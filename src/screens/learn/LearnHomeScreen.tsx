@@ -11,7 +11,8 @@ import { TopBarActions } from '../../components/navigation/TopBarActions';
 import { LearnSummaryCard } from '../../components/learn/LearnSummaryCard';
 import { GradeSelector } from '../../components/learn/GradeSelector';
 import { CourseCard, CourseTint } from '../../components/learn/CourseCard';
-import { SUBJECTS, countLessonsForGrade, countLessons, Grade } from '../../data/curriculum';
+import { Grade } from '../../data/curriculum';
+import { useAllSubjectUnits, useSubjects, countLessons, countLessonsForGrade } from '../../hooks/useCurriculum';
 import { LearnStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -24,9 +25,13 @@ const TINTS: CourseTint[] = ['brand', 'warning', 'success', 'secondary'];
 export function LearnHomeScreen({ navigation }: Props) {
   const t = useTheme();
   const [grade, setGrade] = useState<Grade>(12);
+  const { data: subjects } = useSubjects();
+  const unitQueries = useAllSubjectUnits(subjects);
 
-  const avgMastery = SUBJECTS.reduce((sum, s) => sum + s.mastery, 0) / SUBJECTS.length;
-  const totalLessonsCompleted = SUBJECTS.reduce((sum, s) => sum + countLessons(s).completed, 0);
+  if (!subjects) return null;
+
+  const avgMastery = subjects.length ? subjects.reduce((sum, s) => sum + s.mastery, 0) / subjects.length : 0;
+  const totalLessonsCompleted = unitQueries.reduce((sum, q) => sum + countLessons(q.data).completed, 0);
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -49,14 +54,14 @@ export function LearnHomeScreen({ navigation }: Props) {
             <Ionicons name="school-outline" size={16} color={t.colors.brand} />
           </View>
           <Text style={[t.typography.h3, { color: t.colors.textPrimary, marginLeft: 10, flex: 1 }]}>
-            Master <Text style={{ color: t.colors.brand }}>{SUBJECTS.length}</Text> subjects for your UEE
+            Master <Text style={{ color: t.colors.brand }}>{subjects.length}</Text> subjects for your UEE
           </Text>
         </View>
 
         <View style={{ marginTop: 18 }}>
           <LearnSummaryCard
             avgMastery={avgMastery}
-            courseCount={SUBJECTS.length}
+            courseCount={subjects.length}
             lessonsCompleted={totalLessonsCompleted}
           />
         </View>
@@ -66,14 +71,15 @@ export function LearnHomeScreen({ navigation }: Props) {
         </View>
 
         <View style={[styles.grid, { marginTop: 18 }]}>
-          {SUBJECTS.map((subject, i) => {
-            const { completed, total } = countLessonsForGrade(subject, grade);
-            const unit = subject.units.find((u) => u.grade === grade);
+          {subjects.map((subject, i) => {
+            const units = unitQueries[i]?.data;
+            const { completed, total } = countLessonsForGrade(units, grade);
+            const unit = units?.find((u) => u.grade === grade);
             return (
               <CourseCard
                 key={subject.id}
                 name={subject.name}
-                icon={subject.icon}
+                icon={subject.icon as keyof typeof Ionicons.glyphMap}
                 unitTitle={unit?.title}
                 mastery={subject.mastery}
                 lessonsCompleted={completed}

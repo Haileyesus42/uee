@@ -9,8 +9,9 @@ import { ProgressBar } from '../../components/progress/ProgressBar';
 import { HeartsBadge } from '../../components/progress/Badges';
 import { MultipleChoiceOption, OptionState } from '../../components/questions/MultipleChoiceOption';
 import { FeedbackBanner } from '../../components/questions/FeedbackBanner';
-import { findLesson } from '../../data/curriculum';
-import { getLessonContent } from '../../data/lessonContent';
+import { useLesson } from '../../hooks/useCurriculum';
+import { postLessonProgress } from '../../api/curriculum';
+import { useQueryClient } from '@tanstack/react-query';
 import { LearnStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<LearnStackParamList, 'Lesson'>;
@@ -18,18 +19,20 @@ type Props = NativeStackScreenProps<LearnStackParamList, 'Lesson'>;
 export function LessonScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { subjectId, unitId, lessonId } = route.params;
-  const lesson = findLesson(subjectId, unitId, lessonId);
-  const steps = getLessonContent(lessonId, lesson?.title ?? 'this topic');
+  const { data: lesson } = useLesson(lessonId);
+  const steps = lesson?.steps ?? [];
   const questionCount = steps.filter((s) => s.type === 'question').length;
+  const queryClient = useQueryClient();
 
   const [stepIndex, setStepIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
   const [attempted, setAttempted] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const firstAttemptResults = useRef<boolean[]>([]);
 
-  if (!lesson) return null;
+  if (!lesson || steps.length === 0) return null;
 
   const step = steps[stepIndex];
   const isLastStep = stepIndex === steps.length - 1;
@@ -43,17 +46,30 @@ export function LessonScreen({ navigation, route }: Props) {
     setShowHint(false);
   }
 
-  function handleAdvance() {
+  async function handleAdvance() {
     if (isLastStep) {
+      if (submitting) return;
+      setSubmitting(true);
       const correctCount = firstAttemptResults.current.filter(Boolean).length;
-      navigation.replace('LessonComplete', {
-        subjectId,
-        unitId,
-        lessonId,
-        xpEarned: questionCount * 10,
-        correctCount,
-        totalQuestions: questionCount || 1,
-      });
+      try {
+        const result = await postLessonProgress(lessonId, {
+          correctCount,
+          totalSteps: questionCount || 1,
+        });
+        queryClient.invalidateQueries({ queryKey: ['subjects'] });
+        queryClient.invalidateQueries({ queryKey: ['units', subjectId] });
+        queryClient.invalidateQueries({ queryKey: ['me'] });
+        navigation.replace('LessonComplete', {
+          subjectId,
+          unitId,
+          lessonId,
+          xpEarned: result.xpAwarded,
+          correctCount,
+          totalQuestions: questionCount || 1,
+        });
+      } finally {
+        setSubmitting(false);
+      }
       return;
     }
     goToStep(stepIndex + 1);
@@ -190,7 +206,7 @@ export function LessonScreen({ navigation, route }: Props) {
           <Button
             label={step.type === 'question' ? 'Check' : 'Continue'}
             onPress={step.type === 'question' ? handleCheck : handleAdvance}
-            disabled={step.type === 'question' && selected === null}
+            disabled={(step.type === 'question' && selected === null) || submitting}
           />
         </View>
       )}

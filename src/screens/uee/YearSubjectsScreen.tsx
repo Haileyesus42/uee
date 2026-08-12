@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
-import { SUBJECTS } from '../../data/curriculum';
+import { useSubjects } from '../../hooks/useCurriculum';
 import { UeeStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<UeeStackParamList, 'YearSubjects'>;
@@ -14,6 +14,8 @@ type Props = NativeStackScreenProps<UeeStackParamList, 'YearSubjects'>;
 export function YearSubjectsScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { year } = route.params;
+  const { data: subjects } = useSubjects();
+  if (!subjects) return null;
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -26,17 +28,17 @@ export function YearSubjectsScreen({ navigation, route }: Props) {
           Choose a subject to view that year's paper.
         </Text>
 
-        {SUBJECTS.map((subject, i) => (
+        {subjects.map((subject, i) => (
           <Pressable
             key={subject.id}
             onPress={() =>
               navigation.navigate('PaperViewer', { year, subjectId: subject.id, subjectName: subject.name })
             }
           >
-            <Card style={i === SUBJECTS.length - 1 ? undefined : styles.cardSpacing}>
+            <Card style={i === subjects.length - 1 ? undefined : styles.cardSpacing}>
               <View style={styles.row}>
                 <View style={[styles.iconChip, { backgroundColor: t.colors.brandLight }]}>
-                  <Ionicons name={subject.icon} size={20} color={t.colors.brand} />
+                  <Ionicons name={subject.icon as keyof typeof Ionicons.glyphMap} size={20} color={t.colors.brand} />
                 </View>
                 <Text style={[t.typography.h3, { color: t.colors.textPrimary, flex: 1, marginLeft: 12 }]}>
                   {subject.name}

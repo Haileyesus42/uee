@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
@@ -8,7 +8,8 @@ import { AuthMethodTabs, AuthMethod } from '../../components/onboarding/AuthMeth
 import { CountryPickerSheet } from '../../components/onboarding/CountryPickerSheet';
 import { Country, DEFAULT_COUNTRY } from '../../data/countries';
 import { OnboardingStackParamList } from '../../navigation/types';
-import { useOnboardingFlow } from '../../navigation/OnboardingFlowContext';
+import { useAuth } from '../../auth/AuthProvider';
+import { ApiError } from '../../api/client';
 
 type Props = NativeStackScreenProps<OnboardingStackParamList, 'Auth'>;
 
@@ -18,21 +19,28 @@ const TELEGRAM_BLUE = '#229ED9';
 
 export function AuthScreen({ navigation }: Props) {
   const t = useTheme();
-  const { complete } = useOnboardingFlow();
+  const { requestOtp } = useAuth();
   const [method, setMethod] = useState<AuthMethod>('phone');
   const [country, setCountry] = useState<Country>(DEFAULT_COUNTRY);
   const [phone, setPhone] = useState('');
   const [pickerOpen, setPickerOpen] = useState(false);
-  const [connectingTelegram, setConnectingTelegram] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const canContinuePhone = phone.length >= 7;
+  const canContinuePhone = phone.length >= 7 && !sending;
 
-  // Simulates the Telegram Login Widget hand-off: Telegram itself verifies
-  // the user inside its own app, so — unlike the phone path — there's no
-  // separate OTP step afterward.
-  function handleTelegramContinue() {
-    setConnectingTelegram(true);
-    setTimeout(() => complete(), 1200);
+  async function handleContinuePhone() {
+    const fullPhone = `${country.dialCode}${phone}`;
+    setSending(true);
+    setError(null);
+    try {
+      await requestOtp(fullPhone);
+      navigation.navigate('OtpVerification', { phone: fullPhone });
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : 'Could not send code — check your connection.');
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -40,12 +48,9 @@ export function AuthScreen({ navigation }: Props) {
       onBack={() => navigation.goBack()}
       title="Create Your Account"
       subtitle="Choose how you'd like to sign up."
-      onNext={
-        method === 'phone'
-          ? () => navigation.navigate('OtpVerification', { phone: `${country.dialCode} ${phone}` })
-          : undefined
-      }
+      onNext={method === 'phone' ? handleContinuePhone : undefined}
       nextDisabled={!canContinuePhone}
+      nextLoading={sending}
     >
       <AuthMethodTabs method={method} onChange={setMethod} />
 
@@ -76,6 +81,9 @@ export function AuthScreen({ navigation }: Props) {
           <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 20 }]}>
             We'll text you a one-time code. Carrier charges may apply.
           </Text>
+          {error && (
+            <Text style={[t.typography.caption, { color: t.colors.error, marginTop: 8 }]}>{error}</Text>
+          )}
 
           <CountryPickerSheet
             visible={pickerOpen}
@@ -88,30 +96,21 @@ export function AuthScreen({ navigation }: Props) {
         </View>
       ) : (
         <View style={styles.telegramWrap}>
-          <View style={[styles.telegramBadge, { backgroundColor: TELEGRAM_BLUE }]}>
+          <View style={[styles.telegramBadge, { backgroundColor: TELEGRAM_BLUE, opacity: 0.6 }]}>
             <Ionicons name="paper-plane" size={28} color="#FFFFFF" />
           </View>
           <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 16, textAlign: 'center' }]}>
-            Verify instantly through Telegram
+            Telegram sign-in is coming soon
           </Text>
           <Text style={[styles.telegramCaption, { color: t.colors.textSecondary }]}>
-            No code to type — approve the login inside Telegram and you're in.
+            Telegram can only message accounts that have already started a chat with our bot — we're finishing that
+            flow. Use your phone number for now.
           </Text>
 
-          <Pressable
-            onPress={handleTelegramContinue}
-            disabled={connectingTelegram}
-            style={[styles.telegramButton, { backgroundColor: TELEGRAM_BLUE, opacity: connectingTelegram ? 0.75 : 1 }]}
-          >
-            {connectingTelegram ? (
-              <ActivityIndicator color="#FFFFFF" />
-            ) : (
-              <>
-                <Ionicons name="paper-plane-outline" size={17} color="#FFFFFF" />
-                <Text style={styles.telegramButtonText}>Continue with Telegram</Text>
-              </>
-            )}
-          </Pressable>
+          <View style={[styles.telegramButton, { backgroundColor: t.colors.border, opacity: 0.6 }]}>
+            <Ionicons name="paper-plane-outline" size={17} color={t.colors.textSecondary} />
+            <Text style={[styles.telegramButtonText, { color: t.colors.textSecondary }]}>Coming Soon</Text>
+          </View>
         </View>
       )}
     </PhoneFlowLayout>

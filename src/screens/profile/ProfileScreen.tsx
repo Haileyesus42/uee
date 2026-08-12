@@ -7,6 +7,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
+import { useMe } from '../../hooks/useProfile';
+import { useAuth } from '../../auth/AuthProvider';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'ProfileHome'>;
@@ -23,6 +25,8 @@ const MENU: { id: keyof ProfileStackParamList; label: string; icon: keyof typeof
 
 export function ProfileScreen({ navigation }: Props) {
   const t = useTheme();
+  const { data: profile } = useMe();
+  const { logout } = useAuth();
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -47,14 +51,14 @@ export function ProfileScreen({ navigation }: Props) {
               end={{ x: 0.85, y: 1 }}
               style={styles.avatar}
             >
-              <Text style={styles.avatarEmoji}>👩🏾‍🎓</Text>
+              <Text style={styles.avatarEmoji}>{profile?.avatarEmoji ?? '🧑🎓'}</Text>
             </LinearGradient>
             <View style={{ marginLeft: 10 }}>
               <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, fontSize: 15 }]}>
-                Selam Tesfaye
+                {profile?.name || 'Compass Student'}
               </Text>
               <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 1, fontSize: 11 }]}>
-                Level 12 · Rising Scholar
+                Level {profile?.level ?? 1} · {profile?.levelTitle ?? 'New Learner'}
               </Text>
             </View>
           </View>
@@ -62,9 +66,14 @@ export function ProfileScreen({ navigation }: Props) {
           <View style={[styles.divider, { backgroundColor: t.colors.border }]} />
 
           <View style={styles.statsRow}>
-            <Stat icon="flash" value="1,250" label="XP" tint="warning" />
-            <Stat icon="flame" value="14" label="Day Streak" tint="warning" />
-            <Stat icon="checkmark-circle" value="82%" label="Accuracy" tint="success" />
+            <Stat icon="flash" value={(profile?.xp ?? 0).toLocaleString()} label="XP" tint="warning" />
+            <Stat icon="flame" value={String(profile?.streakDays ?? 0)} label="Day Streak" tint="warning" />
+            <Stat
+              icon="checkmark-circle"
+              value={`${Math.round((profile?.accuracy ?? 0) * 100)}%`}
+              label="Accuracy"
+              tint="success"
+            />
           </View>
         </Card>
 
@@ -90,6 +99,21 @@ export function ProfileScreen({ navigation }: Props) {
               </View>
             </Pressable>
           ))}
+        </Card>
+
+        <Card padded={false} style={{ marginTop: 14 }}>
+          <Pressable onPress={logout}>
+            <View style={styles.row}>
+              <View style={[styles.iconChip, { backgroundColor: t.colors.errorLight }]}>
+                <Ionicons name="log-out-outline" size={15} color={t.colors.error} />
+              </View>
+              <Text
+                style={[t.typography.caption, { color: t.colors.error, flex: 1, marginLeft: 10, fontWeight: '600' }]}
+              >
+                Log Out
+              </Text>
+            </View>
+          </Pressable>
         </Card>
       </ScrollView>
     </SafeAreaView>

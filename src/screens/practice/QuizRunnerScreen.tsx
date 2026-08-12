@@ -1,14 +1,16 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useTheme } from '../../theme/ThemeProvider';
 import { ProgressBar } from '../../components/progress/ProgressBar';
 import { Button } from '../../components/buttons/Button';
 import { MultipleChoiceOption, OptionState } from '../../components/questions/MultipleChoiceOption';
 import { FeedbackBanner } from '../../components/questions/FeedbackBanner';
-import { getPracticeQuestions } from '../../data/practiceQuestions';
+import { answerQuizAttempt, getPracticeQuestions, startQuizAttempt, submitQuizAttempt } from '../../api/practice';
+import { startUeeExam } from '../../api/uee';
 import { PracticeStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<PracticeStackParamList, 'QuizRunner'>;
@@ -20,17 +22,36 @@ function formatTime(totalSeconds: number): string {
 }
 
 export function QuizRunnerScreen({ navigation, route }: Props) {
-  const { mode, subjectId, subjectName, topic, questionCount, timeLimitMinutes } = route.params;
+  const { mode, subjectId, subjectName, topic, questionCount, timeLimitMinutes, pastPaperYear } = route.params;
   const t = useTheme();
   const isMock = mode === 'mock';
+  const queryClient = useQueryClient();
 
-  const questions = useMemo(() => getPracticeQuestions(subjectId, questionCount), [subjectId, questionCount]);
+  const { data: questions } = useQuery({
+    queryKey: ['practice-questions', subjectId, questionCount],
+    queryFn: () => getPracticeQuestions(subjectId, questionCount),
+  });
+
+  const attemptPromise = useRef<Promise<{ id: string }> | null>(null);
+  if (!attemptPromise.current) {
+    // A past-paper exam reuses this same runner (docs/backend-architecture.md §6: "not
+    // a separate engine") but needs its attempt tagged source='uee_exam' + the paper
+    // year, so it goes through the UEE exam-start endpoint instead of quiz-attempts.
+    attemptPromise.current = pastPaperYear
+      ? startUeeExam(pastPaperYear, subjectId)
+      : startQuizAttempt({ mode, source: 'practice', subjectId, topic });
+  }
 
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
+  const [finishing, setFinishing] = useState(false);
   const answers = useRef<number[]>([]);
-  const startedAt = useRef(Date.now());
+  // The timer effect below is set up once on mount — before `questions` has loaded —
+  // and never re-runs (stable `[isMock]` deps), so it can't close directly over
+  // `finish` (which needs `quizQuestions`, not defined yet on that first render).
+  // Routing the call through a ref that's kept current every render sidesteps that.
+  const finishRef = useRef<() => void>(() => {});
 
   const totalSeconds = (timeLimitMinutes ?? questionCount * 1.5) * 60;
   const [remaining, setRemaining] = useState(Math.round(totalSeconds));
@@ -41,7 +62,7 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
       setRemaining((r) => {
         if (r <= 1) {
           clearInterval(id);
-          finish();
+          finishRef.current();
           return 0;
         }
         return r - 1;
@@ -51,8 +72,11 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMock]);
 
-  const question = questions[index];
-  const isLast = index === questions.length - 1;
+  if (!questions) return null;
+  const quizQuestions = questions;
+
+  const question = quizQuestions[index];
+  const isLast = index === quizQuestions.length - 1;
 
   function optionState(i: number): OptionState {
     if (!isMock) {
@@ -75,29 +99,31 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
     setChecked(false);
   }
 
-  function finish() {
+  async function finish() {
+    if (finishing) return;
+    setFinishing(true);
+
     const finalAnswers = [...answers.current];
     finalAnswers[index] = finalAnswers[index] ?? (selected ?? -1);
-    const reviewItems = questions.map((q, i) => ({
-      prompt: q.prompt,
-      options: q.options,
-      correctIndex: q.correctIndex,
-      selectedIndex: finalAnswers[i] ?? -1,
-      explanation: q.explanation,
-    }));
-    const correctCount = reviewItems.filter((r) => r.selectedIndex === r.correctIndex).length;
-    const timeSpentSeconds = Math.round((Date.now() - startedAt.current) / 1000);
+
+    const attempt = await attemptPromise.current!;
+    await Promise.all(
+      quizQuestions.map((q, i) => answerQuizAttempt(attempt.id, { questionId: q.id, selectedIndex: finalAnswers[i] ?? -1 }))
+    );
+    const result = await submitQuizAttempt(attempt.id);
+    queryClient.invalidateQueries({ queryKey: ['me'] });
 
     navigation.replace('Results', {
       mode,
       subjectName,
       topic,
-      correctCount,
-      totalQuestions: questions.length,
-      timeSpentSeconds,
-      reviewItems,
+      correctCount: result.correctCount,
+      totalQuestions: result.totalQuestions,
+      timeSpentSeconds: result.timeSpentSeconds,
+      reviewItems: result.reviewItems,
     });
   }
+  finishRef.current = finish;
 
   function handlePrimary() {
     if (!isMock && !checked) {
@@ -163,9 +189,9 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
       {showFooterButton && (
         <View style={{ paddingHorizontal: t.spacing.md, paddingBottom: 12 }}>
           <Button
-            label={isMock ? (isLast ? 'Submit Exam' : 'Next') : 'Check'}
+            label={finishing ? 'Submitting…' : isMock ? (isLast ? 'Submit Exam' : 'Next') : 'Check'}
             onPress={handlePrimary}
-            disabled={selected === null}
+            disabled={selected === null || finishing}
           />
         </View>
       )}

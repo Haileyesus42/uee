@@ -6,7 +6,7 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Button } from '../../components/buttons/Button';
 import { JourneyRow } from '../../components/progress/JourneyRow';
-import { findUnit } from '../../data/curriculum';
+import { useUnits } from '../../hooks/useCurriculum';
 import { LearnStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<LearnStackParamList, 'TopicDetail'>;
@@ -14,7 +14,8 @@ type Props = NativeStackScreenProps<LearnStackParamList, 'TopicDetail'>;
 export function TopicDetailScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { subjectId, unitId } = route.params;
-  const unit = findUnit(subjectId, unitId);
+  const { data: units } = useUnits(subjectId);
+  const unit = units?.find((u) => u.id === unitId);
   if (!unit) return null;
 
   const nextLesson = unit.lessons.find((l) => l.status === 'current' || l.status === 'available') ?? unit.lessons[0];

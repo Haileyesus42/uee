@@ -1,0 +1,234 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum LessonStatus {
+  locked
+  available
+  current
+  completed
+}
+
+enum QuizMode {
+  practice
+  mock
+}
+
+enum QuizSource {
+  practice
+  uee_exam
+}
+
+enum ChatRole {
+  user
+  unity
+}
+
+enum SubscriptionPlan {
+  monthly
+  yearly
+}
+
+enum SubscriptionStatus {
+  active
+  expired
+  canceled
+}
+
+enum SubscriptionProvider {
+  chapa
+  telebirr
+  mock
+}
+
+model User {
+  id          String   @id @default(uuid())
+  phone       String   @unique
+  telegramId  String?  @unique
+  name        String   @default("")
+  avatarEmoji String   @default("🧑🎓")
+  grade       Int      @default(9)
+  tokenVersion Int     @default(0)
+  createdAt   DateTime @default(now())
+
+  stats         UserStats?
+  lessonProgress UserLessonProgress[]
+  quizAttempts  QuizAttempt[]
+  xpEvents      XpEvent[]
+  chatMessages  ChatMessage[]
+  subscription  Subscription?
+
+  @@map("users")
+}
+
+model Subject {
+  id   String @id @default(uuid())
+  slug String @unique
+  name String
+  icon String
+
+  units     Unit[]
+  questions Question[]
+
+  @@map("subjects")
+}
+
+model Unit {
+  id          String @id @default(uuid())
+  subjectId   String
+  subject     Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  grade       Int
+  title       String
+  description String
+  order       Int
+
+  lessons Lesson[]
+
+  @@index([subjectId, grade])
+  @@map("units")
+}
+
+model Lesson {
+  id     String @id @default(uuid())
+  unitId String
+  unit   Unit   @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  title  String
+  order  Int
+
+  steps    LessonStep[]
+  progress UserLessonProgress[]
+
+  @@index([unitId])
+  @@map("lessons")
+}
+
+model LessonStep {
+  id       String @id @default(uuid())
+  lessonId String
+  lesson   Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  type     String // explanation | example | question
+  order    Int
+  content  Json
+
+  @@index([lessonId])
+  @@map("lesson_steps")
+}
+
+model Question {
+  id            String  @id @default(uuid())
+  subjectId     String
+  subject       Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  prompt        String
+  options       Json
+  correctIndex  Int
+  explanation   String
+  difficulty    String  @default("medium")
+
+  answers QuizAttemptAnswer[]
+
+  @@index([subjectId])
+  @@map("questions")
+}
+
+model QuizAttempt {
+  id               String     @id @default(uuid())
+  userId           String
+  user             User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mode             QuizMode
+  source           QuizSource
+  subjectId        String
+  topic            String?
+  pastPaperYear    Int?
+  startedAt        DateTime   @default(now())
+  submittedAt      DateTime?
+  timeSpentSeconds Int?
+
+  answers QuizAttemptAnswer[]
+
+  @@index([userId])
+  @@map("quiz_attempts")
+}
+
+model QuizAttemptAnswer {
+  id             String      @id @default(uuid())
+  attemptId      String
+  attempt        QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  questionId     String
+  question       Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selectedIndex  Int
+  correct        Boolean
+
+  @@unique([attemptId, questionId])
+  @@index([questionId])
+  @@map("quiz_attempt_answers")
+}
+
+model UserLessonProgress {
+  userId                   String
+  user                     User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId                 String
+  lesson                   Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  status                   LessonStatus @default(locked)
+  firstAttemptCorrectCount Int          @default(0)
+  completedAt              DateTime?
+
+  @@id([userId, lessonId])
+  @@map("user_lesson_progress")
+}
+
+model UserStats {
+  userId        String    @id
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xp            Int       @default(0)
+  streakDays    Int       @default(0)
+  lastActiveDate DateTime?
+  hearts        Int       @default(5)
+  heartsRegenAt DateTime?
+
+  @@map("user_stats")
+}
+
+model XpEvent {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount    Int
+  reason    String
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@map("xp_events")
+}
+
+model ChatMessage {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role      ChatRole
+  text      String
+  context   Json?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@map("chat_messages")
+}
+
+model Subscription {
+  id          String               @id @default(uuid())
+  userId      String               @unique
+  user        User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan        SubscriptionPlan
+  priceETB    Int
+  status      SubscriptionStatus   @default(active)
+  provider    SubscriptionProvider
+  providerRef String               @unique
+  startedAt   DateTime             @default(now())
+  expiresAt   DateTime
+
+  @@map("subscriptions")
+}

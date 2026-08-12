@@ -11,7 +11,8 @@ import { TopBarActions } from '../../components/navigation/TopBarActions';
 import { LeaderboardPeriodSelector } from '../../components/leaderboard/LeaderboardPeriodSelector';
 import { LeaderboardPodium } from '../../components/leaderboard/LeaderboardPodium';
 import { LeaderboardRow } from '../../components/leaderboard/LeaderboardRow';
-import { LEADERBOARD_DATA, LeaderboardPeriod } from '../../data/leaderboard';
+import { LeaderboardPeriod } from '../../data/leaderboard';
+import { useLeaderboard } from '../../hooks/useLeaderboard';
 import { LeaderboardStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -19,13 +20,12 @@ type Props = CompositeScreenProps<
   BottomTabScreenProps<MainTabParamList>
 >;
 
-const TOTAL_LEARNERS = 1240;
-
 export function LeaderboardHomeScreen({ navigation }: Props) {
   const t = useTheme();
-  const [period, setPeriod] = useState<LeaderboardPeriod>('weekly');
+  const [period, setPeriod] = useState<LeaderboardPeriod>('allTime');
+  const { data } = useLeaderboard(period);
 
-  const entries = LEADERBOARD_DATA[period];
+  const entries = data?.entries ?? [];
   const top3 = entries.slice(0, 3);
   const rest = entries.slice(3);
   const currentUser = entries.find((e) => e.isCurrentUser);
@@ -53,11 +53,10 @@ export function LeaderboardHomeScreen({ navigation }: Props) {
           <Text style={[t.typography.h3, { color: t.colors.textPrimary, marginLeft: 10, flex: 1 }]}>
             {currentUser ? (
               <>
-                You're ranked <Text style={{ color: t.colors.brand }}>#{currentUser.rank}</Text> of{' '}
-                {TOTAL_LEARNERS.toLocaleString()}
+                You're ranked <Text style={{ color: t.colors.brand }}>#{currentUser.rank}</Text> · keep going
               </>
             ) : (
-              `${TOTAL_LEARNERS.toLocaleString()} learners competing`
+              'Earn XP to join the leaderboard'
             )}
           </Text>
         </View>
@@ -66,13 +65,24 @@ export function LeaderboardHomeScreen({ navigation }: Props) {
           <LeaderboardPeriodSelector period={period} onChange={setPeriod} />
         </View>
 
-        <LeaderboardPodium top3={top3} />
-
-        <View style={{ marginTop: 22 }}>
-          {rest.map((entry) => (
-            <LeaderboardRow key={entry.rank} entry={entry} />
-          ))}
-        </View>
+        {data && !data.available ? (
+          <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 24, textAlign: 'center' }]}>
+            {period === 'weekly' ? 'Weekly' : 'Monthly'} rankings are coming soon — check All-Time for now.
+          </Text>
+        ) : entries.length === 0 ? (
+          <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 24, textAlign: 'center' }]}>
+            No one has earned XP yet — be the first!
+          </Text>
+        ) : (
+          <>
+            <LeaderboardPodium top3={top3} />
+            <View style={{ marginTop: 22 }}>
+              {rest.map((entry) => (
+                <LeaderboardRow key={entry.rank} entry={entry} />
+              ))}
+            </View>
+          </>
+        )}
       </ScrollView>
     </SafeAreaView>
   );

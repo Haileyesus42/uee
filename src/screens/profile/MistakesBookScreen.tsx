@@ -7,23 +7,15 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
 import { MultipleChoiceOption } from '../../components/questions/MultipleChoiceOption';
-import { getPracticeQuestions } from '../../data/practiceQuestions';
-import { SUBJECTS } from '../../data/curriculum';
+import { useMistakes } from '../../hooks/useProfile';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'MistakesBook'>;
 
-// Mock "wrongly answered" queue — pulls a few questions per weak subject
-// rather than tracking real per-user history, since there's no backend yet.
-const MISTAKES = [
-  { subject: SUBJECTS[0].name, question: getPracticeQuestions('mathematics', 1)[0] },
-  { subject: SUBJECTS[1].name, question: getPracticeQuestions('physics', 2)[1] },
-  { subject: SUBJECTS[1].name, question: getPracticeQuestions('physics', 3)[2] },
-];
-
 export function MistakesBookScreen({ navigation }: Props) {
   const t = useTheme();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { data: mistakes } = useMistakes();
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -36,7 +28,13 @@ export function MistakesBookScreen({ navigation }: Props) {
           Questions you've gotten wrong recently. Retry them to build mastery.
         </Text>
 
-        {MISTAKES.map((item, i) => {
+        {mistakes?.length === 0 && (
+          <Text style={[t.typography.body, { color: t.colors.textSecondary, textAlign: 'center', marginTop: 20 }]}>
+            No mistakes yet — keep practicing!
+          </Text>
+        )}
+
+        {mistakes?.map((item, i) => {
           const open = openIndex === i;
           return (
             <Pressable key={i} onPress={() => setOpenIndex(open ? null : i)}>

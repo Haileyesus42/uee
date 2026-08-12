@@ -13,9 +13,9 @@ export function LeaderboardPodium({ top3 }: { top3: LeaderboardEntry[] }) {
   const [first, second, third] = top3;
   return (
     <View style={styles.row}>
-      <PodiumColumn entry={second} place={2} pillarHeight={PILLAR_HEIGHTS[0]} />
-      <PodiumColumn entry={first} place={1} pillarHeight={PILLAR_HEIGHTS[1]} crown />
-      <PodiumColumn entry={third} place={3} pillarHeight={PILLAR_HEIGHTS[2]} />
+      {second && <PodiumColumn entry={second} place={2} pillarHeight={PILLAR_HEIGHTS[0]} />}
+      {first && <PodiumColumn entry={first} place={1} pillarHeight={PILLAR_HEIGHTS[1]} crown />}
+      {third && <PodiumColumn entry={third} place={3} pillarHeight={PILLAR_HEIGHTS[2]} />}
     </View>
   );
 }

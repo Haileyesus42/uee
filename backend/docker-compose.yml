@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: compass-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: compass
+      POSTGRES_PASSWORD: compass_dev_pw
+      POSTGRES_DB: compass_dev
+    ports:
+      - "5434:5432"
+    volumes:
+      - compass_postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: compass-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - compass_redis_data:/data
+
+volumes:
+  compass_postgres_data:
+  compass_redis_data:

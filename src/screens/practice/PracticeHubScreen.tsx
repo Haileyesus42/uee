@@ -10,6 +10,7 @@ import { AppTopBar } from '../../components/navigation/AppTopBar';
 import { TopBarActions } from '../../components/navigation/TopBarActions';
 import { PracticeStatsCard } from '../../components/practice/PracticeStatsCard';
 import { PracticeModeCard, PracticeModeTint } from '../../components/practice/PracticeModeCard';
+import { useMe } from '../../hooks/useProfile';
 import { PracticeStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -57,6 +58,7 @@ const MODES: {
 
 export function PracticeHubScreen({ navigation }: Props) {
   const t = useTheme();
+  const { data: profile } = useMe();
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -83,7 +85,11 @@ export function PracticeHubScreen({ navigation }: Props) {
         </View>
 
         <View style={{ marginTop: 18 }}>
-          <PracticeStatsCard accuracy={0.82} streakDays={14} questionsAnswered={248} />
+          <PracticeStatsCard
+            accuracy={profile?.accuracy ?? 0}
+            streakDays={profile?.streakDays ?? 0}
+            questionsAnswered={profile?.questionsSolved ?? 0}
+          />
         </View>
 
         <View style={{ marginTop: 18, gap: 12 }}>

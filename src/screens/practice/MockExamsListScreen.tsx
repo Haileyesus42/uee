@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
-import { SUBJECTS } from '../../data/curriculum';
+import { useSubjects } from '../../hooks/useCurriculum';
 import { PracticeStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<PracticeStackParamList, 'MockExamsList'>;
@@ -16,6 +16,8 @@ const TIME_LIMIT_MINUTES = 30;
 
 export function MockExamsListScreen({ navigation }: Props) {
   const t = useTheme();
+  const { data: subjects } = useSubjects();
+  if (!subjects) return null;
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -28,7 +30,7 @@ export function MockExamsListScreen({ navigation }: Props) {
           Full-length, timed simulations. No hints, no XP — just like the real UEE.
         </Text>
 
-        {SUBJECTS.map((subject, i) => (
+        {subjects.map((subject, i) => (
           <Pressable
             key={subject.id}
             onPress={() =>
@@ -42,10 +44,10 @@ export function MockExamsListScreen({ navigation }: Props) {
               })
             }
           >
-            <Card style={i === SUBJECTS.length - 1 ? undefined : styles.cardSpacing}>
+            <Card style={i === subjects.length - 1 ? undefined : styles.cardSpacing}>
               <View style={styles.row}>
                 <View style={[styles.iconChip, { backgroundColor: t.colors.brandLight }]}>
-                  <Ionicons name={subject.icon} size={20} color={t.colors.brand} />
+                  <Ionicons name={subject.icon as keyof typeof Ionicons.glyphMap} size={20} color={t.colors.brand} />
                 </View>
                 <View style={{ flex: 1, marginLeft: 12 }}>
                   <Text style={[t.typography.h3, { color: t.colors.textPrimary }]}>{subject.name}</Text>

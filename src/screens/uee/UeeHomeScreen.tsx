@@ -10,8 +10,8 @@ import { AppTopBar } from '../../components/navigation/AppTopBar';
 import { TopBarActions } from '../../components/navigation/TopBarActions';
 import { PastPapersStatsCard } from '../../components/uee/PastPapersStatsCard';
 import { YearCard, YearCardTint } from '../../components/uee/YearCard';
-import { PAST_PAPER_YEARS } from '../../data/pastPapers';
-import { SUBJECTS } from '../../data/curriculum';
+import { useUeeYears } from '../../hooks/useUee';
+import { useSubjects } from '../../hooks/useCurriculum';
 import { UeeStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -23,6 +23,9 @@ const TINTS: YearCardTint[] = ['brand', 'warning', 'success', 'secondary'];
 
 export function UeeHomeScreen({ navigation }: Props) {
   const t = useTheme();
+  const { data: years } = useUeeYears();
+  const { data: subjects } = useSubjects();
+  if (!years || !subjects) return null;
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -45,21 +48,21 @@ export function UeeHomeScreen({ navigation }: Props) {
             <Ionicons name="document-text-outline" size={16} color={t.colors.brand} />
           </View>
           <Text style={[t.typography.h3, { color: t.colors.textPrimary, marginLeft: 10, flex: 1 }]}>
-            <Text style={{ color: t.colors.brand }}>{PAST_PAPER_YEARS.length}+</Text> years of past UEE papers, with
+            <Text style={{ color: t.colors.brand }}>{years.length}+</Text> years of past UEE papers, with
             full solutions
           </Text>
         </View>
 
         <View style={{ marginTop: 18 }}>
-          <PastPapersStatsCard years={PAST_PAPER_YEARS.length} subjectsPerYear={SUBJECTS.length} />
+          <PastPapersStatsCard years={years.length} subjectsPerYear={subjects.length} />
         </View>
 
         <View style={[styles.grid, { marginTop: 18 }]}>
-          {PAST_PAPER_YEARS.map((year, i) => (
+          {years.map((year, i) => (
             <YearCard
               key={year}
               year={year}
-              subjectCount={SUBJECTS.length}
+              subjectCount={subjects.length}
               tint={TINTS[i % TINTS.length]}
               onPress={() => navigation.navigate('YearSubjects', { year })}
             />

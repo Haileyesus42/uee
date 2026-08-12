@@ -6,7 +6,7 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { ChoiceCard } from '../../components/onboarding/ChoiceCard';
 import { Button } from '../../components/buttons/Button';
-import { SUBJECTS } from '../../data/curriculum';
+import { useSubjects } from '../../hooks/useCurriculum';
 import { PracticeStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<PracticeStackParamList, 'QuizSetup'>;
@@ -15,10 +15,12 @@ const QUESTION_COUNTS = [5, 10, 15, 20];
 
 export function QuizSetupScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const [subjectId, setSubjectId] = useState(route.params.presetSubjectId ?? SUBJECTS[0].id);
+  const { data: subjects } = useSubjects();
+  const [subjectId, setSubjectId] = useState(route.params.presetSubjectId ?? null);
   const [questionCount, setQuestionCount] = useState(10);
 
-  const subject = SUBJECTS.find((s) => s.id === subjectId) ?? SUBJECTS[0];
+  if (!subjects) return null;
+  const subject = subjects.find((s) => s.id === subjectId) ?? subjects[0];
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -30,11 +32,11 @@ export function QuizSetupScreen({ navigation, route }: Props) {
         <Text style={[t.typography.caption, { color: t.colors.textSecondary, letterSpacing: 0.5, marginBottom: 12 }]}>
           SUBJECT
         </Text>
-        {SUBJECTS.map((s) => (
+        {subjects.map((s) => (
           <ChoiceCard
             key={s.id}
             label={s.name}
-            selected={subjectId === s.id}
+            selected={subject.id === s.id}
             onPress={() => setSubjectId(s.id)}
           />
         ))}

@@ -45,6 +45,7 @@ export type PracticeStackParamList = {
     topic: string;
     questionCount: number;
     timeLimitMinutes?: number;
+    pastPaperYear?: number;
   };
   Results: {
     mode: QuizMode;

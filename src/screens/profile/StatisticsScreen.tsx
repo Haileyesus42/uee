@@ -7,25 +7,36 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
 import { ProgressBar } from '../../components/progress/ProgressBar';
-import { SUBJECTS } from '../../data/curriculum';
+import { useSubjects } from '../../hooks/useCurriculum';
+import { useMe } from '../../hooks/useProfile';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'Statistics'>;
 
-const OVERVIEW = [
-  { icon: 'list-outline' as const, value: '248', label: 'Questions Solved', tint: 'brand' as const },
-  { icon: 'checkmark-circle-outline' as const, value: '82%', label: 'Accuracy', tint: 'success' as const },
-  { icon: 'time-outline' as const, value: '6h 20m', label: 'Study Time', tint: 'warning' as const },
-];
+function formatStudyTime(totalSeconds: number): string {
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.round((totalSeconds % 3600) / 60);
+  return h > 0 ? `${h}h ${m}m` : `${m}m`;
+}
 
 export function StatisticsScreen({ navigation }: Props) {
   const t = useTheme();
+  const { data: subjects } = useSubjects();
+  const { data: profile } = useMe();
   const tintMap = {
     brand: { bg: t.colors.brandLight, fg: t.colors.brand },
     warning: { bg: t.colors.warningLight, fg: t.colors.warning },
     success: { bg: t.colors.successLight, fg: t.colors.success },
   } as const;
-  const weakest = [...SUBJECTS].sort((a, b) => a.mastery - b.mastery)[0];
+
+  if (!subjects || !profile) return null;
+
+  const OVERVIEW = [
+    { icon: 'list-outline' as const, value: String(profile.questionsSolved), label: 'Questions Solved', tint: 'brand' as const },
+    { icon: 'checkmark-circle-outline' as const, value: `${Math.round(profile.accuracy * 100)}%`, label: 'Accuracy', tint: 'success' as const },
+    { icon: 'time-outline' as const, value: formatStudyTime(profile.studyTimeSeconds), label: 'Study Time', tint: 'warning' as const },
+  ];
+  const weakest = [...subjects].sort((a, b) => a.mastery - b.mastery)[0];
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -61,7 +72,7 @@ export function StatisticsScreen({ navigation }: Props) {
         <Text style={[t.typography.h3, { color: t.colors.textPrimary, marginTop: 28, marginBottom: 14 }]}>
           Subject Mastery
         </Text>
-        {SUBJECTS.map((subject) => (
+        {subjects.map((subject) => (
           <View key={subject.id} style={styles.masteryRow}>
             <View style={styles.masteryHeader}>
               <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary }]}>{subject.name}</Text>

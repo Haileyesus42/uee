@@ -6,15 +6,18 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { ProgressBar } from '../../components/progress/ProgressBar';
 import { UnitPath } from '../../components/learn/UnitPath';
-import { findSubject } from '../../data/curriculum';
+import { useSubjects, useUnits } from '../../hooks/useCurriculum';
 import { LearnStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<LearnStackParamList, 'SubjectPath'>;
 
 export function SubjectPathScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const subject = findSubject(route.params.subjectId);
-  if (!subject) return null;
+  const { subjectId } = route.params;
+  const { data: subjects } = useSubjects();
+  const { data: units } = useUnits(subjectId);
+  const subject = subjects?.find((s) => s.id === subjectId);
+  if (!subject || !units) return null;
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -32,11 +35,11 @@ export function SubjectPathScreen({ navigation, route }: Props) {
         <ProgressBar progress={subject.mastery} height={5} />
 
         <View style={{ marginTop: 32 }}>
-          {subject.units.map((unit, i) => (
-            <View key={unit.id} style={{ marginBottom: i === subject.units.length - 1 ? 0 : 36 }}>
+          {units.map((unit, i) => (
+            <View key={unit.id} style={{ marginBottom: i === units.length - 1 ? 0 : 36 }}>
               <UnitPath
                 title={unit.title}
-                grade={unit.grade}
+                grade={unit.grade as 9 | 10 | 11 | 12}
                 lessons={unit.lessons.map((l) => ({ label: l.title, status: l.status }))}
                 onPressHeader={() => navigation.navigate('TopicDetail', { subjectId: subject.id, unitId: unit.id })}
                 onPressLesson={(index) =>

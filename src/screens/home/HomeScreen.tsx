@@ -16,6 +16,8 @@ import { TrustBanner } from '../../components/home/TrustBanner';
 import { FeatureGrid, FeatureId } from '../../components/home/FeatureGrid';
 import { TodaysGoalCard } from '../../components/home/TodaysGoalCard';
 import { SmartInsightCard } from '../../components/home/SmartInsightCard';
+import { useMe } from '../../hooks/useProfile';
+import { useAllSubjectUnits, useSubjects } from '../../hooks/useCurriculum';
 import { HomeStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -23,9 +25,41 @@ type Props = CompositeScreenProps<
   BottomTabScreenProps<MainTabParamList>
 >;
 
+// The next lesson to resume is the first "current" lesson found across subjects, in
+// subject-list order — every subject has at most one (see the linear-unlock logic in
+// backend/src/modules/curriculum/routes.ts), so this picks the first one going.
+function useContinueLearning() {
+  const { data: subjects } = useSubjects();
+  const unitQueries = useAllSubjectUnits(subjects);
+
+  for (let i = 0; i < (subjects?.length ?? 0); i++) {
+    const subject = subjects![i];
+    const units = unitQueries[i]?.data;
+    if (!units) continue;
+    for (const unit of units) {
+      const lessonIndex = unit.lessons.findIndex((l) => l.status === 'current');
+      if (lessonIndex === -1) continue;
+      const lesson = unit.lessons[lessonIndex];
+      return {
+        subjectId: subject.id,
+        unitId: unit.id,
+        lessonId: lesson.id,
+        subjectName: subject.name,
+        lessonTitle: lesson.title,
+        lessonPosition: lessonIndex + 1,
+        lessonCount: unit.lessons.length,
+        progress: lessonIndex / unit.lessons.length,
+      };
+    }
+  }
+  return null;
+}
+
 export function HomeScreen({ navigation }: Props) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
+  const { data: profile } = useMe();
+  const continueLearning = useContinueLearning();
 
   // Hero has a dark purple gradient, so the status bar needs light icons
   // while Home is focused — reverts automatically when another tab focuses.
@@ -78,7 +112,7 @@ export function HomeScreen({ navigation }: Props) {
                 end={{ x: 0.85, y: 1 }}
                 style={styles.avatar}
               >
-                <Text style={styles.avatarEmoji}>👩🏾‍🎓</Text>
+                <Text style={styles.avatarEmoji}>{profile?.avatarEmoji ?? '🧑🎓'}</Text>
               </LinearGradient>
             </Pressable>
           </View>
@@ -90,29 +124,35 @@ export function HomeScreen({ navigation }: Props) {
       </LinearGradient>
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl, gap: 12 }}>
-        <StreakWeekBar streakDays={14} />
-        <ContinueLearningCard
-          subject="Mathematics"
-          lessonTitle="Quadratic Equations"
-          lessonPosition={4}
-          lessonCount={8}
-          progress={0.75}
-          onPress={() =>
-            navigation.navigate('Learn', {
-              screen: 'Lesson',
-              params: { subjectId: 'mathematics', unitId: 'algebra', lessonId: 'quadratic-equations' },
-            })
-          }
-        />
+        <StreakWeekBar streakDays={profile?.streakDays ?? 0} />
+        {continueLearning && (
+          <ContinueLearningCard
+            subject={continueLearning.subjectName}
+            lessonTitle={continueLearning.lessonTitle}
+            lessonPosition={continueLearning.lessonPosition}
+            lessonCount={continueLearning.lessonCount}
+            progress={continueLearning.progress}
+            onPress={() =>
+              navigation.navigate('Learn', {
+                screen: 'Lesson',
+                params: {
+                  subjectId: continueLearning.subjectId,
+                  unitId: continueLearning.unitId,
+                  lessonId: continueLearning.lessonId,
+                },
+              })
+            }
+          />
+        )}
         <TrustBanner />
         <FeatureGrid onPressItem={handleFeaturePress} />
         <TodaysGoalCard
           minutesDone={12}
           minutesGoal={15}
           daysCompleted={4}
-          xpEarned={1250}
-          level={12}
-          levelTitle="Rising Scholar"
+          xpEarned={profile?.xp ?? 0}
+          level={profile?.level ?? 1}
+          levelTitle={profile?.levelTitle ?? 'New Learner'}
         />
         <SmartInsightCard
           message="You usually struggle with Functions."

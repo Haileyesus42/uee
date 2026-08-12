@@ -8,7 +8,7 @@ import { TopBar } from '../../components/navigation/TopBar';
 import { MultipleChoiceOption } from '../../components/questions/MultipleChoiceOption';
 import { RobotHead } from '../../components/home/RobotHead';
 import { useUnityChat } from '../../context/UnityChatContext';
-import { getPaperQuestions } from '../../data/pastPapers';
+import { useUeeQuestions } from '../../hooks/useUee';
 import { UeeStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<UeeStackParamList, 'SolutionDetail'>;
@@ -17,7 +17,8 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { openChat } = useUnityChat();
   const { year, subjectId, subjectName, questionIndex } = route.params;
-  const questions = getPaperQuestions(subjectId, year);
+  const { data: questions } = useUeeQuestions(year, subjectId);
+  if (!questions) return null;
   const question = questions[questionIndex];
 
   const isFirst = questionIndex === 0;

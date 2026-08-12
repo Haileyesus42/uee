@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { View } from 'react-native';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { useTheme } from '../theme/ThemeProvider';
+import { useAuth } from '../auth/AuthProvider';
 import { UnityChatProvider } from '../context/UnityChatContext';
 import { OnboardingNavigator } from './OnboardingNavigator';
 import { MainTabNavigator } from './MainTabNavigator';
 
 export function RootNavigator() {
   const t = useTheme();
-  const [onboarded, setOnboarded] = useState(false);
+  const { status } = useAuth();
 
   const navTheme = {
     ...(t.scheme === 'dark' ? DarkTheme : DefaultTheme),
@@ -22,10 +24,14 @@ export function RootNavigator() {
     },
   };
 
+  if (status === 'loading') {
+    return <View style={{ flex: 1, backgroundColor: t.colors.brand }} />;
+  }
+
   return (
     <NavigationContainer theme={navTheme}>
       <UnityChatProvider>
-        {onboarded ? <MainTabNavigator /> : <OnboardingNavigator onComplete={() => setOnboarded(true)} />}
+        {status === 'signedIn' ? <MainTabNavigator /> : <OnboardingNavigator onComplete={() => {}} />}
       </UnityChatProvider>
     </NavigationContainer>
   );

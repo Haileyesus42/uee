@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { GradientButton } from '../../components/buttons/GradientButton';
+import { useCheckout, useSubscription } from '../../hooks/useBilling';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'Premium'>;
@@ -30,6 +31,9 @@ const PLANS: { id: PlanId; label: string; price: string; period: string; note?: 
 export function PremiumScreen({ navigation }: Props) {
   const t = useTheme();
   const [selectedPlan, setSelectedPlan] = useState<PlanId>('yearly');
+  const { data: subscription } = useSubscription();
+  const checkoutMutation = useCheckout();
+  const isPro = subscription?.status === 'active';
 
   const tintMap: Record<Tint, { bg: string; fg: string }> = {
     brand: { bg: t.colors.brandLight, fg: t.colors.brand },
@@ -56,7 +60,11 @@ export function PremiumScreen({ navigation }: Props) {
           <Text style={styles.heroTitle}>Unlock Your Full{'\n'}UEE Potential</Text>
           <View style={styles.trustRow}>
             <Ionicons name="people" size={12} color="rgba(255,255,255,0.85)" />
-            <Text style={styles.trustText}>Join 3,200+ students already Pro</Text>
+            <Text style={styles.trustText}>
+              {isPro && subscription?.status === 'active'
+                ? `You're Pro until ${new Date(subscription.expiresAt).toLocaleDateString()}`
+                : 'Join 3,200+ students already Pro'}
+            </Text>
           </View>
         </LinearGradient>
 
@@ -128,7 +136,11 @@ export function PremiumScreen({ navigation }: Props) {
       </ScrollView>
 
       <View style={{ paddingHorizontal: t.spacing.md, paddingBottom: 12 }}>
-        <GradientButton label="Upgrade Now" onPress={() => {}} style={{ paddingVertical: 15 }} />
+        <GradientButton
+          label={isPro ? "You're Pro ✓" : checkoutMutation.isPending ? 'Processing…' : 'Upgrade Now'}
+          onPress={() => !isPro && checkoutMutation.mutate(selectedPlan)}
+          style={{ paddingVertical: 15, opacity: isPro || checkoutMutation.isPending ? 0.7 : 1 }}
+        />
         <Text style={[styles.footNote, { color: t.colors.textSecondary }]}>Cancel anytime · Secure payment</Text>
       </View>
     </SafeAreaView>

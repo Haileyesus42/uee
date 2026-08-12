@@ -53,7 +53,7 @@ flowchart TB
         SMS["SMS gateway (e.g. Africa's Talking)"]
         TG["Telegram Bot API"]
         PAY["Chapa / Telebirr"]
-        LLM["LLM provider (Claude API)"]
+        LLM["LLM provider (DeepSeek-V3 → Claude Haiku 4.5)"]
     end
 
     RN -->|HTTPS / JSON| LB --> API
@@ -93,7 +93,7 @@ flowchart TB
 | Object storage | Cloudflare R2 or S3 | Avatars now; scanned past-paper PDFs later if `getPaperQuestions` stops being a reused question bank and becomes real historical papers. |
 | Hosting | Fly.io or Render for the API; managed Postgres/Redis from the same or a paired provider | Cheap, simple deploys, scale-to-zero options — appropriate for a pre-revenue-scale product. Move to AWS/GCP only when there's a concrete reason (compliance, specific managed service, real traffic). |
 | Error tracking | Sentry (free tier covers this stage) | |
-| AI provider | Claude API (Anthropic) | Powers Unity — see §9. |
+| AI provider | DeepSeek-V3 at launch → Claude Haiku 4.5 after 1,000 Pro subscribers | Powers Unity — see §9 for the switch criteria and why it's a config change, not a rewrite. |
 
 ---
 
@@ -349,11 +349,20 @@ Reading a leaderboard page is `ZREVRANGE ... WITHSCORES` (O(log N)); a user's ow
 
 1. **Assembles context** — the user's grade, weakest subject (lowest recent accuracy from `QuizAttemptAnswer`), and, if the message came from an "Ask Unity" tap (`FeedbackBanner` in Learn/Practice, or the explanation card in UEE Study Mode), the specific `questionId` and its prompt/explanation. This is what makes Unity's answer about *that* question instead of a generic tutor reply.
 2. **Sends a bounded window** — system prompt + last ~10 messages + the context above, not the full history, to keep token cost predictable.
-3. **Calls Claude** (Anthropic API) and persists both the user message and the reply to `CHAT_MESSAGE`.
+3. **Calls the LLM provider** and persists both the user message and the reply to `CHAT_MESSAGE`.
 
 Given the floating-panel UX (`UnityChatPanel`) already streams a typed reply visually, the API should support **streaming responses** (SSE or chunked) rather than a single blocking call — the panel already has the UI shape for it (message bubbles appended incrementally reads naturally as tokens arrive).
 
-Cost control: this is the one module where per-request cost scales with usage, unlike everything else in this stack. Recommend a **daily message cap on the free tier** (e.g. 10 messages/day) and unlimited on Compass Pro — which also gives Pro a second concrete benefit beyond content access, and ties directly into §10.
+### Provider: DeepSeek-V3 at launch, Claude Haiku 4.5 after 1,000 Pro subscribers
+
+This is the one module where per-request cost scales directly with usage, unlike everything else in this stack — and at 25–250 ETB pricing, an unmetered or generously-metered free tier can cost more than the whole product earns (worked example: a 500k-free-user, 10-message/day model runs ~$9k/month against ~$2.7k/month of revenue at a 3% conversion rate). Two decisions follow from that:
+
+- **Launch on DeepSeek-V3**, priced roughly an order of magnitude below Claude Haiku per token, to keep free-tier/trial access affordable while the user base — and its real DAU/conversion numbers — are still unknown.
+- **Switch to Claude Haiku 4.5 once Compass Pro passes ~1,000 paying subscribers.** At that point subscription revenue can absorb the higher per-token cost, and Haiku buys back the two things DeepSeek is weaker on for this specific use case: more reliable structured tool-calling (Unity's `search_questions`/`recommend_next_topic` tools need clean, schema-valid calls — this is the most common failure mode for non-frontier models) and stronger built-in safety tuning, which matters more for a product used by grade 9–12 students.
+
+**Implementation consequence:** DeepSeek's API is OpenAI-compatible (chat completions shape), not Anthropic's Messages API — a genuinely different request/response format, not just a model-ID string. Build the LLM call behind a small provider interface (`chat(messages, tools) → reply`) from day one, with a DeepSeek implementation now and a Claude implementation added later, selected by a single config value. That keeps the eventual switch a deploy-time flag, not a rewrite of the chat module. **Before launch, specifically test DeepSeek-V3's function-calling against Unity's actual tool schemas** — general benchmark quality doesn't guarantee clean tool-call JSON on your specific tools.
+
+Cost control on top of the provider choice: recommend a **daily message cap on the free tier** (e.g. 10 messages/day) and unlimited on Compass Pro — which also gives Pro a second concrete benefit beyond content access, and ties directly into §10. Re-check this cap against real usage data once you have it; the number above was sized for planning, not measured.
 
 ---
 
@@ -373,7 +382,7 @@ Cost control: this is the one module where per-request cost scales with usage, u
 
 - **Environments:** `dev` (local, Docker Compose for Postgres/Redis), `staging`, `production` — same Prisma schema, seeded differently (`staging`/`dev` seed with the current mock data as a starting fixture).
 - **CI:** typecheck + lint + Prisma migration dry-run on every PR; migrations apply on merge to `main` via a deploy step, not manually.
-- **Secrets:** provider env vars (Fly/Render secrets), never committed — SMS gateway key, Telegram bot token, Chapa secret key, Anthropic API key, JWT signing key.
+- **Secrets:** provider env vars (Fly/Render secrets), never committed — SMS gateway key, Telegram bot token, Chapa secret key, DeepSeek API key (Anthropic API key added later at the §9 provider switch), JWT signing key.
 - **Seeding real content:** the 7 subjects × 4 grades × ~5 lessons currently hardcoded in `curriculum.ts` and `lessonContent.ts` become the initial Prisma seed script — this is mechanical (the shapes already match §4 almost exactly) and should be the very first migration, so the app can run against Postgres with zero visible change before any new feature is added.
 
 ---

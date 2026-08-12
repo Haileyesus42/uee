@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -6,15 +6,25 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { TextField } from '../../components/forms/TextField';
 import { Button } from '../../components/buttons/Button';
+import { useMe, useUpdateProfile } from '../../hooks/useProfile';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'EditProfile'>;
 
 export function EditProfileScreen({ navigation }: Props) {
   const t = useTheme();
-  const [name, setName] = useState('Selam Tesfaye');
-  const [email, setEmail] = useState('selam@example.com');
-  const [targetScore, setTargetScore] = useState('550 and above');
+  const { data: profile } = useMe();
+  const updateProfile = useUpdateProfile();
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    if (profile) setName(profile.name);
+  }, [profile]);
+
+  async function handleSave() {
+    await updateProfile.mutateAsync({ name });
+    navigation.goBack();
+  }
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -24,12 +34,10 @@ export function EditProfileScreen({ navigation }: Props) {
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, flexGrow: 1 }} keyboardShouldPersistTaps="handled">
         <TextField label="Full name" value={name} onChangeText={setName} />
-        <TextField label="Email" value={email} onChangeText={setEmail} keyboardType="email-address" autoCapitalize="none" />
-        <TextField label="Target score" value={targetScore} onChangeText={setTargetScore} />
       </ScrollView>
 
       <View style={{ paddingHorizontal: t.spacing.md, paddingBottom: 12 }}>
-        <Button label="Save Changes" onPress={() => navigation.goBack()} />
+        <Button label="Save Changes" onPress={handleSave} disabled={updateProfile.isPending} />
       </View>
     </SafeAreaView>
   );

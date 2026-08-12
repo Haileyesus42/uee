@@ -7,7 +7,7 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { Button } from '../../components/buttons/Button';
 import { ProgressBar } from '../../components/progress/ProgressBar';
 import { XpPill } from '../../components/progress/Badges';
-import { findUnit } from '../../data/curriculum';
+import { useSubjects, useUnits } from '../../hooks/useCurriculum';
 import { LearnStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<LearnStackParamList, 'LessonComplete'>;
@@ -15,11 +15,15 @@ type Props = NativeStackScreenProps<LearnStackParamList, 'LessonComplete'>;
 export function LessonCompleteScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { subjectId, unitId, lessonId, xpEarned, correctCount, totalQuestions } = route.params;
-  const unit = findUnit(subjectId, unitId);
+  const { data: units } = useUnits(subjectId);
+  const { data: subjects } = useSubjects();
+  const unit = units?.find((u) => u.id === unitId);
   const accuracy = Math.round((correctCount / totalQuestions) * 100);
 
-  const masteryBefore = 0.58;
-  const masteryAfter = Math.min(1, masteryBefore + 0.06);
+  // Mastery just refetched post-completion (LessonScreen invalidates the subjects
+  // query on submit) — "before" is an approximation, not a stored history value.
+  const masteryAfter = subjects?.find((s) => s.id === subjectId)?.mastery ?? 0;
+  const masteryBefore = Math.max(0, masteryAfter - 0.06);
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]}>

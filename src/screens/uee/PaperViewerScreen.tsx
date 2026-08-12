@@ -10,7 +10,7 @@ import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
 import { Button } from '../../components/buttons/Button';
 import { PaperModeSelector, PaperMode } from '../../components/uee/PaperModeSelector';
-import { getPaperQuestions } from '../../data/pastPapers';
+import { useUeeQuestions } from '../../hooks/useUee';
 import { UeeStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -29,14 +29,16 @@ const EXAM_RULES = [
 export function PaperViewerScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { year, subjectId, subjectName } = route.params;
-  const questions = getPaperQuestions(subjectId, year);
+  const { data: questions } = useUeeQuestions(year, subjectId);
   const [mode, setMode] = useState<PaperMode>('study');
-  const examMinutes = Math.round(questions.length * MINUTES_PER_QUESTION);
+  if (!questions) return null;
+  const paperQuestions = questions;
+  const examMinutes = Math.round(paperQuestions.length * MINUTES_PER_QUESTION);
 
   function startExam() {
     Alert.alert(
       'Start Exam Mode?',
-      `You'll have ${examMinutes} minutes for ${questions.length} questions. Once started, the timer can't be paused.`,
+      `You'll have ${examMinutes} minutes for ${paperQuestions.length} questions. Once started, the timer can't be paused.`,
       [
         { text: 'Cancel', style: 'cancel' },
         {
@@ -49,8 +51,9 @@ export function PaperViewerScreen({ navigation, route }: Props) {
                 subjectId,
                 subjectName,
                 topic: `${year} UEE Exam`,
-                questionCount: questions.length,
+                questionCount: paperQuestions.length,
                 timeLimitMinutes: examMinutes,
+                pastPaperYear: year,
               },
             }),
         },
@@ -71,10 +74,10 @@ export function PaperViewerScreen({ navigation, route }: Props) {
       {mode === 'study' ? (
         <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl }}>
           <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginBottom: 16 }]}>
-            {questions.length} questions · Tap a question to view its solution
+            {paperQuestions.length} questions · Tap a question to view its solution
           </Text>
 
-          {questions.map((q, i) => (
+          {paperQuestions.map((q, i) => (
             <Pressable
               key={i}
               onPress={() => navigation.navigate('SolutionDetail', { year, subjectId, subjectName, questionIndex: i })}
@@ -101,7 +104,7 @@ export function PaperViewerScreen({ navigation, route }: Props) {
 
             <View style={styles.statsRow}>
               <View style={styles.statCol}>
-                <Text style={[t.typography.h2, { color: t.colors.textPrimary }]}>{questions.length}</Text>
+                <Text style={[t.typography.h2, { color: t.colors.textPrimary }]}>{paperQuestions.length}</Text>
                 <Text style={[t.typography.caption, { color: t.colors.textSecondary }]}>Questions</Text>
               </View>
               <View style={[styles.statDivider, { backgroundColor: t.colors.border }]} />

@@ -4,40 +4,25 @@ import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from 
 import { PhoneFlowLayout } from '../../components/onboarding/PhoneFlowLayout';
 import { useTheme } from '../../theme/ThemeProvider';
 import { OnboardingStackParamList } from '../../navigation/types';
-import { useOnboardingFlow } from '../../navigation/OnboardingFlowContext';
+import { useAuth } from '../../auth/AuthProvider';
+import { ApiError } from '../../api/client';
+import { requestOtp } from '../../api/auth';
 
 type Props = NativeStackScreenProps<OnboardingStackParamList, 'OtpVerification'>;
 
 const CODE_LENGTH = 4;
-const DEMO_CODE = '1234';
-const AUTO_ARRIVE_MS = 1400;
 const RESEND_COOLDOWN = 30;
 
 export function OtpVerificationScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const { complete } = useOnboardingFlow();
+  const { verifyOtp } = useAuth();
   const { phone } = route.params;
   const [code, setCode] = useState('');
+  const [verifying, setVerifying] = useState(false);
   const [verified, setVerified] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(RESEND_COOLDOWN);
-  const autoFillTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const verifyStarted = useRef(false);
-
-  function scheduleAutoFill() {
-    if (autoFillTimer.current) clearTimeout(autoFillTimer.current);
-    autoFillTimer.current = setTimeout(() => setCode(DEMO_CODE), AUTO_ARRIVE_MS);
-  }
-
-  // Simulates the code "arriving" via SMS autofill — a real device would
-  // hook into the OS's SMS OTP autofill (textContentType="oneTimeCode");
-  // there's no backend here to actually send one.
-  useEffect(() => {
-    scheduleAutoFill();
-    return () => {
-      if (autoFillTimer.current) clearTimeout(autoFillTimer.current);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (secondsLeft <= 0) return;
@@ -47,31 +32,42 @@ export function OtpVerificationScreen({ navigation, route }: Props) {
 
   // Guards with a ref (not the `verified` state) so setting `verified` below
   // doesn't itself change this effect's dependencies and re-trigger it — that
-  // would run this effect's own cleanup and cancel the pending `complete()`
-  // timeout before it ever fires.
+  // would run this effect's own cleanup and cancel the pending verify call
+  // before it ever resolves.
   useEffect(() => {
-    if (code.length === CODE_LENGTH && !verifyStarted.current) {
-      verifyStarted.current = true;
-      setVerified(true);
-      const proceed = setTimeout(() => complete(), 500);
-      return () => clearTimeout(proceed);
-    }
-  }, [code, complete]);
+    if (code.length !== CODE_LENGTH || verifyStarted.current) return;
+    verifyStarted.current = true;
+    setError(null);
+    setVerifying(true);
+
+    verifyOtp(phone, code)
+      .then(() => setVerified(true))
+      // RootNavigator switches to the main app the instant verifyOtp() sets a
+      // session — no explicit navigation call needed here on success.
+      .catch((err) => {
+        verifyStarted.current = false;
+        setCode('');
+        setError(err instanceof ApiError ? err.message : 'Could not verify — check your connection.');
+      })
+      .finally(() => setVerifying(false));
+  }, [code, phone, verifyOtp]);
 
   function handleChangeCode(v: string) {
-    if (autoFillTimer.current) {
-      clearTimeout(autoFillTimer.current);
-      autoFillTimer.current = null;
-    }
     setCode(v.replace(/[^0-9]/g, '').slice(0, CODE_LENGTH));
   }
 
-  function handleResend() {
+  async function handleResend() {
     verifyStarted.current = false;
     setCode('');
     setVerified(false);
+    setVerifying(false);
+    setError(null);
     setSecondsLeft(RESEND_COOLDOWN);
-    scheduleAutoFill();
+    try {
+      await requestOtp(phone);
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : 'Could not resend — check your connection.');
+    }
   }
 
   return (
@@ -97,8 +93,14 @@ export function OtpVerificationScreen({ navigation, route }: Props) {
             style={[
               styles.box,
               {
-                borderColor: verified ? t.colors.success : code.length === i ? t.colors.brand : t.colors.border,
-                backgroundColor: verified ? t.colors.successLight : t.colors.surface,
+                borderColor: verified
+                  ? t.colors.success
+                  : error
+                    ? t.colors.error
+                    : code.length === i
+                      ? t.colors.brand
+                      : t.colors.border,
+                backgroundColor: verified ? t.colors.successLight : error ? t.colors.errorLight : t.colors.surface,
                 borderRadius: t.radius.md,
               },
             ]}
@@ -126,6 +128,13 @@ export function OtpVerificationScreen({ navigation, route }: Props) {
               Verified — continuing…
             </Text>
           </>
+        ) : verifying ? (
+          <>
+            <ActivityIndicator size="small" color={t.colors.brand} />
+            <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginLeft: 8 }]}>Verifying…</Text>
+          </>
+        ) : error ? (
+          <Text style={[t.typography.caption, { color: t.colors.error }]}>{error}</Text>
         ) : secondsLeft > 0 ? (
           <Text style={[t.typography.caption, { color: t.colors.textSecondary }]}>
             Resend code in 0:{secondsLeft.toString().padStart(2, '0')}
