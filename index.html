@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Countdown Widget</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: #efeaf9;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .card {
+    width: 900px;
+    max-width: 100%;
+    border-radius: 34px;
+    padding: 28px 28px 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(80, 50, 180, .25);
+    background:
+      radial-gradient(circle at 0% 100%, rgba(55, 20, 160, .45), transparent 45%),
+      linear-gradient(105deg, #5636d6 0%, #6c48e0 14%, #8f76ea 30%, #ece8fa 52%, #f6f4fc 100%);
+  }
+
+  /* ---------- decorative sparkles ---------- */
+  .spark { position: absolute; color: #fff; text-shadow: 0 0 8px rgba(255,255,255,.8); pointer-events: none; }
+  .s1 { top: 34px;  left: 62px;  font-size: 16px; }
+  .s2 { top: 66px;  left: 40px;  font-size: 9px;  }
+  .s3 { top: 196px; left: 38px;  font-size: 14px; }
+  .s4 { top: 244px; left: 64px;  font-size: 8px;  }
+  .dot { position: absolute; border-radius: 50%; pointer-events: none; }
+  .d1 { top: 60px;  left: 240px; width: 5px; height: 5px; background: #fff; }
+  .d2 { top: 222px; left: 262px; width: 6px; height: 6px; background: #8f76ea; }
+
+  /* ---------- top row ---------- */
+  .top { display: flex; align-items: center; }
+
+  /* hourglass hero */
+  .hero { flex: 0 0 250px; height: 265px; position: relative; display: grid; place-items: center; }
+  .hero::before {
+    content: ''; position: absolute; width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.35), transparent 65%);
+  }
+  .orbit {
+    position: absolute; width: 235px; height: 235px; border-radius: 50%;
+    border: 1.5px dashed rgba(255,255,255,.55);
+  }
+  .tile {
+    width: 152px; height: 152px; border-radius: 46px;
+    display: grid; place-items: center; font-size: 76px;
+    background: linear-gradient(145deg, #9a79f5 0%, #7a4ff0 45%, #6a35e6 100%);
+    box-shadow: 0 18px 40px rgba(60, 25, 170, .5),
+                inset 0 2px 8px rgba(255,255,255,.55),
+                0 0 0 6px rgba(255,255,255,.15);
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.15));
+  }
+
+  /* middle info */
+  .info { flex: 1; padding-left: 12px; }
+  .count { display: flex; align-items: baseline; gap: 12px; }
+  .count b { font-size: 96px; line-height: .9; font-weight: 800; color: #16103c; letter-spacing: -2px; }
+  .count span { font-size: 23px; font-weight: 600; color: #7c3aed; }
+  .info h1 { font-size: 21px; font-weight: 700; color: #16103c; margin: 8px 0 12px; }
+  .mini-line { width: 52px; height: 4px; border-radius: 4px;
+    background: linear-gradient(90deg, #7c3aed 50%, #e2dcf6 50%); margin-bottom: 18px; }
+  .tip { display: flex; align-items: center; gap: 13px; }
+  .tip-ic { flex: 0 0 46px; height: 46px; border-radius: 50%; background: #e6def9;
+    display: grid; place-items: center; font-size: 20px; }
+  .tip p { font-size: 15px; color: #43406b; line-height: 1.4; font-weight: 500; }
+
+  .vline { width: 1px; align-self: stretch; background: #e1dbf2; margin: 4px 24px; }
+
+  /* right side – calendar */
+  .side { flex: 0 0 215px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .cal { width: 185px; border-radius: 18px; overflow: hidden; background: #f8f6fd;
+    box-shadow: 0 12px 28px rgba(70, 40, 170, .18); }
+  .cal-top { background: linear-gradient(90deg, #7b2ff7, #5a1cc0); color: #fff;
+    text-align: center; padding: 8px 0; font-weight: 700; letter-spacing: 2px; font-size: 14px; }
+  .cal-main { text-align: center; padding: 12px 0 16px; }
+  .cal-main b { display: block; font-size: 46px; font-weight: 800; color: #16103c; line-height: 1.1; }
+  .cal-main span { font-size: 16px; font-weight: 700; color: #7c3aed; letter-spacing: 1px; }
+
+  .mark { display: flex; align-items: center; gap: 10px; border: none; cursor: pointer;
+    background: #fdfcff; padding: 10px 16px; border-radius: 14px; width: 100%;
+    font: 600 13.5px 'Poppins', sans-serif; color: #2b2751;
+    box-shadow: 0 8px 20px rgba(70, 40, 170, .12); transition: .2s; }
+  .mark:hover { transform: translateY(-2px); }
+  .mark-ic { flex: 0 0 28px; height: 28px; border-radius: 8px; background: #ece5fb;
+    display: grid; place-items: center; font-size: 14px; }
+  .chev { margin-left: auto; font-size: 18px; color: #2b2751; }
+
+  /* ---------- bottom bar ---------- */
+  .bottom {
+    margin-top: 22px; border-radius: 20px; padding: 16px 22px;
+    display: flex; align-items: center; gap: 20px;
+    background: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.65);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 26px rgba(70, 40, 170, .1);
+  }
+  .streak { display: flex; align-items: center; gap: 14px; }
+  .ring { width: 64px; height: 64px; border-radius: 50%;
+    background: conic-gradient(#7c3aed 0 290deg, #e4defa 290deg 360deg);
+    display: grid; place-items: center; box-shadow: 0 5px 12px rgba(124,58,237,.25); }
+  .ring-in { width: 52px; height: 52px; background: #fff; border-radius: 50%;
+    display: grid; place-items: center; font-size: 23px; }
+  .streak-txt strong { font-size: 17px; color: #16103c; font-weight: 700; }
+  .streak-txt strong b { color: #7c3aed; font-size: 19px; }
+  .streak-txt small { display: block; font-size: 12.5px; color: #6b6890; font-weight: 500; }
+
+  .vline2 { width: 1px; height: 52px; background: #ddd6f0; }
+
+  .week { display: flex; gap: 20px; margin-left: auto; align-items: center; }
+  .day { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+  .day i { width: 36px; height: 36px; border-radius: 50%; background: #e4defa;
+    display: grid; place-items: center; font-style: normal;
+    color: #6d3be0; font-weight: 800; font-size: 14px; }
+  .day label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #6b6890; }
+  .day.today i { background: #f6f1fe; border: 2px dashed #a78bfa; font-size: 16px; width: 40px; height: 40px; }
+  .day.today label { color: #7c3aed; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px) {
+    .top { flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .vline { display: none; }
+    .info { padding-left: 0; flex-basis: 100%; text-align: center; }
+    .count, .tip { justify-content: center; }
+    .mini-line { margin-inline: auto; }
+    .week { margin-left: 0; flex-wrap: wrap; justify-content: center; }
+    .bottom { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <span class="spark s1">✦</span><span class="spark s2">✦</span>
+  <span class="spark s3">✦</span><span class="spark s4">✦</span>
+  <span class="dot d1"></span><span class="dot d2"></span>
+
+  <!-- ===== TOP ===== -->
+  <div class="top">
+    <div class="hero">
+      <div class="orbit"></div>
+      <div class="tile">⏳</div>
+    </div>
+
+    <div class="info">
+      <div class="count"><b>62</b><span>days</span></div>
+      <h1>Until Matriculation Exam</h1>
+      <div class="mini-line"></div>
+      <div class="tip">
+        <div class="tip-ic">🎯</div>
+        <p>Stay consistent,<br>success is near!</p>
+      </div>
+    </div>
+
+    <div class="vline"></div>
+
+    <div class="side">
+      <div class="cal">
+        <div class="cal-top">TUE</div>
+        <div class="cal-main"><b>11</b><span>AUG</span></div>
+      </div>
+      <button class="mark">
+        <span class="mark-ic">📅</span>
+        Mark your calendar
+        <span class="chev">›</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== BOTTOM ===== -->
+  <div class="bottom">
+    <div class="streak">
+      <div class="ring"><div class="ring-in">🔥</div></div>
+      <div class="streak-txt">
+        <strong><b>14</b> days streak</strong>
+        <small>You're on fire! Keep going!</small>
+      </div>
+    </div>
+
+    <div class="vline2"></div>
+
+    <div class="week">
+      <div class="day"><i>✓</i><label>WED</label></div>
+      <div class="day"><i>✓</i><label>THU</label></div>
+      <div class="day"><i>✓</i><label>FRI</label></div>
+      <div class="day"><i>✓</i><label>SAT</label></div>
+      <div class="day"><i>✓</i><label>SUN</label></div>
+      <div class="day"><i>✓</i><label>MON</label></div>
+      <div class="day today"><i>🔥</i><label>TUE</label></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
