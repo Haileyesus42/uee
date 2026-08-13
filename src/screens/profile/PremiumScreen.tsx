@@ -63,7 +63,7 @@ export function PremiumScreen({ navigation }: Props) {
             <Text style={styles.trustText}>
               {isPro && subscription?.status === 'active'
                 ? `You're Pro until ${new Date(subscription.expiresAt).toLocaleDateString()}`
-                : 'Join 3,200+ students already Pro'}
+                : 'Built for ambitious UEE students'}
             </Text>
           </View>
         </LinearGradient>

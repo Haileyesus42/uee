@@ -24,12 +24,22 @@ const answerBody = z.object({
   selectedIndex: z.number().int().min(-1),
 });
 
-// Cycles through the bank when more questions are requested than exist — matches
-// getPracticeQuestions()'s modulo behavior in the current mock data.
+// Cycles through the bank when more questions are requested than exist — fine for
+// endless practice drilling, where seeing a question again is expected. NOT used
+// for UEE papers (see pickUniqueQuestions) — a "past exam" repeating the same
+// question twice in one sitting reads as broken, not as a feature.
 export async function pickQuestions(subjectId: string, count: number) {
   const bank = await prisma.question.findMany({ where: { subjectId } });
   if (bank.length === 0) return [];
   return Array.from({ length: count }, (_, i) => bank[i % bank.length]);
+}
+
+// Caps at the bank's real size instead of cycling — a paper is shorter than
+// `maxCount` when the underlying question bank doesn't have enough unique
+// questions yet, rather than silently padding it out with repeats.
+export async function pickUniqueQuestions(subjectId: string, maxCount: number) {
+  const bank = await prisma.question.findMany({ where: { subjectId } });
+  return bank.slice(0, maxCount);
 }
 
 export async function practiceRoutes(app: FastifyInstance) {

@@ -88,10 +88,23 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
     return selected === i ? 'selected' : 'default';
   }
 
-  function recordAndAdvance() {
-    answers.current[index] = selected ?? -1;
+  // Persists one question's answer the moment the user moves past it, rather than
+  // batching every answer into one call at the very end — a user who closes a
+  // 10-question quiz after question 1 previously lost that answer entirely, since
+  // nothing was ever sent to the backend until a `finish()` that never happened.
+  // Guarded by `answers.current[index]` so a question is never PATCHed twice.
+  async function persistCurrentAnswer() {
+    if (answers.current[index] !== undefined) return;
+    const selectedIndex = selected ?? -1;
+    answers.current[index] = selectedIndex;
+    const attempt = await attemptPromise.current!;
+    await answerQuizAttempt(attempt.id, { questionId: quizQuestions[index].id, selectedIndex });
+  }
+
+  async function recordAndAdvance() {
+    await persistCurrentAnswer();
     if (isLast) {
-      finish();
+      await finish();
       return;
     }
     setIndex((i) => i + 1);
@@ -103,13 +116,12 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
     if (finishing) return;
     setFinishing(true);
 
-    const finalAnswers = [...answers.current];
-    finalAnswers[index] = finalAnswers[index] ?? (selected ?? -1);
+    // Covers the mock-exam timeout path, which calls finish() directly without
+    // going through recordAndAdvance() first — the in-progress question's answer
+    // (or lack of one) still needs to be persisted before submitting.
+    await persistCurrentAnswer();
 
     const attempt = await attemptPromise.current!;
-    await Promise.all(
-      quizQuestions.map((q, i) => answerQuizAttempt(attempt.id, { questionId: q.id, selectedIndex: finalAnswers[i] ?? -1 }))
-    );
     const result = await submitQuizAttempt(attempt.id);
     queryClient.invalidateQueries({ queryKey: ['me'] });
 

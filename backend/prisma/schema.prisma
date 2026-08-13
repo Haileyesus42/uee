@@ -175,6 +175,7 @@ model UserLessonProgress {
   lesson                   Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
   status                   LessonStatus @default(locked)
   firstAttemptCorrectCount Int          @default(0)
+  totalQuestionSteps       Int          @default(0)
   completedAt              DateTime?
 
   @@id([userId, lessonId])

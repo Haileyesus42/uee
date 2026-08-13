@@ -60,6 +60,10 @@ export function HomeScreen({ navigation }: Props) {
   const insets = useSafeAreaInsets();
   const { data: profile } = useMe();
   const continueLearning = useContinueLearning();
+  const { data: subjectsForInsight } = useSubjects();
+  const weakestSubject = subjectsForInsight?.length
+    ? [...subjectsForInsight].sort((a, b) => a.mastery - b.mastery)[0]
+    : null;
 
   // Hero has a dark purple gradient, so the status bar needs light icons
   // while Home is focused — reverts automatically when another tab focuses.
@@ -154,16 +158,17 @@ export function HomeScreen({ navigation }: Props) {
           level={profile?.level ?? 1}
           levelTitle={profile?.levelTitle ?? 'New Learner'}
         />
-        <SmartInsightCard
-          message="You usually struggle with Functions."
-          ctaLabel="Study Functions →"
-          onPress={() =>
-            navigation.navigate('Learn', {
-              screen: 'LessonIntroduction',
-              params: { subjectId: 'mathematics', unitId: 'algebra', lessonId: 'functions' },
-            })
-          }
-        />
+        {weakestSubject && (
+          <SmartInsightCard
+            message={
+              weakestSubject.mastery > 0
+                ? `${weakestSubject.name} is your weakest subject at ${Math.round(weakestSubject.mastery * 100)}% mastery.`
+                : `You haven't started ${weakestSubject.name} yet — a great place to build momentum.`
+            }
+            ctaLabel={`Study ${weakestSubject.name} →`}
+            onPress={() => navigation.navigate('Learn', { screen: 'SubjectPath', params: { subjectId: weakestSubject.id } })}
+          />
+        )}
       </ScrollView>
     </SafeAreaView>
   );

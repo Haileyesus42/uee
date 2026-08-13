@@ -15,18 +15,34 @@ async function buildProfilePayload(userId: string) {
   const user = await prisma.user.findUniqueOrThrow({ where: { id: userId } });
   const stats = await prisma.userStats.findUnique({ where: { userId } });
 
+  // "Questions solved" and accuracy combine two sources on purpose: quiz-attempt
+  // answers (Practice/Mock/UEE) AND lesson question-steps (UserLessonProgress).
+  // Counting only the former was a real bug — a student who answers a lesson
+  // question correctly saw it nowhere in their own stats.
   const answers = await prisma.quizAttemptAnswer.findMany({
     where: { attempt: { userId } },
     select: { correct: true },
   });
-  const questionsSolved = answers.length;
-  const accuracy = questionsSolved === 0 ? 0 : answers.filter((a) => a.correct).length / questionsSolved;
+  const quizCorrect = answers.filter((a) => a.correct).length;
+
+  const completedLessons = await prisma.userLessonProgress.findMany({
+    where: { userId, status: 'completed' },
+    select: { firstAttemptCorrectCount: true, totalQuestionSteps: true },
+  });
+  const lessonQuestions = completedLessons.reduce((sum, l) => sum + l.totalQuestionSteps, 0);
+  const lessonCorrect = completedLessons.reduce((sum, l) => sum + l.firstAttemptCorrectCount, 0);
+
+  const questionsSolved = answers.length + lessonQuestions;
+  const accuracy = questionsSolved === 0 ? 0 : (quizCorrect + lessonCorrect) / questionsSolved;
+
+  const lessonsCompleted = completedLessons.length;
 
   const submittedAttempts = await prisma.quizAttempt.findMany({
     where: { userId, submittedAt: { not: null } },
-    select: { timeSpentSeconds: true },
+    select: { timeSpentSeconds: true, source: true },
   });
   const studyTimeSeconds = submittedAttempts.reduce((sum, a) => sum + (a.timeSpentSeconds ?? 0), 0);
+  const ueeExamsCompleted = submittedAttempts.filter((a) => a.source === 'uee_exam').length;
 
   const xp = stats?.xp ?? 0;
   const { level, levelTitle } = xpToLevel(xp);
@@ -45,6 +61,8 @@ async function buildProfilePayload(userId: string) {
     accuracy,
     questionsSolved,
     studyTimeSeconds,
+    lessonsCompleted,
+    ueeExamsCompleted,
   };
 }
 

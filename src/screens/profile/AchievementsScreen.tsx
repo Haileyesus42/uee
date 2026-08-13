@@ -5,24 +5,56 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
+import { useMe } from '../../hooks/useProfile';
+import { useSubjects } from '../../hooks/useCurriculum';
+import { Profile, Subject } from '../../api/types';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'Achievements'>;
 
-const BADGES: { id: string; title: string; icon: keyof typeof Ionicons.glyphMap; unlocked: boolean }[] = [
-  { id: 'first-lesson', title: 'First Lesson', icon: 'book', unlocked: true },
-  { id: 'week-streak', title: '7 Day Streak', icon: 'flame', unlocked: true },
-  { id: 'hundred-questions', title: '100 Questions', icon: 'checkmark-done', unlocked: true },
-  { id: 'perfect-lesson', title: 'Perfect Lesson', icon: 'star', unlocked: true },
-  { id: 'ten-topics', title: '10 Topics Mastered', icon: 'ribbon', unlocked: false },
-  { id: 'fixed-fifty', title: 'Fixed 50 Mistakes', icon: 'construct', unlocked: false },
-  { id: 'uee-challenger', title: 'UEE Challenger', icon: 'shield', unlocked: false },
-  { id: 'month-streak', title: '30 Day Streak', icon: 'trophy', unlocked: false },
+// Every threshold here is checked against real account data (see useMe/useSubjects)
+// — no badge is ever marked unlocked without a real signal to back it. A badge with
+// no available real signal is left out entirely rather than always-locked filler.
+const BADGES: {
+  id: string;
+  title: string;
+  icon: keyof typeof Ionicons.glyphMap;
+  isUnlocked: (profile: Profile, subjects: Subject[]) => boolean;
+}[] = [
+  { id: 'first-lesson', title: 'First Lesson', icon: 'book', isUnlocked: (p) => p.lessonsCompleted >= 1 },
+  { id: 'week-streak', title: '7 Day Streak', icon: 'flame', isUnlocked: (p) => p.streakDays >= 7 },
+  { id: 'hundred-questions', title: '100 Questions', icon: 'checkmark-done', isUnlocked: (p) => p.questionsSolved >= 100 },
+  {
+    id: 'perfect-start',
+    title: 'Perfect Start',
+    icon: 'star',
+    isUnlocked: (p) => p.questionsSolved >= 1 && p.accuracy >= 1,
+  },
+  {
+    id: 'subject-mastered',
+    title: 'Subject Mastered',
+    icon: 'ribbon',
+    isUnlocked: (_p, subjects) => subjects.some((s) => s.mastery >= 1),
+  },
+  {
+    id: 'five-subjects',
+    title: '5 Subjects Started',
+    icon: 'compass',
+    isUnlocked: (_p, subjects) => subjects.filter((s) => s.mastery > 0).length >= 5,
+  },
+  { id: 'uee-challenger', title: 'UEE Challenger', icon: 'shield', isUnlocked: (p) => p.ueeExamsCompleted >= 1 },
+  { id: 'month-streak', title: '30 Day Streak', icon: 'trophy', isUnlocked: (p) => p.streakDays >= 30 },
 ];
 
 export function AchievementsScreen({ navigation }: Props) {
   const t = useTheme();
-  const unlockedCount = BADGES.filter((b) => b.unlocked).length;
+  const { data: profile } = useMe();
+  const { data: subjects } = useSubjects();
+
+  if (!profile || !subjects) return null;
+
+  const badges = BADGES.map((b) => ({ ...b, unlocked: b.isUnlocked(profile, subjects) }));
+  const unlockedCount = badges.filter((b) => b.unlocked).length;
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -32,11 +64,11 @@ export function AchievementsScreen({ navigation }: Props) {
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl }}>
         <Text style={[t.typography.body, { color: t.colors.textSecondary, marginBottom: 20 }]}>
-          {unlockedCount} of {BADGES.length} unlocked
+          {unlockedCount} of {badges.length} unlocked
         </Text>
 
         <View style={styles.grid}>
-          {BADGES.map((badge) => (
+          {badges.map((badge) => (
             <View
               key={badge.id}
               style={[

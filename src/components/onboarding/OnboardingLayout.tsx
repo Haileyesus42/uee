@@ -90,7 +90,7 @@ export function OnboardingLayout({
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   header: { paddingTop: 4 },
-  scrollContent: { flexGrow: 1, paddingTop: 20 },
+  scrollContent: { flexGrow: 1, paddingTop: 20, justifyContent: 'center' },
   iconChip: { width: 52, height: 52, borderRadius: 26, alignItems: 'center', justifyContent: 'center' },
   footer: { paddingTop: 8, paddingBottom: 12 },
 });

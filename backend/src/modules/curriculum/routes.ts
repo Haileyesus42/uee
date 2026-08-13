@@ -105,9 +105,15 @@ export async function curriculumRoutes(app: FastifyInstance) {
           lessonId: lesson.id,
           status: 'completed',
           firstAttemptCorrectCount: correctCount,
+          totalQuestionSteps: totalSteps,
           completedAt: new Date(),
         },
-        update: { status: 'completed', firstAttemptCorrectCount: correctCount, completedAt: new Date() },
+        update: {
+          status: 'completed',
+          firstAttemptCorrectCount: correctCount,
+          totalQuestionSteps: totalSteps,
+          completedAt: new Date(),
+        },
       });
 
       const orderedLessonIds = await flattenedLessonIds(lesson.unit.subjectId);

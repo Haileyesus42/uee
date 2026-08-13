@@ -65,6 +65,8 @@ export type Profile = {
   accuracy: number;
   questionsSolved: number;
   studyTimeSeconds: number;
+  lessonsCompleted: number;
+  ueeExamsCompleted: number;
 };
 
 export type Mistake = {
