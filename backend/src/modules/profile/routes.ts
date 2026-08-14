@@ -49,9 +49,18 @@ async function buildProfilePayload(userId: string) {
 
   return {
     id: user.id,
-    phone: user.phone,
+    telegramId: user.telegramId,
+    telegramUsername: user.telegramUsername,
     name: user.name,
     avatarEmoji: user.avatarEmoji,
+    hasAvatarPhoto: user.avatarFileId != null,
+    bio: user.bio,
+    birthday:
+      user.birthdayDay != null && user.birthdayMonth != null
+        ? { day: user.birthdayDay, month: user.birthdayMonth, year: user.birthdayYear }
+        : null,
+    languageCode: user.languageCode,
+    isPremium: user.isPremium,
     grade: user.grade,
     xp,
     streakDays: stats?.streakDays ?? 0,

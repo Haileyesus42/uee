@@ -1,138 +1,108 @@
-import React, { useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, Linking, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
-import { PhoneFlowLayout } from '../../components/onboarding/PhoneFlowLayout';
-import { AuthMethodTabs, AuthMethod } from '../../components/onboarding/AuthMethodTabs';
-import { CountryPickerSheet } from '../../components/onboarding/CountryPickerSheet';
-import { Country, DEFAULT_COUNTRY } from '../../data/countries';
+import { TopBar } from '../../components/navigation/TopBar';
+import { Button } from '../../components/buttons/Button';
 import { OnboardingStackParamList } from '../../navigation/types';
 import { useAuth } from '../../auth/AuthProvider';
 import { ApiError } from '../../api/client';
 
 type Props = NativeStackScreenProps<OnboardingStackParamList, 'Auth'>;
 
-// Telegram brand blue — fixed regardless of theme, same as the exam-hero
-// gradient elsewhere: this is Telegram's own identity, not ours to retheme.
+// Telegram brand blue — fixed regardless of theme, same as the exam-hero gradient
+// elsewhere: this is Telegram's own identity, not ours to retheme.
 const TELEGRAM_BLUE = '#229ED9';
+
+type Phase = 'idle' | 'waiting' | 'error';
 
 export function AuthScreen({ navigation }: Props) {
   const t = useTheme();
-  const { requestOtp } = useAuth();
-  const [method, setMethod] = useState<AuthMethod>('phone');
-  const [country, setCountry] = useState<Country>(DEFAULT_COUNTRY);
-  const [phone, setPhone] = useState('');
-  const [pickerOpen, setPickerOpen] = useState(false);
-  const [sending, setSending] = useState(false);
+  const { beginTelegramLogin, pollTelegramLogin, cancelTelegramLogin } = useAuth();
+  const [phase, setPhase] = useState<Phase>('idle');
   const [error, setError] = useState<string | null>(null);
+  const pendingLink = useRef<{ loginToken: string; deepLink: string } | null>(null);
 
-  const canContinuePhone = phone.length >= 7 && !sending;
+  useEffect(() => {
+    // Stop polling if the user backs out of this screen mid-attempt.
+    return () => cancelTelegramLogin();
+  }, [cancelTelegramLogin]);
 
-  async function handleContinuePhone() {
-    const fullPhone = `${country.dialCode}${phone}`;
-    setSending(true);
+  async function startLogin() {
     setError(null);
+    setPhase('waiting');
     try {
-      await requestOtp(fullPhone);
-      navigation.navigate('OtpVerification', { phone: fullPhone });
+      const link = await beginTelegramLogin();
+      pendingLink.current = link;
+      await Linking.openURL(link.deepLink);
+      const confirmed = await pollTelegramLogin(link.loginToken);
+      if (!confirmed) {
+        setError("Didn't get a confirmation in time — try again.");
+        setPhase('error');
+      }
+      // On success the app switches screens automatically once useAuth()'s status
+      // flips to 'signedIn' — nothing else to do here.
     } catch (err) {
-      setError(err instanceof ApiError ? err.message : 'Could not send code — check your connection.');
-    } finally {
-      setSending(false);
+      setError(err instanceof ApiError ? err.message : 'Could not reach Telegram — check your connection.');
+      setPhase('error');
     }
   }
 
+  function reopenTelegram() {
+    if (pendingLink.current) Linking.openURL(pendingLink.current.deepLink);
+  }
+
   return (
-    <PhoneFlowLayout
-      onBack={() => navigation.goBack()}
-      title="Create Your Account"
-      subtitle="Choose how you'd like to sign up."
-      onNext={method === 'phone' ? handleContinuePhone : undefined}
-      nextDisabled={!canContinuePhone}
-      nextLoading={sending}
-    >
-      <AuthMethodTabs method={method} onChange={setMethod} />
+    <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]}>
+      <View style={{ paddingHorizontal: t.spacing.md }}>
+        <TopBar onBack={() => navigation.goBack()} />
+      </View>
 
-      {method === 'phone' ? (
-        <View style={{ marginTop: 22 }}>
-          <Pressable onPress={() => setPickerOpen(true)} style={[styles.row, { borderBottomColor: t.colors.border }]}>
-            <Text style={styles.flag}>{country.flag}</Text>
-            <Text style={[t.typography.body, { color: t.colors.textPrimary, flex: 1, marginLeft: 10 }]}>
-              {country.name}
+      <View style={[styles.content, { paddingHorizontal: t.spacing.md }]}>
+        <View style={[styles.badge, { backgroundColor: TELEGRAM_BLUE }]}>
+          <Ionicons name="paper-plane" size={30} color="#FFFFFF" />
+        </View>
+
+        <Text style={[t.typography.h1, { color: t.colors.textPrimary, marginTop: 20, textAlign: 'center' }]}>
+          Continue with Telegram
+        </Text>
+        <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 8, textAlign: 'center' }]}>
+          {phase === 'waiting'
+            ? 'Tap Start in Telegram to confirm — this screen will move on automatically.'
+            : "We'll open Telegram so you can confirm it's you. No password, no code to type."}
+        </Text>
+
+        {phase === 'waiting' && (
+          <View style={styles.waitingRow}>
+            <ActivityIndicator color={t.colors.brand} />
+            <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginLeft: 8 }]}>
+              Waiting for confirmation…
             </Text>
-            <Text style={[t.typography.body, { color: t.colors.textSecondary }]}>{country.dialCode}</Text>
-            <Ionicons name="chevron-forward" size={16} color={t.colors.textSecondary} style={{ marginLeft: 6 }} />
-          </Pressable>
-
-          <View style={[styles.row, { borderBottomColor: t.colors.border, marginTop: 2 }]}>
-            <Text style={[t.typography.body, { color: t.colors.textPrimary }]}>{country.dialCode}</Text>
-            <TextInput
-              value={phone}
-              onChangeText={(v) => setPhone(v.replace(/[^0-9]/g, '').slice(0, 10))}
-              placeholder="Phone number"
-              placeholderTextColor={t.colors.textSecondary}
-              keyboardType="phone-pad"
-              autoFocus
-              style={[t.typography.body, styles.phoneInput, { color: t.colors.textPrimary }]}
-            />
           </View>
-
-          <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 20 }]}>
-            We'll text you a one-time code. Carrier charges may apply.
+        )}
+        {error && (
+          <Text style={[t.typography.caption, { color: t.colors.error, marginTop: 16, textAlign: 'center' }]}>
+            {error}
           </Text>
-          {error && (
-            <Text style={[t.typography.caption, { color: t.colors.error, marginTop: 8 }]}>{error}</Text>
-          )}
+        )}
+      </View>
 
-          <CountryPickerSheet
-            visible={pickerOpen}
-            onClose={() => setPickerOpen(false)}
-            onSelect={(c) => {
-              setCountry(c);
-              setPickerOpen(false);
-            }}
-          />
-        </View>
-      ) : (
-        <View style={styles.telegramWrap}>
-          <View style={[styles.telegramBadge, { backgroundColor: TELEGRAM_BLUE, opacity: 0.6 }]}>
-            <Ionicons name="paper-plane" size={28} color="#FFFFFF" />
-          </View>
-          <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 16, textAlign: 'center' }]}>
-            Telegram sign-in is coming soon
-          </Text>
-          <Text style={[styles.telegramCaption, { color: t.colors.textSecondary }]}>
-            Telegram can only message accounts that have already started a chat with our bot — we're finishing that
-            flow. Use your phone number for now.
-          </Text>
-
-          <View style={[styles.telegramButton, { backgroundColor: t.colors.border, opacity: 0.6 }]}>
-            <Ionicons name="paper-plane-outline" size={17} color={t.colors.textSecondary} />
-            <Text style={[styles.telegramButtonText, { color: t.colors.textSecondary }]}>Coming Soon</Text>
-          </View>
-        </View>
-      )}
-    </PhoneFlowLayout>
+      <View style={{ paddingHorizontal: t.spacing.md, paddingBottom: 12 }}>
+        {phase === 'waiting' ? (
+          <Button label="Reopen Telegram" onPress={reopenTelegram} variant="secondary" />
+        ) : (
+          <Button label={phase === 'error' ? 'Try Again' : 'Continue with Telegram'} onPress={startLogin} />
+        )}
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  row: { flexDirection: 'row', alignItems: 'center', borderBottomWidth: 1.5, paddingVertical: 13 },
-  flag: { fontSize: 20 },
-  phoneInput: { flex: 1, marginLeft: 10, padding: 0 },
-  telegramWrap: { alignItems: 'center', marginTop: 32, paddingHorizontal: 8 },
-  telegramBadge: { width: 64, height: 64, borderRadius: 32, alignItems: 'center', justifyContent: 'center' },
-  telegramCaption: { fontSize: 12.5, lineHeight: 17, marginTop: 6, textAlign: 'center', maxWidth: 260 },
-  telegramButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'stretch',
-    borderRadius: 14,
-    paddingVertical: 14,
-    marginTop: 24,
-    gap: 8,
-  },
-  telegramButtonText: { color: '#FFFFFF', fontFamily: 'Inter_700Bold', fontSize: 14.5, fontWeight: '700' },
+  flex: { flex: 1 },
+  content: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  badge: { width: 72, height: 72, borderRadius: 36, alignItems: 'center', justifyContent: 'center' },
+  waitingRow: { flexDirection: 'row', alignItems: 'center', marginTop: 24 },
 });

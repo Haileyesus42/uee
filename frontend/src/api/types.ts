@@ -53,9 +53,15 @@ export type LeaderboardResponse = {
 
 export type Profile = {
   id: string;
-  phone: string;
+  telegramId: string;
+  telegramUsername: string | null;
   name: string;
   avatarEmoji: string;
+  hasAvatarPhoto: boolean;
+  bio: string | null;
+  birthday: { day: number; month: number; year: number | null } | null;
+  languageCode: string | null;
+  isPremium: boolean;
   grade: number;
   xp: number;
   streakDays: number;

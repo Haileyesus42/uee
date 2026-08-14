@@ -10,7 +10,11 @@ const envSchema = z.object({
   JWT_REFRESH_SECRET: z.string().min(16),
   ACCESS_TOKEN_TTL: z.string().default('15m'),
   REFRESH_TOKEN_TTL: z.string().default('30d'),
-  SMS_PROVIDER: z.enum(['console', 'africastalking']).default('console'),
+  // Optional at the schema level so the server can still boot (and the rest of the
+  // API stay usable) before a bot token exists — server.ts logs a clear warning and
+  // skips starting the polling loop when either is missing, rather than crashing.
+  TELEGRAM_BOT_TOKEN: z.string().optional().default(''),
+  TELEGRAM_BOT_USERNAME: z.string().optional().default(''),
   PAYMENT_PROVIDER: z.enum(['mock', 'chapa']).default('mock'),
   CHAPA_SECRET_KEY: z.string().optional().default(''),
   DEEPSEEK_API_KEY: z.string().optional().default(''),

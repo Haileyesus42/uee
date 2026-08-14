@@ -1,25 +1,19 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Pressable } from 'react-native';
+import { Avatar } from '../common/Avatar';
+import { useMe } from '../../hooks/useProfile';
 
-// Same gradient/emoji identity as the avatar on Home and Profile, sized down
-// to sit inline in an AppTopBar's `right` slot.
 export function ProfileAvatarButton({ onPress }: { onPress?: () => void }) {
+  const { data: profile } = useMe();
+
   return (
     <Pressable onPress={onPress} hitSlop={8}>
-      <LinearGradient
-        colors={['#cbb7f5', '#8f6fe0']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 0.85, y: 1 }}
-        style={styles.avatar}
-      >
-        <Text style={styles.avatarEmoji}>👩🏾‍🎓</Text>
-      </LinearGradient>
+      <Avatar
+        userId={profile?.id ?? ''}
+        hasPhoto={profile?.hasAvatarPhoto ?? false}
+        emoji={profile?.avatarEmoji ?? '🧑🎓'}
+        size={40}
+      />
     </Pressable>
   );
 }
-
-const styles = StyleSheet.create({
-  avatar: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
-  avatarEmoji: { fontSize: 20 },
-});

@@ -6,7 +6,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { Button } from '../../components/buttons/Button';
 import { ProgressBar } from '../../components/progress/ProgressBar';
-import { HeartsBadge } from '../../components/progress/Badges';
 import { MultipleChoiceOption, OptionState } from '../../components/questions/MultipleChoiceOption';
 import { FeedbackBanner } from '../../components/questions/FeedbackBanner';
 import { useLesson } from '../../hooks/useCurriculum';
@@ -103,16 +102,15 @@ export function LessonScreen({ navigation, route }: Props) {
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]}>
       <View style={[styles.header, { paddingHorizontal: t.spacing.md }]}>
         <Pressable
-          onPress={() => navigation.navigate('SubjectPath', { subjectId })}
+          onPress={() => navigation.reset({ index: 0, routes: [{ name: 'LearnHome' }] })}
           hitSlop={10}
           style={styles.closeButton}
         >
           <Ionicons name="close" size={22} color={t.colors.textSecondary} />
         </Pressable>
-        <View style={{ flex: 1, marginHorizontal: 12 }}>
+        <View style={{ flex: 1, marginLeft: 12 }}>
           <ProgressBar progress={(stepIndex + 1) / steps.length} height={6} />
         </View>
-        <HeartsBadge hearts={4} max={5} />
       </View>
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, flexGrow: 1 }} keyboardShouldPersistTaps="handled">

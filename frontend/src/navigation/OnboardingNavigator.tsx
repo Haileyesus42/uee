@@ -5,7 +5,6 @@ import { OnboardingStackParamList } from './types';
 import { SplashScreen } from '../screens/onboarding/SplashScreen';
 import { WelcomeScreen } from '../screens/onboarding/WelcomeScreen';
 import { AuthScreen } from '../screens/onboarding/AuthScreen';
-import { OtpVerificationScreen } from '../screens/onboarding/OtpVerificationScreen';
 import { GradeSelectionScreen } from '../screens/onboarding/GradeSelectionScreen';
 import { SubjectSelectionScreen } from '../screens/onboarding/SubjectSelectionScreen';
 import { UeeGoalScreen } from '../screens/onboarding/UeeGoalScreen';
@@ -25,7 +24,6 @@ export function OnboardingNavigator({ onComplete }: { onComplete: () => void }) 
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Auth" component={AuthScreen} />
-        <Stack.Screen name="OtpVerification" component={OtpVerificationScreen} />
         <Stack.Screen name="GradeSelection" component={GradeSelectionScreen} />
         <Stack.Screen name="SubjectSelection" component={SubjectSelectionScreen} />
         <Stack.Screen name="UeeGoal" component={UeeGoalScreen} />

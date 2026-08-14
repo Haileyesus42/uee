@@ -4,7 +4,6 @@ export type OnboardingStackParamList = {
   Splash: undefined;
   Welcome: undefined;
   Auth: undefined;
-  OtpVerification: { phone: string };
   GradeSelection: undefined;
   SubjectSelection: undefined;
   UeeGoal: undefined;

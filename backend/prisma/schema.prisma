@@ -47,14 +47,26 @@ enum SubscriptionProvider {
 }
 
 model User {
-  id          String   @id @default(uuid())
-  phone       String   @unique
-  telegramId  String?  @unique
-  name        String   @default("")
-  avatarEmoji String   @default("🧑🎓")
-  grade       Int      @default(9)
-  tokenVersion Int     @default(0)
-  createdAt   DateTime @default(now())
+  id               String   @id @default(uuid())
+  telegramId       String   @unique
+  telegramUsername String?
+  phone            String?  @unique
+  name             String   @default("")
+  avatarEmoji      String   @default("🧑🎓")
+  // Telegram's photo file_id for this user's current chat photo — re-resolved
+  // and proxied on read (see GET /avatars/:userId), never downloaded to disk.
+  // Optional because most of the fields below depend on the user's Telegram
+  // privacy settings and are frequently absent even when we ask.
+  avatarFileId     String?
+  bio              String?
+  birthdayDay      Int?
+  birthdayMonth    Int?
+  birthdayYear     Int?
+  languageCode     String?
+  isPremium        Boolean  @default(false)
+  grade            Int      @default(9)
+  tokenVersion     Int      @default(0)
+  createdAt        DateTime @default(now())
 
   stats         UserStats?
   lessonProgress UserLessonProgress[]

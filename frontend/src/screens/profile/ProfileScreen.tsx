@@ -2,11 +2,11 @@ import React from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
+import { Avatar } from '../../components/common/Avatar';
 import { useMe } from '../../hooks/useProfile';
 import { useAuth } from '../../auth/AuthProvider';
 import { ProfileStackParamList } from '../../navigation/types';
@@ -45,14 +45,12 @@ export function ProfileScreen({ navigation }: Props) {
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl }}>
         <Card style={styles.identityCard}>
           <View style={styles.identityRow}>
-            <LinearGradient
-              colors={['#cbb7f5', '#8f6fe0']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 0.85, y: 1 }}
-              style={styles.avatar}
-            >
-              <Text style={styles.avatarEmoji}>{profile?.avatarEmoji ?? '🧑🎓'}</Text>
-            </LinearGradient>
+            <Avatar
+              userId={profile?.id ?? ''}
+              hasPhoto={profile?.hasAvatarPhoto ?? false}
+              emoji={profile?.avatarEmoji ?? '🧑🎓'}
+              size={46}
+            />
             <View style={{ marginLeft: 10 }}>
               <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, fontSize: 15 }]}>
                 {profile?.name || 'Compass Student'}
@@ -149,8 +147,6 @@ const styles = StyleSheet.create({
   themeButton: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center' },
   identityCard: { paddingVertical: 14 },
   identityRow: { flexDirection: 'row', alignItems: 'center' },
-  avatar: { width: 46, height: 46, borderRadius: 23, alignItems: 'center', justifyContent: 'center' },
-  avatarEmoji: { fontSize: 22 },
   divider: { height: StyleSheet.hairlineWidth, marginVertical: 12 },
   statsRow: { flexDirection: 'row', justifyContent: 'space-around' },
   statCol: { alignItems: 'center' },

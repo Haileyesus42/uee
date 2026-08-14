@@ -8,6 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { setStatusBarStyle } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
+import { Avatar } from '../../components/common/Avatar';
 import { ProBadgeButton } from '../../components/navigation/ProBadgeButton';
 import { ExamCountdownHero } from '../../components/home/ExamCountdownHero';
 import { StreakWeekBar } from '../../components/home/StreakWeekBar';
@@ -110,14 +111,12 @@ export function HomeScreen({ navigation }: Props) {
             </Pressable>
             <ProBadgeButton onPress={() => navigation.navigate('Profile', { screen: 'Premium' })} />
             <Pressable onPress={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}>
-              <LinearGradient
-                colors={['#cbb7f5', '#8f6fe0']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 0.85, y: 1 }}
-                style={styles.avatar}
-              >
-                <Text style={styles.avatarEmoji}>{profile?.avatarEmoji ?? '🧑🎓'}</Text>
-              </LinearGradient>
+              <Avatar
+                userId={profile?.id ?? ''}
+                hasPhoto={profile?.hasAvatarPhoto ?? false}
+                emoji={profile?.avatarEmoji ?? '🧑🎓'}
+                size={40}
+              />
             </Pressable>
           </View>
         </View>
@@ -201,7 +200,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  avatar: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
-  avatarEmoji: { fontSize: 20 },
   heroContent: { marginTop: 10 },
 });

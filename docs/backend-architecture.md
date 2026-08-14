@@ -2,7 +2,7 @@
 
 **Status:** Backend implemented and wired to the frontend (see `backend/` and `frontend/src/api/`, `frontend/src/hooks/`). This doc is kept as the original design reference; paths below refer to the app, now at `frontend/src/data/*.ts` etc.
 
-**Scope:** API, data model, and infrastructure needed to make Home, Learn, Practice, UEE, Leaderboard, Profile, and Unity chat real, plus phone/Telegram auth and Compass Pro billing.
+**Scope:** API, data model, and infrastructure needed to make Home, Learn, Practice, UEE, Leaderboard, Profile, and Unity chat real, plus Telegram auth and Compass Pro billing.
 
 **Optimized for:** a small team (1–3 engineers), a cost-sensitive product (Compass Pro is priced at 25–250 ETB — call it $0.20–$2/user), and a single TypeScript codebase shared in spirit with the RN client.
 
@@ -12,10 +12,10 @@
 
 These choices shape everything below — flag if any is wrong:
 
-- **No email/password, ever.** Auth is phone number + OTP, delivered via SMS or Telegram, matching the UI already built in `PhoneAuthScreen`/`OtpVerificationScreen`. Login and registration are the same flow — the backend must not require a separate "register" step.
-- **Cost-sensitive.** At 25 ETB/month (~$0.20), infra spend per user has to be near-zero. This rules out anything with a meaningful per-request or per-seat cost at MVP scale.
+- **No email/password, ever.** Auth is Telegram-only (phone + SMS OTP was removed — see §5) — login and registration are the same flow, the backend must not require a separate "register" step.
+- **Cost-sensitive.** At 25 ETB/month (~$0.20), infra spend per user has to be near-zero. This rules out anything with a meaningful per-request or per-seat cost at MVP scale — Telegram-only auth is partly *because* of this constraint: no SMS gateway bill.
 - **TypeScript end-to-end.** The client is TS/RN. Sharing types between client and server (via a shared package or tRPC) removes a whole class of bugs for a small team without a dedicated API-contract process.
-- **Ethiopia-specific integrations.** SMS OTP needs a gateway with real ET delivery (not just Twilio's default coverage). Telegram OTP has a real platform constraint (see §5). Payments should go through a local rail (Chapa or Telebirr), not Stripe, since Stripe doesn't settle in ETB.
+- **Ethiopia-specific integrations.** Telegram auth has a real platform constraint (see §5). Payments should go through a local rail (Chapa or Telebirr), not Stripe, since Stripe doesn't settle in ETB.
 - **Content changes shouldn't need app releases.** Subjects, units, lessons, and questions currently live in static TS files. They need to move to a database an admin can edit without shipping a new app build.
 
 ---
@@ -45,13 +45,12 @@ flowchart TB
 
     subgraph Data["Data layer"]
         PG[("PostgreSQL\nusers · curriculum · attempts · billing")]
-        REDIS[("Redis\nOTP codes · leaderboard sorted sets · job queue")]
+        REDIS[("Redis\nTelegram login tokens · leaderboard sorted sets · job queue")]
         S3[("Object storage\navatars, future paper scans")]
     end
 
     subgraph External["External services"]
-        SMS["SMS gateway (e.g. Africa's Talking)"]
-        TG["Telegram Bot API"]
+        TG["Telegram Bot API (long-polling)"]
         PAY["Chapa / Telebirr"]
         LLM["LLM provider (DeepSeek-V3 → Claude Haiku 4.5)"]
     end
@@ -59,7 +58,6 @@ flowchart TB
     RN -->|HTTPS / JSON| LB --> API
     AUTH --> PG
     AUTH --> REDIS
-    AUTH --> SMS
     AUTH --> TG
     CURR --> PG
     QUIZ --> PG
@@ -88,7 +86,7 @@ flowchart TB
 | Client↔server contract | tRPC (preferred) or REST + Zod-validated DTOs | tRPC gives end-to-end type safety with zero codegen — the RN app calls `trpc.curriculum.getSubjects.useQuery()` and gets real types. REST is the fallback if the team wants a conventional OpenAPI surface (e.g. for a future web admin or third-party integrations). |
 | Database | PostgreSQL (managed: Supabase, Neon, or RDS) | The domain is deeply relational (users → attempts → questions → subjects → units), and XP/subscription writes need real transactions. |
 | ORM | Prisma | TS-native schema, migrations, and a query builder that matches the data model in §4 almost 1:1. |
-| Cache / ephemeral state | Redis (managed: Upstash for low volume) | OTP codes with TTL, leaderboard sorted sets (§7), rate limiting, BullMQ job queue. |
+| Cache / ephemeral state | Redis (managed: Upstash for low volume) | Telegram login tokens with TTL, leaderboard sorted sets (§7), rate limiting, BullMQ job queue. |
 | Background jobs | BullMQ on Redis | Streak-break detection, leaderboard period rollover, subscription-expiry downgrade, notification dispatch. |
 | Object storage | Cloudflare R2 or S3 | Avatars now; scanned past-paper PDFs later if `getPaperQuestions` stops being a reused question bank and becomes real historical papers. |
 | Hosting | Fly.io or Render for the API; managed Postgres/Redis from the same or a paired provider | Cheap, simple deploys, scale-to-zero options — appropriate for a pre-revenue-scale product. Move to AWS/GCP only when there's a concrete reason (compliance, specific managed service, real traffic). |
@@ -117,8 +115,9 @@ erDiagram
 
     USER {
         uuid id PK
-        string phone UK
-        string telegramId UK "nullable"
+        string telegramId UK
+        string telegramUsername "nullable"
+        string phone UK "nullable, not used for login"
         string name
         string avatarEmoji
         int grade "9-12"
@@ -230,57 +229,55 @@ Notes on the fields that don't map 1:1 from the mock data:
 
 ---
 
-## 5. Auth: phone + Telegram OTP
+## 5. Auth: Telegram-only
+
+**Status: implemented.** Phone + SMS OTP (the original design below §5.1) was removed — an SMS gateway is a real recurring cost per message with no free tier that scales to 500k users, while Telegram delivery is free. Telegram is now the sole auth method; `User.telegramId` is required, `User.phone` is optional (kept for a possible future use — e.g. Chapa mobile-money payouts often want one — but nothing reads it for login).
 
 ```mermaid
 sequenceDiagram
     participant App as Compass App
     participant API as Auth module
     participant Redis
-    participant SMS as SMS gateway
-    participant TG as Telegram Bot API
+    participant TG as Telegram Bot API (long-polling)
 
-    App->>API: POST /auth/otp/request { phone, channel }
-    API->>API: generate 4-digit code
-    API->>Redis: SET otp:{phone} = hash(code), TTL 5min
-    alt channel = sms
-        API->>SMS: send code to phone
-    else channel = telegram
-        API->>TG: sendMessage(chatId, code)
-        Note over API,TG: only works if the user already<br/>started a chat with @CompassBot
-    end
-    API-->>App: 202 Accepted
+    App->>API: POST /auth/telegram/start
+    API->>API: generate random loginToken
+    API->>Redis: SET telegram:login:pending:{token}, TTL 5min
+    API-->>App: { loginToken, deepLink: t.me/<bot>?start={token} }
+    App->>App: Linking.openURL(deepLink)
+    App->>API: poll GET /auth/telegram/status/{token} every 2s
 
-    App->>API: POST /auth/otp/verify { phone, code }
-    API->>Redis: GET otp:{phone}
-    alt code matches and not expired
-        API->>API: findOrCreate User by phone
-        API-->>App: 200 { accessToken, refreshToken, user }
-    else
-        API-->>App: 400 Invalid or expired code
-    end
+    Note over App,TG: user taps Start in Telegram
+    TG->>API: getUpdates → message "/start {token}"
+    API->>Redis: DEL telegram:login:pending:{token} (atomic, single-use)
+    API->>API: findOrCreate User by telegramId
+    API->>Redis: SET telegram:login:result:{token} = tokens+user, TTL 2min
+    API->>TG: sendMessage("✅ You're verified…")
+
+    API-->>App: (next poll) { status: 'verified', accessToken, refreshToken, user }
 ```
 
-**The Telegram constraint is real and worth designing around, not papering over.** A bot cannot cold-message an arbitrary phone number — Telegram requires the user to have opened a chat with the bot first (there's no server-to-phone-number push the way SMS has). Two honest options:
+**Why long-polling (`getUpdates`), not a webhook:** a webhook needs a public HTTPS URL registered with Telegram — fine in production, awkward in local dev (would need ngrok/cloudflared just to test signup). Long-polling needs nothing but outbound internet access, works identically in every environment, and at this message volume (login events, not chat) the inefficiency long-polling is usually criticized for doesn't matter.
 
-1. **Onboarding nudge:** if the user picks "Telegram" and the bot has no existing chat with them, respond with a deep link (`t.me/CompassBot?start=verify`) instead of silently trying to send — the client opens Telegram, the user taps Start once, and *then* OTP-via-Telegram works for that account going forward.
-2. **Silent SMS fallback:** if the Telegram send fails (bot API returns "chat not found"), fall back to SMS automatically and tell the user in the UI ("Sent via SMS instead").
+**Why polling `/auth/telegram/status`, not a websocket/SSE push:** the app has nothing else that needs a persistent connection, so a 2-second poll avoids standing up a whole connection-management layer for one screen.
 
-Option 2 is simpler and matches user expectation ("I asked for a code, I got a code") better than a redirect detour during signup — recommend that as the default, with option 1 available as a one-time "link your Telegram" action from Settings for users who want faster/free delivery going forward.
+**Session strategy:** unchanged from the original design — short-lived access token (15 min) + long-lived refresh token (30 days, rotated on use). No separate "login" vs "register" endpoint — the bot handler does a `findOrCreate` by `telegramId`.
 
-**Session strategy:** short-lived access token (15 min) + long-lived refresh token (30 days, rotated on use, stored hashed). No separate "login" vs "register" endpoint — `verify` does a `findOrCreate`, matching the collapsed flow already built in `PhoneAuthScreen`.
+**Rate limiting:** max 20 `/auth/telegram/start` calls per IP per hour (Redis `INCR` + `EXPIRE`) — generous, since the real anti-abuse mechanism here is that `loginToken` is a 32-byte random value nobody can guess, not a short human-entered code like the old OTP was.
 
-**Rate limiting:** max 5 OTP requests per phone per hour, max 5 verify attempts per code — both enforced in Redis (`INCR` + `EXPIRE`), not the database, since this is exactly the write-heavy/short-lived pattern Redis is for.
+### 5.1 Original design (superseded, kept for history)
+
+The phone + SMS/Telegram-OTP design that used to live here — 4-digit codes, an SMS gateway, `POST /auth/otp/request` / `POST /auth/otp/verify` — is gone from the code. If SMS ever comes back (e.g. a "recover access without Telegram" path), the cold-message constraint that motivated the original two-option design is still real: a bot can't message a user who hasn't started a chat with it first.
 
 ---
 
 ## 6. API surface
 
-Organized by the app's own tabs, not by database table — each group below is a NestJS module / tRPC router.
+Organized by the app's own tabs, not by database table — each group below is a Fastify plugin (module) registered in `backend/src/server.ts`; implemented as REST+Zod, not NestJS/tRPC (see §3).
 
 **Auth**
-- `POST /auth/otp/request` — see §5
-- `POST /auth/otp/verify` — see §5
+- `POST /auth/telegram/start` — see §5
+- `GET /auth/telegram/status/:token` — see §5
 - `POST /auth/refresh`
 
 **Curriculum (Learn tab)**
@@ -382,15 +379,15 @@ Cost control on top of the provider choice: recommend a **daily message cap on t
 
 - **Environments:** `dev` (local, Docker Compose for Postgres/Redis), `staging`, `production` — same Prisma schema, seeded differently (`staging`/`dev` seed with the current mock data as a starting fixture).
 - **CI:** typecheck + lint + Prisma migration dry-run on every PR; migrations apply on merge to `main` via a deploy step, not manually.
-- **Secrets:** provider env vars (Fly/Render secrets), never committed — SMS gateway key, Telegram bot token, Chapa secret key, DeepSeek API key (Anthropic API key added later at the §9 provider switch), JWT signing key.
+- **Secrets:** provider env vars (Fly/Render secrets), never committed — Telegram bot token, Chapa secret key, DeepSeek API key (Anthropic API key added later at the §9 provider switch), JWT signing key.
 - **Seeding real content:** the 7 subjects × 4 grades × ~5 lessons currently hardcoded in `curriculum.ts` and `lessonContent.ts` become the initial Prisma seed script — this is mechanical (the shapes already match §4 almost exactly) and should be the very first migration, so the app can run against Postgres with zero visible change before any new feature is added.
 
 ---
 
 ## 12. Security checklist
 
-- Phone numbers are PII — hash or encrypt at rest if the provider doesn't already (managed Postgres with disk encryption covers this at rest; the concern is app-level logging — never log full phone numbers, mask to `+251 9XX XXX XXX` last-4 in logs).
-- OTP codes are hashed in Redis, never stored or logged in plaintext.
+- `loginToken` is a 32-byte random value, single-use (Redis `DEL` return value gates consumption — see §5), and short-lived (5 min pending / 2 min post-verification) — never logged.
+- If `phone` is ever collected later (e.g. for Chapa payouts), treat it as PII the same way the original phone-auth design did: never log it in full, mask to last 4 digits.
 - JWT refresh tokens are rotated on every use and revocable (store a `tokenVersion` on `User`, bump it to invalidate all sessions — e.g. on suspected compromise).
 - All billing webhooks verify provider signatures; reject unsigned or mismatched requests before touching the database.
 - Rate limit `POST /chat/messages` per user in addition to the daily cap, to bound cost from a single abusive session.
@@ -401,8 +398,8 @@ Cost control on top of the provider choice: recommend a **daily message cap on t
 
 | Phase | Scope | Why this grouping |
 |---|---|---|
-| **1 — MVP** | Auth (phone+SMS only, Telegram deferred), curriculum read + seed, Learn progress, Practice + Mock Exams, all-time leaderboard only, Compass Pro checkout | Everything a paying user needs on day one; Telegram OTP and weekly/monthly leaderboard periods are additive, not blocking. |
-| **2** | Telegram OTP, weekly/monthly leaderboard periods, Unity chat, push notifications, streak/hearts polish | Needs real usage data (leaderboard periods need users active across weeks; Unity's context assembly benefits from real accuracy history existing). |
+| **1 — MVP** | Telegram-only auth, curriculum read + seed, Learn progress, Practice + Mock Exams, all-time leaderboard only, Compass Pro checkout | Everything a paying user needs on day one; weekly/monthly leaderboard periods are additive, not blocking. |
+| **2** | Weekly/monthly leaderboard periods, Unity chat, push notifications, streak/hearts polish | Needs real usage data (leaderboard periods need users active across weeks; Unity's context assembly benefits from real accuracy history existing). |
 | **3** | Admin content authoring (so subjects/units/questions are edited without a migration), analytics dashboard, real historical past-paper archive (replacing the current shared question-bank reuse in `getPaperQuestions`) | Scales the *content* side once the *product* side is proven. |
 
 ---

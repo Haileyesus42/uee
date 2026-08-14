@@ -2,19 +2,23 @@ import { apiFetch } from './client';
 
 export type AuthUser = {
   id: string;
-  phone: string;
-  telegramId: string | null;
+  telegramId: string;
+  telegramUsername: string | null;
   name: string;
   avatarEmoji: string;
   grade: number;
 };
 
-export type VerifyResult = { accessToken: string; refreshToken: string; user: AuthUser };
+export type StartTelegramLoginResult = { loginToken: string; deepLink: string };
 
-export function requestOtp(phone: string): Promise<{ ok: true }> {
-  return apiFetch('/auth/otp/request', { method: 'POST', body: { phone }, auth: false });
+export type TelegramLoginStatus =
+  | { status: 'pending' }
+  | { status: 'verified'; accessToken: string; refreshToken: string; user: AuthUser };
+
+export function startTelegramLogin(): Promise<StartTelegramLoginResult> {
+  return apiFetch('/auth/telegram/start', { method: 'POST', auth: false });
 }
 
-export function verifyOtp(phone: string, code: string): Promise<VerifyResult> {
-  return apiFetch('/auth/otp/verify', { method: 'POST', body: { phone, code }, auth: false });
+export function getTelegramLoginStatus(loginToken: string): Promise<TelegramLoginStatus> {
+  return apiFetch(`/auth/telegram/status/${loginToken}`, { auth: false });
 }

@@ -59,7 +59,23 @@ export function LessonCompleteScreen({ navigation, route }: Props) {
       </ScrollView>
 
       <View style={{ paddingHorizontal: t.spacing.md, paddingBottom: 12 }}>
-        <Button label="Continue" onPress={() => navigation.navigate('SubjectPath', { subjectId })} />
+        <Button
+          label="Continue"
+          onPress={() =>
+            // A plain navigate('SubjectPath', ...) here is ambiguous: when this lesson
+            // was reached via Home's "Continue Learning" shortcut (not by drilling down
+            // through SubjectPath), SubjectPath isn't already in the stack, so navigate
+            // would *push* a new one instead of popping back to an existing one — the
+            // resulting stack (…, LessonComplete, SubjectPath) means the back button
+            // lands on the just-finished lesson instead of the Learn tab, which is
+            // exactly the "loops between lessons" bug. reset() defines the stack
+            // explicitly so this is correct regardless of how the lesson was entered.
+            navigation.reset({
+              index: 1,
+              routes: [{ name: 'LearnHome' }, { name: 'SubjectPath', params: { subjectId } }],
+            })
+          }
+        />
       </View>
     </SafeAreaView>
   );

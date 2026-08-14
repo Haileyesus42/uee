@@ -48,7 +48,11 @@ export async function apiFetch<T>(path: string, options: RequestOptions = {}): P
   const { method = 'GET', body, auth = true } = options;
 
   async function send(accessToken: string | null): Promise<Response> {
-    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    const headers: Record<string, string> = {};
+    // Only claim a JSON content-type when there's actually a body — Fastify's
+    // strict JSON parser rejects an empty body sent with this header (surfaced by
+    // POST /auth/telegram/start, which takes no body at all).
+    if (body !== undefined) headers['Content-Type'] = 'application/json';
     if (accessToken) headers.Authorization = `Bearer ${accessToken}`;
     return fetch(`${BASE_URL}${path}`, {
       method,
