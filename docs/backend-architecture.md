@@ -1,6 +1,6 @@
 # Compass Backend Architecture
 
-**Status:** Proposed design — no backend exists yet. The Expo app currently runs entirely on mock data in `src/data/*.ts` and a local `onboarded` boolean; every screen referenced below is real and shipped in this repo.
+**Status:** Backend implemented and wired to the frontend (see `backend/` and `frontend/src/api/`, `frontend/src/hooks/`). This doc is kept as the original design reference; paths below refer to the app, now at `frontend/src/data/*.ts` etc.
 
 **Scope:** API, data model, and infrastructure needed to make Home, Learn, Practice, UEE, Leaderboard, Profile, and Unity chat real, plus phone/Telegram auth and Compass Pro billing.
 
