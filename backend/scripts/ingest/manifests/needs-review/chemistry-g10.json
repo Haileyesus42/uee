@@ -1,0 +1,107 @@
+{
+  "subject": "chemistry",
+  "grade": 10,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-10-chemistry-new-curriculum--student-textbook-kehulumcom175992936186a3.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.6 Stoichiometry",
+      "pageStart": 40,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "Unit 2: SOLLUTIONS",
+      "sectionTitle": "2.2 The Solution Process",
+      "pageStart": 65,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "Unit 2: SOLLUTIONS",
+      "sectionTitle": "2.3 Solubility as an Equilibrium Process",
+      "pageStart": 79,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "Unit 2: SOLLUTIONS",
+      "sectionTitle": "2.6 Solution Stoichiometry",
+      "pageStart": 104,
+      "pageEnd": 106
+    },
+    {
+      "unitTitle": "Unit 2: SOLLUTIONS",
+      "sectionTitle": "2.7 Describing Reactions in Solution",
+      "pageStart": 107,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "Unit 3: IMPORTANT INORGANIC COMPOUNDS",
+      "sectionTitle": "3.1 Introduction",
+      "pageStart": 116,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 3: IMPORTANT INORGANIC COMPOUNDS",
+      "sectionTitle": "3.2 Oxides",
+      "pageStart": 117,
+      "pageEnd": 153
+    },
+    {
+      "unitTitle": "Unit 3: IMPORTANT INORGANIC COMPOUNDS",
+      "sectionTitle": "3.5 Salts",
+      "pageStart": 154,
+      "pageEnd": 172
+    },
+    {
+      "unitTitle": "Unit 4: : ENERGY CHANGES AND ELECTROCHEMISTRY",
+      "sectionTitle": "4.1 Introduction",
+      "pageStart": 173,
+      "pageEnd": 179
+    },
+    {
+      "unitTitle": "Unit 4: : ENERGY CHANGES AND ELECTROCHEMISTRY",
+      "sectionTitle": "4.2 Energy Changes in Electrochemistry",
+      "pageStart": 180,
+      "pageEnd": 187
+    },
+    {
+      "unitTitle": "Unit 4: : ENERGY CHANGES AND ELECTROCHEMISTRY",
+      "sectionTitle": "4.3 Electrochemical Cells",
+      "pageStart": 188,
+      "pageEnd": 192
+    },
+    {
+      "unitTitle": "Unit 4: : ENERGY CHANGES AND ELECTROCHEMISTRY",
+      "sectionTitle": "4.4 Electrolysis",
+      "pageStart": 193,
+      "pageEnd": 204
+    },
+    {
+      "unitTitle": "Unit 5: : METALS AND NONMETALS",
+      "sectionTitle": "5.1 Introduction",
+      "pageStart": 205,
+      "pageEnd": 240
+    },
+    {
+      "unitTitle": "Unit 6: : HYDROCARBONS AND THEIR NATURAL SOURCES 234",
+      "sectionTitle": "6.1 Introduction",
+      "pageStart": 241,
+      "pageEnd": 290
+    },
+    {
+      "unitTitle": "Unit 6: : HYDROCARBONS AND THEIR NATURAL SOURCES 234",
+      "sectionTitle": "6.4 Aromatic Hydrocarbons: Benzene",
+      "pageStart": 291,
+      "pageEnd": 295
+    },
+    {
+      "unitTitle": "Unit 6: : HYDROCARBONS AND THEIR NATURAL SOURCES 234",
+      "sectionTitle": "6.5 Natural Sources of Hydrocarbons",
+      "pageStart": 296,
+      "pageEnd": 296
+    }
+  ],
+  "knownHeaders": [
+    "STUDENT TEXTBOOK"
+  ]
+}

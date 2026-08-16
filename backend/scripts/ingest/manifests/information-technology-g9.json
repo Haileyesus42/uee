@@ -1,0 +1,222 @@
+{
+  "subject": "information-technology",
+  "grade": 9,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-9-information-technology-new-curriculum--student-textbook-kehulumcom1759930819ba23.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Basics of Files and Folders \b",
+      "pageStart": 8,
+      "pageEnd": 11
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 Managing Files and Folders\b",
+      "pageStart": 12,
+      "pageEnd": 31
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Computer Drives\b",
+      "pageStart": 32,
+      "pageEnd": 35
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Unit Summary\b",
+      "pageStart": 36,
+      "pageEnd": 37
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Unit Review Exercise\b",
+      "pageStart": 38,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Definition of Network\b",
+      "pageStart": 44,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Fundamental Elements of Network\b",
+      "pageStart": 45,
+      "pageEnd": 52
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Types of Networks \b",
+      "pageStart": 53,
+      "pageEnd": 66
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Advantages and Disadvantages of Network \b",
+      "pageStart": 67,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Unit Summary\b",
+      "pageStart": 70,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.6 Unit Review Exercise\b",
+      "pageStart": 73,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Using Application Software \b",
+      "pageStart": 79,
+      "pageEnd": 79
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Word Processing \b",
+      "pageStart": 79,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Manipulating Data in Spreadsheet \b",
+      "pageStart": 116,
+      "pageEnd": 127
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 Creating Presentation \b",
+      "pageStart": 128,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.5 Unit Summary \b",
+      "pageStart": 143,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.6 Unit Review Exercise\b",
+      "pageStart": 145,
+      "pageEnd": 151
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Image\b",
+      "pageStart": 152,
+      "pageEnd": 153
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Multimedia Production Planning Strategies\b",
+      "pageStart": 154,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Using Image Processing Software\b",
+      "pageStart": 155,
+      "pageEnd": 192
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Unit Summary\b",
+      "pageStart": 193,
+      "pageEnd": 193
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Unit Review Exercise\b",
+      "pageStart": 194,
+      "pageEnd": 198
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Definition of Security\b",
+      "pageStart": 199,
+      "pageEnd": 200
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Principles of Computer Security\b",
+      "pageStart": 201,
+      "pageEnd": 203
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.3 Computer Security Threats \b",
+      "pageStart": 204,
+      "pageEnd": 210
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.4 Potential Losses Due to Security Attacks\b",
+      "pageStart": 211,
+      "pageEnd": 212
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.5 How to Secure yourself and your Computer Systems\b",
+      "pageStart": 213,
+      "pageEnd": 215
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.6 Unit Summary \b",
+      "pageStart": 216,
+      "pageEnd": 217
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.7 Unit Review Exercise\b",
+      "pageStart": 218,
+      "pageEnd": 223
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Defining a Problem and Computational Problem \b",
+      "pageStart": 224,
+      "pageEnd": 225
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 Steps in Problem Solving \b",
+      "pageStart": 226,
+      "pageEnd": 229
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Working with Flowcharts and Block Programming\b",
+      "pageStart": 230,
+      "pageEnd": 242
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Problem Solving Approaches \b",
+      "pageStart": 243,
+      "pageEnd": 245
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Unit Summary \b",
+      "pageStart": 246,
+      "pageEnd": 246
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.6 Unit Review Exercise\b",
+      "pageStart": 247,
+      "pageEnd": 247
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1 : ORGANIZATION OF FILES",
+    "STUDENT TEXTBOOK"
+  ]
+}

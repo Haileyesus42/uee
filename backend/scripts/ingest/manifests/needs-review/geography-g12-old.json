@@ -1,0 +1,72 @@
+{
+  "subject": "geography",
+  "grade": 12,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-12-geography-old-curriculum--student-textbook-kehulumcom17551651766f21.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Definition and Concept .........................................\b",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Approaches of Research ....................................\b",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 The Nature of Geographic Research .....................\b",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Basic Research Methodology in Geography ........\b",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.6 Conducting Action Research ................................\b",
+      "pageStart": 8,
+      "pageEnd": 66
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Location, Size and Shape of Ethiopia ...................\b",
+      "pageStart": 67,
+      "pageEnd": 155
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Population Theories ...................................................\b",
+      "pageStart": 156,
+      "pageEnd": 156
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Settlement Patterns of Ethiopian Population .........\b",
+      "pageStart": 156,
+      "pageEnd": 156
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.8 Population Policy of Ethiopia ..................................\b",
+      "pageStart": 156,
+      "pageEnd": 212
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Major Features of Ethiopian Economy .................\b",
+      "pageStart": 213,
+      "pageEnd": 213
+    }
+  ],
+  "knownHeaders": [
+    "GRADE 12 GEOGRAPHY",
+    "STUDENT TEXTBOOK"
+  ]
+}

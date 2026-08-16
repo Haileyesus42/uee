@@ -1,0 +1,264 @@
+{
+  "subject": "biology",
+  "grade": 9,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-9-biology-new-curriculum--student-textbook-kehulumcom17599334842417.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Introduction to Biology",
+      "sectionTitle": "1.1 Definition of Biology",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "Unit 1: Introduction to Biology",
+      "sectionTitle": "1.2 Why do we study Biology?",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "Unit 1: Introduction to Biology",
+      "sectionTitle": "1.4 . Tools of a Biologist",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "Unit 1: Introduction to Biology",
+      "sectionTitle": "1.5 The Light Microscope",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "Unit 1: Introduction to Biology",
+      "sectionTitle": "1.6 General Laboratory Safety Rules",
+      "pageStart": 8,
+      "pageEnd": 25
+    },
+    {
+      "unitTitle": "Unit 2: \u0007Characteristics and Classification of Organisms",
+      "sectionTitle": "2.1 Characteristics of living things",
+      "pageStart": 26,
+      "pageEnd": 27
+    },
+    {
+      "unitTitle": "Unit 2: \u0007Characteristics and Classification of Organisms",
+      "sectionTitle": "2.2 Taxonomy of living things",
+      "pageStart": 28,
+      "pageEnd": 30
+    },
+    {
+      "unitTitle": "Unit 2: \u0007Characteristics and Classification of Organisms",
+      "sectionTitle": "2.3 Relevance of classification",
+      "pageStart": 31,
+      "pageEnd": 31
+    },
+    {
+      "unitTitle": "Unit 2: \u0007Characteristics and Classification of Organisms",
+      "sectionTitle": "2.4 Linnaean system of nomenclature",
+      "pageStart": 32,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit 2: \u0007Characteristics and Classification of Organisms",
+      "sectionTitle": "2.5 Common Ethiopian animals and plants",
+      "pageStart": 33,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit 2: \u0007Characteristics and Classification of Organisms",
+      "sectionTitle": "2.6 The five-kingdom system of classification",
+      "pageStart": 35,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 2: \u0007Characteristics and Classification of Organisms",
+      "sectionTitle": "2.7 Renowned Taxonomists in Ethiopia",
+      "pageStart": 46,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "Unit 3: Cells",
+      "sectionTitle": "3.2 Cell theory",
+      "pageStart": 51,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 3: Cells",
+      "sectionTitle": "3.3 Cell structure and function",
+      "pageStart": 51,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 3: Cells",
+      "sectionTitle": "3.4 Types of cells",
+      "pageStart": 51,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 3: Cells",
+      "sectionTitle": "3.5 Animal and plant cells",
+      "pageStart": 51,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 3: Cells",
+      "sectionTitle": "3.6 Observing cells under a microscope",
+      "pageStart": 51,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 3: Cells",
+      "sectionTitle": "3.7 The cell and its environment",
+      "pageStart": 51,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 3: Cells",
+      "sectionTitle": "3.8 Levels of Biological Organization",
+      "pageStart": 51,
+      "pageEnd": 80
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.1 Introduction to reproduction",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.2 Asexual reproduction",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.3 Types of asexual reproduction",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.4 Sexual reproduction in Humans",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.5 Primary and secondary sexual characteristics",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.7 Female reproductive structures",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.8 The Menstrual cycle",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.9 Fertilization and pregnancy",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.10 Methods of birth control",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4: Reproduction",
+      "sectionTitle": "4.11 \u0007Sexually transmitted infections (STIs): Transmission and prevention",
+      "pageStart": 81,
+      "pageEnd": 111
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.1 What is food?",
+      "pageStart": 112,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.2 Nutrition",
+      "pageStart": 112,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.3 Nutrients",
+      "pageStart": 113,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.4 Balanced diets",
+      "pageStart": 117,
+      "pageEnd": 118
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.5 Deficiency diseases",
+      "pageStart": 119,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.6 Malnutrition",
+      "pageStart": 122,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.7 Substance abuse",
+      "pageStart": 124,
+      "pageEnd": 133
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.8 Infectious and noninfectious diseases",
+      "pageStart": 134,
+      "pageEnd": 134
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.8 1. Infectious diseases",
+      "pageStart": 134,
+      "pageEnd": 134
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.8 2 Non-infectious diseases",
+      "pageStart": 134,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "Unit 5: Human Health, Nutrition, and Disease",
+      "sectionTitle": "5.9 Renowned Nutritionists in Ethiopia",
+      "pageStart": 143,
+      "pageEnd": 145
+    },
+    {
+      "unitTitle": "Unit 6: Ecology",
+      "sectionTitle": "6.1 Ecology",
+      "pageStart": 146,
+      "pageEnd": 146
+    },
+    {
+      "unitTitle": "Unit 6: Ecology",
+      "sectionTitle": "6.2 Ecological relationships",
+      "pageStart": 146,
+      "pageEnd": 146
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1: INTRODUCTION TO BIOLOGY",
+    "STUDENT TEXTBOOK"
+  ]
+}

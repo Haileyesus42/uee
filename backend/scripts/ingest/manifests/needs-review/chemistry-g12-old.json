@@ -1,0 +1,132 @@
+{
+  "subject": "chemistry",
+  "grade": 12,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-12-chemistry-old-curriculum--student-textbook-kehulumcom17551529478492.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.7 Solution Stoichiometry .................................. 41",
+      "pageStart": 46,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.9 Colligative Properties of Solutions ................ 46",
+      "pageStart": 51,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "Unit 2: Acid-Base Equilibrium",
+      "sectionTitle": "2.1 Acid-Base Concepts",
+      "pageStart": 73,
+      "pageEnd": 73
+    },
+    {
+      "unitTitle": "Unit 2: Acid-Base Equilibrium",
+      "sectionTitle": "2.2 Ionic Equilibria of Weak Acids and Bases",
+      "pageStart": 73,
+      "pageEnd": 73
+    },
+    {
+      "unitTitle": "Unit 2: Acid-Base Equilibrium",
+      "sectionTitle": "2.3 Common Ion Effect and Buffer Solutions",
+      "pageStart": 73,
+      "pageEnd": 73
+    },
+    {
+      "unitTitle": "Unit 2: Acid-Base Equilibrium",
+      "sectionTitle": "2.4 Hydrolysis of Salts",
+      "pageStart": 73,
+      "pageEnd": 73
+    },
+    {
+      "unitTitle": "Unit 2: Acid-Base Equilibrium",
+      "sectionTitle": "2.5 Acid-Base Indicators",
+      "pageStart": 73,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 3: Introduction to Chemical Thermodynamics",
+      "sectionTitle": "3.1 Common Thermodynamic Terms",
+      "pageStart": 124,
+      "pageEnd": 124
+    },
+    {
+      "unitTitle": "Unit 3: Introduction to Chemical Thermodynamics",
+      "sectionTitle": "3.3 Thermochemistry",
+      "pageStart": 124,
+      "pageEnd": 162
+    },
+    {
+      "unitTitle": "Unit 4: Electrochemistry",
+      "sectionTitle": "4.1 Oxidation-Reduction Reaction",
+      "pageStart": 163,
+      "pageEnd": 163
+    },
+    {
+      "unitTitle": "Unit 4: Electrochemistry",
+      "sectionTitle": "4.2 Electrolysis of Aqueous Solutions",
+      "pageStart": 163,
+      "pageEnd": 163
+    },
+    {
+      "unitTitle": "Unit 4: Electrochemistry",
+      "sectionTitle": "4.3 Quantitative Aspects of Electrolysis",
+      "pageStart": 163,
+      "pageEnd": 163
+    },
+    {
+      "unitTitle": "Unit 4: Electrochemistry",
+      "sectionTitle": "4.4 Industrial Application of Electrolysis",
+      "pageStart": 163,
+      "pageEnd": 163
+    },
+    {
+      "unitTitle": "Unit 4: Electrochemistry",
+      "sectionTitle": "4.5 Galvanic (Voltaic) Cells",
+      "pageStart": 163,
+      "pageEnd": 224
+    },
+    {
+      "unitTitle": "Unit 5: Some Elements in Nature and Industry",
+      "sectionTitle": "5.1 Some Elements in Nature",
+      "pageStart": 225,
+      "pageEnd": 225
+    },
+    {
+      "unitTitle": "Unit 5: Some Elements in Nature and Industry",
+      "sectionTitle": "5.2 Some Elements in Industry",
+      "pageStart": 225,
+      "pageEnd": 266
+    },
+    {
+      "unitTitle": "Unit 6: Polymers",
+      "sectionTitle": "6.1 Introduction to Polymers",
+      "pageStart": 267,
+      "pageEnd": 267
+    },
+    {
+      "unitTitle": "Unit 6: Polymers",
+      "sectionTitle": "6.2 Polymerization",
+      "pageStart": 267,
+      "pageEnd": 267
+    },
+    {
+      "unitTitle": "Unit 6: Polymers",
+      "sectionTitle": "6.3 Synthetic Polymers",
+      "pageStart": 267,
+      "pageEnd": 267
+    },
+    {
+      "unitTitle": "Unit 6: Polymers",
+      "sectionTitle": "6.4 Natural Polymers",
+      "pageStart": 267,
+      "pageEnd": 267
+    }
+  ],
+  "knownHeaders": [
+    "SOLUTIONS (UNIT 1)",
+    "STUDENT TEXTBOOK"
+  ]
+}

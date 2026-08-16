@@ -1,0 +1,102 @@
+{
+  "subject": "citizenship-education",
+  "grade": 10,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-10-citizenship-education-new-curriculum--student-textbook-kehulumcom1759929229d024.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION\b",
+      "sectionTitle": "1.1 The concept of democracy and democratization\b",
+      "pageStart": 10,
+      "pageEnd": 11
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION\b",
+      "sectionTitle": "1.2 Definitions and actors of democratization process\b",
+      "pageStart": 12,
+      "pageEnd": 20
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION\b",
+      "sectionTitle": "1.4 The role of democracy for social transformation\b",
+      "pageStart": 21,
+      "pageEnd": 26
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION\b",
+      "sectionTitle": "1.6 Aspects of democracy\b",
+      "pageStart": 27,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit 2: CITIZENS IN THE DIGITAL TECHNOLOGY AGE\b",
+      "sectionTitle": "2.1 Implications of digital technology on citizens \b",
+      "pageStart": 33,
+      "pageEnd": 52
+    },
+    {
+      "unitTitle": "Unit 2: CITIZENS IN THE DIGITAL TECHNOLOGY AGE\b",
+      "sectionTitle": "2.2 The ethics of using digital technology\b",
+      "pageStart": 53,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "Unit 2: CITIZENS IN THE DIGITAL TECHNOLOGY AGE\b",
+      "sectionTitle": "2.4 Impacts of unethical use of digital technology on young citizens\b",
+      "pageStart": 59,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE\b",
+      "sectionTitle": "4.2 Impacts of absence of peace\b",
+      "pageStart": 94,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE\b",
+      "sectionTitle": "4.5 The roles of indigenous social institutions in ensuring sustainable peace\b",
+      "pageStart": 103,
+      "pageEnd": 118
+    },
+    {
+      "unitTitle": "Unit 5: FEDERALISM IN ETHIOPIA\b",
+      "sectionTitle": "5.4 Advantage and disadvantage of federalism\b",
+      "pageStart": 119,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 5: FEDERALISM IN ETHIOPIA\b",
+      "sectionTitle": "5.5 The roles of federalism in accommodating diversity in Ethiopia\b",
+      "pageStart": 124,
+      "pageEnd": 139
+    },
+    {
+      "unitTitle": "Unit 6: HUMAN RIGHTS\b",
+      "sectionTitle": "6.2 Citizens and state obligations in realizing human rights\b",
+      "pageStart": 140,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "Unit 7: PATRIOTISM\b",
+      "sectionTitle": "7.3 The bases of patriotism\b",
+      "pageStart": 155,
+      "pageEnd": 175
+    },
+    {
+      "unitTitle": "Unit 8: GLOBALIZATION AND GLOBAL ISSUES\b",
+      "sectionTitle": "8.2 Advantages and disadvantages of globalization\b",
+      "pageStart": 176,
+      "pageEnd": 182
+    },
+    {
+      "unitTitle": "Unit 8: GLOBALIZATION AND GLOBAL ISSUES\b",
+      "sectionTitle": "8.3 Fighting the negative impact of globalization\b",
+      "pageStart": 183,
+      "pageEnd": 183
+    }
+  ],
+  "knownHeaders": [
+    "INTRODUCTION",
+    "STUDENT TEXTBOOK"
+  ]
+}

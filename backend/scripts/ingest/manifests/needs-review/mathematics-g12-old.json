@@ -1,0 +1,132 @@
+{
+  "subject": "mathematics",
+  "grade": 12,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-12-mathematics-old-curriculum--student-textbook-kehulumcom175516396074e8.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Limits of sequences of numbers",
+      "pageStart": 49,
+      "pageEnd": 110
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Introduction to Derivatives",
+      "pageStart": 111,
+      "pageEnd": 111
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Derivatives of some functions",
+      "pageStart": 111,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Extreme values of functions",
+      "pageStart": 169,
+      "pageEnd": 169
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Minimization and maximization problems",
+      "pageStart": 169,
+      "pageEnd": 169
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Rate of change",
+      "pageStart": 169,
+      "pageEnd": 214
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Techniques of integration",
+      "pageStart": 215,
+      "pageEnd": 215
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.4 Applications of Integral calculus",
+      "pageStart": 215,
+      "pageEnd": 278
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 Coordinates of a point in space",
+      "pageStart": 279,
+      "pageEnd": 279
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Equation of sphere",
+      "pageStart": 279,
+      "pageEnd": 279
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.6 Vectors in space",
+      "pageStart": 279,
+      "pageEnd": 303
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.1 Revision on logic",
+      "pageStart": 304,
+      "pageEnd": 304
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.2 Different types of proofs",
+      "pageStart": 304,
+      "pageEnd": 329
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.3 Construction and interpretation of graphs",
+      "pageStart": 330,
+      "pageEnd": 330
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.5 Analysis of frequency distributions",
+      "pageStart": 330,
+      "pageEnd": 330
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.6 Use of cumulative frequency curves",
+      "pageStart": 330,
+      "pageEnd": 377
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.1 Applications to purchasing",
+      "pageStart": 378,
+      "pageEnd": 378
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.2 Percent increase and percent decrease",
+      "pageStart": 378,
+      "pageEnd": 378
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.3 Real estate expenses",
+      "pageStart": 378,
+      "pageEnd": 378
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.4 Wages",
+      "pageStart": 378,
+      "pageEnd": 378
+    }
+  ],
+  "knownHeaders": [
+    "MATHEMATICS GRADE 12",
+    "STUDENT TEXTBOOK"
+  ]
+}

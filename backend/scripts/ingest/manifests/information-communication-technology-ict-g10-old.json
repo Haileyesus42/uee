@@ -1,0 +1,84 @@
+{
+  "subject": "information-communication-technology-ict",
+  "grade": 10,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-10-information-communication-technology-ict-old-curriculum--student-textbook-kehulumcom1755087808ddd7.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Basics of ICT",
+      "pageStart": 5,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 Computer System",
+      "pageStart": 13,
+      "pageEnd": 21
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Key Features of Word Processing",
+      "pageStart": 22,
+      "pageEnd": 39
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Key Features of Presentation Software and Techniques",
+      "pageStart": 40,
+      "pageEnd": 47
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Desktop Publishing",
+      "pageStart": 48,
+      "pageEnd": 68
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Information and Computer Security",
+      "pageStart": 69,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Key Features of Spreadsheets",
+      "pageStart": 79,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Database Application",
+      "pageStart": 93,
+      "pageEnd": 119
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Overview of the Internet",
+      "pageStart": 120,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Definition of WWW",
+      "pageStart": 127,
+      "pageEnd": 130
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.3 Planning and Developing Web Pages",
+      "pageStart": 131,
+      "pageEnd": 139
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Control and Learning with LOGO",
+      "pageStart": 140,
+      "pageEnd": 140
+    }
+  ],
+  "knownHeaders": [
+    "PREFACE",
+    "STUDENT TEXTBOOK"
+  ]
+}

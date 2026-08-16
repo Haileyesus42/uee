@@ -1,0 +1,150 @@
+{
+  "subject": "information-technology",
+  "grade": 11,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-11-information-technology-new-curriculum--student-textbook-kehulumcom17599167591be6.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Data, Information, Knowledge, and Wisdom",
+      "pageStart": 7,
+      "pageEnd": 11
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 Introduction to Information Systems",
+      "pageStart": 12,
+      "pageEnd": 16
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Applications of Information Systems",
+      "pageStart": 17,
+      "pageEnd": 27
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 IT for Entrepreneurship",
+      "pageStart": 28,
+      "pageEnd": 33
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Artificial Intelligence",
+      "pageStart": 34,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Augmented Reality and Virtual Reality",
+      "pageStart": 44,
+      "pageEnd": 49
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Data Science",
+      "pageStart": 50,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Data Management Approaches",
+      "pageStart": 57,
+      "pageEnd": 60
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Data Model",
+      "pageStart": 61,
+      "pageEnd": 68
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Creating Relational Database in Microsoft Access",
+      "pageStart": 69,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 World Wide Web",
+      "pageStart": 82,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Website Design",
+      "pageStart": 84,
+      "pageEnd": 85
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 HTML Basics",
+      "pageStart": 86,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 HTML Links",
+      "pageStart": 93,
+      "pageEnd": 96
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 HTML Tables",
+      "pageStart": 97,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.6 HTML Lists",
+      "pageStart": 104,
+      "pageEnd": 114
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Hardware Troubleshooting",
+      "pageStart": 115,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Basics of Preventive Maintenance",
+      "pageStart": 126,
+      "pageEnd": 137
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Types of Programming Languages",
+      "pageStart": 138,
+      "pageEnd": 139
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 Basics of Python",
+      "pageStart": 140,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Variables and Data Types",
+      "pageStart": 145,
+      "pageEnd": 153
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Statements and Expressions",
+      "pageStart": 154,
+      "pageEnd": 156
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Writing a Simple Program",
+      "pageStart": 157,
+      "pageEnd": 157
+    }
+  ],
+  "knownHeaders": [
+    "UNIT INFORMATION",
+    "STUDENT TEXTBOOK"
+  ]
+}

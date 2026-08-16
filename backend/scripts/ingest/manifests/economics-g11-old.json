@@ -1,0 +1,186 @@
+{
+  "subject": "economics",
+  "grade": 11,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-11-economics-old-curriculum--student-textbook-kehulumcom1755112487f4e6.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 RESOURCE ALLOCATION",
+      "pageStart": 25,
+      "pageEnd": 27
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 ECONOMIC SYSTEMS",
+      "pageStart": 28,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "2.1 THEORY OF DEMAND",
+      "pageStart": 57,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "2.2 THEORY OF SUPPLY",
+      "pageStart": 70,
+      "pageEnd": 77
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "2.3 MARKET EQUILIBRIUM",
+      "pageStart": 78,
+      "pageEnd": 89
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "2.4 ELASTICITY OF DEMAND AND SUPPLY",
+      "pageStart": 90,
+      "pageEnd": 105
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "2.5 ELASTICITY OF SUPPLY",
+      "pageStart": 106,
+      "pageEnd": 122
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "3.1 THE CONCEPT OF UTILITY",
+      "pageStart": 123,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "3.2 THE CARDINAL UTILITY THEORY",
+      "pageStart": 123,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 2: Demand, Supply and",
+      "sectionTitle": "3.3 THE ORDINAL UTILITY THEORY: INDIFFERENCE CURVE APPROACH",
+      "pageStart": 123,
+      "pageEnd": 150
+    },
+    {
+      "unitTitle": "Unit 4: Theory of Production and",
+      "sectionTitle": "4.1 THEORY OF PRODUCTION",
+      "pageStart": 151,
+      "pageEnd": 165
+    },
+    {
+      "unitTitle": "Unit 4: Theory of Production and",
+      "sectionTitle": "4.2 THEORY OF COST",
+      "pageStart": 166,
+      "pageEnd": 175
+    },
+    {
+      "unitTitle": "Unit 4: Theory of Production and",
+      "sectionTitle": "4.3 RELATIONSHIP BETWEEN PRODUCTION AND COST",
+      "pageStart": 176,
+      "pageEnd": 194
+    },
+    {
+      "unitTitle": "Unit 5: Market Structures and",
+      "sectionTitle": "5.1 PERFECTLY COMPETITIVE MARKET",
+      "pageStart": 195,
+      "pageEnd": 206
+    },
+    {
+      "unitTitle": "Unit 5: Market Structures and",
+      "sectionTitle": "5.2 PURE MONOPOLY",
+      "pageStart": 207,
+      "pageEnd": 213
+    },
+    {
+      "unitTitle": "Unit 5: Market Structures and",
+      "sectionTitle": "5.3 MONOPOLISTICALLY COMPETITIVE MARKET",
+      "pageStart": 214,
+      "pageEnd": 217
+    },
+    {
+      "unitTitle": "Unit 5: Market Structures and",
+      "sectionTitle": "5.4 OLIGOPOLY MARKET",
+      "pageStart": 218,
+      "pageEnd": 228
+    },
+    {
+      "unitTitle": "Unit 6: The Fundamental Concerns",
+      "sectionTitle": "6.1 CONCERNS OF MACROECONOMICS",
+      "pageStart": 229,
+      "pageEnd": 230
+    },
+    {
+      "unitTitle": "Unit 6: The Fundamental Concerns",
+      "sectionTitle": "6.2 PROBLEMS OF MACROECONOMICS",
+      "pageStart": 231,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 7: National Income Account",
+      "sectionTitle": "7.3 OTHER NATIONAL INCOME ACCOUNT",
+      "pageStart": 276,
+      "pageEnd": 278
+    },
+    {
+      "unitTitle": "Unit 7: National Income Account",
+      "sectionTitle": "7.4 GDP AND INCOME DISTRIBUTION",
+      "pageStart": 279,
+      "pageEnd": 288
+    },
+    {
+      "unitTitle": "Unit 7: National Income Account",
+      "sectionTitle": "8.1 CONSUMPTION",
+      "pageStart": 289,
+      "pageEnd": 289
+    },
+    {
+      "unitTitle": "Unit 7: National Income Account",
+      "sectionTitle": "8.2 SAVING",
+      "pageStart": 289,
+      "pageEnd": 289
+    },
+    {
+      "unitTitle": "Unit 7: National Income Account",
+      "sectionTitle": "8.3 RELATIONSHIP BETWEEN CONSUMPTION AND SAVING",
+      "pageStart": 289,
+      "pageEnd": 289
+    },
+    {
+      "unitTitle": "Unit 7: National Income Account",
+      "sectionTitle": "8.4 INVESTMENT",
+      "pageStart": 289,
+      "pageEnd": 320
+    },
+    {
+      "unitTitle": "Unit 9: International Trade and",
+      "sectionTitle": "9.1 INTERNATIONAL TRADE",
+      "pageStart": 321,
+      "pageEnd": 328
+    },
+    {
+      "unitTitle": "Unit 9: International Trade and",
+      "sectionTitle": "9.2 BALANCE OF PAYMENTS",
+      "pageStart": 329,
+      "pageEnd": 333
+    },
+    {
+      "unitTitle": "Unit 9: International Trade and",
+      "sectionTitle": "9.3 FOREIGN EXCHANGE RATES",
+      "pageStart": 334,
+      "pageEnd": 342
+    },
+    {
+      "unitTitle": "Unit 9: International Trade and",
+      "sectionTitle": "10.2 MACROECONOMIC POLICIES",
+      "pageStart": 343,
+      "pageEnd": 343
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1: CONCEPTS OF ECONOMICS",
+    "STUDENT TEXTBOOK"
+  ]
+}

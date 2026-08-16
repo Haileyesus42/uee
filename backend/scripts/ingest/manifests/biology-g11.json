@@ -1,0 +1,276 @@
+{
+  "subject": "biology",
+  "grade": 11,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-11-biology-new-curriculum--student-textbook-kehulumcom1759924577039e.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit One: Biology and Technology",
+      "sectionTitle": "1.1 Learning from nature",
+      "pageStart": 12,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "Unit One: Biology and Technology",
+      "sectionTitle": "1.2 Biology and technology",
+      "pageStart": 16,
+      "pageEnd": 20
+    },
+    {
+      "unitTitle": "Unit One: Biology and Technology",
+      "sectionTitle": "1.3 Impacts of biology and technology on society and the natural world",
+      "pageStart": 21,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "Unit One: Biology and Technology",
+      "sectionTitle": "1.4 Ethical issues in biology",
+      "pageStart": 23,
+      "pageEnd": 26
+    },
+    {
+      "unitTitle": "Unit Two: Animals",
+      "sectionTitle": "2.1 Characteristics of animals",
+      "pageStart": 31,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit Two: Animals",
+      "sectionTitle": "2.2 Invertebrates and Vertebrates",
+      "pageStart": 33,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit Two: Animals",
+      "sectionTitle": "2.3 Reproduction in Animals",
+      "pageStart": 35,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit Two: Animals",
+      "sectionTitle": "2.4 The economic importance of animals (insects)",
+      "pageStart": 52,
+      "pageEnd": 57
+    },
+    {
+      "unitTitle": "Unit Two: Animals",
+      "sectionTitle": "2.5 Animal Behavior",
+      "pageStart": 58,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "Unit Two: Animals",
+      "sectionTitle": "2.6 Homeostasis in animals",
+      "pageStart": 65,
+      "pageEnd": 74
+    },
+    {
+      "unitTitle": "Unit Two: Animals",
+      "sectionTitle": "2.7 Renowned zoologists in Ethiopia",
+      "pageStart": 75,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.1 What are enzymes?",
+      "pageStart": 84,
+      "pageEnd": 85
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.2 Properties and functions of enzymes",
+      "pageStart": 86,
+      "pageEnd": 91
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.3 Protein structures",
+      "pageStart": 92,
+      "pageEnd": 95
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.4 Enzyme substrate models",
+      "pageStart": 96,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.5 Enzyme regulation",
+      "pageStart": 98,
+      "pageEnd": 100
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.6 Types of enzymes",
+      "pageStart": 101,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.7 Factors affecting enzyme action",
+      "pageStart": 104,
+      "pageEnd": 105
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.8 Enzyme kinetics",
+      "pageStart": 106,
+      "pageEnd": 107
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.9 Application of enzymes in industries and their benefits",
+      "pageStart": 108,
+      "pageEnd": 109
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.10 Malting in Ethiopian tradition",
+      "pageStart": 110,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit Three: Enzymes",
+      "sectionTitle": "3.11 Renowned Biochemists in Ethiopia",
+      "pageStart": 113,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.1 The genetic materials",
+      "pageStart": 118,
+      "pageEnd": 118
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.2 The structure and function of DNA and RNA",
+      "pageStart": 119,
+      "pageEnd": 127
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.3 The process of cell division",
+      "pageStart": 128,
+      "pageEnd": 136
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.4 Protein synthesis",
+      "pageStart": 137,
+      "pageEnd": 140
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.5 Mendelian inheritance",
+      "pageStart": 141,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.6 Sex determination",
+      "pageStart": 150,
+      "pageEnd": 151
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.7 Non-Mendelian inheritance",
+      "pageStart": 152,
+      "pageEnd": 158
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.8 Human pedigree analysis and its importance",
+      "pageStart": 159,
+      "pageEnd": 162
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.9 Genetic disorders",
+      "pageStart": 163,
+      "pageEnd": 167
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.10 Genetic testing and counseling",
+      "pageStart": 168,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.11 Gene therapy",
+      "pageStart": 169,
+      "pageEnd": 170
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.12 Breeding",
+      "pageStart": 171,
+      "pageEnd": 174
+    },
+    {
+      "unitTitle": "Unit Four: Genetics",
+      "sectionTitle": "4.13 Bioinformatics introduction",
+      "pageStart": 175,
+      "pageEnd": 178
+    },
+    {
+      "unitTitle": "Unit Five: The human body systems",
+      "sectionTitle": "5.1 Human Musculoskeletal Systems",
+      "pageStart": 185,
+      "pageEnd": 195
+    },
+    {
+      "unitTitle": "Unit Five: The human body systems",
+      "sectionTitle": "5.2 The reproductive system",
+      "pageStart": 196,
+      "pageEnd": 225
+    },
+    {
+      "unitTitle": "Unit Five: The human body systems",
+      "sectionTitle": "5.3 Harmful traditional practices",
+      "pageStart": 226,
+      "pageEnd": 226
+    },
+    {
+      "unitTitle": "Unit Five: The human body systems",
+      "sectionTitle": "5.4 Family planning",
+      "pageStart": 227,
+      "pageEnd": 232
+    },
+    {
+      "unitTitle": "Unit Six: Population and natural resources",
+      "sectionTitle": "6.2 Natural resources",
+      "pageStart": 258,
+      "pageEnd": 259
+    },
+    {
+      "unitTitle": "Unit Six: Population and natural resources",
+      "sectionTitle": "6.3 Conservation of natural resources in Ethiopia",
+      "pageStart": 260,
+      "pageEnd": 265
+    },
+    {
+      "unitTitle": "Unit Six: Population and natural resources",
+      "sectionTitle": "6.4 Impact of traffic accident on wild and domestic animals",
+      "pageStart": 266,
+      "pageEnd": 268
+    },
+    {
+      "unitTitle": "Unit Six: Population and natural resources",
+      "sectionTitle": "6.5 Impact of human activities on the environment",
+      "pageStart": 269,
+      "pageEnd": 282
+    },
+    {
+      "unitTitle": "Unit Six: Population and natural resources",
+      "sectionTitle": "6.6 Indigenous conservation practices in Ethiopia",
+      "pageStart": 283,
+      "pageEnd": 283
+    }
+  ],
+  "knownHeaders": [
+    "UNIT ONE: BIOLOGY AND TECHNOLOGY",
+    "STUDENT TEXTBOOK"
+  ]
+}

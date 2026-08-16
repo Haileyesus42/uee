@@ -1,0 +1,108 @@
+{
+  "subject": "chemistry",
+  "grade": 11,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-11-chemistry-old-curriculum--student-textbook-kehulumcom175513758161b6.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 2: Atomic Structure and Periodic Table",
+      "sectionTitle": "2.4 Makeup of the Nucleus",
+      "pageStart": 48,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "Unit 3: Chemical Bonding and Structure",
+      "sectionTitle": "3.1 Introduction",
+      "pageStart": 116,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 3: Chemical Bonding and Structure",
+      "sectionTitle": "3.2 Ionic Bonding",
+      "pageStart": 116,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 3: Chemical Bonding and Structure",
+      "sectionTitle": "3.3 Covalent Bonding and Molecular Geometry",
+      "pageStart": 116,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 3: Chemical Bonding and Structure",
+      "sectionTitle": "3.4 Metallic Bonding",
+      "pageStart": 116,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 3: Chemical Bonding and Structure",
+      "sectionTitle": "3.5 Chemical Bonding Theories",
+      "pageStart": 116,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 3: Chemical Bonding and Structure",
+      "sectionTitle": "3.6 Types of Crystals",
+      "pageStart": 116,
+      "pageEnd": 203
+    },
+    {
+      "unitTitle": "Unit 4: Chemical Kinetics",
+      "sectionTitle": "4.1 Rate of Reaction",
+      "pageStart": 204,
+      "pageEnd": 204
+    },
+    {
+      "unitTitle": "Unit 4: Chemical Kinetics",
+      "sectionTitle": "4.2 Theories of Reaction Rates",
+      "pageStart": 204,
+      "pageEnd": 204
+    },
+    {
+      "unitTitle": "Unit 4: Chemical Kinetics",
+      "sectionTitle": "4.3 Rate Equation or Rate Law",
+      "pageStart": 204,
+      "pageEnd": 204
+    },
+    {
+      "unitTitle": "Unit 4: Chemical Kinetics",
+      "sectionTitle": "4.4 Reaction Mechanism",
+      "pageStart": 204,
+      "pageEnd": 259
+    },
+    {
+      "unitTitle": "Unit 5: Chemical Equilibrium and Phase Equilibrium",
+      "sectionTitle": "5.1 Chemical Equilibrium",
+      "pageStart": 260,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 5: Chemical Equilibrium and Phase Equilibrium",
+      "sectionTitle": "5.2 Phase Equilibrium",
+      "pageStart": 260,
+      "pageEnd": 320
+    },
+    {
+      "unitTitle": "Unit 6: Carboxylic Acids, Esters, Fats and Oils",
+      "sectionTitle": "6.1 Carboxylic Acids",
+      "pageStart": 321,
+      "pageEnd": 321
+    },
+    {
+      "unitTitle": "Unit 6: Carboxylic Acids, Esters, Fats and Oils",
+      "sectionTitle": "6.2 Esters",
+      "pageStart": 322,
+      "pageEnd": 322
+    },
+    {
+      "unitTitle": "Unit 6: Carboxylic Acids, Esters, Fats and Oils",
+      "sectionTitle": "6.3 Fats and Oils",
+      "pageStart": 322,
+      "pageEnd": 322
+    }
+  ],
+  "knownHeaders": [
+    "CHEMISTRY GRADE 11",
+    "STUDENT TEXTBOOK"
+  ]
+}

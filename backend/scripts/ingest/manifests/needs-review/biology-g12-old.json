@@ -1,0 +1,96 @@
+{
+  "subject": "biology",
+  "grade": 12,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-12-biology-old-curriculum--student-textbook-kehulumcom17551535477795.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Cycling matter through ecosystems",
+      "pageStart": 48,
+      "pageEnd": 60
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Biomes",
+      "pageStart": 61,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Biodiversity",
+      "pageStart": 66,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Populations",
+      "pageStart": 83,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Genetic crosses",
+      "pageStart": 104,
+      "pageEnd": 104
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 Mutations",
+      "pageStart": 105,
+      "pageEnd": 173
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 The origin of life",
+      "pageStart": 174,
+      "pageEnd": 185
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Theories of evolution",
+      "pageStart": 186,
+      "pageEnd": 193
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 The evidence for evolution",
+      "pageStart": 194,
+      "pageEnd": 206
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 The processes of evolution",
+      "pageStart": 207,
+      "pageEnd": 215
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 The evolution of humans",
+      "pageStart": 216,
+      "pageEnd": 233
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 An introduction to behaviour",
+      "pageStart": 234,
+      "pageEnd": 234
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Innate behaviour",
+      "pageStart": 234,
+      "pageEnd": 234
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.3 Learned behaviour",
+      "pageStart": 234,
+      "pageEnd": 234
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1: MICRO-ORGANISMS",
+    "STUDENT TEXTBOOK"
+  ]
+}

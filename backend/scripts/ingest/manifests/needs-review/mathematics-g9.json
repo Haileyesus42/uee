@@ -1,0 +1,186 @@
+{
+  "subject": "mathematics",
+  "grade": 9,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-9-mathematics-new-curriculum--student-textbook-_kehulum_com_0fa6.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Sets and Elements",
+      "pageStart": 12,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 Set Description",
+      "pageStart": 12,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 The Notion of Sets",
+      "pageStart": 12,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Operations on Sets",
+      "pageStart": 12,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Application",
+      "pageStart": 12,
+      "pageEnd": 37
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Rational Numbers",
+      "pageStart": 38,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Irrational Numbers",
+      "pageStart": 38,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Real Numbers",
+      "pageStart": 38,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Application",
+      "pageStart": 38,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Solving Non-linear Equations",
+      "pageStart": 116,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 Applications of Equations",
+      "pageStart": 116,
+      "pageEnd": 161
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Inequalities Involving Absolute Value",
+      "pageStart": 162,
+      "pageEnd": 162
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Quadratic Inequalities",
+      "pageStart": 162,
+      "pageEnd": 162
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Applications of Inequalities",
+      "pageStart": 162,
+      "pageEnd": 195
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Revision on Right-angled Triangles",
+      "pageStart": 196,
+      "pageEnd": 196
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Trigonometric Ratios",
+      "pageStart": 196,
+      "pageEnd": 217
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Properties of Regular Polygons",
+      "pageStart": 218,
+      "pageEnd": 249
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.1 Revision on Congruency of Triangles",
+      "pageStart": 250,
+      "pageEnd": 250
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.2 Definition of Similar Figures",
+      "pageStart": 250,
+      "pageEnd": 250
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.3 Theorems on Similar Plane Figures",
+      "pageStart": 250,
+      "pageEnd": 250
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.5 Ratio of Areas of Similar Plane Figures",
+      "pageStart": 250,
+      "pageEnd": 250
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.6 Construction of Similar Plane Figure",
+      "pageStart": 250,
+      "pageEnd": 250
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.7 Applications of Similarities",
+      "pageStart": 250,
+      "pageEnd": 287
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.1 Vector and Scalar Quantities",
+      "pageStart": 288,
+      "pageEnd": 288
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.2 Representation of a Vector",
+      "pageStart": 288,
+      "pageEnd": 288
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.3 Vectors Operations",
+      "pageStart": 288,
+      "pageEnd": 288
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.4 Position Vector",
+      "pageStart": 288,
+      "pageEnd": 321
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.1 Statistical Data",
+      "pageStart": 322,
+      "pageEnd": 322
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.2 Probability",
+      "pageStart": 322,
+      "pageEnd": 322
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1: FURTHER ON SETS",
+    "STUDENT TEXTBOOK"
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "subject": "physics",
+  "grade": 10,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-10-physics-new-curriculum--student-textbook-kehulumcom17599255229e06.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Scalars and Vectors",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 Vector representations",
+      "pageStart": 9,
+      "pageEnd": 11
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Vector addition and subtraction",
+      "pageStart": 12,
+      "pageEnd": 13
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Graphical method of vector addition",
+      "pageStart": 14,
+      "pageEnd": 19
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Vector resolution",
+      "pageStart": 20,
+      "pageEnd": 27
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Position and Displacement",
+      "pageStart": 28,
+      "pageEnd": 30
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Average velocity and instantaneous velocity",
+      "pageStart": 31,
+      "pageEnd": 40
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Acceleration",
+      "pageStart": 41,
+      "pageEnd": 41
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Equations of motion with constant acceleration",
+      "pageStart": 42,
+      "pageEnd": 47
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Graphical representation of uniformly accelerated motion",
+      "pageStart": 48,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.6 Relative velocity in one dimension",
+      "pageStart": 59,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Elasticity and plasticity",
+      "pageStart": 66,
+      "pageEnd": 68
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Density and specific gravity",
+      "pageStart": 69,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Stress and Strain",
+      "pageStart": 73,
+      "pageEnd": 77
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 The Young Modulus",
+      "pageStart": 78,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.5 Static equilibrium",
+      "pageStart": 83,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Charges in Nature",
+      "pageStart": 98,
+      "pageEnd": 99
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Methods of Charging a Body",
+      "pageStart": 100,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 The electroscope",
+      "pageStart": 103,
+      "pageEnd": 104
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Electrical Discharge",
+      "pageStart": 105,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Coulomb’s law of electrostatics",
+      "pageStart": 109,
+      "pageEnd": 109
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.6 The electric field",
+      "pageStart": 110,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.8 Current, Voltage, and Ohm’s Law",
+      "pageStart": 116,
+      "pageEnd": 130
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.9 Combination of resistors in a circuit",
+      "pageStart": 131,
+      "pageEnd": 133
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.10 Voltmeter and ammeter connection in a circuit",
+      "pageStart": 134,
+      "pageEnd": 141
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.12 Electric projects",
+      "pageStart": 142,
+      "pageEnd": 157
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Magnet",
+      "pageStart": 158,
+      "pageEnd": 160
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Magnetic Field",
+      "pageStart": 161,
+      "pageEnd": 164
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.3 The Earth’s magnetic field and the compass",
+      "pageStart": 165,
+      "pageEnd": 167
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.4 Magnetic field of a current-carrying conductor",
+      "pageStart": 168,
+      "pageEnd": 172
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.6 Magnetic force on a current-carrying wire",
+      "pageStart": 173,
+      "pageEnd": 176
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.8 Applications of magnetism",
+      "pageStart": 177,
+      "pageEnd": 183
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Electromagnetic (EM) waves",
+      "pageStart": 184,
+      "pageEnd": 185
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 EM Spectrum",
+      "pageStart": 186,
+      "pageEnd": 191
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Light as a wave",
+      "pageStart": 192,
+      "pageEnd": 195
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Laws of reflection & refraction",
+      "pageStart": 196,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Mirrors and lenses",
+      "pageStart": 209,
+      "pageEnd": 233
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.6 Human eye and optical instruments",
+      "pageStart": 234,
+      "pageEnd": 243
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.7 Primary colors of light and human vision",
+      "pageStart": 244,
+      "pageEnd": 245
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.8 Color addition of light",
+      "pageStart": 246,
+      "pageEnd": 246
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.9 Color subtraction of light using filters",
+      "pageStart": 247,
+      "pageEnd": 247
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1",
+    "STUDENT TEXTBOOK"
+  ]
+}

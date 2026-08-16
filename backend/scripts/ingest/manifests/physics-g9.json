@@ -1,0 +1,198 @@
+{
+  "subject": "physics",
+  "grade": 9,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-9-physics-new-curriculum--student-textbook-kehulumcom1759930084a307.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Classification of Physical Quantities",
+      "pageStart": 33,
+      "pageEnd": 35
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Unit conversion",
+      "pageStart": 36,
+      "pageEnd": 46
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Position, Distance and Displacement",
+      "pageStart": 47,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Average Speed and Instantaneous Speed",
+      "pageStart": 52,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Average Velocity and Instantaneous Velocity",
+      "pageStart": 54,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 Acceleration",
+      "pageStart": 57,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.5 Uniform Motion",
+      "pageStart": 59,
+      "pageEnd": 63
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.6 Graphical Representation of Motion",
+      "pageStart": 64,
+      "pageEnd": 70
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 The Concept of Force",
+      "pageStart": 71,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Newton’s Laws of Motion",
+      "pageStart": 73,
+      "pageEnd": 79
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Forces of Friction",
+      "pageStart": 80,
+      "pageEnd": 80
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 The Concept of Work",
+      "pageStart": 81,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Kinetic and Potential Energies",
+      "pageStart": 83,
+      "pageEnd": 86
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.6 Power",
+      "pageStart": 87,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Simple Machines and their Purposes",
+      "pageStart": 93,
+      "pageEnd": 95
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Simple Machines at Home",
+      "pageStart": 96,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.3 Simple Machines at Work Place",
+      "pageStart": 98,
+      "pageEnd": 99
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.4 Classification of Simple Machines",
+      "pageStart": 100,
+      "pageEnd": 119
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.6 Designing Simple Machine",
+      "pageStart": 120,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Common Characteristics of Waves",
+      "pageStart": 127,
+      "pageEnd": 128
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 String, Pendulum and Spring",
+      "pageStart": 129,
+      "pageEnd": 135
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Propagation of Waves and Energy Transmission",
+      "pageStart": 136,
+      "pageEnd": 141
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Sound Waves",
+      "pageStart": 142,
+      "pageEnd": 143
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Superposition of Waves",
+      "pageStart": 144,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.6 Characteristics of Sound Waves",
+      "pageStart": 145,
+      "pageEnd": 152
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.1 Temperature and Our Life",
+      "pageStart": 153,
+      "pageEnd": 155
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.3 Temperature Change and its Effects",
+      "pageStart": 156,
+      "pageEnd": 158
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.4 Measuring Temperature with Different Thermometric Scales",
+      "pageStart": 159,
+      "pageEnd": 164
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.5 Types of Thermometers and Their Use",
+      "pageStart": 165,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.6 Conversion between Temperature Scales",
+      "pageStart": 169,
+      "pageEnd": 172
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.7 Thermal Expansion of Materials",
+      "pageStart": 173,
+      "pageEnd": 173
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 3",
+    "STUDENT TEXTBOOK"
+  ]
+}

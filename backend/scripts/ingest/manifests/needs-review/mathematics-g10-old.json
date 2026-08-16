@@ -1,0 +1,114 @@
+{
+  "subject": "mathematics",
+  "grade": 10,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-10-mathematics-old-curriculum--student-textbook-kehulumcom17550871288be4.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Graphs of polynomial functions",
+      "pageStart": 42,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Exponents and logarithms",
+      "pageStart": 59,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 The exponential functions and their graphs",
+      "pageStart": 59,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 The logarithmic functions and their graphs",
+      "pageStart": 59,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Inequalities involving absolute value",
+      "pageStart": 117,
+      "pageEnd": 117
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Systems of liner inequalities in two variables",
+      "pageStart": 117,
+      "pageEnd": 148
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Distance between two points",
+      "pageStart": 149,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Division of a line segment",
+      "pageStart": 149,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Equation of a line",
+      "pageStart": 149,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Parallel and perpendicular lines",
+      "pageStart": 149,
+      "pageEnd": 230
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Theorems on triangles",
+      "pageStart": 231,
+      "pageEnd": 231
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 Special quadrilaterals",
+      "pageStart": 231,
+      "pageEnd": 231
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 More on circles",
+      "pageStart": 231,
+      "pageEnd": 231
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Regular polygons",
+      "pageStart": 231,
+      "pageEnd": 274
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.2 Pyramids, cones and spheres",
+      "pageStart": 275,
+      "pageEnd": 275
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.3 Frustums of pyramids and cones",
+      "pageStart": 275,
+      "pageEnd": 275
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.4 Surface areas and volumes of composed solids",
+      "pageStart": 275,
+      "pageEnd": 275
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1 POLYNOMIAL FUNCTIONS",
+    "STUDENT TEXTBOOK"
+  ]
+}

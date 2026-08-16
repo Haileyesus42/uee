@@ -1,0 +1,156 @@
+{
+  "subject": "mathematics",
+  "grade": 10,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-10-mathematics-new-curriculum--student-textbook-kehulumcom1759925836e39e.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Applications of Relations and Functions",
+      "pageStart": 59,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Definition of Polynomial Function ………",
+      "pageStart": 76,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Operations on polynomial functions ……",
+      "pageStart": 76,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Theorem on polynomial functions ………",
+      "pageStart": 76,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Zeros of polynomial functions ……………",
+      "pageStart": 76,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Graphs of polynomial functions.…………",
+      "pageStart": 76,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.6 Applications ……………………",
+      "pageStart": 76,
+      "pageEnd": 129
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Exponents and Logarithms …………………",
+      "pageStart": 130,
+      "pageEnd": 190
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.6 Applications ……………………………………",
+      "pageStart": 191,
+      "pageEnd": 207
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Radian Measure of angle………………….…",
+      "pageStart": 208,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Basic Trigonometric Function ……………",
+      "pageStart": 208,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Trigonometric Identities & Equation……",
+      "pageStart": 208,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Application ………………………",
+      "pageStart": 208,
+      "pageEnd": 259
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Symmetrical properties of circles..………",
+      "pageStart": 260,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Angle properties of circles …………………",
+      "pageStart": 260,
+      "pageEnd": 295
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Revision of Cylinders and Prisms…………",
+      "pageStart": 296,
+      "pageEnd": 296
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 Pyramids, cones and Spheres………………",
+      "pageStart": 296,
+      "pageEnd": 296
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Frustum of pyramids and cones……………",
+      "pageStart": 296,
+      "pageEnd": 296
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 solids………………………………………………",
+      "pageStart": 296,
+      "pageEnd": 353
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.1 Distance between two points …….………",
+      "pageStart": 354,
+      "pageEnd": 354
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.2 Division of a line segment…………………",
+      "pageStart": 354,
+      "pageEnd": 354
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.3 Equation of a line…………………..…………",
+      "pageStart": 354,
+      "pageEnd": 354
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.5 Equation of a Circle……………………………",
+      "pageStart": 354,
+      "pageEnd": 354
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.6 Applications ……………………………………",
+      "pageStart": 354,
+      "pageEnd": 354
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1: RELATIONS AND FUNCTIONS",
+    "STUDENT TEXTBOOK"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "subject": "chemistry",
+  "grade": 9,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-9-chemistry-new-curriculum--student-textbook-kehulumcom17599332397bc8.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Definition and Scope of Chemistry\b",
+      "pageStart": 9,
+      "pageEnd": 42
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Chemistry as Experimental Science \b",
+      "pageStart": 43,
+      "pageEnd": 70
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Atomic Theory \b",
+      "pageStart": 71,
+      "pageEnd": 122
+    },
+    {
+      "unitTitle": "Unit 4: : PERIODIC CLASSIFICATION OF ELEMENTS\b109",
+      "sectionTitle": "4.3 The Modern Periodic Table \b",
+      "pageStart": 123,
+      "pageEnd": 131
+    },
+    {
+      "unitTitle": "Unit 4: : PERIODIC CLASSIFICATION OF ELEMENTS\b109",
+      "sectionTitle": "4.4 The Major Trends in the Periodic Table \b",
+      "pageStart": 132,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "Unit 5: : CHEMICAL BONDING\b140",
+      "sectionTitle": "5.2 Ionic Bonding \b",
+      "pageStart": 150,
+      "pageEnd": 173
+    },
+    {
+      "unitTitle": "Unit 5: : CHEMICAL BONDING\b140",
+      "sectionTitle": "5.4 Metallic Bonding\b",
+      "pageStart": 174,
+      "pageEnd": 174
+    }
+  ],
+  "knownHeaders": [
+    "U NI T",
+    "STUDENT TEXTBOOK"
+  ]
+}

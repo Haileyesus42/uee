@@ -1,0 +1,330 @@
+{
+  "subject": "information-technology",
+  "grade": 10,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-10-information-technology-new-curriculum--student-textbook-kehulumcom1759926369d9fc.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Unit Overview",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 File Management",
+      "pageStart": 8,
+      "pageEnd": 10
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Storage Drives",
+      "pageStart": 11,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 File Name Extension",
+      "pageStart": 13,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 File Directory Structure",
+      "pageStart": 16,
+      "pageEnd": 20
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.6 File Conversion",
+      "pageStart": 21,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.7 File Importing and Exporting",
+      "pageStart": 23,
+      "pageEnd": 24
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.8 Saving and Opening Files",
+      "pageStart": 25,
+      "pageEnd": 26
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.9 File Backup and Recovery",
+      "pageStart": 27,
+      "pageEnd": 29
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.10 File Compression",
+      "pageStart": 30,
+      "pageEnd": 31
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.11 Deleting a File",
+      "pageStart": 32,
+      "pageEnd": 33
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.12 Restoring Deleted File",
+      "pageStart": 34,
+      "pageEnd": 35
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.13 Unit Summary",
+      "pageStart": 36,
+      "pageEnd": 36
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.14 Unit Review Exercise",
+      "pageStart": 37,
+      "pageEnd": 42
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Unit Overview",
+      "pageStart": 43,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Network Media (Transmission Media)",
+      "pageStart": 44,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Telecommunications Network",
+      "pageStart": 60,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Mobile Communications",
+      "pageStart": 65,
+      "pageEnd": 68
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Cellular Networks",
+      "pageStart": 69,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.6 Satellite Networks",
+      "pageStart": 73,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.7 Internet Protocol",
+      "pageStart": 79,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.8 Unit Summary",
+      "pageStart": 83,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.9 Unit Review Exercise",
+      "pageStart": 84,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Unit Overview",
+      "pageStart": 88,
+      "pageEnd": 88
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Word Processing",
+      "pageStart": 89,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Spreadsheet",
+      "pageStart": 109,
+      "pageEnd": 131
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 PowerPoint Presentation",
+      "pageStart": 132,
+      "pageEnd": 137
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.5 Unit Summary",
+      "pageStart": 138,
+      "pageEnd": 139
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.6 Unit Review Exercise",
+      "pageStart": 140,
+      "pageEnd": 145
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Unit Overview",
+      "pageStart": 146,
+      "pageEnd": 146
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Basics of Multimedia",
+      "pageStart": 146,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Multimedia File Formats",
+      "pageStart": 155,
+      "pageEnd": 155
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Multimedia Production",
+      "pageStart": 156,
+      "pageEnd": 157
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Multimedia Authoring and Authoring Tools",
+      "pageStart": 158,
+      "pageEnd": 163
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.6 Multimedia Editing",
+      "pageStart": 164,
+      "pageEnd": 183
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.7 Unit Summary",
+      "pageStart": 184,
+      "pageEnd": 184
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.8 Unit Review Exercise",
+      "pageStart": 185,
+      "pageEnd": 188
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Unit Overview",
+      "pageStart": 189,
+      "pageEnd": 189
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Information and Computer Security",
+      "pageStart": 190,
+      "pageEnd": 191
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.4 Privacy and Security",
+      "pageStart": 192,
+      "pageEnd": 193
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.5 Computer Security Threats",
+      "pageStart": 194,
+      "pageEnd": 194
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.6 Threat Prevention Strategies",
+      "pageStart": 195,
+      "pageEnd": 203
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.7 Cyber Security",
+      "pageStart": 204,
+      "pageEnd": 205
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.8 Unit Summary",
+      "pageStart": 206,
+      "pageEnd": 206
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.9 Unit Review Exercise",
+      "pageStart": 207,
+      "pageEnd": 210
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Unit Overview",
+      "pageStart": 211,
+      "pageEnd": 211
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 Basics of Algorithm",
+      "pageStart": 211,
+      "pageEnd": 212
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Definition of Algorithm",
+      "pageStart": 213,
+      "pageEnd": 213
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Characteristics of Algorithm",
+      "pageStart": 214,
+      "pageEnd": 216
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Algorithm Representation",
+      "pageStart": 217,
+      "pageEnd": 224
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.6 Integrated Development Environment(IDE)",
+      "pageStart": 225,
+      "pageEnd": 229
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.7 Unit Summary",
+      "pageStart": 230,
+      "pageEnd": 230
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.8 Unit Review Exercise",
+      "pageStart": 231,
+      "pageEnd": 231
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1 : ORGANIZATION OF FILES",
+    "STUDENT TEXTBOOK"
+  ]
+}

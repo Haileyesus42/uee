@@ -1,0 +1,42 @@
+{
+  "subject": "information-communication-technology-ict",
+  "grade": 9,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-9-information-communication-technology-ict-old-curriculum--student-textbook-kehulumcom1754574165c4d5.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Computer System",
+      "pageStart": 34,
+      "pageEnd": 63
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Pr esentation Software and Techniques",
+      "pageStart": 64,
+      "pageEnd": 73
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Information and Computer Security",
+      "pageStart": 74,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Spreadsheets",
+      "pageStart": 83,
+      "pageEnd": 122
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Control and Learning with LOGO",
+      "pageStart": 123,
+      "pageEnd": 123
+    }
+  ],
+  "knownHeaders": [
+    "UNIT – 1 INTRODUCTION TO IC T",
+    "STUDENT TEXTBOOK"
+  ]
+}

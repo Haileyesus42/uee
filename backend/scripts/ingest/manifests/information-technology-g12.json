@@ -1,0 +1,144 @@
+{
+  "subject": "information-technology",
+  "grade": 12,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-12-information-technology-new-curriculum--student-textbook-kehulumcom1759915352faae.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit One: Information Systems and Their Applications",
+      "sectionTitle": "1.2 Intellectual Property",
+      "pageStart": 21,
+      "pageEnd": 23
+    },
+    {
+      "unitTitle": "Unit One: Information Systems and Their Applications",
+      "sectionTitle": "1.3 Digital Identity Management",
+      "pageStart": 24,
+      "pageEnd": 24
+    },
+    {
+      "unitTitle": "Unit One: Information Systems and Their Applications",
+      "sectionTitle": "1.4 Collaboration Through Digital Technologies",
+      "pageStart": 25,
+      "pageEnd": 28
+    },
+    {
+      "unitTitle": "Unit One: Information Systems and Their Applications",
+      "sectionTitle": "1.5 Engaging in Citizenship through Digital Technologies",
+      "pageStart": 29,
+      "pageEnd": 36
+    },
+    {
+      "unitTitle": "Unit Two: Emerging Technologies",
+      "sectionTitle": "2.1 Introduction to Bigdata",
+      "pageStart": 37,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "Unit Two: Emerging Technologies",
+      "sectionTitle": "2.2 Cloud Computing",
+      "pageStart": 44,
+      "pageEnd": 52
+    },
+    {
+      "unitTitle": "Unit Two: Emerging Technologies",
+      "sectionTitle": "2.3 Fog Computing",
+      "pageStart": 53,
+      "pageEnd": 54
+    },
+    {
+      "unitTitle": "Unit Two: Emerging Technologies",
+      "sectionTitle": "2.4 Internet of Things (IoT)",
+      "pageStart": 55,
+      "pageEnd": 67
+    },
+    {
+      "unitTitle": "Unit Three: Database Management System",
+      "sectionTitle": "3.1 Overview of Relational Database Management System",
+      "pageStart": 68,
+      "pageEnd": 70
+    },
+    {
+      "unitTitle": "Unit Three: Database Management System",
+      "sectionTitle": "3.2 Database Manipulation Using SQL",
+      "pageStart": 71,
+      "pageEnd": 107
+    },
+    {
+      "unitTitle": "Unit Four: Web Authoring",
+      "sectionTitle": "4.1 Introduction to XML",
+      "pageStart": 108,
+      "pageEnd": 122
+    },
+    {
+      "unitTitle": "Unit Four: Web Authoring",
+      "sectionTitle": "4.2 HTML vs. XML",
+      "pageStart": 123,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "Unit Four: Web Authoring",
+      "sectionTitle": "4.3 Publishing Website",
+      "pageStart": 126,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "Unit Five: Maintenance and Troubleshooting",
+      "sectionTitle": "5.1 Install and uninstall software",
+      "pageStart": 143,
+      "pageEnd": 148
+    },
+    {
+      "unitTitle": "Unit Five: Maintenance and Troubleshooting",
+      "sectionTitle": "5.2 Software Troubleshooting",
+      "pageStart": 149,
+      "pageEnd": 152
+    },
+    {
+      "unitTitle": "Unit Five: Maintenance and Troubleshooting",
+      "sectionTitle": "5.3 Tools to speedup computer system",
+      "pageStart": 153,
+      "pageEnd": 157
+    },
+    {
+      "unitTitle": "Unit Five: Maintenance and Troubleshooting",
+      "sectionTitle": "5.4 Network Troubleshooting",
+      "pageStart": 158,
+      "pageEnd": 164
+    },
+    {
+      "unitTitle": "Unit Five: Maintenance and Troubleshooting",
+      "sectionTitle": "5.5 Network Maintenance Tools",
+      "pageStart": 165,
+      "pageEnd": 171
+    },
+    {
+      "unitTitle": "Unit Six: Fundamentals of Programming",
+      "sectionTitle": "6.1 Program Flow Controls and Syntax in Python",
+      "pageStart": 172,
+      "pageEnd": 192
+    },
+    {
+      "unitTitle": "Unit Six: Fundamentals of Programming",
+      "sectionTitle": "6.2 Comments in Python",
+      "pageStart": 193,
+      "pageEnd": 195
+    },
+    {
+      "unitTitle": "Unit Six: Fundamentals of Programming",
+      "sectionTitle": "6.3 Python Interpreter",
+      "pageStart": 196,
+      "pageEnd": 197
+    },
+    {
+      "unitTitle": "Unit Six: Fundamentals of Programming",
+      "sectionTitle": "6.4 Testing and Debugging Programs",
+      "pageStart": 198,
+      "pageEnd": 198
+    }
+  ],
+  "knownHeaders": [
+    "UNIT AND",
+    "STUDENT TEXTBOOK"
+  ]
+}

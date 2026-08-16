@@ -1,0 +1,102 @@
+{
+  "subject": "biology",
+  "grade": 9,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-9-biology-old-curriculum--student-textbook-kehulumcom1754576096a64f.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 The microscope",
+      "pageStart": 17,
+      "pageEnd": 17
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 The cell",
+      "pageStart": 17,
+      "pageEnd": 36
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 The cell and its environment",
+      "pageStart": 37,
+      "pageEnd": 54
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Food and nutrition",
+      "pageStart": 55,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 The digestive system",
+      "pageStart": 73,
+      "pageEnd": 85
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 The respiratory system",
+      "pageStart": 86,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 Cellular respiration",
+      "pageStart": 103,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Micro-organisms",
+      "pageStart": 127,
+      "pageEnd": 127
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Diseases",
+      "pageStart": 127,
+      "pageEnd": 127
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 HIV and AIDS",
+      "pageStart": 127,
+      "pageEnd": 174
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Principles of classification",
+      "pageStart": 175,
+      "pageEnd": 175
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 The five kingdoms",
+      "pageStart": 175,
+      "pageEnd": 203
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Ecosystems",
+      "pageStart": 204,
+      "pageEnd": 215
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Recycling in nature",
+      "pageStart": 216,
+      "pageEnd": 226
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Tree-growing project",
+      "pageStart": 227,
+      "pageEnd": 227
+    }
+  ],
+  "knownHeaders": [
+    "CELL BIOLOGY",
+    "STUDENT TEXTBOOK"
+  ]
+}

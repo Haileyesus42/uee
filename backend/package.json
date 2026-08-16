@@ -14,7 +14,17 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:seed": "tsx prisma/seed.ts",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "ingest:exam": "tsx scripts/ingest/extractExam.ts",
+    "ingest:paper": "tsx scripts/ingest/extractPastPaper.ts",
+    "ingest:lesson-text": "tsx scripts/ingest/extractLessonFromText.ts",
+    "ingest:textbook": "tsx scripts/ingest/extractTextbookSections.ts",
+    "ingest:lesson": "tsx scripts/ingest/extractLesson.ts",
+    "ingest:import": "tsx scripts/ingest/importReviewed.ts",
+    "ingest:download": "tsx scripts/ingest/downloadTextbooks.ts",
+    "ingest:kehulum": "tsx scripts/ingest/convertKehulum.ts",
+    "ingest:manifest": "tsx scripts/ingest/generateManifest.ts",
+    "billing:expire": "tsx scripts/expireSubscriptions.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

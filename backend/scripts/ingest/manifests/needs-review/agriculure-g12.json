@@ -1,0 +1,330 @@
+{
+  "subject": "agriculure",
+  "grade": 12,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-12-agriculure-new-curriculum--student-textbook-kehulumcom175991626076c1.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Classifications of vegetable crops",
+      "pageStart": 10,
+      "pageEnd": 29
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Classification of fruit crops",
+      "pageStart": 30,
+      "pageEnd": 30
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Establishing a nursery",
+      "pageStart": 30,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 3: 3.1. Definition of terms",
+      "sectionTitle": "3.1 Definition of terms",
+      "pageStart": 54,
+      "pageEnd": 54
+    },
+    {
+      "unitTitle": "Unit 3: 3.1. Definition of terms",
+      "sectionTitle": "3.2 Classification of root and tuber crops",
+      "pageStart": 54,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.1 Introduction to tissue culture",
+      "pageStart": 103,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.2 Types of crops produced by tissue",
+      "pageStart": 103,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.3 Benefits of tissue culture",
+      "pageStart": 103,
+      "pageEnd": 106
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.4 Introduction to genetic engineering",
+      "pageStart": 107,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.5 Application of genetic engineering in crop",
+      "pageStart": 109,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "6.1 Beef cattle breeds and methods of selection",
+      "pageStart": 113,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "6.2 Beef cattle feeds and feeding methods",
+      "pageStart": 113,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "6.3 Beef cattle housing",
+      "pageStart": 113,
+      "pageEnd": 143
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "7.1 Sheep and goat breeds and selection",
+      "pageStart": 144,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "7.2 Sheep and goat feeds and feeding",
+      "pageStart": 144,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "7.3 Sheep and goat housing",
+      "pageStart": 144,
+      "pageEnd": 167
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "8.1 Camel breeds and selections",
+      "pageStart": 168,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "8.2 Camel feeds and feeding",
+      "pageStart": 168,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "8.3 Camel housing",
+      "pageStart": 168,
+      "pageEnd": 183
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "9.1 Poultry breeds, classification and selection",
+      "pageStart": 184,
+      "pageEnd": 184
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "9.2 Poultry feeds and feeding",
+      "pageStart": 184,
+      "pageEnd": 184
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "9.3 Poultry housing",
+      "pageStart": 184,
+      "pageEnd": 184
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "9.4 Poultry incubation and hatchery",
+      "pageStart": 184,
+      "pageEnd": 184
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "9.6 Layers and broilers management",
+      "pageStart": 184,
+      "pageEnd": 184
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "9.7 Major diseases of poultry and controlling",
+      "pageStart": 184,
+      "pageEnd": 199
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "10.3 Fish feeds and feeding practices",
+      "pageStart": 200,
+      "pageEnd": 200
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "10.4 Fish culture techniques",
+      "pageStart": 200,
+      "pageEnd": 200
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "10.5 Fish rearing",
+      "pageStart": 200,
+      "pageEnd": 200
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "10.6 Fishing methods",
+      "pageStart": 200,
+      "pageEnd": 200
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "10.7 Handling fish and fish products",
+      "pageStart": 200,
+      "pageEnd": 200
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "10.8 Diseases in aquaculture",
+      "pageStart": 200,
+      "pageEnd": 218
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.1 Introduction to honey bee management",
+      "pageStart": 219,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.2 Bee biology and behavior",
+      "pageStart": 219,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.3 Types of honey bee colony",
+      "pageStart": 219,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.4 Management of honey bees",
+      "pageStart": 219,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.5 Colony management and queen rearing",
+      "pageStart": 219,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.6 Hive products and processing",
+      "pageStart": 219,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.7 Bee diseases, pests and predators",
+      "pageStart": 219,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "11.8 Indigenous knowledge in apiculture",
+      "pageStart": 219,
+      "pageEnd": 234
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "12.2 Design and layout of the nursery",
+      "pageStart": 235,
+      "pageEnd": 235
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "12.3 Producing plants from seeds",
+      "pageStart": 235,
+      "pageEnd": 243
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "13.2 Significance of agro forestry",
+      "pageStart": 244,
+      "pageEnd": 244
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "13.3 Classification of agro forestry systems",
+      "pageStart": 244,
+      "pageEnd": 259
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "14.1 Soil properties",
+      "pageStart": 260,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "14.2 Soil erosion",
+      "pageStart": 260,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "14.3 Major causes of soil erosion",
+      "pageStart": 260,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "14.4 Negative impacts of soil erosion",
+      "pageStart": 260,
+      "pageEnd": 272
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "15.1 Basic gender-related terminologies",
+      "pageStart": 273,
+      "pageEnd": 280
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "16.1 Food safety hazards and health risks",
+      "pageStart": 281,
+      "pageEnd": 281
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "16.2 Source of food contaminants",
+      "pageStart": 281,
+      "pageEnd": 281
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "16.3 Food safety and nutrition linkage",
+      "pageStart": 281,
+      "pageEnd": 292
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "17.1 Roles of ICT in agriculture",
+      "pageStart": 293,
+      "pageEnd": 294
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "17.2 Major application of ICT in agriculture",
+      "pageStart": 295,
+      "pageEnd": 295
+    }
+  ],
+  "knownHeaders": [
+    "AGRICULTURE GRADE 12",
+    "STUDENT TEXTBOOK"
+  ]
+}

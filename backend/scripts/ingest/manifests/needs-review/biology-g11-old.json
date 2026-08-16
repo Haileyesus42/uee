@@ -1,0 +1,60 @@
+{
+  "subject": "biology",
+  "grade": 11,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-11-biology-old-curriculum--student-textbook-kehulumcom1755138104bc1e.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Inorganic and organic molecules",
+      "pageStart": 46,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Nature of enzymes",
+      "pageStart": 83,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Functions of enzymes",
+      "pageStart": 83,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Factors affecting the functions of enzymes",
+      "pageStart": 83,
+      "pageEnd": 114
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Cell theory",
+      "pageStart": 115,
+      "pageEnd": 124
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Types of cells",
+      "pageStart": 125,
+      "pageEnd": 128
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Parts of the cell and their functions",
+      "pageStart": 129,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Respiration",
+      "pageStart": 155,
+      "pageEnd": 155
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1: THE SCIENCE OF BIOLOGY",
+    "STUDENT TEXTBOOK"
+  ]
+}

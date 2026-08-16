@@ -1,0 +1,180 @@
+{
+  "subject": "geography",
+  "grade": 10,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-10-geography-new-curriculum--student-textbook-kehulumcom17599285581298.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit ONE: LANDFORMS OF AFRICA",
+      "sectionTitle": "1.1 Overview of the World’s Major Landforms",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "Unit ONE: LANDFORMS OF AFRICA",
+      "sectionTitle": "1.2 Location and Related Features of Africa",
+      "pageStart": 8,
+      "pageEnd": 8
+    },
+    {
+      "unitTitle": "Unit ONE: LANDFORMS OF AFRICA",
+      "sectionTitle": "1.3 Major Landforms of Africa",
+      "pageStart": 8,
+      "pageEnd": 31
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE OF AFRICA",
+      "sectionTitle": "2.1 Overview of World Climatic Regions and Types",
+      "pageStart": 32,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE OF AFRICA",
+      "sectionTitle": "2.2 Climate Types and Zones of Africa",
+      "pageStart": 32,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE OF AFRICA",
+      "sectionTitle": "2.3 Benefits of Climate for Life of People of Africa",
+      "pageStart": 32,
+      "pageEnd": 57
+    },
+    {
+      "unitTitle": "Unit THREE: NATURAL RESOURCE BASE OF AFRICA",
+      "sectionTitle": "3.1 Overview of Major Natural Resources of the World",
+      "pageStart": 58,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "Unit THREE: NATURAL RESOURCE BASE OF AFRICA",
+      "sectionTitle": "3.2 Major Drainage and Water Resources in Africa",
+      "pageStart": 58,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "Unit THREE: NATURAL RESOURCE BASE OF AFRICA",
+      "sectionTitle": "3.3 Main Types of Soils and Mineral Resources in Africa",
+      "pageStart": 58,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "Unit THREE: NATURAL RESOURCE BASE OF AFRICA",
+      "sectionTitle": "3.4 Major Vegetation and Wildlife of Africa",
+      "pageStart": 58,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "4.1 Overview of World Population Growth and Size",
+      "pageStart": 94,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "4.2 Africa’s Major Demographic Trends",
+      "pageStart": 94,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "4.3 Population Structure",
+      "pageStart": 94,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "4.4 Distribution and Density of Africa’s Population",
+      "pageStart": 94,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "4.5 Urban and Rural Settlement Patterns in Africa",
+      "pageStart": 94,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "5.1 Overview of Employment Structure in the World",
+      "pageStart": 126,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "5.2 Major Economic Activities in Africa",
+      "pageStart": 126,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "5.3 Possible Solutions to the Problem of Unemployment",
+      "pageStart": 126,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "5.4 Africa’s Agenda 2063 and Its Implications",
+      "pageStart": 126,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "5.6 Linguistic and Religious Diversity in Africa",
+      "pageStart": 126,
+      "pageEnd": 151
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "6.1 Overview of Global Population Change",
+      "pageStart": 152,
+      "pageEnd": 152
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "6.2 Human-environment Relationship",
+      "pageStart": 152,
+      "pageEnd": 165
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "7.1 Unplanned Urbanization",
+      "pageStart": 166,
+      "pageEnd": 166
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "7.2 Migration – Factors and Impacts on Africa",
+      "pageStart": 166,
+      "pageEnd": 166
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "7.3 Coastal Pollution in Africa",
+      "pageStart": 166,
+      "pageEnd": 181
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "8.1 Basic Concepts of Geospatial Information",
+      "pageStart": 182,
+      "pageEnd": 182
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "8.2 Sources and Tools of Geographic Data",
+      "pageStart": 182,
+      "pageEnd": 182
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION OF AFRICA",
+      "sectionTitle": "8.3 Geographic Data Representations",
+      "pageStart": 182,
+      "pageEnd": 182
+    }
+  ],
+  "knownHeaders": [
+    "UNIT ONE",
+    "STUDENT TEXTBOOK"
+  ]
+}

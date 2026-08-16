@@ -1,0 +1,108 @@
+{
+  "subject": "chemistry",
+  "grade": 10,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-10-chemistry-old-curriculum--student-textbook-kehulumcom17550656242a23.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Aromatic Hydrocarbons-Benzene",
+      "pageStart": 55,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Natural Sources of Hydrocarbons",
+      "pageStart": 59,
+      "pageEnd": 62
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.6 Alcohols",
+      "pageStart": 63,
+      "pageEnd": 96
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Introduction",
+      "pageStart": 97,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Oxides",
+      "pageStart": 97,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Acids",
+      "pageStart": 97,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Bases",
+      "pageStart": 97,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Salts",
+      "pageStart": 97,
+      "pageEnd": 165
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Introduction",
+      "pageStart": 166,
+      "pageEnd": 166
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Electrical Conductivity",
+      "pageStart": 166,
+      "pageEnd": 166
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Electrolysis",
+      "pageStart": 166,
+      "pageEnd": 166
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 Galvanic Cells (Voltaic Cells)",
+      "pageStart": 166,
+      "pageEnd": 193
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Introduction",
+      "pageStart": 194,
+      "pageEnd": 194
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Natural Resources and Industry",
+      "pageStart": 194,
+      "pageEnd": 194
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Some Industries in Ethiopia",
+      "pageStart": 194,
+      "pageEnd": 194
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Environmental Pollution",
+      "pageStart": 194,
+      "pageEnd": 194
+    }
+  ],
+  "knownHeaders": [
+    "CHEMISTRY GRADE 10",
+    "STUDENT TEXTBOOK"
+  ]
+}

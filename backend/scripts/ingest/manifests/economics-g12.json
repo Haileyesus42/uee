@@ -1,0 +1,210 @@
+{
+  "subject": "economics",
+  "grade": 12,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-12-economics-new-curriculum--student-textbook-kehulumcom1759915712056d.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: THE FUNDAMENTAL CONCEPTS OF MACROECONOMICS",
+      "sectionTitle": "1.2 Key Challenges in Macroeconomics",
+      "pageStart": 23,
+      "pageEnd": 26
+    },
+    {
+      "unitTitle": "Unit 1: THE FUNDAMENTAL CONCEPTS OF MACROECONOMICS",
+      "sectionTitle": "1.3 The Schools of Thought in Macroeconomic Analysis",
+      "pageStart": 27,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit 2: AGGREGATE DEMAND AND AGGREGATE SUPPLY",
+      "sectionTitle": "2.1 Aggregate Demand",
+      "pageStart": 36,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "Unit 2: AGGREGATE DEMAND AND AGGREGATE SUPPLY",
+      "sectionTitle": "2.2 Aggregate Supply",
+      "pageStart": 45,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "Unit 2: AGGREGATE DEMAND AND AGGREGATE SUPPLY",
+      "sectionTitle": "2.3 Equilibrium of Aggregate Demand and Aggregate Supply",
+      "pageStart": 51,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "Unit 3: MARKET FAILURE AND CONSUMER PROTECTION",
+      "sectionTitle": "3.1 Market Failure",
+      "pageStart": 59,
+      "pageEnd": 60
+    },
+    {
+      "unitTitle": "Unit 3: MARKET FAILURE AND CONSUMER PROTECTION",
+      "sectionTitle": "3.2 Public Goods",
+      "pageStart": 61,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "Unit 3: MARKET FAILURE AND CONSUMER PROTECTION",
+      "sectionTitle": "3.3 Externalities",
+      "pageStart": 65,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 3: MARKET FAILURE AND CONSUMER PROTECTION",
+      "sectionTitle": "3.4 Asymmetric Information",
+      "pageStart": 70,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "Unit 3: MARKET FAILURE AND CONSUMER PROTECTION",
+      "sectionTitle": "3.5 Consumer Protection",
+      "pageStart": 73,
+      "pageEnd": 80
+    },
+    {
+      "unitTitle": "Unit 4: MACROECONOMIC POLICY INSTRUMENTS",
+      "sectionTitle": "4.1 Definition and Types of Macroeconomic Policies",
+      "pageStart": 82,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 4: MACROECONOMIC POLICY INSTRUMENTS",
+      "sectionTitle": "4.2 Fiscal Policy",
+      "pageStart": 83,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "Unit 4: MACROECONOMIC POLICY INSTRUMENTS",
+      "sectionTitle": "4.3 Monetary Policy",
+      "pageStart": 88,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit 4: MACROECONOMIC POLICY INSTRUMENTS",
+      "sectionTitle": "4.4 Income Policy and Wage",
+      "pageStart": 94,
+      "pageEnd": 98
+    },
+    {
+      "unitTitle": "Unit 4: MACROECONOMIC POLICY INSTRUMENTS",
+      "sectionTitle": "4.5 Foreign Exchange Policies",
+      "pageStart": 99,
+      "pageEnd": 110
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "5.1 Taxes: Definition, Principles, Objectives and Classifications",
+      "pageStart": 112,
+      "pageEnd": 117
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "5.2 Approaches to Tax Equity",
+      "pageStart": 118,
+      "pageEnd": 119
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "5.3 Tax System and Structure in Ethiopia",
+      "pageStart": 120,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "5.4 Types of Tax and Tax Accounting in Ethiopia",
+      "pageStart": 121,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "5.5 Problems Associated with Taxation in Ethiopia",
+      "pageStart": 126,
+      "pageEnd": 131
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "6.1 Concept of Poverty and Its Measurement",
+      "pageStart": 132,
+      "pageEnd": 137
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "6.2 Concept of Inequality and its Measurements",
+      "pageStart": 138,
+      "pageEnd": 143
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "6.3 Global and Regional Poverty",
+      "pageStart": 144,
+      "pageEnd": 145
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "6.4 Women and Poverty",
+      "pageStart": 146,
+      "pageEnd": 148
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "6.5 Overview of Poverty and Inequalities in Ethiopia",
+      "pageStart": 149,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "6.6 Role of Indigenous Knowledge in Reducing Poverty",
+      "pageStart": 150,
+      "pageEnd": 157
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "7.1 National Development Objectives and Strategies- Historical Review",
+      "pageStart": 158,
+      "pageEnd": 176
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "7.2 Overview of Home-grown Economic Reforms in Ethiopia",
+      "pageStart": 177,
+      "pageEnd": 183
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "7.3 Fiscal Decentralization",
+      "pageStart": 184,
+      "pageEnd": 191
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "8.1 Economy and the Environment",
+      "pageStart": 192,
+      "pageEnd": 198
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "8.2 Global Warming and Climate Change",
+      "pageStart": 199,
+      "pageEnd": 207
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "8.3 Green Economy and Green Growth",
+      "pageStart": 208,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "Unit 5: TAX THEORY AND PRACTICE",
+      "sectionTitle": "8.4 Overview of Environment and Climate Change in Ethiopia",
+      "pageStart": 209,
+      "pageEnd": 209
+    }
+  ],
+  "knownHeaders": [
+    "GRADE 12 ECONOMICS STUDENT TEXTBOOK",
+    "STUDENT TEXTBOOK"
+  ]
+}

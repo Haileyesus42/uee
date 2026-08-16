@@ -1,0 +1,132 @@
+{
+  "subject": "information-communication-technology-ict",
+  "grade": 12,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-12-information-communication-technology-ict-old-curriculum--student-textbook-kehulumcom17551644570331.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Information Systems",
+      "sectionTitle": "1.1 Basics of E-learning",
+      "pageStart": 5,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "Unit 1: Information Systems",
+      "sectionTitle": "1.2 Basics of E-Government",
+      "pageStart": 13,
+      "pageEnd": 18
+    },
+    {
+      "unitTitle": "Unit 1: Information Systems",
+      "sectionTitle": "1.3 Basics of E-Banking",
+      "pageStart": 19,
+      "pageEnd": 20
+    },
+    {
+      "unitTitle": "Unit 1: Information Systems",
+      "sectionTitle": "1.4 Basics of E-Libraries",
+      "pageStart": 21,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "Unit 1: Information Systems",
+      "sectionTitle": "1.5 Basics of E-Commerce",
+      "pageStart": 23,
+      "pageEnd": 26
+    },
+    {
+      "unitTitle": "Unit 1: Information Systems",
+      "sectionTitle": "1.6 System Analysis",
+      "pageStart": 27,
+      "pageEnd": 33
+    },
+    {
+      "unitTitle": "Unit 2: Enhancing the Use of Software",
+      "sectionTitle": "2.1 Using Application Software",
+      "pageStart": 34,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "Unit 3: Exploiting the Internet",
+      "sectionTitle": "3.1 General Concept of Website Design",
+      "pageStart": 62,
+      "pageEnd": 67
+    },
+    {
+      "unitTitle": "Unit 3: Exploiting the Internet",
+      "sectionTitle": "3.2 Planning a Website",
+      "pageStart": 68,
+      "pageEnd": 70
+    },
+    {
+      "unitTitle": "Unit 3: Exploiting the Internet",
+      "sectionTitle": "3.3 Website Design Considerations",
+      "pageStart": 71,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "Unit 3: Exploiting the Internet",
+      "sectionTitle": "3.4 Website Development",
+      "pageStart": 73,
+      "pageEnd": 80
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.1 Basics of Multimedia",
+      "pageStart": 81,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.2 Multimedia Authoring",
+      "pageStart": 84,
+      "pageEnd": 85
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.3 Introduction to Multimedia Authoring Tools",
+      "pageStart": 86,
+      "pageEnd": 88
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.4 Inserting and Editing Text",
+      "pageStart": 89,
+      "pageEnd": 90
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.5 Working with Images and Graphics",
+      "pageStart": 91,
+      "pageEnd": 91
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.6 Page Transitions, Positioning and Motion Icon",
+      "pageStart": 92,
+      "pageEnd": 95
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.7 Libraries",
+      "pageStart": 96,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.8 Working with Sound and Digital Movies",
+      "pageStart": 98,
+      "pageEnd": 100
+    },
+    {
+      "unitTitle": "Unit 4: Image Processing and Multimedia Systems",
+      "sectionTitle": "4.9 Overview of Film Editing",
+      "pageStart": 101,
+      "pageEnd": 101
+    }
+  ],
+  "knownHeaders": [
+    "PREFACE",
+    "STUDENT TEXTBOOK"
+  ]
+}
