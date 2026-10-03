@@ -10,8 +10,7 @@ import { AppTopBar } from '../../components/navigation/AppTopBar';
 import { TopBarActions } from '../../components/navigation/TopBarActions';
 import { PastPapersStatsCard } from '../../components/uee/PastPapersStatsCard';
 import { YearCard, YearCardTint } from '../../components/uee/YearCard';
-import { useUeeYears } from '../../hooks/useUee';
-import { useSubjects } from '../../hooks/useCurriculum';
+import { useUeeSubjects, useUeeYears } from '../../hooks/useUee';
 import { UeeStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -21,10 +20,11 @@ type Props = CompositeScreenProps<
 
 const TINTS: YearCardTint[] = ['brand', 'warning', 'success', 'secondary'];
 
-export function UeeHomeScreen({ navigation }: Props) {
+export function UeeHomeScreen({ navigation, route }: Props) {
   const t = useTheme();
+  const { stream } = route.params;
   const { data: years } = useUeeYears();
-  const { data: subjects } = useSubjects();
+  const { data: subjects } = useUeeSubjects(stream);
   if (!years || !subjects) return null;
 
   return (
@@ -64,7 +64,7 @@ export function UeeHomeScreen({ navigation }: Props) {
               year={year}
               subjectCount={subjects.length}
               tint={TINTS[i % TINTS.length]}
-              onPress={() => navigation.navigate('YearSubjects', { year })}
+              onPress={() => navigation.navigate('YearSubjects', { stream, year })}
             />
           ))}
         </View>

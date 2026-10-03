@@ -1,6 +1,7 @@
 import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { OnboardingLayout } from '../../components/onboarding/OnboardingLayout';
 import { useTheme } from '../../theme/ThemeProvider';
 import { useUnits, useLesson } from '../../hooks/useCurriculum';
@@ -33,6 +34,20 @@ export function LessonIntroductionScreen({ navigation, route }: Props) {
         <MetaItem label="Questions" value={String(questionCount)} />
         <MetaItem label="XP" value={`+${questionCount * 10}`} />
       </View>
+
+      {lesson.textbookSectionId ? (
+        <Pressable
+          style={styles.textbookLink}
+          onPress={() =>
+            navigation.navigate('TextbookReader', { subjectId, sectionId: lesson.textbookSectionId as string })
+          }
+        >
+          <Ionicons name="book-outline" size={16} color={t.colors.brand} />
+          <Text style={[t.typography.bodyStrong, { color: t.colors.brand, marginLeft: 6, fontSize: 13 }]}>
+            Read the full chapter
+          </Text>
+        </Pressable>
+      ) : null}
     </OnboardingLayout>
   );
 }
@@ -49,4 +64,5 @@ function MetaItem({ label, value }: { label: string; value: string }) {
 
 const styles = StyleSheet.create({
   metaRow: { flexDirection: 'row' },
+  textbookLink: { flexDirection: 'row', alignItems: 'center', marginTop: 20 },
 });

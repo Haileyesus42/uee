@@ -9,6 +9,7 @@ import { ProgressBar } from '../../components/progress/ProgressBar';
 import { Button } from '../../components/buttons/Button';
 import { MultipleChoiceOption, OptionState } from '../../components/questions/MultipleChoiceOption';
 import { FeedbackBanner } from '../../components/questions/FeedbackBanner';
+import { MathText } from '../../components/common/MathText';
 import { answerQuizAttempt, getPracticeQuestions, startQuizAttempt, submitQuizAttempt } from '../../api/practice';
 import { startUeeExam } from '../../api/uee';
 import { PracticeStackParamList } from '../../navigation/types';
@@ -22,7 +23,8 @@ function formatTime(totalSeconds: number): string {
 }
 
 export function QuizRunnerScreen({ navigation, route }: Props) {
-  const { mode, subjectId, subjectName, topic, questionCount, timeLimitMinutes, pastPaperYear } = route.params;
+  const { mode, subjectId, subjectName, topic, questionCount, timeLimitMinutes, pastPaperYear, pastPaperStream } =
+    route.params;
   const t = useTheme();
   const isMock = mode === 'mock';
   const queryClient = useQueryClient();
@@ -37,9 +39,10 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
     // A past-paper exam reuses this same runner (docs/backend-architecture.md §6: "not
     // a separate engine") but needs its attempt tagged source='uee_exam' + the paper
     // year, so it goes through the UEE exam-start endpoint instead of quiz-attempts.
-    attemptPromise.current = pastPaperYear
-      ? startUeeExam(pastPaperYear, subjectId)
-      : startQuizAttempt({ mode, source: 'practice', subjectId, topic });
+    attemptPromise.current =
+      pastPaperYear && pastPaperStream
+        ? startUeeExam(pastPaperStream, pastPaperYear, subjectId)
+        : startQuizAttempt({ mode, source: 'practice', subjectId, topic });
   }
 
   const [index, setIndex] = useState(0);
@@ -172,9 +175,9 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
         <Text style={[t.typography.caption, { color: t.colors.brand, letterSpacing: 0.5, marginTop: 8 }]}>
           {subjectName.toUpperCase()}
         </Text>
-        <Text style={[t.typography.question, { color: t.colors.textPrimary, marginTop: 8, marginBottom: 24 }]}>
+        <MathText style={[t.typography.question, { color: t.colors.textPrimary, marginTop: 8, marginBottom: 24 }]}>
           {question.prompt}
-        </Text>
+        </MathText>
 
         {question.options.map((option, i) => (
           <MultipleChoiceOption

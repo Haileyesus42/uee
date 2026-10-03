@@ -1,7 +1,8 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
+import { MathText } from '../common/MathText';
 
 export type OptionState = 'default' | 'selected' | 'correct' | 'incorrect';
 
@@ -30,7 +31,7 @@ export function MultipleChoiceOption({
       disabled={state === 'correct' || state === 'incorrect'}
       style={[styles.row, { borderColor: c.border, backgroundColor: c.bg, borderRadius: t.radius.md }]}
     >
-      <Text style={[styles.label, { color: c.text }]}>{label}</Text>
+      <MathText style={[styles.label, { color: c.text }]}>{label}</MathText>
       {state === 'correct' && <Ionicons name="checkmark-circle" size={20} color={t.colors.success} />}
       {state === 'incorrect' && <Ionicons name="close-circle" size={20} color={t.colors.error} />}
     </Pressable>

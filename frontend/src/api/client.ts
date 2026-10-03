@@ -1,6 +1,8 @@
 import { clearTokens, getStoredTokens, storeTokens } from './tokenStorage';
 
-const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000';
+// Exported for billing.ts's Telebirr screenshot upload, which needs its own fetch
+// call outside apiFetch (FormData, not JSON — see the comment there).
+export const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000';
 
 export class ApiError extends Error {
   status: number;
@@ -39,7 +41,7 @@ async function refreshAccessToken(): Promise<string | null> {
 }
 
 type RequestOptions = {
-  method?: 'GET' | 'POST' | 'PATCH' | 'DELETE';
+  method?: 'GET' | 'POST' | 'PATCH' | 'PUT' | 'DELETE';
   body?: unknown;
   auth?: boolean; // defaults to true — set false for the OTP request/verify calls
 };

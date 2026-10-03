@@ -24,6 +24,13 @@ enum QuizSource {
   uee_exam
 }
 
+// UEE past papers are split by stream — the same subject (e.g. English,
+// Mathematics) has a genuinely different paper per stream.
+enum Stream {
+  natural
+  social
+}
+
 enum ChatRole {
   user
   unity
@@ -35,6 +42,7 @@ enum SubscriptionPlan {
 }
 
 enum SubscriptionStatus {
+  pending
   active
   expired
   canceled
@@ -44,6 +52,16 @@ enum SubscriptionProvider {
   chapa
   telebirr
   mock
+}
+
+// Outcome of one manual-Telebirr payment attempt (see
+// src/modules/billing/telebirr.ts). Distinct from SubscriptionStatus — a
+// submission only ever produces an active Subscription on `approved`; `rejected`/
+// `needs_review` submissions have no Subscription row at all.
+enum TelebirrSubmissionStatus {
+  approved
+  rejected
+  needs_review
 }
 
 model User {
@@ -74,6 +92,10 @@ model User {
   xpEvents      XpEvent[]
   chatMessages  ChatMessage[]
   subscription  Subscription?
+  bookmarks       UserBookmark[]
+  highlights      UserHighlight[]
+  readingProgress UserReadingProgress[]
+  telebirrSubmissions TelebirrSubmission[]
 
   @@map("users")
 }
@@ -83,9 +105,14 @@ model Subject {
   slug String @unique
   name String
   icon String
+  // Which UEE stream(s) this subject has a past-paper for — drives the
+  // Natural/Social picker on the UEE tab (see backend/src/modules/uee/routes.ts).
+  // Empty for subjects that are curriculum-only with no UEE past paper.
+  streams Stream[] @default([])
 
   units     Unit[]
   questions Question[]
+  textbookSections TextbookSection[]
 
   @@map("subjects")
 }
@@ -114,6 +141,7 @@ model Lesson {
 
   steps    LessonStep[]
   progress UserLessonProgress[]
+  textbookSections TextbookSection[]
 
   @@index([unitId])
   @@map("lessons")
@@ -140,10 +168,20 @@ model Question {
   correctIndex  Int
   explanation   String
   difficulty    String  @default("medium")
+  // Set only for questions ingested from a real past paper (see backend/scripts/ingest/)
+  // — ties the question to the exam sitting it actually came from. Null for the
+  // generic practice-bank questions, which aren't attributed to a specific year.
+  examYear      Int?
+  // Set alongside examYear for real past-paper questions — which UEE stream that
+  // sitting's paper was for. Null for the generic practice-bank questions, same
+  // reasoning as examYear.
+  stream        Stream?
 
   answers QuizAttemptAnswer[]
 
   @@index([subjectId])
+  @@index([subjectId, examYear])
+  @@index([subjectId, stream, examYear])
   @@map("questions")
 }
 
@@ -244,4 +282,123 @@ model Subscription {
   expiresAt   DateTime
 
   @@map("subscriptions")
+}
+
+// One manual-Telebirr payment attempt. The screenshot is stored as bytes in
+// Postgres rather than on disk or a cloud bucket — low volume (manual payments,
+// not content ingestion), and it keeps this working unmodified on hosts whose
+// local disk doesn't survive a redeploy (see src/modules/billing/telebirr.ts).
+model TelebirrSubmission {
+  id       String           @id @default(uuid())
+  userId   String
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan     SubscriptionPlan
+  priceETB Int
+
+  screenshot     Bytes
+  screenshotType String
+  // sha256 of the screenshot bytes. Unique so the exact same image can never be
+  // submitted twice — the cheapest, least ambiguous fraud check there is, and it
+  // runs before the Groq call so a replay doesn't even cost an API request.
+  screenshotHash String @unique
+
+  // Whatever Groq's vision model could read off the screenshot — any of these can
+  // be null if it couldn't find/read that field. Never trusted on its own; see
+  // telebirr.ts for the checks run against it before a submission is approved.
+  extractedRef        String?
+  extractedAmountETB  Float?
+  extractedReceiver   String?
+  rawExtraction       Json?
+
+  status     TelebirrSubmissionStatus
+  // Set either by the automatic checks (why it was flagged needs_review) or by
+  // whoever reviews it (why it was approved/rejected by hand) — one free-text
+  // field covers both since only one of the two ever applies to a given row.
+  reviewNote String?
+  reviewedAt DateTime?
+  createdAt  DateTime                  @default(now())
+
+  @@index([userId])
+  @@index([extractedRef])
+  @@map("telebirr_submissions")
+}
+
+// Textbook Study Mode — raw reader over the actual textbook text, alongside the
+// structured Lesson/LessonStep path. See docs/backend-architecture.md and
+// backend/scripts/ingest/extractTextbookSections.ts for how these get populated
+// (verbatim pdftotext extraction, no LLM involved — unlike LessonStep content).
+model TextbookSection {
+  id           String  @id @default(uuid())
+  subjectId    String
+  subject      Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  grade        Int
+  unitTitle    String
+  sectionTitle String
+  // Sequential across the whole subject+grade (not per-unit) so prev/next
+  // navigation is just order-1 / order+1 regardless of unit boundaries.
+  // Scoped to grade, not just subject — a subject can have multiple grades'
+  // worth of sections (history g9-g12), each independently numbered from 0
+  // by the ingest pipeline; scoping only to subjectId made every grade
+  // after the first collide with the previous one's order values on import.
+  order        Int
+  // ContentBlock[] (see backend/scripts/ingest/schemas.ts) — text | image |
+  // heading | list | table, in reading order. Block granularity (not one
+  // text blob, not char offsets) is what makes highlighting and
+  // reading-position simple: both just reference a block index. Images are
+  // real extracted figures (see imageExtract.ts), served from
+  // GET /textbook/images/:filename.
+  blocks       Json
+  pageStart    Int
+  pageEnd      Int
+  // Cross-link to the matching structured Lesson, when one exists — lets the
+  // reader offer "practice this as a guided lesson" and vice versa.
+  lessonId     String?
+  lesson       Lesson? @relation(fields: [lessonId], references: [id], onDelete: SetNull)
+
+  bookmarks  UserBookmark[]
+  highlights UserHighlight[]
+
+  @@unique([subjectId, grade, order])
+  @@index([subjectId, grade, order])
+  @@map("textbook_sections")
+}
+
+model UserBookmark {
+  id        String          @id @default(uuid())
+  userId    String
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sectionId String
+  section   TextbookSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  createdAt DateTime        @default(now())
+
+  @@unique([userId, sectionId])
+  @@map("user_bookmarks")
+}
+
+model UserHighlight {
+  id             String          @id @default(uuid())
+  userId         String
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sectionId      String
+  section        TextbookSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  // Which entry in TextbookSection.blocks — whole-block granularity, not
+  // freeform character-range selection (see docs/backend-architecture.md for why).
+  paragraphIndex Int
+  note           String?
+  createdAt      DateTime        @default(now())
+
+  @@index([userId, sectionId])
+  @@map("user_highlights")
+}
+
+model UserReadingProgress {
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subjectId      String
+  sectionId      String
+  paragraphIndex Int
+  updatedAt      DateTime @updatedAt
+
+  @@id([userId, subjectId])
+  @@map("user_reading_progress")
 }

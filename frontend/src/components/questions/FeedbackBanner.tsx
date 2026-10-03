@@ -5,6 +5,7 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { useUnityChat } from '../../context/UnityChatContext';
 import { Button } from '../buttons/Button';
 import { RobotHead } from '../home/RobotHead';
+import { MathText } from '../common/MathText';
 
 export function FeedbackBanner({
   variant,
@@ -31,7 +32,7 @@ export function FeedbackBanner({
         <Ionicons name={isSuccess ? 'checkmark-circle' : 'close-circle'} size={20} color={accent} />
         <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginLeft: 8 }]}>{title}</Text>
       </View>
-      <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 6 }]}>{message}</Text>
+      <MathText style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 6 }]}>{message}</MathText>
 
       {isSuccess ? (
         <View style={{ marginTop: 14 }}>

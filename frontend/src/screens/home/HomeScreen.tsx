@@ -77,7 +77,7 @@ export function HomeScreen({ navigation }: Props) {
 
   function handleFeaturePress(id: FeatureId) {
     if (id === 'courses') navigation.navigate('Learn', { screen: 'LearnHome' });
-    else if (id === 'uee') navigation.navigate('Uee', { screen: 'UeeHome' });
+    else if (id === 'uee') navigation.navigate('Uee', { screen: 'StreamSelect' });
     else if (id === 'mock') navigation.navigate('Practice', { screen: 'MockExamsList' });
     else navigation.navigate('Practice', { screen: 'PracticeHub' });
   }

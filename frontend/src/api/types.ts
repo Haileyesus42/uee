@@ -1,6 +1,12 @@
 export type JourneyStatus = 'locked' | 'available' | 'current' | 'completed';
 
-export type Subject = { id: string; slug: string; name: string; icon: string; mastery: number };
+export type Subject = { id: string; slug: string; name: string; icon: string; mastery: number; hasTextbook: boolean };
+
+export type UeeStreamId = 'natural' | 'social';
+export type UeeStream = { id: UeeStreamId; label: string };
+export type UeeSubject = { id: string; slug: string; name: string; icon: string };
+
+export type ChatMessage = { id: string; role: 'user' | 'unity'; text: string; createdAt: string };
 
 export type UnitLesson = { id: string; title: string; status: JourneyStatus };
 export type Unit = { id: string; title: string; description: string; grade: number; lessons: UnitLesson[] };
@@ -10,7 +16,7 @@ export type LessonStep =
   | { type: 'example'; heading: string; body: string; steps: string[] }
   | { type: 'question'; prompt: string; options: string[]; correctIndex: number; hint: string; explanation: string };
 
-export type LessonDetail = { id: string; title: string; steps: LessonStep[] };
+export type LessonDetail = { id: string; title: string; steps: LessonStep[]; textbookSectionId: string | null };
 
 export type PracticeQuestion = {
   id: string;
@@ -80,6 +86,69 @@ export type Mistake = {
   question: { prompt: string; options: string[]; correctIndex: number; explanation: string };
 };
 
+// Textbook Study Mode
+export type TextbookTocSection = {
+  id: string;
+  unitTitle: string;
+  sectionTitle: string;
+  order: number;
+  pageStart: number;
+  pageEnd: number;
+};
+export type TextbookTocUnit = { unitTitle: string; sections: TextbookTocSection[] };
+
+export type TextbookContentBlock =
+  | { type: 'text'; text: string }
+  | { type: 'image'; filename: string; width: number; height: number; caption?: string }
+  | { type: 'heading'; level: 1 | 2 | 3; text: string }
+  | { type: 'list'; ordered: boolean; items: string[] }
+  | { type: 'table'; rows: string[][]; caption?: string };
+
+export type TextbookSectionDetail = {
+  id: string;
+  unitTitle: string;
+  sectionTitle: string;
+  blocks: TextbookContentBlock[];
+  lessonId: string | null;
+  unitId: string | null;
+  prevSectionId: string | null;
+  nextSectionId: string | null;
+};
+
+export type TextbookSearchResult = { sectionId: string; sectionTitle: string; snippet: string };
+
+export type TextbookBookmark = {
+  id: string;
+  sectionId: string;
+  createdAt: string;
+  section: { sectionTitle: string; unitTitle: string; subjectId: string };
+};
+
+export type TextbookHighlight = { id: string; sectionId: string; paragraphIndex: number; note: string | null; createdAt: string };
+
+export type TextbookReadingProgress = { subjectId: string; sectionId: string; paragraphIndex: number; updatedAt: string } | null;
+
 export type SubscriptionStatus =
   | { status: 'none' }
-  | { status: 'active' | 'expired' | 'canceled'; plan: 'monthly' | 'yearly'; priceETB: number; startedAt: string; expiresAt: string };
+  | {
+      status: 'pending' | 'active' | 'expired' | 'canceled';
+      plan: 'monthly' | 'yearly';
+      priceETB: number;
+      startedAt: string;
+      expiresAt: string;
+    };
+
+export type TelebirrInfo =
+  | { enabled: false }
+  | { enabled: true; receiverPhone: string; receiverName: string | null; priceETB: Record<'monthly' | 'yearly', number> };
+
+export type TelebirrSubmissionStatus = 'approved' | 'rejected' | 'needs_review';
+
+export type TelebirrSubmission = {
+  id: string;
+  status: TelebirrSubmissionStatus;
+  plan: 'monthly' | 'yearly';
+  priceETB: number;
+  reviewNote: string | null;
+  createdAt: string;
+};

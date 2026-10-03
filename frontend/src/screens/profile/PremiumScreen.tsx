@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { GradientButton } from '../../components/buttons/GradientButton';
-import { useCheckout, useSubscription } from '../../hooks/useBilling';
+import { useCheckout, useSubscription, useTelebirrInfo } from '../../hooks/useBilling';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'Premium'>;
@@ -32,8 +32,13 @@ export function PremiumScreen({ navigation }: Props) {
   const t = useTheme();
   const [selectedPlan, setSelectedPlan] = useState<PlanId>('yearly');
   const { data: subscription } = useSubscription();
+  const { data: telebirrInfo } = useTelebirrInfo();
   const checkoutMutation = useCheckout();
   const isPro = subscription?.status === 'active';
+  // Real Chapa checkouts sit here until the webhook confirms payment (see
+  // useSubscription's poll) — distinct from checkoutMutation.isPending, which is
+  // just "the checkout request itself is in flight," not "payment is settling."
+  const isAwaitingPayment = subscription?.status === 'pending';
 
   const tintMap: Record<Tint, { bg: string; fg: string }> = {
     brand: { bg: t.colors.brandLight, fg: t.colors.brand },
@@ -61,7 +66,9 @@ export function PremiumScreen({ navigation }: Props) {
           <View style={styles.trustRow}>
             <Ionicons name="people" size={12} color="rgba(255,255,255,0.85)" />
             <Text style={styles.trustText}>
-              {isPro && subscription?.status === 'active'
+              {isAwaitingPayment
+                ? "Confirming your payment — this can take a minute."
+                : isPro && subscription?.status === 'active'
                 ? `You're Pro until ${new Date(subscription.expiresAt).toLocaleDateString()}`
                 : 'Built for ambitious UEE students'}
             </Text>
@@ -137,11 +144,31 @@ export function PremiumScreen({ navigation }: Props) {
 
       <View style={{ paddingHorizontal: t.spacing.md, paddingBottom: 12 }}>
         <GradientButton
-          label={isPro ? "You're Pro ✓" : checkoutMutation.isPending ? 'Processing…' : 'Upgrade Now'}
-          onPress={() => !isPro && checkoutMutation.mutate(selectedPlan)}
-          style={{ paddingVertical: 15, opacity: isPro || checkoutMutation.isPending ? 0.7 : 1 }}
+          label={
+            isPro
+              ? "You're Pro ✓"
+              : isAwaitingPayment
+              ? 'Confirming payment…'
+              : checkoutMutation.isPending
+              ? 'Processing…'
+              : 'Upgrade Now'
+          }
+          onPress={() => !isPro && !isAwaitingPayment && checkoutMutation.mutate(selectedPlan)}
+          style={{
+            paddingVertical: 15,
+            opacity: isPro || isAwaitingPayment || checkoutMutation.isPending ? 0.7 : 1,
+          }}
         />
         <Text style={[styles.footNote, { color: t.colors.textSecondary }]}>Cancel anytime · Secure payment</Text>
+
+        {!isPro && !isAwaitingPayment && telebirrInfo?.enabled ? (
+          <Pressable
+            onPress={() => navigation.navigate('TelebirrPayment', { plan: selectedPlan })}
+            style={styles.telebirrLink}
+          >
+            <Text style={[t.typography.caption, { color: t.colors.brand }]}>Pay with Telebirr instead</Text>
+          </Pressable>
+        ) : null}
       </View>
     </SafeAreaView>
   );
@@ -204,4 +231,5 @@ const styles = StyleSheet.create({
   ribbonText: { color: '#5B3B0A', fontFamily: 'Inter_700Bold', fontSize: 9, fontWeight: '700' },
 
   footNote: { textAlign: 'center', fontFamily: 'Inter_500Medium', fontSize: 10.5, marginTop: 8 },
+  telebirrLink: { alignItems: 'center', marginTop: 12, padding: 4 },
 });

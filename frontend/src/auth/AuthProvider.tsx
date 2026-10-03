@@ -51,6 +51,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setStatus('signedOut');
         return;
       }
+      // Trust stored tokens immediately rather than gating "signed in" on this
+      // getMe() call succeeding — a real, confirmed-invalid session is already
+      // handled precisely by setSessionExpiredHandler above (fires only after
+      // apiFetch's own refresh-and-retry has genuinely failed). Treating *any*
+      // getMe() failure here as "signed out" was the bug: a plain network
+      // hiccup, a slow cold start, or the backend being briefly unreachable
+      // all threw here too, and forced a real, logged-in user back through the
+      // entire Telegram login flow every time one of those happened — reported
+      // as "always get started is prompted."
+      setStatus('signedIn');
       try {
         const profile = await getMe();
         setUser({
@@ -61,9 +71,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           avatarEmoji: profile.avatarEmoji,
           grade: profile.grade,
         });
-        setStatus('signedIn');
       } catch {
-        setStatus('signedOut');
+        // Not a real sign-out — see comment above. `user` just stays null
+        // until something (another screen's own query, a retry) fetches it
+        // successfully; a genuinely expired session is still caught by
+        // setSessionExpiredHandler regardless of where the 401 originates.
       }
     })();
   }, []);

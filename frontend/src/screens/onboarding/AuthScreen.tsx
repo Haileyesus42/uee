@@ -33,10 +33,32 @@ export function AuthScreen({ navigation }: Props) {
   async function startLogin() {
     setError(null);
     setPhase('waiting');
+
+    // Neither of these two calls actually reaches Telegram — /auth/telegram/start
+    // and the status poll are both purely local (a Redis token + a read), so a
+    // failure here means our own server is unreachable, not Telegram. Only
+    // Linking.openURL genuinely leaves the app. Distinguishing them so the error
+    // shown actually points at what broke, instead of one generic "check your
+    // connection" that blamed Telegram for a backend hiccup.
+    let link: { loginToken: string; deepLink: string };
     try {
-      const link = await beginTelegramLogin();
+      link = await beginTelegramLogin();
       pendingLink.current = link;
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't reach the server — check your connection.");
+      setPhase('error');
+      return;
+    }
+
+    try {
       await Linking.openURL(link.deepLink);
+    } catch {
+      setError("Couldn't open Telegram — make sure it's installed.");
+      setPhase('error');
+      return;
+    }
+
+    try {
       const confirmed = await pollTelegramLogin(link.loginToken);
       if (!confirmed) {
         setError("Didn't get a confirmation in time — try again.");
@@ -45,7 +67,7 @@ export function AuthScreen({ navigation }: Props) {
       // On success the app switches screens automatically once useAuth()'s status
       // flips to 'signedIn' — nothing else to do here.
     } catch (err) {
-      setError(err instanceof ApiError ? err.message : 'Could not reach Telegram — check your connection.');
+      setError(err instanceof ApiError ? err.message : "Couldn't reach the server — check your connection.");
       setPhase('error');
     }
   }

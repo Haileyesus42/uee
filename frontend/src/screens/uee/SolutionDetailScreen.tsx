@@ -10,14 +10,15 @@ import { RobotHead } from '../../components/home/RobotHead';
 import { useUnityChat } from '../../context/UnityChatContext';
 import { useUeeQuestions } from '../../hooks/useUee';
 import { UeeStackParamList } from '../../navigation/types';
+import { MathText } from '../../components/common/MathText';
 
 type Props = NativeStackScreenProps<UeeStackParamList, 'SolutionDetail'>;
 
 export function SolutionDetailScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { openChat } = useUnityChat();
-  const { year, subjectId, subjectName, questionIndex } = route.params;
-  const { data: questions } = useUeeQuestions(year, subjectId);
+  const { stream, year, subjectId, subjectName, questionIndex } = route.params;
+  const { data: questions } = useUeeQuestions(stream, year, subjectId);
   if (!questions) return null;
   const question = questions[questionIndex];
 
@@ -38,9 +39,9 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
         <Text style={[t.typography.caption, { color: t.colors.brand, letterSpacing: 0.5 }]}>
           {subjectName.toUpperCase()} · {year}
         </Text>
-        <Text style={[t.typography.question, { color: t.colors.textPrimary, marginTop: 8, marginBottom: 20 }]}>
+        <MathText style={[t.typography.question, { color: t.colors.textPrimary, marginTop: 8, marginBottom: 20 }]}>
           {question.prompt}
-        </Text>
+        </MathText>
 
         {question.options.map((option, i) => (
           <MultipleChoiceOption
@@ -67,9 +68,9 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
               </Text>
             </Pressable>
           </View>
-          <Text style={[t.typography.body, { color: t.colors.textPrimary, marginTop: 6 }]}>
+          <MathText style={[t.typography.body, { color: t.colors.textPrimary, marginTop: 6 }]}>
             {question.explanation}
-          </Text>
+          </MathText>
         </View>
       </ScrollView>
 

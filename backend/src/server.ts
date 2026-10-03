@@ -1,5 +1,6 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
+import multipart from '@fastify/multipart';
 import { ZodError } from 'zod';
 import { env } from './env';
 import { authRoutes } from './modules/auth/routes';
@@ -10,6 +11,8 @@ import { ueeRoutes } from './modules/uee/routes';
 import { leaderboardRoutes } from './modules/leaderboard/routes';
 import { profileRoutes } from './modules/profile/routes';
 import { billingRoutes } from './modules/billing/routes';
+import { textbookRoutes } from './modules/textbook/routes';
+import { chatRoutes } from './modules/chat/routes';
 
 async function main() {
   const app = Fastify({
@@ -17,6 +20,10 @@ async function main() {
   });
 
   await app.register(cors, { origin: true });
+  // Only the Telebirr screenshot submission route actually consumes multipart
+  // (via request.parts()) — registering it globally is harmless for every other
+  // route, which still goes through the default JSON parser untouched.
+  await app.register(multipart, { limits: { fileSize: 8 * 1024 * 1024, files: 1 } });
 
   app.setErrorHandler((error, request, reply) => {
     if (error instanceof ZodError) {
@@ -43,6 +50,8 @@ async function main() {
   await app.register(leaderboardRoutes);
   await app.register(profileRoutes);
   await app.register(billingRoutes);
+  await app.register(textbookRoutes);
+  await app.register(chatRoutes);
 
   await app.listen({ port: env.PORT, host: '0.0.0.0' });
 

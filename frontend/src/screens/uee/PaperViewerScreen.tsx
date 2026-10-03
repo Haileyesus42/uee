@@ -28,8 +28,8 @@ const EXAM_RULES = [
 
 export function PaperViewerScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const { year, subjectId, subjectName } = route.params;
-  const { data: questions } = useUeeQuestions(year, subjectId);
+  const { stream, year, subjectId, subjectName } = route.params;
+  const { data: questions } = useUeeQuestions(stream, year, subjectId);
   const [mode, setMode] = useState<PaperMode>('study');
   if (!questions) return null;
   const paperQuestions = questions;
@@ -54,6 +54,7 @@ export function PaperViewerScreen({ navigation, route }: Props) {
                 questionCount: paperQuestions.length,
                 timeLimitMinutes: examMinutes,
                 pastPaperYear: year,
+                pastPaperStream: stream,
               },
             }),
         },
@@ -80,7 +81,7 @@ export function PaperViewerScreen({ navigation, route }: Props) {
           {paperQuestions.map((q, i) => (
             <Pressable
               key={i}
-              onPress={() => navigation.navigate('SolutionDetail', { year, subjectId, subjectName, questionIndex: i })}
+              onPress={() => navigation.navigate('SolutionDetail', { stream, year, subjectId, subjectName, questionIndex: i })}
               style={[styles.row, { borderBottomColor: t.colors.border }]}
             >
               <Text style={[t.typography.bodyStrong, { color: t.colors.brand }]}>{i + 1}</Text>

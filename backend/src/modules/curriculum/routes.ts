@@ -29,6 +29,11 @@ export async function curriculumRoutes(app: FastifyInstance) {
     });
     const progress = await prisma.userLessonProgress.findMany({ where: { userId: request.userId } });
     const progressByLessonId = new Map(progress.map((p) => [p.lessonId, p]));
+    // Textbook Study Mode is only offered for subjects with real ingested content
+    // (see backend/scripts/ingest/extractTextbookSections.ts) — grouped count avoids
+    // an N+1 query per subject.
+    const textbookCounts = await prisma.textbookSection.groupBy({ by: ['subjectId'], _count: true });
+    const hasTextbookBySubjectId = new Set(textbookCounts.map((t) => t.subjectId));
 
     return subjects.map((s) => {
       const lessons = s.units.flatMap((u) => u.lessons);
@@ -40,6 +45,7 @@ export async function curriculumRoutes(app: FastifyInstance) {
         name: s.name,
         icon: s.icon,
         mastery: total === 0 ? 0 : completed / total,
+        hasTextbook: hasTextbookBySubjectId.has(s.id),
       };
     });
   });
@@ -79,7 +85,13 @@ export async function curriculumRoutes(app: FastifyInstance) {
   app.get<{ Params: { id: string } }>('/lessons/:id', { preHandler: authenticate }, async (request, reply) => {
     const lesson = await prisma.lesson.findUnique({
       where: { id: request.params.id },
-      include: { steps: { orderBy: { order: 'asc' } } },
+      include: {
+        steps: { orderBy: { order: 'asc' } },
+        // Reverse of TextbookSection.lessonId — lets the Interactive-mode lesson
+        // screens offer a "read the full chapter" link into Textbook Mode when a
+        // matching section exists (see backend/scripts/ingest/importReviewed.ts).
+        textbookSections: { select: { id: true }, take: 1 },
+      },
     });
     if (!lesson) return reply.code(404).send({ error: 'Lesson not found' });
 
@@ -87,6 +99,7 @@ export async function curriculumRoutes(app: FastifyInstance) {
       id: lesson.id,
       title: lesson.title,
       steps: lesson.steps.map((s) => ({ type: s.type, ...(s.content as object) })),
+      textbookSectionId: lesson.textbookSections[0]?.id ?? null,
     };
   });
 

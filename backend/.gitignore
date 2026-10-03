@@ -2,3 +2,14 @@ node_modules/
 dist/
 .env
 *.tsbuildinfo
+
+# Scanned source pages (likely copyrighted textbook/exam material) and the raw,
+# not-yet-reviewed extraction output — see scripts/ingest/. Reviewed output that's
+# been imported lives in Postgres, not here.
+scripts/ingest/input/
+scripts/ingest/output/
+
+# Raw source PDFs (copyrighted textbooks/exams) and the figures extracted from
+# them (see imageExtract.ts) — served at runtime from disk, not meant to be
+# committed. Reviewed/imported content lives in Postgres, not here.
+assets/

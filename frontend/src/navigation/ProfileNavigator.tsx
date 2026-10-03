@@ -7,6 +7,7 @@ import { StatisticsScreen } from '../screens/profile/StatisticsScreen';
 import { AchievementsScreen } from '../screens/profile/AchievementsScreen';
 import { SettingsScreen } from '../screens/profile/SettingsScreen';
 import { PremiumScreen } from '../screens/profile/PremiumScreen';
+import { TelebirrPaymentScreen } from '../screens/profile/TelebirrPaymentScreen';
 import { HelpScreen } from '../screens/profile/HelpScreen';
 import { MistakesBookScreen } from '../screens/profile/MistakesBookScreen';
 
@@ -21,6 +22,7 @@ export function ProfileNavigator() {
       <Stack.Screen name="Achievements" component={AchievementsScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Premium" component={PremiumScreen} />
+      <Stack.Screen name="TelebirrPayment" component={TelebirrPaymentScreen} />
       <Stack.Screen name="Help" component={HelpScreen} />
       <Stack.Screen name="MistakesBook" component={MistakesBookScreen} />
     </Stack.Navigator>

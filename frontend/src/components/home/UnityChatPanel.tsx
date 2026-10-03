@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
+  ActivityIndicator,
   Animated,
   Dimensions,
   Easing,
@@ -15,28 +16,13 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
+import { useChatHistory, useSendChatMessage } from '../../hooks/useChat';
 import { RobotMascot } from './RobotMascot';
 
 type Message = { id: string; from: 'user' | 'unity'; text: string };
 
 const SUGGESTIONS = ['Explain a topic', 'Recommend what to study', 'Track my progress', 'Create a quiz for me'];
-
-function generateReply(prompt: string): string {
-  const p = prompt.toLowerCase();
-  if (p.includes('explain')) {
-    return "Sure — which topic would you like me to explain? For example, I can walk you through quadratic equations, Newton's Laws, or cell structure.";
-  }
-  if (p.includes('recommend')) {
-    return "Based on your progress, I'd recommend practicing Functions in Mathematics next — you're close to finishing Algebra, and Physics could use some review too.";
-  }
-  if (p.includes('track') || p.includes('progress')) {
-    return "You're at 62% mastery in Mathematics, 41% in Physics. You've solved 248 questions with 82% accuracy overall. Keep going!";
-  }
-  if (p.includes('quiz')) {
-    return "I've put together a 10-question quiz mixing Algebra and Physics. Head to Practice → Quick Practice to start it.";
-  }
-  return "Good question! Let's break that down together — could you tell me a bit more about what you're working on?";
-}
+const FALLBACK_REPLY = "Sorry, I'm having trouble responding right now — please try again in a moment.";
 
 const PANEL_WIDTH = Math.min(380, Dimensions.get('window').width * 0.9);
 
@@ -46,10 +32,21 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
   const scrollRef = useRef<ScrollView>(null);
   const anim = useRef(new Animated.Value(0)).current;
 
-  const [messages, setMessages] = useState<Message[]>([
-    { id: 'intro', from: 'unity', text: "Hi Selam! I'm Unity, your AI tutor. What would you like help with today?" },
-  ]);
+  const { data: history } = useChatHistory();
+  const sendMutation = useSendChatMessage();
+  const [pending, setPending] = useState<string | null>(null);
+  const [localError, setLocalError] = useState(false);
   const [input, setInput] = useState('');
+
+  const messages: Message[] = [
+    { id: 'intro', from: 'unity', text: "Hi! I'm Unity, your AI tutor. What would you like help with today?" },
+    ...(history ?? []).map((m): Message => ({ id: m.id, from: m.role, text: m.text })),
+    ...(pending ? [{ id: 'pending', from: 'user' as const, text: pending }] : []),
+    // Groq being down is already handled server-side with a normal 200 + friendly
+    // text — this bubble only shows up for the rarer network/auth failure, where
+    // the message never made it to the server at all.
+    ...(localError ? [{ id: 'local-error', from: 'unity' as const, text: FALLBACK_REPLY }] : []),
+  ];
 
   useEffect(() => {
     Animated.timing(anim, {
@@ -60,13 +57,19 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
     }).start();
   }, [visible, anim]);
 
-  function send(text: string) {
-    if (!text.trim()) return;
-    const userMsg: Message = { id: `u-${Date.now()}`, from: 'user', text };
-    const replyMsg: Message = { id: `a-${Date.now()}`, from: 'unity', text: generateReply(text) };
-    setMessages((prev) => [...prev, userMsg, replyMsg]);
-    setInput('');
+  useEffect(() => {
     setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 50);
+  }, [messages.length, sendMutation.isPending]);
+
+  function send(text: string) {
+    if (!text.trim() || sendMutation.isPending) return;
+    setPending(text);
+    setLocalError(false);
+    setInput('');
+    sendMutation.mutate(text, {
+      onSettled: () => setPending(null),
+      onError: () => setLocalError(true),
+    });
   }
 
   const translateX = anim.interpolate({ inputRange: [0, 1], outputRange: [PANEL_WIDTH, 0] });
@@ -118,6 +121,15 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
                     </View>
                   </View>
                 )
+              )}
+
+              {sendMutation.isPending && (
+                <View style={styles.unityRow}>
+                  <RobotMascot size={26} />
+                  <View style={[styles.bubble, styles.unityBubble, { backgroundColor: t.colors.surface }]}>
+                    <ActivityIndicator size="small" color={t.colors.textSecondary} />
+                  </View>
+                </View>
               )}
 
               {messages.length <= 1 && (

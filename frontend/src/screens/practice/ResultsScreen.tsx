@@ -7,6 +7,7 @@ import { useTheme } from '../../theme/ThemeProvider';
 import { Card } from '../../components/cards/Card';
 import { Button } from '../../components/buttons/Button';
 import { PracticeStackParamList } from '../../navigation/types';
+import { MathText } from '../../components/common/MathText';
 
 type Props = NativeStackScreenProps<PracticeStackParamList, 'Results'>;
 
@@ -72,20 +73,26 @@ export function ResultsScreen({ navigation, route }: Props) {
                       Question {i + 1}
                     </Text>
                   </View>
-                  <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 6 }]}>
+                  <MathText style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 6 }]}>
                     {item.prompt}
-                  </Text>
-                  <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 6 }]}>
-                    Correct answer: {item.options[item.correctIndex]}
-                  </Text>
+                  </MathText>
+                  <View style={styles.answerRow}>
+                    <Text style={[t.typography.caption, { color: t.colors.textSecondary }]}>Correct answer: </Text>
+                    <MathText style={[t.typography.caption, { color: t.colors.textSecondary, flex: 1 }]}>
+                      {item.options[item.correctIndex]}
+                    </MathText>
+                  </View>
                   {!isRight && item.selectedIndex >= 0 && (
-                    <Text style={[t.typography.caption, { color: t.colors.error, marginTop: 2 }]}>
-                      Your answer: {item.options[item.selectedIndex]}
-                    </Text>
+                    <View style={styles.answerRow}>
+                      <Text style={[t.typography.caption, { color: t.colors.error }]}>Your answer: </Text>
+                      <MathText style={[t.typography.caption, { color: t.colors.error, flex: 1 }]}>
+                        {item.options[item.selectedIndex]}
+                      </MathText>
+                    </View>
                   )}
-                  <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 6 }]}>
+                  <MathText style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 6 }]}>
                     {item.explanation}
-                  </Text>
+                  </MathText>
                 </Card>
               );
             })}
@@ -117,4 +124,5 @@ const styles = StyleSheet.create({
   reviewToggle: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 24 },
   reviewCard: { marginBottom: 10 },
   reviewHeader: { flexDirection: 'row', alignItems: 'center' },
+  answerRow: { flexDirection: 'row', alignItems: 'flex-start', marginTop: 6 },
 });

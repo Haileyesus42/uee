@@ -1,4 +1,5 @@
 import type { NavigatorScreenParams } from '@react-navigation/native';
+import type { UeeStreamId } from '../api/types';
 
 export type OnboardingStackParamList = {
   Splash: undefined;
@@ -29,6 +30,13 @@ export type LearnStackParamList = {
     correctCount: number;
     totalQuestions: number;
   };
+  // Textbook Study Mode — flat siblings alongside the Interactive-mode routes
+  // above, same stack (see docs/backend-architecture.md for why: matches how
+  // TopicDetail/LessonIntroduction/etc. already coexist, no nested navigator).
+  TextbookHome: { subjectId: string };
+  TextbookReader: { subjectId: string; sectionId: string };
+  TextbookSearch: { subjectId: string };
+  TextbookBookmarks: { subjectId: string };
 };
 
 export type QuizMode = 'practice' | 'mock';
@@ -45,6 +53,7 @@ export type PracticeStackParamList = {
     questionCount: number;
     timeLimitMinutes?: number;
     pastPaperYear?: number;
+    pastPaperStream?: UeeStreamId;
   };
   Results: {
     mode: QuizMode;
@@ -64,10 +73,17 @@ export type PracticeStackParamList = {
 };
 
 export type UeeStackParamList = {
-  UeeHome: undefined;
-  YearSubjects: { year: number };
-  PaperViewer: { year: number; subjectId: string; subjectName: string };
-  SolutionDetail: { year: number; subjectId: string; subjectName: string; questionIndex: number };
+  StreamSelect: undefined;
+  UeeHome: { stream: UeeStreamId };
+  YearSubjects: { stream: UeeStreamId; year: number };
+  PaperViewer: { stream: UeeStreamId; year: number; subjectId: string; subjectName: string };
+  SolutionDetail: {
+    stream: UeeStreamId;
+    year: number;
+    subjectId: string;
+    subjectName: string;
+    questionIndex: number;
+  };
 };
 
 export type ProfileStackParamList = {
@@ -77,6 +93,7 @@ export type ProfileStackParamList = {
   Achievements: undefined;
   Settings: undefined;
   Premium: undefined;
+  TelebirrPayment: { plan: 'monthly' | 'yearly' };
   Help: undefined;
   MistakesBook: undefined;
 };

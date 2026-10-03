@@ -229,16 +229,27 @@ function buildSections(outline: Boundary[], located: (number | null)[]): { secti
 }
 
 function deriveKnownHeaders(pages: string[], tocEndIdx: number, pageCount: number): string[] {
-  // Sample a body page's header line (first non-blank line) for the running
-  // "<SUBJECT> GRADE <N>" token that prefixes every page.
-  for (let i = tocEndIdx + 1; i < Math.min(tocEndIdx + 20, pageCount); i += 1) {
+  // The running "<SUBJECT> GRADE <N>" token repeats on every body page, but a
+  // single sampled page's first line can just as easily be a one-off unit
+  // divider ("Unit One: Biology and technology") that happens to satisfy the
+  // same shape check — hand-confirmed this misfire on grade-11 biology,
+  // where it picked the divider instead of "BIOLOGY GRADE 11" because that's
+  // literally the only line on that particular page. Requiring the same
+  // first-column token to appear on at least 2 of several sampled pages
+  // confirms it's actually a repeating header, not a one-off heading.
+  const counts = new Map<string, number>();
+  for (let i = tocEndIdx + 1; i < Math.min(tocEndIdx + 30, pageCount); i += 1) {
     const firstLine = pages[i]?.split('\n').find((l) => l.trim().length > 0);
     if (!firstLine) continue;
     // Header lines are "<TITLE TOKEN>   <STUDENT TEXTBOOK|other>" — big gap between columns.
     const parts = firstLine.split(/\s{2,}/).map((p) => p.trim()).filter(Boolean);
-    if (parts.length > 0 && parts[0].length > 3 && parts[0].length < 40 && !/^\d+\.\d/.test(parts[0])) {
-      return [parts[0].toUpperCase(), 'STUDENT TEXTBOOK'];
+    const token = parts[0];
+    if (token && token.length > 3 && token.length < 40 && !/^\d+\.\d/.test(token)) {
+      counts.set(token.toUpperCase(), (counts.get(token.toUpperCase()) ?? 0) + 1);
     }
+  }
+  for (const [token, count] of counts) {
+    if (count >= 2) return [token, 'STUDENT TEXTBOOK'];
   }
   return ['STUDENT TEXTBOOK'];
 }

@@ -11,15 +11,17 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 type Grade = 9 | 10 | 11 | 12;
+type Stream = 'natural' | 'social';
 type SeedLesson = { id: string; title: string };
 type SeedUnit = { id: string; title: string; description: string; grade: Grade; lessons: SeedLesson[] };
-type SeedSubject = { id: string; name: string; icon: string; units: SeedUnit[] };
+type SeedSubject = { id: string; name: string; icon: string; streams: Stream[]; units: SeedUnit[] };
 
 const SUBJECTS: SeedSubject[] = [
   {
     id: 'mathematics',
     name: 'Mathematics',
     icon: 'calculator-outline',
+    streams: ['natural', 'social'],
     units: [
       {
         id: 'geometry',
@@ -71,6 +73,7 @@ const SUBJECTS: SeedSubject[] = [
     id: 'physics',
     name: 'Physics',
     icon: 'planet-outline',
+    streams: ['natural'],
     units: [
       {
         id: 'physics-foundations',
@@ -119,6 +122,7 @@ const SUBJECTS: SeedSubject[] = [
     id: 'chemistry',
     name: 'Chemistry',
     icon: 'flask-outline',
+    streams: ['natural'],
     units: [
       {
         id: 'atomic-structure',
@@ -167,6 +171,7 @@ const SUBJECTS: SeedSubject[] = [
     id: 'biology',
     name: 'Biology',
     icon: 'leaf-outline',
+    streams: ['natural'],
     units: [
       {
         id: 'intro-biology',
@@ -189,15 +194,61 @@ const SUBJECTS: SeedSubject[] = [
           { id: 'genetics-intro', title: 'Genetics' },
         ],
       },
+      // Real Grade 11 Biology curriculum (from the Ministry of Education student
+      // textbook, see backend/assets/books/ + docs/backend-architecture.md §10) has
+      // 6 units, not the single "Human Physiology" placeholder this replaces. Only
+      // Unit One has real lesson stubs so far — its content is being pulled via
+      // backend/scripts/ingest/extractLessonFromText.ts as the pilot. Units Two-Six
+      // intentionally have lessons:[] rather than stub titles with no real content:
+      // a stub would fall through to defaultLessonContent()'s generic filler under a
+      // specific real title (e.g. "Enzyme Kinetics"), which reads as real content
+      // when it isn't — worse than an empty unit. Filled in incrementally.
       {
-        id: 'human-physiology',
-        title: 'Human Physiology',
+        id: 'biology-and-technology',
+        title: 'Biology and Technology',
         grade: 11,
-        description: "How the body's major systems keep you alive.",
+        description: 'Learning from nature, and the two-way relationship between biology and technology.',
         lessons: [
-          { id: 'digestive-system', title: 'Digestive System' },
-          { id: 'circulatory-system', title: 'Circulatory System' },
+          { id: 'learning-from-nature', title: 'Learning From Nature' },
+          { id: 'biology-and-technology-lesson', title: 'Biology and Technology' },
+          { id: 'impacts-of-biology-and-technology', title: 'Impacts on Society and the Natural World' },
+          { id: 'ethical-issues-in-biology', title: 'Ethical Issues in Biology' },
         ],
+      },
+      {
+        id: 'animals',
+        title: 'Animals',
+        grade: 11,
+        description: 'Classification, reproduction, behavior, and homeostasis in animals.',
+        lessons: [],
+      },
+      {
+        id: 'enzymes',
+        title: 'Enzymes',
+        grade: 11,
+        description: 'Enzyme structure, function, regulation, and industrial application.',
+        lessons: [],
+      },
+      {
+        id: 'genetics-g11',
+        title: 'Genetics',
+        grade: 11,
+        description: 'Cell division, inheritance, genetic disorders, and bioinformatics.',
+        lessons: [],
+      },
+      {
+        id: 'human-body-systems',
+        title: 'The Human Body Systems',
+        grade: 11,
+        description: 'The reproductive system and related health topics.',
+        lessons: [],
+      },
+      {
+        id: 'population-natural-resources',
+        title: 'Population and Natural Resources',
+        grade: 11,
+        description: 'Conservation, human impact on the environment, and indigenous practices in Ethiopia.',
+        lessons: [],
       },
       {
         id: 'ecology-evolution',
@@ -215,6 +266,7 @@ const SUBJECTS: SeedSubject[] = [
     id: 'english',
     name: 'English',
     icon: 'book-outline',
+    streams: ['natural', 'social'],
     units: [
       {
         id: 'grammar',
@@ -263,6 +315,7 @@ const SUBJECTS: SeedSubject[] = [
     id: 'aptitude',
     name: 'Aptitude',
     icon: 'bulb-outline',
+    streams: ['natural', 'social'],
     units: [
       {
         id: 'basic-numeracy',
@@ -312,6 +365,7 @@ const SUBJECTS: SeedSubject[] = [
     id: 'civics',
     name: 'Civics',
     icon: 'people-outline',
+    streams: ['natural', 'social'],
     units: [
       {
         id: 'government-citizenship',
@@ -355,6 +409,46 @@ const SUBJECTS: SeedSubject[] = [
         ],
       },
     ],
+  },
+  {
+    // No lesson content yet — only exam questions ingested via
+    // backend/scripts/ingest/ (see docs/backend-architecture.md §10). units
+    // stays empty until real Grade 9-12 History curriculum content is sourced;
+    // an empty Learn path for this subject is honest, not a placeholder lie.
+    id: 'history',
+    name: 'History',
+    icon: 'time-outline',
+    streams: ['social'],
+    units: [],
+  },
+  {
+    // Same as history above — Social Science-stream-only, no lesson content yet.
+    id: 'geography',
+    name: 'Geography',
+    icon: 'earth-outline',
+    streams: ['social'],
+    units: [],
+  },
+  {
+    id: 'economics',
+    name: 'Economics',
+    icon: 'trending-up-outline',
+    streams: ['social'],
+    units: [],
+  },
+  {
+    // New-curriculum-only for now, same reasoning as history/geography/
+    // economics above — no lesson content yet, textbook-only. The old-
+    // curriculum ICT books (a different subject slug the ingest pipeline
+    // used, "information-communication-technology-ict") aren't imported:
+    // the data model has no field to distinguish old vs new curriculum for
+    // the same subject+grade, so — matching how economics' old-curriculum
+    // books were handled — only the new-curriculum books are in.
+    id: 'information-technology',
+    name: 'Information Technology',
+    icon: 'laptop-outline',
+    streams: ['natural', 'social'],
+    units: [],
   },
 ];
 
@@ -638,8 +732,8 @@ async function main() {
   for (const subject of SUBJECTS) {
     await prisma.subject.upsert({
       where: { slug: subject.id },
-      create: { id: subject.id, slug: subject.id, name: subject.name, icon: subject.icon },
-      update: { name: subject.name, icon: subject.icon },
+      create: { id: subject.id, slug: subject.id, name: subject.name, icon: subject.icon, streams: subject.streams },
+      update: { name: subject.name, icon: subject.icon, streams: subject.streams },
     });
 
     for (const [unitOrder, unit] of subject.units.entries()) {
@@ -672,7 +766,22 @@ async function main() {
           }),
         });
       }
+
+      // A lesson removed from a unit's list above (not just renamed — upsert
+      // handles that) would otherwise sit orphaned in the DB forever. Cascades
+      // to its LessonStep rows via the schema's onDelete: Cascade.
+      await prisma.lesson.deleteMany({
+        where: { unitId: unit.id, id: { notIn: unit.lessons.map((l) => l.id) } },
+      });
     }
+
+    // Same problem one level up: a unit dropped from SUBJECTS (e.g. the old
+    // placeholder "human-physiology" replaced by the real curriculum's units)
+    // would otherwise stay in the DB, orphaned, forever — upsert only ever
+    // creates/updates, it never notices something was removed.
+    await prisma.unit.deleteMany({
+      where: { subjectId: subject.id, id: { notIn: subject.units.map((u) => u.id) } },
+    });
   }
 
   console.log('Seeding practice question bank...');

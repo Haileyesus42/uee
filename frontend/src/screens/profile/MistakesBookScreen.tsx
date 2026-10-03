@@ -9,6 +9,7 @@ import { Card } from '../../components/cards/Card';
 import { MultipleChoiceOption } from '../../components/questions/MultipleChoiceOption';
 import { useMistakes } from '../../hooks/useProfile';
 import { ProfileStackParamList } from '../../navigation/types';
+import { MathText } from '../../components/common/MathText';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'MistakesBook'>;
 
@@ -61,9 +62,9 @@ export function MistakesBookScreen({ navigation }: Props) {
                         state={oi === item.question.correctIndex ? 'correct' : 'default'}
                       />
                     ))}
-                    <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 4 }]}>
+                    <MathText style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 4 }]}>
                       {item.question.explanation}
-                    </Text>
+                    </MathText>
                   </View>
                 )}
               </Card>

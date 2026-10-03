@@ -6,15 +6,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
-import { useSubjects } from '../../hooks/useCurriculum';
+import { useUeeSubjects } from '../../hooks/useUee';
 import { UeeStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<UeeStackParamList, 'YearSubjects'>;
 
 export function YearSubjectsScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const { year } = route.params;
-  const { data: subjects } = useSubjects();
+  const { stream, year } = route.params;
+  const { data: subjects } = useUeeSubjects(stream);
   if (!subjects) return null;
 
   return (
@@ -32,7 +32,7 @@ export function YearSubjectsScreen({ navigation, route }: Props) {
           <Pressable
             key={subject.id}
             onPress={() =>
-              navigation.navigate('PaperViewer', { year, subjectId: subject.id, subjectName: subject.name })
+              navigation.navigate('PaperViewer', { stream, year, subjectId: subject.id, subjectName: subject.name })
             }
           >
             <Card style={i === subjects.length - 1 ? undefined : styles.cardSpacing}>
