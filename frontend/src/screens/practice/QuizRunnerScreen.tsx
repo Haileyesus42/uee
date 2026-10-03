@@ -151,10 +151,26 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
   const isCorrect = !isMock && selected === question.correctIndex;
   const showFooterButton = isMock || !checked;
 
+  // popToTop() alone only works when this screen was pushed onto an
+  // already-open Practice stack (QuizSetup/MockExamsList) — it correctly skips
+  // back past the setup screen to the hub. But a past-paper exam reaches this
+  // screen via a cross-stack jump from the UEE tab (see PaperViewerScreen),
+  // which mounts Practice fresh with QuizRunner as its only route: popToTop has
+  // nothing to pop and silently no-ops ("POP_TO_TOP was not handled by any
+  // navigator" in dev, a dead close button in production). goBack() bubbles up
+  // to the parent navigator in that case and correctly returns to the paper.
+  function exitQuiz() {
+    if (navigation.getState().routes.length > 1) {
+      navigation.popToTop();
+    } else {
+      navigation.goBack();
+    }
+  }
+
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]}>
       <View style={[styles.header, { paddingHorizontal: t.spacing.md }]}>
-        <Pressable onPress={() => navigation.popToTop()} hitSlop={10} style={styles.closeButton}>
+        <Pressable onPress={exitQuiz} hitSlop={10} style={styles.closeButton}>
           <Ionicons name="close" size={22} color={t.colors.textSecondary} />
         </Pressable>
         <View style={{ flex: 1, marginHorizontal: 12 }}>
