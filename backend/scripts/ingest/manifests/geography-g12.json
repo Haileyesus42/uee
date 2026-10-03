@@ -1,0 +1,210 @@
+{
+  "subject": "geography",
+  "grade": 12,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-12-geography-new-curriculum--student-textbook-kehulumcom17599134797b34.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit ONE: MAJOR GEOLOGICAL PROCESSES",
+      "sectionTitle": "1.1 Continental Drift Theory",
+      "pageStart": 11,
+      "pageEnd": 13
+    },
+    {
+      "unitTitle": "Unit ONE: MAJOR GEOLOGICAL PROCESSES",
+      "sectionTitle": "1.2 Plate Tectonics Theory",
+      "pageStart": 14,
+      "pageEnd": 16
+    },
+    {
+      "unitTitle": "Unit ONE: MAJOR GEOLOGICAL PROCESSES",
+      "sectionTitle": "1.3 Plate Movements and Plate Boundaries",
+      "pageStart": 17,
+      "pageEnd": 19
+    },
+    {
+      "unitTitle": "Unit ONE: MAJOR GEOLOGICAL PROCESSES",
+      "sectionTitle": "1.4 Major Geological Processes",
+      "pageStart": 20,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE CHANGE",
+      "sectionTitle": "2.1 Basic Concepts of Climate Change",
+      "pageStart": 44,
+      "pageEnd": 46
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE CHANGE",
+      "sectionTitle": "2.2 Trends in Global Climate Change",
+      "pageStart": 47,
+      "pageEnd": 47
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE CHANGE",
+      "sectionTitle": "2.3 Natural and Human Induced Climate Change",
+      "pageStart": 48,
+      "pageEnd": 54
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE CHANGE",
+      "sectionTitle": "2.4 Consequences of Climate Change",
+      "pageStart": 55,
+      "pageEnd": 58
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE CHANGE",
+      "sectionTitle": "2.5 Adaptation and Mitigation Strategies to Climate Change",
+      "pageStart": 59,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE CHANGE",
+      "sectionTitle": "2.6 International conventions and agreements on climate",
+      "pageStart": 62,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "Unit TWO: CLIMATE CHANGE",
+      "sectionTitle": "2.7 Pillars of Climate Resilient Green Economy of Ethiopia",
+      "pageStart": 66,
+      "pageEnd": 71
+    },
+    {
+      "unitTitle": "Unit THREE: MANAGEMENT OF CONFLICT",
+      "sectionTitle": "3.1 The Concept of Sustainable Development",
+      "pageStart": 72,
+      "pageEnd": 77
+    },
+    {
+      "unitTitle": "Unit THREE: MANAGEMENT OF CONFLICT",
+      "sectionTitle": "3.2 Resource Use Policies and Related Conflicts",
+      "pageStart": 78,
+      "pageEnd": 89
+    },
+    {
+      "unitTitle": "Unit THREE: MANAGEMENT OF CONFLICT",
+      "sectionTitle": "3.3 Governance of Natural Resources",
+      "pageStart": 90,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "Unit THREE: MANAGEMENT OF CONFLICT",
+      "sectionTitle": "3.4 Indigenous Conflict Resolution Practices",
+      "pageStart": 93,
+      "pageEnd": 100
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION POLICIES",
+      "sectionTitle": "4.2 Population Policies",
+      "pageStart": 101,
+      "pageEnd": 110
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION POLICIES",
+      "sectionTitle": "4.3 Measures Taken to Curb Growth of Population",
+      "pageStart": 111,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION POLICIES",
+      "sectionTitle": "4.4 Relationship Between Population & Socio-economic Develoment",
+      "pageStart": 116,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit FOUR: POPULATION POLICIES",
+      "sectionTitle": "4.5 Relationship Between Population and Environmental Health",
+      "pageStart": 124,
+      "pageEnd": 132
+    },
+    {
+      "unitTitle": "Unit FIVE: CHALLENGES OF ECONOMIC",
+      "sectionTitle": "5.1 Multiple Faces of Poverty and Implication to Development",
+      "pageStart": 133,
+      "pageEnd": 137
+    },
+    {
+      "unitTitle": "Unit FIVE: CHALLENGES OF ECONOMIC",
+      "sectionTitle": "5.2 The Advantages and Disadvantage of Globalization",
+      "pageStart": 138,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "Unit FIVE: CHALLENGES OF ECONOMIC",
+      "sectionTitle": "5.3 The Growing Imbalance between Regions and Countries",
+      "pageStart": 143,
+      "pageEnd": 146
+    },
+    {
+      "unitTitle": "Unit FIVE: CHALLENGES OF ECONOMIC",
+      "sectionTitle": "5.4 Corruption",
+      "pageStart": 147,
+      "pageEnd": 153
+    },
+    {
+      "unitTitle": "Unit FIVE: CHALLENGES OF ECONOMIC",
+      "sectionTitle": "5.5 Global Health Crises",
+      "pageStart": 154,
+      "pageEnd": 161
+    },
+    {
+      "unitTitle": "Unit SIX: SOLUTIONS TO ENVIRONMENTAL",
+      "sectionTitle": "6.1 Environmental Problems",
+      "pageStart": 162,
+      "pageEnd": 171
+    },
+    {
+      "unitTitle": "Unit SIX: SOLUTIONS TO ENVIRONMENTAL",
+      "sectionTitle": "6.2 Sustainability Challenge",
+      "pageStart": 172,
+      "pageEnd": 178
+    },
+    {
+      "unitTitle": "Unit SIX: SOLUTIONS TO ENVIRONMENTAL",
+      "sectionTitle": "6.3 Environmental Education",
+      "pageStart": 179,
+      "pageEnd": 182
+    },
+    {
+      "unitTitle": "Unit SIX: SOLUTIONS TO ENVIRONMENTAL",
+      "sectionTitle": "6.4 Environmental Movements",
+      "pageStart": 183,
+      "pageEnd": 186
+    },
+    {
+      "unitTitle": "Unit SIX: SOLUTIONS TO ENVIRONMENTAL",
+      "sectionTitle": "6.5 Environmentally Friendly Indigenous Practices",
+      "pageStart": 187,
+      "pageEnd": 195
+    },
+    {
+      "unitTitle": "Unit SEVEN: CONTEMPORARY GLOBAL GEOGRAPHIC ISSUES",
+      "sectionTitle": "7.1 Climate Change",
+      "pageStart": 196,
+      "pageEnd": 198
+    },
+    {
+      "unitTitle": "Unit SEVEN: CONTEMPORARY GLOBAL GEOGRAPHIC ISSUES",
+      "sectionTitle": "7.2 Desertification",
+      "pageStart": 199,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "Unit SEVEN: CONTEMPORARY GLOBAL GEOGRAPHIC ISSUES",
+      "sectionTitle": "7.3 Drought",
+      "pageStart": 209,
+      "pageEnd": 217
+    },
+    {
+      "unitTitle": "Unit SEVEN: CONTEMPORARY GLOBAL GEOGRAPHIC ISSUES",
+      "sectionTitle": "7.4 Famine",
+      "pageStart": 218,
+      "pageEnd": 224
+    }
+  ],
+  "knownHeaders": [
+    "UNIT",
+    "STUDENT TEXTBOOK"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "subject": "economics",
+  "grade": 10,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-10-economics-new-curriculum--student-textbook-kehulumcom1759928992f5b9.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 2: Theories of Demand and Supply",
+      "sectionTitle": "2.3 Market Equilibrium",
+      "pageStart": 37,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "Unit 2: Theories of Demand and Supply",
+      "sectionTitle": "2.4 Elasticities of Demand and Supply",
+      "pageStart": 44,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "Unit 3: Theories of Production and Cost",
+      "sectionTitle": "3.1 Theory of Production",
+      "pageStart": 57,
+      "pageEnd": 67
+    },
+    {
+      "unitTitle": "Unit 3: Theories of Production and Cost",
+      "sectionTitle": "3.2 Theory of Cost",
+      "pageStart": 68,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit 4: Market Structure",
+      "sectionTitle": "4.1 Perfectly Competitive Markets",
+      "pageStart": 79,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 4: Market Structure",
+      "sectionTitle": "4.2 Pure Monopoly Market",
+      "pageStart": 83,
+      "pageEnd": 88
+    },
+    {
+      "unitTitle": "Unit 4: Market Structure",
+      "sectionTitle": "4.3 Monopolistically Competitive Market",
+      "pageStart": 89,
+      "pageEnd": 91
+    },
+    {
+      "unitTitle": "Unit 4: Market Structure",
+      "sectionTitle": "4.4 Oligopoly Market",
+      "pageStart": 92,
+      "pageEnd": 96
+    },
+    {
+      "unitTitle": "Unit 5: Banking and Finance",
+      "sectionTitle": "5.1 Introduction to Financial Intermediaries",
+      "pageStart": 98,
+      "pageEnd": 99
+    },
+    {
+      "unitTitle": "Unit 5: Banking and Finance",
+      "sectionTitle": "5.2 Introduction to Financial Markets",
+      "pageStart": 100,
+      "pageEnd": 101
+    },
+    {
+      "unitTitle": "Unit 5: Banking and Finance",
+      "sectionTitle": "5.3 Introduction to Financial Institutions",
+      "pageStart": 102,
+      "pageEnd": 104
+    },
+    {
+      "unitTitle": "Unit 5: Banking and Finance",
+      "sectionTitle": "5.4 Historical Development of Banks in Ethiopia",
+      "pageStart": 105,
+      "pageEnd": 110
+    },
+    {
+      "unitTitle": "Unit 5: Banking and Finance",
+      "sectionTitle": "5.5 Micro-finance Institutions",
+      "pageStart": 111,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit 5: Banking and Finance",
+      "sectionTitle": "5.6 Electronic Banking (e-banking)",
+      "pageStart": 114,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "Unit 5: Banking and Finance",
+      "sectionTitle": "5.7 Indigenous Financial Institutions",
+      "pageStart": 116,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "Unit 6: Economic Growth",
+      "sectionTitle": "6.1 Review of Macroeconomic Variables",
+      "pageStart": 122,
+      "pageEnd": 124
+    },
+    {
+      "unitTitle": "Unit 6: Economic Growth",
+      "sectionTitle": "6.2 Definition and Measurement of Economic Growth",
+      "pageStart": 125,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit 6: Economic Growth",
+      "sectionTitle": "6.3 Sources of Economic Growth",
+      "pageStart": 127,
+      "pageEnd": 130
+    },
+    {
+      "unitTitle": "Unit 6: Economic Growth",
+      "sectionTitle": "6.4 The Weaknesses of Using GDP /GDP Per Capita",
+      "pageStart": 131,
+      "pageEnd": 132
+    },
+    {
+      "unitTitle": "Unit 6: Economic Growth",
+      "sectionTitle": "6.5 The Business Cycle and Its Phases",
+      "pageStart": 133,
+      "pageEnd": 136
+    },
+    {
+      "unitTitle": "Unit 7: The Ethiopian Economy",
+      "sectionTitle": "7.1 Compnents of Gross Domostic Product (GDP)",
+      "pageStart": 138,
+      "pageEnd": 145
+    },
+    {
+      "unitTitle": "Unit 7: The Ethiopian Economy",
+      "sectionTitle": "7.3 The Agricultural Secotor in the Ethiopian Economy",
+      "pageStart": 146,
+      "pageEnd": 151
+    },
+    {
+      "unitTitle": "Unit 7: The Ethiopian Economy",
+      "sectionTitle": "7.4 The Industrial Sector in the Ethiopian Economy",
+      "pageStart": 152,
+      "pageEnd": 155
+    },
+    {
+      "unitTitle": "Unit 7: The Ethiopian Economy",
+      "sectionTitle": "7.5 The Service Sector in the Ethiopian Economy",
+      "pageStart": 156,
+      "pageEnd": 158
+    },
+    {
+      "unitTitle": "Unit 7: The Ethiopian Economy",
+      "sectionTitle": "7.6 Agriculture versus Industrial Development",
+      "pageStart": 159,
+      "pageEnd": 162
+    },
+    {
+      "unitTitle": "Unit 8: Business Startups and Innovation",
+      "sectionTitle": "8.1 Innovation",
+      "pageStart": 164,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "Unit 8: Business Startups and Innovation",
+      "sectionTitle": "8.2 Business Startups",
+      "pageStart": 169,
+      "pageEnd": 170
+    },
+    {
+      "unitTitle": "Unit 8: Business Startups and Innovation",
+      "sectionTitle": "8.3 Types of Businesses Organizations",
+      "pageStart": 171,
+      "pageEnd": 175
+    }
+  ],
+  "knownHeaders": [
+    "STUDENT TEXTBOOK"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "subject": "mathematics",
+  "grade": 11,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-11-mathematics-old-curriculum--student-textbook-chilot.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Inverse functions and their graphs…",
+      "pageStart": 39,
+      "pageEnd": 74
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Conic sections",
+      "pageStart": 75,
+      "pageEnd": 152
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Probability",
+      "pageStart": 153,
+      "pageEnd": 281
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "7.3 Complex conjugate and modulus",
+      "pageStart": 282,
+      "pageEnd": 308
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.2 Representation of vectors",
+      "pageStart": 309,
+      "pageEnd": 313
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.3 Scalar (inner or dot) product of vectors",
+      "pageStart": 314,
+      "pageEnd": 327
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "8.5 Transformation of the plane",
+      "pageStart": 328,
+      "pageEnd": 355
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.1 The functions y =sec x, y = csc x and y = cot x",
+      "pageStart": 356,
+      "pageEnd": 368
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.3 Graphs of some trigonometric functions",
+      "pageStart": 369,
+      "pageEnd": 384
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "9.4 Applications of trigonometric functions",
+      "pageStart": 385,
+      "pageEnd": 433
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "11.1 Basic mathematical concepts in business",
+      "pageStart": 434,
+      "pageEnd": 446
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "11.2 Compound interest and depreciation",
+      "pageStart": 447,
+      "pageEnd": 460
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "11.3 Saving, investing and borrowing money",
+      "pageStart": 461,
+      "pageEnd": 469
+    }
+  ],
+  "knownHeaders": [
+    "MATHEMATICS GRADE 11",
+    "STUDENT TEXTBOOK"
+  ]
+}

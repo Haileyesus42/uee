@@ -24,6 +24,8 @@
     "ingest:download": "tsx scripts/ingest/downloadTextbooks.ts",
     "ingest:kehulum": "tsx scripts/ingest/convertKehulum.ts",
     "ingest:manifest": "tsx scripts/ingest/generateManifest.ts",
+    "ingest:lesson-plan": "tsx scripts/ingest/manifestToLessonPlan.ts",
+    "ingest:lesson-run": "tsx scripts/ingest/runLessonPlan.ts",
     "billing:expire": "tsx scripts/expireSubscriptions.ts"
   },
   "prisma": {

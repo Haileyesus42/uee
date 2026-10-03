@@ -15,20 +15,42 @@ function sleep(ms: number): Promise<void> {
 // that a batch of ~100 sequential per-question calls blows through easily. Retries
 // on 429 using the delay the API itself reports (falls back to a fixed 2s if the
 // message doesn't include one) rather than failing the whole item outright.
+//
+// Also retries a thrown network error (TypeError: fetch failed / ETIMEDOUT) the
+// same way — hand-confirmed during a 33-call lesson batch on this tier (8000 TPM)
+// that running calls back-to-back makes a chunk of them fail this way instead of
+// cleanly 429ing; a fixed backoff before retrying clears it. Previously only the
+// 429 branch retried, so any of these just failed the whole item outright.
 async function fetchGroqWithRetry(body: unknown, maxRetries = 5): Promise<Response> {
   for (let attempt = 0; ; attempt += 1) {
-    const res = await fetch(GROQ_CHAT_URL, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${env.GROQ_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
+    let res: Response;
+    try {
+      res = await fetch(GROQ_CHAT_URL, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${env.GROQ_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+    } catch (err) {
+      if (attempt >= maxRetries) throw err;
+      await sleep(3000);
+      continue;
+    }
     if (res.status !== 429 || attempt >= maxRetries) return res;
     const text = await res.clone().text();
-    const match = text.match(/try again in ([\d.]+)s/i);
-    const waitMs = match ? Math.ceil(Number(match[1]) * 1000) + 250 : 2000;
+    // Groq reports the wait as "2.5s" (per-minute limits) or "18m34.56s" (daily
+    // limits — hand-confirmed hitting this account's 200k TPD cap mid-batch).
+    // The old regex only captured the trailing seconds, so a daily-limit wait
+    // like "18m34.56s" parsed as ~35s instead of the real ~18.5 minutes.
+    const match = text.match(/try again in (?:([\d.]+)m)?([\d.]+)s/i);
+    const waitMs = match ? Math.ceil((Number(match[1] ?? 0) * 60 + Number(match[2])) * 1000) + 250 : 2000;
+    // A daily-quota wait can run tens of minutes — not worth blocking this call
+    // on. Return the 429 as-is so the caller's error surfaces immediately and
+    // the batch runner one level up can stop cleanly and resume the whole run
+    // later, rather than one fetch hanging for most of an hour.
+    if (waitMs > 60_000) return res;
     await sleep(waitMs);
   }
 }

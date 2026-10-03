@@ -48,6 +48,17 @@ const END_MARKER_TOC_LINE = new RegExp(
   `^\\s*Unit\\s+([A-Za-z0-9]+)\\s+(?:summary|review\\s+questions?)\\b.*[${LEADER_CHARS}]{2,}\\d{1,4}\\s*$`,
   'i'
 );
+// Every unit's opening page carries its own mini outline ("Unit Contents" /
+// "Contents", then bare "1.1 Title" lines with no leader/page-number at all —
+// unlike the book's front ToC, which always has one). These bare lines match
+// SECTION_TOC_LINE's shape just as well as a real in-body heading does, and
+// since this page sits right at the start of the unit's own page range,
+// locateBoundaryPages (searching forward, never backward) hits it before the
+// real headings and "locates" every section of the unit here — confirmed on
+// grade-9 mathematics, where 1.1-1.4 all resolved to the single page carrying
+// Unit 1's own contents list. Skipping the whole page once this marker is seen
+// avoids it entirely, rather than trying to pattern-match around it.
+const UNIT_CONTENTS_MARKER = /^\s*Unit\s+Contents?\s*$/i;
 
 function parseArgs(argv: string[]) {
   const args: Record<string, string> = {};
@@ -142,6 +153,39 @@ function parseOutline(pages: string[]): { outline: Boundary[]; tocEndIdx: number
   return { outline, tocEndIdx };
 }
 
+// A real in-body heading is followed by its content (objectives, prose, an
+// activity) — only a *list* of headings is followed immediately by the next
+// heading, with nothing in between. This catches the same per-unit mini-outline
+// problem as UNIT_CONTENTS_MARKER even when a book doesn't use that literal
+// wording ("Sections" instead of "Unit Contents" — seen in grade-9 biology,
+// where the outline and section 1.1's real heading both fall on the same
+// printed page, so skipping the whole page like UNIT_CONTENTS_MARKER does
+// would discard the real content along with the list). Marks every line in a
+// run of 3+ consecutive heading-shaped lines as list context, to be ignored by
+// the boundary search below — a real outline lists every section in a unit
+// (typically 4+), while two genuinely adjacent real headings (a short section
+// immediately followed by the next) is the one case this must NOT catch;
+// hand-confirmed on grade-9 mathematics, where a 2-line threshold here wrongly
+// ate 2.1/2.2's real headings along with the Unit 2 boundary.
+function isHeadingShaped(line: string): boolean {
+  return /^(\d+)\.(\d+)\.?\s+\S/.test(line) || /^Unit\s+[A-Za-z0-9]+\b/i.test(line);
+}
+
+function markListContextLines(lines: string[]): boolean[] {
+  const shaped = lines.map(isHeadingShaped);
+  const skip = new Array(lines.length).fill(false);
+  let runStart = -1;
+  for (let i = 0; i <= lines.length; i += 1) {
+    if (i < lines.length && shaped[i]) {
+      if (runStart === -1) runStart = i;
+    } else {
+      if (runStart !== -1 && i - runStart >= 3) skip.fill(true, runStart, i);
+      runStart = -1;
+    }
+  }
+  return skip;
+}
+
 // Walks body pages sequentially looking for each outline entry's heading in
 // turn. Returns a parallel array of located page numbers (1-indexed, PDF page
 // numbers) — null for any boundary never found (left for manual follow-up).
@@ -154,7 +198,11 @@ function locateBoundaryPages(pages: string[], startIdx: number, outline: Boundar
     let found = false;
     for (let pi = searchFrom; pi < pages.length && !found; pi += 1) {
       const lines = pages[pi].split('\n').map((l) => l.trim()).filter(Boolean);
-      for (const line of lines) {
+      if (lines.some((l) => UNIT_CONTENTS_MARKER.test(l))) continue; // see UNIT_CONTENTS_MARKER
+      const listContext = markListContextLines(lines);
+      for (let li = 0; li < lines.length; li += 1) {
+        if (listContext[li]) continue; // see markListContextLines
+        const line = lines[li];
         if (line.length > 100) continue; // headings are short; skip body prose
         if (boundary.kind === 'unit') {
           const m = line.match(/^Unit\s+([A-Za-z0-9]+)\s*:\s*(.+)$/i);
@@ -214,8 +262,13 @@ function buildSections(outline: Boundary[], located: (number | null)[]): { secti
       }
     }
     if (pageEnd === null || pageEnd < pageStart) {
-      unresolved.push(`${b.sectionNum} ${b.title} (no located boundary after it — using single-page fallback)`);
-      pageEnd = pageStart;
+      // Dropped, not guessed: a single-page fallback here is usually wrong (the
+      // real section is almost always more than one page), and a wrong page
+      // range reads as real content once it's in the reader — worse than the
+      // section being absent. Same reasoning as the seed.ts comment on why an
+      // empty unit beats a generic-filler one.
+      unresolved.push(`${b.sectionNum} ${b.title} (no located boundary after it — dropped, not guessed)`);
+      continue;
     }
 
     sections.push({

@@ -1,0 +1,131 @@
+{
+  "subject": "physics",
+  "grade": 12,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-12-physics-new-curriculum--student-textbook-kehulumcom1759910068aff6.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Projectile motion",
+      "pageStart": 41,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Rotational Motion",
+      "pageStart": 45,
+      "pageEnd": 55
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Rotational Dynamics",
+      "pageStart": 56,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Planetary motion and Kepler’s laws",
+      "pageStart": 60,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Newton’s law of universal Gravitation",
+      "pageStart": 65,
+      "pageEnd": 74
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Fluid Statics",
+      "pageStart": 75,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Pressure in fluids at rest",
+      "pageStart": 88,
+      "pageEnd": 106
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Archimedes’ principle",
+      "pageStart": 107,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.5 Safety and high pressure",
+      "pageStart": 113,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Magnetic field lines",
+      "pageStart": 126,
+      "pageEnd": 130
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Current and Magnetism",
+      "pageStart": 131,
+      "pageEnd": 131
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.4 Electromagnetic Induction",
+      "pageStart": 132,
+      "pageEnd": 134
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.5 Faraday’s Law of electromagnetic Induction",
+      "pageStart": 135,
+      "pageEnd": 139
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.7 Application and safety",
+      "pageStart": 140,
+      "pageEnd": 148
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Semiconductors",
+      "pageStart": 149,
+      "pageEnd": 152
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Diodes and their Functions",
+      "pageStart": 153,
+      "pageEnd": 155
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.3 Rectification",
+      "pageStart": 156,
+      "pageEnd": 159
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.4 Transistors and their application",
+      "pageStart": 160,
+      "pageEnd": 166
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.5 Integrated Circuits",
+      "pageStart": 167,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.6 Logic gates and logic circuits",
+      "pageStart": 169,
+      "pageEnd": 176
+    }
+  ],
+  "knownHeaders": [
+    "STUDENT TEXTBOOK"
+  ]
+}
