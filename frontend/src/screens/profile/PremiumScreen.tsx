@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { GradientButton } from '../../components/buttons/GradientButton';
-import { useCheckout, useSubscription, useTelebirrInfo } from '../../hooks/useBilling';
+import { useSubscription, useTelebirrInfo } from '../../hooks/useBilling';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'Premium'>;
@@ -33,11 +33,7 @@ export function PremiumScreen({ navigation }: Props) {
   const [selectedPlan, setSelectedPlan] = useState<PlanId>('yearly');
   const { data: subscription } = useSubscription();
   const { data: telebirrInfo } = useTelebirrInfo();
-  const checkoutMutation = useCheckout();
   const isPro = subscription?.status === 'active';
-  // Real Chapa checkouts sit here until the webhook confirms payment (see
-  // useSubscription's poll) — distinct from checkoutMutation.isPending, which is
-  // just "the checkout request itself is in flight," not "payment is settling."
   const isAwaitingPayment = subscription?.status === 'pending';
 
   const tintMap: Record<Tint, { bg: string; fg: string }> = {
@@ -149,26 +145,31 @@ export function PremiumScreen({ navigation }: Props) {
               ? "You're Pro ✓"
               : isAwaitingPayment
               ? 'Confirming payment…'
-              : checkoutMutation.isPending
-              ? 'Processing…'
+              : telebirrInfo && !telebirrInfo.enabled
+              ? 'Payment unavailable'
               : 'Upgrade Now'
           }
-          onPress={() => !isPro && !isAwaitingPayment && checkoutMutation.mutate(selectedPlan)}
+          // Only real payment path wired up right now is Telebirr (manual screenshot,
+          // verified by Groq — see TelebirrPaymentScreen). There used to be a second
+          // "Upgrade Now" path straight through paymentProvider.ts, but with
+          // PAYMENT_PROVIDER=mock that activated Pro instantly with no payment at all —
+          // the two buttons need to do the same thing, not offer a free shortcut next
+          // to the real one. Chapa stays wired up server-side for whenever a live
+          // merchant key exists; nothing here calls it anymore. Disabled rather than
+          // navigating to a dead end if Telebirr itself isn't configured (no second
+          // payment path left to fall back to).
+          onPress={() =>
+            !isPro &&
+            !isAwaitingPayment &&
+            telebirrInfo?.enabled &&
+            navigation.navigate('TelebirrPayment', { plan: selectedPlan })
+          }
           style={{
             paddingVertical: 15,
-            opacity: isPro || isAwaitingPayment || checkoutMutation.isPending ? 0.7 : 1,
+            opacity: isPro || isAwaitingPayment || !telebirrInfo?.enabled ? 0.7 : 1,
           }}
         />
-        <Text style={[styles.footNote, { color: t.colors.textSecondary }]}>Cancel anytime · Secure payment</Text>
-
-        {!isPro && !isAwaitingPayment && telebirrInfo?.enabled ? (
-          <Pressable
-            onPress={() => navigation.navigate('TelebirrPayment', { plan: selectedPlan })}
-            style={styles.telebirrLink}
-          >
-            <Text style={[t.typography.caption, { color: t.colors.brand }]}>Pay with Telebirr instead</Text>
-          </Pressable>
-        ) : null}
+        <Text style={[styles.footNote, { color: t.colors.textSecondary }]}>Cancel anytime · Pay via Telebirr</Text>
       </View>
     </SafeAreaView>
   );
@@ -231,5 +232,4 @@ const styles = StyleSheet.create({
   ribbonText: { color: '#5B3B0A', fontFamily: 'Inter_700Bold', fontSize: 9, fontWeight: '700' },
 
   footNote: { textAlign: 'center', fontFamily: 'Inter_500Medium', fontSize: 10.5, marginTop: 8 },
-  telebirrLink: { alignItems: 'center', marginTop: 12, padding: 4 },
 });

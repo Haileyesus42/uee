@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ActivityIndicator, Alert, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as ImagePicker from 'expo-image-picker';
@@ -14,6 +14,26 @@ import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'TelebirrPayment'>;
 type PickedImage = { uri: string; mimeType: string };
+
+// Telebirr has no documented deep-link scheme for pre-filling a send-money
+// screen (recipient/amount) for a peer-to-peer transfer — that only exists for
+// its formal merchant "Fabric Payment Gateway" API (a redirect-based checkout
+// requiring registered merchant credentials, a different integration entirely
+// from this manual-screenshot flow). This just launches the app itself, saving
+// a "find and open Telebirr" step — the user still enters the number manually
+// once inside. Package id per public APK listings, not an official source;
+// worst case it's wrong and the Play Store fallback below still works.
+const TELEBIRR_PACKAGE = 'cn.tydic.ethiopay';
+
+async function openTelebirrApp() {
+  try {
+    await Linking.openURL(`android-app://${TELEBIRR_PACKAGE}`);
+  } catch {
+    // Not installed, or nothing handled the intent — send them to install it
+    // instead of failing silently.
+    await Linking.openURL(`https://play.google.com/store/apps/details?id=${TELEBIRR_PACKAGE}`).catch(() => {});
+  }
+}
 
 export function TelebirrPaymentScreen({ navigation, route }: Props) {
   const t = useTheme();
@@ -77,7 +97,7 @@ export function TelebirrPaymentScreen({ navigation, route }: Props) {
         </View>
         <View style={[styles.flex, styles.center, { padding: t.spacing.lg }]}>
           <Text style={[t.typography.body, { color: t.colors.textSecondary, textAlign: 'center' }]}>
-            Telebirr payment isn't available right now — please use the card payment option instead.
+            Telebirr payment isn't set up yet — please check back shortly or contact support.
           </Text>
         </View>
       </SafeAreaView>
@@ -141,6 +161,15 @@ export function TelebirrPaymentScreen({ navigation, route }: Props) {
                 </View>
                 <Ionicons name="copy-outline" size={20} color={t.colors.brand} />
               </Pressable>
+
+              {Platform.OS === 'android' ? (
+                <Pressable onPress={openTelebirrApp} style={styles.openAppRow}>
+                  <Ionicons name="open-outline" size={15} color={t.colors.textSecondary} />
+                  <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginLeft: 6 }]}>
+                    Open Telebirr app
+                  </Text>
+                </Pressable>
+              ) : null}
             </View>
 
             <View style={[styles.card, { backgroundColor: t.colors.surface, borderColor: t.colors.border, borderWidth: 1, marginTop: t.spacing.md }]}>
@@ -206,5 +235,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   preview: { width: '100%', height: 180, borderRadius: 12, marginTop: 12 },
+  openAppRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10, padding: 4 },
   footNote: { textAlign: 'center', fontFamily: 'Inter_500Medium', fontSize: 10.5, marginTop: 8 },
 });
