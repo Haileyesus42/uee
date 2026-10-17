@@ -1,0 +1,155 @@
+{
+  "subject": "english",
+  "grade": 9,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-9-english-for-ethiopia--student-textbook-ethiopialearning.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Learning to learn",
+      "sectionTitle": "Unit 1 Part A",
+      "pageStart": 7,
+      "pageEnd": 16
+    },
+    {
+      "unitTitle": "Unit 1: Learning to learn",
+      "sectionTitle": "Unit 1 Part B",
+      "pageStart": 17,
+      "pageEnd": 24
+    },
+    {
+      "unitTitle": "Unit 2: Places to visit",
+      "sectionTitle": "Unit 2 Part A",
+      "pageStart": 25,
+      "pageEnd": 31
+    },
+    {
+      "unitTitle": "Unit 2: Places to visit",
+      "sectionTitle": "Unit 2 Part B",
+      "pageStart": 32,
+      "pageEnd": 41
+    },
+    {
+      "unitTitle": "Unit 3: Hobbies and crafts",
+      "sectionTitle": "Unit 3 Part A",
+      "pageStart": 42,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 3: Hobbies and crafts",
+      "sectionTitle": "Unit 3 Part B",
+      "pageStart": 54,
+      "pageEnd": 67
+    },
+    {
+      "unitTitle": "Unit 4: Food for health",
+      "sectionTitle": "Unit 4 Part A",
+      "pageStart": 68,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit 4: Food for health",
+      "sectionTitle": "Unit 4 Part B",
+      "pageStart": 77,
+      "pageEnd": 86
+    },
+    {
+      "unitTitle": "Unit 5: HIV and AIDS",
+      "sectionTitle": "Unit 5 Part A",
+      "pageStart": 87,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit 5: HIV and AIDS",
+      "sectionTitle": "Unit 5 Part B",
+      "pageStart": 94,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "Unit 6: Media, TV and Radio",
+      "sectionTitle": "Unit 6 Part A",
+      "pageStart": 104,
+      "pageEnd": 111
+    },
+    {
+      "unitTitle": "Unit 6: Media, TV and Radio",
+      "sectionTitle": "Unit 6 Part B",
+      "pageStart": 112,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "Unit 7: Cities of the future",
+      "sectionTitle": "Unit 7 Part A",
+      "pageStart": 126,
+      "pageEnd": 132
+    },
+    {
+      "unitTitle": "Unit 7: Cities of the future",
+      "sectionTitle": "Unit 7 Part B",
+      "pageStart": 133,
+      "pageEnd": 140
+    },
+    {
+      "unitTitle": "Unit 8: Money and finance",
+      "sectionTitle": "Unit 8 Part A",
+      "pageStart": 141,
+      "pageEnd": 150
+    },
+    {
+      "unitTitle": "Unit 8: Money and finance",
+      "sectionTitle": "Unit 8 Part B",
+      "pageStart": 151,
+      "pageEnd": 159
+    },
+    {
+      "unitTitle": "Unit 9: People and traditional culture",
+      "sectionTitle": "Unit 9 Part A",
+      "pageStart": 160,
+      "pageEnd": 168
+    },
+    {
+      "unitTitle": "Unit 9: People and traditional culture",
+      "sectionTitle": "Unit 9 Part B",
+      "pageStart": 169,
+      "pageEnd": 182
+    },
+    {
+      "unitTitle": "Unit 10: Newspapers and magazines",
+      "sectionTitle": "Unit 10 Part A",
+      "pageStart": 183,
+      "pageEnd": 189
+    },
+    {
+      "unitTitle": "Unit 10: Newspapers and magazines",
+      "sectionTitle": "Unit 10 Part B",
+      "pageStart": 190,
+      "pageEnd": 197
+    },
+    {
+      "unitTitle": "Unit 11: Endangered animals",
+      "sectionTitle": "Unit 11 Part A",
+      "pageStart": 198,
+      "pageEnd": 206
+    },
+    {
+      "unitTitle": "Unit 11: Endangered animals",
+      "sectionTitle": "Unit 11 Part B",
+      "pageStart": 207,
+      "pageEnd": 213
+    },
+    {
+      "unitTitle": "Unit 12: Stigma and discrimination",
+      "sectionTitle": "Unit 12 Part A",
+      "pageStart": 214,
+      "pageEnd": 219
+    },
+    {
+      "unitTitle": "Unit 12: Stigma and discrimination",
+      "sectionTitle": "Unit 12 Part B",
+      "pageStart": 220,
+      "pageEnd": 254
+    }
+  ],
+  "knownHeaders": [
+    "ENGLISH STUDENT TEXTBOOK GRADE 9"
+  ]
+}

@@ -60,6 +60,48 @@ const END_MARKER_TOC_LINE = new RegExp(
 // avoids it entirely, rather than trying to pattern-match around it.
 const UNIT_CONTENTS_MARKER = /^\s*Unit\s+Contents?\s*$/i;
 
+// grade-10 citizenship-education's heading box lays out inconsistently under
+// pdftotext: about half its lessons read fine as "LESSON" then "N.M Title"
+// together on the next line (already matched by SECTION_TOC_LINE-shaped logic
+// below), but the other half split the number onto its own bare line BEFORE
+// "LESSON", with the title only appearing 1-2 lines after it — hand-confirmed
+// by diffing which of this book's headings resolved vs. not (e.g. "1.3" alone,
+// then "LESSON", then "Institutionalizing democracy" on the next line).
+// Gated on an actual "LESSON" line immediately following the bare number so
+// this can't misfire on some unrelated bare "N.M" elsewhere in body text.
+const BARE_SECTION_NUM = /^(\d+)\.(\d+)\.?\s*$/;
+const LESSON_LABEL_LINE = /^LESSON\b/i;
+const PURE_NUMBER_LINE = /^\d{1,2}$/; // the lesson's own running index (1, 2, 3…), not a section number
+
+// grade-11 civics-and-ethical-education (chilot) numbers its lessons "1.", "2."…
+// resetting within each unit, instead of the "1.1"/"1.2" unit.section style
+// every other book here uses — so SECTION_TOC_LINE's two-number shape never
+// matches this book's ToC at all. Recovered by tracking which unit we're
+// under while scanning the ToC (see currentUnitNum in parseOutline) and
+// synthesizing the same "<unit>.<lesson>" sectionNum downstream code expects.
+const SECTION_TOC_LINE_SIMPLE = new RegExp(`^\\s*(\\d{1,2})\\.\\s+(.+?)[${LEADER_CHARS}]{2,}\\d{1,4}\\s*$`);
+// This book also has no number at all directly on the in-body heading itself
+// — the only reliable per-lesson anchor is the running page header repeated
+// on every page of the lesson, "UNIT <n> — <unit title>  ...  LESSON <n>",
+// which conveniently already carries both the unit AND the within-unit lesson
+// number together (hand-confirmed: this exact header repeats on every page of
+// grade-11 civics, so the forward search's first match is the lesson's first
+// page, same as every other in-body heading match here).
+const UNIT_LESSON_HEADER_LINE = /^UNIT\s+([A-Za-z0-9]+)\s*[—–-]\s*.+?LESSON\s+(\d+)\s*$/i;
+
+// grade-11/12 chemistry (new curriculum) embed each top-level section's title
+// in a custom display font whose ToUnicode mapping is broken for the specific
+// glyphs it uses — pdftotext recovers the leading "1.3" numeral fine (plain
+// numeral font) but the title words after it decode to raw C0 control bytes
+// (hand-confirmed with `cat -A`: "1.3    ^_^^^]^\^[^Z…", not blank, not real
+// text, not even the equation-like false positives titleOverlapOk normally
+// guards against — see its own comment). Real body prose never contains a
+// literal control byte anywhere in this book, so finding one right after a
+// matching section number is itself strong, unambiguous confirmation this is
+// the real heading — stronger than requiring a title match we already know is
+// unrecoverable.
+const HAS_CONTROL_BYTES = /[\x00-\x08\x0b\x0e-\x1f]/;
+
 function parseArgs(argv: string[]) {
   const args: Record<string, string> = {};
   for (let i = 0; i < argv.length; i += 1) {
@@ -83,6 +125,18 @@ function parseArgs(argv: string[]) {
 
 function normalize(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+// The ToC's leader-dot run sometimes has one stray control character (0x08
+// seen in grade-10 citizenship-education) wedged between the real title and
+// the dots themselves — not itself a leader char (see LEADER_CHARS), so the
+// lazy title capture in parseOutline ends up swallowing it into the title.
+// Harmless prose-wise (only ever shows up in this ToC-adjacent position, body
+// text reads clean) but would otherwise leave a literal control character
+// inside a title that gets stored straight into the DB and shown in the
+// reader UI.
+function cleanTitle(s: string): string {
+  return s.replace(/[\x00-\x1f]+/g, '').trim();
 }
 
 // Naive de-pluralization ("states" -> "state") — ToC wording and the actual
@@ -113,9 +167,21 @@ function titleOverlapOk(candidate: string, expected: string): boolean {
 function parseOutline(pages: string[]): { outline: Boundary[]; tocEndIdx: number } {
   const outline: Boundary[] = [];
   let tocEndIdx = -1;
+  // Tracks the most recently seen Unit number, for books whose ToC numbers
+  // sections "1.", "2."… resetting within each unit (see SECTION_TOC_LINE_SIMPLE)
+  // rather than globally-unique "1.1"/"1.2" pairs — only meaningful as a
+  // fallback once a Unit heading has actually been seen.
+  let currentUnitNum: string | null = null;
   for (let i = 0; i < pages.length; i += 1) {
     const lines = pages[i].split('\n');
-    const leaderCount = lines.filter((l) => LEADER.test(l)).length;
+    // looksLikeTitle here too (not just when actually pushing a boundary below)
+    // — otherwise a body page with a numbered table (e.g. grade-11 civics'
+    // "1 / 2 / 3…" row-number column, each on its own line with nothing else)
+    // reads as a pile of bare whitespace-then-digit "leaders" with no title
+    // text at all, clears the leaderCount bar, and gets misidentified as a
+    // later/false ToC page — which pushes tocEndIdx past it and silently
+    // skips however much real body content sits in between as "front matter."
+    const leaderCount = lines.filter((l) => LEADER.test(l) && looksLikeTitle(l)).length;
     if (leaderCount < 3) continue; // not a ToC page — a slightly higher bar since the gap pattern is broad
     tocEndIdx = i;
     for (let li = 0; li < lines.length; li += 1) {
@@ -123,9 +189,11 @@ function parseOutline(pages: string[]): { outline: Boundary[]; tocEndIdx: number
       const unitMatch = line.match(UNIT_TOC_LINE);
       const endMatch = line.match(END_MARKER_TOC_LINE);
       const sectionMatch = line.match(SECTION_TOC_LINE);
+      const simpleSectionMatch = line.match(SECTION_TOC_LINE_SIMPLE);
       const bareUnitMatch = line.match(UNIT_BARE_LINE);
       if (unitMatch && looksLikeTitle(unitMatch[2])) {
-        outline.push({ kind: 'unit', unitNum: unitMatch[1], title: unitMatch[2].trim() });
+        currentUnitNum = unitMatch[1];
+        outline.push({ kind: 'unit', unitNum: unitMatch[1], title: cleanTitle(unitMatch[2]) });
       } else if (endMatch) {
         outline.push({ kind: 'end-marker', unitNum: endMatch[1] });
       } else if (sectionMatch && looksLikeTitle(sectionMatch[3])) {
@@ -133,7 +201,17 @@ function parseOutline(pages: string[]): { outline: Boundary[]; tocEndIdx: number
           kind: 'section',
           unitNum: sectionMatch[1],
           sectionNum: `${sectionMatch[1]}.${sectionMatch[2]}`,
-          title: sectionMatch[3].trim(),
+          title: cleanTitle(sectionMatch[3]),
+        });
+      } else if (currentUnitNum !== null && simpleSectionMatch && looksLikeTitle(simpleSectionMatch[2])) {
+        // See SECTION_TOC_LINE_SIMPLE — only tried once we're already inside a
+        // tracked unit, and only once the real "1.1" shape above has failed to
+        // match, so this can't steal a line from a book that already works.
+        outline.push({
+          kind: 'section',
+          unitNum: currentUnitNum,
+          sectionNum: `${currentUnitNum}.${simpleSectionMatch[1]}`,
+          title: cleanTitle(simpleSectionMatch[2]),
         });
       } else if (bareUnitMatch) {
         // "UNIT ONE" (or "UNIT      1") on its own line, title on the next —
@@ -144,8 +222,11 @@ function parseOutline(pages: string[]): { outline: Boundary[]; tocEndIdx: number
         // leader+number if present, otherwise take the line as-is.
         const next = lines.slice(li + 1).find((l) => l.trim() !== '');
         if (next) {
-          const title = next.replace(TRAILING_LEADER_NUM, '').trim();
-          if (looksLikeTitle(title)) outline.push({ kind: 'unit', unitNum: bareUnitMatch[1], title });
+          const title = cleanTitle(next.replace(TRAILING_LEADER_NUM, ''));
+          if (looksLikeTitle(title)) {
+            currentUnitNum = bareUnitMatch[1];
+            outline.push({ kind: 'unit', unitNum: bareUnitMatch[1], title });
+          }
         }
       }
     }
@@ -203,6 +284,24 @@ function locateBoundaryPages(pages: string[], startIdx: number, outline: Boundar
       for (let li = 0; li < lines.length; li += 1) {
         if (listContext[li]) continue; // see markListContextLines
         const line = lines[li];
+
+        // See UNIT_LESSON_HEADER_LINE — checked ahead of the length filter
+        // below since this repeating header is long (large gap-fill
+        // whitespace before "LESSON N"), unlike a real heading line.
+        if (boundary.kind === 'section') {
+          const unitLesson = line.match(UNIT_LESSON_HEADER_LINE);
+          if (unitLesson) {
+            const [, unitNum, lessonNum] = unitLesson;
+            const expectedLessonNum = boundary.sectionNum.split('.')[1];
+            if (unitNum.toLowerCase() === boundary.unitNum.toLowerCase() && lessonNum === expectedLessonNum) {
+              located[bi] = pi + 1;
+              searchFrom = pi;
+              found = true;
+              break;
+            }
+          }
+        }
+
         if (line.length > 100) continue; // headings are short; skip body prose
         if (boundary.kind === 'unit') {
           const m = line.match(/^Unit\s+([A-Za-z0-9]+)\s*:\s*(.+)$/i);
@@ -214,11 +313,27 @@ function locateBoundaryPages(pages: string[], startIdx: number, outline: Boundar
           }
         } else if (boundary.kind === 'section') {
           const m = line.match(/^(\d+)\.(\d+)\.?\s+(.+)$/);
-          if (m && `${m[1]}.${m[2]}` === boundary.sectionNum && titleOverlapOk(m[3], boundary.title)) {
-            located[bi] = pi + 1;
-            searchFrom = pi;
-            found = true;
-            break;
+          if (m && `${m[1]}.${m[2]}` === boundary.sectionNum) {
+            if (titleOverlapOk(m[3], boundary.title) || HAS_CONTROL_BYTES.test(m[3])) {
+              located[bi] = pi + 1;
+              searchFrom = pi;
+              found = true;
+              break;
+            }
+          }
+          // See BARE_SECTION_NUM: a bare "N.M" line immediately followed by a
+          // "LESSON" label, title 1-2 lines further down.
+          const bare = line.match(BARE_SECTION_NUM);
+          if (bare && `${bare[1]}.${bare[2]}` === boundary.sectionNum && LESSON_LABEL_LINE.test(lines[li + 1] ?? '')) {
+            const titleLine = lines
+              .slice(li + 2, li + 5)
+              .find((l) => !PURE_NUMBER_LINE.test(l) && looksLikeTitle(l));
+            if (titleLine && titleOverlapOk(titleLine, boundary.title)) {
+              located[bi] = pi + 1;
+              searchFrom = pi;
+              found = true;
+              break;
+            }
           }
         } else {
           const m = line.match(/^Unit\s+([A-Za-z0-9]+)\s+(?:summary|review\s+questions?)/i);

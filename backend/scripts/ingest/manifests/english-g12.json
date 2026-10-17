@@ -1,0 +1,371 @@
+{
+  "subject": "english",
+  "grade": 12,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-12-english-for-ethiopia-new-curriculum--student-textbook-kehulumcom1759915593b3b5.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Sustainable Development",
+      "sectionTitle": "1A Listening Skills",
+      "pageStart": 7,
+      "pageEnd": 10
+    },
+    {
+      "unitTitle": "Unit 1: Sustainable Development",
+      "sectionTitle": "1B Speaking Skills",
+      "pageStart": 11,
+      "pageEnd": 13
+    },
+    {
+      "unitTitle": "Unit 1: Sustainable Development",
+      "sectionTitle": "1C Reading Skills",
+      "pageStart": 14,
+      "pageEnd": 19
+    },
+    {
+      "unitTitle": "Unit 1: Sustainable Development",
+      "sectionTitle": "1D Vocabulary Skills",
+      "pageStart": 20,
+      "pageEnd": 21
+    },
+    {
+      "unitTitle": "Unit 1: Sustainable Development",
+      "sectionTitle": "1E Grammar Skills",
+      "pageStart": 22,
+      "pageEnd": 25
+    },
+    {
+      "unitTitle": "Unit 1: Sustainable Development",
+      "sectionTitle": "1F Writing Skills",
+      "pageStart": 26,
+      "pageEnd": 29
+    },
+    {
+      "unitTitle": "Unit 2: Time Management",
+      "sectionTitle": "2A Listening Skills",
+      "pageStart": 30,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit 2: Time Management",
+      "sectionTitle": "2B Speaking Skills",
+      "pageStart": 33,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit 2: Time Management",
+      "sectionTitle": "2C Reading Skills",
+      "pageStart": 35,
+      "pageEnd": 41
+    },
+    {
+      "unitTitle": "Unit 2: Time Management",
+      "sectionTitle": "2D Vocabulary Skills",
+      "pageStart": 42,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 2: Time Management",
+      "sectionTitle": "2E Grammar Skills",
+      "pageStart": 46,
+      "pageEnd": 52
+    },
+    {
+      "unitTitle": "Unit 2: Time Management",
+      "sectionTitle": "2F Writing Skills",
+      "pageStart": 53,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "Unit 3: Evidence on Traffic Accident",
+      "sectionTitle": "3A Listening Skills",
+      "pageStart": 60,
+      "pageEnd": 63
+    },
+    {
+      "unitTitle": "Unit 3: Evidence on Traffic Accident",
+      "sectionTitle": "3B Speaking Skills",
+      "pageStart": 64,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "Unit 3: Evidence on Traffic Accident",
+      "sectionTitle": "3C Reading Skills",
+      "pageStart": 65,
+      "pageEnd": 70
+    },
+    {
+      "unitTitle": "Unit 3: Evidence on Traffic Accident",
+      "sectionTitle": "3D Vocabulary Skills",
+      "pageStart": 71,
+      "pageEnd": 71
+    },
+    {
+      "unitTitle": "Unit 3: Evidence on Traffic Accident",
+      "sectionTitle": "3E Grammar Skills",
+      "pageStart": 72,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "Unit 3: Evidence on Traffic Accident",
+      "sectionTitle": "3F Writing Skills",
+      "pageStart": 76,
+      "pageEnd": 79
+    },
+    {
+      "unitTitle": "Unit 4: Natural Resource Management",
+      "sectionTitle": "4A Listening Skills",
+      "pageStart": 80,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 4: Natural Resource Management",
+      "sectionTitle": "4B Speaking Skills",
+      "pageStart": 83,
+      "pageEnd": 89
+    },
+    {
+      "unitTitle": "Unit 4: Natural Resource Management",
+      "sectionTitle": "4C Reading Skills",
+      "pageStart": 90,
+      "pageEnd": 95
+    },
+    {
+      "unitTitle": "Unit 4: Natural Resource Management",
+      "sectionTitle": "4D Vocabulary Skills",
+      "pageStart": 96,
+      "pageEnd": 98
+    },
+    {
+      "unitTitle": "Unit 4: Natural Resource Management",
+      "sectionTitle": "4E Grammar Skills",
+      "pageStart": 99,
+      "pageEnd": 101
+    },
+    {
+      "unitTitle": "Unit 4: Natural Resource Management",
+      "sectionTitle": "4F Writing Skills",
+      "pageStart": 102,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "Unit 5: Mechanized Agriculture",
+      "sectionTitle": "5A Listening Skills",
+      "pageStart": 109,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 5: Mechanized Agriculture",
+      "sectionTitle": "5B Speaking Skills",
+      "pageStart": 113,
+      "pageEnd": 114
+    },
+    {
+      "unitTitle": "Unit 5: Mechanized Agriculture",
+      "sectionTitle": "5C Reading Skills",
+      "pageStart": 115,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "Unit 5: Mechanized Agriculture",
+      "sectionTitle": "5D Vocabulary Skills",
+      "pageStart": 121,
+      "pageEnd": 122
+    },
+    {
+      "unitTitle": "Unit 5: Mechanized Agriculture",
+      "sectionTitle": "5E Grammar Skills",
+      "pageStart": 123,
+      "pageEnd": 128
+    },
+    {
+      "unitTitle": "Unit 5: Mechanized Agriculture",
+      "sectionTitle": "5F Writing Skills",
+      "pageStart": 129,
+      "pageEnd": 134
+    },
+    {
+      "unitTitle": "Unit 6: Green Economies",
+      "sectionTitle": "6A Listening Skills",
+      "pageStart": 135,
+      "pageEnd": 138
+    },
+    {
+      "unitTitle": "Unit 6: Green Economies",
+      "sectionTitle": "6B Speaking Skills",
+      "pageStart": 139,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "Unit 6: Green Economies",
+      "sectionTitle": "6C Reading Skills",
+      "pageStart": 145,
+      "pageEnd": 151
+    },
+    {
+      "unitTitle": "Unit 6: Green Economies",
+      "sectionTitle": "6D Vocabulary Skills",
+      "pageStart": 152,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "Unit 6: Green Economies",
+      "sectionTitle": "6E Grammar Skills",
+      "pageStart": 155,
+      "pageEnd": 156
+    },
+    {
+      "unitTitle": "Unit 6: Green Economies",
+      "sectionTitle": "6F Writing Skills",
+      "pageStart": 157,
+      "pageEnd": 163
+    },
+    {
+      "unitTitle": "Unit 7: National Pride",
+      "sectionTitle": "7A Listening Skills",
+      "pageStart": 164,
+      "pageEnd": 167
+    },
+    {
+      "unitTitle": "Unit 7: National Pride",
+      "sectionTitle": "7B Speaking Skills",
+      "pageStart": 168,
+      "pageEnd": 169
+    },
+    {
+      "unitTitle": "Unit 7: National Pride",
+      "sectionTitle": "7C Reading Skills",
+      "pageStart": 170,
+      "pageEnd": 175
+    },
+    {
+      "unitTitle": "Unit 7: National Pride",
+      "sectionTitle": "7D Vocabulary Skills",
+      "pageStart": 176,
+      "pageEnd": 177
+    },
+    {
+      "unitTitle": "Unit 7: National Pride",
+      "sectionTitle": "7E Grammar Skills",
+      "pageStart": 178,
+      "pageEnd": 182
+    },
+    {
+      "unitTitle": "Unit 7: National Pride",
+      "sectionTitle": "7F Writing Skills",
+      "pageStart": 183,
+      "pageEnd": 185
+    },
+    {
+      "unitTitle": "Unit 8: Telemedicine",
+      "sectionTitle": "8A Listening Skills",
+      "pageStart": 186,
+      "pageEnd": 188
+    },
+    {
+      "unitTitle": "Unit 8: Telemedicine",
+      "sectionTitle": "8B Speaking Skills",
+      "pageStart": 189,
+      "pageEnd": 194
+    },
+    {
+      "unitTitle": "Unit 8: Telemedicine",
+      "sectionTitle": "8C Reading Skills",
+      "pageStart": 195,
+      "pageEnd": 203
+    },
+    {
+      "unitTitle": "Unit 8: Telemedicine",
+      "sectionTitle": "8D Vocabulary Skills",
+      "pageStart": 204,
+      "pageEnd": 209
+    },
+    {
+      "unitTitle": "Unit 8: Telemedicine",
+      "sectionTitle": "8E Grammar Skills",
+      "pageStart": 210,
+      "pageEnd": 217
+    },
+    {
+      "unitTitle": "Unit 8: Telemedicine",
+      "sectionTitle": "8F Writing Skills",
+      "pageStart": 218,
+      "pageEnd": 220
+    },
+    {
+      "unitTitle": "Unit 9: Conflict Management",
+      "sectionTitle": "9A Listening Skills",
+      "pageStart": 221,
+      "pageEnd": 224
+    },
+    {
+      "unitTitle": "Unit 9: Conflict Management",
+      "sectionTitle": "9B Speaking Skills",
+      "pageStart": 225,
+      "pageEnd": 227
+    },
+    {
+      "unitTitle": "Unit 9: Conflict Management",
+      "sectionTitle": "9C Reading Skills",
+      "pageStart": 228,
+      "pageEnd": 231
+    },
+    {
+      "unitTitle": "Unit 9: Conflict Management",
+      "sectionTitle": "9D Vocabulary Skills",
+      "pageStart": 232,
+      "pageEnd": 233
+    },
+    {
+      "unitTitle": "Unit 9: Conflict Management",
+      "sectionTitle": "9E Grammar Skills",
+      "pageStart": 234,
+      "pageEnd": 239
+    },
+    {
+      "unitTitle": "Unit 9: Conflict Management",
+      "sectionTitle": "9F Writing Skills",
+      "pageStart": 240,
+      "pageEnd": 248
+    },
+    {
+      "unitTitle": "Unit 10: Robotics",
+      "sectionTitle": "10A Listening Skills",
+      "pageStart": 249,
+      "pageEnd": 251
+    },
+    {
+      "unitTitle": "Unit 10: Robotics",
+      "sectionTitle": "10B Speaking Skills",
+      "pageStart": 252,
+      "pageEnd": 252
+    },
+    {
+      "unitTitle": "Unit 10: Robotics",
+      "sectionTitle": "10C Reading Skills",
+      "pageStart": 253,
+      "pageEnd": 257
+    },
+    {
+      "unitTitle": "Unit 10: Robotics",
+      "sectionTitle": "10D Vocabulary Skills",
+      "pageStart": 258,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 10: Robotics",
+      "sectionTitle": "10E Grammar Skills",
+      "pageStart": 261,
+      "pageEnd": 264
+    },
+    {
+      "unitTitle": "Unit 10: Robotics",
+      "sectionTitle": "10F Writing Skills",
+      "pageStart": 265,
+      "pageEnd": 270
+    }
+  ],
+  "knownHeaders": [
+    "ENGLISH STUDENT TEXTBOOK GRADE 12"
+  ]
+}

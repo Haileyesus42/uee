@@ -3,7 +3,170 @@
   "grade": 11,
   "curriculum": "new",
   "pdfPath": "assets/books/grade-11-chemistry-new-curriculum--student-textbook-kehulumcom17599238964126.pdf",
-  "sections": [],
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Introduction",
+      "pageStart": 12,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 Dalton’s Atomic Theory and the Modern Atomic Theory",
+      "pageStart": 13,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Early Experiments to Characterize the Atom",
+      "pageStart": 16,
+      "pageEnd": 21
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Make-up of the Nucleus",
+      "pageStart": 22,
+      "pageEnd": 24
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Electromagnetic Radiation and Atomic Spectra",
+      "pageStart": 25,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.6 The Quantum Mechanical Model of the Atom",
+      "pageStart": 44,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.7 Electronic Configurations and Orbital Diagrams",
+      "pageStart": 51,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.8 Electronic Configurations and the Periodic Table of the Elements",
+      "pageStart": 57,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Introduction",
+      "pageStart": 77,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Ionic Bonds",
+      "pageStart": 79,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Covalent Bonds and Molecular Geometry",
+      "pageStart": 93,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Metallic Bonding",
+      "pageStart": 121,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Chemical Bonding Theories",
+      "pageStart": 124,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.6 Types of Crystal",
+      "pageStart": 145,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Introduction",
+      "pageStart": 155,
+      "pageEnd": 156
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Kinetic Theory and Properties of Matter",
+      "pageStart": 157,
+      "pageEnd": 159
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 The Gaseous State",
+      "pageStart": 160,
+      "pageEnd": 182
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 The Liquid State",
+      "pageStart": 183,
+      "pageEnd": 190
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.5 The Solid State",
+      "pageStart": 191,
+      "pageEnd": 203
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 The Rate of a Reaction",
+      "pageStart": 204,
+      "pageEnd": 217
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Factors Affecting the Rate of a Chemical Reaction",
+      "pageStart": 218,
+      "pageEnd": 232
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Chemical Equilibrium",
+      "pageStart": 233,
+      "pageEnd": 274
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.1 Introduction",
+      "pageStart": 275,
+      "pageEnd": 275
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.2 Alcohols and Ethers",
+      "pageStart": 276,
+      "pageEnd": 298
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.3 Aldehydes and Ketones",
+      "pageStart": 299,
+      "pageEnd": 303
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.4 Carboxylic Acids",
+      "pageStart": 304,
+      "pageEnd": 324
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "6.5 Esters",
+      "pageStart": 325,
+      "pageEnd": 330
+    }
+  ],
   "knownHeaders": [
     "CHEMISTRY GRADE 11",
     "STUDENT TEXTBOOK"

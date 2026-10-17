@@ -1,0 +1,126 @@
+{
+  "subject": "biology",
+  "grade": 10,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-10-biology-old-curriculum--student-textbook-kehulumcom17550681869c5d.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Biotechnology",
+      "sectionTitle": "1.1 What is biotechnology?",
+      "pageStart": 2,
+      "pageEnd": 7
+    },
+    {
+      "unitTitle": "Unit 1: Biotechnology",
+      "sectionTitle": "1.2 New applications of biotechnology",
+      "pageStart": 8,
+      "pageEnd": 19
+    },
+    {
+      "unitTitle": "Unit 2: Heredity",
+      "sectionTitle": "2.1 Mitosis and meiosis",
+      "pageStart": 20,
+      "pageEnd": 30
+    },
+    {
+      "unitTitle": "Unit 2: Heredity",
+      "sectionTitle": "2.2 Mendelian inheritance",
+      "pageStart": 31,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 2: Heredity",
+      "sectionTitle": "2.3 Heredity and breeding",
+      "pageStart": 46,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 3: Human biology and health",
+      "sectionTitle": "3.1 The nervous system",
+      "pageStart": 54,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit 3: Human biology and health",
+      "sectionTitle": "3.2 Sense organs",
+      "pageStart": 77,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit 3: Human biology and health",
+      "sectionTitle": "3.3 The endocrine glands",
+      "pageStart": 94,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "Unit 3: Human biology and health",
+      "sectionTitle": "3.4 Reproductive health",
+      "pageStart": 109,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 3: Human biology and health",
+      "sectionTitle": "3.5 Homeostasis",
+      "pageStart": 122,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "Unit 4: Food making and growth in plants",
+      "sectionTitle": "4.1 The leaf",
+      "pageStart": 143,
+      "pageEnd": 146
+    },
+    {
+      "unitTitle": "Unit 4: Food making and growth in plants",
+      "sectionTitle": "4.2 Photosynthesis",
+      "pageStart": 147,
+      "pageEnd": 158
+    },
+    {
+      "unitTitle": "Unit 4: Food making and growth in plants",
+      "sectionTitle": "4.3 Transport",
+      "pageStart": 159,
+      "pageEnd": 170
+    },
+    {
+      "unitTitle": "Unit 4: Food making and growth in plants",
+      "sectionTitle": "4.4 Response in plants",
+      "pageStart": 171,
+      "pageEnd": 183
+    },
+    {
+      "unitTitle": "Unit 5: Conservation of natural resources",
+      "sectionTitle": "5.1 Definition of resources",
+      "pageStart": 184,
+      "pageEnd": 185
+    },
+    {
+      "unitTitle": "Unit 5: Conservation of natural resources",
+      "sectionTitle": "5.2 Conservation and biodiversity",
+      "pageStart": 186,
+      "pageEnd": 188
+    },
+    {
+      "unitTitle": "Unit 5: Conservation of natural resources",
+      "sectionTitle": "5.3 Vegetation",
+      "pageStart": 189,
+      "pageEnd": 192
+    },
+    {
+      "unitTitle": "Unit 5: Conservation of natural resources",
+      "sectionTitle": "5.4 Wildlife",
+      "pageStart": 193,
+      "pageEnd": 198
+    },
+    {
+      "unitTitle": "Unit 5: Conservation of natural resources",
+      "sectionTitle": "5.5 Air",
+      "pageStart": 199,
+      "pageEnd": 213
+    }
+  ],
+  "knownHeaders": [
+    "GRADE 10 BIOLOGY",
+    "STUDENT TEXTBOOK"
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "subject": "civics",
+  "grade": 12,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-12-civics-and-ethical-education--student-textbook-ethiopialearning.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Building a Democratic System",
+      "sectionTitle": "1.1 The Necessity of a Democratic System",
+      "pageStart": 7,
+      "pageEnd": 9
+    },
+    {
+      "unitTitle": "Unit 1: Building a Democratic System",
+      "sectionTitle": "1.2 Authority and Power",
+      "pageStart": 10,
+      "pageEnd": 11
+    },
+    {
+      "unitTitle": "Unit 1: Building a Democratic System",
+      "sectionTitle": "1.3 Constitutional Rights versus Constitutional Obligations",
+      "pageStart": 12,
+      "pageEnd": 13
+    },
+    {
+      "unitTitle": "Unit 1: Building a Democratic System",
+      "sectionTitle": "1.4 State Power Distribution in Ethiopia",
+      "pageStart": 14,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "Unit 1: Building a Democratic System",
+      "sectionTitle": "1.5 Ethiopian Foreign Relations",
+      "pageStart": 16,
+      "pageEnd": 20
+    },
+    {
+      "unitTitle": "Unit 2: Rule of Law",
+      "sectionTitle": "2.1 Constitution and Other Laws",
+      "pageStart": 21,
+      "pageEnd": 23
+    },
+    {
+      "unitTitle": "Unit 2: Rule of Law",
+      "sectionTitle": "2.2 Rule of Law and Management of Conflict",
+      "pageStart": 24,
+      "pageEnd": 28
+    },
+    {
+      "unitTitle": "Unit 2: Rule of Law",
+      "sectionTitle": "2.3 Rule of Law and Governments",
+      "pageStart": 29,
+      "pageEnd": 30
+    },
+    {
+      "unitTitle": "Unit 2: Rule of Law",
+      "sectionTitle": "2.4 Rule of Law and the Fight against Corruption",
+      "pageStart": 31,
+      "pageEnd": 36
+    },
+    {
+      "unitTitle": "Unit 3: Equality",
+      "sectionTitle": "3.1 The History of the Ethiopian Peoples’ Struggle against Oppression",
+      "pageStart": 37,
+      "pageEnd": 39
+    },
+    {
+      "unitTitle": "Unit 3: Equality",
+      "sectionTitle": "3.2 Conflict of Interests",
+      "pageStart": 40,
+      "pageEnd": 41
+    },
+    {
+      "unitTitle": "Unit 3: Equality",
+      "sectionTitle": "3.3 Equality and the Notion of Affirmative Action",
+      "pageStart": 42,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "Unit 3: Equality",
+      "sectionTitle": "3.4 Unity in Diversity",
+      "pageStart": 45,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 4: Justice",
+      "sectionTitle": "4.1 Equity of Benefits and Burdens",
+      "pageStart": 52,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 4: Justice",
+      "sectionTitle": "4.2 Justice and the Judiciary",
+      "pageStart": 54,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "Unit 4: Justice",
+      "sectionTitle": "4.3 Crime and Justice",
+      "pageStart": 57,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "Unit 4: Justice",
+      "sectionTitle": "4.4 Justice in Taxation",
+      "pageStart": 62,
+      "pageEnd": 67
+    },
+    {
+      "unitTitle": "Unit 5: Patriotism",
+      "sectionTitle": "5.1 The Quality of a Patriot",
+      "pageStart": 68,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "Unit 5: Patriotism",
+      "sectionTitle": "5.2 Ethiopian History in an International Perspective",
+      "pageStart": 73,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "Unit 5: Patriotism",
+      "sectionTitle": "5.3 The Duties of a Patriot Citizen",
+      "pageStart": 76,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "Unit 5: Patriotism",
+      "sectionTitle": "5.4 Concern for the International Community",
+      "pageStart": 79,
+      "pageEnd": 85
+    },
+    {
+      "unitTitle": "Unit 6: Responsibility",
+      "sectionTitle": "6.1 Shouldering and Executing Responsibility",
+      "pageStart": 86,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "Unit 6: Responsibility",
+      "sectionTitle": "6.2 Costs of Fulfilling Responsibility on Individuals",
+      "pageStart": 88,
+      "pageEnd": 89
+    },
+    {
+      "unitTitle": "Unit 6: Responsibility",
+      "sectionTitle": "6.3 Fulfilling Promises to Promote Understanding in the International Arena",
+      "pageStart": 90,
+      "pageEnd": 91
+    },
+    {
+      "unitTitle": "Unit 6: Responsibility",
+      "sectionTitle": "6.4 Co-operation among Nations for Mutual Benefits",
+      "pageStart": 92,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit 6: Responsibility",
+      "sectionTitle": "6.5 The Severity of HIV/AIDS as a Global Pandemic",
+      "pageStart": 94,
+      "pageEnd": 98
+    },
+    {
+      "unitTitle": "Unit 7: Industriousness",
+      "sectionTitle": "7.1 Work as Human Necessity",
+      "pageStart": 99,
+      "pageEnd": 101
+    },
+    {
+      "unitTitle": "Unit 7: Industriousness",
+      "sectionTitle": "7.2 Factors Determining the World of Work",
+      "pageStart": 102,
+      "pageEnd": 104
+    },
+    {
+      "unitTitle": "Unit 7: Industriousness",
+      "sectionTitle": "7.3 Work in an International Perspective",
+      "pageStart": 105,
+      "pageEnd": 109
+    },
+    {
+      "unitTitle": "Unit 8: Self-Reliance",
+      "sectionTitle": "8.1 Self-Reliance",
+      "pageStart": 110,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 8: Self-Reliance",
+      "sectionTitle": "8.2 Dependency",
+      "pageStart": 113,
+      "pageEnd": 115
+    },
+    {
+      "unitTitle": "Unit 8: Self-Reliance",
+      "sectionTitle": "8.3 Self-reliance and Morally Sound Decision-making Capacity",
+      "pageStart": 116,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "Unit 9: Saving",
+      "sectionTitle": "9.1 Methods of Saving",
+      "pageStart": 121,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 9: Saving",
+      "sectionTitle": "9.2 Regulating the National Economy on Realistic International Principles",
+      "pageStart": 124,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit 9: Saving",
+      "sectionTitle": "9.3 Types of Economy",
+      "pageStart": 127,
+      "pageEnd": 129
+    },
+    {
+      "unitTitle": "Unit 9: Saving",
+      "sectionTitle": "9.4 Money and Capital",
+      "pageStart": 130,
+      "pageEnd": 135
+    },
+    {
+      "unitTitle": "Unit 10: Active Community Participation",
+      "sectionTitle": "10.1 Effective Leadership for Active Participation",
+      "pageStart": 136,
+      "pageEnd": 137
+    },
+    {
+      "unitTitle": "Unit 10: Active Community Participation",
+      "sectionTitle": "10.2 Civic Participation",
+      "pageStart": 138,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "Unit 11: The Pursuit of Wisdom",
+      "sectionTitle": "11.1 Knowledge",
+      "pageStart": 145,
+      "pageEnd": 146
+    },
+    {
+      "unitTitle": "Unit 11: The Pursuit of Wisdom",
+      "sectionTitle": "11.2 Information as a Source of Knowledge",
+      "pageStart": 147,
+      "pageEnd": 149
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1 — BUILDING A DEMOCRATIC SYSTEM",
+    "STUDENT TEXTBOOK"
+  ]
+}

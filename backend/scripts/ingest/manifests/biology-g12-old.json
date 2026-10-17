@@ -1,0 +1,138 @@
+{
+  "subject": "biology",
+  "grade": 12,
+  "curriculum": "old",
+  "pdfPath": "assets/books/grade-12-biology-old-curriculum--student-textbook-kehulumcom17551535477795.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Micro-organisms",
+      "sectionTitle": "1.1 Bacteria",
+      "pageStart": 6,
+      "pageEnd": 13
+    },
+    {
+      "unitTitle": "Unit 1: Micro-organisms",
+      "sectionTitle": "1.2 The ecology and uses of bacteria",
+      "pageStart": 14,
+      "pageEnd": 28
+    },
+    {
+      "unitTitle": "Unit 1: Micro-organisms",
+      "sectionTitle": "1.3 What are viruses?",
+      "pageStart": 29,
+      "pageEnd": 47
+    },
+    {
+      "unitTitle": "Unit 2: Ecology",
+      "sectionTitle": "2.1 Cycling matter through ecosystems",
+      "pageStart": 48,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "Unit 2: Ecology",
+      "sectionTitle": "2.2 Ecological succession",
+      "pageStart": 57,
+      "pageEnd": 60
+    },
+    {
+      "unitTitle": "Unit 2: Ecology",
+      "sectionTitle": "2.3 Biomes",
+      "pageStart": 61,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "Unit 2: Ecology",
+      "sectionTitle": "2.4 Biodiversity",
+      "pageStart": 66,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 2: Ecology",
+      "sectionTitle": "2.5 Populations",
+      "pageStart": 83,
+      "pageEnd": 104
+    },
+    {
+      "unitTitle": "Unit 3: Genetics",
+      "sectionTitle": "3.1 Genetic crosses",
+      "pageStart": 105,
+      "pageEnd": 130
+    },
+    {
+      "unitTitle": "Unit 3: Genetics",
+      "sectionTitle": "3.2 Molecular genetics",
+      "pageStart": 131,
+      "pageEnd": 144
+    },
+    {
+      "unitTitle": "Unit 3: Genetics",
+      "sectionTitle": "3.3 Protein synthesis",
+      "pageStart": 145,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "Unit 3: Genetics",
+      "sectionTitle": "3.4 Mutations",
+      "pageStart": 155,
+      "pageEnd": 173
+    },
+    {
+      "unitTitle": "Unit 4: Evolution",
+      "sectionTitle": "4.1 The origin of life",
+      "pageStart": 174,
+      "pageEnd": 185
+    },
+    {
+      "unitTitle": "Unit 4: Evolution",
+      "sectionTitle": "4.2 Theories of evolution",
+      "pageStart": 186,
+      "pageEnd": 193
+    },
+    {
+      "unitTitle": "Unit 4: Evolution",
+      "sectionTitle": "4.3 The evidence for evolution",
+      "pageStart": 194,
+      "pageEnd": 206
+    },
+    {
+      "unitTitle": "Unit 4: Evolution",
+      "sectionTitle": "4.4 The processes of evolution",
+      "pageStart": 207,
+      "pageEnd": 215
+    },
+    {
+      "unitTitle": "Unit 4: Evolution",
+      "sectionTitle": "4.5 The evolution of humans",
+      "pageStart": 216,
+      "pageEnd": 233
+    },
+    {
+      "unitTitle": "Unit 5: Behaviour",
+      "sectionTitle": "5.1 An introduction to behaviour",
+      "pageStart": 234,
+      "pageEnd": 240
+    },
+    {
+      "unitTitle": "Unit 5: Behaviour",
+      "sectionTitle": "5.2 Innate behaviour",
+      "pageStart": 241,
+      "pageEnd": 247
+    },
+    {
+      "unitTitle": "Unit 5: Behaviour",
+      "sectionTitle": "5.3 Learned behaviour",
+      "pageStart": 248,
+      "pageEnd": 258
+    },
+    {
+      "unitTitle": "Unit 5: Behaviour",
+      "sectionTitle": "5.4 Examples of behaviour patterns",
+      "pageStart": 259,
+      "pageEnd": 279
+    }
+  ],
+  "knownHeaders": [
+    "GRADE 12 BIOLOGY",
+    "STUDENT TEXTBOOK"
+  ]
+}

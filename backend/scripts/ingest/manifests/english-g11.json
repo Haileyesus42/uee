@@ -1,0 +1,155 @@
+{
+  "subject": "english",
+  "grade": 11,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-11-english-for-ethiopia--student-textbook-ethiopialearning.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: The African Union",
+      "sectionTitle": "Unit 1 Part A",
+      "pageStart": 7,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "Unit 1: The African Union",
+      "sectionTitle": "Unit 1 Part B",
+      "pageStart": 23,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit 2: Education",
+      "sectionTitle": "Unit 2 Part A",
+      "pageStart": 35,
+      "pageEnd": 49
+    },
+    {
+      "unitTitle": "Unit 2: Education",
+      "sectionTitle": "Unit 2 Part B",
+      "pageStart": 50,
+      "pageEnd": 63
+    },
+    {
+      "unitTitle": "Unit 3: Traditional and modern medicine",
+      "sectionTitle": "Unit 3 Part A",
+      "pageStart": 64,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 3: Traditional and modern medicine",
+      "sectionTitle": "Unit 3 Part B",
+      "pageStart": 82,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "Unit 4: HIV and AIDS",
+      "sectionTitle": "Unit 4 Part A",
+      "pageStart": 103,
+      "pageEnd": 114
+    },
+    {
+      "unitTitle": "Unit 4: HIV and AIDS",
+      "sectionTitle": "Unit 4 Part B",
+      "pageStart": 115,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "Unit 5: Tourism",
+      "sectionTitle": "Unit 5 Part A",
+      "pageStart": 126,
+      "pageEnd": 133
+    },
+    {
+      "unitTitle": "Unit 5: Tourism",
+      "sectionTitle": "Unit 5 Part B",
+      "pageStart": 134,
+      "pageEnd": 146
+    },
+    {
+      "unitTitle": "Unit 6: Fiction",
+      "sectionTitle": "Unit 6 Part A",
+      "pageStart": 147,
+      "pageEnd": 156
+    },
+    {
+      "unitTitle": "Unit 6: Fiction",
+      "sectionTitle": "Unit 6 Part B",
+      "pageStart": 157,
+      "pageEnd": 172
+    },
+    {
+      "unitTitle": "Unit 7: Weather and climate change",
+      "sectionTitle": "Unit 7 Part A",
+      "pageStart": 173,
+      "pageEnd": 185
+    },
+    {
+      "unitTitle": "Unit 7: Weather and climate change",
+      "sectionTitle": "Unit 7 Part B",
+      "pageStart": 186,
+      "pageEnd": 202
+    },
+    {
+      "unitTitle": "Unit 8: Water",
+      "sectionTitle": "Unit 8 Part A",
+      "pageStart": 203,
+      "pageEnd": 214
+    },
+    {
+      "unitTitle": "Unit 8: Water",
+      "sectionTitle": "Unit 8 Part B",
+      "pageStart": 215,
+      "pageEnd": 226
+    },
+    {
+      "unitTitle": "Unit 9: Disability",
+      "sectionTitle": "Unit 9 Part A",
+      "pageStart": 227,
+      "pageEnd": 238
+    },
+    {
+      "unitTitle": "Unit 9: Disability",
+      "sectionTitle": "Unit 9 Part B",
+      "pageStart": 239,
+      "pageEnd": 253
+    },
+    {
+      "unitTitle": "Unit 10: Poverty and development",
+      "sectionTitle": "Unit 10 Part A",
+      "pageStart": 254,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 10: Poverty and development",
+      "sectionTitle": "Unit 10 Part B",
+      "pageStart": 261,
+      "pageEnd": 271
+    },
+    {
+      "unitTitle": "Unit 11: NGOs",
+      "sectionTitle": "Unit 11 Part A",
+      "pageStart": 272,
+      "pageEnd": 283
+    },
+    {
+      "unitTitle": "Unit 11: NGOs",
+      "sectionTitle": "Unit 11 Part B",
+      "pageStart": 284,
+      "pageEnd": 292
+    },
+    {
+      "unitTitle": "Unit 12: Technological advances",
+      "sectionTitle": "Unit 12 Part A",
+      "pageStart": 293,
+      "pageEnd": 298
+    },
+    {
+      "unitTitle": "Unit 12: Technological advances",
+      "sectionTitle": "Unit 12 Part B",
+      "pageStart": 299,
+      "pageEnd": 334
+    }
+  ],
+  "knownHeaders": [
+    "ENGLISH STUDENT TEXTBOOK GRADE 11"
+  ]
+}

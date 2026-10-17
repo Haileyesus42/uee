@@ -3,7 +3,128 @@
   "grade": 12,
   "curriculum": "new",
   "pdfPath": "assets/books/grade-12-chemistry-new-curriculum--student-textbook-kehulumcom1759915918b6bd.pdf",
-  "sections": [],
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Acid-Base Concepts",
+      "pageStart": 11,
+      "pageEnd": 21
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.2 Ionic Equlibria of Week Acids and Bases",
+      "pageStart": 22,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.3 Common Ion Effect and Buffer Solution",
+      "pageStart": 39,
+      "pageEnd": 46
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Hydrolysis of Salts",
+      "pageStart": 47,
+      "pageEnd": 49
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.5 Acid–Base Indicators and Titrations",
+      "pageStart": 50,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.1 Oxidation-Reduction Reactions",
+      "pageStart": 65,
+      "pageEnd": 73
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.2 Electrolysis of Aqueous Solutions",
+      "pageStart": 74,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.3 Quantitative Aspects of Electrolysis",
+      "pageStart": 88,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.4 Industrial Application of Electrolysis",
+      "pageStart": 94,
+      "pageEnd": 99
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "2.5 Volatic Cells",
+      "pageStart": 100,
+      "pageEnd": 143
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.1 Introduction",
+      "pageStart": 144,
+      "pageEnd": 145
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.2 Natural Resources and Industry",
+      "pageStart": 146,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.3 Manufacturing of Valuable Products/ Chemicals",
+      "pageStart": 150,
+      "pageEnd": 181
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "3.4 Some Manufacturing Industries in Ethiopia",
+      "pageStart": 182,
+      "pageEnd": 221
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.1 Introduction to Polymers",
+      "pageStart": 222,
+      "pageEnd": 222
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.2 Polymerization Reactions",
+      "pageStart": 223,
+      "pageEnd": 231
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "4.3 Classification of Polymers",
+      "pageStart": 232,
+      "pageEnd": 248
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.1 Introduction",
+      "pageStart": 249,
+      "pageEnd": 262
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.2 Environmental Pollution",
+      "pageStart": 263,
+      "pageEnd": 272
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "5.3 Global Warming and Climate Change",
+      "pageStart": 273,
+      "pageEnd": 276
+    }
+  ],
   "knownHeaders": [
     "CHEMISTRY GRADE 12",
     "STUDENT TEXTBOOK"
