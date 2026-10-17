@@ -106,9 +106,6 @@ export function HomeScreen({ navigation }: Props) {
             <Text style={styles.brandText}>Compass</Text>
           </View>
           <View style={styles.topBarRight}>
-            <Pressable onPress={() => navigation.navigate('Notifications')} style={styles.topBarButton}>
-              <Ionicons name="notifications-outline" size={16} color="#5636d6" />
-            </Pressable>
             <ProBadgeButton onPress={() => navigation.navigate('Profile', { screen: 'Premium' })} />
             <Pressable onPress={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}>
               <Avatar
@@ -116,6 +113,8 @@ export function HomeScreen({ navigation }: Props) {
                 hasPhoto={profile?.hasAvatarPhoto ?? false}
                 emoji={profile?.avatarEmoji ?? '🧑🎓'}
                 size={40}
+                dot
+                onDotPress={() => navigation.navigate('Notifications')}
               />
             </Pressable>
           </View>
@@ -192,13 +191,5 @@ const styles = StyleSheet.create({
     marginLeft: 7,
   },
   topBarRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  topBarButton: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   heroContent: { marginTop: 10 },
 });
