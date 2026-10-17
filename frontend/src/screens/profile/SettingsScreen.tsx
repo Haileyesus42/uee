@@ -5,12 +5,14 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
+import { useAuth } from '../../auth/AuthProvider';
 import { ProfileStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<ProfileStackParamList, 'Settings'>;
 
 export function SettingsScreen({ navigation }: Props) {
   const t = useTheme();
+  const { logout } = useAuth();
   const [notifications, setNotifications] = useState(true);
 
   return (
@@ -42,7 +44,7 @@ export function SettingsScreen({ navigation }: Props) {
         <SettingsRow icon="star-outline" label="Go Premium" onPress={() => navigation.navigate('Premium')} />
 
         <SectionLabel>Account Actions</SectionLabel>
-        <SettingsRow icon="log-out-outline" label="Log Out" destructive onPress={() => {}} />
+        <SettingsRow icon="log-out-outline" label="Log Out" destructive onPress={logout} />
       </ScrollView>
     </SafeAreaView>
   );
