@@ -54,13 +54,23 @@ export async function authRoutes(app: FastifyInstance) {
   // Public by design (no auth) — the URL only leaks an opaque user UUID, and an
   // avatar image isn't sensitive. Lets any screen use a plain <Image> without
   // threading a token through it.
+  //
+  // A user-uploaded photo takes priority over their Telegram one — it's a
+  // deliberate choice, the Telegram photo is just whatever happened to be set
+  // (and frequently isn't visible to the bot at all, see avatarFileId's comment).
   app.get<{ Params: { userId: string } }>('/avatars/:userId', async (request, reply) => {
     const user = await prisma.user.findUnique({
       where: { id: request.params.userId },
-      select: { avatarFileId: true },
+      select: { avatarFileId: true, avatarUpload: true, avatarUploadType: true },
     });
-    if (!user?.avatarFileId) return reply.code(404).send();
+    if (!user) return reply.code(404).send();
 
+    if (user.avatarUpload) {
+      reply.header('Cache-Control', 'public, max-age=3600');
+      return reply.type(user.avatarUploadType ?? 'image/jpeg').send(user.avatarUpload);
+    }
+
+    if (!user.avatarFileId) return reply.code(404).send();
     const file = await fetchTelegramFile(user.avatarFileId);
     if (!file) return reply.code(404).send();
 

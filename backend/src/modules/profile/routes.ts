@@ -1,9 +1,12 @@
 import type { FastifyInstance } from 'fastify';
+import type { MultipartFile } from '@fastify/multipart';
 import { z } from 'zod';
 import { prisma } from '../../lib/prisma';
 import { authenticate } from '../../plugins/authenticate';
 import { computeAvailableHearts } from '../../lib/gamification';
 import { xpToLevel } from '../../lib/leveling';
+
+const ALLOWED_AVATAR_MIME = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
 const patchBody = z.object({
   name: z.string().min(1).max(80).optional(),
@@ -53,7 +56,7 @@ async function buildProfilePayload(userId: string) {
     telegramUsername: user.telegramUsername,
     name: user.name,
     avatarEmoji: user.avatarEmoji,
-    hasAvatarPhoto: user.avatarFileId != null,
+    hasAvatarPhoto: user.avatarUpload != null || user.avatarFileId != null,
     bio: user.bio,
     birthday:
       user.birthdayDay != null && user.birthdayMonth != null
@@ -81,6 +84,42 @@ export async function profileRoutes(app: FastifyInstance) {
   app.patch('/me', { preHandler: authenticate }, async (request) => {
     const body = patchBody.parse(request.body);
     await prisma.user.update({ where: { id: request.userId }, data: body });
+    return buildProfilePayload(request.userId);
+  });
+
+  // Multipart upload, same pattern as POST /billing/telebirr/submit — read the
+  // one file part into a Buffer and store it directly (see avatarUpload's
+  // schema comment for why, unlike the Telegram photo, this has to be).
+  app.post('/me/avatar', { preHandler: authenticate }, async (request, reply) => {
+    let file: MultipartFile | undefined;
+    let buffer: Buffer | undefined;
+
+    for await (const part of request.parts()) {
+      if (part.type === 'file' && part.fieldname === 'avatar' && !buffer) {
+        file = part;
+        buffer = await part.toBuffer();
+      } else if (part.type === 'file') {
+        await part.toBuffer(); // drain any other/duplicate file part
+      }
+    }
+
+    if (!file || !buffer) return reply.code(400).send({ error: 'Missing "avatar" file.' });
+    if (!ALLOWED_AVATAR_MIME.has(file.mimetype)) {
+      return reply.code(400).send({ error: 'Avatar must be a JPEG, PNG, or WebP image.' });
+    }
+
+    await prisma.user.update({
+      where: { id: request.userId },
+      data: { avatarUpload: buffer, avatarUploadType: file.mimetype },
+    });
+    return buildProfilePayload(request.userId);
+  });
+
+  app.delete('/me/avatar', { preHandler: authenticate }, async (request) => {
+    await prisma.user.update({
+      where: { id: request.userId },
+      data: { avatarUpload: null, avatarUploadType: null },
+    });
     return buildProfilePayload(request.userId);
   });
 

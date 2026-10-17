@@ -76,6 +76,13 @@ model User {
   // Optional because most of the fields below depend on the user's Telegram
   // privacy settings and are frequently absent even when we ask.
   avatarFileId     String?
+  // A user-uploaded photo (POST /me/avatar), stored directly — unlike the
+  // Telegram photo above, there's no external source to re-fetch this from,
+  // so it has to actually be persisted. Takes priority over avatarFileId when
+  // both are present (an explicit upload is a deliberate choice; the Telegram
+  // photo is just whatever happened to be set).
+  avatarUpload     Bytes?
+  avatarUploadType String?
   bio              String?
   birthdayDay      Int?
   birthdayMonth    Int?
