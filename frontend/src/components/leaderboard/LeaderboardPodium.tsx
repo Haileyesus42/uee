@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
+import { Avatar } from '../common/Avatar';
 import { LeaderboardEntry } from '../../data/leaderboard';
 
 // Medal colors are a fixed gold/silver/bronze identity, not theme tokens —
@@ -40,20 +41,13 @@ function PodiumColumn({
       <View style={styles.crownSlot}>
         {crown && <Ionicons name="trophy" size={20} color={color} />}
       </View>
-      <View
-        style={[
-          styles.avatar,
-          {
-            width: avatarSize,
-            height: avatarSize,
-            borderRadius: avatarSize / 2,
-            backgroundColor: t.colors.surface,
-            borderColor: color,
-          },
-        ]}
-      >
-        <Text style={{ fontSize: avatarSize * 0.46 }}>{entry.avatarEmoji}</Text>
-      </View>
+      <Avatar
+        userId={entry.userId}
+        hasPhoto={entry.hasAvatarPhoto}
+        emoji={entry.avatarEmoji}
+        size={avatarSize}
+        style={[styles.avatar, { borderColor: color }]}
+      />
       <Text
         style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 8, fontSize: 12 }]}
         numberOfLines={1}

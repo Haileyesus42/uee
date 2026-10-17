@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useTheme } from '../../theme/ThemeProvider';
+import { Avatar } from '../common/Avatar';
 import { LeaderboardEntry } from '../../data/leaderboard';
 
 export function LeaderboardRow({ entry }: { entry: LeaderboardEntry }) {
@@ -21,9 +22,7 @@ export function LeaderboardRow({ entry }: { entry: LeaderboardEntry }) {
       >
         {entry.rank}
       </Text>
-      <View style={[styles.avatar, { backgroundColor: t.colors.surfaceAlt }]}>
-        <Text style={{ fontSize: 16 }}>{entry.avatarEmoji}</Text>
-      </View>
+      <Avatar userId={entry.userId} hasPhoto={entry.hasAvatarPhoto} emoji={entry.avatarEmoji} size={32} />
       <Text
         style={[
           t.typography.bodyStrong,
@@ -41,5 +40,4 @@ export function LeaderboardRow({ entry }: { entry: LeaderboardEntry }) {
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', borderRadius: 14, padding: 10, marginBottom: 8 },
-  avatar: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
 });

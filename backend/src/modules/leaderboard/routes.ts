@@ -26,7 +26,10 @@ export async function leaderboardRoutes(app: FastifyInstance) {
 
     const users = await prisma.user.findMany({
       where: { id: { in: ranked.map((r) => r.userId) } },
-      select: { id: true, name: true, avatarEmoji: true },
+      // avatarUploadType, not avatarUpload — same not-null-ness (they're always
+      // set together) but a short string instead of pulling each user's full
+      // image bytes over the wire just to check presence.
+      select: { id: true, name: true, avatarEmoji: true, avatarUploadType: true, avatarFileId: true },
     });
     const userById = new Map(users.map((u) => [u.id, u]));
 
@@ -34,8 +37,10 @@ export async function leaderboardRoutes(app: FastifyInstance) {
       const user = userById.get(r.userId);
       return {
         rank: i + 1,
+        userId: r.userId,
         name: user?.name || 'Student',
         avatarEmoji: user?.avatarEmoji ?? '🧑🎓',
+        hasAvatarPhoto: user != null && (user.avatarUploadType != null || user.avatarFileId != null),
         xp: r.xp,
         isCurrentUser: r.userId === request.userId,
       };

@@ -45,8 +45,10 @@ export type QuizSubmitResult = {
 
 export type LeaderboardEntry = {
   rank: number;
+  userId: string;
   name: string;
   avatarEmoji: string;
+  hasAvatarPhoto: boolean;
   xp: number;
   isCurrentUser: boolean;
 };
