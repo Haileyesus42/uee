@@ -150,4 +150,19 @@ export async function profileRoutes(app: FastifyInstance) {
 
     return mistakes;
   });
+
+  app.get('/me/notifications', { preHandler: authenticate }, async (request) => {
+    const notifications = await prisma.notification.findMany({
+      where: { userId: request.userId },
+      orderBy: { createdAt: 'desc' },
+      take: 50,
+    });
+    const unreadCount = await prisma.notification.count({ where: { userId: request.userId, read: false } });
+    return { notifications, unreadCount };
+  });
+
+  app.post('/me/notifications/read-all', { preHandler: authenticate }, async (request) => {
+    await prisma.notification.updateMany({ where: { userId: request.userId, read: false }, data: { read: true } });
+    return { ok: true };
+  });
 }

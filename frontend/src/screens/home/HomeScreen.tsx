@@ -18,6 +18,7 @@ import { FeatureGrid, FeatureId } from '../../components/home/FeatureGrid';
 import { TodaysGoalCard } from '../../components/home/TodaysGoalCard';
 import { SmartInsightCard } from '../../components/home/SmartInsightCard';
 import { useMe } from '../../hooks/useProfile';
+import { useNotifications } from '../../hooks/useNotifications';
 import { useAllSubjectUnits, useSubjects } from '../../hooks/useCurriculum';
 import { HomeStackParamList, MainTabParamList } from '../../navigation/types';
 
@@ -60,6 +61,7 @@ export function HomeScreen({ navigation }: Props) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
   const { data: profile } = useMe();
+  const { data: notificationsData } = useNotifications();
   const continueLearning = useContinueLearning();
   const { data: subjectsForInsight } = useSubjects();
   const weakestSubject = subjectsForInsight?.length
@@ -113,7 +115,7 @@ export function HomeScreen({ navigation }: Props) {
                 hasPhoto={profile?.hasAvatarPhoto ?? false}
                 emoji={profile?.avatarEmoji ?? '🧑🎓'}
                 size={40}
-                dot
+                dot={(notificationsData?.unreadCount ?? 0) > 0}
                 onDotPress={() => navigation.navigate('Notifications')}
               />
             </Pressable>

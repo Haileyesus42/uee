@@ -6,6 +6,7 @@ import { prisma } from '../../lib/prisma';
 import { env } from '../../env';
 import { authenticate } from '../../plugins/authenticate';
 import { extractJsonFromImageBuffer } from '../../lib/groqVision';
+import { notifyUpgrade } from '../../lib/notify';
 import { sendTelegramMessage } from '../auth/telegramBot';
 import { PRICE_ETB, DURATION_DAYS, addDays } from './plans';
 
@@ -88,6 +89,7 @@ function evaluateExtraction(extracted: Extraction, plan: 'monthly' | 'yearly'): 
 
 async function activateFromSubmission(submission: { id: string; userId: string; plan: 'monthly' | 'yearly'; priceETB: number }) {
   const now = new Date();
+  const expiresAt = addDays(now, DURATION_DAYS[submission.plan]);
   await prisma.subscription.upsert({
     where: { userId: submission.userId },
     create: {
@@ -98,7 +100,7 @@ async function activateFromSubmission(submission: { id: string; userId: string; 
       provider: 'telebirr',
       providerRef: submission.id,
       startedAt: now,
-      expiresAt: addDays(now, DURATION_DAYS[submission.plan]),
+      expiresAt,
     },
     update: {
       plan: submission.plan,
@@ -107,9 +109,10 @@ async function activateFromSubmission(submission: { id: string; userId: string; 
       provider: 'telebirr',
       providerRef: submission.id,
       startedAt: now,
-      expiresAt: addDays(now, DURATION_DAYS[submission.plan]),
+      expiresAt,
     },
   });
+  await notifyUpgrade(submission.userId, submission.plan, expiresAt);
 }
 
 function requireAdminSecret(secret: unknown): boolean {

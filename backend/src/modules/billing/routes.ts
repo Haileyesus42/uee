@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { prisma } from '../../lib/prisma';
 import { authenticate } from '../../plugins/authenticate';
 import { paymentProvider, verifyChapaTransaction, verifyChapaWebhookSignature } from './paymentProvider';
+import { notifyUpgrade } from '../../lib/notify';
 import { PRICE_ETB, DURATION_DAYS, addDays } from './plans';
 import { telebirrRoutes } from './telebirr';
 
@@ -63,6 +64,7 @@ export async function billingRoutes(app: FastifyInstance) {
       }
 
       await prisma.subscription.update({ where: { providerRef: txRef }, data: { status: 'active' } });
+      await notifyUpgrade(subscription.userId, subscription.plan, subscription.expiresAt);
       return reply.send({ ok: true });
     });
   });
@@ -88,6 +90,7 @@ export async function billingRoutes(app: FastifyInstance) {
     // minutes of checkout; an abandoned pending checkout just never flips to
     // active; and retrying checkout overwrites it (upsert on userId).
     const now = new Date();
+    const expiresAt = addDays(now, DURATION_DAYS[plan]);
     await prisma.subscription.upsert({
       where: { userId: request.userId },
       create: {
@@ -98,7 +101,7 @@ export async function billingRoutes(app: FastifyInstance) {
         provider: paymentProvider.name,
         providerRef: result.providerRef,
         startedAt: now,
-        expiresAt: addDays(now, DURATION_DAYS[plan]),
+        expiresAt,
       },
       update: {
         plan,
@@ -107,9 +110,10 @@ export async function billingRoutes(app: FastifyInstance) {
         provider: paymentProvider.name,
         providerRef: result.providerRef,
         startedAt: now,
-        expiresAt: addDays(now, DURATION_DAYS[plan]),
+        expiresAt,
       },
     });
+    if (result.activateImmediately) await notifyUpgrade(request.userId, plan, expiresAt);
 
     return reply.send({ redirectUrl: result.redirectUrl, activated: result.activateImmediately });
   });

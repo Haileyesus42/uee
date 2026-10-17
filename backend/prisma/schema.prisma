@@ -103,6 +103,7 @@ model User {
   highlights      UserHighlight[]
   readingProgress UserReadingProgress[]
   telebirrSubmissions TelebirrSubmission[]
+  notifications   Notification[]
 
   @@map("users")
 }
@@ -328,6 +329,20 @@ model TelebirrSubmission {
   @@index([userId])
   @@index([extractedRef])
   @@map("telebirr_submissions")
+}
+
+model Notification {
+  id     String @id @default(uuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  title     String
+  body      String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@map("notifications")
 }
 
 // Textbook Study Mode — raw reader over the actual textbook text, alongside the

@@ -19,7 +19,7 @@ export function ProBadgeButton({ onPress }: { onPress?: () => void }) {
     <Pressable onPress={onPress} hitSlop={8}>
       <LinearGradient colors={['#F6D68F', '#D9A441']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.pill}>
         <Ionicons name={isPro ? 'checkmark-circle' : 'star'} size={9} color="#5B3B0A" />
-        <Text style={styles.label}>PRO</Text>
+        <Text style={styles.label}>{isPro ? 'PRO' : 'TRIAL'}</Text>
       </LinearGradient>
     </Pressable>
   );

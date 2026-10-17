@@ -22,11 +22,11 @@ export function Avatar({
   emoji: string;
   size: number;
   style?: StyleProp<ViewStyle>;
-  // Small unread-style indicator in the corner (see HomeScreen's top bar,
-  // which uses this instead of a separate bell button). onDotPress gets its
-  // own small Pressable with generous hitSlop so it's a real tap target
-  // despite the dot itself being tiny — the rest of the avatar keeps
-  // whatever onPress its wrapping Pressable already has, unchanged.
+  // Whether the small red unread-indicator circle is visually shown (see
+  // HomeScreen's top bar, which uses this instead of a separate bell button).
+  // onDotPress's tap target is independent of this — it still renders
+  // whenever onDotPress is given, even with dot false, so "no unread
+  // notifications" never removes the only way to reach that screen from here.
   dot?: boolean;
   onDotPress?: () => void;
 }) {
@@ -62,9 +62,9 @@ export function Avatar({
       </LinearGradient>
     );
 
-  if (!dot) return content;
+  if (!dot && !onDotPress) return content;
 
-  const dotNode = (
+  const dotNode = dot ? (
     <View
       style={{
         width: dotSize,
@@ -75,8 +75,19 @@ export function Avatar({
         borderColor: '#FFFFFF',
       }}
     />
-  );
-  const dotPosition = { position: 'absolute' as const, top: dotCenterY - dotSize / 2, left: dotCenterX - dotSize / 2 };
+  ) : null;
+  // Explicit width/height here (not just on dotNode) so the tap target stays
+  // the same dotSize×dotSize box, centered on the same spot, whether or not
+  // the red circle is actually rendered inside it — a Pressable with no size
+  // of its own and a null child collapses to 0×0, which quietly shifts
+  // hitSlop's effective tappable area off the intended corner.
+  const dotPosition = {
+    position: 'absolute' as const,
+    top: dotCenterY - dotSize / 2,
+    left: dotCenterX - dotSize / 2,
+    width: dotSize,
+    height: dotSize,
+  };
 
   return (
     <View style={{ width: size, height: size }}>

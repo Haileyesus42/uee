@@ -152,3 +152,6 @@ export type TelebirrSubmission = {
   reviewNote: string | null;
   createdAt: string;
 };
+
+// AppNotification, not Notification — the latter collides with the DOM/RN global.
+export type AppNotification = { id: string; title: string; body: string; read: boolean; createdAt: string };
