@@ -14,13 +14,28 @@ type Props = NativeStackScreenProps<LearnStackParamList, 'TextbookHome'>;
 
 export function TextbookHomeScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const { subjectId } = route.params;
+  const { subjectId, grade } = route.params;
   const { data: subjects } = useSubjects();
-  const { data: toc } = useTextbookToc(subjectId);
+  const { data: toc } = useTextbookToc(subjectId, grade);
   const { data: progress } = useReadingProgress(subjectId);
   const subject = subjects?.find((s) => s.id === subjectId);
 
   if (!subject || !toc) return null;
+
+  if (toc.length === 0) {
+    return (
+      <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
+        <View style={{ paddingHorizontal: t.spacing.md }}>
+          <TopBar title={subject.name} onBack={() => navigation.goBack()} />
+        </View>
+        <View style={{ padding: t.spacing.md, alignItems: 'center' }}>
+          <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 24, textAlign: 'center' }]}>
+            No {subject.name} textbook for Grade {grade} yet — try a different grade.
+          </Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   const continueSection = progress
     ? toc.flatMap((u) => u.sections).find((s) => s.id === progress.sectionId)

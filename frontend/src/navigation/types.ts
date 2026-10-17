@@ -33,7 +33,7 @@ export type LearnStackParamList = {
   // Textbook Study Mode — flat siblings alongside the Interactive-mode routes
   // above, same stack (see docs/backend-architecture.md for why: matches how
   // TopicDetail/LessonIntroduction/etc. already coexist, no nested navigator).
-  TextbookHome: { subjectId: string };
+  TextbookHome: { subjectId: string; grade: number };
   TextbookReader: { subjectId: string; sectionId: string };
   TextbookSearch: { subjectId: string };
   TextbookBookmarks: { subjectId: string };
