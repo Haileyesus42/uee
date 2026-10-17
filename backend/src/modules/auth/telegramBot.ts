@@ -14,10 +14,13 @@ type TelegramFrom = {
   is_premium?: boolean;
 };
 
+type TelegramPhotoSize = { file_id: string; width: number; height: number };
+
 type TelegramUpdate = {
   update_id: number;
   message?: {
     text?: string;
+    photo?: TelegramPhotoSize[];
     chat: { id: number };
     from?: TelegramFrom;
   };
@@ -122,6 +125,33 @@ async function handleStartMessage(loginToken: string, from: TelegramFrom, chatId
   });
 
   await sendTelegramMessage(chatId, "✅ You're verified — return to the Compass app to continue.");
+  await sendTelegramMessage(chatId, '📸 Want a profile picture? Send me a photo here anytime and I’ll add it to your account.');
+}
+
+// Fires for any photo message from an already-registered chat, not just one
+// immediately after /start — the prompt above says "anytime" and means it, so
+// this isn't gated on being part of the same conversation turn as registration.
+// Silently ignores photos from a chat_id with no user row yet (hasn't sent
+// /start at all) rather than inventing registration-before-verification.
+async function handlePhotoMessage(photo: TelegramPhotoSize[], from: TelegramFrom, chatId: number) {
+  const telegramId = String(from.id);
+  const user = await prisma.user.findUnique({ where: { telegramId } });
+  if (!user) return;
+
+  // Telegram sends every size it generated, smallest first — the last entry is
+  // the highest resolution available.
+  const largest = photo[photo.length - 1];
+  const file = await fetchTelegramFile(largest.file_id);
+  if (!file) {
+    await sendTelegramMessage(chatId, "Couldn't fetch that photo — mind trying again?");
+    return;
+  }
+
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { avatarUpload: file.buffer, avatarUploadType: file.contentType },
+  });
+  await sendTelegramMessage(chatId, '✅ Profile picture saved!');
 }
 
 // Deliberately not cached to disk or re-hosted anywhere — Telegram file_ids can go
@@ -137,7 +167,14 @@ export async function fetchTelegramFile(fileId: string): Promise<{ buffer: Buffe
     const imageRes = await fetch(downloadUrl);
     if (!imageRes.ok) return null;
 
-    const contentType = imageRes.headers.get('content-type') ?? 'image/jpeg';
+    // Telegram's file CDN often answers with application/octet-stream instead of
+    // a real image type — confirmed live, not hypothetical (a captured photo came
+    // back this way). Every caller of this function only ever fetches photos
+    // (chat photos or message photos, both JPEG — Telegram transcodes every
+    // "photo" send to JPEG), so a non-image content-type is always wrong, not a
+    // legitimate other format to preserve.
+    const rawContentType = imageRes.headers.get('content-type');
+    const contentType = rawContentType?.startsWith('image/') ? rawContentType : 'image/jpeg';
     const buffer = Buffer.from(await imageRes.arrayBuffer());
     return { buffer, contentType };
   } catch (err) {
@@ -178,8 +215,17 @@ export async function startTelegramPolling(): Promise<void> {
       for (const update of body.result) {
         offset = update.update_id + 1;
         const message = update.message;
-        const text = message?.text;
-        if (!message?.from || !text?.startsWith('/start ')) continue;
+        if (!message?.from) continue;
+
+        if (message.photo?.length) {
+          handlePhotoMessage(message.photo, message.from, message.chat.id).catch((err) =>
+            console.error('[telegram] failed to handle photo', err)
+          );
+          continue;
+        }
+
+        const text = message.text;
+        if (!text?.startsWith('/start ')) continue;
 
         const loginToken = text.slice('/start '.length).trim();
         if (!loginToken) continue;
