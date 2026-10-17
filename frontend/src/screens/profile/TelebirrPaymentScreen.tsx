@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as ImagePicker from 'expo-image-picker';
 import * as Clipboard from 'expo-clipboard';
 import { Ionicons } from '@expo/vector-icons';
+import { useQueryClient } from '@tanstack/react-query';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { GradientButton } from '../../components/buttons/GradientButton';
@@ -41,10 +42,23 @@ export function TelebirrPaymentScreen({ navigation, route }: Props) {
   const { data: info, isLoading: infoLoading } = useTelebirrInfo();
   const { data: latestData, isLoading: latestLoading } = useLatestTelebirrSubmission();
   const submitMutation = useSubmitTelebirrPayment();
+  const queryClient = useQueryClient();
   const [picked, setPicked] = useState<PickedImage | null>(null);
 
   const latest = latestData?.submission ?? null;
   const awaitingReview = latest?.status === 'needs_review';
+
+  // The submit call's own onSuccess invalidates ['subscription'] once, but this
+  // screen keeps polling ['telebirrSubmission'] afterward for the needs_review
+  // case (see useLatestTelebirrSubmission) — when a later poll is what actually
+  // observes the flip to 'approved' (a human reviewed it minutes later), nothing
+  // else tells the rest of the app to re-check subscription status, so ProBadge
+  // and anything else gated on isPro silently keeps showing stale "not Pro".
+  useEffect(() => {
+    if (latest?.status === 'approved') {
+      queryClient.invalidateQueries({ queryKey: ['subscription'] });
+    }
+  }, [latest?.status, queryClient]);
 
   async function pickImage() {
     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();

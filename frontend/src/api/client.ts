@@ -87,3 +87,42 @@ export async function apiFetch<T>(path: string, options: RequestOptions = {}): P
   if (res.status === 204) return undefined as T;
   return res.json() as Promise<T>;
 }
+
+// For multipart uploads (Telebirr screenshot, avatar) — these can't go through
+// apiFetch since it always sends JSON. React Native's fetch builds the body and
+// boundary itself from a FormData, so Content-Type is deliberately left unset.
+// Shares apiFetch's refresh-on-401 retry: without it, a submission that takes
+// longer than the access token's TTL to put together (leave the app, send the
+// payment, screenshot it, come back) fails with "Invalid or expired token"
+// instead of transparently refreshing, which is exactly what happened in
+// production — every slow submission hit this.
+export async function apiFetchMultipart<T>(path: string, form: FormData): Promise<T> {
+  async function send(accessToken: string): Promise<Response> {
+    return fetch(`${BASE_URL}${path}`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${accessToken}` },
+      body: form,
+    });
+  }
+
+  const tokens = await getStoredTokens();
+  if (!tokens) throw new ApiError(401, 'Not signed in');
+  let res = await send(tokens.accessToken);
+
+  if (res.status === 401) {
+    if (!refreshInFlight) refreshInFlight = refreshAccessToken().finally(() => (refreshInFlight = null));
+    const newAccessToken = await refreshInFlight;
+
+    if (newAccessToken) {
+      res = await send(newAccessToken);
+    } else {
+      await clearTokens();
+      onSessionExpired?.();
+      throw new ApiError(401, 'Session expired');
+    }
+  }
+
+  const payload = await res.json().catch(() => ({}));
+  if (!res.ok) throw new ApiError(res.status, payload.error ?? 'Request failed');
+  return payload as T;
+}
