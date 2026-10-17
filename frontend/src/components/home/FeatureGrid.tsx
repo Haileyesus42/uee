@@ -58,7 +58,7 @@ export function FeatureGrid({ onPressItem }: { onPressItem?: (id: FeatureId) => 
           <Pressable
             key={f.id}
             onPress={() => onPressItem?.(f.id)}
-            style={({ pressed }) => [styles.card, { backgroundColor: tint.bg }, pressed && { opacity: 0.85 }]}
+            style={({ pressed }) => [styles.card, { backgroundColor: tint.bg }, t.shadow.card, pressed && { opacity: 0.85 }]}
           >
             <View style={styles.topRow}>
               {f.id === 'uee' ? (

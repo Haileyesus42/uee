@@ -14,7 +14,7 @@ export function TrustBanner() {
       colors={gradientColors}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
-      style={styles.banner}
+      style={[styles.banner, t.shadow.raised]}
     >
       <View style={[styles.trophy, { backgroundColor: t.colors.brandLight }]}>
         <Text style={styles.trophyEmoji}>🏆</Text>
