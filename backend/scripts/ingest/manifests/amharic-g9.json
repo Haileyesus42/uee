@@ -1,0 +1,66 @@
+{
+  "subject": "amharic",
+  "grade": 9,
+  "curriculum": "new",
+  "pdfPath": "assets/books/grade-9-amharic-new-curriculum--student-textbook-kehulumcom1759933673b3a1.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ አንድ፡- ቋንቋ",
+      "pageStart": 6,
+      "pageEnd": 25
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ ኹለት፡- ግብር",
+      "pageStart": 26,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ ሦስት፡- ማዕድን ማውጣት",
+      "pageStart": 46,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ አራት፡- ልቦለድ",
+      "pageStart": 62,
+      "pageEnd": 77
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ አምስት፡- ቃላዊ ስነፅሑፍ",
+      "pageStart": 78,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ ስድስት፡- ግጥም",
+      "pageStart": 93,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ ሰባት፡- ኮቪድ -19 (ኮሮና)",
+      "pageStart": 109,
+      "pageEnd": 124
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ ስምንት፡- ተውኔት",
+      "pageStart": 125,
+      "pageEnd": 150
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "ምዕራፍ ዘጠኝ፡- ማህበራዊ መገናኛ ብዙኃን እና ተግባቦት",
+      "pageStart": 151,
+      "pageEnd": 164
+    }
+  ],
+  "knownHeaders": [
+    "ETHIOFETENA.COM ETHIOPIAN NO 1 EDUCATIONAL WEBSITE",
+    "አማርኛ"
+  ]
+}
