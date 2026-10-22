@@ -1,0 +1,43 @@
+{
+  "subject": "hpe",
+  "grade": 10,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/HPE Grade 10 Teacher Guide final version.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit one: Sport and society                                                       1       4.2.3.1 Diving (ground diving)",
+      "sectionTitle": "1.1 Sport and media                                                               1       4.2.3.3 Kicking (Goal kick)",
+      "pageStart": 13,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "Unit objective: 10      5.1.2. Delays",
+      "sectionTitle": "2.6 Flexibility developing exercises                                             21      5.2.2. Double block",
+      "pageStart": 23,
+      "pageEnd": 25
+    },
+    {
+      "unitTitle": "Unit objective: 26    Unit Six: Basketball",
+      "sectionTitle": "3.3 History of Ethiopian athletics                                              27    Unit objective",
+      "pageStart": 26,
+      "pageEnd": 26
+    },
+    {
+      "unitTitle": "Unit objective: 26    Unit Six: Basketball",
+      "sectionTitle": "3.4 Horizontal jumps                                                            28    6.1. Basic rules of basketball",
+      "pageStart": 27,
+      "pageEnd": 49
+    },
+    {
+      "unitTitle": "Unit objective: 35      6.1.6 Playing regulation",
+      "sectionTitle": "6.3 Extended lay-up shoot",
+      "pageStart": 50,
+      "pageEnd": 56
+    }
+  ],
+  "knownHeaders": [
+    "HEALTH AND PHYSICAL EDUCATION",
+    "TEACHER GUIDE"
+  ]
+}

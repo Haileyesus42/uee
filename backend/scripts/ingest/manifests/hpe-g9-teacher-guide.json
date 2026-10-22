@@ -1,0 +1,25 @@
+{
+  "subject": "hpe",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/HPE Grade 9 Teacher Guide final version - Copy.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit ONE: SPORT AND SOCIETY                                               1        Answer key",
+      "sectionTitle": "1.1 Sport and economy",
+      "pageStart": 11,
+      "pageEnd": 13
+    },
+    {
+      "unitTitle": "Unit ONE: SPORT AND SOCIETY                                               1        Answer key",
+      "sectionTitle": "1.3 Sport and technology                                                  6   6.1. The brief history of basketball",
+      "pageStart": 14,
+      "pageEnd": 51
+    }
+  ],
+  "knownHeaders": [
+    "HEALTH",
+    "TEACHER GUIDE"
+  ]
+}

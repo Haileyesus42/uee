@@ -1,0 +1,228 @@
+{
+  "subject": "physics",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/Physics Grade 9 Teacher Guide final version-June 2022.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.1 Lesson 1: Definition and Nature of Physics (1hr)",
+      "pageStart": 11,
+      "pageEnd": 12
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.2 Lesson 2: Branches of Physics (2hrs)",
+      "pageStart": 13,
+      "pageEnd": 14
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.3 Lesson 3: Related Fields to Physics (2hrs)",
+      "pageStart": 15,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.4 Lesson 4: Historical Issues and Contributors (1hr)",
+      "pageStart": 16,
+      "pageEnd": 18
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.1 Lesson 1: Scales, Standards and Units (Prefixes)-4hrs",
+      "pageStart": 19,
+      "pageEnd": 21
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.2 Lesson 2: Measurement and Safety (4hrs)",
+      "pageStart": 22,
+      "pageEnd": 23
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.3 Lesson 3: Classification of Physical Quantities (4hrs)",
+      "pageStart": 24,
+      "pageEnd": 27
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.4 Lesson 4: Unit Conversion (4hrs)",
+      "pageStart": 28,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.1 Lesson 1: Position, Distance and Displacement (4hrs)",
+      "pageStart": 33,
+      "pageEnd": 35
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.2 Lesson 2: Average and Instantaneous Speed (2hrs)",
+      "pageStart": 36,
+      "pageEnd": 37
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.3 Lesson 3: Average and Instantaneous Velocity (2hrs)",
+      "pageStart": 38,
+      "pageEnd": 40
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.4 Lesson 4: Acceleration (2hrs)",
+      "pageStart": 41,
+      "pageEnd": 42
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.5 Lesson 5: Uniform Motion (2hrs)",
+      "pageStart": 43,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.6 Lesson 6: Graphical Representation of Motion (4hrs)",
+      "pageStart": 45,
+      "pageEnd": 48
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.1 Lesson 1: The Concept of Force (2hrs)",
+      "pageStart": 49,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.2 Lesson 2: Newton’s Laws of Motion (4hrs)",
+      "pageStart": 51,
+      "pageEnd": 52
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.3 Lesson 3: Forces of Friction (1hr)",
+      "pageStart": 53,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.4 Lesson 4: The Concept of Work (2hrs)",
+      "pageStart": 54,
+      "pageEnd": 55
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.5 Lesson 5: Kinetic and Potential Energies (2hrs)",
+      "pageStart": 56,
+      "pageEnd": 57
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.6 Lesson 6: Power (1hr)",
+      "pageStart": 58,
+      "pageEnd": 62
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.1 Lesson 1 : Simple Machines and their Purpose (3hrs)",
+      "pageStart": 63,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.2 Lesson 2: Simple Machines at Home (1hr)",
+      "pageStart": 65,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.3 Lesson 3: Simple Machines at Work Place (1hr)",
+      "pageStart": 66,
+      "pageEnd": 66
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.4 Lesson 4: Classification of Simple Machines (2hrs)",
+      "pageStart": 67,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.6 Lesson 6: Designing Simple Machine (2hrs)",
+      "pageStart": 76,
+      "pageEnd": 80
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.1 Lesson 1: Common Characteristics of Waves (1hr)",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.2 Lesson 2: String, Pendulum, and Spring (4hrs)",
+      "pageStart": 82,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.3 Lesson 3: Propagation of Waves and Energy Transmission (2hrs)",
+      "pageStart": 84,
+      "pageEnd": 85
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.4 Lesson 4: Sound Wave (5hrs)",
+      "pageStart": 86,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.5 Lesson 5: Superposition of Waves (2hrs)",
+      "pageStart": 88,
+      "pageEnd": 88
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.6 Lesson 6: Characteristics of Sound Wave (1hr)",
+      "pageStart": 89,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.1 Lesson 1: Temperature and our Life (1hr)",
+      "pageStart": 93,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.2 Lesson 2: Extreme Temperature and Safety (1hr)",
+      "pageStart": 95,
+      "pageEnd": 95
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.3 Lesson 3: Temperature Changes and its Effects (2hrs)",
+      "pageStart": 96,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.5 Lesson 5: Types of Thermometers and their Use (2hrs)",
+      "pageStart": 103,
+      "pageEnd": 104
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.6 Lesson 6: Conversion Between Temperature Scales (6hrs)",
+      "pageStart": 105,
+      "pageEnd": 105
+    }
+  ],
+  "knownHeaders": [
+    "TEACHER GUIDE"
+  ]
+}

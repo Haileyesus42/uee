@@ -117,12 +117,72 @@ function isBulletMarkerRun(run: TextRun): boolean {
   return BULLET_CHARS.has(run.text.trim());
 }
 
+// Shadow/outline copies of the same glyph are emitted as separate runs at
+// (almost) the same position — hand-confirmed on the maths books, where a
+// centred "ACTIVITY 1.1" heading arrives as per-character runs each doubled
+// by a shadow copy. Keep the first of each such pair.
+function dedupeRuns(runs: TextRun[]): TextRun[] {
+  const kept: TextRun[] = [];
+  for (const r of runs) {
+    const dup = kept.some(
+      (k) => k.text === r.text && Math.abs(k.top - r.top) <= 2.5 && Math.abs(k.left - r.left) <= 3
+    );
+    if (!dup) kept.push(r);
+  }
+  return kept;
+}
+
+const SUPERSCRIPT: Record<string, string> = {
+  '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
+  '+': '⁺', '-': '⁻', '=': '⁼', '(': '⁽', ')': '⁾', n: 'ⁿ', i: 'ⁱ', x: 'ˣ', y: 'ʸ',
+};
+const SUBSCRIPT: Record<string, string> = {
+  '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
+  '+': '₊', '-': '₋', '=': '₌', '(': '₍', ')': '₎', a: 'ₐ', e: 'ₑ', o: 'ₒ', x: 'ₓ',
+  h: 'ₕ', k: 'ₖ', l: 'ₗ', m: 'ₘ', n: 'ₙ', p: 'ₚ', s: 'ₛ', t: 'ₜ',
+};
+function mapScript(s: string, table: Record<string, string>): string {
+  return Array.from(s).map((c) => table[c] ?? c).join('');
+}
+
+// Joins a line's runs. Beyond the plain space-join this handles three shapes
+// that text extraction otherwise mangles:
+//   - duplicate shadow runs (dedupeRuns),
+//   - letter-spaced headings made of per-character runs ("A C T I V I T Y"
+//     must become "ACTIVITY", not "A C T I V I T Y"),
+//   - superscript/subscript runs (smaller font, offset baseline) — encoded as
+//     Unicode so "n 2" becomes "n²" and H 2 O becomes H₂O.
 function groupText(runs: TextRun[]): string {
-  return runs
-    .map((r) => cleanRunText(r.text))
-    .filter(Boolean)
-    .join(' ')
-    .trim();
+  const unique = dedupeRuns(runs)
+    .map((r) => ({ ...r, text: cleanRunText(r.text) }))
+    .filter((r) => r.text);
+  if (unique.length === 0) return '';
+
+  // The run carrying the most characters defines body size/baseline for the
+  // line; smaller runs above/below it are scripts.
+  const dominant = unique.reduce((a, b) =>
+    Array.from(b.text).length > Array.from(a.text).length ? b : a
+  );
+  const singles = unique.filter((r) => Array.from(r.text.trim()).length === 1).length;
+  const letterSpaced = unique.length >= 4 && singles >= unique.length * 0.6;
+
+  let out = '';
+  let afterScript = false;
+  for (const r of unique) {
+    const smaller = r !== dominant && r.fontSize < dominant.fontSize * 0.85;
+    const isSuper = smaller && r.top < dominant.top - 1.5;
+    const isSub =
+      smaller && r.top > dominant.top + Math.max(2, dominant.height * 0.35);
+    if (isSuper || isSub) {
+      out += mapScript(r.text, isSuper ? SUPERSCRIPT : SUBSCRIPT);
+      afterScript = true;
+      continue;
+    }
+    if (!out) out = r.text;
+    else out += letterSpaced || afterScript ? r.text : ` ${r.text}`;
+    afterScript = false;
+  }
+  return out.replace(/\s+/g, ' ').trim();
 }
 
 function classifyLine(group: LineGroup, bodyFontSize: number): ClassifiedLine | null {
@@ -139,25 +199,30 @@ function classifyLine(group: LineGroup, bodyFontSize: number): ClassifiedLine | 
 
   let listMarker: ClassifiedLine['listMarker'] = null;
   let contentText = text;
-  if (isBulletMarkerRun(first)) {
+  // The marker is often preceded by empty bold runs, so start from the first
+  // run that actually carries text.
+  const mkIdx = group.runs.findIndex((r) => cleanRunText(r.text).trim() !== '');
+  const mk = mkIdx >= 0 ? group.runs[mkIdx] : first;
+  const afterMk = group.runs.slice(mkIdx >= 0 ? mkIdx + 1 : 1);
+  if (isBulletMarkerRun(mk)) {
     listMarker = 'bullet';
-    contentText = groupText(group.runs.slice(1));
+    contentText = groupText(afterMk);
   } else {
-    const glyphSplit = splitLeadingGlyph(first.text);
-    const ordinalMatch = first.text.trimStart().match(ORDINAL_PREFIX);
+    const glyphSplit = splitLeadingGlyph(mk.text);
+    const ordinalMatch = mk.text.trimStart().match(ORDINAL_PREFIX);
     if (glyphSplit.hadGlyph) {
       listMarker = 'bullet';
-      contentText = groupText([{ ...first, text: glyphSplit.rest }, ...group.runs.slice(1)]);
+      contentText = groupText([{ ...mk, text: glyphSplit.rest }, ...afterMk]);
     } else if (ordinalMatch) {
       listMarker = 'ordinal';
-      const restOfFirst = first.text.trimStart().slice(ordinalMatch[0].length);
-      contentText = groupText([{ ...first, text: restOfFirst }, ...group.runs.slice(1)]);
+      const restOfFirst = mk.text.trimStart().slice(ordinalMatch[0].length);
+      contentText = groupText([{ ...mk, text: restOfFirst }, ...afterMk]);
     }
   }
 
-  // The line's own style = its first run's (a marker's font doesn't count —
-  // look past it when there is one).
-  const styleRun = listMarker ? (group.runs[1] ?? first) : first;
+  // The line's own style = its first real run's (a marker's font doesn't count
+  // — look past it when there is one).
+  const styleRun = listMarker ? (afterMk[0] ?? mk) : mk;
   const bold = styleRun?.bold ?? false;
   const fontSize = styleRun?.fontSize ?? bodyFontSize;
   const isLabelStyle = bold && fontSize < bodyFontSize * 1.15;
@@ -335,15 +400,20 @@ export function linesToNodes(lines: ClassifiedLine[], bodyFontSize: number): Doc
       i += 1;
       while (i < lines.length) {
         const next = lines[i];
-        if (!sameFlow(prev, next)) break; // large gap — not the same flow (e.g. a column/aside splice)
         if (next.listMarker) {
+          // Consecutive items may be spaced more generously than wrapped prose,
+          // and their content column shifts relative to the marker column, so
+          // sameFlow (which demands horizontal alignment) must not gate them —
+          // it was splitting every list into one-item lists.
           if ((next.listMarker === 'ordinal') !== ordered) break; // marker style changed — new list
+          if (next.group.top - prev.group.bottom > bodyFontSize * 3) break; // page/column break
           items.push(itemText.trim());
           itemText = next.contentText;
           prev = next;
           i += 1;
           continue;
         }
+        if (!sameFlow(prev, next)) break; // large gap — not the same flow (e.g. a column/aside splice)
         if (isHeadingLine(next, bodyFontSize, gapBetween(prev, next))) break;
         // A non-marker line right after a list item, at roughly body size,
         // is that item's wrapped continuation.

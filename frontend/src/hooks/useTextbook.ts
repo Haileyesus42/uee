@@ -7,6 +7,7 @@ import {
   getBookmarks,
   getHighlights,
   getReadingProgress,
+  getTextbookEdition,
   getTextbookSection,
   getTextbookToc,
   putReadingProgress,
@@ -14,17 +15,27 @@ import {
 } from '../api/textbook';
 import {
   TextbookBookmark,
+  TextbookEdition,
   TextbookHighlight,
+  TextbookKind,
   TextbookReadingProgress,
   TextbookSearchResult,
   TextbookSectionDetail,
   TextbookTocUnit,
 } from '../api/types';
 
-export function useTextbookToc(subjectId: string, grade?: number) {
+export function useTextbookToc(subjectId: string, kind: TextbookKind, grade?: number) {
   return useQuery<TextbookTocUnit[]>({
-    queryKey: ['textbookToc', subjectId, grade ?? 'all'],
-    queryFn: () => getTextbookToc(subjectId, grade),
+    queryKey: ['textbookToc', subjectId, kind, grade ?? 'all'],
+    queryFn: () => getTextbookToc(subjectId, kind, grade),
+    enabled: !!subjectId,
+  });
+}
+
+export function useTextbookEdition(subjectId: string, kind: TextbookKind) {
+  return useQuery<TextbookEdition>({
+    queryKey: ['textbookEdition', subjectId, kind],
+    queryFn: () => getTextbookEdition(subjectId, kind),
     enabled: !!subjectId,
   });
 }
@@ -41,7 +52,10 @@ export function useTextbookSection(sectionId: string) {
 // pattern) — mutations are called directly from handlers, followed by manual
 // queryClient invalidation of whatever's cached.
 export function useTextbookSearch() {
-  return { search: (subjectId: string, q: string): Promise<TextbookSearchResult[]> => searchTextbook(subjectId, q) };
+  return {
+    search: (subjectId: string, kind: TextbookKind, q: string): Promise<TextbookSearchResult[]> =>
+      searchTextbook(subjectId, kind, q),
+  };
 }
 
 export function useBookmarks(subjectId?: string) {
@@ -77,17 +91,17 @@ export function useHighlights(sectionId: string) {
   return { ...query, toggleHighlight };
 }
 
-export function useReadingProgress(subjectId: string) {
+export function useReadingProgress(subjectId: string, kind: TextbookKind) {
   const queryClient = useQueryClient();
   const query = useQuery<TextbookReadingProgress>({
-    queryKey: ['textbookProgress', subjectId],
-    queryFn: () => getReadingProgress(subjectId),
+    queryKey: ['textbookProgress', subjectId, kind],
+    queryFn: () => getReadingProgress(subjectId, kind),
     enabled: !!subjectId,
   });
 
   async function saveProgress(sectionId: string, paragraphIndex: number) {
-    await putReadingProgress(subjectId, { sectionId, paragraphIndex });
-    queryClient.invalidateQueries({ queryKey: ['textbookProgress', subjectId] });
+    await putReadingProgress(subjectId, kind, { sectionId, paragraphIndex });
+    queryClient.invalidateQueries({ queryKey: ['textbookProgress', subjectId, kind] });
   }
 
   return { ...query, saveProgress };

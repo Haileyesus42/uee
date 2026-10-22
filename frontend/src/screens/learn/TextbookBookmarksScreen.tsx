@@ -34,7 +34,7 @@ export function TextbookBookmarksScreen({ navigation, route }: Props) {
           <View style={[styles.row, { backgroundColor: t.colors.surface, borderColor: t.colors.border }]}>
             <Pressable
               style={{ flex: 1 }}
-              onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: item.sectionId })}
+              onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: item.sectionId, kind: item.section.kind })}
             >
               <Text style={[t.typography.caption, { color: t.colors.textSecondary }]}>{item.section.unitTitle}</Text>
               <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 2 }]} numberOfLines={1}>

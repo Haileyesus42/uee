@@ -1,0 +1,235 @@
+{
+  "subject": "mathematics",
+  "grade": 12,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/grade-12-mathematics-old-curriculum--student-textbook-kehulumcom175516396074e8.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Sequences and Series",
+      "sectionTitle": "1.2 Summary",
+      "pageStart": 45,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 1: Sequences and Series",
+      "sectionTitle": "1.3 Review Exercises on Unit 1",
+      "pageStart": 46,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "Unit 2: Introduction to Limits and Continuity",
+      "sectionTitle": "2.1 Limits of sequences of numbers",
+      "pageStart": 51,
+      "pageEnd": 105
+    },
+    {
+      "unitTitle": "Unit 2: Introduction to Limits and Continuity",
+      "sectionTitle": "2.2 Summary",
+      "pageStart": 106,
+      "pageEnd": 107
+    },
+    {
+      "unitTitle": "Unit 2: Introduction to Limits and Continuity",
+      "sectionTitle": "2.3 Review Exercises on Unit 2",
+      "pageStart": 108,
+      "pageEnd": 111
+    },
+    {
+      "unitTitle": "Unit 3: Introduction to Differential Calculus",
+      "sectionTitle": "3.1 Introduction to Derivatives",
+      "pageStart": 112,
+      "pageEnd": 128
+    },
+    {
+      "unitTitle": "Unit 3: Introduction to Differential Calculus",
+      "sectionTitle": "3.2 Derivatives of some functions",
+      "pageStart": 129,
+      "pageEnd": 162
+    },
+    {
+      "unitTitle": "Unit 3: Introduction to Differential Calculus",
+      "sectionTitle": "3.1 Key Terms",
+      "pageStart": 163,
+      "pageEnd": 163
+    },
+    {
+      "unitTitle": "Unit 3: Introduction to Differential Calculus",
+      "sectionTitle": "3.2 Summary",
+      "pageStart": 164,
+      "pageEnd": 166
+    },
+    {
+      "unitTitle": "Unit 3: Introduction to Differential Calculus",
+      "sectionTitle": "3.3 Review Exercises on Unit 3",
+      "pageStart": 167,
+      "pageEnd": 170
+    },
+    {
+      "unitTitle": "Unit 4: Applications of Differential Calculus",
+      "sectionTitle": "4.1 Extreme values of functions",
+      "pageStart": 171,
+      "pageEnd": 196
+    },
+    {
+      "unitTitle": "Unit 4: Applications of Differential Calculus",
+      "sectionTitle": "4.2 Minimization and maximization problems",
+      "pageStart": 197,
+      "pageEnd": 204
+    },
+    {
+      "unitTitle": "Unit 4: Applications of Differential Calculus",
+      "sectionTitle": "4.3 Rate of change",
+      "pageStart": 205,
+      "pageEnd": 211
+    },
+    {
+      "unitTitle": "Unit 4: Applications of Differential Calculus",
+      "sectionTitle": "4.2 Summary",
+      "pageStart": 212,
+      "pageEnd": 214
+    },
+    {
+      "unitTitle": "Unit 4: Applications of Differential Calculus",
+      "sectionTitle": "4.3 Review Exercises on Unit 4",
+      "pageStart": 215,
+      "pageEnd": 227
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.2 Techniques of integration",
+      "pageStart": 228,
+      "pageEnd": 252
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.4 Applications of Integral calculus",
+      "pageStart": 253,
+      "pageEnd": 273
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.3 Review Exercises on Unit 5",
+      "pageStart": 274,
+      "pageEnd": 275
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.4 Space (For Natural Science Students)",
+      "pageStart": 276,
+      "pageEnd": 281
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "6.2 Coordinates of a point in space",
+      "pageStart": 282,
+      "pageEnd": 289
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "6.5 Equation of sphere",
+      "pageStart": 290,
+      "pageEnd": 292
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "6.6 Vectors in space",
+      "pageStart": 293,
+      "pageEnd": 300
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.8 Review Exercises on Unit 6",
+      "pageStart": 301,
+      "pageEnd": 304
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "7.1 Revision on logic",
+      "pageStart": 305,
+      "pageEnd": 314
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "7.2 Different types of proofs",
+      "pageStart": 315,
+      "pageEnd": 324
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.9 Key Terms",
+      "pageStart": 325,
+      "pageEnd": 325
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.10 Summary",
+      "pageStart": 326,
+      "pageEnd": 326
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.11 Review Exercises on Unit 7",
+      "pageStart": 327,
+      "pageEnd": 339
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "8.3 Construction and interpretation of graphs",
+      "pageStart": 340,
+      "pageEnd": 366
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "8.5 Analysis of frequency distributions",
+      "pageStart": 367,
+      "pageEnd": 369
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "8.6 Use of cumulative frequency curves",
+      "pageStart": 370,
+      "pageEnd": 373
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.13 Summary",
+      "pageStart": 374,
+      "pageEnd": 377
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "5.14 Review Exercises on Unit 8",
+      "pageStart": 378,
+      "pageEnd": 378
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "9.1 Applications to purchasing",
+      "pageStart": 379,
+      "pageEnd": 380
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "9.2 Percent increase and percent decrease",
+      "pageStart": 381,
+      "pageEnd": 387
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "9.3 Real estate expenses",
+      "pageStart": 388,
+      "pageEnd": 392
+    },
+    {
+      "unitTitle": "Unit 5: Introduction to Integral Calculus",
+      "sectionTitle": "9.4 Wages",
+      "pageStart": 393,
+      "pageEnd": 396
+    }
+  ],
+  "knownHeaders": [
+    "MATHEMATICS GRADE 12",
+    "STUDENT TEXTBOOK"
+  ]
+}

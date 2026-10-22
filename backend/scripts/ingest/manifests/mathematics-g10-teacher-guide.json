@@ -1,0 +1,121 @@
+{
+  "subject": "mathematics",
+  "grade": 10,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/Maths Grade 10 Teacher Guide 1Aug22.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: RELATIONS AND FUNCTIONS. ………………",
+      "sectionTitle": "1.1 Relations ………………………………………………………",
+      "pageStart": 10,
+      "pageEnd": 18
+    },
+    {
+      "unitTitle": "Unit 1: RELATIONS AND FUNCTIONS. ………………",
+      "sectionTitle": "1.2 Functions ………………………………………………….……",
+      "pageStart": 19,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 2: Polynomial functions ……………………………",
+      "sectionTitle": "2.2 Operations on polynomial functions …………………………",
+      "pageStart": 54,
+      "pageEnd": 62
+    },
+    {
+      "unitTitle": "Unit 2: Polynomial functions ……………………………",
+      "sectionTitle": "2.3 Theorem on polynomial functions ……………...……………",
+      "pageStart": 63,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 2: Polynomial functions ……………………………",
+      "sectionTitle": "2.4 Zeros of polynomial functions ……………………",
+      "pageStart": 70,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit 2: Polynomial functions ……………………………",
+      "sectionTitle": "2.5 Graphs of polynomial functions.…………………",
+      "pageStart": 77,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 2: Polynomial functions ……………………………",
+      "sectionTitle": "2.6 Applications ……………………",
+      "pageStart": 83,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "Unit 3: Exponential and Logarithmic Functions ………",
+      "sectionTitle": "3.1 Exponents and Logarithms ……………………………",
+      "pageStart": 88,
+      "pageEnd": 100
+    },
+    {
+      "unitTitle": "Unit 3: Exponential and Logarithmic Functions ………",
+      "sectionTitle": "3.2 The Exponential Functions and Their Graphs ……………",
+      "pageStart": 101,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "Unit 3: Exponential and Logarithmic Functions ………",
+      "sectionTitle": "3.3 The Logarithmic Functions and Their Graphs……………",
+      "pageStart": 109,
+      "pageEnd": 134
+    },
+    {
+      "unitTitle": "Unit 3: Exponential and Logarithmic Functions ………",
+      "sectionTitle": "4.1 Radian Measure of angle………………….…………………………",
+      "pageStart": 135,
+      "pageEnd": 158
+    },
+    {
+      "unitTitle": "Unit 3: Exponential and Logarithmic Functions ………",
+      "sectionTitle": "4.4 Application ………………………",
+      "pageStart": 159,
+      "pageEnd": 169
+    },
+    {
+      "unitTitle": "Unit 5: Circles ………………………………………….…",
+      "sectionTitle": "5.1 Symmetrical properties of circles..………………",
+      "pageStart": 170,
+      "pageEnd": 172
+    },
+    {
+      "unitTitle": "Unit 5: Circles ………………………………………….…",
+      "sectionTitle": "5.2 Angle properties of circles …………………………………………",
+      "pageStart": 173,
+      "pageEnd": 190
+    },
+    {
+      "unitTitle": "Unit 6: Solid Figures ………………………………….…",
+      "sectionTitle": "6.2 Pyramids, cones and Spheres…………………………………..…",
+      "pageStart": 191,
+      "pageEnd": 202
+    },
+    {
+      "unitTitle": "Unit 6: Solid Figures ………………………………….…",
+      "sectionTitle": "6.3 Frustum of pyramids and cones…………………………………",
+      "pageStart": 203,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "Unit 6: Solid Figures ………………………………….…",
+      "sectionTitle": "6.4 Surface areas and volumes of composed solids…………",
+      "pageStart": 209,
+      "pageEnd": 222
+    },
+    {
+      "unitTitle": "Unit 7: Coordinate Geometry …………….………….…",
+      "sectionTitle": "7.3 Equation of a line…………………..……………………………………",
+      "pageStart": 223,
+      "pageEnd": 227
+    }
+  ],
+  "knownHeaders": [
+    "MATHEMATICS TEACHER’S GUIDE",
+    "TEACHER GUIDE"
+  ]
+}

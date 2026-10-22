@@ -1,0 +1,163 @@
+{
+  "subject": "agriculture",
+  "grade": 11,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/grade-11-agriculture-new-curriculum--student-textbook-kehulumcom17599249828b69.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Introduction to Crop Production",
+      "sectionTitle": "1.6 Indigenous knowledge in crop production",
+      "pageStart": 9,
+      "pageEnd": 26
+    },
+    {
+      "unitTitle": "Unit 2: Field Crops Production and Management",
+      "sectionTitle": "2.2 Pulse crops production and management",
+      "pageStart": 27,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "Unit 2: Field Crops Production and Management",
+      "sectionTitle": "3.1 Oil crops production and management",
+      "pageStart": 45,
+      "pageEnd": 46
+    },
+    {
+      "unitTitle": "Unit 2: Field Crops Production and Management",
+      "sectionTitle": "3.2 Fiber crops production and management",
+      "pageStart": 47,
+      "pageEnd": 49
+    },
+    {
+      "unitTitle": "Unit 2: Field Crops Production and Management",
+      "sectionTitle": "3.3 Sugar crops production and management",
+      "pageStart": 50,
+      "pageEnd": 54
+    },
+    {
+      "unitTitle": "Unit 4: Introduction to Farm Animals",
+      "sectionTitle": "4.1 Farm animal species",
+      "pageStart": 55,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 4: Introduction to Farm Animals",
+      "sectionTitle": "4.4 Animal production systems",
+      "pageStart": 70,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "Unit 5: Animal Feeds and Feeding Practices",
+      "sectionTitle": "5.4 Feed formulation practices",
+      "pageStart": 76,
+      "pageEnd": 98
+    },
+    {
+      "unitTitle": "Unit 6: Animal Genetics and Breeding Practices",
+      "sectionTitle": "6.3 Farm animal reproductive technologies",
+      "pageStart": 99,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit 7: Farm Animals Housing",
+      "sectionTitle": "7.2 Types of farm animal housing",
+      "pageStart": 114,
+      "pageEnd": 127
+    },
+    {
+      "unitTitle": "Unit 8: Basic Animal Health and Disease Control",
+      "sectionTitle": "8.3 Internal and external parasites of farm animals",
+      "pageStart": 128,
+      "pageEnd": 139
+    },
+    {
+      "unitTitle": "Unit 9: Dairy Cattle Production and Management",
+      "sectionTitle": "9.7 Profitability in dairy business",
+      "pageStart": 140,
+      "pageEnd": 167
+    },
+    {
+      "unitTitle": "Unit 10: Introduction to Natural Resources",
+      "sectionTitle": "10.2 Major types of natural resources",
+      "pageStart": 168,
+      "pageEnd": 186
+    },
+    {
+      "unitTitle": "Unit 11: Management of Natural Resources",
+      "sectionTitle": "11.5 Environmental management",
+      "pageStart": 187,
+      "pageEnd": 202
+    },
+    {
+      "unitTitle": "Unit 12: Concepts of Biodiversity",
+      "sectionTitle": "12.1 What is biodiversity?",
+      "pageStart": 203,
+      "pageEnd": 203
+    },
+    {
+      "unitTitle": "Unit 12: Concepts of Biodiversity",
+      "sectionTitle": "12.2 The scope of biodiversity",
+      "pageStart": 204,
+      "pageEnd": 204
+    },
+    {
+      "unitTitle": "Unit 12: Concepts of Biodiversity",
+      "sectionTitle": "12.3 Values and services of biodiversity",
+      "pageStart": 205,
+      "pageEnd": 205
+    },
+    {
+      "unitTitle": "Unit 12: Concepts of Biodiversity",
+      "sectionTitle": "12.4 Threats to biodiversity",
+      "pageStart": 206,
+      "pageEnd": 216
+    },
+    {
+      "unitTitle": "Unit 13: Climate Change Adaptation and Mitigation",
+      "sectionTitle": "13.1 Definition of climate change and its variability",
+      "pageStart": 217,
+      "pageEnd": 218
+    },
+    {
+      "unitTitle": "Unit 13: Climate Change Adaptation and Mitigation",
+      "sectionTitle": "13.2 Climate change and its effects",
+      "pageStart": 219,
+      "pageEnd": 231
+    },
+    {
+      "unitTitle": "Unit 14: Mechanized Farming",
+      "sectionTitle": "14.1 Introduction to mechanized farming",
+      "pageStart": 232,
+      "pageEnd": 232
+    },
+    {
+      "unitTitle": "Unit 14: Mechanized Farming",
+      "sectionTitle": "14.2 Types of farm tools and equipment",
+      "pageStart": 233,
+      "pageEnd": 239
+    },
+    {
+      "unitTitle": "Unit 15: Introduction to Human Nutrition",
+      "sectionTitle": "15.2 Nutrients and their functions",
+      "pageStart": 240,
+      "pageEnd": 259
+    },
+    {
+      "unitTitle": "Unit 15: Introduction to Human Nutrition",
+      "sectionTitle": "16.1 Importance of diversified food production",
+      "pageStart": 260,
+      "pageEnd": 260
+    },
+    {
+      "unitTitle": "Unit 15: Introduction to Human Nutrition",
+      "sectionTitle": "16.2 Dietary diversification strategies",
+      "pageStart": 261,
+      "pageEnd": 261
+    }
+  ],
+  "knownHeaders": [
+    "AGRICULTURE GRADE 11",
+    "STUDENT TEXTBOOK"
+  ]
+}

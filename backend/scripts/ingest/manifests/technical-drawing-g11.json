@@ -1,0 +1,127 @@
+{
+  "subject": "technical-drawing",
+  "grade": 11,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/Technical Drawing_Grade-11.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.1 History of Drawing",
+      "pageStart": 6,
+      "pageEnd": 6
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.2 Areas/Professional Disciplines of Technical Drawing",
+      "pageStart": 7,
+      "pageEnd": 7
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.3 Technical Drawing Today (Computer Aided Design and Drafting)",
+      "pageStart": 8,
+      "pageEnd": 10
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.2 Selection of Drawing Materials",
+      "pageStart": 11,
+      "pageEnd": 14
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.3 Selection of Drawing Instruments",
+      "pageStart": 15,
+      "pageEnd": 36
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.1 Introduction",
+      "pageStart": 37,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.1 Introduction",
+      "pageStart": 45,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.2 Technique of Lettering",
+      "pageStart": 46,
+      "pageEnd": 46
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.3 Single Stroke Letters",
+      "pageStart": 47,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.4 Guide Lines",
+      "pageStart": 51,
+      "pageEnd": 62
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.1 Introduction",
+      "pageStart": 63,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.3 Polygons",
+      "pageStart": 70,
+      "pageEnd": 88
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.2 Projection",
+      "pageStart": 89,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.4 The Six Principal Views",
+      "pageStart": 93,
+      "pageEnd": 98
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.5 Fundamental Views of Edges and Surfaces",
+      "pageStart": 99,
+      "pageEnd": 104
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.6 Visualization",
+      "pageStart": 105,
+      "pageEnd": 119
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.1 Introduction",
+      "pageStart": 120,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.2 Axonometric Projection",
+      "pageStart": 124,
+      "pageEnd": 137
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.3 Oblique Projection",
+      "pageStart": 138,
+      "pageEnd": 145
+    }
+  ],
+  "knownHeaders": [
+    "2 BASIC TECHNICAL DRAWING EQUIPMENTS",
+    "STUDENT TEXTBOOK"
+  ]
+}

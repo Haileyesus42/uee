@@ -14,10 +14,11 @@ type Props = NativeStackScreenProps<LearnStackParamList, 'TextbookHome'>;
 
 export function TextbookHomeScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const { subjectId, grade } = route.params;
+  const { subjectId, grade, kind = 'textbook' } = route.params;
+  const bookLabel = kind === 'teacher_guide' ? 'teacher guide' : 'textbook';
   const { data: subjects } = useSubjects();
-  const { data: toc } = useTextbookToc(subjectId, grade);
-  const { data: progress } = useReadingProgress(subjectId);
+  const { data: toc } = useTextbookToc(subjectId, kind, grade);
+  const { data: progress } = useReadingProgress(subjectId, kind);
   const subject = subjects?.find((s) => s.id === subjectId);
 
   if (!subject || !toc) return null;
@@ -30,7 +31,7 @@ export function TextbookHomeScreen({ navigation, route }: Props) {
         </View>
         <View style={{ padding: t.spacing.md, alignItems: 'center' }}>
           <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 24, textAlign: 'center' }]}>
-            No {subject.name} textbook for Grade {grade} yet — try a different grade.
+            No {subject.name} {bookLabel} for Grade {grade} yet — try a different grade.
           </Text>
         </View>
       </SafeAreaView>
@@ -49,7 +50,7 @@ export function TextbookHomeScreen({ navigation, route }: Props) {
           onBack={() => navigation.goBack()}
           action={
             <View style={{ flexDirection: 'row', gap: 12 }}>
-              <Pressable onPress={() => navigation.navigate('TextbookSearch', { subjectId })} hitSlop={8}>
+              <Pressable onPress={() => navigation.navigate('TextbookSearch', { subjectId, kind })} hitSlop={8}>
                 <Ionicons name="search-outline" size={20} color={t.colors.textPrimary} />
               </Pressable>
               <Pressable onPress={() => navigation.navigate('TextbookBookmarks', { subjectId })} hitSlop={8}>
@@ -63,7 +64,7 @@ export function TextbookHomeScreen({ navigation, route }: Props) {
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl }}>
         {continueSection ? (
           <Pressable
-            onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: continueSection.id })}
+            onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: continueSection.id, kind })}
           >
             <Card style={[styles.continueCard, { backgroundColor: t.colors.brandLight }]}>
               <Text style={[t.typography.caption, { color: t.colors.brand }]}>Continue Reading</Text>
@@ -83,7 +84,7 @@ export function TextbookHomeScreen({ navigation, route }: Props) {
               {unit.sections.map((section, i) => (
                 <Pressable
                   key={section.id}
-                  onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: section.id })}
+                  onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: section.id, kind })}
                 >
                   <View
                     style={[

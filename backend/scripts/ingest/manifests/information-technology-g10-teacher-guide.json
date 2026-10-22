@@ -1,0 +1,163 @@
+{
+  "subject": "information-technology",
+  "grade": 10,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/IT Grade 10  Teacher's Guide_final June 23 2022.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.3 Telecommunications Network",
+      "pageStart": 42,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.4 Mobile Communication",
+      "pageStart": 44,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.5 Cellular Networks",
+      "pageStart": 46,
+      "pageEnd": 47
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.6 Satellite Networks",
+      "pageStart": 48,
+      "pageEnd": 49
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.7 Data Communication",
+      "pageStart": 50,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.8 Internet Protocol",
+      "pageStart": 52,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.9 Unit Summary",
+      "pageStart": 54,
+      "pageEnd": 55
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.10 Answers to the Unit Review Exercise",
+      "pageStart": 56,
+      "pageEnd": 60
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.1 Unit Overview",
+      "pageStart": 61,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.4 PowerPoint Presentation",
+      "pageStart": 62,
+      "pageEnd": 68
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.5 Unit Summary",
+      "pageStart": 69,
+      "pageEnd": 70
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.6 Answers to the Unit Review Exercise",
+      "pageStart": 71,
+      "pageEnd": 80
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.2 Basics of Multimedia",
+      "pageStart": 81,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.5 Multimedia Authoring and Multimedia Tools",
+      "pageStart": 82,
+      "pageEnd": 89
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.6 Multimedia Editing",
+      "pageStart": 90,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.7 Unit Summary",
+      "pageStart": 93,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.8 Answers to the Unit Review Exercise",
+      "pageStart": 94,
+      "pageEnd": 98
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.2 Information and Computer Security",
+      "pageStart": 99,
+      "pageEnd": 99
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.7 Cyber Security",
+      "pageStart": 100,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.8 Unit Summary",
+      "pageStart": 109,
+      "pageEnd": 109
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.9 Answers to the Unit Review Exercise",
+      "pageStart": 110,
+      "pageEnd": 111
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.4 Characteristics of Algorithm",
+      "pageStart": 112,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.5 Algorithm Representation",
+      "pageStart": 113,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.6 Integrated Development Environment (IDE)",
+      "pageStart": 122,
+      "pageEnd": 123
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.7 Unit Summary",
+      "pageStart": 124,
+      "pageEnd": 124
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 2 : COMPUTER NETWORK",
+    "TEACHER GUIDE"
+  ]
+}

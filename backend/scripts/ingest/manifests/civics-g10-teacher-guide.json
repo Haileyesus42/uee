@@ -1,0 +1,234 @@
+{
+  "subject": "civics",
+  "grade": 10,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/Citizenship Grade 10 Teachers Guide FINAL version.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION",
+      "sectionTitle": "1.1 The concept of democracy and democratization",
+      "pageStart": 13,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION",
+      "sectionTitle": "1.2 Definitions and actors of democratization process",
+      "pageStart": 16,
+      "pageEnd": 18
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION",
+      "sectionTitle": "1.3 Institutionalizing democracy",
+      "pageStart": 19,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION",
+      "sectionTitle": "1.4 The role of democracy for social transformation",
+      "pageStart": 23,
+      "pageEnd": 25
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION",
+      "sectionTitle": "1.5 Democratic values",
+      "pageStart": 26,
+      "pageEnd": 28
+    },
+    {
+      "unitTitle": "Unit 1: DEMOCRACY AND DEMOCRATIZATION",
+      "sectionTitle": "1.6 Aspects of democracy",
+      "pageStart": 29,
+      "pageEnd": 33
+    },
+    {
+      "unitTitle": "Unit 2: CITIZENS IN THE AGE OF DIGITAL TECHNOLOGY",
+      "sectionTitle": "2.1 Implications of digital technology on citizens",
+      "pageStart": 34,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "Unit 2: CITIZENS IN THE AGE OF DIGITAL TECHNOLOGY",
+      "sectionTitle": "2.2 The ethics of using digital technology",
+      "pageStart": 39,
+      "pageEnd": 42
+    },
+    {
+      "unitTitle": "Unit 2: CITIZENS IN THE AGE OF DIGITAL TECHNOLOGY",
+      "sectionTitle": "2.3 Opportunities of digital technology for young citizens",
+      "pageStart": 43,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 2: CITIZENS IN THE AGE OF DIGITAL TECHNOLOGY",
+      "sectionTitle": "2.4 Impacts of unethical use of digital technology on young citizens",
+      "pageStart": 46,
+      "pageEnd": 50
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE",
+      "sectionTitle": "3.1 The concept of good governance",
+      "pageStart": 51,
+      "pageEnd": 52
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE",
+      "sectionTitle": "3.2 Elements of good governance",
+      "pageStart": 53,
+      "pageEnd": 55
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE",
+      "sectionTitle": "3.3 The role of good governance",
+      "pageStart": 56,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE",
+      "sectionTitle": "3.4 Challenges for good governance",
+      "pageStart": 60,
+      "pageEnd": 62
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE",
+      "sectionTitle": "3.5 Impacts of lack of good governance",
+      "pageStart": 63,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE",
+      "sectionTitle": "3.6 Understanding and fighting corruption",
+      "pageStart": 66,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 3: UNDERSTANDING GOOD GOVERNANCE",
+      "sectionTitle": "3.7 Understanding and fighting corruption",
+      "pageStart": 70,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "Unit 4: INDIGENOUS CONFLICT RESOLUTION MECHANISMS",
+      "sectionTitle": "4.1 The concepts of peace",
+      "pageStart": 76,
+      "pageEnd": 79
+    },
+    {
+      "unitTitle": "Unit 4: INDIGENOUS CONFLICT RESOLUTION MECHANISMS",
+      "sectionTitle": "4.2 Impacts of absence of peace",
+      "pageStart": 80,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 4: INDIGENOUS CONFLICT RESOLUTION MECHANISMS",
+      "sectionTitle": "4.3 The notion of peace building",
+      "pageStart": 83,
+      "pageEnd": 85
+    },
+    {
+      "unitTitle": "Unit 4: INDIGENOUS CONFLICT RESOLUTION MECHANISMS",
+      "sectionTitle": "4.4 Indigenous conflict resolution mechanisms",
+      "pageStart": 86,
+      "pageEnd": 96
+    },
+    {
+      "unitTitle": "Unit 5: FEDERALISM IN ETHIOPIA",
+      "sectionTitle": "5.1 The meaning of federalism",
+      "pageStart": 97,
+      "pageEnd": 99
+    },
+    {
+      "unitTitle": "Unit 5: FEDERALISM IN ETHIOPIA",
+      "sectionTitle": "5.2 Types of federalism",
+      "pageStart": 100,
+      "pageEnd": 103
+    },
+    {
+      "unitTitle": "Unit 5: FEDERALISM IN ETHIOPIA",
+      "sectionTitle": "5.3 Key features of federalism",
+      "pageStart": 104,
+      "pageEnd": 107
+    },
+    {
+      "unitTitle": "Unit 5: FEDERALISM IN ETHIOPIA",
+      "sectionTitle": "5.4 Advantage and disadvantage of federalism",
+      "pageStart": 108,
+      "pageEnd": 110
+    },
+    {
+      "unitTitle": "Unit 5: FEDERALISM IN ETHIOPIA",
+      "sectionTitle": "5.5 The roles of federalism in accommodating diversity in Ethiopia",
+      "pageStart": 111,
+      "pageEnd": 117
+    },
+    {
+      "unitTitle": "Unit 6: HUMAN RIGHT",
+      "sectionTitle": "6.1 The concept of human right",
+      "pageStart": 118,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 6: HUMAN RIGHT",
+      "sectionTitle": "6.2 Citizens and state obligations in realizing human rights",
+      "pageStart": 122,
+      "pageEnd": 128
+    },
+    {
+      "unitTitle": "Unit 7: PATRIOTISM",
+      "sectionTitle": "7.1 The meaning of patriotism",
+      "pageStart": 129,
+      "pageEnd": 130
+    },
+    {
+      "unitTitle": "Unit 7: PATRIOTISM",
+      "sectionTitle": "7.2 Types of patriotism",
+      "pageStart": 131,
+      "pageEnd": 135
+    },
+    {
+      "unitTitle": "Unit 7: PATRIOTISM",
+      "sectionTitle": "7.3 The bases of patriotism",
+      "pageStart": 136,
+      "pageEnd": 138
+    },
+    {
+      "unitTitle": "Unit 7: PATRIOTISM",
+      "sectionTitle": "7.4 The importance of patriotism",
+      "pageStart": 139,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "Unit 7: PATRIOTISM",
+      "sectionTitle": "7.5 Duties expected of patriots",
+      "pageStart": 143,
+      "pageEnd": 147
+    },
+    {
+      "unitTitle": "Unit 8: GLOBALIZATION AND GLOBAL ISSUES",
+      "sectionTitle": "8.1 The meaning of globalization",
+      "pageStart": 148,
+      "pageEnd": 150
+    },
+    {
+      "unitTitle": "Unit 8: GLOBALIZATION AND GLOBAL ISSUES",
+      "sectionTitle": "8.2 Advantages and disadvantages of globalization",
+      "pageStart": 151,
+      "pageEnd": 155
+    },
+    {
+      "unitTitle": "Unit 8: GLOBALIZATION AND GLOBAL ISSUES",
+      "sectionTitle": "8.3 Fighting the negative impact of globalization",
+      "pageStart": 156,
+      "pageEnd": 159
+    },
+    {
+      "unitTitle": "Unit 8: GLOBALIZATION AND GLOBAL ISSUES",
+      "sectionTitle": "8.4 Major global issues",
+      "pageStart": 160,
+      "pageEnd": 165
+    }
+  ],
+  "knownHeaders": [
+    "TEACHER GUIDE"
+  ]
+}

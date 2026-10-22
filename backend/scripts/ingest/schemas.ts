@@ -93,6 +93,9 @@ export type ExtractedContentBlock = z.infer<typeof ExtractedContentBlockSchema>;
 export const ExtractedTextbookSectionSchema = z.object({
   subject: z.string().min(1),
   grade: z.number().int().positive(),
+  // Defaults 'textbook' so already-written output files from before this field
+  // existed still validate as-is.
+  kind: z.enum(['textbook', 'teacher_guide']).default('textbook'),
   unitTitle: z.string().min(1),
   sectionTitle: z.string().min(1),
   order: z.number().int().min(0),

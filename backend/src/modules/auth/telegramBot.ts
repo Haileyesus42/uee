@@ -193,11 +193,16 @@ let polling = false;
 // means it works identically in local dev and in production with zero config
 // difference — appropriate for a small team, per the same reasoning as the rest
 // of this stack's provider choices.
+const POLL_BACKOFF_MIN_MS = 3000;
+const POLL_BACKOFF_MAX_MS = 60_000;
+
 export async function startTelegramPolling(): Promise<void> {
   if (polling) return;
   polling = true;
 
   let offset = 0;
+  let backoffMs = POLL_BACKOFF_MIN_MS;
+  let warnedUnreachable = false;
   console.log('[telegram] bot polling started');
 
   while (polling) {
@@ -210,6 +215,10 @@ export async function startTelegramPolling(): Promise<void> {
         await sleep(3000);
         continue;
       }
+
+      // Reaching the API proves the network is back — reset the backoff.
+      backoffMs = POLL_BACKOFF_MIN_MS;
+      warnedUnreachable = false;
 
       const body = (await res.json()) as { ok: boolean; result: TelegramUpdate[] };
       for (const update of body.result) {
@@ -235,8 +244,21 @@ export async function startTelegramPolling(): Promise<void> {
         );
       }
     } catch (err) {
-      console.error('[telegram] polling error', err);
-      await sleep(3000);
+      // Distinguish "no outbound route" from a real API error: an unreachable
+      // api.telegram.org is an environment problem (common in containers with
+      // no egress) and retrying every 3s only floods the log.
+      const code = (err as { cause?: { code?: string } })?.cause?.code;
+      if (!warnedUnreachable) {
+        console.warn(
+          `[telegram] cannot reach api.telegram.org (${code ?? (err as Error).message}) — Telegram login is ` +
+            'unavailable from this process. Check outbound network/DNS, or set TELEGRAM_POLLING_ENABLED=false. ' +
+            `Retrying with backoff up to ${POLL_BACKOFF_MAX_MS / 1000}s.`
+        );
+        warnedUnreachable = true;
+      }
+      console.warn(`[telegram] polling error (${code ?? 'unknown'}), retrying in ${backoffMs / 1000}s`);
+      await sleep(backoffMs);
+      backoffMs = Math.min(backoffMs * 2, POLL_BACKOFF_MAX_MS);
     }
   }
 }

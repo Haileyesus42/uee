@@ -349,11 +349,21 @@ model Notification {
 // structured Lesson/LessonStep path. See docs/backend-architecture.md and
 // backend/scripts/ingest/extractTextbookSections.ts for how these get populated
 // (verbatim pdftotext extraction, no LLM involved — unlike LessonStep content).
+enum TextbookSectionKind {
+  TEXTBOOK
+  TEACHER_GUIDE
+}
+
 model TextbookSection {
-  id           String  @id @default(uuid())
+  id           String              @id @default(uuid())
   subjectId    String
-  subject      Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  subject      Subject             @relation(fields: [subjectId], references: [id], onDelete: Cascade)
   grade        Int
+  // Same shape of content either way (verbatim reading-mode text) — just a
+  // different source book. Defaults TEXTBOOK so existing rows/imports are
+  // unaffected; see docs/backend-architecture.md for why this reuses the
+  // model instead of a parallel TeacherGuideSection table.
+  kind         TextbookSectionKind @default(TEXTBOOK)
   unitTitle    String
   sectionTitle String
   // Sequential across the whole subject+grade (not per-unit) so prev/next
@@ -380,8 +390,8 @@ model TextbookSection {
   bookmarks  UserBookmark[]
   highlights UserHighlight[]
 
-  @@unique([subjectId, grade, order])
-  @@index([subjectId, grade, order])
+  @@unique([subjectId, grade, kind, order])
+  @@index([subjectId, grade, kind, order])
   @@map("textbook_sections")
 }
 
@@ -415,12 +425,13 @@ model UserHighlight {
 
 model UserReadingProgress {
   userId         String
-  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user           User                @relation(fields: [userId], references: [id], onDelete: Cascade)
   subjectId      String
+  kind           TextbookSectionKind @default(TEXTBOOK)
   sectionId      String
   paragraphIndex Int
-  updatedAt      DateTime @updatedAt
+  updatedAt      DateTime            @updatedAt
 
-  @@id([userId, subjectId])
+  @@id([userId, subjectId, kind])
   @@map("user_reading_progress")
 }

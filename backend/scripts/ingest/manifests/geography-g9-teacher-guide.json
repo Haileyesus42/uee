@@ -1,0 +1,223 @@
+{
+  "subject": "geography",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/Geography Grade 9 Teacher Guide final version.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.2 Location, Size and Shape of Ethiopia",
+      "pageStart": 23,
+      "pageEnd": 23
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.3 Geological History of Ethiopia",
+      "pageStart": 24,
+      "pageEnd": 57
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.1 Meaning of weather and climate",
+      "pageStart": 58,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.2 Elements of Weather and Climate",
+      "pageStart": 62,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.3 Controls of Climate in Ethiopia",
+      "pageStart": 66,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.4 Climatic Regions and Seasonal Variations in Ethiopia",
+      "pageStart": 70,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.5 Measurements of Weather and Climate",
+      "pageStart": 76,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.1 Meaning of Natural Resources",
+      "pageStart": 84,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.2 Drainage Systems of Ethiopia",
+      "pageStart": 88,
+      "pageEnd": 91
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.3 Water Resources of Ethiopia",
+      "pageStart": 92,
+      "pageEnd": 96
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.4 Major Soil Types of Ethiopia",
+      "pageStart": 97,
+      "pageEnd": 101
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.5 Major Mineral Resources and Their Distribution in Ethiopia",
+      "pageStart": 102,
+      "pageEnd": 106
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.6 Biotic Resources of Ethiopia",
+      "pageStart": 107,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.1 Concepts of Human Population",
+      "pageStart": 122,
+      "pageEnd": 125
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.2 The Trends of Population Growth In Ethiopia",
+      "pageStart": 126,
+      "pageEnd": 129
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.3 Population Composition",
+      "pageStart": 130,
+      "pageEnd": 135
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.4 Population Distribution",
+      "pageStart": 136,
+      "pageEnd": 141
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.5 Urban and Rural Settlement Patterns",
+      "pageStart": 142,
+      "pageEnd": 147
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.6 Health and Disease in Ethiopia",
+      "pageStart": 148,
+      "pageEnd": 158
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.8 Language and Religion Diversity in Ethiopia",
+      "pageStart": 159,
+      "pageEnd": 165
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.1 Major Economic Activities in Ethiopia",
+      "pageStart": 166,
+      "pageEnd": 180
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.3 Trade and Transport in Ethiopia",
+      "pageStart": 181,
+      "pageEnd": 185
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.4 Road Safety in Ethiopia",
+      "pageStart": 186,
+      "pageEnd": 190
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.5 Cultural Landscapes and Tourism in Ethiopia",
+      "pageStart": 191,
+      "pageEnd": 199
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.1 Human-Environment Relationship",
+      "pageStart": 200,
+      "pageEnd": 205
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.2 Optimum population and Resource Use",
+      "pageStart": 206,
+      "pageEnd": 209
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.3 Over Population and Resource Use",
+      "pageStart": 210,
+      "pageEnd": 214
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.4 Under Population and Resource use",
+      "pageStart": 215,
+      "pageEnd": 218
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.5 Impacts of Rapid Population Growth",
+      "pageStart": 219,
+      "pageEnd": 229
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.1 Natural resource degradation",
+      "pageStart": 230,
+      "pageEnd": 244
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.2 The Ethiopian “Green Legacy” Movement",
+      "pageStart": 245,
+      "pageEnd": 253
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.1 Maps and its Basic Components",
+      "pageStart": 254,
+      "pageEnd": 258
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.2 Scale, Scale Conversion and Measurements on Maps",
+      "pageStart": 259,
+      "pageEnd": 264
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.3 Position on Maps",
+      "pageStart": 265,
+      "pageEnd": 269
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.4 Map Sketching",
+      "pageStart": 270,
+      "pageEnd": 273
+    }
+  ],
+  "knownHeaders": [
+    "TEACHER’S GUIDE",
+    "TEACHER GUIDE"
+  ]
+}

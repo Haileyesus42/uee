@@ -3,11 +3,13 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 
-export type LearnMode = 'interactive' | 'textbook';
+export type LearnMode = 'interactive' | 'textbook' | 'teacher_guide';
 
 const OPTIONS: { key: LearnMode; label: string; icon: keyof typeof Ionicons.glyphMap }[] = [
-  { key: 'interactive', label: 'Interactive Learning', icon: 'trail-sign-outline' },
-  { key: 'textbook', label: 'Textbook / Raw Study', icon: 'book-outline' },
+  // Short labels: three chips share one row, so long ones wrap and overflow.
+  { key: 'interactive', label: 'Interactive', icon: 'trail-sign-outline' },
+  { key: 'textbook', label: 'Textbook', icon: 'book-outline' },
+  { key: 'teacher_guide', label: 'Guides', icon: 'easel-outline' },
 ];
 
 // Same visual/interaction pattern as PaperModeSelector (UEE Study/Exam toggle) —
@@ -29,9 +31,11 @@ export function LearnModeSelector({ mode, onChange }: { mode: LearnMode; onChang
           >
             <Ionicons name={opt.icon} size={14} color={active ? t.colors.brand : t.colors.textSecondary} />
             <Text
+              numberOfLines={1}
+              ellipsizeMode="tail"
               style={[
                 t.typography.bodyStrong,
-                { color: active ? t.colors.brand : t.colors.textSecondary, fontSize: 13, marginLeft: 6 },
+                { color: active ? t.colors.brand : t.colors.textSecondary, fontSize: 13, marginLeft: 6, flexShrink: 1 },
               ]}
             >
               {opt.label}

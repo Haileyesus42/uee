@@ -20,6 +20,7 @@ import { useTextbookSection, useReadingProgress, useBookmarks, useHighlights } f
 import { LearnStackParamList } from '../../navigation/types';
 import { TextbookContentBlock } from '../../api/types';
 import { MathText } from '../../components/common/MathText';
+import { FacsimilePager } from '../../components/learn/FacsimilePager';
 
 type Props = NativeStackScreenProps<LearnStackParamList, 'TextbookReader'>;
 
@@ -137,9 +138,9 @@ function ReaderTable({
 // toggleScheme() here would flip the whole app's theme, not just the reader.
 export function TextbookReaderScreen({ navigation, route }: Props) {
   const t = useTheme();
-  const { subjectId, sectionId } = route.params;
+  const { subjectId, sectionId, kind = 'textbook', initialPage } = route.params;
   const { data: section } = useTextbookSection(sectionId);
-  const { data: progress, saveProgress } = useReadingProgress(subjectId);
+  const { data: progress, saveProgress } = useReadingProgress(subjectId, kind);
   const { data: bookmarks, toggleBookmark } = useBookmarks(subjectId);
   const { data: highlights, toggleHighlight } = useHighlights(sectionId);
   const currentBookmark = bookmarks?.find((b) => b.sectionId === sectionId);
@@ -176,6 +177,77 @@ export function TextbookReaderScreen({ navigation, route }: Props) {
   }, []);
 
   if (!section) return null;
+
+  // Facsimile sections hold one image per printed page. Rendering them in the
+  // text ScrollView reads as one endless article, so they get a paged reader:
+  // one page per screen, swiped horizontally.
+  const facsimilePages = section.blocks.filter(
+    (b): b is Extract<TextbookContentBlock, { type: 'image' }> => b.type === 'image'
+  );
+  if (section.isFacsimile && facsimilePages.length > 0) {
+    const initialIndex = Math.max(
+      0,
+      initialPage != null
+        ? initialPage - section.pageStart
+        : progress?.sectionId === sectionId
+          ? progress.paragraphIndex
+          : 0
+    );
+    return (
+      <SafeAreaView style={[styles.flex, { backgroundColor: rt.bg }]} edges={['top']}>
+        <View style={[styles.header, { borderBottomColor: t.colors.border }]}>
+          <Pressable onPress={() => navigation.goBack()} hitSlop={10}>
+            <Ionicons name="chevron-back" size={22} color={rt.text} />
+          </Pressable>
+          <Text style={[styles.headerTitle, { color: rt.text }]} numberOfLines={1}>
+            {section.sectionTitle}
+          </Text>
+          <Pressable onPress={() => toggleBookmark(sectionId, currentBookmark?.id)} hitSlop={8}>
+            <Ionicons
+              name={currentBookmark ? 'bookmark' : 'bookmark-outline'}
+              size={22}
+              color={currentBookmark ? t.colors.brand : rt.text}
+            />
+          </Pressable>
+        </View>
+
+        <FacsimilePager
+          pages={facsimilePages}
+          pageStart={section.pageStart}
+          pageEnd={section.pageEnd}
+          initialIndex={initialIndex}
+          apiUrl={API_URL}
+          textColor={rt.text}
+          hasPrev={!!section.prevSectionId}
+          hasNext={!!section.nextSectionId}
+          onPageChange={(index) => saveProgress(sectionId, index)}
+          onOpenImage={(filename) => setViewerUri(`${API_URL}/textbook/images/${filename}`)}
+          onPrevSection={() =>
+            section.prevSectionId &&
+            navigation.replace('TextbookReader', {
+              subjectId,
+              sectionId: section.prevSectionId,
+              kind,
+              // Land on the previous section's last page so paging backwards
+              // is continuous instead of jumping to its first page.
+              initialPage: Number.MAX_SAFE_INTEGER,
+            })
+          }
+          onNextSection={() =>
+            section.nextSectionId &&
+            navigation.replace('TextbookReader', {
+              subjectId,
+              sectionId: section.nextSectionId,
+              kind,
+            })
+          }
+        />
+
+        <ImageViewerModal uri={viewerUri} onClose={() => setViewerUri(null)} />
+      </SafeAreaView>
+    );
+  }
+
   const baseSize = FONT_SIZES[fontSizeIndex];
 
   return (
@@ -251,6 +323,17 @@ export function TextbookReaderScreen({ navigation, route }: Props) {
         onContentSizeChange={() => {
           if (hasRestoredScroll.current) return;
           hasRestoredScroll.current = true;
+          // A page-number jump (facsimile editions) wins over saved progress:
+          // the requested page maps to a block index within this section.
+          if (initialPage != null && section) {
+            const idx = Math.max(
+              0,
+              Math.min(initialPage - section.pageStart, section.blocks.length - 1)
+            );
+            const y = paragraphY.current[idx];
+            if (y != null) scrollViewRef.current?.scrollTo({ y, animated: false });
+            return;
+          }
           // Resume at the saved paragraph, but only when reopening the exact
           // section that progress points to — arriving via TOC/search/prev-next
           // instead should just start at the top of that section.
@@ -355,7 +438,7 @@ export function TextbookReaderScreen({ navigation, route }: Props) {
         <View style={[styles.navRow, { borderTopColor: t.colors.border }]}>
           <Pressable
             disabled={!section.prevSectionId}
-            onPress={() => section.prevSectionId && navigation.replace('TextbookReader', { subjectId, sectionId: section.prevSectionId })}
+            onPress={() => section.prevSectionId && navigation.replace('TextbookReader', { subjectId, sectionId: section.prevSectionId, kind })}
             style={{ opacity: section.prevSectionId ? 1 : 0.3 }}
           >
             <View style={styles.navButton}>
@@ -365,7 +448,7 @@ export function TextbookReaderScreen({ navigation, route }: Props) {
           </Pressable>
           <Pressable
             disabled={!section.nextSectionId}
-            onPress={() => section.nextSectionId && navigation.replace('TextbookReader', { subjectId, sectionId: section.nextSectionId })}
+            onPress={() => section.nextSectionId && navigation.replace('TextbookReader', { subjectId, sectionId: section.nextSectionId, kind })}
             style={{ opacity: section.nextSectionId ? 1 : 0.3 }}
           >
             <View style={styles.navButton}>

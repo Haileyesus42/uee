@@ -1,5 +1,5 @@
 import type { NavigatorScreenParams } from '@react-navigation/native';
-import type { UeeStreamId } from '../api/types';
+import type { TextbookKind, UeeStreamId } from '../api/types';
 
 export type OnboardingStackParamList = {
   Splash: undefined;
@@ -33,9 +33,12 @@ export type LearnStackParamList = {
   // Textbook Study Mode — flat siblings alongside the Interactive-mode routes
   // above, same stack (see docs/backend-architecture.md for why: matches how
   // TopicDetail/LessonIntroduction/etc. already coexist, no nested navigator).
-  TextbookHome: { subjectId: string; grade: number };
-  TextbookReader: { subjectId: string; sectionId: string };
-  TextbookSearch: { subjectId: string };
+  // `kind` distinguishes the student textbook from the teacher's guide — same
+  // screens, same reader, different source book (see TextbookSectionKind).
+  // Optional, defaults to 'textbook', so existing callers don't need updating.
+  TextbookHome: { subjectId: string; grade: number; kind?: TextbookKind };
+  TextbookReader: { subjectId: string; sectionId: string; kind?: TextbookKind; initialPage?: number };
+  TextbookSearch: { subjectId: string; kind?: TextbookKind };
   TextbookBookmarks: { subjectId: string };
 };
 

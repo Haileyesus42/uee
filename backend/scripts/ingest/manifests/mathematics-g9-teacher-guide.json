@@ -1,0 +1,157 @@
+{
+  "subject": "mathematics",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/Grade 9 Maths Teacher Guide 2Aug22.pdf",
+  "sections": [
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.1 Revision on Natural Numbers and Integers……………….………",
+      "pageStart": 14,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "",
+      "sectionTitle": "1.4 Real Numbers ……………………………………………..…………….………",
+      "pageStart": 35,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 2: SOLVING EQUATIONS …………………………",
+      "sectionTitle": "2.1 Revision of Linear Equation in One Variable ……………..……",
+      "pageStart": 52,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "Unit 2: SOLVING EQUATIONS …………………………",
+      "sectionTitle": "2.3 Solving Non-linear Equations …………………………..……………",
+      "pageStart": 60,
+      "pageEnd": 69
+    },
+    {
+      "unitTitle": "Unit 2: SOLVING EQUATIONS …………………………",
+      "sectionTitle": "2.4 Applications on Equations …………………………………….…………",
+      "pageStart": 70,
+      "pageEnd": 77
+    },
+    {
+      "unitTitle": "Unit 2: SOLVING EQUATIONS …………………………",
+      "sectionTitle": "3.1 Revision on Linear Inequalities in One Variable ………………",
+      "pageStart": 78,
+      "pageEnd": 79
+    },
+    {
+      "unitTitle": "Unit 2: SOLVING EQUATIONS …………………………",
+      "sectionTitle": "3.2 Systems of Linear Inequalities in Two Variables………………",
+      "pageStart": 80,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 2: SOLVING EQUATIONS …………………………",
+      "sectionTitle": "3.3 Inequalities Involving Absolute Value ……………………………",
+      "pageStart": 83,
+      "pageEnd": 83
+    },
+    {
+      "unitTitle": "Unit 2: SOLVING EQUATIONS …………………………",
+      "sectionTitle": "3.4 Quadratic Inequalities……………………………………………..………",
+      "pageStart": 84,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "Unit 4: Introduction to Trigonometry…………………",
+      "sectionTitle": "4.1 Revision on Right-angled Triangles…………..………………………",
+      "pageStart": 93,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit 4: Introduction to Trigonometry…………………",
+      "sectionTitle": "4.2 The Trigonometric Ratios ………………………………………………",
+      "pageStart": 95,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "Unit 5: Regular Polygons ………………………………",
+      "sectionTitle": "5.1 Sum of Interior Angles of a Convex Polygons ……………….…",
+      "pageStart": 103,
+      "pageEnd": 105
+    },
+    {
+      "unitTitle": "Unit 5: Regular Polygons ………………………………",
+      "sectionTitle": "5.2 Sum of Exterior Angles of a Convex Polygons ………………..…",
+      "pageStart": 106,
+      "pageEnd": 117
+    },
+    {
+      "unitTitle": "Unit 5: Regular Polygons ………………………………",
+      "sectionTitle": "6.1 Revision on Congruency of Triangles ……………………..……..…",
+      "pageStart": 118,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "Unit 5: Regular Polygons ………………………………",
+      "sectionTitle": "6.2 Definition of Similar Figures …………………………..………….……",
+      "pageStart": 121,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 5: Regular Polygons ………………………………",
+      "sectionTitle": "6.3 Theorems on Similar Plane Figures ………………..…………..……",
+      "pageStart": 122,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit 5: Regular Polygons ………………………………",
+      "sectionTitle": "6.5 Ratio of Areas of Similar Plane Figures …………..……...…………",
+      "pageStart": 127,
+      "pageEnd": 129
+    },
+    {
+      "unitTitle": "Unit 5: Regular Polygons ………………………………",
+      "sectionTitle": "6.6 Construction of Similar Plane Figures ………………….…………",
+      "pageStart": 130,
+      "pageEnd": 138
+    },
+    {
+      "unitTitle": "Unit 7: Vectors in Two Dimensions ………………..…",
+      "sectionTitle": "7.1 Scalar and Vector Quantities ………………………………………….…",
+      "pageStart": 139,
+      "pageEnd": 139
+    },
+    {
+      "unitTitle": "Unit 7: Vectors in Two Dimensions ………………..…",
+      "sectionTitle": "7.2 Representation of a Vector ………………………………………………",
+      "pageStart": 140,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "Unit 7: Vectors in Two Dimensions ………………..…",
+      "sectionTitle": "7.3 Vectors Operations ………………………………………………………..…",
+      "pageStart": 143,
+      "pageEnd": 147
+    },
+    {
+      "unitTitle": "Unit 7: Vectors in Two Dimensions ………………..…",
+      "sectionTitle": "7.4 Position Vector ……………………………………………………………..…",
+      "pageStart": 148,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "Unit 7: Vectors in Two Dimensions ………………..…",
+      "sectionTitle": "7.5 Applications of Vectors in Two Dimensions………………………",
+      "pageStart": 150,
+      "pageEnd": 156
+    },
+    {
+      "unitTitle": "Unit 8: Statistics and Probability …………….…………",
+      "sectionTitle": "8.1 Statistical Data …………………………………………………………………",
+      "pageStart": 157,
+      "pageEnd": 166
+    }
+  ],
+  "knownHeaders": [
+    "MATHEMATICS TEACHER’S GUIDE",
+    "TEACHER GUIDE"
+  ]
+}

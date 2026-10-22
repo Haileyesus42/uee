@@ -55,8 +55,12 @@ async function main() {
 
   await app.listen({ port: env.PORT, host: '0.0.0.0' });
 
-  if (env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_BOT_USERNAME) {
+  if (env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_BOT_USERNAME && env.TELEGRAM_POLLING_ENABLED) {
     startTelegramPolling().catch((err) => app.log.error(err, '[telegram] polling loop crashed'));
+  } else if (!env.TELEGRAM_POLLING_ENABLED) {
+    app.log.warn(
+      'TELEGRAM_POLLING_ENABLED=false — Telegram login is disabled (no getUpdates polling); the rest of the API is unaffected.'
+    );
   } else {
     app.log.warn(
       'TELEGRAM_BOT_TOKEN / TELEGRAM_BOT_USERNAME not set — Telegram login is disabled until both are configured.'

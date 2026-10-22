@@ -1684,7 +1684,9 @@ async function main() {
 
   console.log('Seeding practice question bank...');
   for (const [subjectId, questions] of Object.entries(QUESTION_BANKS)) {
-    await prisma.question.deleteMany({ where: { subjectId } });
+    // Only the generic bank is replaced — imported past papers carry an
+    // examYear and would otherwise be wiped by a routine re-seed.
+    await prisma.question.deleteMany({ where: { subjectId, examYear: null } });
     await prisma.question.createMany({
       data: questions.map((q) => ({
         subjectId,

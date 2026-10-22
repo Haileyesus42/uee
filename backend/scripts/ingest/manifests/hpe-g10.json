@@ -1,0 +1,157 @@
+{
+  "subject": "hpe",
+  "grade": 10,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/grade-10-health-and-physical-education-hpe-new-curriculum--student-textbook-kehulumcom17599270253739.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.1 Sport and media",
+      "pageStart": 11,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.2 Sport and religion",
+      "pageStart": 16,
+      "pageEnd": 16
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.3 Sport and politics",
+      "pageStart": 17,
+      "pageEnd": 19
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.5 Basic rules of Anti–Doping",
+      "pageStart": 20,
+      "pageEnd": 27
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.1 Methods of physical fitness training",
+      "pageStart": 28,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.2 Impacts of sedentary life",
+      "pageStart": 33,
+      "pageEnd": 35
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.3 Exercises to develop cardiovascular endurance",
+      "pageStart": 36,
+      "pageEnd": 36
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.4 Exercises to develop muscle endurance",
+      "pageStart": 37,
+      "pageEnd": 41
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.5 Exercise to develop strength",
+      "pageStart": 42,
+      "pageEnd": 45
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.6 Flexibility developing exercises",
+      "pageStart": 46,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.1 History of world athletics",
+      "pageStart": 54,
+      "pageEnd": 55
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.2 History of African athletics",
+      "pageStart": 56,
+      "pageEnd": 57
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.4 Horizontal jumps",
+      "pageStart": 58,
+      "pageEnd": 74
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.2 Skills of football",
+      "pageStart": 75,
+      "pageEnd": 93
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.2 Blocking skills of volleyball",
+      "pageStart": 94,
+      "pageEnd": 107
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.1 Basic rules of basketball",
+      "pageStart": 108,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.2 Lay-up shooting Skills of basketball",
+      "pageStart": 114,
+      "pageEnd": 114
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.3 Extended arm lay-up shoot",
+      "pageStart": 115,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.4 Mini basketball games",
+      "pageStart": 117,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.1 General rules of handball",
+      "pageStart": 122,
+      "pageEnd": 124
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.2 Goalkeeping",
+      "pageStart": 125,
+      "pageEnd": 129
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.3 Advanced skills of handball",
+      "pageStart": 130,
+      "pageEnd": 136
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.1 Ethics in sport and self-defence",
+      "pageStart": 137,
+      "pageEnd": 141
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.2 Basic conflict resolution techniques",
+      "pageStart": 142,
+      "pageEnd": 146
+    }
+  ],
+  "knownHeaders": [
+    "GRADE 10",
+    "STUDENT TEXTBOOK"
+  ]
+}

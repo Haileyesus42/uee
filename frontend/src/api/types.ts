@@ -1,6 +1,15 @@
 export type JourneyStatus = 'locked' | 'available' | 'current' | 'completed';
 
-export type Subject = { id: string; slug: string; name: string; icon: string; mastery: number; hasTextbook: boolean };
+export type Subject = {
+  id: string;
+  slug: string;
+  name: string;
+  icon: string;
+  mastery: number;
+  hasTextbook: boolean;
+  hasTeacherGuide: boolean;
+};
+export type TextbookKind = 'textbook' | 'teacher_guide';
 
 export type UeeStreamId = 'natural' | 'social';
 export type UeeStream = { id: UeeStreamId; label: string };
@@ -111,6 +120,12 @@ export type TextbookSectionDetail = {
   unitTitle: string;
   sectionTitle: string;
   blocks: TextbookContentBlock[];
+  // True when the section is a facsimile (page-image) edition: no extracted
+  // text, so text search and highlighting don't apply.
+  isFacsimile?: boolean;
+  // Page range this section covers; used to resolve a "go to page N" request.
+  pageStart: number;
+  pageEnd: number;
   lessonId: string | null;
   unitId: string | null;
   prevSectionId: string | null;
@@ -119,11 +134,13 @@ export type TextbookSectionDetail = {
 
 export type TextbookSearchResult = { sectionId: string; sectionTitle: string; snippet: string };
 
+export type TextbookEdition = { facsimile: boolean };
+
 export type TextbookBookmark = {
   id: string;
   sectionId: string;
   createdAt: string;
-  section: { sectionTitle: string; unitTitle: string; subjectId: string };
+  section: { sectionTitle: string; unitTitle: string; subjectId: string; kind: TextbookKind };
 };
 
 export type TextbookHighlight = { id: string; sectionId: string; paragraphIndex: number; note: string | null; createdAt: string };

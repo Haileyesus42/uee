@@ -34,6 +34,10 @@ type ManifestSection = { unitTitle: string; sectionTitle: string; pageStart: num
 type Manifest = {
   subject: string;
   grade: number;
+  // 'textbook' (default) for the student book, 'teacher_guide' for the
+  // teacher's edition — same block shape, just a different source book and
+  // TextbookSection.kind on import. See prisma/schema.prisma.
+  kind?: 'textbook' | 'teacher_guide';
   pdfPath: string;
   knownHeaders?: string[];
   sections: ManifestSection[];
@@ -99,6 +103,15 @@ async function main() {
   // subject as a prefix (see imageExtract.ts), which keeps the serving route
   // (GET /textbook/images/:filename) a simple single-directory lookup.
   const imagesDir = resolve(__dirname, '../../assets/textbook-images');
+  // Figure filenames are "<prefix>-p<page>-<n>.jpg" in one flat directory, so
+  // the prefix has to separate books that share a subject but reuse the same
+  // page numbers — exactly what a teacher guide does against its student book.
+  // Student books keep the bare subject prefix so the thousands of already
+  // imported image references stay valid.
+  const imagePrefix =
+    manifest.kind === 'teacher_guide'
+      ? `${manifest.subject}-g${manifest.grade}-teacher-guide`
+      : manifest.subject;
 
   console.log(`Extracting ${manifest.sections.length} section(s) from ${pdfPath}...`);
 
@@ -112,7 +125,7 @@ async function main() {
 
     const images: { filename: string; width: number; height: number }[] = [];
     for (let page = section.pageStart; page <= section.pageEnd; page += 1) {
-      const pageImages = await extractContentFigures(pdfPath, page, imagesDir, manifest.subject);
+      const pageImages = await extractContentFigures(pdfPath, page, imagesDir, imagePrefix);
       images.push(...pageImages);
     }
 
@@ -124,6 +137,7 @@ async function main() {
     results.push({
       subject: manifest.subject,
       grade: manifest.grade,
+      kind: manifest.kind ?? 'textbook',
       // generateManifest.ts's ToC-unit-heading detection doesn't recognize
       // every book's format — leaves unitTitle empty for several books
       // (hand-confirmed: 11 of 21 manifests this session, some entirely) —
@@ -142,7 +156,9 @@ async function main() {
 
   await cleanupBookImages(pdfPath);
 
-  const outPath = out ? resolve(out) : resolve(__dirname, `output/textbook-${manifest.subject}-g${manifest.grade}.json`);
+  const kindSuffix = manifest.kind === 'teacher_guide' ? '-teacher-guide' : '';
+  const outPath =
+    out ? resolve(out) : resolve(__dirname, `output/textbook-${manifest.subject}-g${manifest.grade}${kindSuffix}.json`);
   await mkdir(resolve(outPath, '..'), { recursive: true });
   await writeFile(outPath, JSON.stringify(results, null, 2));
 

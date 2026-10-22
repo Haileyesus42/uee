@@ -15,7 +15,7 @@
 // — omitting it targets the streamless (examYear-only) slot instead.
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { PrismaClient, Stream } from '@prisma/client';
+import { PrismaClient, Stream, TextbookSectionKind } from '@prisma/client';
 import { ExtractedQuestionBatchSchema, ExtractedLessonStepBatchSchema, ExtractedTextbookSectionBatchSchema } from './schemas';
 
 const prisma = new PrismaClient();
@@ -135,13 +135,18 @@ async function importTextbook(path: string, subjectSlug: string) {
   });
   const lessonByTitle = new Map(lessons.map((l) => [l.title.trim().toLowerCase(), l.id]));
 
+  // 'teacher_guide' sections don't cross-link to a structured Lesson — that
+  // link is for "practice this as a guided lesson," which only makes sense
+  // from the student's own textbook.
+  const kind: TextbookSectionKind = sections[0].kind === 'teacher_guide' ? 'TEACHER_GUIDE' : 'TEXTBOOK';
   let linked = 0;
   const data = sections.map((s) => {
-    const lessonId = lessonByTitle.get(stripNumberPrefix(s.sectionTitle)) ?? null;
+    const lessonId = kind === 'TEXTBOOK' ? lessonByTitle.get(stripNumberPrefix(s.sectionTitle)) ?? null : null;
     if (lessonId) linked += 1;
     return {
       subjectId: subject.id,
       grade: s.grade,
+      kind,
       unitTitle: s.unitTitle,
       sectionTitle: s.sectionTitle,
       order: s.order,
@@ -152,17 +157,17 @@ async function importTextbook(path: string, subjectSlug: string) {
     };
   });
 
-  // Scoped to this file's grade, not the whole subject — a subject can have
-  // multiple grades imported separately (e.g. history g9-g12), and deleting
-  // by subjectId alone would wipe every other grade's sections each time a
-  // new one is imported.
+  // Scoped to this file's grade AND kind, not the whole subject — a subject
+  // can have multiple grades imported separately (e.g. history g9-g12), and
+  // the student textbook and teacher guide for the same subject+grade are
+  // separate books that must not delete each other's sections.
   const grade = sections[0].grade;
   await prisma.$transaction([
-    prisma.textbookSection.deleteMany({ where: { subjectId: subject.id, grade } }),
+    prisma.textbookSection.deleteMany({ where: { subjectId: subject.id, grade, kind } }),
     prisma.textbookSection.createMany({ data }),
   ]);
 
-  console.log(`Imported ${sections.length} section(s) for ${subjectSlug} (${linked} cross-linked to an existing lesson).`);
+  console.log(`Imported ${sections.length} ${kind} section(s) for ${subjectSlug} (${linked} cross-linked to an existing lesson).`);
 }
 
 async function main() {

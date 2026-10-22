@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View } from 'react-native';
 import { createBottomTabNavigator, BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { BottomNavigation, NavKey } from '../components/navigation/BottomNavigation';
@@ -46,12 +46,33 @@ function CustomTabBar({ state, navigation }: BottomTabBarProps) {
   );
 }
 
+// Deepest focused route name from a navigator state object. Called from the
+// navigator's onStateChange rather than a hook — MainTabNavigator itself
+// renders the navigator, so it is not inside a navigation context.
+function deepestRouteName(state: any): string | undefined {
+  let current = state;
+  while (current?.routes?.[current.index ?? 0]?.state) {
+    current = current.routes[current.index ?? 0].state;
+  }
+  return current?.routes?.[current.index ?? 0]?.name;
+}
+
 export function MainTabNavigator() {
   const { open: chatOpen, openChat, closeChat } = useUnityChat();
+  const [focusedRoute, setFocusedRoute] = useState<string | undefined>();
+  // The reader is a full-screen reading surface; the chat bubble would cover
+  // page controls, so it is hidden there.
+  const hideFab = focusedRoute === 'TextbookReader';
 
   return (
     <View style={{ flex: 1 }}>
-      <Tab.Navigator screenOptions={{ headerShown: false }} tabBar={(props) => <CustomTabBar {...props} />}>
+      <Tab.Navigator
+        screenOptions={{ headerShown: false }}
+        tabBar={(props) => <CustomTabBar {...props} />}
+        screenListeners={{
+          state: (event) => setFocusedRoute(deepestRouteName(event.data.state)),
+        }}
+      >
         <Tab.Screen name="Home" component={HomeNavigator} />
         <Tab.Screen name="Learn" component={LearnNavigator} />
         <Tab.Screen name="Practice" component={PracticeNavigator} />
@@ -66,7 +87,7 @@ export function MainTabNavigator() {
           panel is open since it slides in over the same corner. Chat open/close
           state lives in UnityChatContext so any screen — not just this one —
           can trigger it (e.g. the "ask Unity" affordance on quiz feedback). */}
-      {!chatOpen && <UnityFloatingButton onPress={openChat} bottom={70} />}
+      {!chatOpen && !hideFab && <UnityFloatingButton onPress={openChat} bottom={70} />}
       <UnityChatPanel visible={chatOpen} onClose={closeChat} />
     </View>
   );

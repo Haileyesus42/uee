@@ -25,13 +25,19 @@ function blockSearchableText(b: ContentBlock): string | null {
 const IMAGES_DIR = resolve(__dirname, '../../../assets/textbook-images');
 const IMAGE_MIME: Record<string, string> = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
 
-const tocQuery = z.object({ grade: z.coerce.number().int().min(9).max(12).optional() });
-const searchQuery = z.object({ q: z.string().min(1) });
+const kindParam = z.enum(['textbook', 'teacher_guide']).default('textbook');
+const KIND_DB: Record<z.infer<typeof kindParam>, 'TEXTBOOK' | 'TEACHER_GUIDE'> = {
+  textbook: 'TEXTBOOK',
+  teacher_guide: 'TEACHER_GUIDE',
+};
+const tocQuery = z.object({ grade: z.coerce.number().int().min(9).max(12).optional(), kind: kindParam });
+const searchQuery = z.object({ q: z.string().min(1), kind: kindParam });
 const bookmarksQuery = z.object({ subjectId: z.string().optional() });
 const bookmarkBody = z.object({ sectionId: z.string() });
 const highlightsQuery = z.object({ sectionId: z.string() });
 const highlightBody = z.object({ sectionId: z.string(), paragraphIndex: z.number().int().min(0), note: z.string().optional() });
-const progressBody = z.object({ sectionId: z.string(), paragraphIndex: z.number().int().min(0) });
+const progressQuery = z.object({ kind: kindParam });
+const progressBody = z.object({ sectionId: z.string(), paragraphIndex: z.number().int().min(0), kind: kindParam });
 
 const SNIPPET_RADIUS = 90;
 
@@ -53,9 +59,9 @@ export async function textbookRoutes(app: FastifyInstance) {
     '/textbook/:subjectId/toc',
     { preHandler: authenticate },
     async (request) => {
-      const { grade } = tocQuery.parse(request.query);
+      const { grade, kind } = tocQuery.parse(request.query);
       const sections = await prisma.textbookSection.findMany({
-        where: { subjectId: request.params.subjectId, ...(grade ? { grade } : {}) },
+        where: { subjectId: request.params.subjectId, kind: KIND_DB[kind], ...(grade ? { grade } : {}) },
         orderBy: { order: 'asc' },
         select: { id: true, unitTitle: true, sectionTitle: true, order: true, pageStart: true, pageEnd: true },
       });
@@ -90,28 +96,66 @@ export async function textbookRoutes(app: FastifyInstance) {
       const [prev, next] = await Promise.all([
         prisma.textbookSection.findUnique({
           where: {
-            subjectId_grade_order: { subjectId: section.subjectId, grade: section.grade, order: section.order - 1 },
+            subjectId_grade_kind_order: {
+              subjectId: section.subjectId,
+              grade: section.grade,
+              kind: section.kind,
+              order: section.order - 1,
+            },
           },
           select: { id: true },
         }),
         prisma.textbookSection.findUnique({
           where: {
-            subjectId_grade_order: { subjectId: section.subjectId, grade: section.grade, order: section.order + 1 },
+            subjectId_grade_kind_order: {
+              subjectId: section.subjectId,
+              grade: section.grade,
+              kind: section.kind,
+              order: section.order + 1,
+            },
           },
           select: { id: true },
         }),
       ]);
+
+      const sectionBlocks = (section.blocks ?? []) as { type?: string }[];
 
       return {
         id: section.id,
         unitTitle: section.unitTitle,
         sectionTitle: section.sectionTitle,
         blocks: section.blocks,
+        // A facsimile section is a run of page images rather than extracted
+        // text; clients use this to swap text-only affordances for page
+        // navigation.
+        isFacsimile: sectionBlocks.length > 0 && sectionBlocks.every((b) => b?.type === 'image'),
+        // Page range for this section — the reader needs it to turn a
+        // "go to page N" request into a block index.
+        pageStart: section.pageStart,
+        pageEnd: section.pageEnd,
         lessonId: section.lessonId,
         unitId: section.lesson?.unitId ?? null,
         prevSectionId: prev?.id ?? null,
         nextSectionId: next?.id ?? null,
       };
+    }
+  );
+
+  // Whether this subject/grade book is a facsimile (page-image) edition.
+  // Reads one section's blocks — cheap. The client uses it to decide between
+  // text search and page-number navigation.
+  app.get<{ Params: { subjectId: string } }>(
+    '/textbook/:subjectId/edition',
+    { preHandler: authenticate },
+    async (request) => {
+      const { kind } = tocQuery.parse(request.query);
+      const first = await prisma.textbookSection.findFirst({
+        where: { subjectId: request.params.subjectId, kind: KIND_DB[kind] },
+        orderBy: { order: 'asc' },
+        select: { blocks: true },
+      });
+      const blocks = (first?.blocks ?? []) as { type?: string }[];
+      return { facsimile: blocks.length > 0 && blocks.every((b) => b?.type === 'image') };
     }
   );
 
@@ -125,10 +169,11 @@ export async function textbookRoutes(app: FastifyInstance) {
     '/textbook/:subjectId/search',
     { preHandler: authenticate },
     async (request) => {
-      const { q } = searchQuery.parse(request.query);
+      const { q, kind } = searchQuery.parse(request.query);
       const matches = await prisma.$queryRaw<{ id: string; sectionTitle: string; blocks: unknown }[]>`
         SELECT id, "sectionTitle", blocks FROM textbook_sections
         WHERE "subjectId" = ${request.params.subjectId}
+        AND kind = ${KIND_DB[kind]}::"TextbookSectionKind"
         AND to_tsvector('english', blocks::text) @@ plainto_tsquery('english', ${q})
         ORDER BY "order" ASC
         LIMIT 30
@@ -168,11 +213,17 @@ export async function textbookRoutes(app: FastifyInstance) {
   // Bookmarks
   app.get('/textbook/bookmarks', { preHandler: authenticate }, async (request) => {
     const { subjectId } = bookmarksQuery.parse(request.query);
-    return prisma.userBookmark.findMany({
+    const bookmarks = await prisma.userBookmark.findMany({
       where: { userId: request.userId, ...(subjectId ? { section: { subjectId } } : {}) },
-      include: { section: { select: { sectionTitle: true, unitTitle: true, subjectId: true } } },
+      include: { section: { select: { sectionTitle: true, unitTitle: true, subjectId: true, kind: true } } },
       orderBy: { createdAt: 'desc' },
     });
+    // Lowercased to match the kind value every other textbook endpoint
+    // takes/returns (the Prisma enum is uppercase internally only).
+    return bookmarks.map((b) => ({
+      ...b,
+      section: { ...b.section, kind: b.section.kind === 'TEACHER_GUIDE' ? 'teacher_guide' : 'textbook' },
+    }));
   });
 
   app.post('/textbook/bookmarks', { preHandler: authenticate }, async (request, reply) => {
@@ -217,8 +268,11 @@ export async function textbookRoutes(app: FastifyInstance) {
     '/textbook/:subjectId/progress',
     { preHandler: authenticate },
     async (request) => {
+      const { kind } = progressQuery.parse(request.query);
       const progress = await prisma.userReadingProgress.findUnique({
-        where: { userId_subjectId: { userId: request.userId, subjectId: request.params.subjectId } },
+        where: {
+          userId_subjectId_kind: { userId: request.userId, subjectId: request.params.subjectId, kind: KIND_DB[kind] },
+        },
       });
       return progress ?? null;
     }
@@ -228,10 +282,18 @@ export async function textbookRoutes(app: FastifyInstance) {
     '/textbook/:subjectId/progress',
     { preHandler: authenticate },
     async (request, reply) => {
-      const { sectionId, paragraphIndex } = progressBody.parse(request.body);
+      const { sectionId, paragraphIndex, kind } = progressBody.parse(request.body);
       const progress = await prisma.userReadingProgress.upsert({
-        where: { userId_subjectId: { userId: request.userId, subjectId: request.params.subjectId } },
-        create: { userId: request.userId, subjectId: request.params.subjectId, sectionId, paragraphIndex },
+        where: {
+          userId_subjectId_kind: { userId: request.userId, subjectId: request.params.subjectId, kind: KIND_DB[kind] },
+        },
+        create: {
+          userId: request.userId,
+          subjectId: request.params.subjectId,
+          kind: KIND_DB[kind],
+          sectionId,
+          paragraphIndex,
+        },
         update: { sectionId, paragraphIndex },
       });
       return reply.send(progress);

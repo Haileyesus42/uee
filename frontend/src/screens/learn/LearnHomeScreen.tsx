@@ -58,10 +58,11 @@ export function LearnHomeScreen({ navigation }: Props) {
 
   const avgMastery = subjects.length ? subjects.reduce((sum, s) => sum + s.mastery, 0) / subjects.length : 0;
   const totalLessonsCompleted = unitQueries.reduce((sum, q) => sum + countLessons(q.data).completed, 0);
-  // Textbook Mode only lists subjects with real ingested content — everything
-  // else stays hidden rather than shown with nothing behind it (same "honest,
-  // not fake" call as the empty-lessons units elsewhere in Learn).
+  // Textbook/Teacher Guide modes only list subjects with real ingested content
+  // — everything else stays hidden rather than shown with nothing behind it
+  // (same "honest, not fake" call as the empty-lessons units elsewhere in Learn).
   const textbookSubjects = subjects.filter((s) => s.hasTextbook);
+  const teacherGuideSubjects = subjects.filter((s) => s.hasTeacherGuide);
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -134,18 +135,20 @@ export function LearnHomeScreen({ navigation }: Props) {
             </View>
 
             <View style={[styles.grid, { marginTop: 18 }]}>
-              {textbookSubjects.length === 0 ? (
+              {(mode === 'textbook' ? textbookSubjects : teacherGuideSubjects).length === 0 ? (
                 <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 8 }]}>
-                  No textbooks available yet — check back soon.
+                  {mode === 'textbook'
+                    ? 'No textbooks available yet — check back soon.'
+                    : 'No teacher guides available yet — check back soon.'}
                 </Text>
               ) : (
-                textbookSubjects.map((subject, i) => (
+                (mode === 'textbook' ? textbookSubjects : teacherGuideSubjects).map((subject, i) => (
                   <TextbookCard
                     key={subject.id}
                     name={subject.name}
                     icon={subject.icon as keyof typeof Ionicons.glyphMap}
                     tint={TINTS[i % TINTS.length]}
-                    onPress={() => navigation.navigate('TextbookHome', { subjectId: subject.id, grade })}
+                    onPress={() => navigation.navigate('TextbookHome', { subjectId: subject.id, grade, kind: mode === 'teacher_guide' ? 'teacher_guide' : 'textbook' })}
                   />
                 ))
               )}

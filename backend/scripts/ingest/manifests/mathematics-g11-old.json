@@ -2,89 +2,185 @@
   "subject": "mathematics",
   "grade": 11,
   "curriculum": "old",
+  "kind": "textbook",
   "pdfPath": "assets/books/grade-11-mathematics-old-curriculum--student-textbook-chilot.pdf",
   "sections": [
     {
-      "unitTitle": "",
-      "sectionTitle": "1.5 Inverse functions and their graphs…",
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.1 Revision on relations",
+      "pageStart": 11,
+      "pageEnd": 16
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.2 Some additional types of functions",
+      "pageStart": 17,
+      "pageEnd": 28
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.3 Classification of functions",
+      "pageStart": 29,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.4 Composition of functions",
+      "pageStart": 35,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.5 Inverse functions and their graphs",
       "pageStart": 39,
-      "pageEnd": 74
+      "pageEnd": 44
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 2: Rational Expressions and Rational Functions",
+      "sectionTitle": "Unit 2: Rational Expressions and Rational Functions",
+      "pageStart": 45,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit 3: Coordinate Geometry",
+      "sectionTitle": "3.1 Straight line",
+      "pageStart": 77,
+      "pageEnd": 84
+    },
+    {
+      "unitTitle": "Unit 3: Coordinate Geometry",
       "sectionTitle": "3.2 Conic sections",
-      "pageStart": 75,
-      "pageEnd": 152
+      "pageStart": 85,
+      "pageEnd": 120
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 4: Mathematical Reasoning",
+      "sectionTitle": "Unit 4: Mathematical Reasoning",
+      "pageStart": 121,
+      "pageEnd": 153
+    },
+    {
+      "unitTitle": "Unit 5: Statistics and Probability",
+      "sectionTitle": "5.1 Statistics",
+      "pageStart": 154,
+      "pageEnd": 192
+    },
+    {
+      "unitTitle": "Unit 5: Statistics and Probability",
       "sectionTitle": "5.2 Probability",
-      "pageStart": 153,
+      "pageStart": 193,
+      "pageEnd": 228
+    },
+    {
+      "unitTitle": "Unit 6: Matrices and Determinants",
+      "sectionTitle": "6.1 Matrices",
+      "pageStart": 229,
+      "pageEnd": 241
+    },
+    {
+      "unitTitle": "Unit 6: Matrices and Determinants",
+      "sectionTitle": "6.2 Determinants and their properties",
+      "pageStart": 242,
+      "pageEnd": 248
+    },
+    {
+      "unitTitle": "Unit 6: Matrices and Determinants",
+      "sectionTitle": "6.3 Inverse of a square matrix",
+      "pageStart": 249,
+      "pageEnd": 253
+    },
+    {
+      "unitTitle": "Unit 6: Matrices and Determinants",
+      "sectionTitle": "6.4 Systems of equations with two or three variables",
+      "pageStart": 254,
+      "pageEnd": 263
+    },
+    {
+      "unitTitle": "Unit 6: Matrices and Determinants",
+      "sectionTitle": "6.5 Cramer\u2019s rule",
+      "pageStart": 264,
       "pageEnd": 281
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
       "sectionTitle": "7.3 Complex conjugate and modulus",
       "pageStart": 282,
+      "pageEnd": 290
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "7.5 Argand diagram and polar representation of x complex numbers",
+      "pageStart": 291,
       "pageEnd": 308
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 8: Vectors and Transformation of the Plane (For Natural Science Students)",
       "sectionTitle": "8.2 Representation of vectors",
       "pageStart": 309,
       "pageEnd": 313
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 8: Vectors and Transformation of the Plane (For Natural Science Students)",
       "sectionTitle": "8.3 Scalar (inner or dot) product of vectors",
       "pageStart": 314,
       "pageEnd": 327
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 8: Vectors and Transformation of the Plane (For Natural Science Students)",
       "sectionTitle": "8.5 Transformation of the plane",
       "pageStart": 328,
       "pageEnd": 355
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 9: Further on Trigonometric Functions (For Natural Science Students)",
       "sectionTitle": "9.1 The functions y =sec x, y = csc x and y = cot x",
       "pageStart": 356,
       "pageEnd": 368
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 9: Further on Trigonometric Functions (For Natural Science Students)",
       "sectionTitle": "9.3 Graphs of some trigonometric functions",
       "pageStart": 369,
       "pageEnd": 384
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 9: Further on Trigonometric Functions (For Natural Science Students)",
       "sectionTitle": "9.4 Applications of trigonometric functions",
       "pageStart": 385,
+      "pageEnd": 410
+    },
+    {
+      "unitTitle": "Unit 10: Introduction to Linear Programming (For Social Science Students)",
+      "sectionTitle": "10.2 Graphical solutions of systems of linear 4 3 Solution inequalities",
+      "pageStart": 411,
       "pageEnd": 433
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 11: Mathematical Applications in Business (For Social Science Students)",
       "sectionTitle": "11.1 Basic mathematical concepts in business",
       "pageStart": 434,
       "pageEnd": 446
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 11: Mathematical Applications in Business (For Social Science Students)",
       "sectionTitle": "11.2 Compound interest and depreciation",
       "pageStart": 447,
       "pageEnd": 460
     },
     {
-      "unitTitle": "",
+      "unitTitle": "Unit 11: Mathematical Applications in Business (For Social Science Students)",
       "sectionTitle": "11.3 Saving, investing and borrowing money",
       "pageStart": 461,
       "pageEnd": 469
+    },
+    {
+      "unitTitle": "Unit 11: Mathematical Applications in Business (For Social Science Students)",
+      "sectionTitle": "11.4 Taxation",
+      "pageStart": 470,
+      "pageEnd": 484
     }
   ],
   "knownHeaders": [
-    "MATHEMATICS GRADE 11",
     "STUDENT TEXTBOOK"
   ]
 }

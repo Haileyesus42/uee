@@ -5,7 +5,6 @@ import { authenticate } from '../../plugins/authenticate';
 import { pickUniqueQuestions } from '../practice/routes';
 
 const QUESTIONS_PER_PAPER = 10;
-const YEAR_COUNT = 22;
 
 const STREAMS: { id: Stream; label: string }[] = [
   { id: 'natural', label: 'Natural Science' },
@@ -16,10 +15,16 @@ export async function ueeRoutes(app: FastifyInstance) {
   app.get('/uee/streams', { preHandler: authenticate }, async () => STREAMS);
 
   app.get('/uee/years', { preHandler: authenticate }, async () => {
-    // Starts at last year, not the current (still in progress) year — a paper
-    // for a UEE sitting that hasn't happened yet isn't a "past" paper.
-    const lastCompletedYear = new Date().getFullYear() - 1;
-    return Array.from({ length: YEAR_COUNT }, (_, i) => lastCompletedYear - i);
+    // Only years that actually have an ingested past paper. The picker used to
+    // list 22 years regardless of the data, so every one of them silently served
+    // the 3–5 question practice fallback — advertising papers that don't exist.
+    const rows = await prisma.question.findMany({
+      where: { examYear: { not: null } },
+      select: { examYear: true },
+      distinct: ['examYear'],
+      orderBy: { examYear: 'desc' },
+    });
+    return rows.map((r) => r.examYear).filter((y): y is number => y !== null);
   });
 
   app.get<{ Params: { stream: Stream } }>(

@@ -1,0 +1,175 @@
+{
+  "subject": "civics",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/Citizenship educ Grade 9 .Teacher Guide  final.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: ETHICAL VALUES",
+      "sectionTitle": "1.1 THE MEANING OF ETHICS",
+      "pageStart": 9,
+      "pageEnd": 11
+    },
+    {
+      "unitTitle": "Unit 1: ETHICAL VALUES",
+      "sectionTitle": "1.2 MAJOR ETHICAL VALUES",
+      "pageStart": 12,
+      "pageEnd": 20
+    },
+    {
+      "unitTitle": "Unit 1: ETHICAL VALUES",
+      "sectionTitle": "1.3 THE IMPORTANCE OF ETHICAL VALUES OF CITIZENS",
+      "pageStart": 21,
+      "pageEnd": 24
+    },
+    {
+      "unitTitle": "Unit 1: ETHICAL VALUES",
+      "sectionTitle": "1.4 ASPECTS OF APPLIED ETHICS",
+      "pageStart": 25,
+      "pageEnd": 31
+    },
+    {
+      "unitTitle": "Unit 2: THE  CULTURE  OF  USING  DIGITAL  TECHNOLOGY",
+      "sectionTitle": "2.1 THE CONCEPTOF DIGITAL TECHNOLOGY",
+      "pageStart": 32,
+      "pageEnd": 35
+    },
+    {
+      "unitTitle": "Unit 2: THE  CULTURE  OF  USING  DIGITAL  TECHNOLOGY",
+      "sectionTitle": "2.2 CULTURE AND DIGITAL TECHNOLOGY",
+      "pageStart": 36,
+      "pageEnd": 39
+    },
+    {
+      "unitTitle": "Unit 2: THE  CULTURE  OF  USING  DIGITAL  TECHNOLOGY",
+      "sectionTitle": "2.3 THE PURPOSE OF DIGITAL TECHNOLOGY",
+      "pageStart": 40,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "Unit 2: THE  CULTURE  OF  USING  DIGITAL  TECHNOLOGY",
+      "sectionTitle": "2.4 CODES OF CONDUCTS FOR USING DIGITAL TECHNOLOGY",
+      "pageStart": 44,
+      "pageEnd": 47
+    },
+    {
+      "unitTitle": "Unit 2: THE  CULTURE  OF  USING  DIGITAL  TECHNOLOGY",
+      "sectionTitle": "2.5 EFFECTIVE COMMUNICATION THROUGH DIGITAL MEDIA",
+      "pageStart": 48,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 3: CONSTITUTIONALISM",
+      "sectionTitle": "3.1 UNDERSTANDING CONSTITUTION",
+      "pageStart": 54,
+      "pageEnd": 63
+    },
+    {
+      "unitTitle": "Unit 3: CONSTITUTIONALISM",
+      "sectionTitle": "3.3 CONSTITUTIONAL EXPERIENCES OF ETHIOPIA",
+      "pageStart": 64,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "Unit 4: UNDERSTANDING INDIGENOUS KNOWLEDGE",
+      "sectionTitle": "4.1 THE CONCEPT OF INDIGENOUS KNOWLEDGE",
+      "pageStart": 73,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit 4: UNDERSTANDING INDIGENOUS KNOWLEDGE",
+      "sectionTitle": "4.2 THE ROLES OF INDIGENOUS KNOWLEDGE IN PRODUCING RESPONSIBLE CITIZENS",
+      "pageStart": 77,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 4: UNDERSTANDING INDIGENOUS KNOWLEDGE",
+      "sectionTitle": "4.3 THE ROLES OF INDIGENOUS SOCIAL INSTITUTIONS IN SOLVING PROBLEMS OF COMMUNITIES",
+      "pageStart": 83,
+      "pageEnd": 88
+    },
+    {
+      "unitTitle": "Unit 5: MULTICULTURALISM  IN ETHIOPIA",
+      "sectionTitle": "5.1 UNDERSTANDING CULTURE",
+      "pageStart": 89,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "Unit 5: MULTICULTURALISM  IN ETHIOPIA",
+      "sectionTitle": "5.2 UNDERSTANDING OF MULTICULTURALISM",
+      "pageStart": 93,
+      "pageEnd": 97
+    },
+    {
+      "unitTitle": "Unit 5: MULTICULTURALISM  IN ETHIOPIA",
+      "sectionTitle": "5.3 PILLARS OF MULTICULTURAL SOCIETIES",
+      "pageStart": 98,
+      "pageEnd": 101
+    },
+    {
+      "unitTitle": "Unit 5: MULTICULTURALISM  IN ETHIOPIA",
+      "sectionTitle": "5.4 MAJOR FORMS OF DIVERSITY DEMONSTRATING MULTICULTURALISM",
+      "pageStart": 102,
+      "pageEnd": 107
+    },
+    {
+      "unitTitle": "Unit 6: NATIONAL  UNITY  THROUGH  DIVERSITY",
+      "sectionTitle": "6.1 UNDERSTANDING OF UNITY IN DIVERSITY",
+      "pageStart": 108,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 6: NATIONAL  UNITY  THROUGH  DIVERSITY",
+      "sectionTitle": "6.2 ELEMENTS OF DIVERSITY",
+      "pageStart": 113,
+      "pageEnd": 117
+    },
+    {
+      "unitTitle": "Unit 6: NATIONAL  UNITY  THROUGH  DIVERSITY",
+      "sectionTitle": "6.3 ACCOMMODATION OF DIVERSITY",
+      "pageStart": 118,
+      "pageEnd": 121
+    },
+    {
+      "unitTitle": "Unit 6: NATIONAL  UNITY  THROUGH  DIVERSITY",
+      "sectionTitle": "6.4 THE IMPORTANCE OF DIVERSITY MANAGEMENT IN ETHIOPIA",
+      "pageStart": 122,
+      "pageEnd": 127
+    },
+    {
+      "unitTitle": "Unit 7: PROBLEM SOLVING SKILLS",
+      "sectionTitle": "7.1 UNDERSTANDING PROBLEM SOLVING",
+      "pageStart": 128,
+      "pageEnd": 131
+    },
+    {
+      "unitTitle": "Unit 7: PROBLEM SOLVING SKILLS",
+      "sectionTitle": "7.2 THE IMPORTANCE OF PROBLEM SOLVING SKILLS",
+      "pageStart": 132,
+      "pageEnd": 136
+    },
+    {
+      "unitTitle": "Unit 7: PROBLEM SOLVING SKILLS",
+      "sectionTitle": "7.3 CHARACTERISTICS OF GOOD PROBLEM SOLVER",
+      "pageStart": 137,
+      "pageEnd": 142
+    },
+    {
+      "unitTitle": "Unit 7: PROBLEM SOLVING SKILLS",
+      "sectionTitle": "7.4 WAYS TO IMPROVE ONE ’S PROBLEM SOLVING SKILLS",
+      "pageStart": 143,
+      "pageEnd": 149
+    },
+    {
+      "unitTitle": "Unit 8: ETHIOPIA’S  FOREIGN RELATIONS  IN EAST AFRICA",
+      "sectionTitle": "8.1 THE CONCEPT OF FOREIGN RELATIONS",
+      "pageStart": 150,
+      "pageEnd": 154
+    }
+  ],
+  "knownHeaders": [
+    "LESSON",
+    "TEACHER GUIDE"
+  ]
+}

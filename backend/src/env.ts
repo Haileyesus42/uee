@@ -15,6 +15,14 @@ const envSchema = z.object({
   // skips starting the polling loop when either is missing, rather than crashing.
   TELEGRAM_BOT_TOKEN: z.string().optional().default(''),
   TELEGRAM_BOT_USERNAME: z.string().optional().default(''),
+  // Long-polling starts when a token is configured, but dev environments often
+  // have no outbound access to api.telegram.org (containers, CI, restricted
+  // networks). Turning this off keeps the API fully usable while Telegram login
+  // is simply unavailable; set TELEGRAM_POLLING_ENABLED=false.
+  TELEGRAM_POLLING_ENABLED: z.preprocess(
+    (v) => (typeof v === 'string' ? !['false', '0', 'no', 'off'].includes(v.toLowerCase()) : v),
+    z.boolean().default(true)
+  ),
   PAYMENT_PROVIDER: z.enum(['mock', 'chapa']).default('mock'),
   CHAPA_SECRET_KEY: z.string().optional().default(''),
   // Publicly reachable base URL for this server — Chapa's webhook is a

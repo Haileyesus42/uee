@@ -1,0 +1,175 @@
+{
+  "subject": "mathematics",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/grade-9-mathematics-new-curriculum--student-textbook-_kehulum_com_0fa6.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: FURTHER ON SETS",
+      "sectionTitle": "1.1 Sets and Elements",
+      "pageStart": 13,
+      "pageEnd": 14
+    },
+    {
+      "unitTitle": "Unit 1: FURTHER ON SETS",
+      "sectionTitle": "1.2 Set Description",
+      "pageStart": 15,
+      "pageEnd": 17
+    },
+    {
+      "unitTitle": "Unit 1: FURTHER ON SETS",
+      "sectionTitle": "1.3 The Notion of Sets",
+      "pageStart": 18,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "Unit 1: FURTHER ON SETS",
+      "sectionTitle": "1.4 Operations on Sets",
+      "pageStart": 23,
+      "pageEnd": 30
+    },
+    {
+      "unitTitle": "Unit 1: FURTHER ON SETS",
+      "sectionTitle": "1.5 Application",
+      "pageStart": 31,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "Unit 2: THE NUMBER SYSTEM",
+      "sectionTitle": "2.2 Rational Numbers",
+      "pageStart": 56,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "Unit 2: THE NUMBER SYSTEM",
+      "sectionTitle": "2.3 Irrational Numbers",
+      "pageStart": 62,
+      "pageEnd": 71
+    },
+    {
+      "unitTitle": "Unit 2: THE NUMBER SYSTEM",
+      "sectionTitle": "2.4 Real Numbers",
+      "pageStart": 72,
+      "pageEnd": 105
+    },
+    {
+      "unitTitle": "Unit 2: THE NUMBER SYSTEM",
+      "sectionTitle": "2.5 Application",
+      "pageStart": 106,
+      "pageEnd": 116
+    },
+    {
+      "unitTitle": "Unit 3: SOLVING EQUATIONS",
+      "sectionTitle": "3.3 Solving Non-linear Equations",
+      "pageStart": 134,
+      "pageEnd": 153
+    },
+    {
+      "unitTitle": "Unit 3: SOLVING EQUATIONS",
+      "sectionTitle": "3.4 Applications of Equations",
+      "pageStart": 154,
+      "pageEnd": 162
+    },
+    {
+      "unitTitle": "Unit 4: SOLVING INEQUALITIES",
+      "sectionTitle": "4.3 Inequalities Involving Absolute Value",
+      "pageStart": 177,
+      "pageEnd": 181
+    },
+    {
+      "unitTitle": "Unit 4: SOLVING INEQUALITIES",
+      "sectionTitle": "4.4 Quadratic Inequalities",
+      "pageStart": 182,
+      "pageEnd": 186
+    },
+    {
+      "unitTitle": "Unit 4: SOLVING INEQUALITIES",
+      "sectionTitle": "4.5 Applications of Inequalities",
+      "pageStart": 187,
+      "pageEnd": 196
+    },
+    {
+      "unitTitle": "Unit 5: INTRODUCTION TO TRIGONOMETRY",
+      "sectionTitle": "5.1 Revision on Right-angled Triangles",
+      "pageStart": 197,
+      "pageEnd": 200
+    },
+    {
+      "unitTitle": "Unit 5: INTRODUCTION TO TRIGONOMETRY",
+      "sectionTitle": "5.2 Trigonometric Ratios",
+      "pageStart": 201,
+      "pageEnd": 218
+    },
+    {
+      "unitTitle": "Unit 6: REGULAR POLYGONS",
+      "sectionTitle": "6.4 Properties of Regular Polygons",
+      "pageStart": 235,
+      "pageEnd": 250
+    },
+    {
+      "unitTitle": "Unit 7: CONGRUENCY AND SIMILARITY",
+      "sectionTitle": "7.1 Revision on Congruency of Triangles",
+      "pageStart": 251,
+      "pageEnd": 255
+    },
+    {
+      "unitTitle": "Unit 7: CONGRUENCY AND SIMILARITY",
+      "sectionTitle": "7.2 Definition of Similar Figures",
+      "pageStart": 256,
+      "pageEnd": 259
+    },
+    {
+      "unitTitle": "Unit 7: CONGRUENCY AND SIMILARITY",
+      "sectionTitle": "7.3 Theorems on Similar Plane Figures",
+      "pageStart": 260,
+      "pageEnd": 272
+    },
+    {
+      "unitTitle": "Unit 7: CONGRUENCY AND SIMILARITY",
+      "sectionTitle": "7.5 Ratio of Areas of Similar Plane Figures",
+      "pageStart": 273,
+      "pageEnd": 275
+    },
+    {
+      "unitTitle": "Unit 7: CONGRUENCY AND SIMILARITY",
+      "sectionTitle": "7.6 Construction of Similar Plane Figure",
+      "pageStart": 276,
+      "pageEnd": 289
+    },
+    {
+      "unitTitle": "Unit 8: VECTORS IN TWO DIMENTIONS",
+      "sectionTitle": "8.1 Vector and Scalar Quantities",
+      "pageStart": 290,
+      "pageEnd": 291
+    },
+    {
+      "unitTitle": "Unit 8: VECTORS IN TWO DIMENTIONS",
+      "sectionTitle": "8.2 Representation of a Vector",
+      "pageStart": 292,
+      "pageEnd": 298
+    },
+    {
+      "unitTitle": "Unit 8: VECTORS IN TWO DIMENTIONS",
+      "sectionTitle": "8.3 Vectors Operations",
+      "pageStart": 299,
+      "pageEnd": 309
+    },
+    {
+      "unitTitle": "Unit 8: VECTORS IN TWO DIMENTIONS",
+      "sectionTitle": "8.4 Position Vector",
+      "pageStart": 310,
+      "pageEnd": 322
+    },
+    {
+      "unitTitle": "Unit 9: Statistics and Probability",
+      "sectionTitle": "9.1 Statistical Data",
+      "pageStart": 324,
+      "pageEnd": 356
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 1: FURTHER ON SETS",
+    "STUDENT TEXTBOOK"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "subject": "agriculture",
+  "grade": 12,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/G12-Agriculture-STB-2023-web.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Vegetable Crops Production and Management",
+      "sectionTitle": "1.3 Classifications of vegetable crops",
+      "pageStart": 10,
+      "pageEnd": 29
+    },
+    {
+      "unitTitle": "Unit 2: Fruit Crops Production and Management",
+      "sectionTitle": "2.5 Establishing a nursery",
+      "pageStart": 30,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 3: 3.1. Definition of terms",
+      "sectionTitle": "3.2 Classification of root and tuber crops",
+      "pageStart": 54,
+      "pageEnd": 102
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.3 Benefits of tissue culture",
+      "pageStart": 103,
+      "pageEnd": 106
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.4 Introduction to genetic engineering",
+      "pageStart": 107,
+      "pageEnd": 108
+    },
+    {
+      "unitTitle": "Unit 5: 5.1. Introduction to tissue culture",
+      "sectionTitle": "5.5 Application of genetic engineering in crop",
+      "pageStart": 109,
+      "pageEnd": 112
+    },
+    {
+      "unitTitle": "Unit 6: Beef Cattle Production and Management",
+      "sectionTitle": "6.3 Beef cattle housing",
+      "pageStart": 113,
+      "pageEnd": 143
+    },
+    {
+      "unitTitle": "Unit 7: Sheep and Goat Production and Management",
+      "sectionTitle": "7.3 Sheep and goat housing",
+      "pageStart": 144,
+      "pageEnd": 167
+    },
+    {
+      "unitTitle": "Unit 8: Camel Production and Management",
+      "sectionTitle": "8.3 Camel housing",
+      "pageStart": 168,
+      "pageEnd": 183
+    },
+    {
+      "unitTitle": "Unit 9: 9.1. Poultry breeds, classification and selection",
+      "sectionTitle": "9.7 Major diseases of poultry and controlling",
+      "pageStart": 184,
+      "pageEnd": 199
+    },
+    {
+      "unitTitle": "Unit 10: Fishery Production and Management",
+      "sectionTitle": "10.3 Fish feeds and feeding practices",
+      "pageStart": 200,
+      "pageEnd": 206
+    },
+    {
+      "unitTitle": "Unit 10: Fishery Production and Management",
+      "sectionTitle": "10.4 Fish culture techniques",
+      "pageStart": 207,
+      "pageEnd": 208
+    },
+    {
+      "unitTitle": "Unit 10: Fishery Production and Management",
+      "sectionTitle": "10.5 Fish rearing",
+      "pageStart": 209,
+      "pageEnd": 209
+    },
+    {
+      "unitTitle": "Unit 10: Fishery Production and Management",
+      "sectionTitle": "10.6 Fishing methods",
+      "pageStart": 210,
+      "pageEnd": 210
+    },
+    {
+      "unitTitle": "Unit 10: Fishery Production and Management",
+      "sectionTitle": "10.7 Handling fish and fish products",
+      "pageStart": 211,
+      "pageEnd": 213
+    },
+    {
+      "unitTitle": "Unit 10: Fishery Production and Management",
+      "sectionTitle": "10.8 Diseases in aquaculture",
+      "pageStart": 214,
+      "pageEnd": 218
+    },
+    {
+      "unitTitle": "Unit 11: Apiculture",
+      "sectionTitle": "11.8 Indigenous knowledge in apiculture",
+      "pageStart": 219,
+      "pageEnd": 234
+    },
+    {
+      "unitTitle": "Unit 12: Nursery and Plantation Technology",
+      "sectionTitle": "12.3 Producing plants from seeds",
+      "pageStart": 235,
+      "pageEnd": 243
+    },
+    {
+      "unitTitle": "Unit 13: Basics of Agro-Forestry Systems and Practices",
+      "sectionTitle": "13.3 Classification of agro forestry systems",
+      "pageStart": 244,
+      "pageEnd": 259
+    },
+    {
+      "unitTitle": "Unit 14: Soil and Water Conservation",
+      "sectionTitle": "14.4 Negative impacts of soil erosion",
+      "pageStart": 260,
+      "pageEnd": 272
+    },
+    {
+      "unitTitle": "Unit 15: Gender and Human Nutrition",
+      "sectionTitle": "15.1 Basic gender-related terminologies",
+      "pageStart": 273,
+      "pageEnd": 280
+    },
+    {
+      "unitTitle": "Unit 15: Gender and Human Nutrition",
+      "sectionTitle": "16.3 Food safety and nutrition linkage",
+      "pageStart": 281,
+      "pageEnd": 292
+    },
+    {
+      "unitTitle": "Unit 17: Technologies (ICT) in Agriculture",
+      "sectionTitle": "17.1 Roles of ICT in agriculture",
+      "pageStart": 293,
+      "pageEnd": 294
+    }
+  ],
+  "knownHeaders": [
+    "AGRICULTURE GRADE 12",
+    "STUDENT TEXTBOOK"
+  ]
+}

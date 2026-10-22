@@ -1,0 +1,169 @@
+{
+  "subject": "information-technology",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "teacher_guide",
+  "pdfPath": "assets/teacher-guides/_batch/IT Grade 9 Teacher's Guide_final June 23 2022 (1).pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.2 Fundamental Elements of Network",
+      "pageStart": 30,
+      "pageEnd": 31
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.3 Types of Networks",
+      "pageStart": 32,
+      "pageEnd": 35
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.4 Advantages and Disadvantages of Computer Network",
+      "pageStart": 36,
+      "pageEnd": 40
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.5 Unit Summary",
+      "pageStart": 41,
+      "pageEnd": 43
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.6 Answers to the Unit Review Exercise",
+      "pageStart": 44,
+      "pageEnd": 46
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.1 Using Application Software",
+      "pageStart": 47,
+      "pageEnd": 47
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.2 Word Processing",
+      "pageStart": 48,
+      "pageEnd": 56
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.3 Manipulating Data in Spreadsheet",
+      "pageStart": 57,
+      "pageEnd": 59
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.4 Creating Presentations",
+      "pageStart": 60,
+      "pageEnd": 62
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.5 Unit Summary",
+      "pageStart": 63,
+      "pageEnd": 63
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.6 Answers to the Unit Review Exercise",
+      "pageStart": 64,
+      "pageEnd": 67
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.1 Image",
+      "pageStart": 68,
+      "pageEnd": 68
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.2 Multimedia Production Planning Strategies",
+      "pageStart": 69,
+      "pageEnd": 70
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.3 Using Image Processing Software",
+      "pageStart": 71,
+      "pageEnd": 73
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.4 Unit Summary",
+      "pageStart": 74,
+      "pageEnd": 75
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.5 Answers to the Unit Review Exercise",
+      "pageStart": 76,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.1 Definition of Security",
+      "pageStart": 79,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.2 Principles of Computer Security",
+      "pageStart": 82,
+      "pageEnd": 82
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.3 Computer Security Threats",
+      "pageStart": 83,
+      "pageEnd": 86
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.4 Potential Losses Encountered Due to Security Attacks",
+      "pageStart": 87,
+      "pageEnd": 87
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.5 How to Secure Yourself and Your Computer Systems",
+      "pageStart": 88,
+      "pageEnd": 88
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.6 Unit Summary",
+      "pageStart": 89,
+      "pageEnd": 91
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.1 Defining a Problem and Computational Problem",
+      "pageStart": 92,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.2 Steps of Problem Solving",
+      "pageStart": 95,
+      "pageEnd": 96
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.3 Working with Flowcharts and Block Programming",
+      "pageStart": 97,
+      "pageEnd": 114
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.4 Problem Solving Approaches",
+      "pageStart": 115,
+      "pageEnd": 118
+    }
+  ],
+  "knownHeaders": [
+    "UNIT 2 : COMPUTER NETWORK",
+    "TEACHER GUIDE"
+  ]
+}

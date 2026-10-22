@@ -27,6 +27,16 @@ type Props = CompositeScreenProps<
   BottomTabScreenProps<MainTabParamList>
 >;
 
+// The Matriculation (UEE) exam is always on 4 June. Count to the next one, so
+// the number stays correct across years instead of being hardcoded.
+function daysUntilMatriculation(now: Date = new Date()): number {
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const thisYear = new Date(startOfToday.getFullYear(), 5, 4);
+  const target =
+    thisYear < startOfToday ? new Date(startOfToday.getFullYear() + 1, 5, 4) : thisYear;
+  return Math.round((target.getTime() - startOfToday.getTime()) / 86_400_000);
+}
+
 // The next lesson to resume is the first "current" lesson found across subjects, in
 // subject-list order — every subject has at most one (see the linear-unlock logic in
 // backend/src/modules/curriculum/routes.ts), so this picks the first one going.
@@ -97,7 +107,7 @@ export function HomeScreen({ navigation }: Props) {
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={[]}>
       <LinearGradient
         colors={heroColors}
-        locations={[0, 0.14, 0.3, 0.52, 1]}
+        locations={[0, 0.2, 0.42, 0.66, 1]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0.4 }}
         style={[styles.hero, { paddingTop: insets.top + 8 }]}
@@ -123,7 +133,7 @@ export function HomeScreen({ navigation }: Props) {
         </View>
 
         <View style={styles.heroContent}>
-          <ExamCountdownHero daysUntilExam={62} />
+          <ExamCountdownHero daysUntilExam={daysUntilMatriculation()} />
         </View>
       </LinearGradient>
 
@@ -180,7 +190,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 6,
     borderBottomRightRadius: 6,
     paddingHorizontal: 16,
-    paddingBottom: 12,
+    paddingBottom: 26,
     overflow: 'hidden',
   },
   topBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 40 },
@@ -193,5 +203,7 @@ const styles = StyleSheet.create({
     marginLeft: 7,
   },
   topBarRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  heroContent: { marginTop: 10 },
+  // Spare height is split above/below the card instead of pooling at the
+  // bottom, so a tall hero reads as centred rather than empty.
+  heroContent: { marginTop: 10, flex: 1, justifyContent: 'center' },
 });

@@ -1,0 +1,169 @@
+{
+  "subject": "hpe",
+  "grade": 9,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/grade-9-health-and-physical-education-hpe-new-curriculum--student-textbook-kehulumcom1759931015f4a8.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.1 Sport and economy",
+      "pageStart": 12,
+      "pageEnd": 15
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.2 Sport and gender",
+      "pageStart": 16,
+      "pageEnd": 19
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.3 Sport and technology",
+      "pageStart": 20,
+      "pageEnd": 22
+    },
+    {
+      "unitTitle": "Unit 1",
+      "sectionTitle": "1.4 Consequence of doping",
+      "pageStart": 23,
+      "pageEnd": 29
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.1 Body system and exercise",
+      "pageStart": 30,
+      "pageEnd": 32
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.2 Hypokinetic diseases and exercise",
+      "pageStart": 33,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.3 Principles of physical fitness training",
+      "pageStart": 35,
+      "pageEnd": 36
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.4 Exercise which develops cardiovascular endurance",
+      "pageStart": 37,
+      "pageEnd": 39
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.5 Exercise which develops muscular endurance and strength",
+      "pageStart": 40,
+      "pageEnd": 44
+    },
+    {
+      "unitTitle": "Unit 2",
+      "sectionTitle": "2.6 Exercise which develops flexibility",
+      "pageStart": 45,
+      "pageEnd": 53
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.1 History of athletics",
+      "pageStart": 54,
+      "pageEnd": 55
+    },
+    {
+      "unitTitle": "Unit 3",
+      "sectionTitle": "3.2 Sprint and Sprint Relay",
+      "pageStart": 56,
+      "pageEnd": 66
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.1 Brief history of football",
+      "pageStart": 67,
+      "pageEnd": 76
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.2 Rules of Football",
+      "pageStart": 77,
+      "pageEnd": 81
+    },
+    {
+      "unitTitle": "Unit 4",
+      "sectionTitle": "4.3 Skills of Football",
+      "pageStart": 82,
+      "pageEnd": 92
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.1 A brief history of volleyball",
+      "pageStart": 93,
+      "pageEnd": 94
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.2 Rules of volleyball",
+      "pageStart": 95,
+      "pageEnd": 99
+    },
+    {
+      "unitTitle": "Unit 5",
+      "sectionTitle": "5.3 Spike skill of volleyball",
+      "pageStart": 100,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.2 Rules of Basketball",
+      "pageStart": 114,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "Unit 6",
+      "sectionTitle": "6.3 Skills of basketball",
+      "pageStart": 121,
+      "pageEnd": 131
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.1 A brief history of handball",
+      "pageStart": 132,
+      "pageEnd": 134
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.2 The rules of handball",
+      "pageStart": 135,
+      "pageEnd": 140
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.3 Basic skills of handball",
+      "pageStart": 141,
+      "pageEnd": 145
+    },
+    {
+      "unitTitle": "Unit 7",
+      "sectionTitle": "7.4 Modified game related to handball",
+      "pageStart": 146,
+      "pageEnd": 151
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.1 Essence and roles of self-defense",
+      "pageStart": 152,
+      "pageEnd": 154
+    },
+    {
+      "unitTitle": "Unit 8",
+      "sectionTitle": "8.2 Principles and rules of self-defense",
+      "pageStart": 155,
+      "pageEnd": 158
+    }
+  ],
+  "knownHeaders": [
+    "STUDENT’S TEXT BOOK GRADE 9",
+    "STUDENT TEXTBOOK"
+  ]
+}

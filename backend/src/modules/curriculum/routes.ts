@@ -32,8 +32,13 @@ export async function curriculumRoutes(app: FastifyInstance) {
     // Textbook Study Mode is only offered for subjects with real ingested content
     // (see backend/scripts/ingest/extractTextbookSections.ts) — grouped count avoids
     // an N+1 query per subject.
-    const textbookCounts = await prisma.textbookSection.groupBy({ by: ['subjectId'], _count: true });
-    const hasTextbookBySubjectId = new Set(textbookCounts.map((t) => t.subjectId));
+    const textbookCounts = await prisma.textbookSection.groupBy({ by: ['subjectId', 'kind'], _count: true });
+    const hasTextbookBySubjectId = new Set(
+      textbookCounts.filter((t) => t.kind === 'TEXTBOOK').map((t) => t.subjectId)
+    );
+    const hasTeacherGuideBySubjectId = new Set(
+      textbookCounts.filter((t) => t.kind === 'TEACHER_GUIDE').map((t) => t.subjectId)
+    );
 
     return subjects.map((s) => {
       const lessons = s.units.flatMap((u) => u.lessons);
@@ -46,6 +51,7 @@ export async function curriculumRoutes(app: FastifyInstance) {
         icon: s.icon,
         mastery: total === 0 ? 0 : completed / total,
         hasTextbook: hasTextbookBySubjectId.has(s.id),
+        hasTeacherGuide: hasTeacherGuideBySubjectId.has(s.id),
       };
     });
   });

@@ -1,0 +1,145 @@
+{
+  "subject": "general-business",
+  "grade": 12,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/General Business - Grade 12.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: MARKETING",
+      "sectionTitle": "1.1 What is Marketing?",
+      "pageStart": 6,
+      "pageEnd": 6
+    },
+    {
+      "unitTitle": "Unit 1: MARKETING",
+      "sectionTitle": "1.2 What is Market?",
+      "pageStart": 7,
+      "pageEnd": 7
+    },
+    {
+      "unitTitle": "Unit 1: MARKETING",
+      "sectionTitle": "1.3 Major Marketing Functions",
+      "pageStart": 8,
+      "pageEnd": 9
+    },
+    {
+      "unitTitle": "Unit 1: MARKETING",
+      "sectionTitle": "1.4 Marketing Mix- Overview",
+      "pageStart": 10,
+      "pageEnd": 46
+    },
+    {
+      "unitTitle": "Unit 2: COMMUNICATION",
+      "sectionTitle": "2.1 Definition of Communication and Business Communication",
+      "pageStart": 47,
+      "pageEnd": 51
+    },
+    {
+      "unitTitle": "Unit 2: COMMUNICATION",
+      "sectionTitle": "2.2 Methods of Communication",
+      "pageStart": 52,
+      "pageEnd": 54
+    },
+    {
+      "unitTitle": "Unit 2: COMMUNICATION",
+      "sectionTitle": "2.3 Effective Formats of Business Messages",
+      "pageStart": 55,
+      "pageEnd": 61
+    },
+    {
+      "unitTitle": "Unit 2: COMMUNICATION",
+      "sectionTitle": "2.4 Business Report Writing and Business Reports",
+      "pageStart": 62,
+      "pageEnd": 63
+    },
+    {
+      "unitTitle": "Unit 2: COMMUNICATION",
+      "sectionTitle": "2.5 Other Common Reports and their Headings",
+      "pageStart": 64,
+      "pageEnd": 64
+    },
+    {
+      "unitTitle": "Unit 2: COMMUNICATION",
+      "sectionTitle": "2.6 Writing Your Curriculum Vitae (Cv)",
+      "pageStart": 65,
+      "pageEnd": 65
+    },
+    {
+      "unitTitle": "Unit 2: COMMUNICATION",
+      "sectionTitle": "2.7 Preparing for an Interview",
+      "pageStart": 66,
+      "pageEnd": 72
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "3.1 Definition of Trade",
+      "pageStart": 73,
+      "pageEnd": 78
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "3.2 Foreign Trade",
+      "pageStart": 79,
+      "pageEnd": 101
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.2 Importance of Accounting",
+      "pageStart": 102,
+      "pageEnd": 105
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.3 The Beginning Balance Sheet",
+      "pageStart": 106,
+      "pageEnd": 110
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.4 Recording the Opening Entry",
+      "pageStart": 111,
+      "pageEnd": 113
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.5 Posting the Opening Entry",
+      "pageStart": 114,
+      "pageEnd": 119
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.6 Business Transaction",
+      "pageStart": 120,
+      "pageEnd": 120
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.7 Income and Expense Accounts",
+      "pageStart": 121,
+      "pageEnd": 122
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.8 The Six-Column work Sheet",
+      "pageStart": 123,
+      "pageEnd": 126
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.9 The Financial Statements",
+      "pageStart": 127,
+      "pageEnd": 132
+    },
+    {
+      "unitTitle": "Unit 3: TRADE",
+      "sectionTitle": "4.10 The Petty Cash Fund",
+      "pageStart": 133,
+      "pageEnd": 138
+    }
+  ],
+  "knownHeaders": [
+    "1 MARKETING",
+    "STUDENT TEXTBOOK"
+  ]
+}

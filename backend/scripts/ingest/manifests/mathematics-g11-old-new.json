@@ -1,0 +1,115 @@
+{
+  "subject": "mathematics",
+  "grade": 11,
+  "curriculum": "new",
+  "kind": "textbook",
+  "pdfPath": "assets/books/grade-11-mathematics-old-curriculum--student-textbook-chilot.pdf",
+  "sections": [
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.1 Revision on relations",
+      "pageStart": 11,
+      "pageEnd": 16
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.2 Some additional types of functions",
+      "pageStart": 17,
+      "pageEnd": 28
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.3 Classification of functions",
+      "pageStart": 29,
+      "pageEnd": 34
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.4 Composition of functions",
+      "pageStart": 35,
+      "pageEnd": 38
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.5 Inverse functions and their graphs",
+      "pageStart": 39,
+      "pageEnd": 41
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.1 Key terms",
+      "pageStart": 42,
+      "pageEnd": 42
+    },
+    {
+      "unitTitle": "Unit 1: Further on Relation and Functions",
+      "sectionTitle": "1.3 Review exercises",
+      "pageStart": 43,
+      "pageEnd": 354
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "7.6 Review exercises",
+      "pageStart": 355,
+      "pageEnd": 355
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "9.1 The functions y =sec x, y = csc x and y = cot x",
+      "pageStart": 356,
+      "pageEnd": 368
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "9.3 Graphs of some trigonometric functions",
+      "pageStart": 369,
+      "pageEnd": 384
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "9.4 Applications of trigonometric functions",
+      "pageStart": 385,
+      "pageEnd": 400
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "7.10 Key terms",
+      "pageStart": 401,
+      "pageEnd": 433
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "11.1 Basic mathematical concepts in business",
+      "pageStart": 434,
+      "pageEnd": 446
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "11.2 Compound interest and depreciation",
+      "pageStart": 447,
+      "pageEnd": 460
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "11.3 Saving, investing and borrowing money",
+      "pageStart": 461,
+      "pageEnd": 469
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "11.4 Taxation",
+      "pageStart": 470,
+      "pageEnd": 479
+    },
+    {
+      "unitTitle": "Unit 7: The Set of Complex Numbers",
+      "sectionTitle": "7.11 Key terms",
+      "pageStart": 480,
+      "pageEnd": 480
+    }
+  ],
+  "knownHeaders": [
+    "MATHEMATICS GRADE 11",
+    "STUDENT TEXTBOOK"
+  ]
+}
