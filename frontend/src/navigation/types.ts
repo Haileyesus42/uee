@@ -68,7 +68,8 @@ export type PracticeStackParamList = {
     reviewItems: {
       prompt: string;
       options: string[];
-      correctIndex: number;
+      // null when the source had no answer key — shown but never scored.
+      correctIndex: number | null;
       selectedIndex: number;
       explanation: string;
     }[];

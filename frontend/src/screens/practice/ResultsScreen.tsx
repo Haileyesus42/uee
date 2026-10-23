@@ -60,14 +60,17 @@ export function ResultsScreen({ navigation, route }: Props) {
         {showReview && (
           <View style={{ marginTop: 12 }}>
             {reviewItems.map((item, i) => {
-              const isRight = item.selectedIndex === item.correctIndex;
+              // Correctness is only defined when the source published a key;
+              // an unkeyed question is neither right nor wrong.
+              const hasKey = item.correctIndex !== null;
+              const isRight = hasKey && item.selectedIndex === item.correctIndex;
               return (
                 <Card key={i} style={styles.reviewCard}>
                   <View style={styles.reviewHeader}>
                     <Ionicons
-                      name={isRight ? 'checkmark-circle' : 'close-circle'}
+                      name={hasKey ? (isRight ? 'checkmark-circle' : 'close-circle') : 'help-circle-outline'}
                       size={16}
-                      color={isRight ? t.colors.success : t.colors.error}
+                      color={hasKey ? (isRight ? t.colors.success : t.colors.error) : t.colors.textSecondary}
                     />
                     <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginLeft: 6 }]}>
                       Question {i + 1}
@@ -77,12 +80,14 @@ export function ResultsScreen({ navigation, route }: Props) {
                     {item.prompt}
                   </MathText>
                   <View style={styles.answerRow}>
-                    <Text style={[t.typography.caption, { color: t.colors.textSecondary }]}>Correct answer: </Text>
+                    <Text style={[t.typography.caption, { color: t.colors.textSecondary }]}>
+                      {hasKey ? 'Correct answer: ' : 'Answer key: '}
+                    </Text>
                     <MathText style={[t.typography.caption, { color: t.colors.textSecondary, flex: 1 }]}>
-                      {item.options[item.correctIndex]}
+                      {hasKey ? item.options[item.correctIndex as number] : 'not published for this question'}
                     </MathText>
                   </View>
-                  {!isRight && item.selectedIndex >= 0 && (
+                  {hasKey && !isRight && item.selectedIndex >= 0 && (
                     <View style={styles.answerRow}>
                       <Text style={[t.typography.caption, { color: t.colors.error }]}>Your answer: </Text>
                       <MathText style={[t.typography.caption, { color: t.colors.error, flex: 1 }]}>

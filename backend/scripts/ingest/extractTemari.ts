@@ -81,6 +81,40 @@ type Parsed = { prompt: string; options: string[]; correctIndex: number; explana
 //          Answer: C
 //          Explanation text, possibly wrapped over several lines.
 //
+// Maths questions sometimes lay the four options out in two columns, with the
+// bodies (stacked fractions) on the lines *below* the "A. ... B." / "C. ... D."
+// rows. -layout text flattens that, so a label split finds empty values.
+// Fallback: take the column boundary from where the right-hand label sits and
+// cut each following line there.
+function columnOptions(optionsPart: string): Record<string, string> | null {
+  const acc: Record<string, string[]> = { A: [], B: [], C: [], D: [] };
+  let row: 'AB' | 'CD' | null = null;
+  let boundary = -1;
+
+  for (const line of optionsPart.split('\n')) {
+    const hasAB = /\bA\./.test(line) && /\bB\./.test(line);
+    const hasCD = /\bC\./.test(line) && /\bD\./.test(line);
+    if (hasAB || hasCD) {
+      row = hasAB ? 'AB' : 'CD';
+      boundary = line.search(hasAB ? /\bB\./ : /\bD\./);
+      continue;
+    }
+    if (!row || boundary <= 0 || !line.trim()) continue;
+    const left = line.slice(0, boundary).trim();
+    const right = line.slice(boundary).trim();
+    if (left) acc[row === 'AB' ? 'A' : 'C'].push(left);
+    if (right) acc[row === 'AB' ? 'B' : 'D'].push(right);
+  }
+
+  const out: Record<string, string> = {};
+  for (const l of ['A', 'B', 'C', 'D']) {
+    const v = acc[l].join(' ').replace(/\s+/g, ' ').replace(/\s*✓\s*/g, ' ').trim();
+    if (!v) return null;
+    out[l] = v;
+  }
+  return out;
+}
+
 // Split on the "Answer: X" lines, NOT on question numbers: a stem whose leading
 // "12." isn't at column 0 (stacked fractions, tables) used to be skipped
 // entirely, which is how grade-12-mathematics-2014 yielded 23 of 51. The number
@@ -117,7 +151,7 @@ function parseKey(text: string): Parsed[] {
     const newline = body.indexOf('\n');
     const optionsPart = newline === -1 ? '' : body.slice(newline + 1);
     const parts = optionsPart.split(/(?:^|\s)([A-D])\.\s+/).slice(1);
-    const options: Record<string, string> = {};
+    const flat: Record<string, string> = {};
     for (let p = 0; p + 1 < parts.length; p += 2) {
       const label = parts[p];
       const value = parts[p + 1]
@@ -125,9 +159,16 @@ function parseKey(text: string): Parsed[] {
         .replace(/\s+/g, ' ')
         .replace(/\s*✓\s*/g, ' ')
         .trim();
-      if (!options[label]) options[label] = value;
+      if (!flat[label]) flat[label] = value;
     }
-    if (labels.some((l) => !options[l])) continue;
+    // Column-laid options (stacked fractions) fall back to the boundary split.
+    const options = labels.every((l) => flat[l]) ? flat : columnOptions(optionsPart) ?? flat;
+    if (labels.some((l) => !options[l])) {
+      if (process.env.DEBUG_PARSE) {
+        console.error(`DROP i=${i} reason=options missing=${labels.filter((l) => !options[l]).join('')}\n  ${body.slice(0, 300).replace(/\n/g, ' | ')}`);
+      }
+      continue;
+    }
 
     const prompt = body
       .slice(0, newline === -1 ? body.length : newline)
@@ -135,7 +176,12 @@ function parseKey(text: string): Parsed[] {
       .replace(/\(1\)\s*$/, '')
       .replace(/\s+/g, ' ')
       .trim();
-    if (!prompt) continue;
+    if (!prompt) {
+      if (process.env.DEBUG_PARSE) {
+        console.error(`DROP i=${i} reason=prompt\n  ${body.slice(0, 200).replace(/\n/g, ' | ')}`);
+      }
+      continue;
+    }
 
     const explanationEnd = i + 1 < answers.length ? questionStarts[i + 1] : text.length;
     const explanation = text

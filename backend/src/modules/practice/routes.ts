@@ -76,6 +76,13 @@ export async function practiceRoutes(app: FastifyInstance) {
       const question = await prisma.question.findUnique({ where: { id: questionId } });
       if (!question) return reply.code(404).send({ error: 'Question not found' });
 
+      // Questions imported without an answer key can be read and answered but
+      // never scored — recording them as `correct: false` would punish the
+      // student for a key the source never published.
+      if (question.correctIndex === null) {
+        return reply.send({ ok: true, correct: null });
+      }
+
       const correct = selectedIndex === question.correctIndex;
       await prisma.quizAttemptAnswer.upsert({
         where: { attemptId_questionId: { attemptId: attempt.id, questionId } },

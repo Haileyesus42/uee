@@ -14,7 +14,7 @@ export function FeedbackBanner({
   primaryLabel,
   onPrimaryPress,
 }: {
-  variant: 'success' | 'error';
+  variant: 'success' | 'error' | 'info';
   title: string;
   message: string;
   primaryLabel: string;
@@ -23,13 +23,19 @@ export function FeedbackBanner({
   const t = useTheme();
   const { openChat } = useUnityChat();
   const isSuccess = variant === 'success';
-  const bg = isSuccess ? t.colors.successLight : t.colors.errorLight;
-  const accent = isSuccess ? t.colors.success : t.colors.error;
+  // 'info' is for questions the source never keyed — neither right nor wrong.
+  const isInfo = variant === 'info';
+  const bg = isSuccess ? t.colors.successLight : isInfo ? t.colors.surfaceAlt : t.colors.errorLight;
+  const accent = isSuccess ? t.colors.success : isInfo ? t.colors.textSecondary : t.colors.error;
 
   return (
     <View style={[styles.wrap, { backgroundColor: bg, borderRadius: t.radius.lg }]}>
       <View style={styles.headerRow}>
-        <Ionicons name={isSuccess ? 'checkmark-circle' : 'close-circle'} size={20} color={accent} />
+        <Ionicons
+          name={isSuccess ? 'checkmark-circle' : isInfo ? 'information-circle' : 'close-circle'}
+          size={20}
+          color={accent}
+        />
         <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginLeft: 8 }]}>{title}</Text>
       </View>
       <MathText style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 6 }]}>{message}</MathText>

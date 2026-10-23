@@ -46,7 +46,13 @@ async function importQuestions(path: string, subjectSlug: string, year: number, 
   // extractExam.ts) and a reviewer flipped reviewed:true without noticing the
   // answer was never actually filled in. Hard-fails the whole batch rather than
   // silently skipping, since a partial import is easy to lose track of.
-  const invalid = reviewed.filter((q) => q.correctIndex < 0 || q.correctIndex >= q.options.length);
+  // `-1` (extractExam.ts sentinel) and out-of-range indices are still rejected —
+  // but `-1` is now a *valid* "no answer key" marker, imported as a NULL so the
+  // question is readable yet never scored. Anything else out of range is a real
+  // data error and still fails the batch.
+  const invalid = reviewed.filter(
+    (q) => q.correctIndex !== -1 && (q.correctIndex < 0 || q.correctIndex >= q.options.length)
+  );
   if (invalid.length > 0) {
     throw new Error(
       `${invalid.length} reviewed:true question(s) have an out-of-range correctIndex (e.g. "${invalid[0].prompt.slice(0, 60)}..."). ` +
@@ -70,7 +76,9 @@ async function importQuestions(path: string, subjectSlug: string, year: number, 
         subjectId: subject.id,
         prompt: q.prompt,
         options: q.options,
-        correctIndex: q.correctIndex,
+        // -1 = "no answer key in the source" → NULL, so the row is readable but
+        // can never be scored.
+        correctIndex: q.correctIndex === -1 ? null : q.correctIndex,
         explanation: q.explanation,
         examYear: year,
         stream,

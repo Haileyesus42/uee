@@ -173,7 +173,10 @@ model Question {
   subject       Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
   prompt        String
   options       Json
-  correctIndex  Int
+  // Null = the source published this question without an answer key. Such rows
+  // stay readable but are never scored, so a missing key is never counted as a
+  // wrong answer.
+  correctIndex  Int?
   explanation   String
   difficulty    String  @default("medium")
   // Set only for questions ingested from a real past paper (see backend/scripts/ingest/)

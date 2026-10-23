@@ -59,22 +59,29 @@ type KehulumFile = {
 };
 
 function toExtractedQuestion(q: KehulumQuestion, source: string): ExtractedQuestion | null {
-  if (!q.correct_answer) return null;
   const letters = Object.keys(q.choices).sort();
   const options = letters.map((l) => q.choices[l]);
-  const correctIndex = letters.indexOf(q.correct_answer.toUpperCase());
-  if (correctIndex < 0) return null;
+  // Image-only questions reach the scrape with empty choice text; they cannot be
+  // rendered as text options, so they stay out rather than import as blanks.
+  if (options.length < 2 || options.some((o) => !String(o || '').trim())) return null;
+  // Questions the scrape published without an answer are still imported — with
+  // correctIndex -1 → NULL in the database — so students can read them; they are
+  // simply never scored. Dropping them lost ~4,300 questions.
+  const answeredIndex = q.correct_answer ? letters.indexOf(q.correct_answer.toUpperCase()) : -1;
+  const correctIndex = answeredIndex >= 0 ? answeredIndex : -1;
 
   return ExtractedQuestionSchema.parse({
     prompt: q.question,
     options,
     correctIndex,
-    explanation: q.explanation || '(no explanation available — fill in manually before import)',
+    explanation: q.explanation || '(no explanation available — the source published this question without one)',
     explanationSource: 'transcribed',
-    confidence: 'high',
+    confidence: correctIndex >= 0 ? 'high' : 'low',
     sourcePage: q.number,
     reviewed: false,
-    note: `Scraped from ${source} (question ${q.number}) — spot-check against the source page before flipping reviewed:true.`,
+    note:
+      `Scraped from ${source} (question ${q.number})` +
+      (correctIndex >= 0 ? ' — spot-check against the source page before flipping reviewed:true.' : ' — no answer key in the source; imported unscored.'),
   });
 }
 

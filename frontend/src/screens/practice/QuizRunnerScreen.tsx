@@ -148,7 +148,9 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
     recordAndAdvance();
   }
 
-  const isCorrect = !isMock && selected === question.correctIndex;
+  // A question with no published answer key is neither right nor wrong.
+  const hasKey = question.correctIndex !== null;
+  const isCorrect = !isMock && hasKey && selected === question.correctIndex;
   const showFooterButton = isMock || !checked;
 
   // popToTop() alone only works when this screen was pushed onto an
@@ -207,8 +209,14 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
         {!isMock && checked && (
           <View style={{ marginTop: 12 }}>
             <FeedbackBanner
-              variant={isCorrect ? 'success' : 'error'}
-              title={isCorrect ? 'Correct!' : "Not quite — let's understand what happened."}
+              variant={!hasKey ? 'info' : isCorrect ? 'success' : 'error'}
+              title={
+                !hasKey
+                  ? 'No answer key for this question — it is not scored.'
+                  : isCorrect
+                    ? 'Correct!'
+                    : "Not quite — let's understand what happened."
+              }
               message={question.explanation}
               primaryLabel={isLast ? 'See Results' : 'Continue'}
               onPrimaryPress={recordAndAdvance}

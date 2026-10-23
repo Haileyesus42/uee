@@ -31,7 +31,9 @@ export type PracticeQuestion = {
   id: string;
   prompt: string;
   options: string[];
-  correctIndex: number;
+  // null = the source published this question without an answer key; it is
+  // readable but never scored.
+  correctIndex: number | null;
   explanation: string;
 };
 
@@ -39,7 +41,7 @@ export type QuizReviewItem = {
   questionId: string;
   prompt: string;
   options: string[];
-  correctIndex: number;
+  correctIndex: number | null;
   selectedIndex: number;
   explanation: string;
 };
@@ -94,7 +96,7 @@ export type Profile = {
 
 export type Mistake = {
   subject: string;
-  question: { prompt: string; options: string[]; correctIndex: number; explanation: string };
+  question: { prompt: string; options: string[]; correctIndex: number | null; explanation: string };
 };
 
 // Textbook Study Mode
