@@ -14,13 +14,22 @@
 //
 // Then, per output file:
 //   npm run ingest:import -- --questions ./scripts/ingest/output/english-2025-natural.json --subject english --year 2025 --stream natural
+import { readFileSync } from 'node:fs';
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { ExtractedQuestion, ExtractedQuestionSchema } from './schemas';
 
 const SOURCE_ROOT = join(homedir(), 'Downloads', 'kehulum-euee-questions');
 const OUT_DIR = resolve(__dirname, 'output');
+
+// Answers worked out independently for questions the scrape left unkeyed,
+// keyed by sha1 of the exact prompt. Without this a re-import would silently
+// revert them to unscored.
+const MANUAL_ANSWERS: Record<string, number> = JSON.parse(
+  readFileSync(join(__dirname, 'manual-answers.json'), 'utf-8')
+);
 
 const TRACK_TO_STREAM: Record<string, 'natural' | 'social'> = {
   'natural-science': 'natural',
@@ -66,14 +75,23 @@ function toExtractedQuestion(q: KehulumQuestion, source: string): ExtractedQuest
   if (options.length < 2 || options.some((o) => !String(o || '').trim())) return null;
   // Questions the scrape published without an answer are still imported — with
   // correctIndex -1 → NULL in the database — so students can read them; they are
-  // simply never scored. Dropping them lost ~4,300 questions.
-  const answeredIndex = q.correct_answer ? letters.indexOf(q.correct_answer.toUpperCase()) : -1;
-  const correctIndex = answeredIndex >= 0 ? answeredIndex : -1;
+  // simply never scored. A separately derived answer (manual-answers.json) takes
+  // precedence over "unscored" when one exists for this exact prompt.
+  const manualIndex = MANUAL_ANSWERS[createHash('sha1').update(q.question).digest('hex')];
+  const scrapedIndex = q.correct_answer ? letters.indexOf(q.correct_answer.toUpperCase()) : -1;
+  const usingManual = scrapedIndex < 0 && manualIndex !== undefined;
+  const candidate = scrapedIndex >= 0 ? scrapedIndex : (manualIndex ?? -1);
+  const correctIndex = candidate >= 0 && candidate < options.length ? candidate : -1;
+  // Kehulum's own "Correct Answer is (X)" marker is the source's published key
+  // → official. manual-answers.json entries were worked out independently
+  // (by a person or a model) because the source had no marker → derived.
+  const answerSource = correctIndex === -1 ? undefined : usingManual ? 'derived' : 'official';
 
   return ExtractedQuestionSchema.parse({
     prompt: q.question,
     options,
     correctIndex,
+    answerSource,
     explanation: q.explanation || '(no explanation available — the source published this question without one)',
     explanationSource: 'transcribed',
     confidence: correctIndex >= 0 ? 'high' : 'low',
@@ -92,6 +110,7 @@ async function main() {
   let filesWritten = 0;
   let questionsIn = 0;
   let questionsOut = 0;
+  let questionsAnswered = 0;
   let subjectsSkipped = new Set<string>();
 
   for (const track of Object.keys(TRACK_TO_STREAM)) {
@@ -127,15 +146,21 @@ async function main() {
         await writeFile(outPath, JSON.stringify(converted, null, 2));
         filesWritten += 1;
         questionsOut += converted.length;
+        const answered = converted.filter((q) => q.correctIndex >= 0).length;
+        questionsAnswered += answered;
         console.log(
-          `${appSlug}-${raw.gc_year}-${stream}.json: ${converted.length}/${raw.questions.length} question(s) had a marked answer`
+          `${appSlug}-${raw.gc_year}-${stream}.json: wrote ${converted.length}/${raw.questions.length} question(s) ` +
+            `(${answered} with a real answer, ${converted.length - answered} unscored)`
         );
       }
     }
   }
 
   console.log(`\nRead ${filesRead} source file(s), ${questionsIn} question(s) total.`);
-  console.log(`Wrote ${filesWritten} output file(s), ${questionsOut} question(s) with a usable answer key.`);
+  console.log(
+    `Wrote ${filesWritten} output file(s), ${questionsOut} question(s) total — ${questionsAnswered} with a real answer, ` +
+      `${questionsOut - questionsAnswered} imported unscored (no answer key in the source).`
+  );
   if (subjectsSkipped.size > 0) {
     console.log(`Skipped subject(s) with no app-side mapping: ${[...subjectsSkipped].join(', ')}`);
   }

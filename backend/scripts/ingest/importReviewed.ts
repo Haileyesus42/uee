@@ -60,6 +60,19 @@ async function importQuestions(path: string, subjectSlug: string, year: number, 
     );
   }
 
+  // Third safety net: every real answer needs its provenance recorded (official
+  // source key vs. independently derived) before it reaches the database — this
+  // is the only point that distinguishes the two once rows are in Postgres, so a
+  // silent omission here is unrecoverable later.
+  const missingProvenance = reviewed.filter((q) => q.correctIndex !== -1 && !q.answerSource);
+  if (missingProvenance.length > 0) {
+    throw new Error(
+      `${missingProvenance.length} reviewed:true question(s) have a correctIndex but no answerSource ` +
+        `(e.g. "${missingProvenance[0].prompt.slice(0, 60)}..."). Set answerSource to "official" or "derived" ` +
+        `before importing — nothing was written.`
+    );
+  }
+
   const subject = await prisma.subject.findUnique({ where: { slug: subjectSlug } });
   if (!subject) throw new Error(`No subject with slug "${subjectSlug}" — check backend/prisma/seed.ts for valid slugs.`);
   if (stream && !subject.streams.includes(stream)) {
@@ -79,6 +92,7 @@ async function importQuestions(path: string, subjectSlug: string, year: number, 
         // -1 = "no answer key in the source" → NULL, so the row is readable but
         // can never be scored.
         correctIndex: q.correctIndex === -1 ? null : q.correctIndex,
+        answerSource: q.correctIndex === -1 ? null : q.answerSource,
         explanation: q.explanation,
         examYear: year,
         stream,

@@ -28,6 +28,13 @@ export const ExtractedQuestionSchema = z.object({
   // itself because the source only had an answer key — verify for correctness,
   // not just transcription accuracy. Review scrutiny should differ accordingly.
   explanationSource: z.enum(['transcribed', 'generated']),
+  // Where correctIndex itself came from — 'official' when the source document
+  // published it, 'derived' when nothing was published and it was worked out
+  // independently (then verified) instead. Required whenever correctIndex is a
+  // real index; importReviewed.ts hard-rejects reviewed:true rows that set one
+  // without the other, the same way it already hard-rejects a bad correctIndex.
+  // Absent when correctIndex is -1 (no answer at all, so no provenance to record).
+  answerSource: z.enum(['official', 'derived']).optional(),
   ...reviewFields,
 });
 export type ExtractedQuestion = z.infer<typeof ExtractedQuestionSchema>;

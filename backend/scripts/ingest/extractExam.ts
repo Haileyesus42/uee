@@ -145,6 +145,10 @@ async function main() {
     let explanation = q.explanation;
     let confidence: 'high' | 'low' = q.confidence;
     let note = q.note;
+    // Starts optimistic (marker trusted) — downgraded to 'derived' below whenever
+    // the marker turns out unreliable and Groq has to work the answer out from
+    // the explanation instead. Cleared back to undefined if no answer survives.
+    let answerSource: 'official' | 'derived' | undefined = correctIndex >= 0 ? 'official' : undefined;
 
     const structurallyBroken = !prompt || options.length < 2;
     if (structurallyBroken) {
@@ -156,6 +160,10 @@ async function main() {
         correctIndex = fixed.correctIndex ?? -1;
         explanation = fixed.explanation || '';
         confidence = 'low';
+        // Still transcribing the source's own marker — Groq located it in raw
+        // text the deterministic parser couldn't structure, not reasoning out
+        // an answer from scratch.
+        answerSource = correctIndex >= 0 ? 'official' : undefined;
         console.log('recovered (still needs review)');
       } else {
         console.log('could not recover — skipping (not a real question block, or too garbled)');
@@ -173,17 +181,20 @@ async function main() {
         if (derived !== null && derived >= 0) {
           correctIndex = derived;
           confidence = 'low';
+          answerSource = 'derived';
           note = 'Correct-answer marker for this file is unreliable — this answer was derived from the explanation text via Groq, not transcribed. Verify by hand.';
           console.log('done');
         } else {
           correctIndex = -1;
           confidence = 'low';
+          answerSource = undefined;
           note = "Correct-answer marker for this file is unreliable, and the explanation didn't clearly indicate the right option either — needs manual answer-key entry.";
           console.log('unclear — flagged for manual entry');
         }
       } else {
         correctIndex = -1;
         confidence = 'low';
+        answerSource = undefined;
         note = 'Correct-answer marker for this file is unreliable and there is no explanation to derive from — needs manual answer-key entry.';
       }
     }
@@ -206,6 +217,7 @@ async function main() {
           prompt,
           options,
           correctIndex,
+          answerSource,
           explanation: explanation || '(no explanation available — fill in manually before import)',
           explanationSource,
           confidence: correctIndex >= 0 ? confidence : 'low',

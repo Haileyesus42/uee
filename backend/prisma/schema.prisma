@@ -31,6 +31,18 @@ enum Stream {
   social
 }
 
+// Where a past-paper question's correctIndex actually came from — distinct from
+// explanationSource (ingest/schemas.ts), which is about the explanation text,
+// not the answer itself. official = the source document published this as the
+// correct answer. derived = no official key was available; solved independently
+// (by a model or a person) and verified before import — still correct, but not
+// on the same footing as a published key, so this has to stay visible rather
+// than silently looking identical to "official" once it's in the database.
+enum AnswerSource {
+  official
+  derived
+}
+
 enum ChatRole {
   user
   unity
@@ -177,6 +189,8 @@ model Question {
   // stay readable but are never scored, so a missing key is never counted as a
   // wrong answer.
   correctIndex  Int?
+  // Null exactly when correctIndex is null — see AnswerSource above.
+  answerSource  AnswerSource?
   explanation   String
   difficulty    String  @default("medium")
   // Set only for questions ingested from a real past paper (see backend/scripts/ingest/)

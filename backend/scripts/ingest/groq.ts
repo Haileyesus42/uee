@@ -38,6 +38,14 @@ async function fetchGroqWithRetry(body: unknown, maxRetries = 5): Promise<Respon
       await sleep(3000);
       continue;
     }
+    // 503 = Groq itself reporting the model over capacity; 522 = Cloudflare
+    // (fronting api.groq.com) timing out waiting on the origin — both
+    // hand-confirmed transient during a single identification batch, and both
+    // clear with a short fixed backoff, unlike a 429's quota wait below.
+    if ((res.status === 503 || res.status === 522) && attempt < maxRetries) {
+      await sleep(3000);
+      continue;
+    }
     if (res.status !== 429 || attempt >= maxRetries) return res;
     const text = await res.clone().text();
     // Groq reports the wait as "2.5s" (per-minute limits) or "18m34.56s" (daily

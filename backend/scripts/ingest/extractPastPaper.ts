@@ -30,6 +30,8 @@ Return ONLY a JSON object of the form {"questions": [...]}, where each item has:
 - options: array of the answer choices, transcribed exactly (do not reorder them)
 - correctIndex: 0-based index of the correct option. Use the paper's own answer key if this
   page shows one; otherwise determine it yourself and set confidence to "low".
+- answerSource: "official" if correctIndex came from the paper's own answer key/marker on the
+  page, "derived" if you worked it out yourself because the page showed none.
 - explanation: if the page shows a worked solution, transcribe it and set
   explanationSource to "transcribed". If not, write a short, correct explanation
   yourself and set explanationSource to "generated".

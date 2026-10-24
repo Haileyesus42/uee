@@ -11,3 +11,6 @@
 # Local agent state
 .qwen/
 __pycache__/
+
+# Disposable render caches from one-off ingest/audit scripts
+.tmp-exam-render/
