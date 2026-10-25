@@ -203,7 +203,10 @@ const styles = StyleSheet.create({
     marginLeft: 7,
   },
   topBarRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  // Spare height is split above/below the card instead of pooling at the
-  // bottom, so a tall hero reads as centred rather than empty.
-  heroContent: { marginTop: 10, flex: 1, justifyContent: 'center' },
+  // `hero` has no explicit height — it's sized from its own content. A
+  // `flex: 1` here would try to grow to fill the parent's available space,
+  // but since `hero` has no defined height of its own to flex against, that
+  // collapses this (and everything inside it) toward zero height instead,
+  // clipped by `hero`'s overflow: 'hidden'. Size from content instead.
+  heroContent: { marginTop: 10 },
 });
