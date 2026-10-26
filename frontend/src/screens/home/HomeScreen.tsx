@@ -176,13 +176,18 @@ export function HomeScreen({ navigation }: Props) {
           </View>
           <View style={styles.topBarRight}>
             <Pressable onPress={t.toggleScheme} hitSlop={8} style={styles.themeToggle}>
-              {/* One consistent glyph (not swapped per theme) — the color is
-                  what signals state. A hardcoded white nearly disappeared here:
-                  this sits on the hero gradient's right edge, which (like
-                  ExamCountdownHero's own ink color just below) fades pale in
-                  light mode but stays dark in dark mode — the opposite of the
-                  logo's corner, which is dark-ish in both themes. */}
-              <Ionicons name="contrast-outline" size={16} color={t.scheme === 'dark' ? '#F4F1FF' : '#16103C'} />
+              {/* Sun/moon reflects the current theme, not a swapped-icon bug —
+                  the color is the part that has to adapt. A hardcoded white
+                  nearly disappeared here: this sits on the hero gradient's
+                  right edge, which (like ExamCountdownHero's own ink color
+                  just below) fades pale in light mode but stays dark in dark
+                  mode — the opposite of the logo's corner, which is dark-ish
+                  in both themes. */}
+              <Ionicons
+                name={t.scheme === 'dark' ? 'moon' : 'sunny-outline'}
+                size={16}
+                color={t.scheme === 'dark' ? '#F4F1FF' : '#16103C'}
+              />
             </Pressable>
             <Pressable onPress={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}>
               <Avatar
