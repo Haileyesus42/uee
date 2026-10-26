@@ -39,7 +39,12 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
         <Text style={[t.typography.caption, { color: t.colors.brand, letterSpacing: 0.5 }]}>
           {subjectName.toUpperCase()} · {year}
         </Text>
-        <MathText style={[t.typography.question, { color: t.colors.textPrimary, marginTop: 8, marginBottom: 20 }]}>
+        <MathText
+          style={[
+            t.typography.question,
+            { color: t.colors.textPrimary, marginTop: 8, marginBottom: 20, fontSize: 15, lineHeight: 20 },
+          ]}
+        >
           {question.prompt}
         </MathText>
 

@@ -9,10 +9,14 @@ export function LearnSummaryCard({
   avgMastery,
   courseCount,
   lessonsCompleted,
+  secondaryLabel = 'lessons done',
+  secondaryIcon = 'checkmark-done-outline',
 }: {
   avgMastery: number;
   courseCount: number;
   lessonsCompleted: number;
+  secondaryLabel?: string;
+  secondaryIcon?: keyof typeof Ionicons.glyphMap;
 }) {
   const t = useTheme();
 
@@ -33,11 +37,11 @@ export function LearnSummaryCard({
         </View>
         <View style={styles.statRow}>
           <View style={[styles.statIcon, { backgroundColor: t.colors.successLight }]}>
-            <Ionicons name="checkmark-done-outline" size={13} color={t.colors.success} />
+            <Ionicons name={secondaryIcon} size={13} color={t.colors.success} />
           </View>
           <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginLeft: 8 }]}>
-            <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary }]}>{lessonsCompleted}</Text> lessons
-            done
+            <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary }]}>{lessonsCompleted}</Text>{' '}
+            {secondaryLabel}
           </Text>
         </View>
       </View>

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "db079f85-0e31-4ccf-bdff-2db40b2a01b8",
+    "subject": "civics",
+    "examYear": 2014,
+    "stream": "natural",
+    "prompt": "An altruist is identified by his/ her readiness to",
+    "options": [
+      "Initiates action for constitutional amendment.",
+      "Considered to be revolutionary.",
+      "Automatically made null and void.",
+      "Replace some articles in the constitution."
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available -- the source question is defective)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "Not an explanation-quality gap -- correctIndex is null and the stored explanation already states the source question itself is defective (prompt doesn't match any option; none of the four options is a coherent definition of 'altruist'). No answer exists to verify against, so no explanation was generated. Out of scope for this pilot; would need re-transcription from the original source, not explanation generation."
+  }
+]

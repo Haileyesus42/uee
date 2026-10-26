@@ -43,7 +43,7 @@ export function CourseCard({
         <Ionicons name="chevron-forward" size={14} color={c.fg} />
       </View>
 
-      <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 8 }]} numberOfLines={1}>
+      <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 10 }]} numberOfLines={1}>
         {name}
       </Text>
       {unitTitle ? (
@@ -54,7 +54,7 @@ export function CourseCard({
         <Text style={[styles.unitTitle, { color: t.colors.textSecondary }]}>No units yet</Text>
       )}
 
-      <View style={{ marginTop: 8 }}>
+      <View style={{ marginTop: 10 }}>
         <ProgressBar progress={mastery} height={4} color={c.fg} trackColor="rgba(0,0,0,0.08)" />
       </View>
       <Text style={[styles.meta, { color: t.colors.textSecondary }]}>
@@ -65,9 +65,9 @@ export function CourseCard({
 }
 
 const styles = StyleSheet.create({
-  card: { width: '47%', borderRadius: 16, padding: 12 },
+  card: { width: '47%', borderRadius: 16, padding: 16 },
   topRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  iconChip: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
-  unitTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 10, fontWeight: '600', marginTop: 1 },
-  meta: { fontFamily: 'Inter_500Medium', fontSize: 9, marginTop: 6 },
+  iconChip: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
+  unitTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 10, fontWeight: '600', marginTop: 3 },
+  meta: { fontFamily: 'Inter_500Medium', fontSize: 9, marginTop: 8 },
 });

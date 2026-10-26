@@ -6,7 +6,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
-import { AppTopBar } from '../../components/navigation/AppTopBar';
+import { TopBar } from '../../components/navigation/TopBar';
 import { TopBarActions } from '../../components/navigation/TopBarActions';
 import { PastPapersStatsCard } from '../../components/uee/PastPapersStatsCard';
 import { YearCard, YearCardTint } from '../../components/uee/YearCard';
@@ -30,10 +30,11 @@ export function UeeHomeScreen({ navigation, route }: Props) {
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
       <View style={{ paddingHorizontal: t.spacing.md }}>
-        <AppTopBar
-          title="UEE"
-          icon="document-text-outline"
-          right={
+        <TopBar
+          title={stream === 'natural' ? 'Natural Stream' : 'Social Stream'}
+          titleAlign="left"
+          onBack={() => navigation.goBack()}
+          action={
             <TopBarActions
               onPressPro={() => navigation.navigate('Profile', { screen: 'Premium' })}
               onPressProfile={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}
@@ -47,7 +48,9 @@ export function UeeHomeScreen({ navigation, route }: Props) {
           <View style={[styles.subtitleIcon, { backgroundColor: t.colors.brandLight }]}>
             <Ionicons name="document-text-outline" size={16} color={t.colors.brand} />
           </View>
-          <Text style={[t.typography.h3, { color: t.colors.textPrimary, marginLeft: 10, flex: 1 }]}>
+          <Text
+            style={[t.typography.h3, { color: t.colors.textPrimary, marginLeft: 10, flex: 1, fontSize: 14, lineHeight: 19 }]}
+          >
             <Text style={{ color: t.colors.brand }}>{years.length}+</Text> years of past UEE papers, with
             full solutions
           </Text>

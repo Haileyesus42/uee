@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { createBottomTabNavigator, BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { BottomNavigation, NavKey } from '../components/navigation/BottomNavigation';
+import { BottomNavigation, BOTTOM_NAV_CONTENT_HEIGHT, NavKey } from '../components/navigation/BottomNavigation';
 import { UnityFloatingButton } from '../components/home/UnityFloatingButton';
 import { UnityChatPanel } from '../components/home/UnityChatPanel';
 import { useUnityChat } from '../context/UnityChatContext';
@@ -59,6 +60,7 @@ function deepestRouteName(state: any): string | undefined {
 
 export function MainTabNavigator() {
   const { open: chatOpen, openChat, closeChat } = useUnityChat();
+  const insets = useSafeAreaInsets();
   const [focusedRoute, setFocusedRoute] = useState<string | undefined>();
   // The reader is a full-screen reading surface; the chat bubble would cover
   // page controls, so it is hidden there.
@@ -82,12 +84,24 @@ export function MainTabNavigator() {
       </Tab.Navigator>
 
       {/* Rendered as a sibling of the whole Tab.Navigator (tab bar included),
-          not inside a single screen's scene container, so the default offset
-          needs a manual bump to clear the bottom bar. Hidden while the chat
-          panel is open since it slides in over the same corner. Chat open/close
-          state lives in UnityChatContext so any screen — not just this one —
-          can trigger it (e.g. the "ask Unity" affordance on quiz feedback). */}
-      {!chatOpen && !hideFab && <UnityFloatingButton onPress={openChat} bottom={70} />}
+          not inside a single screen's scene container, so it needs its own
+          clearance above the custom tab bar — computed from that bar's real
+          content height + this device's actual bottom inset, not a fixed guess
+          that only happened to clear the bar on one test device. The extra
+          120dp on top of that (vs. just enough to clear the bar) is deliberate:
+          on Home, the default (unscrolled) view's feature-card grid ends only
+          slightly above the bar, and a smaller gap let the bubble sit directly
+          on top of the "UEE Exams" card's title at rest, not just transiently
+          mid-scroll. A fixed-position corner button can still brush other
+          content while actively scrolling — that's normal for this pattern —
+          but it should never overlap text at the resting scroll position.
+          Hidden while the chat panel is open since it slides in over the same
+          corner. Chat open/close state lives in UnityChatContext so any
+          screen — not just this one — can trigger it (e.g. the "ask Unity"
+          affordance on quiz feedback). */}
+      {!chatOpen && !hideFab && (
+        <UnityFloatingButton onPress={openChat} bottom={BOTTOM_NAV_CONTENT_HEIGHT + insets.bottom + 55} />
+      )}
       <UnityChatPanel visible={chatOpen} onClose={closeChat} />
     </View>
   );

@@ -1,0 +1,762 @@
+[
+  {
+    "id": "30870c6d-2d38-4579-8f4d-5b858a5aba54",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "From the following alternatives select the common features that are found both in animal and plant cells.",
+    "options": [
+      "Cell membrane, nucleus, cytoplasm, lysosome and Golgi apparatus",
+      "Cell membrane, nucleus, cytoplasm, mitochondria and endoplasmic reticulum",
+      "Cell membrane, nucleus, cytoplasm, chloroplast and Golgi apparatus",
+      "Cell membrane, nucleus, cytoplasm, large vacuole and Golgi apparatus"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Cell membrane, nucleus, cytoplasm, mitochondria and endoplasmic reticulum",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Mitochondria and the endoplasmic reticulum are present in both animal and plant cells, unlike lysosomes (mainly emphasized in animal cells), chloroplasts (plant-only), and a large permanent central vacuole (plant-only).",
+    "note": ""
+  },
+  {
+    "id": "8bd1b889-a259-4eba-8901-377e2e92a5ca",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A biology teacher grouped his students into two groups and ordered group I to place a slice of potato in hypertonic solution and group II in hypotonic solution. What will happen to the potato slice in group I and group II?",
+    "options": [
+      "turgid while for group II it will be flaccid.",
+      "haemolyzed while for group II it will be flaccid.",
+      "flaccid while for group II it will be turgid.",
+      "turgid while for group II there will be no change."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) flaccid while for group II it will be turgid.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "In a hypertonic solution, water leaves the cell by osmosis, making it flaccid (plasmolyzed); in a hypotonic solution, water enters the cell, making it turgid.",
+    "note": ""
+  },
+  {
+    "id": "acdc12c5-ba74-4100-ba73-dbf3a0ca8ef7",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A man eats only vegetables, beans, banana and orange for one week continuously in his lunch and dinner. For this man, what nutrients are most likely missed in his meal to be a balanced diet?",
+    "options": [
+      "Carbohydrates",
+      "Lipids",
+      "Proteins",
+      "Minerals"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Lipids",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Vegetables, beans, bananas, and oranges supply carbohydrates, protein, and minerals, but none of these foods are a significant source of dietary fat, so lipids are the nutrient most likely missing.",
+    "note": ""
+  },
+  {
+    "id": "be6d6e89-5a6a-4543-86cf-8fcb9a1413cd",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Three students carried out different experiments in exhaled air as indicated below. Student I – uses cold glass and blue cobalt chloride paper Student II – uses ice cubes Student III – uses tube containing lime solution and straw Based on their setup, which student plans to demonstrate the presence of water vapour and carbon dioxide, respectively?",
+    "options": [
+      "II and III",
+      "I and II",
+      "II and I",
+      "I and III"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) I and III",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Blue cobalt chloride paper turns pink in the presence of water vapor (Student I), while lime solution turns milky/cloudy in the presence of carbon dioxide (Student III) — ice cubes alone (Student II) don't specifically test for either gas.",
+    "note": ""
+  },
+  {
+    "id": "17c5f393-bed9-4774-a7c2-ef8de1408504",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A grade 12 student marked two dots close to each other using a pen on a piece of paper and observed them under a microscope. The two dots appeared well separated under the microscope. This was due to",
+    "options": [
+      "resolution",
+      "magnification",
+      "staining",
+      "mounting"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) resolution",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Resolution is the ability to distinguish two close points as separate, which is different from magnification (simply enlarging the image) — the dots separating under the microscope demonstrates resolution.",
+    "note": ""
+  },
+  {
+    "id": "19ab87ea-d69e-4f78-91a1-767e68ce4601",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A student made a collection of plants having flowers and seeds from his locality and compared their embryo, leaves and stems using a hand lens. He found that all his collections contain a single seed leaf embryo, long and thin leaves with parallel veins, and stems with scattered vascular bundles. Which option contains plants that can be categorized under his collection?",
+    "options": [
+      "Grasses, orchids, teff and roses",
+      "Grasses, orchids, teff and beans",
+      "Grasses, sunflowers, teff and maize",
+      "Grasses, orchids, teff and maize"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Grasses, orchids, teff and maize",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "A single seed-leaf embryo, parallel-veined leaves, and scattered vascular bundles are defining monocot features; grasses, orchids, teff, and maize are all monocots, while roses and beans are dicots.",
+    "note": ""
+  },
+  {
+    "id": "b2a1c566-d2fb-47db-a309-10778b5e2749",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is NOT a key process involved in the carbon cycle?",
+    "options": [
+      "Evaporation",
+      "Cellular respiration",
+      "Photosynthesis",
+      "Decomposition"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Evaporation",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Evaporation is part of the water cycle, not the carbon cycle — cellular respiration, photosynthesis, and decomposition all directly move carbon between organisms and the atmosphere.",
+    "note": ""
+  },
+  {
+    "id": "58797c85-73fd-486b-972e-11f28ffc7dd6",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is correct about mitosis? It is a division of",
+    "options": [
+      "somatic cells to make daughter cells with half chromosome.",
+      "sex cells to make identical daughter cells with doubled chromosome.",
+      "somatic cells to make identical daughter cells.",
+      "sex cells to make different daughter cells."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) somatic cells to make identical daughter cells.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Mitosis divides somatic (body) cells to produce two genetically identical daughter cells with the same chromosome number as the parent cell — it doesn't halve the chromosome number (that's meiosis) and doesn't involve sex cells.",
+    "note": ""
+  },
+  {
+    "id": "c3ec66f6-59ee-4a82-a653-be2aef67feb4",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following features is common for mitosis and meiosis? They both involve",
+    "options": [
+      "replication of DNA and the formation of daughter cells.",
+      "production of daughter cells identical to the parent cell.",
+      "formation of cells with the same chromosome number as parent cell.",
+      "spermatogenesis and oogenesis processes in males and females."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) replication of DNA and the formation of daughter cells.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Both mitosis and meiosis begin with DNA replication and both ultimately produce daughter cells; they differ in that only mitosis produces genetically identical cells with the parent's chromosome number, while meiosis halves the chromosome number and is specific to forming gametes.",
+    "note": ""
+  },
+  {
+    "id": "1fbf1932-b6c9-401f-aba9-f09a46ea7083",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which tissues of plant leaves are involved in waterproofing, major photosynthetic, and major gas exchange activities, respectively?",
+    "options": [
+      "Guard cells, palisade mesophyll and epidermis",
+      "Guard cells, palisade mesophyll and spongy mesophyll",
+      "Waxy cuticle, palisade mesophyll and spongy mesophyll",
+      "Waxy cuticle, palisade mesophyll and epidermis"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Waxy cuticle, palisade mesophyll and spongy mesophyll",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "The waxy cuticle waterproofs the leaf surface, the palisade mesophyll (densely packed with chloroplasts) carries out most photosynthesis, and the spongy mesophyll's loosely packed cells with large air spaces handle most gas exchange.",
+    "note": ""
+  },
+  {
+    "id": "17bd9f26-a93f-41e4-b3f1-c542b9e215b0",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is correct about the movement of water in plants? It moves",
+    "options": [
+      "against a water potential gradient.",
+      "across the phloem tissue by diffusion.",
+      "across the tissues of a plant by osmosis.",
+      "by using energy until it reaches to the xylem."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) across the tissues of a plant by osmosis.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Water moves between plant tissues passively, by osmosis, down a water potential gradient — it doesn't require energy and isn't carried by the phloem (which transports sugars).",
+    "note": ""
+  },
+  {
+    "id": "6faf6cf9-4ebd-4a38-b9cb-da3cc7d16eee",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What will happen to the growth of the plant when you remove indole-acetic acid (IAA) from the main shoot part of the plant?",
+    "options": [
+      "The plant will bush out.",
+      "It stimulates dropping of leaves.",
+      "The main shoot of the plant elongates.",
+      "The growth of side shoots will slow down."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) The plant will bush out.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "IAA from the shoot apex normally suppresses the growth of lateral (side) buds — a phenomenon called apical dominance — so removing it releases the side buds to grow, making the plant bush out.",
+    "note": ""
+  },
+  {
+    "id": "4a963745-6ba8-43fd-9a31-e210400a6a6b",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is correct about animals? They are",
+    "options": [
+      "Respire, excrete, autotrophic and reproduce",
+      "Unicellular, excrete, heterotrophic and motility",
+      "Heterotrophic, excrete, motility and grow",
+      "Respire, multicellular, autotrophic and reproduce"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Heterotrophic, excrete, motility and grow",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Animals are heterotrophic (consuming other organisms), excrete waste, show motility, and grow — unlike plants, they are not autotrophic, and most animals are multicellular rather than unicellular.",
+    "note": ""
+  },
+  {
+    "id": "81c491fe-c240-46a9-8f3b-d32e177259dc",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What does it mean if an animal is poikilothermic? It",
+    "options": [
+      "changes its body temperature with environmental condition.",
+      "increases its metabolic rate during cold and hot conditions.",
+      "keeps its body temperature constant regardless of external changes.",
+      "produces heat when temperature falls by activating the hypothalamus."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) changes its body temperature with environmental condition.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Poikilothermic ('cold-blooded') animals don't internally regulate their body temperature — it rises and falls with the surrounding environment, unlike homeothermic animals, which keep their temperature constant.",
+    "note": ""
+  },
+  {
+    "id": "70099ebe-c49f-43a5-90c1-cb8e29a0977a",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following statements is correct about the catalytic activities of enzymes? They",
+    "options": [
+      "change the overall nature of the products.",
+      "allow reactions in cells to take place quickly.",
+      "alter themselves at the end of biochemical reactions.",
+      "increase the energy required to start a reaction."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) allow reactions in cells to take place quickly.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Enzymes are biological catalysts that speed up reactions by lowering the activation energy needed — they are not consumed or permanently changed, and they don't alter what the products are, only how fast the reaction reaches them.",
+    "note": ""
+  },
+  {
+    "id": "9ca013d5-cb15-40fd-856d-eb7ae6419ef4",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Four students draw four different big protein structure posters. The contents of each of their structure are displayed in the following table. Student Main contents indicated in the structure I Polypeptide folded into α-helix and β-sheet, and hydrogen bond II Amino acid sequences and peptide bonds III Multiple folded protein subunits in a multi-subunit complex and haem group IV Side chain interaction of amino acids and overall 3-D shape Based on the above information, which student drew secondary and quaternary structures, respectively?",
+    "options": [
+      "I and IV",
+      "II and III",
+      "I and III",
+      "II and IV"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) I and III",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "α-helices/β-sheets held by hydrogen bonds (Student I) describe secondary structure, while multiple folded subunits assembled into a complex with a prosthetic group like haem (Student III) describe quaternary structure — amino acid sequence alone (II) is primary structure, and side-chain interactions giving overall 3D shape (IV) is tertiary structure.",
+    "note": ""
+  },
+  {
+    "id": "cccef819-7162-4d71-a147-02fb5d98c74a",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "How does the induced-fit model explain enzyme specificity? They",
+    "options": [
+      "change the shape of active site slightly to fit substrates precisely.",
+      "have a rigid active site that can just bind to single substrate.",
+      "have multiple active sites that can fit to different substrates.",
+      "bind to whatever the shape of substrate that fits to allosteric site."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) change the shape of active site slightly to fit substrates precisely.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "In the induced-fit model, the enzyme's active site is flexible and slightly changes shape as the substrate binds, molding itself to fit the substrate precisely — unlike the rigid lock-and-key model.",
+    "note": ""
+  },
+  {
+    "id": "6720e8fd-906a-4c9a-b31f-620c6e21ec31",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What happens to the substrate molecule when competitive inhibitor binds with an enzyme? It",
+    "options": [
+      "undergoes conformational change.",
+      "cannot bind with the active site.",
+      "binds to the allosteric site temporarily.",
+      "easily binds with the active site."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) cannot bind with the active site.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "A competitive inhibitor has a shape similar to the substrate and occupies the active site itself, so while it's bound there, the actual substrate cannot bind to the active site.",
+    "note": ""
+  },
+  {
+    "id": "64673035-17c7-4399-8b9f-7ef16b8c45df",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What will happen to the reaction if you add a certain inhibitor or activator to the substrate having allosteric enzyme set up?",
+    "options": [
+      "Inhibitor binds to active site to speed up the reaction.",
+      "Inhibitor binds to regulatory site to increase rate of reaction.",
+      "Activator binds to active site to initiate the reaction.",
+      "Activator binds to regulatory site to activate the reaction."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Activator binds to regulatory site to activate the reaction.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Allosteric regulators bind at a separate regulatory (allosteric) site, not the active site — an activator binding there changes the enzyme's shape in a way that increases its activity.",
+    "note": ""
+  },
+  {
+    "id": "efdbdb79-8f9f-45c5-a5d1-092d6f942082",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following classes of enzyme and type of reactions they catalyze is correctly matched?",
+    "options": [
+      "Oxidoreductases - transfer functional groups from donor to acceptor",
+      "Transferases - transfer of electrons from one molecule to another",
+      "Ligases - cleave bonds by other means rather than hydrolysis",
+      "Lyases - catalyze the hydrolysis of various bonds"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Ligases - cleave bonds by other means rather than hydrolysis",
+    "verified": false,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": null,
+    "note": "FLAGGED (question defect, not an answer mismatch): all 4 options have their enzyme-class name paired with a DIFFERENT class's actual definition. 'Ligases - cleave bonds by other means rather than hydrolysis' is literally the standard definition of Lyases, not Ligases (which join molecules, typically using ATP, e.g. DNA ligase). Likewise (A) describes Transferases, (B) describes Oxidoreductases, (D) describes Hydrolases. None of the 4 options is a textbook-correct match under standard EC enzyme classification. Needs human review against the source paper rather than a forced explanation."
+  },
+  {
+    "id": "7938fd71-3073-4b87-9f33-31c899d2c0bc",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "All of the following features define a chromosome EXCEPT",
+    "options": [
+      "contains hundreds to thousands of genes.",
+      "exists in pairs in diploid organisms.",
+      "made up of DNA and protein.",
+      "functional unit of inheritance."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) functional unit of inheritance.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "A chromosome is made of DNA and protein, exists in pairs in diploid cells, and carries hundreds to thousands of genes — but the chromosome itself isn't 'the functional unit of inheritance'; that description applies to a gene.",
+    "note": ""
+  },
+  {
+    "id": "ba2fd6eb-0433-48a7-9100-db65aa20599b",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which structural and functional difference is observed between DNA and RNA?",
+    "options": [
+      "Both DNA and RNA have the same nitrogenous bases but differ in pentose sugar.",
+      "RNA produces DNA through the process of transcription.",
+      "RNA stores the genetic material while DNA involves in protein synthesis.",
+      "DNA is very stable molecule while RNA is degraded quickly."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) DNA is very stable molecule while RNA is degraded quickly.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "DNA is a stable, long-lasting molecule well-suited to storing genetic information, while RNA (especially mRNA) is chemically less stable and is broken down relatively quickly after use.",
+    "note": ""
+  },
+  {
+    "id": "292807d3-9cca-457a-94de-ae3fcf0410fb",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "All of the following events occur during telophase I of meiosis I cell division EXCEPT",
+    "options": [
+      "crossing over takes place.",
+      "each of the spindle fibers disappears.",
+      "set of chromosomes come together.",
+      "nuclear envelope reforms."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) crossing over takes place.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Crossing over happens during prophase I, not telophase I — by telophase I the spindle fibers break down, the separated chromosome sets have arrived at the poles, and the nuclear envelope re-forms.",
+    "note": ""
+  },
+  {
+    "id": "ae4f1968-cdd1-4a0c-bdc4-eb81946f996d",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Suppose there was a cross between pea plants with flower positions axial (AA) and terminal (aa) and produced F1 generation. What will be the most probable number of heterozygous dominant individuals obtained if 1000 offspring were produced by self-crossing of F1 generation?",
+    "options": [
+      "200",
+      "750",
+      "500",
+      "250"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) 500",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Axial (AA) × terminal (aa) gives an all-heterozygous Aa F1; self-crossing F1 (Aa × Aa) gives the standard 1 AA : 2 Aa : 1 aa ratio, so heterozygous dominant (Aa) individuals make up half of 1000 offspring, or 500.",
+    "note": ""
+  },
+  {
+    "id": "cf7a296d-4955-4494-85cd-dc7c0de31c9b",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "If you have a pea plant of unknown genotype with a green pod color, you obtained all green pod colors of offspring phenotype after a test cross. What was the unknown genotype of the parent? It was",
+    "options": [
+      "homozygous dominant.",
+      "homozygous recessive.",
+      "heterozygous dominant.",
+      "incomplete dominant."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) homozygous dominant.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "A test cross (crossing with a homozygous recessive) that produces offspring that are entirely one phenotype, with no recessive phenotype appearing, shows the unknown parent could only be homozygous dominant — a heterozygous parent would have produced a 1:1 split instead.",
+    "note": ""
+  },
+  {
+    "id": "16a5a619-ccf1-420f-bf5e-a8dc9224f60f",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "This item is based on the following examples of genetic inheritance patterns. 1. Inflated and pinched pod forms will have inflated pod form. 2. Red cow and white bull will have roan calf. 3. AA and BB blood type people will have a child with AB blood type. 4. Red and white roses will have a pink rose offspring. From the above patterns of inheritance, which of the following are exemplary for non-Mendelian inheritance?",
+    "options": [
+      "1, 2, 3",
+      "1, 3, 4",
+      "1, 2, 4",
+      "2, 3, 4"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) 2, 3, 4",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "A roan calf (red cow × white bull), an AB child (two different blood-type alleles), and a pink rose (red × white) are all classic examples of incomplete dominance or codominance, where the heterozygote's phenotype isn't simply one parent's trait — unlike the inflated/pinched pod cross, which follows simple complete dominance.",
+    "note": ""
+  },
+  {
+    "id": "51b15b93-c829-4b24-ac4c-d59246272793",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Farmers want to maintain their sheep with long tails for the next generation through similar sheep from their locality in their breeding program. What process do these farmers apply to keep the desired traits in their program?",
+    "options": [
+      "Inbreeding",
+      "Crossbreeding",
+      "Genetic engineering",
+      "Cloning"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Inbreeding",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Breeding similar, related animals from the same local population to preserve a specific trait is inbreeding, as opposed to crossbreeding (mixing different breeds) or lab-based methods like genetic engineering or cloning.",
+    "note": ""
+  },
+  {
+    "id": "3df19cdd-61c7-428b-a6bb-9d45ab33c94e",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "If progesterone remains high after ovulation, what will be the most likely outcome?",
+    "options": [
+      "FSH will be produced rapidly which leads to a new cycle.",
+      "Oestrogen will be decreased, closing down the lining of the uterus.",
+      "Uterus lining will be maintained and prepared for pregnancy.",
+      "Corpus luteum will be regenerated, inhibiting hormone production."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Uterus lining will be maintained and prepared for pregnancy.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Sustained high progesterone (as maintained by a persisting corpus luteum) keeps the uterine lining built up and ready to support a pregnancy, rather than letting it break down as it would in a normal, non-pregnant cycle.",
+    "note": ""
+  },
+  {
+    "id": "b16f11f6-58a7-4163-9aba-e15719ea3b36",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "The most reliable contraceptive method that prevents travelling of ovum from the ovaries through the fallopian tubes, but requires surgery is",
+    "options": [
+      "contraceptive injection.",
+      "spermicide.",
+      "intrauterine device.",
+      "sterilization."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) sterilization.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Sterilization (e.g., tubal ligation) is a surgical procedure that blocks the fallopian tubes, physically preventing the ovum from traveling down to meet sperm — unlike hormonal or barrier methods, which don't require surgery.",
+    "note": ""
+  },
+  {
+    "id": "dba5f363-6899-4d49-8c3b-53aed29ee8fa",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Among the following, which one increases the risk to be infected by sexually transmitted infections?",
+    "options": [
+      "Have no history of sexually transmitted infections",
+      "Misuse of drugs that inhibit your judgment",
+      "Protective sexual contact and medical treatment",
+      "Consistent use of condoms during intercourse"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Misuse of drugs that inhibit your judgment",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Drugs or alcohol that impair judgment make a person more likely to engage in risky sexual behavior (like unprotected sex), increasing their chances of contracting an STI — the other options describe protective or neutral factors.",
+    "note": ""
+  },
+  {
+    "id": "656524f8-59bc-40c7-a3b3-e8b2ce0b5879",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Two women were decided not to have pregnancy in the near future and they were offered two different contraceptive options. In woman I, the material fitted in her uterus did not allow the sperm to fertilize the egg. In woman II, the contraceptive prevented hormone production and the releasing of eggs from the ovaries. Which type of contraceptive methods did woman I and II used, respectively?",
+    "options": [
+      "Sterilization and Injectable contraceptives Depo-Provera",
+      "Post pill and copper-coated intrauterine device",
+      "Contraceptive injection and contraceptive implant",
+      "Copper-coated intrauterine device and contraceptive injection"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Copper-coated intrauterine device and contraceptive injection",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "A device fitted in the uterus that physically blocks fertilization describes a copper-coated intrauterine device (Woman I), while a method that stops hormone production and ovulation describes a contraceptive injection (Woman II).",
+    "note": ""
+  },
+  {
+    "id": "1d0fec11-f7b5-4df3-b127-c30ffda080ee",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "The finding of the study conducted in two different villages showed that there are harmful practices that affect reproductive health. The common practices in village 1 were forcing underage girls to get married based on norms and sexual abuse or harassment. In village 2, abduction to make the girl a wife unwillingly was very common. Which one of the following options is correct about the two villages?",
+    "options": [
+      "In village 1, gender-based violence, kidnapping and female genital mutilation are common.",
+      "In village 1, gender-based violence and early marriage are common.",
+      "In village 2, kidnapping and female genital mutilation are common.",
+      "In village 2, gender-based violence and female genital mutilation are common."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) In village 1, gender-based violence and early marriage are common.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Forcing underage girls into marriage and subjecting them to sexual abuse or harassment are both forms of gender-based violence tied to early marriage, which matches village 1's described practices — kidnapping (village 2's abduction) and female genital mutilation aren't part of what's described for village 1.",
+    "note": ""
+  },
+  {
+    "id": "4ccb3f29-3be6-45bd-923a-bcd20f0ab499",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "How does drinking alcohol contribute to HIV transmission? By",
+    "options": [
+      "improving the decision making ability of a person",
+      "driving more willingly to participate in risky behaviors",
+      "impotency or loss of sexual drive both in male and female",
+      "increasing rate of the retrovirus multiplication capacity"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) driving more willingly to participate in risky behaviors",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Alcohol lowers inhibitions and impairs judgment, making people more willing to engage in risky behaviors such as unprotected sex, which increases the chance of HIV transmission — it doesn't improve decision-making or directly speed up viral replication.",
+    "note": ""
+  },
+  {
+    "id": "15be84dc-f631-4d44-962c-12a4c0661733",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Select the option where the whole list contains renewable natural resources.",
+    "options": [
+      "Coal, oil, natural gas and minerals",
+      "Coal, wind, hydro power and biomass",
+      "Sunlight, wind, hydro power and biomass",
+      "Sunlight, wind, hydro power and natural gas"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Sunlight, wind, hydro power and biomass",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Sunlight, wind, hydro power, and biomass can all be replenished naturally and are renewable — coal and natural gas are fossil fuels, and minerals are non-renewable, so any option including them is disqualified.",
+    "note": ""
+  },
+  {
+    "id": "952df1c3-365e-4bc3-851d-b5ef8c8e936a",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "This item is based on the following list of activities. I. Establishing national parks II. Wild sanctuaries III. Preparing wild life reserves IV. Practicing overgrazing Which of the above activities CANNOT be used for the conservation of wild life?",
+    "options": [
+      "II",
+      "I",
+      "III",
+      "IV"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) IV",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "National parks, wildlife sanctuaries, and wildlife reserves are all established specifically to conserve wildlife, while overgrazing degrades habitats and works against conservation.",
+    "note": ""
+  },
+  {
+    "id": "be067571-fd8b-4781-adf8-0aa58cf35c0c",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Among the following options, identify the air pollutants that can cause acid rain and its effects, respectively.",
+    "options": [
+      "Carbon dioxide and methane - melting of ice caps and rising of oceans",
+      "Sulphur dioxides and nitrogen dioxides - damaging plants and water",
+      "Perflourocarbons - causing skin cancer and cataracts",
+      "Chloroflourocarbons - increasing UV rays and respiratory disease"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Sulphur dioxides and nitrogen dioxides - damaging plants and water",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Sulphur dioxide and nitrogen dioxide react with water vapor in the atmosphere to form acids, producing acid rain, which damages plants and contaminates water — the other pollutant pairs listed are linked to different problems like ozone depletion or global warming, not acid rain specifically.",
+    "note": ""
+  },
+  {
+    "id": "913bcbf8-fef2-45e1-8c94-3f6323159f78",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is the cause and effect of global warming, respectively?",
+    "options": [
+      "Greenhouse gases and dropping of sea levels",
+      "Greenhouse gases and loss of biodiversity",
+      "Burning of fossil fuels and increase in species diversity",
+      "Burning of fossil fuels and dropping of sea level"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Greenhouse gases and loss of biodiversity",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Greenhouse gases trap heat and drive global warming, and the resulting climate shifts threaten habitats and species, contributing to a loss of biodiversity — global warming raises sea levels (via thermal expansion and ice melt), it doesn't lower them.",
+    "note": ""
+  },
+  {
+    "id": "23a2500b-88df-4d7e-8ca3-6c24e3a6f3f6",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the primary purpose of creating transgenic organisms? To",
+    "options": [
+      "generate pathogenic organisms that fight against non-pathogenic ones",
+      "produce organisms that mimic human beings in every aspect of behaviors",
+      "promote expression of desired genes that improve nutritional quality of organisms",
+      "produce novel organisms that can affect reproduction across different species"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) promote expression of desired genes that improve nutritional quality of organisms",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Transgenic organisms are engineered to express specific desired genes — a common real-world application is improving the nutritional content of crops, such as adding vitamin-A production to rice.",
+    "note": ""
+  },
+  {
+    "id": "fd159408-4378-49fa-aede-8e6b763998f0",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the role of biology in the investigation of a criminal case? To",
+    "options": [
+      "detect flavor compounds in food and monitor environmental pollutants",
+      "examine potential sources of evidences using blood, saliva and hair",
+      "sense pathogens and herbicides using immunochemical detection system",
+      "determine the production of complex organic compounds using mold fungus"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) examine potential sources of evidences using blood, saliva and hair",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Forensic biology examines biological evidence such as blood, saliva, and hair left at a crime scene (often for DNA analysis) to help identify who was involved.",
+    "note": ""
+  },
+  {
+    "id": "b4bc8930-5f1b-4384-813a-40d1a91d1f0a",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "How does biological washing powder save energy? Because they",
+    "options": [
+      "use lipase enzyme without other combination for any stain in clothes.",
+      "are effective in cleaning clothes at lower temperatures without boiling water.",
+      "are effective in removing dirty ores in clothes without spraying acidic water.",
+      "use protease enzyme without other combination for any stain in clothes."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) are effective in cleaning clothes at lower temperatures without boiling water.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Biological washing powders contain enzymes that work effectively at lower water temperatures, so clothes can be cleaned well without needing to heat the water as much, which saves energy.",
+    "note": ""
+  }
+]

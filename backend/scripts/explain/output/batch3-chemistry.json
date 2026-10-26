@@ -1,0 +1,1046 @@
+[
+  {
+    "id": "e07ed0aa-1a7e-489f-a17a-d2e9ad6798d0",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "In order to avoid the decrease in quality of some clothes after washing with water, which of the following chemicals is used for dry cleaning?",
+    "options": [
+      "CH$_2$Cl$_2$",
+      "CH$_4$",
+      "C$_2$Cl$_4$",
+      "C$_2$H$_4$"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) C$_2$Cl$_4$",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Dry cleaning uses a non-polar solvent that dissolves grease and oils without water, which can shrink or damage delicate fabrics. Tetrachloroethylene ($C_2Cl_4$, also called \"perc\") is the standard industrial dry-cleaning solvent because it's a powerful non-polar degreaser that evaporates cleanly without leaving residue.",
+    "note": ""
+  },
+  {
+    "id": "8cf58229-3a10-4973-93b8-dc6d780ed043",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Consider the following equilibrium reaction at 298 K: 2NO₂(g) ⇌ N₂O₄(g) + O₂(g) P(NO₂) = 0.75 atm, P(N₂O₄) = 2.5 × 10⁻³ atm, P(O₂) = 3.5 × 10⁻⁵ atm Calculate the actual equilibrium constant, Kₚ, for this reaction. (Correct value: Kₚ = 1.56 × 10⁻⁷) Which of the following choices matches the value?",
+    "options": [
+      "1.16 × 10⁻⁹",
+      "5.2 × 10⁻¹⁵",
+      "3.9 × 10⁻¹⁴",
+      "2.9 × 10⁻¹⁴"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "UNRESOLVABLE: correctIndex is null — no stored answer key to verify against."
+  },
+  {
+    "id": "64fd369c-3261-499b-9d45-5f81cd436c04",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is the main constituent of natural gas?",
+    "options": [
+      "Butane",
+      "Ethane",
+      "Methane",
+      "Propane"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Methane",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Natural gas is composed mostly of methane ($CH_4$), typically over 70-90% by volume, with smaller amounts of ethane, propane, and butane as the gas gets heavier.",
+    "note": ""
+  },
+  {
+    "id": "84c496d7-8601-4dfd-be48-905cb9b2cd6d",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following organic compounds is used for the production of 1, 2-ethanediol?",
+    "options": [
+      "Ethane",
+      "Ethene",
+      "Ethanol",
+      "Ethyne"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Ethene",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "1,2-ethanediol (ethylene glycol) is industrially produced from ethene ($C_2H_4$) by first oxidizing it to ethylene oxide, then hydrolyzing the epoxide ring to give the diol.",
+    "note": ""
+  },
+  {
+    "id": "86e343ea-1720-4967-bd7a-8a2139efd69e",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "2-methyl-1-butene is one of the isomers of C$_5$H$_{10}$. Which of the following is the CORRECT structural formula of this isomer?",
+    "options": [
+      "CH$_3$-CH$_2$-C(CH$_3$)=CH$_2$",
+      "CH$_3$-CH(CH$_3$)-CH=CH$_2$",
+      "CH$_3$-CH=CH-CH$_2$-CH$_3$",
+      "CH$_3$-C(CH$_3$)=CH-CH$_3$"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) CH$_3$-CH$_2$-C(CH$_3$)=CH$_2$",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Numbering the 4-carbon chain from the end nearer the double bond gives $CH_3$-$CH_2$-$C(CH_3)$=$CH_2$ a double bond at C1-C2 and a methyl branch at C2, matching the name 2-methyl-1-butene exactly. The other options are different structural isomers of $C_5H_{10}$ (3-methyl-1-butene, 2-pentene, and 2-methyl-2-butene respectively), not this compound.",
+    "note": ""
+  },
+  {
+    "id": "8509b9a1-1e6e-4807-b3b3-589703451c0f",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the oxidation number of manganese in KMnO$_4$?",
+    "options": [
+      "+6",
+      "+5",
+      "+8",
+      "+7"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) +7",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "In $KMnO_4$, K is +1 and each O is -2 (4 of them = -8). Since the compound is neutral, the oxidation numbers must sum to zero: $(+1) + x + (-8) = 0$, so $x = +7$ for manganese.",
+    "note": ""
+  },
+  {
+    "id": "d073254e-0df5-452d-b67f-562a5df5b397",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A student added boiling chips into a beaker of water while carrying out an activity to determine the boiling point of water. Why do you think the boiling chips are necessary?",
+    "options": [
+      "To speed up the rate of evaporation",
+      "To ensure smooth rate of evaporation",
+      "To reach the boiling point with less consumption of heat",
+      "To maintain constant temperature and pressure"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) To ensure smooth rate of evaporation",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Boiling chips contain trapped air pockets that provide nucleation sites for bubble formation, allowing the liquid to boil smoothly and continuously rather than superheating and then boiling violently (\"bumping\").",
+    "note": ""
+  },
+  {
+    "id": "521ac612-42d8-4853-a75d-671734c692a9",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the cause of unusual high boiling points of HF, H$_2$O and NH$_3$?",
+    "options": [
+      "Induced dipole forces",
+      "Dipole-Dipole forces",
+      "Ion-dipole forces",
+      "Hydrogen bonding"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Hydrogen bonding",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "HF, $H_2O$, and $NH_3$ each have hydrogen bonded directly to a small, highly electronegative atom (F, O, or N) with a lone pair, which lets hydrogen bonding form between molecules — a much stronger intermolecular force than ordinary dipole-dipole attraction, raising their boiling points well above what their molar mass would otherwise predict.",
+    "note": ""
+  },
+  {
+    "id": "99d4d9c4-c5f6-44f1-bd9f-333b5f92680b",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the name given to the pollution caused by the dumping of non-biodegradable wastes into the environment?",
+    "options": [
+      "Water pollution",
+      "Sound pollution",
+      "Land pollution",
+      "Air pollution"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Land pollution",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Dumping non-biodegradable waste directly onto the ground degrades soil quality and usable land, which is classified as land pollution — distinct from pollution of water or air.",
+    "note": ""
+  },
+  {
+    "id": "10c6249f-cb67-45a9-8ea3-7ec60e0cf90a",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Consider the molecular structure of COCl$_2$ shown below. What are the predicted bond angles Cl-C-O and Cl-C-Cl?",
+    "options": [
+      "Cl-C-O < 120° and Cl-C-Cl = 120°",
+      "Cl-C-O and Cl-C-Cl = 120°",
+      "Cl-C-O > 120° and Cl-C-Cl < 120°",
+      "Cl-C-O = 120° and Cl-C-Cl > 120°"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "UNRESOLVABLE: correctIndex is null, and the question references a molecular structure image (\"shown below\") not present in the text data."
+  },
+  {
+    "id": "6c558ace-bbc5-4973-9875-f319db9252c2",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Consider the structure of an alcohol shown below. What type of an alcohol is it?",
+    "options": [
+      "Polyhydric alcohol",
+      "Tertiary alcohol",
+      "Dihydric alcohol",
+      "Primary alcohol"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "UNRESOLVABLE: correctIndex is null, and the question references a structural diagram (\"shown below\") not present in the text data."
+  },
+  {
+    "id": "fcca4676-3a91-47b1-9aa9-4bfd525b7537",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the IUPAC name of the following carboxylic acid?",
+    "options": [
+      "3-chlorobutanoic acid",
+      "5-chloropentanoic acid",
+      "3-chloropentanoic acid",
+      "2-chloroethanedioic acid"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "UNRESOLVABLE: correctIndex is null, and the question references a compound structure image not present in the text data."
+  },
+  {
+    "id": "06ab1d87-28a2-4099-bd1b-7c1f545053fc",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the CORRECT IUPAC nomenclature of the following alkane?",
+    "options": [
+      "4,6-dichloro-2,8-dimethyldecane",
+      "5,7-dichloro-3,9-dimethyldecane",
+      "4,6-dichloro-8-ethyl-2-methylnonane",
+      "4,6-dichloro-2-ethyl-8-methylnonane"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "UNRESOLVABLE: correctIndex is null, and the question references an alkane structure image not present in the text data."
+  },
+  {
+    "id": "dc5a7863-29f2-400b-8598-954de9aeb338",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which statement below CORRECTLY expresses hydrogen bonding? It is formed by bonding",
+    "options": [
+      "a hydrogen atom to an element such as oxygen.",
+      "a hydrogen atom to an element such as sodium.",
+      "two hydrogen atoms with unequal sharing of electrons.",
+      "two hydrogen atoms with equal sharing of electrons."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) a hydrogen atom to an element such as oxygen.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Hydrogen bonding forms when a hydrogen atom covalently bonded to a small, highly electronegative atom with lone pairs (like O, N, or F) is attracted to a lone pair on a nearby electronegative atom. Oxygen fits this role; sodium (option B) isn't electronegative enough, and options C/D describe ordinary covalent bonding between two hydrogen atoms, not hydrogen bonding.",
+    "note": ""
+  },
+  {
+    "id": "4924a43a-5dac-4b31-ac22-9f5ca71c5958",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which statement below CORRECTLY describes the Bohr's model of an atom?",
+    "options": [
+      "Electrons and neutrons are found in the nucleus.",
+      "Protons and electrons are found in the nucleus.",
+      "Electrons move in circular orbits around the nucleus.",
+      "Protons move in circular orbits around the nucleus."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Electrons move in circular orbits around the nucleus.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "The Bohr model places electrons in fixed circular orbits around a central nucleus (which contains the protons and neutrons), rather than describing them with the probability clouds of the later quantum mechanical model.",
+    "note": ""
+  },
+  {
+    "id": "a776d74b-8d98-4ccf-b8b1-cbacc4d15113",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following CORRECTLY shows the relative charges of an electron, proton and neutron, respectively?",
+    "options": [
+      "0, -1, +1",
+      "0, +1, -1",
+      "-1, 0, +1",
+      "-1, +1, 0"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) -1, +1, 0",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The electron carries a relative charge of -1, the proton +1, and the neutron 0 (hence \"neutral\") — in that order, this is -1, +1, 0.",
+    "note": ""
+  },
+  {
+    "id": "d452263a-e945-4a6a-a5b6-67aa6a50c903",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which gas law describes the behavior of gases using the variables: temperature, volume, pressure and number of moles?",
+    "options": [
+      "Boyle's law",
+      "Ideal gas law",
+      "Combined gas law",
+      "Avogadro's law"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Ideal gas law",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The ideal gas law, $PV = nRT$, directly relates all four variables — pressure, volume, moles, and temperature — in one equation, unlike Boyle's, Avogadro's, or the combined gas law, each of which only relates a subset of them.",
+    "note": ""
+  },
+  {
+    "id": "be7b9326-28a4-4224-864a-f6f3427b34db",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following pair of substances can be considered as examples of the liquid state of matter at room temperature and 1 atm pressure?",
+    "options": [
+      "Water and carbon dioxide",
+      "Carbon and mercury",
+      "Carbon and carbon monoxide",
+      "Water and mercury"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Water and mercury",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "At room temperature and 1 atm, water and mercury are both liquids. Carbon dioxide and carbon monoxide are gases, and carbon (graphite/diamond) is a solid, so no other pair in the options is both liquid.",
+    "note": ""
+  },
+  {
+    "id": "7c261b56-f4d1-4aa6-9c27-122c5e3ecc09",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Given the reaction: C(s) + CO$_2$(g) ⇌ 2CO(g) What is the equilibrium constant expression for the reaction?",
+    "options": [
+      "[CO]$^{2}$/[CO$_2$]",
+      "[CO]$^{2}$/[C][CO$_2$]",
+      "[C][CO$_2$]/[CO]$^{2}$",
+      "[CO$_2$]$^{2}$/[C]"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) [CO]$^{2}$/[CO$_2$]",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Equilibrium constant expressions only include gases and aqueous species — pure solids (like $C(s)$ here) are omitted since their \"concentration\" is constant. That leaves $K_c = [CO]^2/[CO_2]$, matching the stoichiometric coefficients (2 for CO, 1 for $CO_2$).",
+    "note": ""
+  },
+  {
+    "id": "2cb83610-c2d8-48df-ba8f-a3b91a4d886d",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which statement below CORRECTLY distinguishes redox and non-redox reactions?",
+    "options": [
+      "Reduction occurs in redox reactions and oxidation takes place in non-redox reactions.",
+      "Electrons are transferred in redox reactions but not in non-redox reactions.",
+      "Acid-base reactions can be considered as both redox and non-redox reactions.",
+      "Oxidation number remains the same in both redox and non-redox reactions"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Electrons are transferred in redox reactions but not in non-redox reactions.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Redox reactions are defined by electron transfer between species (with corresponding oxidation number changes), while non-redox reactions involve no such transfer. The other options are wrong: redox reactions involve both oxidation and reduction together (not reduction alone), and oxidation numbers do change in redox reactions, not stay constant.",
+    "note": ""
+  },
+  {
+    "id": "dfff4930-dd03-4f9e-be58-a2d7944e9a5f",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following occur during the electrolysis of dilute H$_2$SO$_4$?",
+    "options": [
+      "The overall reaction is: H$_2$(g) + $\\frac{1}{2}$O$_2$(g) → H$_2$O(g)",
+      "SO$_4^{2-}$ is discharged at the anode.",
+      "A basic solution is formed",
+      "H$^{+}$ is discharged at the negative electrode"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) H$^{+}$ is discharged at the negative electrode",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "At the cathode (negative electrode) during electrolysis of dilute $H_2SO_4$, $H^+$ ions are reduced to $H_2$ gas. $SO_4^{2-}$ is too hard to oxidize in dilute aqueous solution, so $O_2$ forms at the anode from water/$OH^-$ instead, and the solution becomes more concentrated (more acidic, not basic) as water is consumed.",
+    "note": ""
+  },
+  {
+    "id": "bfeb1d38-127b-485d-8efe-2ab7350d45ca",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is the overall reaction for electrolysis of molten NaCl?",
+    "options": [
+      "Na$^{+}$(l) + Cl$^{-}$(l) → Na(l) + $\\frac{1}{2}$Cl$_2$(g)",
+      "Na$^{+}$(l) + $\\frac{1}{2}$Cl$_2$(g) → Na$^{+}$(l) + Cl$^{-}$(l)",
+      "H$_2$(g) + $\\frac{1}{2}$O$_2$(g) → H$_2$O(g)",
+      "H$_2$O(g) → H$_2$(g) + $\\frac{1}{2}$O$_2$(g)"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Na$^{+}$(l) + Cl$^{-}$(l) → Na(l) + $\\frac{1}{2}$Cl$_2$(g)",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "In molten NaCl electrolysis, $Na^+$ ions are reduced at the cathode to liquid sodium metal, while $Cl^-$ ions are oxidized at the anode to chlorine gas: $Na^+(l) + Cl^-(l) \\rightarrow Na(l) + \\frac{1}{2}Cl_2(g)$.",
+    "note": ""
+  },
+  {
+    "id": "607aa821-88ac-453f-afb8-1f799e59b0ca",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following process involves preventing the growth of bacteria, fungi and reducing the oxidation of fats?",
+    "options": [
+      "Tanning",
+      "Haber-Bosch",
+      "Contact",
+      "Food preservation"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Food preservation",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Food preservation techniques (refrigeration, salting, canning, etc.) work specifically by inhibiting microbial growth and slowing the oxidative rancidity of fats, which is exactly what's described here.",
+    "note": ""
+  },
+  {
+    "id": "a1e1a7a0-f0a8-4c55-ac51-c9686df44475",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "The following reaction can be used for the synthesis of CH$_3$CH$_2$CH$_2$CH$_3$ as a desired product: CH$_3$CH$_2$CHBrCH$_3$ + CH$_3$S$^{-}$ → CH$_3$CH$_2$CH$_2$CH$_3$ + CH$_3$SH + Br$^{-}$ Which of the following is the atom economy for the above reaction? (Atomic masses: H=1; C=12; S=32 and Br=80)",
+    "options": [
+      "48%",
+      "30.43%",
+      "80%",
+      "56%"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) 30.43%",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: independent atom-economy calculation gives (product mass 58)/(total reactant mass 137+47=184) = 31.5%, close to but not exactly matching the stored answer of 30.43% (option B) — clearly the closest of the 4 options by a wide margin (vs 48%/80%/56%), but the arithmetic doesn't reproduce exactly, so flagging rather than asserting precision that couldn't be independently confirmed bit-for-bit."
+  },
+  {
+    "id": "cd97d02b-da0d-4d6a-8e84-3a6fb47cbd13",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the name given to compounds of carbon and hydrogen containing multiple bonds?",
+    "options": [
+      "Aromatic hydrocarbons",
+      "Aliphatic hydrocarbons",
+      "Unsaturated hydrocarbons",
+      "Saturated hydrocarbons"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Unsaturated hydrocarbons",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Hydrocarbons containing one or more carbon-carbon multiple bonds (double or triple) are called unsaturated hydrocarbons, distinguishing them from saturated hydrocarbons, which contain only single bonds.",
+    "note": ""
+  },
+  {
+    "id": "ff93b9a6-1d6e-4d99-bf10-bfe6f9382915",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which type of glass is made by heating a mixture of silica, sodium carbonate and limestone?",
+    "options": [
+      "Pyrex glass",
+      "Soda-lime",
+      "Borosilicate",
+      "Quartz"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Soda-lime",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Soda-lime glass — the most common type used for windows and bottles — is made by melting silica (sand) with sodium carbonate (which lowers the melting point) and limestone (which adds stability).",
+    "note": ""
+  },
+  {
+    "id": "ba6527bb-c556-499b-ba7c-e937247b67ea",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the purpose of the conversion of pig iron to steel?",
+    "options": [
+      "To decrease the concentration of iron in the pig iron",
+      "To increase the concentration of iron in the pig iron",
+      "To remove impurities by reduction",
+      "To remove impurities by oxidation"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) To remove impurities by oxidation",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Pig iron contains high levels of carbon and other impurities (Si, P, S, Mn). Converting it to steel involves blowing oxygen through the molten iron, which oxidizes and removes these impurities as gases or slag, leaving a purer, more workable form of iron.",
+    "note": ""
+  },
+  {
+    "id": "8ae315bb-afce-4d39-b8bd-42f4511040a2",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following properties is the property of an acidic oxide? An acidic oxide reacts with",
+    "options": [
+      "Water to form acids.",
+      "Salts to form acids.",
+      "Basic oxides to form hydroxides and water.",
+      "Bases to form basic hydroxide and water."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Water to form acids.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Acidic oxides are the oxides of non-metals, and they react with water to form the corresponding acid — for example, $SO_3 + H_2O \\rightarrow H_2SO_4$. This is the defining reaction that distinguishes them from basic oxides.",
+    "note": ""
+  },
+  {
+    "id": "b99eb699-6ac0-4847-b515-90d051787ca9",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Consider the following galvanic cell: ﻿ When the Zn strip was connected to metal 'B' at 25°C, the voltmeter shows 0.51 V. Which of the following is the standard reduction potential of metal 'B'? ($E^\\circ_{\\mathrm{Zn}^{2+}/\\mathrm{Zn}} = -0.76$ V)",
+    "options": [
+      "$E^\\circ_{\\mathrm{B}^{2+}/\\mathrm{B}} = 1.27$ V",
+      "$E^\\circ_{\\mathrm{B}^{2+}/\\mathrm{B}} = 0.25$ V",
+      "$E^\\circ_{\\mathrm{B}^{2+}/\\mathrm{B}} = -1.27$ V",
+      "$E^\\circ_{\\mathrm{B}^{2+}/\\mathrm{B}} = -0.25$ V"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) $E^\\circ_{\\mathrm{B}^{2+}/\\mathrm{B}} = -0.25$ V",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "For a galvanic cell, $E^\\circ_{cell} = E^\\circ_{cathode} - E^\\circ_{anode}$. Since Zn's standard potential (-0.76 V) is quite negative, Zn is the anode (oxidized) and B is the cathode: $0.51 = E^\\circ_B - (-0.76)$, so $E^\\circ_B = 0.51 - 0.76 = -0.25$ V. This is self-consistent — Zn being more negative than B is exactly what makes Zn the anode in the first place.",
+    "note": ""
+  },
+  {
+    "id": "2232704c-982f-4f33-b0f8-002b69b37a6c",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following polymer is used to make ropes, clothes, hair combs and stockings?",
+    "options": [
+      "Bakelite",
+      "Teflon",
+      "Nylon",
+      "Perspex"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Nylon",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Nylon is a synthetic polyamide polymer widely used for its strength and elasticity in ropes, clothing fibers, hair combs, and stockings — unlike Bakelite (a rigid thermoset used for electrical fittings), Teflon (a non-stick coating), or Perspex (a rigid acrylic sheet).",
+    "note": ""
+  },
+  {
+    "id": "a1e9c9b0-cc5d-4a5e-8eee-f780e04267b9",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following catalyst is used in the Ostwald process for the production of $HNO_3$?",
+    "options": [
+      "CuO",
+      "Fe",
+      "$V_2O_5$",
+      "Pt"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Pt",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The Ostwald process oxidizes ammonia to nitric oxide using a platinum (often platinum-rhodium) gauze catalyst, which is the first step toward producing nitric acid industrially.",
+    "note": ""
+  },
+  {
+    "id": "42c43d1f-036c-4d21-b008-561314a2f398",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following factors does NOT affect the rate of a chemical reaction having solid reactants?",
+    "options": [
+      "Volume of reaction vessel",
+      "Physical state of reactants",
+      "Temperature of reaction",
+      "Concentration of reactants"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Volume of reaction vessel",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "For solid reactants, rate-affecting factors are temperature, concentration (or surface area/physical state), and catalysts — the physical volume of the reaction vessel itself doesn't change how fast solid particles react, unlike for gases where vessel volume affects concentration via pressure.",
+    "note": ""
+  },
+  {
+    "id": "5892b341-d722-418f-98a4-a9012d6e8815",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the electron configuration of $O_2^-$ molecule as per the molecular orbital model? (Atomic number of $O = 8$)",
+    "options": [
+      "σ₁s² σ₁s*² σ₂s² σ₂s*² σ₂px² (π₂py² = π₂pz²) (π*₂py¹ = π*₂pz¹)",
+      "σ₁s² σ₁s*² σ₂s² σ₂s*² σ₂px² (π₂py² = π₂pz²) (π*₂pz²)",
+      "σ₁s² σ₁s*² σ₂s² σ₂s*² σ₂px² (π₂py² = π₂pz²) (π*₂py² = π*₂pz²)",
+      "σ₁s² σ₁s*² σ₂s² σ₂s*² σ₂px² (π₂py² = π₂pz²) (π*₂py² = π*₂pz¹)"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) σ₁s² σ₁s*² σ₂s² σ₂s*² σ₂px² (π₂py² = π₂pz²) (π*₂py¹ = π*₂pz¹)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED — likely answer-key error: the question asks for O2^- (superoxide, 17 electrons: 8+8+1), but the stored correct option (A) is the MO configuration for NEUTRAL O2 (16 electrons, 8+8) with 2 unpaired π* electrons — the textbook explanation for O2's paramagnetism. The configuration that actually totals 17 electrons (one extra in the π* set, e.g. π*2py²π*2pz¹) is option D, not A. This looks like the source mixed up neutral O2's well-known MO diagram with the question that specifically asks about the anion."
+  },
+  {
+    "id": "4d3fdc11-f014-48a0-8713-04fd79510697",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "At a particular temperature, the equilibrium constant, Kc = 0.36 for the reaction SO$_3$(g) ⇌ SO$_2$(g) + O$_2$(g). Which of the following predictions can be drawn from the given data?",
+    "options": [
+      "It is not possible to predict the direction of the reaction.",
+      "The reaction will proceed to the right.",
+      "The reaction will proceed to the left.",
+      "The reaction is at equilibrium."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) It is not possible to predict the direction of the reaction.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Knowing only the equilibrium constant ($K_c = 0.36$) tells you the ratio of products to reactants once equilibrium is reached, but it says nothing about which direction a particular starting mixture needs to shift to get there — that requires comparing the reaction quotient $Q$ (calculated from the actual current concentrations) to $K_c$, and no current concentrations are given here. So the direction genuinely cannot be predicted from $K_c$ alone.",
+    "note": ""
+  },
+  {
+    "id": "8940d5b5-01a4-4dc6-8172-0a216fae9b13",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A mineral absorbs purple light of frequency $7.11 \\times 10^{14}\\ \\text{Hz}$. What is the wavelength (in nm) of the absorbed light? ($c = 3.00 \\times 10^8\\ \\text{m/s}$)",
+    "options": [
+      "314.5 nm",
+      "421.9 nm",
+      "237.5 nm",
+      "184.4 nm"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) 421.9 nm",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Using $c = \\lambda\\nu$: $\\lambda = c/\\nu = (3.00\\times10^8)/(7.11\\times10^{14}) = 4.219\\times10^{-7}\\text{ m} = 421.9\\text{ nm}$.",
+    "note": ""
+  },
+  {
+    "id": "a28c10e5-e65c-42b7-8641-b17642ca301e",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What are the quantum numbers for the 5s orbital?",
+    "options": [
+      "$n=5,\\ l=0,\\ m_l=0,\\ m_s=\\pm\\frac{1}{2}$",
+      "$n=5,\\ l=2,\\ m_l=-2,\\ m_s=\\pm\\frac{1}{2}$",
+      "$n=5,\\ l=1,\\ m_l=-2,\\ m_s=\\pm\\frac{1}{2}$",
+      "$n=5,\\ l=0,\\ m_l=-1,\\ m_s=\\pm\\frac{1}{2}$"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) $n=5,\\ l=0,\\ m_l=0,\\ m_s=\\pm\\frac{1}{2}$",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "For any s orbital, the angular momentum quantum number $l = 0$ (by definition of the s subshell), which forces $m_l = 0$ (the only allowed value when $l=0$), and the principal quantum number matches the orbital's shell, $n=5$. The electron's spin is $m_s = \\pm\\frac{1}{2}$ as always.",
+    "note": ""
+  },
+  {
+    "id": "9eb6ac30-207a-4772-9523-ff1c292306ac",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which statement below CORRECTLY describes dipole-dipole forces? It is the force that exists",
+    "options": [
+      "between polar and non-polar molecules.",
+      "between non-polar molecules.",
+      "between polar molecules.",
+      "in all"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) between polar molecules.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Dipole-dipole forces arise from the attraction between the partial positive end of one polar molecule and the partial negative end of another — they require both molecules to have a permanent dipole, so they occur specifically between polar molecules.",
+    "note": ""
+  },
+  {
+    "id": "19716d63-85bd-4b53-950b-bbf49051efe7",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Comparing the forces between molecules of similar molar masses, which one of the following produces the weakest force?",
+    "options": [
+      "Van der Waals forces.",
+      "Ionic forces.",
+      "Hydrogen bonding.",
+      "Covalent bonds"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Van der Waals forces.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "For molecules of similar molar mass, van der Waals (London dispersion) forces are the weakest intermolecular attraction, since they arise only from temporary, induced dipoles — far weaker than the directional, permanent-charge interactions of hydrogen bonding, ionic forces, or the full electron-sharing of covalent bonds.",
+    "note": ""
+  },
+  {
+    "id": "f6aca0db-0f84-4470-bbfd-57f9e8da6733",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "In which of the following is the type of natural resource and the given example CORRECTLY paired?",
+    "options": [
+      "Non-Renewable Resources; water",
+      "Non-Renewable Resources; animal wool",
+      "Renewable resources; crops",
+      "Renewable resources; copper"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Renewable resources; crops",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Crops are a renewable resource because they can be regrown each season. The other pairings are inconsistent: copper is a mined, non-renewable mineral resource (not renewable), and both water and animal wool are generally considered renewable, not non-renewable, so pairing them with \"Non-Renewable\" is incorrect.",
+    "note": ""
+  },
+  {
+    "id": "5ae9ad3b-e819-40b9-bd75-fa34d83121f6",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following compound is a Bronsted-Lowry base?",
+    "options": [
+      "$\\ce{H2S}$",
+      "$\\ce{HCl}$",
+      "$\\ce{NH3}$",
+      "$\\ce{BF3}$"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) $\\ce{NH3}$",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "A Bronsted-Lowry base is a proton ($H^+$) acceptor. Ammonia's lone pair on nitrogen readily accepts a proton to form $NH_4^+$, making it the base here, while $HCl$ and $H_2S$ are proton donors (acids) and $BF_3$ is an electron-pair acceptor (a Lewis acid), not a proton acceptor.",
+    "note": ""
+  },
+  {
+    "id": "f0316e60-8e0c-43ba-af13-eaa3b4d08171",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "In an activity during laboratory session a small amount of lead bromide ($\\ce{PbBr2}$) crystals were placed in a beaker. Two electrodes are inserted until they are in contact with the $\\ce{PbBr2}$ crystals. When the $\\ce{PbBr2}$ crystals in the beaker are gently heated, which of the following will be observed?",
+    "options": [
+      "Lead (II) ion is oxidized at the cathode",
+      "Lead (II) ion is reduced at the anode",
+      "Bromide ion is oxidized at the cathode",
+      "Bromine gas is evolved at the anode"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Bromine gas is evolved at the anode",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "When molten $PbBr_2$ is electrolyzed, $Pb^{2+}$ is reduced at the cathode to liquid lead, while $Br^-$ is oxidized at the anode, releasing bromine gas: $2Br^- \\rightarrow Br_2(g) + 2e^-$.",
+    "note": ""
+  },
+  {
+    "id": "5773febf-b288-4c5e-bd54-61fc663247e2",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following statements CORRECTLY describes the law of conservation of mass?",
+    "options": [
+      "Pure compounds always contain the elements in the same percentage by mass.",
+      "A particular compound is composed of the same elements in the same parts by mass.",
+      "Mass is neither created nor destroyed during a chemical reaction.",
+      "The total mass of substances varies during a chemical reaction."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Mass is neither created nor destroyed during a chemical reaction.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "The law of conservation of mass states that in a chemical reaction, the total mass of the reactants equals the total mass of the products — matter is neither created nor destroyed, only rearranged.",
+    "note": ""
+  },
+  {
+    "id": "95aa7df7-f064-48c8-b66e-585120cd17fc",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the density of methane ($CH_4$) at a pressure of 900 torr and a temperature of 25°C? ($R=0.082$ atm. L/mol. K, 1 atm = 760 torr)",
+    "options": [
+      "9.2",
+      "1.25",
+      "0.92",
+      "0.78"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) 0.78",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Using $d = \\frac{PM}{RT}$ with $P = 900/760 = 1.184\\text{ atm}$, $M = 16\\text{ g/mol}$, $T = 298\\text{ K}$: $d = \\frac{1.184 \\times 16}{0.082 \\times 298} \\approx 0.78\\text{ g/L}$.",
+    "note": ""
+  },
+  {
+    "id": "525d2151-5cde-44ba-a969-83651619108b",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "It takes 2.25 minutes for 0.02 mol of He to diffuse. How long will it take to diffuse for the same amount of methane gas, $CH_4$? (M.wt of He = 4 g/mol, $CH_4$ = 16 g/mol)",
+    "options": [
+      "6 min",
+      "4.5 minutes",
+      "2.25 min",
+      "1.25 min"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) 4.5 minutes",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "By Graham's law, lighter gases diffuse faster, and time taken is proportional to $\\sqrt{M}$ for a fixed amount: $\\frac{t_{CH_4}}{t_{He}} = \\sqrt{\\frac{M_{CH_4}}{M_{He}}} = \\sqrt{\\frac{16}{4}} = 2$. So $CH_4$ takes $2.25 \\times 2 = 4.5$ minutes.",
+    "note": ""
+  },
+  {
+    "id": "1dcf44cd-7276-45ae-b283-e419bc51267e",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What property of an ionic compound can be investigated by heating it in a crucible?",
+    "options": [
+      "Crystallization point",
+      "Malleability",
+      "Solubility",
+      "Melting point"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Melting point",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Heating an ionic compound in a crucible and observing the temperature at which it liquefies directly measures its melting point — a property that reflects the strength of the ionic lattice.",
+    "note": ""
+  },
+  {
+    "id": "599b16b9-1975-41f1-b539-7de043ccd75f",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "For the dissociation of $HNO_2$: $HNO_2(aq) \\rightleftharpoons NO_2^-(aq) + H^+(aq)$ What is the percent ionization of a 0.5 M solution of $HNO_2$? ($K_a$ of $HNO_2$ = $7.1 \\times 10^{-4}$)",
+    "options": [
+      "9.1%",
+      "3.8%",
+      "1.8%",
+      "0.2%"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) 3.8%",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Using $x = \\sqrt{K_a \\times C} = \\sqrt{(7.1\\times10^{-4})(0.5)} = \\sqrt{3.55\\times10^{-4}} \\approx 0.0188$, the percent ionization is $\\frac{x}{C}\\times100\\% = \\frac{0.0188}{0.5}\\times100\\% \\approx 3.8\\%$.",
+    "note": ""
+  },
+  {
+    "id": "4e9ab0d3-abfe-421d-9fcb-b5938ae1b6e9",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following reaction shows the action of $H_2SO_4$ as oxidizing agent?",
+    "options": [
+      "$Mg(s) + 2H_2SO_4(aq) \\rightarrow 3MgSO_4(aq) + (NH_2)_2SO_4(aq)$",
+      "$Cu(s) + 2H_2SO_4(aq) \\rightarrow CuSO_4(aq) + SO_2(g) + 2H_2O(l)$",
+      "$2KOH(aq) + H_2SO_4(aq) \\rightarrow K_2SO_4(aq) + 2H_2O(l)$",
+      "$SO_3(g) + H_2O(l) \\rightarrow H_2SO_4(aq)$"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) $Cu(s) + 2H_2SO_4(aq) \\rightarrow CuSO_4(aq) + SO_2(g) + 2H_2O(l)$",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "In $Cu + 2H_2SO_4 \\rightarrow CuSO_4 + SO_2 + 2H_2O$, sulfur is reduced from +6 (in $H_2SO_4$) to +4 (in $SO_2$) while copper is oxidized — meaning concentrated $H_2SO_4$ itself is acting as the oxidizing agent, which is why it can dissolve copper even though copper doesn't react with dilute acids by simple $H^+$ displacement.",
+    "note": ""
+  },
+  {
+    "id": "559c8aaf-5a02-4033-9590-667f04641c33",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A 0.47 M aqueous solution of a weak base has a pOH of 2. What is $K_b$ for the weak base?",
+    "options": [
+      "4.4 \\times 10^{-1}",
+      "1.0 \\times 10^{-2}",
+      "3.14 \\times 10^{-3}",
+      "2.17 \\times 10^{-4}"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) 2.17 \\times 10^{-4}",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "A pOH of 2 means $[OH^-] = 10^{-2} = 0.01\\text{ M}$. Using $K_b = \\frac{[OH^-]^2}{C-[OH^-]} = \\frac{(0.01)^2}{0.47-0.01} = \\frac{0.0001}{0.46} \\approx 2.17\\times10^{-4}$.",
+    "note": ""
+  },
+  {
+    "id": "a460b171-2a1a-4121-ac91-3532079f2cd7",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "A student carried out an experiment to determine the melting points of NaCl and CuCl$_2$. He/she added 0.2 g of NaCl and CuCl$_2$ into two different test tubes and heated both tubes simultaneously using a Bunsen burner. Which of the following statements is CORRECT regarding the melting point of NaCl and CuCl$_2$?",
+    "options": [
+      "The melting point of NaCl is higher than that of CuCl$_2$.",
+      "The melting point of NaCl is lower than that of CuCl$_2$.",
+      "Both NaCl and CuCl$_2$ will not melt.",
+      "Both NaCl and CuCl$_2$ will melt at the same time."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) The melting point of NaCl is higher than that of CuCl$_2$.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "NaCl is a simple, highly ionic compound with strong, non-directional ionic bonding and a high melting point (~801°C). $CuCl_2$ involves a transition-metal cation with greater polarizing power, giving its bonds more covalent character and a correspondingly lower melting point (~498°C) — so NaCl melts at a higher temperature.",
+    "note": ""
+  },
+  {
+    "id": "bdc9de65-0c0e-41aa-bb06-ac7da4d037b4",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the name given to an acid that dissociates (ionizes) only to a slight extent in aqueous solution?",
+    "options": [
+      "Strong acid",
+      "Dilute acid",
+      "Concentrated acid",
+      "Weak acid"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Weak acid",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "An acid that only partially dissociates in water — establishing an equilibrium rather than ionizing completely — is by definition a weak acid, regardless of how concentrated or dilute the solution is.",
+    "note": ""
+  },
+  {
+    "id": "8dc55007-3e58-40d7-bdd6-5b3a7025b120",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Solutions can be classified based upon their pH values. What is a solution whose pH value is 13?",
+    "options": [
+      "Acidic solution",
+      "Amphoteric solution",
+      "Basic solution",
+      "Neutral solution"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Basic solution",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "A pH of 13 is well above the neutral value of 7, indicating a strongly basic (alkaline) solution.",
+    "note": ""
+  },
+  {
+    "id": "c1e340c3-f6f6-48fd-9807-43ceb07ee2ed",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following statements CORRECTLY describes the relationship among wavelength, frequency and speed in electromagnetic radiation?",
+    "options": [
+      "As the wavelength decreases, the frequency increases.",
+      "As the wavelength increases, the frequency increases.",
+      "As the frequency increases, the speed of light decreases.",
+      "As the wavelength decreases, the speed of light increases."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) As the wavelength decreases, the frequency increases.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Since the speed of light $c = \\lambda\\nu$ is constant, wavelength and frequency are inversely related — as wavelength decreases, frequency must increase to keep their product constant.",
+    "note": ""
+  },
+  {
+    "id": "e48779dc-2325-415e-99d5-de3083ad22a0",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following organic compounds has the highest boiling point?",
+    "options": [
+      "Ethene",
+      "Ethanol",
+      "Ethane",
+      "Ethanal"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Ethanol",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Ethanol's -OH group allows hydrogen bonding between molecules, which requires significantly more energy to break than the weaker van der Waals forces in ethane, ethene, or ethanal (which lacks a hydrogen bond donor), giving ethanol the highest boiling point of the four.",
+    "note": ""
+  },
+  {
+    "id": "6daba6c0-c7aa-46f2-8c98-988bbccf4d27",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is a Lewis base? It is",
+    "options": [
+      "Proton acceptor",
+      "Proton donor",
+      "Electron pair donor",
+      "Electron pair acceptor"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Electron pair donor",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "A Lewis base is defined as a species that donates a lone pair of electrons to form a new covalent bond — the electron-pair counterpart to the Bronsted-Lowry proton-based definition.",
+    "note": ""
+  },
+  {
+    "id": "84b142b5-761c-42d8-a8ad-978262c8e97a",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Given the following information: CH₃COOH (aq) ⇌ CH₃COO⁻ (aq) + H⁺ (aq) CH₃COOH CH₃COO⁻ H⁺ Initial concentration (mol/L) 0.2 0 0 Change -X +X +X Equilibrium concentration 0.2 - X X X Which of the following expressions represents the percent ionization of CH₃COOH?",
+    "options": [
+      "(x/0.2)100%",
+      "((0.2-x)/0.2)100%",
+      "(x/(0.2-x))100%",
+      "((0.2)/x)100%"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) (x/0.2)100%",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Percent ionization compares how much of the acid dissociated (x) to how much was initially present (0.2 M): $\\frac{x}{0.2}\\times100\\%$, using the original concentration as the reference point, not the equilibrium or remaining concentration.",
+    "note": ""
+  },
+  {
+    "id": "2d4411b3-52d5-48a8-9260-bb848b2ecf5a",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Scandium (Sc) has the electron configuration [Ar] 4s$^2$3d$^1$. To which group of elements does it belong to?",
+    "options": [
+      "Transition elements",
+      "Representative elements",
+      "Nonmetals",
+      "Inner transition elements"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Transition elements",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Transition elements are defined by having a partially filled d-subshell in the elemental or a common oxidation state. Scandium's configuration [Ar]$4s^23d^1$ has one electron in the 3d subshell, placing it in the d-block as the first transition element.",
+    "note": ""
+  },
+  {
+    "id": "877e667a-c20f-45ea-8d40-e724294d2a9e",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which law governs the fact that the ratio of the amount of hydrogen to oxygen by weight will be the same in a drop of water and a lake of water?",
+    "options": [
+      "Law of conservation of mass",
+      "Law of relative composition",
+      "Law of definite proportion",
+      "Law of multiple proportions"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Law of definite proportion",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "The law of definite proportions states that a given compound always contains its constituent elements in the same fixed ratio by mass, regardless of the sample's size or source — a drop and a lake of water both contain hydrogen and oxygen in the same 1:8 mass ratio.",
+    "note": ""
+  },
+  {
+    "id": "95c7436a-13bd-44dc-8e8e-e4d663149a4b",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "The molecule of BF$_3$ has both bonding and lone pair of electrons. Based upon these electrons, which one is the CORRECT molecular geometry of the molecule of BF$_3$?",
+    "options": [
+      "Square pyramidal",
+      "Square planar",
+      "Trigonal bipyramidal",
+      "Trigonal planar"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Trigonal planar",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Boron in $BF_3$ forms three bonding pairs and has no lone pairs on the central atom (which is exactly why $BF_3$ is electron-deficient and acts as a Lewis acid), giving it a trigonal planar geometry. Note: the question's premise that $BF_3$ has a lone pair on boron isn't accurate — it has none — but trigonal planar remains $BF_3$'s correct, well-established molecular geometry.",
+    "note": ""
+  }
+]

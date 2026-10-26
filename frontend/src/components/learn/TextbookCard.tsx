@@ -45,7 +45,7 @@ export function TextbookCard({
 }
 
 const styles = StyleSheet.create({
-  card: { width: '47%', borderRadius: 16, padding: 12 },
+  card: { width: '47%', borderRadius: 16, padding: 12, minHeight: 150, justifyContent: 'space-between' },
   topRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   iconChip: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
   hint: { fontFamily: 'Inter_600SemiBold', fontSize: 10, fontWeight: '600', marginTop: 1 },

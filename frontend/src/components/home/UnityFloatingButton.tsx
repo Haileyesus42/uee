@@ -1,13 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, Easing, Pressable, StyleSheet } from 'react-native';
 import { RobotHead } from './RobotHead';
+import { useTheme } from '../../theme/ThemeProvider';
 
 // Persistent floating entry point into Unity — replaces the old full "AI
 // Personal Tutor" card. Bobs gently up and down for a "hovering" feel.
-// White bubble instead of a purple/blue gradient wash, so the robot's own
-// white/silver + purple-accent coloring reads clearly instead of being
-// flattened under another layer of brand color.
+// An elevated-surface bubble (not a flat white one, and not a purple/blue
+// gradient wash) so the robot's own white/silver + purple-accent coloring
+// reads clearly against it in both themes, instead of being flattened under
+// another layer of brand color or stranding a pure-white disc in dark mode.
 export function UnityFloatingButton({ onPress, bottom = 18 }: { onPress?: () => void; bottom?: number }) {
+  const t = useTheme();
   const bob = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -25,7 +28,15 @@ export function UnityFloatingButton({ onPress, bottom = 18 }: { onPress?: () => 
 
   return (
     <Animated.View style={[styles.wrap, { bottom, transform: [{ translateY }] }]}>
-      <Pressable onPress={onPress} hitSlop={8} style={styles.bubble}>
+      <Pressable
+        onPress={onPress}
+        hitSlop={8}
+        style={[
+          styles.bubble,
+          t.shadow.raised,
+          { backgroundColor: t.colors.surfaceAlt, borderColor: t.colors.border },
+        ]}
+      >
         <RobotHead size={34} />
       </Pressable>
     </Animated.View>
@@ -38,13 +49,8 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#5032b4',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.18,
-    shadowRadius: 8,
-    elevation: 5,
   },
 });

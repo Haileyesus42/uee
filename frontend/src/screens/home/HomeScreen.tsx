@@ -9,7 +9,7 @@ import { setStatusBarStyle } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { Avatar } from '../../components/common/Avatar';
-import { ProBadgeButton } from '../../components/navigation/ProBadgeButton';
+import { Card } from '../../components/cards/Card';
 import { ExamCountdownHero } from '../../components/home/ExamCountdownHero';
 import { StreakWeekBar } from '../../components/home/StreakWeekBar';
 import { ContinueLearningCard } from '../../components/home/ContinueLearningCard';
@@ -20,6 +20,7 @@ import { SmartInsightCard } from '../../components/home/SmartInsightCard';
 import { useMe } from '../../hooks/useProfile';
 import { useNotifications } from '../../hooks/useNotifications';
 import { useAllSubjectUnits, useSubjects } from '../../hooks/useCurriculum';
+import { useSubscription } from '../../hooks/useBilling';
 import { HomeStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -40,14 +41,25 @@ function daysUntilMatriculation(now: Date = new Date()): number {
 // The next lesson to resume is the first "current" lesson found across subjects, in
 // subject-list order — every subject has at most one (see the linear-unlock logic in
 // backend/src/modules/curriculum/routes.ts), so this picks the first one going.
+//
+// Returns `undefined` while subjects/units are still loading, and `null` only
+// once every subject's units have actually loaded and genuinely none has a
+// "current" lesson (every lesson everywhere is complete) — these must stay
+// distinct, or the screen would flash an "all caught up" empty state on every
+// normal page load before data arrives, not just on real completion.
 function useContinueLearning() {
   const { data: subjects } = useSubjects();
   const unitQueries = useAllSubjectUnits(subjects);
+  if (!subjects) return undefined;
 
-  for (let i = 0; i < (subjects?.length ?? 0); i++) {
-    const subject = subjects![i];
+  let allUnitsLoaded = true;
+  for (let i = 0; i < subjects.length; i++) {
+    const subject = subjects[i];
     const units = unitQueries[i]?.data;
-    if (!units) continue;
+    if (!units) {
+      allUnitsLoaded = false;
+      continue;
+    }
     for (const unit of units) {
       const lessonIndex = unit.lessons.findIndex((l) => l.status === 'current');
       if (lessonIndex === -1) continue;
@@ -60,18 +72,53 @@ function useContinueLearning() {
         lessonTitle: lesson.title,
         lessonPosition: lessonIndex + 1,
         lessonCount: unit.lessons.length,
+        // Fraction of THIS unit's lessons already completed (lessonIndex is
+        // 0-based, so "Lesson 2 of 3" → 1/3) — matches what "Lesson 2 of 3"
+        // already implies, not lesson-internal or subject-wide progress.
         progress: lessonIndex / unit.lessons.length,
       };
     }
   }
-  return null;
+  return allUnitsLoaded ? null : undefined;
 }
+
+// Shown in place of ContinueLearningCard once every subject's lessons are
+// completed — useContinueLearning() returns null then, which previously left
+// this slot blank with no indication the empty state was deliberate.
+function AllCaughtUpCard() {
+  const t = useTheme();
+  return (
+    <View>
+      <Text style={[caughtUpStyles.sectionLabel, { color: t.colors.brand }]}>Continue Learning</Text>
+      <Card style={caughtUpStyles.card}>
+        <Text style={caughtUpStyles.emoji}>🎉</Text>
+        <View style={caughtUpStyles.textCol}>
+          <Text style={[caughtUpStyles.title, { color: t.colors.textPrimary }]}>You're all caught up</Text>
+          <Text style={[caughtUpStyles.meta, { color: t.colors.textSecondary }]}>
+            Every lesson is complete — check Practice for more.
+          </Text>
+        </View>
+      </Card>
+    </View>
+  );
+}
+
+const caughtUpStyles = StyleSheet.create({
+  sectionLabel: { fontFamily: 'Manrope_700Bold', fontSize: 12, fontWeight: '700', marginBottom: 10 },
+  card: { flexDirection: 'row', alignItems: 'center', padding: 14 },
+  emoji: { fontSize: 28 },
+  textCol: { flex: 1, marginLeft: 12 },
+  title: { fontFamily: 'Manrope_800ExtraBold', fontSize: 13, fontWeight: '800' },
+  meta: { fontFamily: 'Inter_400Regular', fontSize: 11, marginTop: 2 },
+});
 
 export function HomeScreen({ navigation }: Props) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
   const { data: profile } = useMe();
   const { data: notificationsData } = useNotifications();
+  const { data: subscription } = useSubscription();
+  const isPro = subscription?.status === 'active';
   const continueLearning = useContinueLearning();
   const { data: subjectsForInsight } = useSubjects();
   const weakestSubject = subjectsForInsight?.length
@@ -110,15 +157,33 @@ export function HomeScreen({ navigation }: Props) {
         locations={[0, 0.2, 0.42, 0.66, 1]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0.4 }}
-        style={[styles.hero, { paddingTop: insets.top + 8 }]}
+        style={[styles.hero, { paddingTop: insets.top + 4 }]}
       >
         <View style={styles.topBar}>
           <View style={styles.brandRow}>
             <Ionicons name="compass" size={20} color="#FFFFFF" />
             <Text style={styles.brandText}>Compass</Text>
+            {/* Status lives in the wordmark, not as a competing CTA — tap still
+                opens the same Premium screen the old standalone button did. */}
+            <Pressable
+              onPress={() => navigation.navigate('Profile', { screen: 'Premium' })}
+              hitSlop={8}
+              style={[styles.statusBadge, isPro && styles.statusBadgePro]}
+            >
+              {isPro && <Ionicons name="checkmark-circle" size={10} color="#FFE3A3" style={styles.statusBadgeIcon} />}
+              <Text style={[styles.statusBadgeText, isPro && styles.statusBadgeTextPro]}>{isPro ? 'PRO' : 'Free'}</Text>
+            </Pressable>
           </View>
           <View style={styles.topBarRight}>
-            <ProBadgeButton onPress={() => navigation.navigate('Profile', { screen: 'Premium' })} />
+            <Pressable onPress={t.toggleScheme} hitSlop={8} style={styles.themeToggle}>
+              {/* One consistent glyph (not swapped per theme) — the color is
+                  what signals state. A hardcoded white nearly disappeared here:
+                  this sits on the hero gradient's right edge, which (like
+                  ExamCountdownHero's own ink color just below) fades pale in
+                  light mode but stays dark in dark mode — the opposite of the
+                  logo's corner, which is dark-ish in both themes. */}
+              <Ionicons name="contrast-outline" size={16} color={t.scheme === 'dark' ? '#F4F1FF' : '#16103C'} />
+            </Pressable>
             <Pressable onPress={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}>
               <Avatar
                 userId={profile?.id ?? ''}
@@ -139,6 +204,7 @@ export function HomeScreen({ navigation }: Props) {
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl, gap: 12 }}>
         <StreakWeekBar streakDays={profile?.streakDays ?? 0} />
+        {continueLearning === null && <AllCaughtUpCard />}
         {continueLearning && (
           <ContinueLearningCard
             subject={continueLearning.subjectName}
@@ -158,12 +224,12 @@ export function HomeScreen({ navigation }: Props) {
             }
           />
         )}
-        <TrustBanner />
+        <TrustBanner onPress={() => navigation.navigate('Uee', { screen: 'StreamSelect' })} />
         <FeatureGrid onPressItem={handleFeaturePress} />
         <TodaysGoalCard
           minutesDone={12}
           minutesGoal={15}
-          daysCompleted={4}
+          streakDays={profile?.streakDays ?? 0}
           xpEarned={profile?.xp ?? 0}
           level={profile?.level ?? 1}
           levelTitle={profile?.levelTitle ?? 'New Learner'}
@@ -172,8 +238,8 @@ export function HomeScreen({ navigation }: Props) {
           <SmartInsightCard
             message={
               weakestSubject.mastery > 0
-                ? `${weakestSubject.name} is your weakest subject at ${Math.round(weakestSubject.mastery * 100)}% mastery.`
-                : `You haven't started ${weakestSubject.name} yet — a great place to build momentum.`
+                ? `${weakestSubject.name} is weakest at ${Math.round(weakestSubject.mastery * 100)}% mastery.`
+                : `You haven't started ${weakestSubject.name} yet.`
             }
             ctaLabel={`Study ${weakestSubject.name} →`}
             onPress={() => navigation.navigate('Learn', { screen: 'SubjectPath', params: { subjectId: weakestSubject.id } })}
@@ -190,7 +256,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 6,
     borderBottomRightRadius: 6,
     paddingHorizontal: 16,
-    paddingBottom: 26,
+    paddingBottom: 16,
     overflow: 'hidden',
   },
   topBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 40 },
@@ -203,10 +269,40 @@ const styles = StyleSheet.create({
     marginLeft: 7,
   },
   topBarRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  // Glass-chip treatment matches ExamCountdownHero's tipIcon/chipBg below —
+  // same translucent-white-on-purple language, scaled down for a tag that
+  // reads as part of the logo lockup rather than a second call to action.
+  statusBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 7,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+    borderRadius: 8,
+    backgroundColor: 'rgba(255,255,255,0.16)',
+  },
+  statusBadgePro: { backgroundColor: 'rgba(246,214,143,0.24)' },
+  statusBadgeIcon: { marginRight: 2 },
+  statusBadgeText: {
+    fontFamily: 'Inter_700Bold',
+    fontSize: 9.5,
+    fontWeight: '700',
+    color: 'rgba(255,255,255,0.9)',
+    letterSpacing: 0.3,
+  },
+  statusBadgeTextPro: { color: '#FFE3A3' },
+  themeToggle: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255,255,255,0.16)',
+  },
   // `hero` has no explicit height — it's sized from its own content. A
   // `flex: 1` here would try to grow to fill the parent's available space,
   // but since `hero` has no defined height of its own to flex against, that
   // collapses this (and everything inside it) toward zero height instead,
   // clipped by `hero`'s overflow: 'hidden'. Size from content instead.
-  heroContent: { marginTop: 10 },
+  heroContent: { marginTop: 6 },
 });

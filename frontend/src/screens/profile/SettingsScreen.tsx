@@ -27,11 +27,7 @@ export function SettingsScreen({ navigation }: Props) {
         <SettingsRow icon="lock-closed-outline" label="Change Password" onPress={() => {}} />
 
         <SectionLabel>Preferences</SectionLabel>
-        <SettingsRow
-          icon="moon-outline"
-          label="Dark Mode"
-          trailing={<Switch value={t.scheme === 'dark'} onValueChange={t.toggleScheme} />}
-        />
+        {/* Dark Mode now toggles from the Home header, next to the avatar. */}
         <SettingsRow
           icon="notifications-outline"
           label="Notifications"

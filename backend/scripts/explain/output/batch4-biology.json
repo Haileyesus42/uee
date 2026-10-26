@@ -1,0 +1,724 @@
+[
+  {
+    "id": "b8dd7720-5b8f-49f1-b0ec-170c4dd22904",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "If your body cannot make enough red blood cells, which one of the following mineral-rich foods can correct this problem?",
+    "options": [
+      "Iron-rich food",
+      "Calcium-rich food",
+      "Iodine-rich food",
+      "Sodium-rich food"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Iron-rich food",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Iron is a core component of hemoglobin, the oxygen-carrying protein in red blood cells, so a diet rich in iron supports red blood cell production (erythropoiesis) and corrects iron-deficiency anemia. Calcium, iodine, and sodium support other body functions but aren't involved in hemoglobin synthesis.",
+    "note": ""
+  },
+  {
+    "id": "efdbdb79-8f9f-45c5-a5d1-092d6f942082",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following classes of enzyme and type of reactions they catalyze is correctly matched?",
+    "options": [
+      "Oxidoreductases - transfer functional groups from donor to acceptor",
+      "Transferases - transfer of electrons from one molecule to another",
+      "Ligases - cleave bonds by other means rather than hydrolysis",
+      "Lyases - catalyze the hydrolysis of various bonds"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Ligases - cleave bonds by other means rather than hydrolysis",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED (recurring from batch 3): under standard EC enzyme classification, none of the 4 options correctly match class to function — each definition is swapped with a different class's actual definition (A is really Transferases' definition, B is really Oxidoreductases', C/the stored answer is really Lyases', D is really Hydrolases'). Ligases actually join molecules (often using ATP), they don't cleave. Needs correction against the source paper."
+  },
+  {
+    "id": "fa899945-ff3c-474a-88f6-1f184d46cbca",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is biological warfare? The use of",
+    "options": [
+      "selective genes to produce genetically modified organisms",
+      "cloning technique to make exact genetic copies of an organism",
+      "bacteria, fungi and viruses as a biological agent to control pests",
+      "infectious agents with the intent to kill humans, animals or plants"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) infectious agents with the intent to kill humans, animals or plants",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Biological warfare is the deliberate use of pathogens or toxins as weapons to cause death or disease in humans, animals, or plants. The other options describe legitimate biotechnology or pest-control applications (genetic modification, cloning, biological pest control), not warfare.",
+    "note": ""
+  },
+  {
+    "id": "975dcf73-2722-433a-90bf-55d032bee156",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following correctly describes the general features of bacteria? They are unicellular microbes with",
+    "options": [
+      "true nucleus and are omnipresent in nature.",
+      "rigid cell wall and a diverse mode of nutrition.",
+      "mitochondria and a special type of chlorophyll.",
+      "Golgi bodies and genetic materials of a cell."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) rigid cell wall and a diverse mode of nutrition.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Bacteria are prokaryotes with a rigid cell wall (usually peptidoglycan) and highly diverse nutritional modes (autotrophic and heterotrophic variants). They lack a true nucleus (ruling out A) and lack mitochondria and Golgi bodies, which are eukaryotic organelles (ruling out C and D).",
+    "note": ""
+  },
+  {
+    "id": "8150beb5-cbbb-42a5-a61b-29822ea48505",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which group of archaea are found in volcanic vents and hot vapors that contain either obligate aerobes, facultative aerobes or obligate anaerobes?",
+    "options": [
+      "Hyperthermophiles",
+      "Acidophiles",
+      "Halophiles",
+      "Psychrophiles"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Hyperthermophiles",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Hyperthermophiles are archaea adapted to extremely high-temperature environments like volcanic vents and hot springs, and include aerobic, facultative, and strict anaerobic species. Acidophiles, halophiles, and psychrophiles are instead defined by tolerance to acidity, high salt, and cold, respectively.",
+    "note": ""
+  },
+  {
+    "id": "fdc00284-db93-487f-af8b-5c001e834e9f",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "From the fungal diseases given below, which one is transmitted sexually?",
+    "options": [
+      "Candidiasis",
+      "Aspergillosis",
+      "Tineas",
+      "Dermatophytosis"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Candidiasis",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Candidiasis, caused by the yeast Candida albicans, can be transmitted sexually (genital candidiasis) in addition to other routes. Aspergillosis is a respiratory infection, and tineas/dermatophytosis are superficial skin infections (ringworm) — neither is sexually transmitted.",
+    "note": ""
+  },
+  {
+    "id": "fc33d9a1-a63b-4550-98a3-36c7ae3b2ccb",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "This item is based on the following choices of feeding habit employed by organisms. I. Using nutrients dissolved in the surrounding medium II. Manufacturing own nutrients by photosynthesis III. Depending on other plants or animals for food Which method/s do protozoans use to get their nutrition? They employed",
+    "options": [
+      "I only.",
+      "I and II only.",
+      "II and III only.",
+      "I, II and III."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) II and III only.",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED (genuine ambiguity): protozoans as a biological group actually use all three feeding modes described — absorbing dissolved nutrients (saprozoic/osmotrophic, I), photosynthesis in photosynthetic forms like Euglena (II), and ingesting other organisms (holozoic, III) — which would point to option D (I, II and III), not the stored C (II and III only). I can construct a curriculum-specific rationale for excluding I (e.g. treating osmotrophic absorption as more characteristic of bacteria/fungi than protozoa), but it's not something I could verify confidently against standard biology definitions, so flagging rather than writing an explanation I'm not sure is right."
+  },
+  {
+    "id": "cbcac434-551d-471e-afa9-811d55062b2c",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following diseases is correctly matched with its symptoms and method of transmission?",
+    "options": [
+      "Chickenpox - runny and stuffy nose - respiratory droplets",
+      "Measles - paralysis and hydrophobia - bite from infected animals",
+      "Polio - commonly no sign and symptoms - fecal-oral-route",
+      "Rabies - swollen and painful protid glands - through infected saliva"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Polio - commonly no sign and symptoms - fecal-oral-route",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Polio is commonly asymptomatic (only a small fraction of cases develop paralysis) and spreads via the fecal-oral route, matching option C exactly. The other options pair a disease with the wrong symptom: chickenpox's hallmark is an itchy blister rash (not a runny nose), measles doesn't cause paralysis/hydrophobia (those are rabies symptoms), and rabies doesn't cause swollen parotid glands (that's mumps).",
+    "note": ""
+  },
+  {
+    "id": "a7958f5e-062e-442b-a088-8780aab0b4f6",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "In order to link a specific microorganism to a specific disease, Koch used mouse as experimental animal. He took a small amount of blood from a diseased mouse and injected into a healthy mouse, the latter quickly developed anthrax. Again he took blood from this second mouse and then injected it into another, again he observed the symptoms of anthrax. What was his first postulate related with this procedure?",
+    "options": [
+      "The same microorganisms are present in every case of the diseases.",
+      "The isolated microorganisms can cause the same disease to susceptible animal.",
+      "The same pathogens are isolated and re-cultivated from experimental animal.",
+      "The microorganisms are isolated from the tissue of a dead animal and pure culture is prepared."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) The isolated microorganisms can cause the same disease to susceptible animal.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "This procedure — injecting an isolated pathogen into a healthy animal and reproducing the same disease — directly demonstrates Koch's postulate that the isolated microorganism can cause the same disease when introduced into a susceptible host, matching option B. (The experiment doesn't test the disease-association step of comparing diseased vs. healthy animals, which is a separate postulate.)",
+    "note": ""
+  },
+  {
+    "id": "ea249e57-b067-4606-8c15-f01934129519",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Suppose a clinical nurse used a needle to treat a person with HIV/AIDS. What would be the most appropriate method of controlling such microbial infection?",
+    "options": [
+      "Incineration",
+      "Tyndallization",
+      "Sanitization",
+      "Preservation"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Incineration",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Incineration (burning) completely destroys a contaminated needle and any pathogen on it, including HIV, making it the appropriate disposal method for infectious sharps waste. Tyndallization is a multi-day fractional sterilization method impractical for a single needle, sanitization only reduces microbes rather than destroying them, and preservation is the opposite goal entirely.",
+    "note": ""
+  },
+  {
+    "id": "9334f5a5-4283-4c89-b43c-84e92372d436",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "As a clinical microbiologist, suppose you want to collect microbes from a food sample and isolate them via serial dilution. How do you determine the isolated colonies that grow on artificial media?",
+    "options": [
+      "counting the number of strains on the plate",
+      "cross checking with other preserved specimens",
+      "observing their morphological features",
+      "inoculating them into other infected animals"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) observing their morphological features",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Observing colony morphology — shape, color, texture, and size on the agar plate — is the standard first step for distinguishing and identifying isolated microbial colonies after serial dilution. Counting strains, cross-checking specimens, or inoculating animals are later/different steps, not how isolated colonies are initially distinguished from each other.",
+    "note": ""
+  },
+  {
+    "id": "752ecffb-4540-4774-ae56-ed7d4228c4af",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the main difference between anabolism and catabolism in cellular metabolic pathways? Anabolism",
+    "options": [
+      "absorbs energy while catabolism releases energy.",
+      "is destructive while catabolism is constructive process.",
+      "occurs during respiration while catabolism occurs in photosynthesis.",
+      "breaks down macromolecules while catabolism buildups them."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) absorbs energy while catabolism releases energy.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Anabolism builds complex molecules from simpler ones and requires (absorbs) energy, while catabolism breaks complex molecules down and releases energy — the two are energetic opposites. The other options reverse this relationship: anabolism is actually the constructive, molecule-building process, not the destructive one.",
+    "note": ""
+  },
+  {
+    "id": "b22aa3cc-1408-4f28-a6ad-7b55739fe396",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "In a hypothetical scenario where photosynthesis ceased to occur on the earth, the long-term consequences on the continuity of life would be",
+    "options": [
+      "remained unaffected since other sources of energy exist.",
+      "collapsed that could lead to mass extinction.",
+      "balanced between CO2 and O2 appropriately.",
+      "disordered although animal life would flourish."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) collapsed that could lead to mass extinction.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Photosynthesis is the foundation of nearly all food chains and the primary source of atmospheric oxygen, so its loss would collapse ecosystems from the bottom up and could trigger mass extinction. The other options understate this — other energy sources can't replace primary production at ecosystem scale.",
+    "note": ""
+  },
+  {
+    "id": "f37c3ed0-5d9b-4e58-98ca-64c0388d123e",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What are the roles of grana and stroma in the process of photosynthesis? Grana is a site for",
+    "options": [
+      "cyclic pathway while stroma is a site for non-cyclic pathway.",
+      "photolysis of water while stroma is a site for carbon fixation.",
+      "generation of sugar while stroma is a site for photolysis of water.",
+      "production of NADPH while stroma is a site for chemiosmosis."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) photolysis of water while stroma is a site for carbon fixation.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The grana (thylakoid stacks) are the site of the light-dependent reactions, including the photolysis (splitting) of water to release electrons and oxygen, while the stroma surrounding the grana is where the Calvin cycle fixes carbon dioxide into sugar.",
+    "note": ""
+  },
+  {
+    "id": "9101d157-a0c4-43ea-9728-37a35f78c201",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "All of the following events happen in the reduction stages of the Calvin cycle EXCEPT",
+    "options": [
+      "combining of CO2 with RuBP.",
+      "utilization of ATP and NADPH molecules.",
+      "conversion of 3-PGA into a sugar molecule.",
+      "donating of electrons to a 3C-intermediates to form G3P."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) combining of CO2 with RuBP.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Combining CO2 with RuBP (carboxylation) is the carbon fixation step of the Calvin cycle, which happens before the reduction stage — not during it. The reduction stage itself uses ATP and NADPH to convert 3-PGA into G3P, donating electrons to the 3-carbon intermediate.",
+    "note": ""
+  },
+  {
+    "id": "b1a5b361-b108-41b2-a080-08d3f3d074be",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "How does photosynthesis ensure the continuity of life? By",
+    "options": [
+      "constantly adding carbon dioxide to the atmosphere",
+      "maintaining carbon dioxide and oxygen balance in the atmosphere",
+      "constantly removing oxygen from the atmosphere",
+      "adding natural gas and absorbing methane from the atmosphere"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) maintaining carbon dioxide and oxygen balance in the atmosphere",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Photosynthesis consumes carbon dioxide and releases oxygen, counterbalancing respiration (which does the reverse), keeping atmospheric CO2 and O2 levels within the range life depends on. The other options describe photosynthesis adding or removing only one gas, missing this balancing role.",
+    "note": ""
+  },
+  {
+    "id": "f3229b70-657c-4749-a90b-08acf54037af",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following is correct about the energy liberation phase of glycolysis pathway? It",
+    "options": [
+      "hydrolyses two ATP molecules and raises the free energy of glucose.",
+      "breaks six carbon molecules into two glyceraldehyde-3-phosphate molecules.",
+      "releases one water molecule and dihydroxyacetone phosphate molecule.",
+      "produces four ATP, two NADH and two molecules of pyruvate."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) produces four ATP, two NADH and two molecules of pyruvate.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The energy liberation (payoff) phase of glycolysis converts the two 3-carbon intermediates from the splitting step into 2 pyruvate molecules, net producing 4 ATP and 2 NADH in the process. The other options describe the earlier energy-investment or splitting steps, not the liberation phase itself.",
+    "note": ""
+  },
+  {
+    "id": "8240b2d6-f747-483b-bd76-0eee04c671b3",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "In a complete oxidation of glucose molecule, how many net ATP molecules are produced by substrate level phosphorylation?",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "10"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) 4",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Substrate-level phosphorylation produces ATP directly in glycolysis (net 2 ATP) and in the Krebs cycle (2 ATP, one per turn × 2 turns per glucose), totaling 4 ATP. The much larger share of ATP from complete glucose oxidation comes from oxidative phosphorylation via the electron transport chain, which is a separate mechanism.",
+    "note": ""
+  },
+  {
+    "id": "3b187b5d-0612-40dc-8cb8-dc9f13b20459",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What is the difference between aerobic and anaerobic respirations?",
+    "options": [
+      "Aerobic respiration ends with different products while the same product results in anaerobic respiration.",
+      "Proteins are the main respiratory substrate for both aerobic and anaerobic respiration.",
+      "Aerobic respiration produces much more energy than anaerobic respiration.",
+      "Glycolysis is the first pathway for aerobic while Kreb's cycle is for anaerobic respiration."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Aerobic respiration produces much more energy than anaerobic respiration.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Aerobic respiration fully oxidizes glucose using oxygen, yielding roughly 36-38 ATP per glucose, while anaerobic respiration (fermentation) yields only about 2 ATP net — a large difference in energy output, which is the key distinction between the two.",
+    "note": ""
+  },
+  {
+    "id": "fdb56898-4dff-4d7e-9d8f-65f9ce442709",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following statements disproves spontaneous generation theory based on a step wise experimental work?",
+    "options": [
+      "Life is an inherent property of the universe and everlasting.",
+      "Different life forms on the Earth were created by a supreme being within six days.",
+      "Both macro and micro-organisms could arise from pre-existing organisms.",
+      "Life has reached to the Earth in the form of spores with falling meteorite."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Both macro and micro-organisms could arise from pre-existing organisms.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Pasteur's and Redi's stepwise experiments (e.g. the swan-neck flask) established that living organisms, both macroscopic and microscopic, arise only from pre-existing organisms (biogenesis) — directly disproving spontaneous generation. The other options are philosophical or religious claims that weren't established through stepwise experimentation.",
+    "note": ""
+  },
+  {
+    "id": "847a740a-a958-4c28-801b-bf9f56f7734c",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Based on comparative anatomy, chimpanzee is the closest relative to humans because of the similarities in their",
+    "options": [
+      "haemoglobin sequence.",
+      "fossil remains.",
+      "DNA sequence.",
+      "pentadactyl limb."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) pentadactyl limb.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The question specifically asks about comparative anatomy — the study of structural similarities — and the pentadactyl (five-digit) limb is a classic anatomical homology shared by humans and chimpanzees. DNA and haemoglobin sequence comparisons are molecular/genetic evidence, not anatomical evidence, so they don't fit what the question is asking for.",
+    "note": ""
+  },
+  {
+    "id": "dea4759f-b132-4ea4-bdd5-6558f9680873",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following causes of variation allows infertile hybrids to become fertile in plant evolution?",
+    "options": [
+      "Reproductive isolation",
+      "Sympatric speciation",
+      "Polyploidy cell",
+      "Geographical separation"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Polyploidy cell",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Polyploidy — doubling the chromosome number — can restore fertility to a sterile hybrid by giving it matching chromosome pairs to undergo normal meiosis, a well-documented mechanism in plant speciation (e.g. in wheat). Reproductive isolation, sympatric speciation, and geographic separation describe how species diverge, not how a sterile hybrid becomes fertile.",
+    "note": ""
+  },
+  {
+    "id": "25535c77-1e78-41c8-b256-3e362d93212c",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "This item is based on the following course of human evolution. 1. Use of fire and other tools 2. Increase in brain size 3. Emergence of Homo sapiens 4. Bipedal walking and arboreal life Which of the following is the correct order of the above evolutionary time line markers?",
+    "options": [
+      "2, 1, 3, 4",
+      "1, 3, 4, 2",
+      "3, 2, 4, 1",
+      "4, 2, 1, 3"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) 4, 2, 1, 3",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Bipedal walking arose early in hominin evolution (4), followed by increasing brain size (2) in later Homo species, then the use of fire and tools as cognitive capacity grew (1), with Homo sapiens emerging most recently (3) — giving the order 4, 2, 1, 3.",
+    "note": ""
+  },
+  {
+    "id": "2037d0ed-7750-41ec-945b-0ddf51611962",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is NOT a common cause of genetic mutation?",
+    "options": [
+      "Exposure to ultra-violet radiation",
+      "Errors in DNA replication",
+      "Extensive physical exercise",
+      "Experiences of using chemical substance"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Extensive physical exercise",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Physical exercise doesn't damage DNA or introduce mutations. UV radiation, errors during DNA replication, and exposure to mutagenic chemicals are all well-established causes of genetic mutation.",
+    "note": ""
+  },
+  {
+    "id": "71b044c2-42e3-477a-b52c-f5ae0ec7c5cc",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which genetic phenomenon is common for both bottleneck and founder effects?",
+    "options": [
+      "High mutation rate that enhances adaptation",
+      "Genetic drift that reduces diversity in the population",
+      "Gene flow that increases inbreed and disease's resistance",
+      "Natural selection that results from gradual evolutionary changes"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Genetic drift that reduces diversity in the population",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Both the bottleneck effect (a population crash) and the founder effect (a small group establishing a new population) are forms of genetic drift — random sampling of a small gene pool that reduces genetic diversity, regardless of the specific cause.",
+    "note": ""
+  },
+  {
+    "id": "5780fc91-7d1a-471d-b225-67caae0d2e3a",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "In a scenario where a male black lion population left its terrestrial territory and joined a white female lion population in an isolated Island to mate, there would be a",
+    "options": [
+      "decrease in black lion population in the isolated Island.",
+      "genetic variation in terrestrial population due to immigration.",
+      "random introduction of new alleles into the Island population.",
+      "change in allele frequencies of terrestrial population but not in Island."
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) random introduction of new alleles into the Island population.",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "A male joining and mating within a previously isolated island population introduces his alleles into that population's gene pool — a random introduction of new genetic variation via migration (gene flow) into the island, not the terrestrial population he left.",
+    "note": ""
+  },
+  {
+    "id": "74583a12-5b3c-4e74-a902-051cd0428927",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following is an example of anthropogenic driving factor that contributes to species extinction?",
+    "options": [
+      "Earth quack",
+      "Volcanic eruption",
+      "Expansions of agriculture",
+      "Outbreak of wild-fire"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Expansions of agriculture",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Expansion of agriculture is a human-driven (anthropogenic) land-use change that destroys natural habitat, a leading driver of species extinction. Earthquakes and volcanic eruptions are natural geological events, and wildfire is not inherently human-caused the way agricultural expansion is.",
+    "note": ""
+  },
+  {
+    "id": "ad9b169d-f29f-4fff-87d1-29a4d008d21c",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following ions are used to facilitate the release of neurotransmitters to the synaptic cleft before binding to postsynaptic receptor?",
+    "options": [
+      "Calcium ions",
+      "Magnesium ions",
+      "Potassium ions",
+      "Sodium ions"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Calcium ions",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Calcium ion influx into the presynaptic terminal triggers the fusion of neurotransmitter-containing vesicles with the membrane, releasing their contents into the synaptic cleft before the neurotransmitter binds postsynaptic receptors.",
+    "note": ""
+  },
+  {
+    "id": "305949e2-f927-4b83-858d-04de447ddade",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Find the correct pathway of reflex arc that prevents you from physical damage upon the sudden touching of hot plate.",
+    "options": [
+      "Interneuron → receptor → motor neuron → effector",
+      "Sensory neuron → motor neuron → spinal cord → effector",
+      "Sensory neuron → spinal cord → motor neuron → effector",
+      "Interneuron → spinal cord → motor neuron → effector"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Sensory neuron → spinal cord → motor neuron → effector",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "In a simple reflex arc, the sensory neuron detects the stimulus and carries the signal to the spinal cord, which routes it directly to a motor neuron that activates the effector muscle — all before the brain is involved, which is what makes the withdrawal so fast.",
+    "note": ""
+  },
+  {
+    "id": "f9047cb3-e900-4f2a-a762-dc2b7c885e71",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "This item is based on the following list of events that happen during hearing. I. Transmission of amplified sound waves to the ear ossicles II. Movement of sensory hair as a result of vibration of the fluid in the cochlea III. Transmission of nerve impulse into the brain and response to the sound stimulus IV. The pinna directs sound waves into the eardrum Based on the above lists, which alternative shows the correct steps of the events of hearing?",
+    "options": [
+      "IV → III → II → I",
+      "I → II → III → IV",
+      "I → IV → II → III",
+      "IV → I → II → III"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) IV → I → II → III",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The pinna first directs sound waves into the eardrum (IV), which transmits the amplified vibration through the ear ossicles (I), causing fluid in the cochlea to vibrate and move the sensory hair cells (II), which finally generates the nerve impulse sent to the brain (III) — giving the order IV, I, II, III.",
+    "note": ""
+  },
+  {
+    "id": "e4ca0da2-d421-41cd-a01f-65f1bc54cb86",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Suppose low metabolic rate, cretinism and retarded mental and physical development are common problems of infants and childhood in a small village. Which condition in the endocrine system results in these problems?",
+    "options": [
+      "Extreme hypothyroidism",
+      "Malfunction of adrenal cortex",
+      "Over production of parathyroid hormone",
+      "Lack of adrenalin production"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Extreme hypothyroidism",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Cretinism is the classic presentation of extreme hypothyroidism occurring in infancy/childhood (often from regional iodine deficiency), causing low metabolic rate and impaired physical and mental development. The other options involve different glands (adrenal, parathyroid) with different symptom profiles.",
+    "note": ""
+  },
+  {
+    "id": "374f02ee-b8e5-46bb-b0ec-371e88424e55",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "If a woman is admitted to hospital for giving birth, which hormone is helping her in the delivery of her baby and releasing of milk?",
+    "options": [
+      "Vasopressin",
+      "Aldosterone",
+      "Oxytocin",
+      "Progesterone"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Oxytocin",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Oxytocin is the single hormone responsible for both stimulating uterine contractions during labor and triggering the milk let-down reflex during breastfeeding, matching both parts of the question. Vasopressin, aldosterone, and progesterone don't drive both of these functions.",
+    "note": ""
+  },
+  {
+    "id": "dcb9ab27-97e5-4949-95a6-94868869f327",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Assume a patient with type II diabetes gets advice to practice regular exercise to raise the number of insulin receptors. Then, how does insulin regulate the blood glucose level if it is high in this patient? It stimulates",
+    "options": [
+      "glycolysis, which converts glucose into pyruvate.",
+      "glycogenesis, which converts glucose into glycogen.",
+      "lipolysis that converts fatty acid into glucose.",
+      "gluconeogenesis that creates glucose from amino acids."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) glycogenesis, which converts glucose into glycogen.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "When blood glucose is high, insulin's main action is stimulating glycogenesis — converting excess glucose into glycogen for storage in the liver and muscles — which directly lowers blood glucose. Gluconeogenesis and lipolysis instead generate more glucose, the opposite of what's needed here.",
+    "note": ""
+  },
+  {
+    "id": "332f5796-0bb0-49d5-93ee-55ebc7418351",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Several current studies point out that very large quantity of greenhouse gases have been added into Earth's atmosphere due to human activities. What would be the most likely responsible gas and its major sources, respectively?",
+    "options": [
+      "Methane - aluminum smelting and semiconductor manufacturing",
+      "Carbon dioxide - fossil fuel combustion, deforestation, oil and gas usage",
+      "Sulphur hexafluoride - landfills, rice paddies, digestive tracts of cattle",
+      "Perfluorocarbons - electric transmission, magnesium and aluminum production"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Carbon dioxide - fossil fuel combustion, deforestation, oil and gas usage",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Carbon dioxide, released mainly from fossil fuel combustion, deforestation, and oil and gas use, is by far the largest-volume greenhouse gas added to the atmosphere by human activity, making it the primary driver of human-caused climate change.",
+    "note": ""
+  },
+  {
+    "id": "b245db80-c954-4a16-846e-cd6c4157e1ca",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "The effect of increased climate change on agricultural productivity is associated with",
+    "options": [
+      "land use change and expansion of monoculture farming that yields high productivity.",
+      "agroforestry system that increases the mixture of multipurpose trees and crops.",
+      "drought that triggers wild fire, which can consume millions of acres of forest.",
+      "reduction of available water that leads to decrease in biological resources."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) reduction of available water that leads to decrease in biological resources.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Climate change reduces water availability through altered rainfall patterns and drought, which directly decreases the biological resources (crops, livestock, ecosystems) that agricultural productivity depends on. The other options describe either a positive/mitigating outcome or a less direct agricultural link than water scarcity.",
+    "note": ""
+  },
+  {
+    "id": "c65601c3-6f91-4dae-9f27-e329ccdd3a7d",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which one of the following local community practices in Ethiopia is considered as an environmental action that addresses climate change mitigation? Culture of",
+    "options": [
+      "respecting humanity that promotes eco-tourism industry",
+      "negotiating mechanism that is led by elders to reduce social unrest",
+      "planting millions of seedlings following the green legacy initiative",
+      "treating different diseases with herbal remedies by traditional healers"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) planting millions of seedlings following the green legacy initiative",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Ethiopia's Green Legacy Initiative is a real, large-scale national tree-planting program explicitly aimed at climate change mitigation through afforestation and carbon sequestration — a concrete environmental action, unlike the other options, which describe social or cultural practices not specifically aimed at climate mitigation.",
+    "note": ""
+  },
+  {
+    "id": "a19e9cf8-baf0-49ed-9686-aa8dd967ab6f",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which labeled part is responsible for controlling the diameter of the pupil according to the light source?",
+    "options": [
+      "I",
+      "II",
+      "III",
+      "IV"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) III",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: references a labeled anatomical diagram (options are just 'I', 'II', 'III', 'IV') that isn't present anywhere in the stored prompt or options data. Unanswerable without the missing image — same structural gap other forks found in English/Aptitude reading-comprehension questions, here affecting a labeled-diagram biology question instead."
+  },
+  {
+    "id": "5e4ff825-8de6-48db-8a9a-2bbd49259407",
+    "subject": "biology",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Consider the following structure of the human heart. In the above diagram, which part is used for forcing oxygenated blood out of the heart and around the body?",
+    "options": [
+      "I",
+      "II",
+      "III",
+      "IV"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) III",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: references a labeled heart-structure diagram (options are just 'I', 'II', 'III', 'IV') that isn't present anywhere in the stored prompt or options data. Unanswerable without the missing image — same missing-diagram gap as the pupil-diameter question in this same batch."
+  }
+]

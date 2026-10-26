@@ -10,6 +10,7 @@ import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
 import { Button } from '../../components/buttons/Button';
 import { PaperModeSelector, PaperMode } from '../../components/uee/PaperModeSelector';
+import { MathText } from '../../components/common/MathText';
 import { useUeeQuestions } from '../../hooks/useUee';
 import { UeeStackParamList, MainTabParamList } from '../../navigation/types';
 
@@ -85,9 +86,15 @@ export function PaperViewerScreen({ navigation, route }: Props) {
               style={[styles.row, { borderBottomColor: t.colors.border }]}
             >
               <Text style={[t.typography.bodyStrong, { color: t.colors.brand }]}>{i + 1}</Text>
-              <Text style={[t.typography.body, { color: t.colors.textPrimary, flex: 1, marginLeft: 12 }]} numberOfLines={2}>
+              <MathText
+                style={[
+                  t.typography.body,
+                  { color: t.colors.textPrimary, flex: 1, marginLeft: 12, fontSize: 13, lineHeight: 18 },
+                ]}
+                numberOfLines={2}
+              >
                 {q.prompt}
-              </Text>
+              </MathText>
               <Ionicons name="chevron-forward" size={18} color={t.colors.textSecondary} />
             </Pressable>
           ))}

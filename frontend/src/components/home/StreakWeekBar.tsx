@@ -32,9 +32,9 @@ export function StreakWeekBar({ streakDays }: { streakDays: number }) {
         </CircularProgress>
         <View style={styles.streakTextCol}>
           <Text style={styles.streakText}>
-            <Text style={styles.streakNumber}>{streakDays}</Text> days streak
+            <Text style={styles.streakNumber}>{streakDays}</Text> day{streakDays === 1 ? '' : 's'} streak
           </Text>
-          <Text style={styles.streakSub}>You're on fire!</Text>
+          <Text style={styles.streakSub}>{streakDays > 0 ? "You're on fire!" : 'Start today'}</Text>
         </View>
       </View>
 
@@ -43,11 +43,21 @@ export function StreakWeekBar({ streakDays }: { streakDays: number }) {
       <View style={styles.week}>
         {week.map((date, i) => {
           const isToday = date.toDateString() === todayKey;
+          // i=6 is today (see getPastWeek) — daysAgo counts back from there. A day
+          // is part of the CURRENT streak only if it falls within the most recent
+          // `streakDays` consecutive days, derived from the same trusted counter
+          // the headline number uses — not assumed true for every past cell.
+          const daysAgo = 6 - i;
+          const inStreak = daysAgo >= 1 && daysAgo <= streakDays - 1;
           const label = date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase();
           return (
             <View key={i} style={styles.dayCol}>
-              <View style={[styles.dayCircle, isToday && styles.dayCircleToday]}>
-                <Text style={isToday ? styles.dayFlameEmoji : styles.dayCheck}>{isToday ? '🔥' : '✓'}</Text>
+              <View style={[styles.dayCircle, isToday && styles.dayCircleToday, !isToday && !inStreak && styles.dayCircleEmpty]}>
+                {isToday ? (
+                  <Text style={styles.dayFlameEmoji}>🔥</Text>
+                ) : inStreak ? (
+                  <Text style={styles.dayCheck}>✓</Text>
+                ) : null}
               </View>
               <Text style={[styles.dayLabel, isToday && styles.dayLabelToday]}>{label}</Text>
             </View>
@@ -75,6 +85,9 @@ const styles = StyleSheet.create({
   week: { flex: 1, flexDirection: 'row', justifyContent: 'space-between' },
   dayCol: { alignItems: 'center' },
   dayCircle: { width: 20, height: 20, borderRadius: 10, backgroundColor: '#E4DEFA', alignItems: 'center', justifyContent: 'center' },
+  // Outside the current streak window — an unfilled ring, not a filled circle,
+  // so it reads as "no record" rather than a dimmed/failed version of a checkmark.
+  dayCircleEmpty: { backgroundColor: 'transparent', borderWidth: 1, borderColor: '#E4DEFA' },
   dayCircleToday: {
     width: 24,
     height: 24,

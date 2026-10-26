@@ -1,0 +1,192 @@
+[
+  {
+    "id": "db9aed9d-fd72-43b3-b1bd-9e241d0d7687",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Choose the sentence that is correctly punctuated and capitalized.",
+    "options": [
+      "Tadesse and Fanuel are good friends. They study their lessons together and help each other.",
+      "Tadesse and Fanuel are good friends; They study their lessons together and help each other.",
+      "Tadesse and Fanuel are good friends, they study their lessons together and help each other.",
+      "Tadesse and Fanuel are good friends They study their lessons together and help each other!"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Tadesse and Fanuel are good friends. They study their lessons together and help each other.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Option A correctly separates the two independent clauses with a period and capitalizes \"They\" to begin the new sentence. B wrongly capitalizes \"They\" after a semicolon, which joins two independent clauses without starting a new sentence. C is a comma splice — a comma alone can't join two independent clauses — and D omits punctuation between them entirely while adding an exclamation mark that doesn't match the sentence's tone.",
+    "note": "punctuation/capitalization; clean"
+  },
+  {
+    "id": "f9d1f0f2-0113-4dbb-8620-f214bd9029bb",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "At first, the suspect did not realize__________ during the interview. Later on, he saw the voice recorder and refused to continue the interview.",
+    "options": [
+      "he was being recording",
+      "he had recorded",
+      "he was recording",
+      "he was being recorded"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) he was being recorded",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The suspect didn't realize he was being recorded — passive voice, since the recording was being done to him, not by him, which the following clue (\"he saw the voice recorder\") confirms. \"He had recorded\" and \"he was recording\" both wrongly put him in the active role of recording something himself, and \"he was being recording\" isn't grammatically valid English.",
+    "note": "grammar (passive voice, reported speech); clean"
+  },
+  {
+    "id": "f797bbbe-6e5c-4225-8ef0-2b71198d95ad",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "All students but one got above average marks in English.",
+    "options": [
+      "Only one student failed to get above average marks in English.",
+      "Only one student got the above average mark in English.",
+      "All students did not get above average marks in English.",
+      "Everybody got above average mark in English."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Only one student failed to get above average marks in English.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "\"All students but one\" means every student except a single one, so exactly one student did not get above-average marks — which is what (A) states. (B) reverses the meaning (implying only one succeeded), while (C) and (D) both ignore the single exception the sentence specifies.",
+    "note": "paraphrase/reading comprehension; clean"
+  },
+  {
+    "id": "0bb8ba4f-b16e-4246-9faa-23f1a50c78bd",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Bed : Sleep :: Stove : ________",
+    "options": [
+      "Clean",
+      "Wash",
+      "Cook",
+      "Utensil"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Cook",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "A bed is the object primarily associated with sleeping, just as a stove is primarily associated with cooking — both pairs share a \"used for\" relationship.",
+    "note": "analogy; clean; short by nature of question type"
+  },
+  {
+    "id": "edfb225b-0b2c-4dd7-95c1-8312f23e273e",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Tensions between the two countries are rising quickly. We cannot rule out the possibility that war breaks out.",
+    "options": [
+      "assume",
+      "exclude",
+      "predict",
+      "imagine"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) exclude",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "\"Rule out\" means to exclude or eliminate something as a possibility, which matches \"exclude.\" The sentence is saying war hasn't been eliminated as a possibility, not that it's being assumed, predicted, or imagined.",
+    "note": "vocabulary-in-context (synonym); clean"
+  },
+  {
+    "id": "4781107b-638d-4da6-926c-aa477b2f111d",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "The teacher announced that the mathematics examination has been put off for next week.",
+    "options": [
+      "forgotten",
+      "postponed",
+      "prepared",
+      "cancelled"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) postponed",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "\"Put off\" means to postpone or delay something to a later time, confirmed by \"for next week\" — the exam is rescheduled, not cancelled, forgotten, or prepared.",
+    "note": "vocabulary-in-context (synonym); clean"
+  },
+  {
+    "id": "ba0e241e-4292-4215-8e27-e93634e183e9",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Choose the correctly spelt word.",
+    "options": [
+      "expenditure",
+      "particularily",
+      "traditionial",
+      "fotograph"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) expenditure",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "\"Expenditure\" is the only correctly spelled option. The others are misspelled: \"particularily\" should be \"particularly,\" \"traditionial\" should be \"traditional,\" and \"fotograph\" should be \"photograph.\"",
+    "note": "spelling; clean"
+  },
+  {
+    "id": "af4512a1-a9be-4815-9b6d-2d9c77813808",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "I always have much work to do; that is why I________ have time to listen to music.",
+    "options": [
+      "definitely",
+      "scarcely",
+      "mainly",
+      "exactly"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) scarcely",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "\"Scarcely\" means barely or hardly, which fits the sentence's logic: having much work to do is the reason the speaker barely has time for music. \"Definitely have time\" would contradict the \"much work\" clause rather than follow from it.",
+    "note": "vocabulary-in-context (cloze); clean"
+  },
+  {
+    "id": "e83fda9b-0d49-40ea-9911-50a46d0f7e06",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "The lady ___________next to our English teacher is my mother's close friend.",
+    "options": [
+      "sitting",
+      "sit",
+      "sat",
+      "sits"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) sitting",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The sentence already has its main verb (\"is my mother's close friend\"), so the blank needs a participle forming a reduced relative clause — \"sitting next to...\" meaning \"who is sitting next to...\" — not a second finite verb like \"sit,\" \"sat,\" or \"sits.\"",
+    "note": "grammar (reduced relative clause / participle); clean"
+  },
+  {
+    "id": "f1a53a3d-41d9-40cb-b3f4-7362c1090ad6",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "The afternoon sun is________ hot for school children _______play outside. They had better stay in their class.",
+    "options": [
+      "such/for",
+      "too/to",
+      "very/for",
+      "to/to"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) too/to",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "This is the \"too...for...to\" construction: the sun is too hot for the children to play outside in, which is why they'd better stay in class. \"Too/to\" is the only option pair that completes this structure correctly.",
+    "note": "grammar (too...to construction); clean"
+  }
+]

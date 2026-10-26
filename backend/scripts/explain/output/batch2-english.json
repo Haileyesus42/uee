@@ -1,0 +1,477 @@
+[
+  {
+    "id": "03944a9a-77bf-467c-9d0a-1a167543309b",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Eden is in her late twenties. She is of medium height. She has an average weight that fits her height. She respects people, and she is very polite and friendly. This passage is most likely an example of which paragraph type?",
+    "options": [
+      "Descriptive",
+      "Argumentative",
+      "Expository",
+      "Narrative"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Descriptive",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "This paragraph focuses on describing Eden's physical appearance (height, weight) and personality traits (polite, friendly) without making an argument, telling a story, or explaining a process — the defining features of a descriptive paragraph.",
+    "note": ""
+  },
+  {
+    "id": "604352a6-86b1-46ca-8530-2a6b8cfc8756",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Digestion begins in the mouth. This is called mechanical digestion as there is not any kind of chemical involved in the process. It is simply as the saliva is broken down into smaller pieces and the food is swallowed. The other type of digestion is chemical digestion. It is in the stomach that this digestion takes place. This paragraph is most likely taken from:",
+    "options": [
+      "argumentative",
+      "expository",
+      "descriptive",
+      "narrative"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) expository",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The paragraph explains how digestion works step by step (mechanical digestion in the mouth, then chemical digestion in the stomach) — explaining a process or giving information is the defining feature of an expository paragraph, not description, argument, or narrative.",
+    "note": ""
+  },
+  {
+    "id": "d55ba3c0-3934-4105-980f-901e168ad1c4",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "“First of all, the death penalty should be only resort to killing people and spend the rest of their lives in jail. Moreover, if the death penalty committed against them would like to take revenge on the criminal and this makes chaos in society.” This paragraph is most likely:",
+    "options": [
+      "argumentative",
+      "expository",
+      "descriptive",
+      "narrative"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) argumentative",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The paragraph takes a clear stance on the death penalty and gives reasons to support it (deterrence, avoiding chaos from revenge) — presenting and defending an opinion is what makes a paragraph argumentative rather than purely informative or descriptive.",
+    "note": "Source text has some garbled phrasing (likely an OCR/transcription issue), but the argumentative style is still clear."
+  },
+  {
+    "id": "5528163d-0cf9-45e8-b9df-95aec6d626a6",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "A. Three of their children are girls. B. His wife wizero Mulu, is younger than him by 2 years. C. Ato Lemma and Wiro Mulu have four children. D. Ato Lemma is a thirty-year-old person in my community.",
+    "options": [
+      "c b d a",
+      "d b c a",
+      "a c d b",
+      "d c a b"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) d b c a",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The paragraph should introduce the main person first (D: Ato Lemma is thirty years old), then his wife (B: his wife is younger by two years), then their children as a group (C: they have four children), and finally a specific detail about the children (A: three are girls) — general-to-specific ordering.",
+    "note": ""
+  },
+  {
+    "id": "20ae2cdb-4f2e-4377-8f7d-7b6cfd18eb0e",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "a. Many people believe education is the key to success in life. b. These people list names of several intellectuals who struggle to make in the end to breath on their salaries c. As examples, they mention highly educated people who have become rich. d. Others contend that education only leads people to poverty.",
+    "options": [
+      "a b c d",
+      "a c b d",
+      "c b d a",
+      "c b a d"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) a c b d",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: my own independent reconstruction of this paragraph's logical order is \"a c d b\" (belief stated, supporting examples, counter-view introduced, counter-view's examples) — but that sequence isn't even among the 4 given options (a b c d / a c b d / c b d a / c b a d). The stored answer is \"a c b d\" (index 1). Sentence (b) has an ambiguous pronoun referent (\"these people\") that could plausibly point to either group depending on placement, and the source text itself reads awkwardly (\"struggle to make in the end to breath on their salaries\"), suggesting a transcription issue. Not confident enough to write an explanation for the stored answer."
+  },
+  {
+    "id": "db022c0f-99e8-4b64-8d46-4009a5b02f5c",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "a. Hanna is a very charming and sociable girl whom everybody likes. b. Finally, she works in an international supermarket as a saleswoman. She is always smiling and appears to be happy with her job. c. She is only in her late twenties. She usually wears jeans that visibly show the shape of her body. Above her waist, she wears a white nylon T-shirt that makes her breasts appear more visible and attractive. d. To begin with, she is tall and has a slim waist that makes her quite attractive.",
+    "options": [
+      "a d c b",
+      "a c d b",
+      "d a b c",
+      "d a c b"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) a d c b",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The paragraph opens with a general statement about Hanna (A), then 'to begin with' signals the first specific detail — her physical build (D) — followed by further physical/age details (C), and 'finally' signals the last detail about her job (B), following the passage's own sequencing words (to begin with... finally).",
+    "note": ""
+  },
+  {
+    "id": "0b900c4a-7ce1-46e5-b90e-1548ca8629f4",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "a. Arable farming refers to growing crops. b. This farming type refers to keeping sheep and cattle. c. The second farming type is pastoral farming. d. Arable and pastoral farming are commonly known farming types.",
+    "options": [
+      "a d c b",
+      "b a d c",
+      "c b a d",
+      "d c d a"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) a d c b",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Among the four options, this is the only one that avoids a dangling reference — option B opens with 'this farming type' and option C opens with 'the second farming type,' both referring to something not yet introduced at that point. Starting with A (defining arable farming), then D (naming both farming types), C (naming pastoral as the second type), and B (defining it) is the only order where every reference has already been introduced.",
+    "note": "Verified by elimination of the other three options, which contain ungrammatical dangling references — a solid approach for this type of poorly-transcribed ordering question."
+  },
+  {
+    "id": "fbcaad36-62cc-41b4-bdbe-e810824f47a9",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "am / as / think / I / not / I / you / stupid / am / as",
+    "options": [
+      "I am not as I think am stupid as you.",
+      "As you think I am not stupid as I am.",
+      "I am not as you think as I am.",
+      "I am not as stupid as you think I am."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) I am not as stupid as you think I am.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Rearranging the given words produces \"I am not as stupid as you think I am\" — the only grammatical sentence this word set can form; the other options reuse the same words but produce ungrammatical or nonsensical sequences.",
+    "note": ""
+  },
+  {
+    "id": "cdbdf646-1d6a-4b93-ac81-bf7bde12d1ed",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Ethiopia will enjoy a period of peace and ________ in the next few years; this happens if the country ensures law and gives priority to science, technology and innovation.",
+    "options": [
+      "prosperity",
+      "nationality",
+      "protest",
+      "disparity"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) prosperity",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "'Prosperity' pairs naturally with 'peace' as a positive national outcome tied to law and order plus investment in science and technology — the other options (nationality, protest, disparity) don't fit as positive consequences of good governance.",
+    "note": ""
+  },
+  {
+    "id": "b573c631-fe05-4760-af5d-1bad01b49ddf",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "You should not be so ________ to these late comers; once punished, they should be allowed to attend class.",
+    "options": [
+      "generous",
+      "cruel",
+      "modest",
+      "kind"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) cruel",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The sentence argues against being too harsh, since it goes on to say late comers should be let back in after punishment — 'cruel' is the only option describing excessive harshness that this advice would be warning against.",
+    "note": ""
+  },
+  {
+    "id": "9f8bf1f3-f4b7-4fa4-a6bc-ca99088b8c62",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Which of the following words is closest in meaning to haggard as used in paragraph 1?",
+    "options": [
+      "a person who looks trustful",
+      "a person who commits crime",
+      "a person with no home",
+      "a person who looks suspicious"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: not a wrong-answer case — this question references \"paragraph 1,\" which is not included in the prompt text at all, and correctIndex is null (no answer key was ever provided in the source). Unanswerable without the missing passage; needs the original source paragraph attached before any explanation can be written, independent of this generation pass."
+  },
+  {
+    "id": "f79e8abb-4231-40aa-9a89-3f8c71dc2283",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "What does the expression 'I would rather report otherwise' indicate in the context it is used in paragraph 3?",
+    "options": [
+      "The need to tell the public about the homeless",
+      "The fear to hide the true cause of homelessness",
+      "The need to explain the troubles facing the homeless",
+      "The fear to condemn the government for the problem"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: same issue as the previous question — references \"paragraph 3,\" which is not included in the prompt, and correctIndex is null. Unanswerable without the missing passage."
+  },
+  {
+    "id": "099c0a9c-f874-4a4f-945c-40a034e4977d",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Daughter: I think brilliant students should be exempted from cost-sharing. Mother: _________________________ money shouldn't be a reward for good work.",
+    "options": [
+      "No, I don't accept this foolish idea",
+      "I am afraid I can't agree",
+      "This is stupid",
+      "Shut up"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) I am afraid I can't agree",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The mother's follow-up ('money shouldn't be a reward for good work') gives a reason for disagreeing, so the blank needs a polite expression of disagreement — 'I am afraid I can't agree' fits that register, while the other options ('foolish idea,' 'stupid,' 'shut up') are too harsh for a mother speaking to her daughter.",
+    "note": ""
+  },
+  {
+    "id": "0affa94a-dc69-49cc-a293-c2f4966799dc",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Friend: _______________I'm almost blind in the dark. You: Don't worry about it.",
+    "options": [
+      "Will you forgive me for stepping on your foot?",
+      "I shouldn't have stepped on your foot.",
+      "Excuse me for stepping on your foot.",
+      "Did I step on your foot?"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Did I step on your foot?",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "'Don't worry about it' is a natural response reassuring someone who's raised a concern about possibly causing harm — 'Did I step on your foot?' paired with 'I'm almost blind in the dark' as the reason for asking fits that exchange.",
+    "note": "Close call: 'Excuse me for stepping on your foot' (option C) is also a very plausible reading of the same exchange — both work grammatically with the reassurance that follows. Worth a second look."
+  },
+  {
+    "id": "80bbbde2-22ef-4894-987a-3bb4c6d278b8",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Nuru: Well done, Daniel! You got an A grade on your Maths. Daniel: Really? ______________",
+    "options": [
+      "A good achievement, isn't it",
+      "Thank you for the good news.",
+      "I'm glad you liked it.",
+      "Nice work, isn't it?"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Thank you for the good news.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Daniel's 'Really?' signals he's hearing about his grade for the first time, so Nuru must be the one informing him — 'Thank you for the good news' thanks Nuru for sharing it, which fits better than the other options, which assume Daniel already knew his result.",
+    "note": ""
+  },
+  {
+    "id": "717858fd-0c11-46e0-a60b-8f2b90c45b58",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Lilu: ___________________ Maria: I'm sorry; I'm a stranger too.",
+    "options": [
+      "Could you tell me where the director's office is?",
+      "Hi, you know the director's office, don't you?",
+      "Where is the director's office, if I may ask?",
+      "I am sorry to say that, but I got lost."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Could you tell me where the director's office is?",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Maria's response ('I'm a stranger too') only makes sense as a reply to being asked for directions or local information — 'Could you tell me where the director's office is?' is the only option phrased as a genuine request for help rather than an assumption that Maria already knows.",
+    "note": ""
+  },
+  {
+    "id": "bca81775-f6fb-4610-8cc4-3b2f4a20cc2f",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Father: ___________________? Mother: He did not get full mark on his English exam.",
+    "options": [
+      "Why is Zena crying",
+      "How is Zena crying",
+      "Who is crying Zena",
+      "When is Zena crying"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Why is Zena crying",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The mother's answer explains a reason (he failed to get full marks), so the father's question must be asking 'why' — the other options (how/who/when) don't fit an answer that gives a reason.",
+    "note": ""
+  },
+  {
+    "id": "627ab297-75d6-42bb-b13a-ff56f4f3a836",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Student: Today, I'm interviewing Business Managers to give me some idea about the field. Let me begin by________________ Manager: To put it simply, I joined the department because I wanted to learn how to run my own business.",
+    "options": [
+      "asking you how you decided to study business management",
+      "telling you the history of the field in our context",
+      "telling you a few important things about the field",
+      "explaining job opportunities in the field"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) asking you how you decided to study business management",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The manager's reply explains his personal motivation for joining the field, which directly answers a question about how he decided to study business management — the other options don't match an answer framed around personal decision-making.",
+    "note": ""
+  },
+  {
+    "id": "614c3687-2814-4f71-8617-98caaae8275c",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Kidist: _______________ Hana: With sugar, please.",
+    "options": [
+      "Would you prefer your coffee with or without sugar",
+      "How much sugar do you like in your coffee",
+      "Is it good to drink coffee without sugar",
+      "Do you like your coffee with sugar"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Would you prefer your coffee with or without sugar",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "'With sugar, please' directly answers an either/or question offering a choice between two options — 'Would you prefer your coffee with or without sugar' is the only option phrased that way; the others expect a quantity, a yes/no, or a different kind of answer.",
+    "note": ""
+  },
+  {
+    "id": "65ddf43c-42bf-4dfb-a2f9-d5bd9f2193bc",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Ahmed: ______________________________ Samson: You know why? He is such a funny boy that he makes everyone laugh.",
+    "options": [
+      "Do you like to sit next to Solomon in the classroom",
+      "Where do many students like to sit in the classroom",
+      "Why do many students like to sit next to Solomon",
+      "Is Solomon a funny boy"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Why do many students like to sit next to Solomon",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Samson's answer explains why students like sitting next to Solomon (he's funny), so Ahmed's question must ask that directly — 'Why do many students like to sit next to Solomon' is the only option framed as asking for a reason.",
+    "note": ""
+  },
+  {
+    "id": "db40594b-c5ce-4ccb-b382-32841bf6be24",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Mother: Tell me why schools are closed in Kiremt in Ethiopia. Daughter: ___________________________",
+    "options": [
+      "Did you learn year-long yourself?",
+      "Nobody likes going to school.",
+      "I hate Kiremt, Mom.",
+      "I haven't any clue, Mom."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) I haven't any clue, Mom.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The daughter's reply 'I haven't any clue, Mom' is a natural response from someone who genuinely doesn't know the reason schools close, fitting her mother's request to explain why — the other options either answer a different question or don't respond to 'tell me why' at all.",
+    "note": ""
+  },
+  {
+    "id": "b12e216e-b4fc-46e9-a670-f5d875884582",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Ararso: What is your opinion about the need for college education? Jirata: ___________________",
+    "options": [
+      "What is the requirement to join college?",
+      "I feel certain that it's absolutely necessary.",
+      "None of my children joined college.",
+      "I think I've a good idea about it."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) I feel certain that it's absolutely necessary.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Jirata is asked for an opinion, and 'I feel certain that it's absolutely necessary' is a direct statement of opinion — the other options either ask a question back, share an unrelated fact, or stay vague about his actual view.",
+    "note": ""
+  },
+  {
+    "id": "6713badf-ae9c-4469-8b8a-97cb9005219a",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Committing corruption_______ life imprisonment in several countries in the world.",
+    "options": [
+      "impacts",
+      "arises from",
+      "affects",
+      "leads to"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) leads to",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "'Leads to' expresses that committing corruption results in the legal consequence of life imprisonment — the other options either describe influence too weakly (impacts, affects) or reverse the cause-and-effect direction (arises from).",
+    "note": ""
+  },
+  {
+    "id": "cc9756fb-7131-4a4c-adbd-b52a77c82798",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Husband: Where would you like us to go for dinner? Wife: ___________________I like their French toast.",
+    "options": [
+      "How about trying Haile Grand Hotel?",
+      "I do not have enough money for dinner.",
+      "I do not care about dinner tonight.",
+      "Is your sister going with us?"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) How about trying Haile Grand Hotel?",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The wife's answer mentions liking 'their' French toast, implying she's naming a specific restaurant — 'How about trying Haile Grand Hotel?' is the only option that suggests a place, matching the follow-up detail about its food.",
+    "note": ""
+  },
+  {
+    "id": "73a2a508-e10c-43b5-841e-1cb1625f4ecc",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "The weather in Addis Ababa is ________ these days. You cannot tell whether it rains in the morning or in the afternoon.",
+    "options": [
+      "invisible",
+      "immaterial",
+      "unpredictable",
+      "unimaginable"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) unpredictable",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "'Unpredictable' directly matches the explanation that follows — not being able to tell when it will rain is the definition of unpredictable weather, while the other options (invisible, immaterial, unimaginable) don't relate to predicting rain.",
+    "note": ""
+  }
+]

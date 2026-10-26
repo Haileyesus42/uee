@@ -14,22 +14,26 @@ function getCurrentWeekdayIndex(): number {
 export function TodaysGoalCard({
   minutesDone,
   minutesGoal,
-  daysCompleted,
+  streakDays,
   xpEarned,
   level,
   levelTitle,
 }: {
   minutesDone: number;
   minutesGoal: number;
-  daysCompleted: number;
+  streakDays: number;
   xpEarned: number;
   level: number;
   levelTitle: string;
 }) {
   const t = useTheme();
-  const isDark = t.scheme === 'dark';
   const progress = Math.min(1, minutesDone / minutesGoal);
   const todayIndex = getCurrentWeekdayIndex();
+  // Days before today, this calendar week, that are part of the current streak.
+  // Capped at todayIndex (days before today, since the streak can't extend past
+  // Monday within this one displayed week) — unlike a plain `i < streakDays`
+  // check, this can never mark a day after today as done.
+  const daysBeforeTodayInStreak = Math.max(0, Math.min(streakDays - 1, todayIndex));
 
   return (
     <Card style={styles.card}>
@@ -43,12 +47,12 @@ export function TodaysGoalCard({
 
         <View style={styles.week}>
           <Text style={[styles.weekMessage, { color: t.colors.textSecondary }]}>
-            {isDark ? 'Great progress!' : 'Keep going!'}
+            {streakDays >= 3 ? 'Great progress!' : 'Keep going!'}
           </Text>
           <View style={styles.days}>
             {DAY_LABELS.map((label, i) => {
               const isToday = i === todayIndex;
-              const done = i < daysCompleted && !isToday;
+              const done = i < daysBeforeTodayInStreak;
               return (
                 <View key={i} style={styles.dayCol}>
                   <View

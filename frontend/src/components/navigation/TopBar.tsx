@@ -5,10 +5,12 @@ import { useTheme } from '../../theme/ThemeProvider';
 
 export function TopBar({
   title,
+  titleAlign = 'center',
   onBack,
   action,
 }: {
   title?: string;
+  titleAlign?: 'left' | 'center' | 'right';
   onBack?: () => void;
   action?: React.ReactNode;
 }) {
@@ -25,7 +27,10 @@ export function TopBar({
       </View>
 
       {title ? (
-        <Text style={[t.typography.h3, styles.title, { color: t.colors.textPrimary }]} numberOfLines={1}>
+        <Text
+          style={[t.typography.h3, styles.title, { color: t.colors.textPrimary, textAlign: titleAlign }]}
+          numberOfLines={1}
+        >
           {title}
         </Text>
       ) : (
@@ -39,7 +44,11 @@ export function TopBar({
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', height: 44 },
-  side: { width: 40 },
+  // minWidth, not width: the left slot is always just a back chevron (never
+  // wider than this), but the right slot can carry something wider — e.g.
+  // UeeHomeScreen's Pro badge + avatar — which needs room to actually grow
+  // instead of silently overflowing a fixed-width box.
+  side: { minWidth: 40 },
   sideRight: { alignItems: 'flex-end' },
   title: { flex: 1, textAlign: 'center' },
   backButton: { width: 32, height: 32, alignItems: 'flex-start', justifyContent: 'center' },

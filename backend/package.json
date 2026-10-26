@@ -26,12 +26,16 @@
     "ingest:manifest": "tsx scripts/ingest/generateManifest.ts",
     "ingest:lesson-plan": "tsx scripts/ingest/manifestToLessonPlan.ts",
     "ingest:lesson-run": "tsx scripts/ingest/runLessonPlan.ts",
-    "billing:expire": "tsx scripts/expireSubscriptions.ts"
+    "billing:expire": "tsx scripts/expireSubscriptions.ts",
+    "explain:apply": "tsx scripts/explain/applyExplanations.ts",
+    "explain:generate": "tsx scripts/explain/generateExplanations.ts",
+    "explain:propagate": "tsx scripts/explain/propagateSiblings.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
     "@fastify/cors": "^10.0.1",
     "@fastify/multipart": "^10.1.2",
     "@prisma/client": "^5.20.0",

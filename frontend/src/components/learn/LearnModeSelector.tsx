@@ -7,9 +7,13 @@ export type LearnMode = 'interactive' | 'textbook' | 'teacher_guide';
 
 const OPTIONS: { key: LearnMode; label: string; icon: keyof typeof Ionicons.glyphMap }[] = [
   // Short labels: three chips share one row, so long ones wrap and overflow.
-  { key: 'interactive', label: 'Interactive', icon: 'trail-sign-outline' },
-  { key: 'textbook', label: 'Textbook', icon: 'book-outline' },
-  { key: 'teacher_guide', label: 'Guides', icon: 'easel-outline' },
+  // Icons deliberately avoid 'book-outline' (already this screen's own
+  // AppTopBar icon and the bottom Learn tab's icon) and 'flash-outline'
+  // (the bottom Practice tab's icon) — each needs to read distinctly on a
+  // screen where those are already visible.
+  { key: 'interactive', label: 'Interactive', icon: 'layers-outline' },
+  { key: 'textbook', label: 'Textbook', icon: 'reader-outline' },
+  { key: 'teacher_guide', label: 'Guides', icon: 'clipboard-outline' },
 ];
 
 // Same visual/interaction pattern as PaperModeSelector (UEE Study/Exam toggle) —

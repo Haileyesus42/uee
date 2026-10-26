@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   },
   miniLine: { flexDirection: 'row', width: 22, height: 2, borderRadius: 2, overflow: 'hidden', marginTop: 6, marginBottom: 6 },
   miniLineHalf: { flex: 1 },
-  tipRow: { flexDirection: 'row', alignItems: 'center', marginTop: 20 },
+  tipRow: { flexDirection: 'row', alignItems: 'center', marginTop: 8 },
   tipIcon: { width: 24, height: 24, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
   tipEmoji: { fontSize: 12 },
   tipText: {
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
 
-  vline: { width: 1, height: 96, marginHorizontal: 10 },
+  vline: { width: 1, height: 84, marginHorizontal: 10 },
 
   calendarCol: { width: 78, alignItems: 'flex-end' },
   // Shadow lives on a wrapper: the inner calendar clips its gradient with
@@ -190,10 +190,10 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     elevation: 6,
   },
-  calendar: { width: 72, height: 76, borderRadius: 12, overflow: 'hidden' },
-  calendarTop: { paddingVertical: 5, alignItems: 'center' },
+  calendar: { width: 72, height: 70, borderRadius: 12, overflow: 'hidden' },
+  calendarTop: { paddingVertical: 4, alignItems: 'center' },
   calendarWeekday: { color: '#FFFFFF', fontFamily: 'Inter_700Bold', fontSize: 8, fontWeight: '700', letterSpacing: 0.5 },
-  calendarMain: { alignItems: 'center', paddingVertical: 5 },
+  calendarMain: { alignItems: 'center', paddingVertical: 4 },
   calendarDate: { fontFamily: 'Manrope_800ExtraBold', fontSize: 19, fontWeight: '800' },
   calendarMonth: { fontFamily: 'Inter_700Bold', fontSize: 8, fontWeight: '700', letterSpacing: 0.4 },
 });

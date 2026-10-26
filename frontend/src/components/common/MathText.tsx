@@ -16,7 +16,13 @@ function escapeHtml(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>');
 }
 
-function buildHtml(content: string, fontSize: number, lineHeight: number, color: string): string {
+function buildHtml(content: string, fontSize: number, lineHeight: number, color: string, numberOfLines?: number): string {
+  // Line-clamping a WebView's content only makes sense paired with a fixed
+  // outer height (see the component below) — an auto-resized WebView would
+  // just grow to swallow its own "overflow: hidden", defeating the clamp.
+  const clampCss = numberOfLines
+    ? `display: -webkit-box; -webkit-line-clamp: ${numberOfLines}; -webkit-box-orient: vertical; overflow: hidden;`
+    : '';
   return `<!DOCTYPE html>
 <html><head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,7 +38,7 @@ function buildHtml(content: string, fontSize: number, lineHeight: number, color:
     line-height: ${lineHeight}px;
     color: ${color};
   }
-  #content { padding: 0; }
+  #content { padding: 0; ${clampCss} }
   .katex { font-size: 1em; }
 </style>
 </head>
@@ -59,25 +65,41 @@ function buildHtml(content: string, fontSize: number, lineHeight: number, color:
 </body></html>`;
 }
 
-export function MathText({ children, style }: { children: string; style?: StyleProp<TextStyle> }) {
+export function MathText({
+  children,
+  style,
+  numberOfLines,
+}: {
+  children: string;
+  style?: StyleProp<TextStyle>;
+  numberOfLines?: number;
+}) {
   const flat = StyleSheet.flatten(style) ?? {};
   const fontSize = typeof flat.fontSize === 'number' ? flat.fontSize : 15;
   const lineHeight = typeof flat.lineHeight === 'number' ? flat.lineHeight : Math.round(fontSize * 1.35);
   const color = typeof flat.color === 'string' ? flat.color : '#111111';
-  const [height, setHeight] = useState(lineHeight);
+  // When clamped, the WebView's height is fixed up front from lineHeight *
+  // numberOfLines rather than grown to fit content — see buildHtml's clampCss.
+  const clampedHeight = numberOfLines ? lineHeight * numberOfLines : undefined;
+  const [height, setHeight] = useState(clampedHeight ?? lineHeight);
 
   if (!HAS_MATH.test(children)) {
-    return <Text style={style}>{children}</Text>;
+    return (
+      <Text style={style} numberOfLines={numberOfLines}>
+        {children}
+      </Text>
+    );
   }
 
   return (
     <WebView
       originWhitelist={['*']}
-      source={{ html: buildHtml(children, fontSize, lineHeight, color) }}
-      style={{ height, backgroundColor: 'transparent' }}
+      source={{ html: buildHtml(children, fontSize, lineHeight, color, numberOfLines) }}
+      style={[style, { height: clampedHeight ?? height, backgroundColor: 'transparent' }]}
       scrollEnabled={false}
       showsVerticalScrollIndicator={false}
       onMessage={(e) => {
+        if (clampedHeight) return;
         const next = Number(e.nativeEvent.data);
         if (!Number.isNaN(next) && next > 0) setHeight(next);
       }}

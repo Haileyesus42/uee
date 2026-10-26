@@ -13,3 +13,6 @@ scripts/ingest/output/
 # them (see imageExtract.ts) — served at runtime from disk, not meant to be
 # committed. Reviewed/imported content lives in Postgres, not here.
 assets/
+
+# Database backups and AI-handover content exports — local only, never committed.
+exports/

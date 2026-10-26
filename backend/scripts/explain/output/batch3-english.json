@@ -1,0 +1,800 @@
+[
+  {
+    "id": "52039d6e-13dd-46f1-8edc-9a847c55dcbf",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Which of the following words is closest in meaning to haggard as used in paragraph 1?",
+    "options": [
+      "a person who looks trustful",
+      "a person who commits crime",
+      "a person with no home",
+      "a person who looks suspicious"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: References \"paragraph 1,\" which is not present in the stored prompt, and correctIndex is null (no answer key in source). Unanswerable without the missing passage."
+  },
+  {
+    "id": "42431b7a-952c-49c9-910e-28c3e2f75f2c",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Unlike last year, only_________ students needed extra help this year last year we helped almost everyone in the class.",
+    "options": [
+      "many",
+      "most",
+      "a few",
+      "a little"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) a few",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "\"A few\" is the only option that fits the countable noun \"students\" while signaling a small number — the sentence contrasts this year (few needed help) with last year (\"we helped almost everyone\"). \"A little\" is for uncountable nouns, and \"many\"/\"most\" would contradict the intended contrast.",
+    "note": ""
+  },
+  {
+    "id": "090525cd-dbec-4190-b115-000650fa015f",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "What does the expression 'I would rather report otherwise' indicate in the context it is used in paragraph 3?",
+    "options": [
+      "The need to tell the public about the homeless",
+      "The fear to hide the true cause of homelessness",
+      "The need to explain the troubles facing the homeless",
+      "The fear to condemn the government for the problem"
+    ],
+    "correctIndex": null,
+    "oldExplanation": "(no explanation available — the source published this question without one)",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: References \"paragraph 3,\" which is not present in the stored prompt, and correctIndex is null (no answer key in source). Unanswerable without the missing passage."
+  },
+  {
+    "id": "afc7af3f-0b89-4796-a312-ad280cb65a90",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "We should be involved in sports activities to keep___________ fit and healthy.",
+    "options": [
+      "oneself",
+      "yourselves",
+      "ourselves",
+      "ourself"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) ourselves",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "The reflexive pronoun must agree with the subject \"We,\" which takes \"ourselves.\" \"Oneself\" is the generic/impersonal form, \"yourselves\" is second person, and \"ourself\" is not standard English.",
+    "note": ""
+  },
+  {
+    "id": "4b9f68dd-c8a9-46c7-b31d-fff8aa3b76ab",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "I __________my homework when you knocked at the door.",
+    "options": [
+      "had been",
+      "have been doing",
+      "have done",
+      "was doing"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) was doing",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "An ongoing past action interrupted by a shorter past action (\"when you knocked\") takes the past continuous — \"was doing.\" The other tenses don't correctly mark an action in progress at that specific past moment.",
+    "note": ""
+  },
+  {
+    "id": "fe368351-578f-45e4-b6c0-153a5ce0d74b",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "__________I do not complain much; my friends often take me for a fool.",
+    "options": [
+      "As a result of",
+      "In spite of",
+      "Because of",
+      "Because"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Because",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The blank introduces a reason clause with its own subject and verb (\"I do not complain much\"), which needs the subordinating conjunction \"because.\" \"Because of,\" \"in spite of,\" and \"as a result of\" all require a noun phrase or gerund instead.",
+    "note": ""
+  },
+  {
+    "id": "2975ddb0-a396-4b7a-9001-73df9fe520cb",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "My English is not good, I __________ advised to study English when I was younger.",
+    "options": [
+      "wish I had been",
+      "wished I had been",
+      "wished I was",
+      "wish I have been"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) wish I had been",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Expressing regret about a past situation after \"wish\" requires the past perfect — \"wish I had been.\" \"Wished I had been\" wrongly shifts \"wish\" itself into the past tense, and the other options pair the wrong tenses.",
+    "note": ""
+  },
+  {
+    "id": "09041418-22d2-4598-8fea-f5138f87bc09",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "I_______ much today if I had learned about money management at my young age.",
+    "options": [
+      "did not worry",
+      "will not worry",
+      "would not worry",
+      "would not have worried"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) would not worry",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "This is a mixed conditional: a past-perfect condition (\"if I had learned\") paired with a present-time result, signaled by \"today.\" A present consequence takes the simple conditional \"would not worry,\" not the past-perfect \"would not have worried,\" which would describe a past result instead.",
+    "note": ""
+  },
+  {
+    "id": "05549b4c-847e-47f3-93f1-e08ddab74f6e",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "My father is not ________old______ yours; he is only 53 years old.",
+    "options": [
+      "such...as",
+      "as...so",
+      "such...so",
+      "as...as"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) as...as",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Negated equality between two things uses the \"as...as\" construction (\"not as old as\"). \"Such...as,\" \"as...so,\" and \"such...so\" are not standard English comparative structures.",
+    "note": ""
+  },
+  {
+    "id": "174f085f-5795-4874-84e2-3ff6feae3abb",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "natural",
+    "prompt": "Lojo is________ tall girl___________ she can easily touch the ceiling of her classroom.",
+    "options": [
+      "such...as",
+      "such a...that",
+      "as such...that",
+      "so...that"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) such a...that",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Describing a degree that produces a result uses \"such a + adjective + noun + that\" — \"such a tall girl that she can...\" \"So...that\" would need the noun dropped (\"so tall that\"), and the other options aren't valid structures.",
+    "note": ""
+  },
+  {
+    "id": "f3bdddf6-283e-413b-8470-272cdfe124bb",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Daughter: I think brilliant students should be exempted from cost-sharing. Mother: _________________________ money shouldn't be a reward for good work.",
+    "options": [
+      "No, I don't accept this foolish idea",
+      "I am afraid I can't agree",
+      "This is stupid",
+      "Shut up"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) I am afraid I can't agree",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The mother is disagreeing with her daughter before explaining why (\"money shouldn't be a reward\"), so a polite expression of disagreement fits the measured tone. The other options are too harshly dismissive for what follows.",
+    "note": ""
+  },
+  {
+    "id": "8d23171a-d23f-4f78-b48e-c265eb1d7ce9",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Friend: _______________I'm almost blind in the dark. You: Don't worry about it.",
+    "options": [
+      "Will you forgive me for stepping on your foot?",
+      "I shouldn't have stepped on your foot.",
+      "Excuse me for stepping on your foot.",
+      "Did I step on your foot?"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Did I step on your foot?",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "\"I'm almost blind in the dark\" explains why the friend is unsure whether they stepped on a foot, which fits a tentative question (\"Did I step on your foot?\") better than an outright apology assuming it already happened.",
+    "note": ""
+  },
+  {
+    "id": "f09602f4-f0c9-4531-9e1c-cd9cc6444cb6",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Nuru: Well done, Daniel! You got an A grade on your Maths. Daniel: Really? ______________",
+    "options": [
+      "A good achievement, isn't it",
+      "Thank you for the good news.",
+      "I'm glad you liked it.",
+      "Nice work, isn't it?"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) Thank you for the good news.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "Daniel is responding to being congratulated, so a grateful reply fits. The other options are phrased as something Nuru would say to Daniel, not Daniel's own reply, or don't fit a grade-achievement context.",
+    "note": ""
+  },
+  {
+    "id": "43f71ae9-966c-4739-aa3b-8d59ec80b117",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Lilu: ___________________ Maria: I'm sorry; I'm a stranger too.",
+    "options": [
+      "Could you tell me where the director's office is?",
+      "Hi, you know the director's office, don't you?",
+      "Where is the director's office, if I may ask?",
+      "I am sorry to say that, but I got lost."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Could you tell me where the director's office is?",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "Maria's reply (\"I'm a stranger too\") only makes sense as a response to being asked for directions, which \"Could you tell me where the director's office is?\" provides directly.",
+    "note": ""
+  },
+  {
+    "id": "e6bd0082-23c3-42a0-b369-0670942e90a6",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Father: ___________________? Mother: He did not get full mark on his English exam.",
+    "options": [
+      "Why is Zena crying",
+      "How is Zena crying",
+      "Who is crying Zena",
+      "When is Zena crying"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Why is Zena crying",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "\"Why is Zena crying\" is the only grammatically correct question among the options, and it correctly prompts the reason given in the reply (\"He did not get full mark...\").",
+    "note": ""
+  },
+  {
+    "id": "4c4f293a-3e38-4893-8081-fd7440e5d18e",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Student: Today, I'm interviewing Business Managers to give me some idea about the field. Let me begin by________________ Manager: To put it simply, I joined the department because I wanted to learn how to run my own business.",
+    "options": [
+      "asking you how you decided to study business management",
+      "telling you the history of the field in our context",
+      "telling you a few important things about the field",
+      "explaining job opportunities in the field"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) asking you how you decided to study business management",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "\"Let me begin by\" requires a gerund, which only \"asking you how you decided...\" supplies correctly. It also matches the manager's answer, which directly explains why they chose the field.",
+    "note": ""
+  },
+  {
+    "id": "6069e540-01de-4494-81a5-239ac2b4a540",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Kidist: _______________ Hana: With sugar, please.",
+    "options": [
+      "Would you prefer your coffee with or without sugar",
+      "How much sugar do you like in your coffee",
+      "Is it good to drink coffee without sugar",
+      "Do you like your coffee with sugar"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Would you prefer your coffee with or without sugar",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "An either/or question about sugar preference directly matches the reply \"With sugar, please,\" which picks one of the two offered options.",
+    "note": ""
+  },
+  {
+    "id": "14e328a4-126f-4a99-b341-106fe9e36c28",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Ahmed: ______________________________ Samson: You know why? He is such a funny boy that he makes everyone laugh.",
+    "options": [
+      "Do you like to sit next to Solomon in the classroom",
+      "Where do many students like to sit in the classroom",
+      "Why do many students like to sit next to Solomon",
+      "Is Solomon a funny boy"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Why do many students like to sit next to Solomon",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "Samson's reply (\"You know why?\") only makes sense as an answer to a \"why\" question, matching \"Why do many students like to sit next to Solomon.\"",
+    "note": ""
+  },
+  {
+    "id": "5f3fb07e-ce74-4e05-bcbe-29d752ae37b6",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Mother: Tell me why schools are closed in Kiremt in Ethiopia. Daughter: ___________________________",
+    "options": [
+      "Did you learn year-long yourself?",
+      "Nobody likes going to school.",
+      "I hate Kiremt, Mom.",
+      "I haven't any clue, Mom."
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) I haven't any clue, Mom.",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The daughter admits she doesn't actually know the reason schools close, which fits a \"tell me why\" prompt that the daughter can't really answer.",
+    "note": ""
+  },
+  {
+    "id": "0f08dbd7-8b49-4f87-8dd0-bb021f755d3f",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Ararso: What is your opinion about the need for college education? Jirata: ___________________",
+    "options": [
+      "What is the requirement to join college?",
+      "I feel certain that it's absolutely necessary.",
+      "None of my children joined college.",
+      "I think I've a good idea about it."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) I feel certain that it's absolutely necessary.",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The question asks directly for an opinion (\"what is your opinion about...\"), which only \"I feel certain that it's absolutely necessary\" actually provides — the other options are questions or irrelevant statements.",
+    "note": ""
+  },
+  {
+    "id": "45e64615-c0d9-4c51-b0d9-2cc3d0e82509",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Husband: Where would you like us to go for dinner? Wife: ___________________I like their French toast.",
+    "options": [
+      "How about trying Haile Grand Hotel?",
+      "I do not have enough money for dinner.",
+      "I do not care about dinner tonight.",
+      "Is your sister going with us?"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) How about trying Haile Grand Hotel?",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "A restaurant suggestion is needed for \"where to go for dinner,\" and \"How about trying Haile Grand Hotel?\" is immediately justified by \"I like their French toast.\"",
+    "note": ""
+  },
+  {
+    "id": "c7fa1fe7-5ad1-49b3-9ac8-cc516f275b2d",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Mother: Why are you going so early today? Daughter: __________________ Mom.",
+    "options": [
+      "Nobody said it is early",
+      "Mind your own business",
+      "In order to get a front seat",
+      "It is not very early"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) In order to get a front seat",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "The question asks \"why are you going so early,\" which needs a reason — \"In order to get a front seat\" is the only option that actually states a purpose.",
+    "note": ""
+  },
+  {
+    "id": "ecb38ecd-77fb-4187-9693-95042f97d6c2",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Teacher: Tell me the reasons why learning English is important to you. Student: _______________________",
+    "options": [
+      "To begin with, English is a compulsory school subject",
+      "As a matter of fact, we learn English five days a week",
+      "Believe it or not, my written English is very good",
+      "Firstly, English is not my favourite school subject"
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) To begin with, English is a compulsory school subject",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The teacher asks for reasons English is important, and only \"English is a compulsory school subject\" actually gives a reason — the other options state unrelated facts or contradict the premise that English is important.",
+    "note": ""
+  },
+  {
+    "id": "963f6518-58b0-4eac-86a7-bfd3cc4fa713",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Neighbor: Today's youths have a much wider access to information than those who lived in the past. Father: Yes, but_____________________",
+    "options": [
+      "it's good to remember those who lived in the past were less intelligent",
+      "the trouble is they are indiscriminate in their choice of information",
+      "we should appreciate the unlimited interest of today's youth",
+      "the main point is they do not read all that comes their way"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) the trouble is they are indiscriminate in their choice of information",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "\"Yes, but\" signals a contrasting point is coming. Only \"the trouble is they are indiscriminate in their choice of information\" is critical/contrasting; the other options agree with or praise the neighbor's point instead.",
+    "note": ""
+  },
+  {
+    "id": "7890e273-8353-4e43-8fd2-585b8cb62aa0",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Abeya: I think that education is the only way to live a better life? Temesgen: True, but I should say__________________",
+    "options": [
+      "going to college is not mandatory",
+      "perhaps we need to learn further",
+      "perhaps it is one among the few",
+      "going to college is simple"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) perhaps it is one among the few",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "\"True, but\" signals Temesgen is qualifying Abeya's absolute claim that education is the \"only\" way. \"Perhaps it is one among the few\" directly softens \"only\" into \"one of several,\" which the other options don't address.",
+    "note": ""
+  },
+  {
+    "id": "9a8ba5f7-c36f-410f-b537-de2ebf673344",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Husband: Six people died and three were injured in a car accident today. Wife: __________________ Has the cause been known?",
+    "options": [
+      "Look after yourself on the road.",
+      "Never trust a car driver.",
+      "I am sorry to say this.",
+      "What a terrible news!"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) What a terrible news!",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "An exclamation of shock fits naturally before the follow-up question about the cause. The other options don't express a reaction to tragic news.",
+    "note": ""
+  },
+  {
+    "id": "bfb87b93-fe60-4e85-9b3a-d6481215a007",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Student: ______________________ Teacher: Yes. This will be our tomorrow's lesson.",
+    "options": [
+      "Could you explain to me about active and passive voices?",
+      "When do you teach us about active and passive voices?",
+      "Who knows about active and passive voices?",
+      "You could learn active and passive voices."
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) When do you teach us about active and passive voices?",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "The teacher's reply (\"this will be our tomorrow's lesson\") answers a scheduling question, matching \"When do you teach us about active and passive voices?\" — not a request for an explanation.",
+    "note": ""
+  },
+  {
+    "id": "d9d22edc-02c8-4b93-ad7e-a6a263a44684",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Lensa: My spoken English is really horrible; ________________? Zemzem: Practice speaking every day in front of your friends.",
+    "options": [
+      "why you learn English",
+      "what is yours like",
+      "do you like English",
+      "what should I do"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) what should I do",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Zemzem's reply is practical advice (\"practice speaking every day\"), which only makes sense as an answer to a request for advice — \"what should I do.\"",
+    "note": ""
+  },
+  {
+    "id": "38b4e590-8da6-4275-a1db-28a4ee0ec593",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "The part indicated by number 1 is:",
+    "options": [
+      "closing statement",
+      "salutation",
+      "body of the letter",
+      "subject"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) salutation",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: References \"the part indicated by number 1,\" implying a labeled diagram or letter format image that is not present anywhere in the stored prompt/options. Unanswerable without the missing visual."
+  },
+  {
+    "id": "8791ce51-d9e6-475e-8671-b876c37ca77d",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "The part indicated by number 2 is:",
+    "options": [
+      "greeting",
+      "closing statement",
+      "salutation",
+      "body of the letter"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) body of the letter",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: Same issue as the \"number 1\" question — references a labeled diagram/image (\"number 2\") that is not present in the stored data."
+  },
+  {
+    "id": "e9fde713-e66a-4420-be93-602359680f1c",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "The part indicated by number 3 is:",
+    "options": [
+      "a greeting",
+      "closing statement",
+      "salutation",
+      "body of the letter"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) closing statement",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: Same issue — references a labeled diagram/image (\"number 3\") that is not present in the stored data."
+  },
+  {
+    "id": "20ae2cdb-4f2e-4377-8f7d-7b6cfd18eb0e",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "a. Many people believe education is the key to success in life. b. These people list names of several intellectuals who struggle to make in the end to breath on their salaries c. As examples, they mention highly educated people who have become rich. d. Others contend that education only leads people to poverty.",
+    "options": [
+      "a b c d",
+      "a c b d",
+      "c b d a",
+      "c b a d"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) a c b d",
+    "verified": false,
+    "myIndependentAnswerIndex": null,
+    "newExplanation": null,
+    "note": "FLAGGED: My own best ordering (a: thesis \"many believe education=success\" -> c: supporting example \"rich people\" -> d: counter-thesis \"others say it leads to poverty\" -> b: supporting example \"struggling intellectuals\") is \"a c d b,\" which is not among the 4 given options (a b c d / a c b d / c b d a / c b a d). The stored answer \"a c b d\" requires \"these people\" in (b) to refer forward to \"others\" introduced only in the later (d), which reads as backward anaphora. Genuinely uncertain — flagging rather than forcing a fit."
+  },
+  {
+    "id": "85ff1324-95d3-4f84-ae13-2ab5a447cb93",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Choose the sentence that is correctly punctuated and capitalized.",
+    "options": [
+      "Hello Kenyan National Hotel, can I help you?",
+      "Hello, Kenyan National Hotel. can I help you?",
+      "Hello Kenyan National Hotel. Can I help you?",
+      "Hello, Kenyan National Hotel! Can I help you?"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) Hello, Kenyan National Hotel! Can I help you?",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "Correct punctuation needs a comma before a direct address (\"Hello, Kenyan National Hotel\") and a capital letter after terminal punctuation (\"Can I help you?\"). Only this option has both right; the others are missing the comma, have a lowercase letter after a period, or drop the comma entirely.",
+    "note": ""
+  },
+  {
+    "id": "829b980d-5d5d-496a-ab79-1d9ba9a973df",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "At first, the suspect did not realize__________ during the interview. Later on, he saw the voice recorder and refused to continue the interview.",
+    "options": [
+      "he was being recording",
+      "he had recorded",
+      "he was recording",
+      "he was being recorded"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) he was being recorded",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "The suspect is the object of an ongoing, covert recording — past continuous passive, \"was being recorded.\" \"Was being recording\" is not grammatical, and the other options aren't passive or aren't continuous.",
+    "note": ""
+  },
+  {
+    "id": "c84a0eea-76de-40bd-9369-4b0cf05e75fd",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Addis Ababa University, which is the oldest university in the country, has changed its admission policy.",
+    "options": [
+      "Addis Ababa University admits students based on new rules and regulations.",
+      "Addis Ababa University has grown old with its admission policy.",
+      "Addis Ababa University has a conducive learning atmosphere.",
+      "Joining Addis Ababa University has now become easy."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Addis Ababa University admits students based on new rules and regulations.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "The original sentence says the university \"has changed its admission policy\" — the only option that preserves this meaning is the one describing new admission rules; the others describe the university's age, atmosphere, or ease of entry instead.",
+    "note": ""
+  },
+  {
+    "id": "163b684c-7dc7-4be4-97a8-455aea5c79be",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "All students but one got above average marks in English.",
+    "options": [
+      "Only one student failed to get above average marks in English.",
+      "Only one student got the above average mark in English.",
+      "All students did not get above average marks in English.",
+      "Everybody got above average mark in English."
+    ],
+    "correctIndex": 0,
+    "oldExplanation": "Correct Answer is (A) Only one student failed to get above average marks in English.",
+    "verified": true,
+    "myIndependentAnswerIndex": 0,
+    "newExplanation": "\"All students but one\" means all except one — so exactly one student did not get above-average marks, which \"only one student failed\" restates correctly.",
+    "note": ""
+  },
+  {
+    "id": "3e533ea9-c409-404d-a20a-d3d5a02ca7a8",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Bed : Sleep :: Stove : ________",
+    "options": [
+      "Clean",
+      "Wash",
+      "Cook",
+      "Utensil"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) Cook",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "A bed is for sleeping; a stove is for cooking — the same \"used for\" relationship.",
+    "note": ""
+  },
+  {
+    "id": "5c9e6540-231b-4aba-aaf6-2905a6b3c853",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Mouse is to computer as steering wheel is to ________.",
+    "options": [
+      "thermo-flask",
+      "refrigerator",
+      "vehicle",
+      "television"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) vehicle",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "A mouse is used to control a computer; a steering wheel is used to control a vehicle — the same \"used to control\" relationship.",
+    "note": ""
+  },
+  {
+    "id": "c93c2c01-2521-4c22-a2e7-dc152362b3ac",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Tensions between the two countries are rising quickly. We cannot rule out the possibility that war breaks out.",
+    "options": [
+      "assume",
+      "exclude",
+      "predict",
+      "imagine"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) exclude",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "\"Rule out\" means to dismiss as impossible or exclude from consideration, which matches \"exclude\" most closely among the options.",
+    "note": ""
+  },
+  {
+    "id": "5a97f9df-a707-4bd9-a386-8f981213d82b",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "If you go to a new place, your behavior and manner should harmonize with that of the people you meet there.",
+    "options": [
+      "go against",
+      "consider",
+      "contradict",
+      "integrate"
+    ],
+    "correctIndex": 3,
+    "oldExplanation": "Correct Answer is (D) integrate",
+    "verified": true,
+    "myIndependentAnswerIndex": 3,
+    "newExplanation": "\"Harmonize with\" means to blend in or be consistent with, which matches \"integrate\" — adapting to fit in with the people and surroundings.",
+    "note": ""
+  },
+  {
+    "id": "7d370ba9-6ae0-492e-bbe5-476187bc9e0d",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "The teacher announced that the mathematics examination has been put off for next week.",
+    "options": [
+      "forgotten",
+      "postponed",
+      "prepared",
+      "cancelled"
+    ],
+    "correctIndex": 1,
+    "oldExplanation": "Correct Answer is (B) postponed",
+    "verified": true,
+    "myIndependentAnswerIndex": 1,
+    "newExplanation": "\"Put off\" means to postpone or delay something to a later time, confirmed by \"for next week\" — the exam is rescheduled, not cancelled or forgotten.",
+    "note": ""
+  },
+  {
+    "id": "7daba123-53f6-4436-ae96-56805a92d3ff",
+    "subject": "english",
+    "examYear": 2025,
+    "stream": "social",
+    "prompt": "Thanks to science and technology, many of our organs are replaceable .",
+    "options": [
+      "removable",
+      "curable",
+      "exchangeable",
+      "avoidable"
+    ],
+    "correctIndex": 2,
+    "oldExplanation": "Correct Answer is (C) exchangeable",
+    "verified": true,
+    "myIndependentAnswerIndex": 2,
+    "newExplanation": "\"Replaceable\" means capable of being replaced with an equivalent, which \"exchangeable\" matches most directly — \"removable\" only means able to be taken out, not necessarily substituted.",
+    "note": ""
+  }
+]

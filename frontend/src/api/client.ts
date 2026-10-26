@@ -3,7 +3,7 @@ import { clearTokens, getStoredTokens, storeTokens } from './tokenStorage';
 // Exported for billing.ts's Telebirr screenshot upload, which needs its own fetch
 // call outside apiFetch (FormData, not JSON — see the comment there).
 export const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000';
-
+console.log('[api] base =', process.env.EXPO_PUBLIC_API_URL)
 export class ApiError extends Error {
   status: number;
   constructor(status: number, message: string) {
