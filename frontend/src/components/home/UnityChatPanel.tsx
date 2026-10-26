@@ -17,7 +17,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { useChatHistory, useSendChatMessage } from '../../hooks/useChat';
+import { useUnityChat } from '../../context/UnityChatContext';
 import { RobotMascot } from './RobotMascot';
+import { MathText } from '../common/MathText';
 
 type Message = { id: string; from: 'user' | 'unity'; text: string };
 
@@ -26,11 +28,21 @@ const FALLBACK_REPLY = "Sorry, I'm having trouble responding right now — pleas
 
 const PANEL_WIDTH = Math.min(380, Dimensions.get('window').width * 0.9);
 
+function getDisplayText(text: string): string {
+  if (text.startsWith('[Q_CONTEXT]')) {
+    const firstLine = text.split('\n')[0];
+    return firstLine.replace('[Q_CONTEXT] ', '');
+  }
+  return text;
+}
+
 export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
   const scrollRef = useRef<ScrollView>(null);
   const anim = useRef(new Animated.Value(0)).current;
+
+  const { pendingPrompt, clearPendingPrompt } = useUnityChat();
 
   const { data: history } = useChatHistory();
   const sendMutation = useSendChatMessage();
@@ -40,11 +52,8 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
 
   const messages: Message[] = [
     { id: 'intro', from: 'unity', text: "Hi! I'm Unity, your AI tutor. What would you like help with today?" },
-    ...(history ?? []).map((m): Message => ({ id: m.id, from: m.role, text: m.text })),
-    ...(pending ? [{ id: 'pending', from: 'user' as const, text: pending }] : []),
-    // Groq being down is already handled server-side with a normal 200 + friendly
-    // text — this bubble only shows up for the rarer network/auth failure, where
-    // the message never made it to the server at all.
+    ...(history ?? []).map((m): Message => ({ id: m.id, from: m.role, text: getDisplayText(m.text) })),
+    ...(pending ? [{ id: 'pending', from: 'user' as const, text: getDisplayText(pending) }] : []),
     ...(localError ? [{ id: 'local-error', from: 'unity' as const, text: FALLBACK_REPLY }] : []),
   ];
 
@@ -71,6 +80,15 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
       onError: () => setLocalError(true),
     });
   }
+
+  useEffect(() => {
+    if (!pendingPrompt) return;
+    if (sendMutation.isPending) return;
+    const text = pendingPrompt.text;
+    clearPendingPrompt();
+    send(text);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingPrompt, sendMutation.isPending]);
 
   const translateX = anim.interpolate({ inputRange: [0, 1], outputRange: [PANEL_WIDTH, 0] });
   const backdropOpacity = anim.interpolate({ inputRange: [0, 1], outputRange: [0, 1] });
@@ -111,7 +129,9 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
                   <View key={msg.id} style={styles.unityRow}>
                     <RobotMascot size={26} />
                     <View style={[styles.bubble, styles.unityBubble, { backgroundColor: t.colors.surface }]}>
-                      <Text style={[styles.bubbleText, { color: t.colors.textPrimary }]}>{msg.text}</Text>
+                      <MathText markdown style={[styles.bubbleText, { color: t.colors.textPrimary }]}>
+                        {msg.text}
+                      </MathText>
                     </View>
                   </View>
                 ) : (
@@ -173,8 +193,6 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   backdrop: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(15,10,30,0.4)' },
-  // Shadow lives on this unclipped outer wrapper; the inner `panel` view below
-  // does the corner-radius clipping — combining both on one view clips the shadow too.
   shadowWrap: {
     position: 'absolute',
     right: 0,

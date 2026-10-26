@@ -1,7 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   FlatList,
-  Image,
   NativeScrollEvent,
   NativeSyntheticEvent,
   Pressable,
@@ -10,6 +9,7 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native';
+import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
 
 export type FacsimilePage = {
@@ -40,7 +40,11 @@ type Props = {
 const pageUri = (apiUrl: string, filename: string) => `${apiUrl}/textbook/images/${filename}`;
 
 // Memoized so a page turn (which updates the counter) does not re-render every
-// mounted neighbour, and `fadeDuration={0}` avoids Android's fade-in delay.
+// mounted neighbour. `recyclingKey` lets expo-image safely reuse the
+// underlying native view across list recycling instead of tearing it down —
+// the plain-Image version of this had to disable removeClippedSubviews
+// entirely to avoid a reload every time a page scrolled off and back on;
+// expo-image's own disk+memory cache makes that no longer necessary.
 const PageItem = memo(function PageItem({
   uri,
   size,
@@ -52,7 +56,14 @@ const PageItem = memo(function PageItem({
 }) {
   return (
     <Pressable style={[styles.page, size]} onPress={onPress}>
-      <Image source={{ uri }} style={size} resizeMode="contain" fadeDuration={0} />
+      <Image
+        source={{ uri }}
+        style={size}
+        contentFit="contain"
+        transition={null}
+        cachePolicy="memory-disk"
+        recyclingKey={uri}
+      />
     </Pressable>
   );
 });
@@ -94,7 +105,7 @@ export function FacsimilePager({
     (i: number) => {
       [i + 1, i + 2, i - 1].forEach((n) => {
         const page = pages[n];
-        if (page) void Image.prefetch(pageUri(apiUrl, page.filename)).catch(() => {});
+        if (page) void Image.prefetch(pageUri(apiUrl, page.filename), 'memory-disk').catch(() => {});
       });
     },
     [pages, apiUrl]
@@ -171,12 +182,15 @@ export function FacsimilePager({
         getItemLayout={(_, i) => ({ length: width, offset: width * i, index: i })}
         onMomentumScrollEnd={handleMomentumEnd}
         onScrollToIndexFailed={() => {}}
-        // Keep neighbours mounted and decoded; unmounting them is what made a
-        // swipe wait for a fresh download.
         initialNumToRender={2}
         maxToRenderPerBatch={3}
         windowSize={5}
-        removeClippedSubviews={false}
+        // Safe to reclip now: expo-image's disk+memory cache (keyed by uri via
+        // recyclingKey above) serves a remounted page instantly from cache
+        // instead of a fresh download, which is what removeClippedSubviews
+        // used to break under plain Image. Recycling off-screen native views
+        // keeps long reading sessions from accumulating memory indefinitely.
+        removeClippedSubviews={true}
         renderItem={renderItem}
       />
       <View style={styles.counter}>

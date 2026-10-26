@@ -8,6 +8,7 @@ export type Subject = {
   mastery: number;
   hasTextbook: boolean;
   hasTeacherGuide: boolean;
+  questionCount: number;
 };
 export type TextbookKind = 'textbook' | 'teacher_guide';
 

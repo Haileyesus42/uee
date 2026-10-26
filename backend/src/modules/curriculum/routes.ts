@@ -39,6 +39,11 @@ export async function curriculumRoutes(app: FastifyInstance) {
     const hasTeacherGuideBySubjectId = new Set(
       textbookCounts.filter((t) => t.kind === 'TEACHER_GUIDE').map((t) => t.subjectId)
     );
+    // Mock Exams is only offered for subjects with enough real questions to fill
+    // a full-length paper — some subjects (e.g. agriculture, pva) have zero
+    // ingested questions and would crash QuizRunner if listed anyway.
+    const questionCounts = await prisma.question.groupBy({ by: ['subjectId'], _count: true });
+    const questionCountBySubjectId = new Map(questionCounts.map((q) => [q.subjectId, q._count]));
 
     return subjects.map((s) => {
       const lessons = s.units.flatMap((u) => u.lessons);
@@ -48,6 +53,7 @@ export async function curriculumRoutes(app: FastifyInstance) {
         id: s.id,
         slug: s.slug,
         name: s.name,
+        questionCount: questionCountBySubjectId.get(s.id) ?? 0,
         icon: s.icon,
         mastery: total === 0 ? 0 : completed / total,
         hasTextbook: hasTextbookBySubjectId.has(s.id),

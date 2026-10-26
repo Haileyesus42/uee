@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Dimensions,
-  Image,
   Modal,
   NativeScrollEvent,
   NativeSyntheticEvent,
@@ -11,12 +10,15 @@ import {
   Text,
   View,
 } from 'react-native';
+import { Image } from 'expo-image';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
+import { useQueryClient } from '@tanstack/react-query';
 import { useTheme } from '../../theme/ThemeProvider';
 import { fontFamily } from '../../theme/tokens';
 import { useTextbookSection, useReadingProgress, useBookmarks, useHighlights } from '../../hooks/useTextbook';
+import { getTextbookSection } from '../../api/textbook';
 import { LearnStackParamList } from '../../navigation/types';
 import { TextbookContentBlock } from '../../api/types';
 import { MathText } from '../../components/common/MathText';
@@ -52,7 +54,12 @@ function ImageViewerModal({ uri, onClose }: { uri: string | null; onClose: () =>
     <Modal visible={uri !== null} transparent animationType="fade" onRequestClose={onClose}>
       <Pressable style={styles.viewerBackdrop} onPress={onClose}>
         {uri ? (
-          <Image source={{ uri }} style={{ width: win.width, height: win.height * 0.85 }} resizeMode="contain" />
+          <Image
+            source={{ uri }}
+            style={{ width: win.width, height: win.height * 0.85 }}
+            contentFit="contain"
+            cachePolicy="memory-disk"
+          />
         ) : null}
         <Pressable style={styles.viewerClose} onPress={onClose} hitSlop={12}>
           <Ionicons name="close" size={26} color="#FFFFFF" />
@@ -136,11 +143,37 @@ function ReaderTable({
 // to this screen, layered visually on top of the app's own light/dark theme —
 // there's no per-screen override mechanism in ThemeProvider, and reusing its
 // toggleScheme() here would flip the whole app's theme, not just the reader.
+// Warms the cache for a section the reader is about to need (not yet asked
+// for) — the section JSON itself (titles/blocks metadata, no image bytes) and
+// its very first page image, so crossing into it is instant rather than
+// waiting on both a network round trip and a cold image fetch at once.
+export async function prefetchSection(
+  queryClient: ReturnType<typeof useQueryClient>,
+  sectionId: string | null | undefined,
+  apiUrl: string
+) {
+  if (!sectionId) return;
+  const data = await queryClient.fetchQuery({
+    queryKey: ['textbookSection', sectionId],
+    queryFn: () => getTextbookSection(sectionId),
+  });
+  const firstImage = data.blocks.find((b): b is Extract<TextbookContentBlock, { type: 'image' }> => b.type === 'image');
+  if (firstImage) void Image.prefetch(`${apiUrl}/textbook/images/${firstImage.filename}`, 'memory-disk').catch(() => {});
+}
+
 export function TextbookReaderScreen({ navigation, route }: Props) {
   const t = useTheme();
   const { subjectId, sectionId, kind = 'textbook', initialPage } = route.params;
   const { data: section } = useTextbookSection(sectionId);
   const { data: progress, saveProgress } = useReadingProgress(subjectId, kind);
+  const queryClient = useQueryClient();
+
+  // As soon as this section's own data is in, warm the next one — the section
+  // JSON is tiny (titles/metadata, not image bytes) so there's no cost to
+  // doing this immediately rather than waiting until the user is near the end.
+  useEffect(() => {
+    if (section?.nextSectionId) void prefetchSection(queryClient, section.nextSectionId, API_URL);
+  }, [section?.nextSectionId, queryClient]);
   const { data: bookmarks, toggleBookmark } = useBookmarks(subjectId);
   const { data: highlights, toggleHighlight } = useHighlights(sectionId);
   const currentBookmark = bookmarks?.find((b) => b.sectionId === sectionId);
@@ -367,7 +400,8 @@ export function TextbookReaderScreen({ navigation, route }: Props) {
                   <Image
                     source={{ uri }}
                     style={{ width: displayWidth, height: displayHeight, borderRadius: 8 }}
-                    resizeMode="contain"
+                    contentFit="contain"
+                    cachePolicy="memory-disk"
                   />
                 </Pressable>
                 {block.caption ? (

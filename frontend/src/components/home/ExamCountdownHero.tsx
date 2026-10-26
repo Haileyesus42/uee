@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
 
   vline: { width: 1, height: 84, marginHorizontal: 10 },
 
-  calendarCol: { width: 78, alignItems: 'flex-end' },
+  calendarCol: { width: 78, alignItems: 'flex-end', marginTop: 8 },
   // Shadow lives on a wrapper: the inner calendar clips its gradient with
   // overflow:'hidden', which would otherwise clip the shadow too.
   calendarShadow: {

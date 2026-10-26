@@ -1,6 +1,7 @@
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
-import { readFile } from 'node:fs/promises';
+import { createReadStream } from 'node:fs';
+import { stat } from 'node:fs/promises';
 import { resolve, basename } from 'node:path';
 import { prisma } from '../../lib/prisma';
 import { authenticate } from '../../plugins/authenticate';
@@ -202,9 +203,19 @@ export async function textbookRoutes(app: FastifyInstance) {
     const mime = IMAGE_MIME[ext];
     if (!mime) return reply.code(400).send({ error: 'Unsupported image type' });
 
+    const fullPath = resolve(IMAGES_DIR, filename);
     try {
-      const buffer = await readFile(resolve(IMAGES_DIR, filename));
-      return reply.type(mime).header('Cache-Control', 'public, max-age=31536000, immutable').send(buffer);
+      // Streamed, not read fully into memory first — these files run up to
+      // ~1MB each and the reader can have several in flight at once
+      // (facsimile prefetch keeps ~5 pages warm), so buffering every request
+      // means that many full-file allocations held in memory simultaneously
+      // for no benefit; a stream only ever holds one chunk at a time.
+      const { size } = await stat(fullPath);
+      return reply
+        .type(mime)
+        .header('Cache-Control', 'public, max-age=31536000, immutable')
+        .header('Content-Length', size)
+        .send(createReadStream(fullPath));
     } catch {
       return reply.code(404).send({ error: 'Image not found' });
     }

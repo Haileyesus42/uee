@@ -40,11 +40,13 @@ export function MultipleChoiceOption({
 
 const styles = StyleSheet.create({
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1.5,
-    padding: 13,
-    marginBottom: 8,
-  },
-  label: { fontFamily: 'Inter_400Regular', fontSize: 13, lineHeight: 18, flex: 1 },
+  flexDirection: 'row',
+  alignItems: 'center',
+  borderWidth: 1.5,
+  paddingVertical: 14,
+  paddingHorizontal: 16,
+  minHeight: 56,
+  marginBottom: 8,
+},
+  label: { fontFamily: 'Inter_400Regular', fontSize: 13, lineHeight: 21, flex: 1 },
 });

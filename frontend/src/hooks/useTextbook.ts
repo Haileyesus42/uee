@@ -25,11 +25,20 @@ import {
   TextbookTocUnit,
 } from '../api/types';
 
+// Content is immutable once ingested (see scripts/ingest/) — re-fetching it on
+// the app's global 30s staleTime (App.tsx) just repeats a request that can
+// never return anything different, on every re-visit of an already-read
+// section. Infinity is safe specifically because nothing in this app ever
+// edits a TextbookSection after import; a real content update ships as a new
+// app version anyway, which starts with a fresh cache.
+const IMMUTABLE_CONTENT = { staleTime: Infinity } as const;
+
 export function useTextbookToc(subjectId: string, kind: TextbookKind, grade?: number) {
   return useQuery<TextbookTocUnit[]>({
     queryKey: ['textbookToc', subjectId, kind, grade ?? 'all'],
     queryFn: () => getTextbookToc(subjectId, kind, grade),
     enabled: !!subjectId,
+    ...IMMUTABLE_CONTENT,
   });
 }
 
@@ -38,6 +47,7 @@ export function useTextbookEdition(subjectId: string, kind: TextbookKind) {
     queryKey: ['textbookEdition', subjectId, kind],
     queryFn: () => getTextbookEdition(subjectId, kind),
     enabled: !!subjectId,
+    ...IMMUTABLE_CONTENT,
   });
 }
 
@@ -46,6 +56,7 @@ export function useTextbookSection(sectionId: string) {
     queryKey: ['textbookSection', sectionId],
     queryFn: () => getTextbookSection(sectionId),
     enabled: !!sectionId,
+    ...IMMUTABLE_CONTENT,
   });
 }
 

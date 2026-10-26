@@ -6,7 +6,10 @@ import { awardXp } from '../../lib/gamification';
 
 const questionsQuery = z.object({
   subjectId: z.string().min(1),
-  count: z.coerce.number().int().min(1).max(50).default(10),
+  // 100 comfortably covers every real UEE paper length (English's 60 is the
+  // longest configured, see MockExamsListScreen's EXAM_CONFIG) with headroom —
+  // was capped at 50, which rejected a full-length English mock outright.
+  count: z.coerce.number().int().min(1).max(100).default(10),
 });
 
 const startAttemptBody = z.object({
@@ -24,14 +27,27 @@ const answerBody = z.object({
   selectedIndex: z.number().int().min(-1),
 });
 
-// Cycles through the bank when more questions are requested than exist — fine for
-// endless practice drilling, where seeing a question again is expected. NOT used
-// for UEE papers (see pickUniqueQuestions) — a "past exam" repeating the same
-// question twice in one sitting reads as broken, not as a feature.
+function shuffled<T>(items: T[]): T[] {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// A random sample, not the same first-N-by-insertion-order every time — a
+// "full-length mock exam" that shows byte-identical questions on every retake
+// isn't actually simulating a new exam. Re-shuffles per lap when more questions
+// are requested than exist, so even the cycled case doesn't fall into a visibly
+// repeating pattern. NOT used for UEE papers (see pickUniqueQuestions) — a real
+// past exam has a fixed, real order that shouldn't be shuffled.
 export async function pickQuestions(subjectId: string, count: number) {
   const bank = await prisma.question.findMany({ where: { subjectId } });
   if (bank.length === 0) return [];
-  return Array.from({ length: count }, (_, i) => bank[i % bank.length]);
+  const picked: typeof bank = [];
+  while (picked.length < count) picked.push(...shuffled(bank));
+  return picked.slice(0, count);
 }
 
 // Caps at the bank's real size instead of cycling — a paper is shorter than

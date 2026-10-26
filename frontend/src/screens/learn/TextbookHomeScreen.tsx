@@ -3,14 +3,18 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
+import { useQueryClient } from '@tanstack/react-query';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { Card } from '../../components/cards/Card';
 import { useSubjects } from '../../hooks/useCurriculum';
 import { useTextbookToc, useReadingProgress } from '../../hooks/useTextbook';
+import { prefetchSection } from './TextbookReaderScreen';
 import { LearnStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<LearnStackParamList, 'TextbookHome'>;
+
+const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000';
 
 export function TextbookHomeScreen({ navigation, route }: Props) {
   const t = useTheme();
@@ -20,6 +24,15 @@ export function TextbookHomeScreen({ navigation, route }: Props) {
   const { data: toc } = useTextbookToc(subjectId, kind, grade);
   const { data: progress } = useReadingProgress(subjectId, kind);
   const subject = subjects?.find((s) => s.id === subjectId);
+  const queryClient = useQueryClient();
+
+  // Warms the section the user is about to open the moment they tap it,
+  // rather than only starting the fetch once TextbookReaderScreen mounts —
+  // the navigation transition's own animation time is otherwise wasted.
+  function openSection(sectionId: string) {
+    void prefetchSection(queryClient, sectionId, API_URL);
+    navigation.navigate('TextbookReader', { subjectId, sectionId, kind });
+  }
 
   if (!subject || !toc) return null;
 
@@ -63,9 +76,7 @@ export function TextbookHomeScreen({ navigation, route }: Props) {
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl }}>
         {continueSection ? (
-          <Pressable
-            onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: continueSection.id, kind })}
-          >
+          <Pressable onPress={() => openSection(continueSection.id)}>
             <Card style={[styles.continueCard, { backgroundColor: t.colors.brandLight }]}>
               <Text style={[t.typography.caption, { color: t.colors.brand }]}>Continue Reading</Text>
               <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginTop: 2 }]}>
@@ -82,10 +93,7 @@ export function TextbookHomeScreen({ navigation, route }: Props) {
             </Text>
             <Card padded={false}>
               {unit.sections.map((section, i) => (
-                <Pressable
-                  key={section.id}
-                  onPress={() => navigation.navigate('TextbookReader', { subjectId, sectionId: section.id, kind })}
-                >
+                <Pressable key={section.id} onPress={() => openSection(section.id)}>
                   <View
                     style={[
                       styles.sectionRow,
