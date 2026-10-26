@@ -31,7 +31,7 @@ export function TrustBanner({ onPress }: { onPress?: () => void }) {
 
           <View style={[styles.trust, { backgroundColor: t.colors.chip, borderColor: t.colors.chipBorder }]}>
             <Ionicons name="shield-checkmark" size={20} color={t.colors.brand} />
-            <Text style={[styles.trustTitle, { color: t.colors.textPrimary }]}>Real Past UEE Exams</Text>
+            <Text style={[styles.trustTitle, { color: t.colors.textPrimary }]}>Real UEE Exams</Text>
           </View>
 
           {onPress && <Ionicons name="chevron-forward" size={16} color={t.colors.textSecondary} style={styles.chevron} />}
