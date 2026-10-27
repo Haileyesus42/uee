@@ -53,7 +53,7 @@ export function Avatar({
       />
     ) : (
       <LinearGradient
-        colors={['#cbb7f5', '#8f6fe0']}
+        colors={['#8FCBB4', '#1C7A63']}
         start={{ x: 0, y: 0 }}
         end={{ x: 0.85, y: 1 }}
         style={[{ width: size, height: size, borderRadius: radius, alignItems: 'center', justifyContent: 'center' }, style]}

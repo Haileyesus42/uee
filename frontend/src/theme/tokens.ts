@@ -1,77 +1,80 @@
-// Design tokens for the UEE learning app.
-// Palette matches the "Unity" home reference exactly (light + dark). Colors
-// carry meaning: brand = primary actions/identity, highlight = the accent
-// used for standout copy (purple in light mode, amber in dark — matches the
-// reference's own per-theme divergence), success/warning/secondary = the
-// three feature-card accents (Mock Exams/Quiz Modes/UEE Exams).
-
+// Design tokens for the Tizata UEE learning app.
+// Palette: Dark Green (#0B5E4B) / Gold (#F4B740) / Cream (#FAF9F6) / Deep Navy
+// (#0E2A2B) — the four brand colors. brand = primary actions/identity (green,
+// both modes), highlight/xp/streak = the gold accent used for standout copy
+// (both modes — gold reads as "the accent against green" in the brand
+// reference regardless of theme, unlike the old purple palette's per-theme
+// divergence). success/error/warning/secondary stay their own distinguishable
+// hues on purpose — collapsing "correct answer" into the same green as brand
+// chrome would blur a signal that needs to read as its own event, not just
+// "on-brand."
 export const color = {
   light: {
-    bg: '#FBF4E9',
-    surface: '#FFFDF8',
-    surfaceAlt: '#FFFFFF',
-    border: 'rgba(38, 28, 71, 0.09)',
-    textPrimary: '#241F36',
-    textSecondary: '#77718A',
+    bg: '#FAF9F6',
+    surface: '#FFFFFF',
+    surfaceAlt: '#F4F2ED',
+    border: 'rgba(14, 42, 43, 0.10)',
+    textPrimary: '#16231F',
+    textSecondary: '#5C6B64',
     textInverse: '#FFFFFF',
 
-    brand: '#6D4DED',
-    brandDark: '#5936C9',
-    brandLight: '#F3EDFC',
+    brand: '#0B5E4B',
+    brandDark: '#094B3C',
+    brandLight: '#E0F0EA',
 
-    secondary: '#2F6BB0',
-    secondaryLight: '#E9F1FB',
+    secondary: '#0E2A2B',
+    secondaryLight: '#E7ECEC',
 
-    success: '#2F7D4F',
-    successLight: '#EDF7EE',
-    error: '#E4573D',
-    errorLight: '#FCE7E2',
-    warning: '#7A5A12',
-    warningLight: '#FDF3E0',
+    success: '#2E8B57',
+    successLight: '#E7F5ED',
+    error: '#C0392B',
+    errorLight: '#FBEAE7',
+    warning: '#8A5A00',
+    warningLight: '#FDF1DC',
 
-    highlight: '#6D4DED',
-    xp: '#7A5A12',
-    streak: '#6D4DED',
-    locked: '#C9C2D6',
-    mastery: '#6D4DED',
+    highlight: '#C98A1A',
+    xp: '#C98A1A',
+    streak: '#C98A1A',
+    locked: '#CDD3CE',
+    mastery: '#0B5E4B',
 
     chip: '#FFFFFF',
-    chipBorder: 'rgba(38, 28, 71, 0.08)',
-    track: '#ECE4D6',
+    chipBorder: 'rgba(14, 42, 43, 0.08)',
+    track: '#ECE8DD',
 
-    overlay: 'rgba(35, 28, 59, 0.5)',
+    overlay: 'rgba(14, 35, 31, 0.5)',
   },
   dark: {
-    bg: '#0B0815',
-    surface: '#161122',
-    surfaceAlt: '#1D1730',
+    bg: '#0E2A2B',
+    surface: '#15393A',
+    surfaceAlt: '#1C4345',
     border: 'rgba(255, 255, 255, 0.07)',
-    textPrimary: '#F4F1FF',
-    textSecondary: '#A49EC2',
+    textPrimary: '#F4F1EA',
+    textSecondary: '#A9B8B3',
     textInverse: '#FFFFFF',
 
-    brand: '#7C5CFF',
-    brandDark: '#6A3FF0',
-    brandLight: '#221A3A',
+    brand: '#1FAE87',
+    brandDark: '#0B5E4B',
+    brandLight: '#16342E',
 
-    secondary: '#7C8CFF',
-    secondaryLight: '#232748',
+    secondary: '#4A7A7C',
+    secondaryLight: '#1C3334',
 
-    success: '#4FCB82',
-    successLight: '#1C3226',
-    error: '#F17A63',
+    success: '#3FB87F',
+    successLight: '#16332A',
+    error: '#E86F5C',
     errorLight: '#3A2119',
-    warning: '#F5BC5C',
+    warning: '#F4B740',
     warningLight: '#3A2E14',
 
-    highlight: '#F5B04E',
-    xp: '#F5B04E',
-    streak: '#F5B04E',
-    locked: '#4A4258',
-    mastery: '#7C5CFF',
+    highlight: '#F4B740',
+    xp: '#F4B740',
+    streak: '#F4B740',
+    locked: '#3A4644',
+    mastery: '#1FAE87',
 
-    chip: '#221A3A',
-    chipBorder: 'rgba(167, 139, 250, 0.25)',
+    chip: '#1C4345',
+    chipBorder: 'rgba(244, 183, 64, 0.25)',
     track: 'rgba(255, 255, 255, 0.09)',
 
     overlay: 'rgba(0, 0, 0, 0.6)',

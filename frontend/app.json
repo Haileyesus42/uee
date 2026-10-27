@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "uee",
+    "name": "Tizata UEE",
     "slug": "uee",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,7 +11,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0B5E4B",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -28,7 +28,7 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Compass needs access to your photos so you can upload a Telebirr payment screenshot."
+          "photosPermission": "Tizata needs access to your photos so you can upload a Telebirr payment screenshot."
         }
       ]
     ]

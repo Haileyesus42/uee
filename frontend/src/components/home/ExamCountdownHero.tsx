@@ -25,12 +25,12 @@ const SPARKS = [
 export function ExamCountdownHero({ daysUntilExam }: { daysUntilExam: number }) {
   const t = useTheme();
   const dark = t.scheme === 'dark';
-  const ink = dark ? '#F4F1FF' : '#16103C';
-  const accent = dark ? '#F5B04E' : '#7C3AED';
-  const mutedText = dark ? '#C7C1E0' : '#43406B';
-  const faintLine = dark ? 'rgba(255,255,255,0.16)' : 'rgba(225,219,242,0.8)';
-  const chipBg = dark ? 'rgba(255,255,255,0.12)' : '#E6DEF9';
-  const calendarBg = dark ? '#1D1730' : '#F8F6FD';
+  const ink = dark ? '#F4F1EA' : '#16231F';
+  const accent = dark ? '#F4B740' : '#0B5E4B';
+  const mutedText = dark ? '#C7D6D0' : '#43544D';
+  const faintLine = dark ? 'rgba(255,255,255,0.16)' : 'rgba(219,232,225,0.8)';
+  const chipBg = dark ? 'rgba(255,255,255,0.12)' : '#DEEDE6';
+  const calendarBg = dark ? '#1C4345' : '#F6FAF8';
 
   const today = new Date();
   const weekday = today.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase();
@@ -51,7 +51,7 @@ export function ExamCountdownHero({ daysUntilExam }: { daysUntilExam: number }) 
         <View style={styles.heroWrap}>
           <View style={styles.orbit} />
           <View style={styles.heroGlow} />
-          <LinearGradient colors={['#9a79f5', '#7a4ff0', '#6a35e6']} style={styles.tile}>
+          <LinearGradient colors={['#3FA381', '#1C7A63', '#0B5E4B']} style={styles.tile}>
             <Text style={styles.tileEmoji}>⏳</Text>
           </LinearGradient>
         </View>
@@ -78,7 +78,7 @@ export function ExamCountdownHero({ daysUntilExam }: { daysUntilExam: number }) 
         <View style={styles.calendarCol}>
           <View style={[styles.calendarShadow, { backgroundColor: calendarBg }]}>
             <View style={[styles.calendar, { backgroundColor: calendarBg }]}>
-              <LinearGradient colors={['#7b2ff7', '#5a1cc0']} style={styles.calendarTop}>
+              <LinearGradient colors={['#1C7A63', '#094B3C']} style={styles.calendarTop}>
                 <Text style={styles.calendarWeekday}>{weekday}</Text>
               </LinearGradient>
               <View style={styles.calendarMain}>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   spark: {
     position: 'absolute',
     color: '#FFFFFF',
-    textShadowColor: 'rgba(74,44,160,0.45)',
+    textShadowColor: 'rgba(8,38,30,0.45)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 4,
   },
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#3c19aa',
+    shadowColor: '#0B5E4B',
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.4,
     shadowRadius: 8,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     letterSpacing: -0.5,
     color: '#FFFFFF',
-    textShadowColor: 'rgba(38,15,96,0.35)',
+    textShadowColor: 'rgba(8,38,30,0.35)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 6,
   },
@@ -158,8 +158,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter_600SemiBold',
     fontSize: 11.5,
     fontWeight: '600',
-    color: '#EDE7FF',
-    textShadowColor: 'rgba(38,15,96,0.35)',
+    color: '#E6F2ED',
+    textShadowColor: 'rgba(8,38,30,0.35)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 4,
   },
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   // overflow:'hidden', which would otherwise clip the shadow too.
   calendarShadow: {
     borderRadius: 12,
-    shadowColor: '#3c19aa',
+    shadowColor: '#0B5E4B',
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.3,
     shadowRadius: 10,

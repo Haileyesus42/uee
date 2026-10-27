@@ -67,8 +67,8 @@ class ChapaPaymentProvider implements PaymentProvider {
         tx_ref: txRef,
         callback_url: `${env.PUBLIC_BASE_URL}/billing/webhook/chapa`,
         customization: {
-          title: 'Compass Pro',
-          description: `Compass Pro — ${details.plan} plan`,
+          title: 'Tizata Pro',
+          description: `Tizata Pro — ${details.plan} plan`,
         },
       }),
     });

@@ -192,7 +192,7 @@ export function UnityChatPanel({ visible, onClose }: { visible: boolean; onClose
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
-  backdrop: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(15,10,30,0.4)' },
+  backdrop: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(8,20,18,0.4)' },
   shadowWrap: {
     position: 'absolute',
     right: 0,

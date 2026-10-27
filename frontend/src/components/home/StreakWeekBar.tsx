@@ -25,7 +25,7 @@ export function StreakWeekBar({ streakDays }: { streakDays: number }) {
       ]}
     >
       <View style={styles.streakRow}>
-        <CircularProgress progress={290 / 360} size={44} strokeWidth={5} color="#7c3aed" trackColor="#E4DEFA">
+        <CircularProgress progress={290 / 360} size={44} strokeWidth={5} color="#C98A1A" trackColor="#F6E8C9">
           <View style={styles.ringIn}>
             <Text style={styles.ringEmoji}>🔥</Text>
           </View>
@@ -78,27 +78,27 @@ const styles = StyleSheet.create({
   ringIn: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center' },
   ringEmoji: { fontSize: 15 },
   streakTextCol: { marginLeft: 8 },
-  streakText: { fontFamily: 'Inter_700Bold', fontSize: 11.5, fontWeight: '700', color: '#16103C' },
-  streakNumber: { color: '#7C3AED', fontSize: 12.5 },
-  streakSub: { fontFamily: 'Inter_500Medium', fontSize: 9, fontWeight: '500', color: '#6B6890', marginTop: 1 },
-  vline2: { width: 1, height: 32, backgroundColor: '#DDD6F0', marginHorizontal: 10, borderRadius: 12 },
+  streakText: { fontFamily: 'Inter_700Bold', fontSize: 11.5, fontWeight: '700', color: '#16231F' },
+  streakNumber: { color: '#C98A1A', fontSize: 12.5 },
+  streakSub: { fontFamily: 'Inter_500Medium', fontSize: 9, fontWeight: '500', color: '#5C6B64', marginTop: 1 },
+  vline2: { width: 1, height: 32, backgroundColor: '#ECE8DD', marginHorizontal: 10, borderRadius: 12 },
   week: { flex: 1, flexDirection: 'row', justifyContent: 'space-between' },
   dayCol: { alignItems: 'center' },
-  dayCircle: { width: 20, height: 20, borderRadius: 10, backgroundColor: '#E4DEFA', alignItems: 'center', justifyContent: 'center' },
+  dayCircle: { width: 20, height: 20, borderRadius: 10, backgroundColor: '#F6E8C9', alignItems: 'center', justifyContent: 'center' },
   // Outside the current streak window — an unfilled ring, not a filled circle,
   // so it reads as "no record" rather than a dimmed/failed version of a checkmark.
-  dayCircleEmpty: { backgroundColor: 'transparent', borderWidth: 1, borderColor: '#E4DEFA' },
+  dayCircleEmpty: { backgroundColor: 'transparent', borderWidth: 1, borderColor: '#F6E8C9' },
   dayCircleToday: {
     width: 24,
     height: 24,
     borderRadius: 12,
-    backgroundColor: '#F6F1FE',
+    backgroundColor: '#FDF3E0',
     borderWidth: 1.5,
     borderStyle: 'dashed',
-    borderColor: '#A78BFA',
+    borderColor: '#F4B740',
   },
-  dayCheck: { color: '#6D3BE0', fontWeight: '800', fontSize: 9 },
+  dayCheck: { color: '#8A5A00', fontWeight: '800', fontSize: 9 },
   dayFlameEmoji: { fontSize: 10 },
-  dayLabel: { fontFamily: 'Inter_700Bold', fontSize: 7, fontWeight: '700', color: '#6B6890', marginTop: 3 },
-  dayLabelToday: { color: '#7C3AED' },
+  dayLabel: { fontFamily: 'Inter_700Bold', fontSize: 7, fontWeight: '700', color: '#5C6B64', marginTop: 3 },
+  dayLabelToday: { color: '#C98A1A' },
 });

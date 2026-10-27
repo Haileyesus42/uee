@@ -10,7 +10,7 @@ import { useTheme } from '../../theme/ThemeProvider';
 export function TrustBanner({ onPress }: { onPress?: () => void }) {
   const t = useTheme();
   const gradientColors: [string, string] =
-    t.scheme === 'dark' ? ['#2b1d52', '#171030'] : ['#fff8ea', '#fffdf8'];
+    t.scheme === 'dark' ? ['#1C4345', '#15393A'] : ['#fff8ea', '#fffdf8'];
 
   return (
     <Pressable onPress={onPress} disabled={!onPress}>

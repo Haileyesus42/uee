@@ -147,8 +147,8 @@ export function HomeScreen({ navigation }: Props) {
   // cut hard against the dark theme's near-black background.
   const heroColors: [string, string, string, string, string] =
     t.scheme === 'dark'
-      ? ['#5636d6', '#6c48e0', '#5a4a8f', '#241c42', t.colors.bg]
-      : ['#5636d6', '#6c48e0', '#8f76ea', '#ece8fa', '#f6f4fc'];
+      ? ['#0B5E4B', '#156654', '#1C4F47', '#15393A', t.colors.bg]
+      : ['#0B5E4B', '#1C7A63', '#6FA996', '#DCEDE6', '#FAF9F6'];
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={[]}>
@@ -161,8 +161,8 @@ export function HomeScreen({ navigation }: Props) {
       >
         <View style={styles.topBar}>
           <View style={styles.brandRow}>
-            <Ionicons name="compass" size={20} color="#FFFFFF" />
-            <Text style={styles.brandText}>Compass</Text>
+            <Ionicons name="book" size={20} color="#FFFFFF" />
+            <Text style={styles.brandText}>Tizata</Text>
             {/* Status lives in the wordmark, not as a competing CTA — tap still
                 opens the same Premium screen the old standalone button did. */}
             <Pressable
@@ -186,7 +186,7 @@ export function HomeScreen({ navigation }: Props) {
               <Ionicons
                 name={t.scheme === 'dark' ? 'moon' : 'sunny-outline'}
                 size={16}
-                color={t.scheme === 'dark' ? '#F4F1FF' : '#16103C'}
+                color={t.scheme === 'dark' ? '#F4F1EA' : '#16231F'}
               />
             </Pressable>
             <Pressable onPress={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}>

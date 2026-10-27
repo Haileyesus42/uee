@@ -29,7 +29,7 @@ export function ContinueLearningCard({
         <View style={styles.row}>
           <View style={styles.thumbWrap}>
             <LinearGradient
-              colors={['#7b4ff0', '#4e2bc6']}
+              colors={['#1C7A63', '#094B3C']}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
               style={styles.thumb}
@@ -49,7 +49,7 @@ export function ContinueLearningCard({
             <View style={styles.progressLine}>
               <View style={[styles.track, { backgroundColor: t.colors.track }]}>
                 <LinearGradient
-                  colors={['#8a63ff', '#6a3ff0']}
+                  colors={['#1a7a60', '#0B5E4B']}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 0 }}
                   style={[styles.fill, { width: `${Math.round(progress * 100)}%` }]}
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center' },
   thumbWrap: { width: 50, height: 50 },
   thumb: { width: 50, height: 50, borderRadius: 12, alignItems: 'center', justifyContent: 'center', padding: 3 },
-  thumbText: { color: '#e6dcff', fontSize: 7.5, fontWeight: '600', textAlign: 'center' },
+  thumbText: { color: '#E0F0EA', fontSize: 7.5, fontWeight: '600', textAlign: 'center' },
   pencil: { position: 'absolute', right: -5, bottom: -5, fontSize: 14, transform: [{ rotate: '8deg' }] },
   info: { flex: 1, marginLeft: 10, marginRight: 8 },
   title: { fontFamily: 'Manrope_800ExtraBold', fontSize: 13, fontWeight: '800' },

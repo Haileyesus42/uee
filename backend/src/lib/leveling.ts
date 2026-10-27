@@ -5,7 +5,7 @@ const TITLES: { minLevel: number; title: string }[] = [
   { minLevel: 4, title: 'Steady Climber' },
   { minLevel: 8, title: 'Rising Scholar' },
   { minLevel: 15, title: 'Exam Strategist' },
-  { minLevel: 25, title: 'Compass Master' },
+  { minLevel: 25, title: 'Tizata Master' },
 ];
 
 const XP_PER_LEVEL = 250;

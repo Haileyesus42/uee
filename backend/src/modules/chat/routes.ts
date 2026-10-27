@@ -15,7 +15,7 @@ const MAX_RESPONSE_TOKENS = 400;
 // but standard heuristic for English text; this doesn't need to be exact, just
 // to keep any single message in the same ballpark as MAX_RESPONSE_TOKENS.
 const MAX_INPUT_CHARS = MAX_RESPONSE_TOKENS * 4;
-// Free-tier cap on real LLM calls per user per day (Compass Pro is unlimited —
+// Free-tier cap on real LLM calls per user per day (Tizata Pro is unlimited —
 // see isProUser below). This is the "5/day free" example from
 // docs/backend-architecture.md §9 — the full Tier 0-3 retrieval/cache system
 // that doc describes (pgvector, Redis response cache, spend counter) is Phase 2
@@ -27,7 +27,7 @@ const DAILY_FREE_LIMIT = 5;
 const HISTORY_WINDOW = 10;
 
 const SYSTEM_PROMPT =
-  'You are Unity, a friendly and encouraging AI tutor inside Compass, an app helping Ethiopian grade 9-12 ' +
+  'You are Unity, a friendly and encouraging AI tutor inside Tizata UEE, an app helping Ethiopian grade 9-12 ' +
   'students prepare for the UEE (University Entrance Exam). Keep answers clear, concise, and exam-relevant. ' +
   'Use simple language a high school student can follow. If asked something far outside academics, gently ' +
   'steer the conversation back to studying.';
@@ -75,7 +75,7 @@ export async function chatRoutes(app: FastifyInstance) {
     const pro = await isProUser(userId);
     if (!pro && (await dailyUsageCount(userId)) >= DAILY_FREE_LIMIT) {
       const limitText =
-        "You've reached today's free chat limit. It resets tomorrow — or upgrade to Compass Pro for unlimited " +
+        "You've reached today's free chat limit. It resets tomorrow — or upgrade to Tizata Pro for unlimited " +
         'access to Unity.';
       const saved = await prisma.chatMessage.create({ data: { userId, role: 'unity', text: limitText } });
       return reply.send({ id: saved.id, role: saved.role, text: saved.text, createdAt: saved.createdAt });

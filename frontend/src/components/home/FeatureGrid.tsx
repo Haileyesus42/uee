@@ -49,9 +49,12 @@ const FEATURES: { id: FeatureId; title: string; icon: keyof typeof Ionicons.glyp
 // for the other stop, not new unrelated colors — "quiz" reuses the exact gold
 // already used for the Pro badge elsewhere in the app.
 const LIGHT_TINTS: Record<FeatureId, { bg: string; gradient: [string, string]; arrowBg: string; iconC: string }> = {
-  courses: { bg: '#F3EDFC', gradient: ['#A98FF5', '#6D4DED'], arrowBg: '#E3D9FA', iconC: '#6D4DED' },
-  quiz: { bg: '#FDF3E0', gradient: ['#F6D68F', '#D9A441'], arrowBg: '#F6D68F', iconC: '#7A5A12' },
-  mock: { bg: '#EDF7EE', gradient: ['#7FD9A0', '#2F7D4F'], arrowBg: '#CDEAD4', iconC: '#2F7D4F' },
+  // courses takes the brand green (it used to match the old purple brand
+  // color) — mock moves to navy instead of its old green so it stays visually
+  // distinct from courses now that courses owns the green.
+  courses: { bg: '#E0F0EA', gradient: ['#3FA381', '#0B5E4B'], arrowBg: '#CBE6DB', iconC: '#0B5E4B' },
+  quiz: { bg: '#FDF3E0', gradient: ['#F6D68F', '#D9A441'], arrowBg: '#F6D68F', iconC: '#8A5A00' },
+  mock: { bg: '#E7ECEC', gradient: ['#4A7A7C', '#0E2A2B'], arrowBg: '#CBD9D9', iconC: '#0E2A2B' },
   uee: { bg: '#E9F1FB', gradient: ['#8AB9F0', '#2F6BB0'], arrowBg: '#C9DEFA', iconC: '#2F6BB0' },
 };
 

@@ -79,7 +79,7 @@ export async function billingRoutes(app: FastifyInstance) {
       // No real email exists to send — auth is Telegram-only (§5). Fine for
       // processing the charge; only matters if Chapa emails a receipt to it.
       email: `user-${request.userId}@compass.app`,
-      firstName: user.name || 'Compass',
+      firstName: user.name || 'Tizata',
     });
 
     // Real Chapa checkouts start `pending` and only flip to `active` from the

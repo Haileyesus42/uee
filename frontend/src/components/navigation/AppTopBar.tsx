@@ -7,11 +7,11 @@ import { useTheme } from '../../theme/ThemeProvider';
 // the same fixed-height structural anchor that TopBar gives pushed screens,
 // without a back button or a single "title" to center. `right` lets a screen
 // (e.g. Home) surface a couple of quick-glance items without a second row.
-// `title`/`icon` let a screen swap the "Compass" wordmark for its own label
+// `title`/`icon` let a screen swap the "Tizata" wordmark for its own label
 // (e.g. Learn) while keeping the same bar structure.
 export function AppTopBar({
-  title = 'Compass',
-  icon = 'compass',
+  title = 'Tizata',
+  icon = 'book',
   right,
 }: {
   title?: string;

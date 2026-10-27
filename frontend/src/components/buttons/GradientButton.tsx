@@ -2,9 +2,8 @@ import React from 'react';
 import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-// Matches the reference's `.btn` exactly — a fixed purple gradient used for
-// every primary CTA regardless of theme (light/dark only change the page
-// around it, not this button).
+// A fixed brand-green gradient used for every primary CTA regardless of theme
+// (light/dark only change the page around it, not this button).
 export function GradientButton({
   label,
   onPress,
@@ -19,7 +18,7 @@ export function GradientButton({
   return (
     <Pressable onPress={onPress} style={({ pressed }) => pressed && styles.pressed}>
       <LinearGradient
-        colors={['#8a63ff', '#6a3ff0']}
+        colors={['#1a7a60', '#0B5E4B']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={[styles.base, style]}
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingVertical: 10,
     paddingHorizontal: 15,
-    shadowColor: '#7c5cff',
+    shadowColor: '#0B5E4B',
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.3,
     shadowRadius: 14,

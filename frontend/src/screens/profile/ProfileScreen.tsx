@@ -19,7 +19,7 @@ const MENU: { id: keyof ProfileStackParamList; label: string; icon: keyof typeof
   { id: 'MistakesBook', label: 'Mistakes Book', icon: 'alert-circle-outline' },
   { id: 'Achievements', label: 'Achievements & Badges', icon: 'trophy-outline' },
   { id: 'Settings', label: 'Settings', icon: 'settings-outline' },
-  { id: 'Premium', label: 'Compass Pro', icon: 'star-outline' },
+  { id: 'Premium', label: 'Tizata Pro', icon: 'star-outline' },
   { id: 'Help', label: 'Help & Support', icon: 'help-circle-outline' },
 ];
 
@@ -53,7 +53,7 @@ export function ProfileScreen({ navigation }: Props) {
             />
             <View style={{ marginLeft: 10 }}>
               <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, fontSize: 15 }]}>
-                {profile?.name || 'Compass Student'}
+                {profile?.name || 'Tizata Student'}
               </Text>
               <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 1, fontSize: 11 }]}>
                 Level {profile?.level ?? 1} · {profile?.levelTitle ?? 'New Learner'}

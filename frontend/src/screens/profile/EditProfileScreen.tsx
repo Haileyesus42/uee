@@ -89,7 +89,7 @@ export function EditProfileScreen({ navigation }: Props) {
           </Pressable>
 
           <Text style={[t.typography.h3, { color: t.colors.textPrimary, marginTop: 14 }]}>
-            {profile?.name || 'Compass Student'}
+            {profile?.name || 'Tizata Student'}
           </Text>
           {profile?.telegramUsername && (
             <Text style={[t.typography.caption, { color: t.colors.textSecondary, marginTop: 2 }]}>

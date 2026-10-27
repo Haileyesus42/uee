@@ -71,7 +71,7 @@ async function handleStartMessage(loginToken: string, from: TelegramFrom, chatId
   if (!consumed) {
     await sendTelegramMessage(
       chatId,
-      "That login link expired or was already used — go back to the Compass app and tap “Continue with Telegram” again."
+      "That login link expired or was already used — go back to the Tizata app and tap “Continue with Telegram” again."
     );
     return;
   }
@@ -124,7 +124,7 @@ async function handleStartMessage(loginToken: string, from: TelegramFrom, chatId
     },
   });
 
-  await sendTelegramMessage(chatId, "✅ You're verified — return to the Compass app to continue.");
+  await sendTelegramMessage(chatId, "✅ You're verified — return to the Tizata app to continue.");
   await sendTelegramMessage(chatId, '📸 Want a profile picture? Send me a photo here anytime and I’ll add it to your account.');
 }
 

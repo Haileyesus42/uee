@@ -18,7 +18,7 @@ export function SmartInsightCard({
 
   return (
     <Card style={styles.card}>
-      <LinearGradient colors={['#8a63ff', '#6a3ff0']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.bulb}>
+      <LinearGradient colors={['#1a7a60', '#0B5E4B']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.bulb}>
         <Text style={styles.bulbEmoji}>💡</Text>
       </LinearGradient>
 
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#7c5cff',
+    shadowColor: '#0B5E4B',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.35,
     shadowRadius: 12,

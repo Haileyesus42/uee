@@ -46,11 +46,11 @@ export function PremiumScreen({ navigation }: Props) {
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
       <View style={{ paddingHorizontal: t.spacing.md }}>
-        <TopBar title="Compass Pro" onBack={() => navigation.goBack()} />
+        <TopBar title="Tizata Pro" onBack={() => navigation.goBack()} />
       </View>
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl }}>
-        <LinearGradient colors={['#8a63ff', '#6a3ff0']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.hero}>
+        <LinearGradient colors={['#1a7a60', '#0B5E4B']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.hero}>
           <Text style={[styles.spark, { top: 10, right: 26, fontSize: 12 }]}>✦</Text>
           <Text style={[styles.spark, { top: 36, right: 48, fontSize: 8 }]}>✦</Text>
           <Text style={[styles.spark, { bottom: 16, left: 22, fontSize: 10 }]}>✦</Text>
