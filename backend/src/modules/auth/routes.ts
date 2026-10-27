@@ -6,7 +6,7 @@ import { redis } from '../../lib/redis';
 import { signAccessToken, signRefreshToken, verifyRefreshToken } from '../../lib/jwt';
 import { storeRefreshToken, isCurrentRefreshToken } from './sessions';
 import { createLoginToken, takeLoginResult } from './telegramSessions';
-import { fetchTelegramFile } from './telegramBot';
+import { fetchTelegramFile, processUpdate, TelegramUpdate } from './telegramBot';
 
 const refreshBody = z.object({
   refreshToken: z.string().min(1),
@@ -76,6 +76,32 @@ export async function authRoutes(app: FastifyInstance) {
 
     reply.header('Cache-Control', 'public, max-age=3600');
     return reply.type(file.contentType).send(file.buffer);
+  });
+
+  // The production alternative to startTelegramPolling() (see telegramBot.ts)
+  // — the only code difference between the two modes is how an update arrives;
+  // both call the same processUpdate. Not wired up automatically: switching to
+  // this requires (1) setting TELEGRAM_WEBHOOK_SECRET, (2) setting
+  // TELEGRAM_POLLING_ENABLED=false so the two modes can't both run and double-
+  // process updates, (3) calling Telegram's setWebhook once with this route's
+  // public URL and the same secret as `secret_token` — an operational step for
+  // whenever real hosting exists, not something to do from a dev box.
+  //
+  // Authenticated by Telegram's own secret-token header, not this app's normal
+  // auth — there's no user session at the point Telegram calls this.
+  app.post('/auth/telegram/webhook', async (request, reply) => {
+    if (!env.TELEGRAM_WEBHOOK_SECRET) return reply.code(404).send();
+
+    const secret = request.headers['x-telegram-bot-api-secret-token'];
+    if (secret !== env.TELEGRAM_WEBHOOK_SECRET) {
+      return reply.code(401).send();
+    }
+
+    // Acks immediately, processes after responding — Telegram retries a webhook
+    // call that's slow to respond, and update handling here can involve a
+    // couple of sequential Telegram/DB calls (see handleStartMessage).
+    processUpdate(request.body as TelegramUpdate);
+    return reply.code(200).send({ ok: true });
   });
 
   app.post('/auth/refresh', async (request, reply) => {

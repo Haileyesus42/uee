@@ -23,6 +23,13 @@ const envSchema = z.object({
     (v) => (typeof v === 'string' ? !['false', '0', 'no', 'off'].includes(v.toLowerCase()) : v),
     z.boolean().default(true)
   ),
+  // Alternative to polling once real multi-instance hosting exists — see
+  // /auth/telegram/webhook in modules/auth/routes.ts and setWebhook's `secret_token`
+  // param (api.telegram.org/bot<token>/setWebhook). Left unset, the webhook route
+  // still exists but rejects every request (no secret to check incoming requests
+  // against), so it's inert until deliberately configured — never an accidental
+  // open endpoint.
+  TELEGRAM_WEBHOOK_SECRET: z.string().optional().default(''),
   PAYMENT_PROVIDER: z.enum(['mock', 'chapa']).default('mock'),
   CHAPA_SECRET_KEY: z.string().optional().default(''),
   // Publicly reachable base URL for this server — Chapa's webhook is a

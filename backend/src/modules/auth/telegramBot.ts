@@ -16,7 +16,7 @@ type TelegramFrom = {
 
 type TelegramPhotoSize = { file_id: string; width: number; height: number };
 
-type TelegramUpdate = {
+export type TelegramUpdate = {
   update_id: number;
   message?: {
     text?: string;
@@ -187,12 +187,45 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// Shared by both the polling loop and the webhook route (routes.ts) — the
+// update → handler dispatch is identical either way, only how updates arrive
+// differs. Fire-and-forget per message (not awaited here) on purpose: one
+// slow/failing update must never hold up the next one in the same batch, and
+// the webhook path specifically needs to ack Telegram fast regardless of how
+// long the actual handler takes.
+export function processUpdate(update: TelegramUpdate): void {
+  const message = update.message;
+  if (!message?.from) return;
+
+  if (message.photo?.length) {
+    handlePhotoMessage(message.photo, message.from, message.chat.id).catch((err) =>
+      console.error('[telegram] failed to handle photo', err)
+    );
+    return;
+  }
+
+  const text = message.text;
+  if (!text?.startsWith('/start ')) return;
+
+  const loginToken = text.slice('/start '.length).trim();
+  if (!loginToken) return;
+
+  handleStartMessage(loginToken, message.from, message.chat.id).catch((err) =>
+    console.error('[telegram] failed to handle /start', err)
+  );
+}
+
 let polling = false;
 
-// Long-polling (not a webhook) on purpose: it needs no public HTTPS URL, which
-// means it works identically in local dev and in production with zero config
-// difference — appropriate for a small team, per the same reasoning as the rest
-// of this stack's provider choices.
+// Long-polling by default — works with zero config in local dev (no public
+// HTTPS URL needed) and is fine in production for a single instance. It does
+// NOT scale past one instance: every instance would independently poll with
+// its own offset, duplicating calls and racing on which one "owns" a given
+// update. See routes.ts's /auth/telegram/webhook for the alternative — switch
+// TELEGRAM_POLLING_ENABLED off and register that URL with Telegram's
+// setWebhook once real multi-instance hosting exists. Both paths funnel
+// through the same processUpdate above, so switching modes changes nothing
+// about how updates are handled, only how they arrive.
 const POLL_BACKOFF_MIN_MS = 3000;
 const POLL_BACKOFF_MAX_MS = 60_000;
 
@@ -223,25 +256,7 @@ export async function startTelegramPolling(): Promise<void> {
       const body = (await res.json()) as { ok: boolean; result: TelegramUpdate[] };
       for (const update of body.result) {
         offset = update.update_id + 1;
-        const message = update.message;
-        if (!message?.from) continue;
-
-        if (message.photo?.length) {
-          handlePhotoMessage(message.photo, message.from, message.chat.id).catch((err) =>
-            console.error('[telegram] failed to handle photo', err)
-          );
-          continue;
-        }
-
-        const text = message.text;
-        if (!text?.startsWith('/start ')) continue;
-
-        const loginToken = text.slice('/start '.length).trim();
-        if (!loginToken) continue;
-
-        handleStartMessage(loginToken, message.from, message.chat.id).catch((err) =>
-          console.error('[telegram] failed to handle /start', err)
-        );
+        processUpdate(update);
       }
     } catch (err) {
       // Distinguish "no outbound route" from a real API error: an unreachable

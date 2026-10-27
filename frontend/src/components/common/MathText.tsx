@@ -3,6 +3,14 @@ import { Text, TextStyle, StyleProp, StyleSheet, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 const HAS_MATH = /\$[^$]+\$/;
+// Deliberately broad, not precise: `*`/`_`/`` ` `` anywhere covers bold,
+// italic, and inline code (including single-char emphasis, not just **bold**)
+// without needing to distinguish them, plus headings/list items/links. Erring
+// toward "treat as markdown" is the safe direction here — the cost of a false
+// positive is just an unnecessary WebView for plain text that happens to
+// contain a literal asterisk; a false negative would silently show literal
+// `*`/`_` characters instead of parsed formatting, which is worse.
+const HAS_MARKDOWN = /[*_`]|^#{1,4}\s|^[-+]\s|^\d+\.\s|\[.+\]\(.+\)/m;
 
 function tryParseFraction(text: string): { num: string; den: string } | null {
   const m = text.trim().match(/^\s*\$?\s*\\(?:d|t)?frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}\s*\$?\s*$/);
@@ -19,7 +27,7 @@ function buildHtml(content: string, fontSize: number, lineHeight: number, color:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js"></script>
 <style>
   * { -webkit-user-select: none; user-select: none; }
   html, body { margin: 0; padding: 0; background: transparent; }
@@ -51,10 +59,24 @@ function buildHtml(content: string, fontSize: number, lineHeight: number, color:
       var rawContent = ${JSON.stringify(content)};
       var contentDiv = document.getElementById('content');
       
+      function escapeHtml(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\\n/g, '<br/>');
+      }
+
       if (${markdown ? 'true' : 'false'}) {
-        contentDiv.innerHTML = marked.parse(rawContent);
+        // A script failing to load (CDN hiccup, this device's network) leaves
+        // marked undefined — marked.parse() throwing here used to be
+        // uncaught, which skipped setTimeout(post) entirely and left the
+        // WebView permanently stuck at its initial tiny height with nothing
+        // ever rendered. Falls back to escaped plain text instead of leaving
+        // the bubble blank.
+        try {
+          contentDiv.innerHTML = marked.parse(rawContent);
+        } catch (e) {
+          contentDiv.innerHTML = escapeHtml(rawContent);
+        }
       } else {
-        contentDiv.innerHTML = rawContent.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\\n/g, '<br/>');
+        contentDiv.innerHTML = escapeHtml(rawContent);
       }
 
       try {
@@ -103,14 +125,22 @@ export function MathText({
         </View>
       );
     }
+  }
 
-    if (!HAS_MATH.test(children)) {
-      return (
-        <Text style={style} numberOfLines={numberOfLines}>
-          {children}
-        </Text>
-      );
-    }
+  // Plain-text fast path applies in both modes, not just non-markdown: a
+  // WebView is real, non-trivial cost on weak/older Android devices — one
+  // spun up per message, each pulling in 3-4 external CDN scripts — and most
+  // markdown=true text (ordinary chat replies) has no math or markdown syntax
+  // in it at all. Forcing all of it through WebView regardless of content is
+  // what let multiple concurrent instances crash the shared WebView renderer
+  // process on a low-end test device, taking every open WebView blank with it
+  // — including this one, independent of what it was even trying to show.
+  if (!HAS_MATH.test(children) && (!markdown || !HAS_MARKDOWN.test(children))) {
+    return (
+      <Text style={style} numberOfLines={numberOfLines}>
+        {children}
+      </Text>
+    );
   }
 
   return (
