@@ -5,6 +5,7 @@ import { prisma } from '../../lib/prisma';
 import { authenticate } from '../../plugins/authenticate';
 import { computeAvailableHearts } from '../../lib/gamification';
 import { xpToLevel } from '../../lib/leveling';
+import { MOTIVATIONAL_QUOTES } from '../../data/motivationalQuotes';
 
 const ALLOWED_AVATAR_MIME = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
@@ -18,10 +19,6 @@ async function buildProfilePayload(userId: string) {
   const user = await prisma.user.findUniqueOrThrow({ where: { id: userId } });
   const stats = await prisma.userStats.findUnique({ where: { userId } });
 
-  // "Questions solved" and accuracy combine two sources on purpose: quiz-attempt
-  // answers (Practice/Mock/UEE) AND lesson question-steps (UserLessonProgress).
-  // Counting only the former was a real bug — a student who answers a lesson
-  // question correctly saw it nowhere in their own stats.
   const answers = await prisma.quizAttemptAnswer.findMany({
     where: { attempt: { userId } },
     select: { correct: true },
@@ -87,9 +84,6 @@ export async function profileRoutes(app: FastifyInstance) {
     return buildProfilePayload(request.userId);
   });
 
-  // Multipart upload, same pattern as POST /billing/telebirr/submit — read the
-  // one file part into a Buffer and store it directly (see avatarUpload's
-  // schema comment for why, unlike the Telegram photo, this has to be).
   app.post('/me/avatar', { preHandler: authenticate }, async (request, reply) => {
     let file: MultipartFile | undefined;
     let buffer: Buffer | undefined;
@@ -99,7 +93,7 @@ export async function profileRoutes(app: FastifyInstance) {
         file = part;
         buffer = await part.toBuffer();
       } else if (part.type === 'file') {
-        await part.toBuffer(); // drain any other/duplicate file part
+        await part.toBuffer();
       }
     }
 
@@ -164,5 +158,129 @@ export async function profileRoutes(app: FastifyInstance) {
   app.post('/me/notifications/read-all', { preHandler: authenticate }, async (request) => {
     await prisma.notification.updateMany({ where: { userId: request.userId, read: false }, data: { read: true } });
     return { ok: true };
+  });
+
+  // ── Motivation banner — ONE message per app-opening session ──────────────
+  // Priority: countdown → last lesson → last practice → last mock → quote.
+  // Every branch reflects actual data; nothing is invented. Falls through
+  // gracefully when the student has no activity yet.
+  app.get('/me/motivation', { preHandler: authenticate }, async (request) => {
+    const userId = request.userId;
+    const daysParam = (request.query as { daysUntilExam?: string }).daysUntilExam;
+    const daysUntilExam = daysParam != null ? Number(daysParam) : null;
+
+    const dayOfYear = Math.floor(
+      (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86_400_000,
+    );
+    const userHash = userId.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
+    const rotationIdx = (userHash + dayOfYear) % 1000;
+
+    // Priority 1 — countdown
+    if (daysUntilExam !== null && daysUntilExam >= 0) {
+      if (daysUntilExam === 0) {
+        return {
+          type: 'countdown',
+          emoji: '🔥',
+          title: 'Exam day',
+          message: 'Today is the day. Stay calm, read carefully, trust your preparation.',
+        };
+      }
+      const weekEst = Math.max(1, Math.round(daysUntilExam / 7));
+      const mockTarget = Math.max(1, Math.floor(daysUntilExam / 14));
+      const framings = [
+        {
+          title: `${daysUntilExam} days to go`,
+          message: `That is about ${weekEst} weeks. Every focused session counts.`,
+        },
+        {
+          title: `${daysUntilExam} days until UEE`,
+          message: `Aim for ${mockTarget} full mock exams this week to build stamina.`,
+        },
+        {
+          title: `${daysUntilExam} days left`,
+          message: 'Spend today on your weakest subject. Progress there pays the most.',
+        },
+        {
+          title: `${daysUntilExam} days remain`,
+          message: 'Review past mistakes before learning new topics. What you got wrong teaches more.',
+        },
+      ];
+      const f = framings[rotationIdx % framings.length];
+      return { type: 'countdown', emoji: '⏳', ...f };
+    }
+
+    // Priority 2 — last completed lesson
+    const lastLesson = await prisma.userLessonProgress.findFirst({
+      where: { userId, status: 'completed', completedAt: { not: null } },
+      orderBy: { completedAt: 'desc' },
+      include: {
+        lesson: {
+          include: {
+            unit: { include: { subject: { select: { name: true } } } },
+          },
+        },
+      },
+    });
+    if (lastLesson?.lesson) {
+      const subjectName = lastLesson.lesson.unit?.subject?.name ?? 'your last subject';
+      const lessonTitle = lastLesson.lesson.title;
+      const lessons = [
+        {
+          title: 'Welcome back',
+          message: `Your last lesson was ${subjectName}: ${lessonTitle}. Ready to continue?`,
+        },
+        {
+          title: 'Pick up where you left off',
+          message: `Continue ${subjectName}: ${lessonTitle}. Momentum matters.`,
+        },
+        {
+          title: 'Keep the streak going',
+          message: `You finished ${lessonTitle}. Next up — one more lesson today.`,
+        },
+      ];
+      const l = lessons[rotationIdx % lessons.length];
+      return { type: 'lesson', emoji: '📚', ...l };
+    }
+
+    // Priority 3 — last practice score
+    const lastPractice = await prisma.quizAttempt.findFirst({
+      where: { userId, submittedAt: { not: null }, mode: 'practice' },
+      orderBy: { submittedAt: 'desc' },
+      include: { answers: { select: { correct: true } } },
+    });
+    if (lastPractice && lastPractice.answers.length > 0) {
+      const correct = lastPractice.answers.filter((a) => a.correct).length;
+      const pct = Math.round((correct / lastPractice.answers.length) * 100);
+      const framing =
+        pct >= 90
+          ? { title: 'Excellent', message: `You scored ${pct}% in your last practice. Keep that edge.` }
+          : pct >= 75
+            ? { title: 'Strong progress', message: `You scored ${pct}% in your last practice. A few more reps and you are there.` }
+            : pct >= 60
+              ? { title: 'Solid', message: `You scored ${pct}% last practice. Focus on what you missed and retry.` }
+              : { title: 'Room to grow', message: `You scored ${pct}% last practice. Review the ones you missed — they are your fastest wins.` };
+      return { type: 'practice', emoji: '🎯', ...framing };
+    }
+
+    // Priority 4 — last mock exam
+    const lastExam = await prisma.quizAttempt.findFirst({
+      where: { userId, submittedAt: { not: null }, mode: 'mock' },
+      orderBy: { submittedAt: 'desc' },
+      include: { answers: { select: { correct: true } } },
+    });
+    if (lastExam && lastExam.answers.length > 0) {
+      const correct = lastExam.answers.filter((a) => a.correct).length;
+      const pct = Math.round((correct / lastExam.answers.length) * 100);
+      return {
+        type: 'exam',
+        emoji: '🏆',
+        title: 'Mock exam',
+        message: `Your last mock score was ${pct}%. ${pct < 80 ? 'Let us aim higher this time.' : 'Stay sharp and aim higher.'}`,
+      };
+    }
+
+    // Priority 5 — rotating quote (deterministic; no per-user state)
+    const quote = MOTIVATIONAL_QUOTES[rotationIdx % MOTIVATIONAL_QUOTES.length];
+    return { type: 'quote', emoji: '✨', title: 'A thought for today', message: quote };
   });
 }

@@ -87,7 +87,7 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
     );
   }
 
-  function askUnityWithContext() {
+function askUnityWithContext() {
   const letter = (i: number) => String.fromCharCode(65 + i);
   const optionsList = question.options.map((opt, i) => `${letter(i)}. ${opt}`).join('\n');
   const correctLine =
@@ -98,8 +98,20 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
     ? `Existing explanation: ${question.explanation}\n\n`
     : '';
 
+  // The first line after [Q_CONTEXT] is what the user SEES in the chat bubble —
+  // getDisplayText strips the prefix and shows only this line. Everything
+  // after the blank line is the full context sent to Unity, hidden from the UI.
+  //
+  // Summarize the actual question for the bubble instead of the generic
+  // "Can you explain this question in more detail?" — the user already knows
+  // they tapped Ask Unity; the bubble should reflect WHAT they're asking about.
+  const displayPrompt =
+    question.prompt.length > 120
+      ? `${question.prompt.slice(0, 117).trimEnd()}…`
+      : question.prompt;
+
   askUnity(
-    `[Q_CONTEXT] Can you explain this question in more detail?\n\n` +
+    `[Q_CONTEXT] Explain: ${displayPrompt}\n\n` +
       `Question: ${question.prompt}\n\n` +
       `Options:\n${optionsList}\n\n` +
       correctLine +
