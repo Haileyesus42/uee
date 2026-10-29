@@ -38,9 +38,9 @@ export function LearnHomeScreen({ navigation }: Props) {
   const unitQueries = useAllSubjectUnits(subjects);
   const textbookSubjectsAll = (subjects ?? []).filter((s) => s.hasTextbook);
   const teacherGuideSubjectsAll = (subjects ?? []).filter((s) => s.hasTeacherGuide);
-  const textbookTocQueries = useAllSubjectTextbookToc(textbookSubjectsAll, 'textbook', grade);
+  const textbookTocQueries = useAllSubjectTextbookToc(textbookSubjectsAll, 'textbook');
   const textbookProgressQueries = useAllSubjectReadingProgress(textbookSubjectsAll, 'textbook');
-  const teacherGuideTocQueries = useAllSubjectTextbookToc(teacherGuideSubjectsAll, 'teacher_guide', grade);
+  const teacherGuideTocQueries = useAllSubjectTextbookToc(teacherGuideSubjectsAll, 'teacher_guide');
   const teacherGuideProgressQueries = useAllSubjectReadingProgress(teacherGuideSubjectsAll, 'teacher_guide');
 
   // This screen used to just `return null` for both the loading state AND any
@@ -85,11 +85,12 @@ export function LearnHomeScreen({ navigation }: Props) {
   // empty-lessons units elsewhere in Learn). "Sections done" has no
   // completion log server-side (see summarizeReadingProgress), so it's a
   // how-far-through-the-grade's-content proxy, same spirit as lesson counts.
-  const textbookSummary = summarizeReadingProgress(textbookSubjectsAll, textbookTocQueries, textbookProgressQueries);
+  const textbookSummary = summarizeReadingProgress(textbookSubjectsAll, textbookTocQueries, textbookProgressQueries, grade);
   const teacherGuideSummary = summarizeReadingProgress(
     teacherGuideSubjectsAll,
     teacherGuideTocQueries,
-    teacherGuideProgressQueries
+    teacherGuideProgressQueries,
+    grade
   );
 
   const summary =

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Linking, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, AppState, Linking, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
@@ -18,17 +18,45 @@ const TELEGRAM_BLUE = '#229ED9';
 
 type Phase = 'idle' | 'waiting' | 'error';
 
+// Retry poll across multiple attempts — one internal poll may return false on
+// timeout before the user finishes in Telegram. 5 retries at the default
+// internal timeout gives roughly a 5-minute total window.
+const POLL_RETRIES = 5;
+
 export function AuthScreen({ navigation }: Props) {
   const t = useTheme();
   const { beginTelegramLogin, pollTelegramLogin, cancelTelegramLogin } = useAuth();
   const [phase, setPhase] = useState<Phase>('idle');
   const [error, setError] = useState<string | null>(null);
   const pendingLink = useRef<{ loginToken: string; deepLink: string } | null>(null);
+  // True only while a login attempt is active. The AppState listener below
+  // uses this to decide whether a resume-from-background should fire a fresh
+  // poll (coming back from Telegram) or do nothing (idle screen).
+  const pollingActive = useRef(false);
 
+  // Stop polling if the user backs out of this screen mid-attempt.
   useEffect(() => {
-    // Stop polling if the user backs out of this screen mid-attempt.
-    return () => cancelTelegramLogin();
+    return () => {
+      pollingActive.current = false;
+      cancelTelegramLogin();
+    };
   }, [cancelTelegramLogin]);
+
+  // The core fix for "doesn't pick up the session after returning from Telegram":
+  // when the app comes back to the foreground, immediately fire one more poll.
+  // Without this, if the previous poll already returned false on timeout, the
+  // user is stuck on the error screen even though Telegram has verified them.
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active' && pollingActive.current && pendingLink.current) {
+        pollTelegramLogin(pendingLink.current.loginToken).catch(() => {
+          // Swallow — the main retry loop in startLogin() is still active and
+          // will surface any error through its own handler.
+        });
+      }
+    });
+    return () => sub.remove();
+  }, [pollTelegramLogin]);
 
   async function startLogin() {
     setError(null);
@@ -44,6 +72,7 @@ export function AuthScreen({ navigation }: Props) {
     try {
       link = await beginTelegramLogin();
       pendingLink.current = link;
+      pollingActive.current = true;
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Couldn't reach the server — check your connection.");
       setPhase('error');
@@ -55,21 +84,33 @@ export function AuthScreen({ navigation }: Props) {
     } catch {
       setError("Couldn't open Telegram — make sure it's installed.");
       setPhase('error');
+      pollingActive.current = false;
       return;
     }
 
-    try {
-      const confirmed = await pollTelegramLogin(link.loginToken);
-      if (!confirmed) {
-        setError("Didn't get a confirmation in time — try again.");
+    // Retry loop: a single pollTelegramLogin() call may return false on its
+    // own internal timeout before the user has tapped Start in Telegram. Loop
+    // a few times to give them a proper window. The AppState listener above
+    // also fires an extra poll each time they return to the app — belt and
+    // suspenders for the same problem.
+    for (let attempt = 0; attempt < POLL_RETRIES; attempt++) {
+      try {
+        const confirmed = await pollTelegramLogin(link.loginToken);
+        if (confirmed) {
+          pollingActive.current = false;
+          return; // Navigation handled by useAuth once status flips to 'signedIn'
+        }
+      } catch (err) {
+        pollingActive.current = false;
+        setError(err instanceof ApiError ? err.message : "Couldn't reach the server — check your connection.");
         setPhase('error');
+        return;
       }
-      // On success the app switches screens automatically once useAuth()'s status
-      // flips to 'signedIn' — nothing else to do here.
-    } catch (err) {
-      setError(err instanceof ApiError ? err.message : "Couldn't reach the server — check your connection.");
-      setPhase('error');
     }
+
+    pollingActive.current = false;
+    setError("Didn't get a confirmation — tap 'Reopen Telegram' or try again.");
+    setPhase('error');
   }
 
   function reopenTelegram() {
@@ -92,7 +133,7 @@ export function AuthScreen({ navigation }: Props) {
         </Text>
         <Text style={[t.typography.body, { color: t.colors.textSecondary, marginTop: 8, textAlign: 'center' }]}>
           {phase === 'waiting'
-            ? 'Tap Start in Telegram to confirm — this screen will move on automatically.'
+            ? 'Tap Start in Telegram, then switch back to this app — this screen moves on automatically.'
             : "We'll open Telegram so you can confirm it's you. No password, no code to type."}
         </Text>
 

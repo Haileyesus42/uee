@@ -124,8 +124,19 @@ async function handleStartMessage(loginToken: string, from: TelegramFrom, chatId
     },
   });
 
-  await sendTelegramMessage(chatId, "✅ You're verified — return to the Tizata app to continue.");
-  await sendTelegramMessage(chatId, '📸 Want a profile picture? Send me a photo here anytime and I’ll add it to your account.');
+  await sendTelegramMessage(
+    chatId,
+    "✅ You're verified! Switch back to the Tizata app (recents button or swipe up from home) — you'll be signed in automatically."
+  );
+  // Gate the photo prompt on the user actually needing one. Without this it
+  // fires on every /start, nagging users who already uploaded a photo (or
+  // already have one from their Telegram profile) each time they log in.
+  if (!user.avatarUpload && !user.avatarFileId) {
+    await sendTelegramMessage(
+      chatId,
+      '📸 Want a profile picture? Send me a photo here anytime and I’ll add it to your account.'
+    );
+  }
 }
 
 // Fires for any photo message from an already-registered chat, not just one

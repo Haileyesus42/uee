@@ -47,7 +47,7 @@ export function MockExamsListScreen({ navigation }: Props) {
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
       <View style={{ paddingHorizontal: t.spacing.md }}>
-        <TopBar title="Mock Exams" onBack={() => navigation.goBack()} />
+        <TopBar title="Model Exams" onBack={() => navigation.goBack()} />
       </View>
 
       <ScrollView contentContainerStyle={{ padding: t.spacing.md, paddingBottom: t.spacing.xl }}>

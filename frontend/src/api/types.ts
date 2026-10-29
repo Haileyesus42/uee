@@ -108,6 +108,7 @@ export type TextbookTocSection = {
   order: number;
   pageStart: number;
   pageEnd: number;
+  grade: number;
 };
 export type TextbookTocUnit = { unitTitle: string; sections: TextbookTocSection[] };
 

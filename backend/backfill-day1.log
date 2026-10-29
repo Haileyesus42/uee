@@ -1,0 +1,3011 @@
+nohup: ignoring input
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9768
+
+✓ [1/9768] 000cb7eb… english (k1/4) — ETA 546m
+✓ [2/9768] 0010de26… civics (k1/4) — ETA 864m
+✓ [3/9768] 001781d5… english (k1/4) — ETA 979m
+✓ [4/9768] 001ed5f7… biology (k1/4) — ETA 1033m
+✓ [5/9768] 0026e336… civics (k1/4) — ETA 1067m
+✓ [6/9768] 002de0f1… physics (k1/4) — ETA 1099m
+✓ [7/9768] 0032023c… physics (k1/4) — ETA 1125m
+✓ [8/9768] 0033cd73… english (k1/4) — ETA 1144m
+✗ [9/9768] 003d4134…: Bad escaped character in JSON at position 622
+✓ [10/9768] 003e3356… geography (k1/4) — ETA 1311m
+✓ [11/9768] 003ebd5a… geography (k1/4) — ETA 1305m
+✓ [12/9768] 004c85cb… civics (k1/4) — ETA 1298m
+✓ [13/9768] 004daee7… aptitude (k1/4) — ETA 1287m
+✓ [14/9768] 0065db38… chemistry (k1/4) — ETA 1287m
+✓ [15/9768] 0082f687… civics (k1/4) — ETA 1277m
+✓ [16/9768] 0093ccdc… civics (k1/4) — ETA 1272m
+✓ [17/9768] 00960d3a… aptitude (k1/4) — ETA 1270m
+✓ [18/9768] 009bce55… chemistry (k1/4) — ETA 1270m
+✓ [19/9768] 009dec6d… english (k1/4) — ETA 1267m
+✓ [20/9768] 00b11226… biology (k1/4) — ETA 1265m
+✓ [21/9768] 00b3e3dd… mathematics (k1/4) — ETA 1262m
+✓ [22/9768] 00b4081a… mathematics (k1/4) — ETA 1259m
+✓ [23/9768] 00bd19b4… english (k1/4) — ETA 1257m
+✓ [24/9768] 00c22fd2… biology (k1/4) — ETA 1257m
+✓ [25/9768] 00c233b6… civics (k1/4) — ETA 1254m
+✓ [26/9768] 00c462cf… civics (k1/4) — ETA 1250m
+✓ [27/9768] 00cda120… geography (k1/4) — ETA 1252m
+✓ [28/9768] 00cf1b41… biology (k1/4) — ETA 1251m
+✓ [29/9768] 00d0d697… english (k1/4) — ETA 1249m
+✓ [30/9768] 00eba1ab… civics (k1/4) — ETA 1247m
+✓ [31/9768] 00f2abc0… aptitude (k1/4) — ETA 1246m
+✓ [32/9768] 00f52ca5… civics (k1/4) — ETA 1250m
+✓ [33/9768] 010a3f88… english (k1/4) — ETA 1251m
+✓ [34/9768] 010d2119… english (k1/4) — ETA 1252m
+✓ [35/9768] 01119869… chemistry (k1/4) — ETA 1250m
+✓ [36/9768] 0114b408… biology (k1/4) — ETA 1250m
+✓ [37/9768] 0116baec… chemistry (k1/4) — ETA 1251m
+✓ [38/9768] 01278038… civics (k1/4) — ETA 1250m
+✓ [39/9768] 01312b01… civics (k1/4) — ETA 1251m
+✓ [40/9768] 01329e14… physics (k1/4) — ETA 1255m
+✓ [41/9768] 013ee4fe… mathematics (k1/4) — ETA 1256m
+✓ [42/9768] 0159d405… civics (k1/4) — ETA 1254m
+✓ [43/9768] 0161ef0e… english (k1/4) — ETA 1254m
+✓ [44/9768] 01641d28… aptitude (k1/4) — ETA 1254m
+✓ [45/9768] 0188bfdf… english (k1/4) — ETA 1255m
+✓ [46/9768] 018a8a82… civics (k1/4) — ETA 1255m
+✓ [47/9768] 018e156a… english (k1/4) — ETA 1255m
+✓ [48/9768] 01934959… mathematics (k1/4) — ETA 1254m
+✓ [49/9768] 01950acb… biology (k1/4) — ETA 1258m
+✓ [50/9768] 019b52c3… english (k1/4) — ETA 1257m
+✓ [51/9768] 019e4bea… civics (k1/4) — ETA 1257m
+✗ [52/9768] 01ab1b22…: Expected double-quoted property name in JSON at position 1975
+✓ [53/9768] 01ac3800… civics (k1/4) — ETA 1279m
+✓ [54/9768] 01b5b548… physics (k1/4) — ETA 1282m
+✓ [55/9768] 01be0f85… civics (k1/4) — ETA 1280m
+✓ [56/9768] 01c27970… chemistry (k1/4) — ETA 1279m
+✓ [57/9768] 01c440e3… mathematics (k1/4) — ETA 1279m
+✓ [58/9768] 01d78bb0… chemistry (k1/4) — ETA 1279m
+✓ [59/9768] 01d88922… mathematics (k1/4) — ETA 1279m
+✓ [60/9768] 01e3bc4e… biology (k1/4) — ETA 1278m
+✓ [61/9768] 01ebd470… english (k1/4) — ETA 1285m
+✓ [62/9768] 01fc7464… civics (k1/4) — ETA 1284m
+✓ [63/9768] 02020ab9… mathematics (k1/4) — ETA 1285m
+✓ [64/9768] 0203e847… mathematics (k1/4) — ETA 1285m
+✓ [65/9768] 020887ef… mathematics (k1/4) — ETA 1284m
+✓ [66/9768] 020a373f… english (k1/4) — ETA 1283m
+✓ [67/9768] 02127966… mathematics (k1/4) — ETA 1281m
+✓ [68/9768] 02155b38… mathematics (k1/4) — ETA 1282m
+✓ [69/9768] 0216ec59… civics (k1/4) — ETA 1281m
+✓ [70/9768] 0219683c… mathematics (k1/4) — ETA 1282m
+✓ [71/9768] 022db217… chemistry (k1/4) — ETA 1282m
+✓ [72/9768] 023bee37… english (k1/4) — ETA 1281m
+✓ [73/9768] 02487d9b… biology (k1/4) — ETA 1280m
+✓ [74/9768] 024882e7… english (k1/4) — ETA 1280m
+✗ [75/9768] 024c63a7…: Bad escaped character in JSON at position 84
+✗ [76/9768] 025833d8…: Bad escaped character in JSON at position 239
+✓ [77/9768] 02664f8c… biology (k1/4) — ETA 1316m
+✓ [78/9768] 026b3bb5… civics (k1/4) — ETA 1314m
+✓ [79/9768] 02719faf… english (k1/4) — ETA 1312m
+✓ [80/9768] 0273985e… history (k1/4) — ETA 1311m
+✓ [81/9768] 0285ddd4… geography (k1/4) — ETA 1310m
+✓ [82/9768] 029012f6… biology (k1/4) — ETA 1309m
+✓ [83/9768] 0293372f… english (k1/4) — ETA 1307m
+✓ [84/9768] 02935d2d… english (k1/4) — ETA 1306m
+✓ [85/9768] 0299f8ba… civics (k1/4) — ETA 1305m
+✓ [86/9768] 029c9c5b… biology (k1/4) — ETA 1305m
+✓ [87/9768] 02a18a06… mathematics (k1/4) — ETA 1303m
+✓ [88/9768] 02a91b83… geography (k1/4) — ETA 1301m
+✓ [89/9768] 02ae415e… civics (k1/4) — ETA 1299m
+✓ [90/9768] 02b0a3a8… mathematics (k1/4) — ETA 1300m
+✓ [91/9768] 02b5b376… biology (k1/4) — ETA 1300m
+✓ [92/9768] 02b8f6b8… physics (k1/4) — ETA 1299m
+✓ [93/9768] 02baaf37… civics (k1/4) — ETA 1298m
+✓ [94/9768] 02bb108e… english (k1/4) — ETA 1296m
+✓ [95/9768] 02bcd3e5… chemistry (k1/4) — ETA 1295m
+✓ [96/9768] 02cdebf9… biology (k1/4) — ETA 1294m
+✓ [97/9768] 02d14f88… geography (k1/4) — ETA 1294m
+✓ [98/9768] 02de9ab5… economics (k1/4) — ETA 1294m
+✓ [99/9768] 02e112af… english (k1/4) — ETA 1293m
+✓ [100/9768] 02eb02a8… chemistry (k1/4) — ETA 1293m
+  ℹ️  no-key: AI said C — The median study time represents the middle value when all observed hours are ordered from
+✓ [101/9768] 02ec129e… aptitude (k1/4) — ETA 1292m
+✓ [102/9768] 02f0428a… biology (k1/4) — ETA 1291m
+✓ [103/9768] 02f20c50… civics (k1/4) — ETA 1290m
+✓ [104/9768] 02f59247… mathematics (k1/4) — ETA 1290m
+✓ [105/9768] 02fc61c2… chemistry (k1/4) — ETA 1290m
+✓ [106/9768] 02fcb86c… physics (k1/4) — ETA 1289m
+✓ [107/9768] 02fd221f… civics (k1/4) — ETA 1288m
+✓ [108/9768] 02ffe300… biology (k1/4) — ETA 1287m
+✓ [109/9768] 030bbc49… biology (k1/4) — ETA 1287m
+✓ [110/9768] 03102aed… chemistry (k1/4) — ETA 1286m
+✓ [111/9768] 03103edc… biology (k1/4) — ETA 1287m
+✓ [112/9768] 031552f8… biology (k1/4) — ETA 1285m
+✓ [113/9768] 031815bb… chemistry (k1/4) — ETA 1285m
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9659
+
+✗ [1/9659] 003d4134…: Bad escaped character in JSON at position 1740
+✓ [2/9659] 01ab1b22… chemistry (k1/4) — ETA 1712m
+✗ [3/9659] 024c63a7…: Bad escaped character in JSON at position 1942
+✓ [4/9659] 025833d8… physics (k1/4) — ETA 2089m
+✓ [5/9659] 031e223c… mathematics (k1/4) — ETA 1817m
+✓ [6/9659] 031f7756… physics (k1/4) — ETA 1680m
+✓ [7/9659] 03239445… english (k1/4) — ETA 1577m
+✓ [8/9659] 03265b3b… mathematics (k1/4) — ETA 1510m
+✓ [9/9659] 032c7516… civics (k1/4) — ETA 1468m
+✓ [10/9659] 032e1151… english (k1/4) — ETA 1445m
+✓ [11/9659] 033e280f… biology (k1/4) — ETA 1421m
+✓ [12/9659] 0346b829… civics (k1/4) — ETA 1398m
+✓ [13/9659] 0348ab7e… biology (k1/4) — ETA 1384m
+✓ [14/9659] 03514158… civics (k1/4) — ETA 1364m
+✓ [15/9659] 03597892… aptitude (k1/4) — ETA 1357m
+✓ [16/9659] 03605327… mathematics (k1/4) — ETA 1350m
+✓ [17/9659] 0367737a… english (k1/4) — ETA 1339m
+✓ [18/9659] 036c1400… civics (k1/4) — ETA 1329m
+✓ [19/9659] 036ce3ef… physics (k1/4) — ETA 1321m
+✓ [20/9659] 0372f484… english (k1/4) — ETA 1312m
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9641
+
+✓ [1/9641] 003d4134… physics (k1/4) — ETA 541m
+✓ [2/9641] 024c63a7… chemistry (k1/4) — ETA 873m
+✓ [3/9641] 0375530b… english (k1/4) — ETA 987m
+✓ [4/9641] 0377294f… biology (k1/4) — ETA 1052m
+✓ [5/9641] 03779f93… english (k1/4) — ETA 1083m
+✓ [6/9641] 0380b391… english (k1/4) — ETA 1107m
+✓ [7/9641] 0387a7c0… geography (k1/4) — ETA 1121m
+✓ [8/9641] 038846f0… aptitude (k1/4) — ETA 1130m
+✓ [9/9641] 0391abfd… english (k1/4) — ETA 1129m
+✓ [10/9641] 03944a9a… english (k1/4) — ETA 1138m
+✓ [11/9641] 03953e11… english (k1/4) — ETA 1147m
+✓ [12/9641] 039de6e3… physics (k1/4) — ETA 1167m
+✓ [13/9641] 039f3de3… civics (k1/4) — ETA 1167m
+✓ [14/9641] 03a096ef… english (k1/4) — ETA 1172m
+✓ [15/9641] 03b35229… mathematics (k1/4) — ETA 1178m
+✓ [16/9641] 03b5541c… mathematics (k1/4) — ETA 1186m
+✓ [17/9641] 03c078fe… civics (k1/4) — ETA 1212m
+✓ [18/9641] 03d0f8e2… civics (k1/4) — ETA 1211m
+✓ [19/9641] 03d2d5a7… geography (k1/4) — ETA 1208m
+✓ [20/9641] 03d2fc41… civics (k1/4) — ETA 1204m
+✓ [21/9641] 03d73978… mathematics (k1/4) — ETA 1206m
+✓ [22/9641] 03d7479e… biology (k1/4) — ETA 1207m
+✓ [23/9641] 03d85280… mathematics (k1/4) — ETA 1205m
+✓ [24/9641] 03e04d60… english (k1/4) — ETA 1206m
+✓ [25/9641] 03e84902… chemistry (k1/4) — ETA 1206m
+✓ [26/9641] 03ec1b66… physics (k1/4) — ETA 1209m
+✓ [27/9641] 03f07f04… civics (k1/4) — ETA 1207m
+✓ [28/9641] 04017c0d… english (k1/4) — ETA 1204m
+✓ [29/9641] 041024d1… civics (k1/4) — ETA 1200m
+✓ [30/9641] 04140a5e… aptitude (k1/4) — ETA 1202m
+✓ [31/9641] 0417cac2… physics (k1/4) — ETA 1201m
+✓ [32/9641] 041a87d7… biology (k1/4) — ETA 1202m
+✓ [33/9641] 041f4889… civics (k1/4) — ETA 1200m
+✓ [34/9641] 0427070a… english (k1/4) — ETA 1200m
+✓ [35/9641] 042b2a51… mathematics (k1/4) — ETA 1202m
+✓ [36/9641] 042b4c65… biology (k1/4) — ETA 1201m
+✓ [37/9641] 0431960e… geography (k1/4) — ETA 1201m
+✓ [38/9641] 043637c9… geography (k1/4) — ETA 1202m
+✓ [39/9641] 043a024d… civics (k1/4) — ETA 1202m
+✓ [40/9641] 0440a600… mathematics (k1/4) — ETA 1204m
+✓ [41/9641] 0441d8c5… civics (k1/4) — ETA 1205m
+✓ [42/9641] 044bac6a… civics (k1/4) — ETA 1203m
+✓ [43/9641] 045bb766… english (k1/4) — ETA 1204m
+✓ [44/9641] 045bbf89… biology (k1/4) — ETA 1205m
+✓ [45/9641] 045da0bb… aptitude (k1/4) — ETA 1206m
+✓ [46/9641] 0464d0f3… english (k1/4) — ETA 1205m
+✓ [47/9641] 0469ce1a… civics (k1/4) — ETA 1203m
+✓ [48/9641] 0472bd7c… civics (k1/4) — ETA 1204m
+✓ [49/9641] 04755c71… history (k1/4) — ETA 1204m
+✓ [50/9641] 04761a56… aptitude (k1/4) — ETA 1205m
+✓ [51/9641] 047bb318… civics (k1/4) — ETA 1204m
+✓ [52/9641] 047f5366… english (k1/4) — ETA 1204m
+✓ [53/9641] 048b8458… english (k1/4) — ETA 1211m
+✓ [54/9641] 048c1573… mathematics (k1/4) — ETA 1210m
+✓ [55/9641] 04953828… english (k1/4) — ETA 1209m
+✓ [56/9641] 0498a228… civics (k1/4) — ETA 1208m
+✓ [57/9641] 049d2ad5… mathematics (k1/4) — ETA 1210m
+✓ [58/9641] 049d4069… civics (k1/4) — ETA 1211m
+✓ [59/9641] 049e8baf… physics (k1/4) — ETA 1213m
+✓ [60/9641] 04ac3189… physics (k1/4) — ETA 1214m
+✓ [61/9641] 04b9a9c8… english (k1/4) — ETA 1213m
+✓ [62/9641] 04ba0a4b… mathematics (k1/4) — ETA 1218m
+✓ [63/9641] 04c704f3… chemistry (k1/4) — ETA 1218m
+✓ [64/9641] 04cbd258… english (k1/4) — ETA 1218m
+✓ [65/9641] 04ce10bd… chemistry (k1/4) — ETA 1220m
+✓ [66/9641] 04d20ad1… mathematics (k1/4) — ETA 1219m
+✓ [67/9641] 04d335b9… civics (k1/4) — ETA 1219m
+✓ [68/9641] 04d36f30… chemistry (k1/4) — ETA 1219m
+✓ [69/9641] 04db39b5… biology (k1/4) — ETA 1219m
+✓ [70/9641] 04dc5012… aptitude (k1/4) — ETA 1218m
+✓ [71/9641] 04df6072… english (k1/4) — ETA 1219m
+✓ [72/9641] 04e694ba… civics (k1/4) — ETA 1218m
+✓ [73/9641] 04e72de2… aptitude (k1/4) — ETA 1219m
+✓ [74/9641] 04e93a30… english (k1/4) — ETA 1219m
+✓ [75/9641] 04eab98b… geography (k1/4) — ETA 1219m
+✓ [76/9641] 04ee6133… english (k1/4) — ETA 1219m
+✓ [77/9641] 04f60e42… economics (k1/4) — ETA 1220m
+✓ [78/9641] 04f753ae… mathematics (k1/4) — ETA 1220m
+✓ [79/9641] 04f982d2… physics (k1/4) — ETA 1219m
+✓ [80/9641] 04fed3ce… economics (k1/4) — ETA 1219m
+✓ [81/9641] 0506b544… mathematics (k1/4) — ETA 1219m
+✓ [82/9641] 05087e57… english (k1/4) — ETA 1221m
+✓ [83/9641] 050a8e93… mathematics (k1/4) — ETA 1221m
+✓ [84/9641] 051a8cab… physics (k1/4) — ETA 1221m
+✓ [85/9641] 0524509f… civics (k1/4) — ETA 1221m
+✓ [86/9641] 05270a46… english (k1/4) — ETA 1221m
+✓ [87/9641] 0527d866… physics (k1/4) — ETA 1229m
+✓ [88/9641] 0528f6d1… physics (k1/4) — ETA 1228m
+✓ [89/9641] 052a9154… civics (k1/4) — ETA 1227m
+✓ [90/9641] 052ff1a7… civics (k1/4) — ETA 1227m
+✓ [91/9641] 053506c3… civics (k1/4) — ETA 1227m
+✓ [92/9641] 053e204f… mathematics (k1/4) — ETA 1227m
+✓ [93/9641] 0543fbdc… civics (k1/4) — ETA 1226m
+[supervisor] Wed 28 Oct 2026 10:35:16 AM EAT — exited, remaining=9548
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9548
+
+✓ [1/9548] 0543ffd5… english (k1/4) — ETA 552m
+✓ [2/9548] 0545063c… english (k1/4) — ETA 898m
+✓ [3/9548] 05549b4c… english (k1/4) — ETA 1003m
+✓ [4/9548] 05665e77… english (k1/4) — ETA 1050m
+✓ [5/9548] 05687d03… mathematics (k1/4) — ETA 1077m
+✓ [6/9548] 056ba78b… civics (k1/4) — ETA 1098m
+✓ [7/9548] 057c92c1… mathematics (k1/4) — ETA 1134m
+✓ [8/9548] 0584ceaa… geography (k1/4) — ETA 1141m
+✓ [9/9548] 0593db1f… aptitude (k1/4) — ETA 1161m
+✓ [10/9548] 0596683a… chemistry (k1/4) — ETA 1164m
+✓ [11/9548] 0596d90a… civics (k1/4) — ETA 1167m
+✓ [12/9548] 05992eb8… chemistry (k1/4) — ETA 1163m
+✓ [13/9548] 059fb884… mathematics (k1/4) — ETA 1167m
+✓ [14/9548] 05a5ab33… english (k1/4) — ETA 1170m
+✓ [15/9548] 05abad56… biology (k1/4) — ETA 1175m
+✓ [16/9548] 05ac8a27… english (k1/4) — ETA 1178m
+✓ [17/9548] 05bbf4dd… english (k1/4) — ETA 1181m
+✓ [18/9548] 05c42e48… civics (k1/4) — ETA 1181m
+✓ [19/9548] 05c90910… civics (k1/4) — ETA 1181m
+✓ [20/9548] 05d93f93… biology (k1/4) — ETA 1182m
+✓ [21/9548] 05dc9662… english (k1/4) — ETA 1181m
+✓ [22/9548] 05df466c… english (k1/4) — ETA 1185m
+✓ [23/9548] 05e53881… english (k1/4) — ETA 1189m
+✓ [24/9548] 05eb9032… physics (k1/4) — ETA 1190m
+✓ [25/9548] 05edf8b3… civics (k1/4) — ETA 1188m
+✓ [26/9548] 05ee3e88… english (k1/4) — ETA 1191m
+✓ [27/9548] 05efb844… economics (k1/4) — ETA 1194m
+✓ [28/9548] 0603eaa7… english (k1/4) — ETA 1197m
+✓ [29/9548] 0609fb8f… english (k1/4) — ETA 1197m
+✓ [30/9548] 060aff08… chemistry (k1/4) — ETA 1200m
+✓ [31/9548] 06121df6… mathematics (k1/4) — ETA 1199m
+✓ [32/9548] 0623b4d6… chemistry (k1/4) — ETA 1198m
+✓ [33/9548] 06297205… biology (k1/4) — ETA 1200m
+✓ [34/9548] 062dcaa1… english (k1/4) — ETA 1201m
+✓ [35/9548] 0630d134… geography (k1/4) — ETA 1201m
+✓ [36/9548] 06323455… civics (k1/4) — ETA 1202m
+✓ [37/9548] 06373e06… english (k1/4) — ETA 1203m
+✓ [38/9548] 063a32ac… civics (k1/4) — ETA 1202m
+✓ [39/9548] 06410e7a… biology (k1/4) — ETA 1203m
+✓ [40/9548] 0643682b… chemistry (k1/4) — ETA 1202m
+✓ [41/9548] 0648265c… civics (k1/4) — ETA 1204m
+✓ [42/9548] 064ac81b… aptitude (k1/4) — ETA 1203m
+✓ [43/9548] 064b0452… mathematics (k1/4) — ETA 1202m
+✓ [44/9548] 066267e2… civics (k1/4) — ETA 1204m
+✓ [45/9548] 0662a75b… english (k1/4) — ETA 1203m
+✓ [46/9548] 066b503f… mathematics (k1/4) — ETA 1205m
+✓ [47/9548] 066bf4c0… civics (k1/4) — ETA 1208m
+✓ [48/9548] 066d3364… history (k1/4) — ETA 1209m
+✓ [49/9548] 0670d088… physics (k1/4) — ETA 1208m
+✓ [50/9548] 067a6f46… mathematics (k1/4) — ETA 1208m
+✓ [51/9548] 067b11d3… english (k1/4) — ETA 1207m
+✓ [52/9548] 06a22f65… mathematics (k1/4) — ETA 1208m
+  ℹ️  no-key: AI said A — Numbering the decane chain from right to left gives substituents at positions 2, 4, 6, and
+✓ [53/9548] 06ab1d87… chemistry (k1/4) — ETA 1207m
+✓ [54/9548] 06ae75c7… english (k1/4) — ETA 1207m
+✓ [55/9548] 06af202c… geography (k1/4) — ETA 1206m
+✓ [56/9548] 06b22376… civics (k1/4) — ETA 1205m
+✓ [57/9548] 06b5489c… history (k1/4) — ETA 1204m
+✓ [58/9548] 06bef8cd… mathematics (k1/4) — ETA 1204m
+✓ [59/9548] 06cc0829… english (k1/4) — ETA 1204m
+✓ [60/9548] 06df82a9… physics (k1/4) — ETA 1205m
+✓ [61/9548] 06dfbf3c… mathematics (k1/4) — ETA 1206m
+✓ [62/9548] 06e1b492… history (k1/4) — ETA 1205m
+✓ [63/9548] 06e7c10c… english (k1/4) — ETA 1205m
+✓ [64/9548] 06eefbf8… civics (k1/4) — ETA 1205m
+✓ [65/9548] 06f7da8e… mathematics (k1/4) — ETA 1204m
+✓ [66/9548] 07070296… biology (k1/4) — ETA 1205m
+✓ [67/9548] 070e098c… mathematics (k1/4) — ETA 1206m
+✓ [68/9548] 07102030… mathematics (k1/4) — ETA 1208m
+✓ [69/9548] 07184c5e… civics (k1/4) — ETA 1208m
+✓ [70/9548] 071bd3b0… civics (k1/4) — ETA 1207m
+✓ [71/9548] 072fb177… history (k1/4) — ETA 1206m
+✓ [72/9548] 073809da… english (k1/4) — ETA 1206m
+✓ [73/9548] 0738f7c0… mathematics (k1/4) — ETA 1205m
+✓ [74/9548] 0742128d… mathematics (k1/4) — ETA 1205m
+✓ [75/9548] 0745c895… civics (k1/4) — ETA 1205m
+✓ [76/9548] 074b1e42… chemistry (k1/4) — ETA 1204m
+✓ [77/9548] 074c3e42… english (k1/4) — ETA 1208m
+✓ [78/9548] 0751f490… english (k1/4) — ETA 1208m
+✓ [79/9548] 07548cae… civics (k1/4) — ETA 1207m
+✓ [80/9548] 075d3c42… english (k1/4) — ETA 1207m
+✓ [81/9548] 075d4a63… english (k1/4) — ETA 1207m
+✓ [82/9548] 075dea60… chemistry (k1/4) — ETA 1207m
+✓ [83/9548] 075eba64… english (k1/4) — ETA 1207m
+✓ [84/9548] 07629747… biology (k1/4) — ETA 1207m
+✓ [85/9548] 0765f144… mathematics (k1/4) — ETA 1207m
+✓ [86/9548] 076d6b19… civics (k1/4) — ETA 1207m
+✓ [87/9548] 0777a588… civics (k1/4) — ETA 1206m
+✓ [88/9548] 077ea722… civics (k1/4) — ETA 1206m
+✓ [89/9548] 0780d3b6… physics (k1/4) — ETA 1207m
+✓ [90/9548] 07818d7e… civics (k1/4) — ETA 1207m
+✓ [91/9548] 0785ac5c… english (k1/4) — ETA 1207m
+✓ [92/9548] 078fa042… chemistry (k1/4) — ETA 1206m
+✓ [93/9548] 0792ca13… english (k1/4) — ETA 1206m
+✓ [94/9548] 079fd9f5… chemistry (k1/4) — ETA 1207m
+✓ [95/9548] 07a37767… english (k1/4) — ETA 1206m
+✓ [96/9548] 07a8e0cd… civics (k1/4) — ETA 1206m
+✓ [97/9548] 07ab966c… history (k1/4) — ETA 1205m
+✓ [98/9548] 07b47a6f… english (k1/4) — ETA 1205m
+✓ [99/9548] 07b83c98… civics (k1/4) — ETA 1205m
+✓ [100/9548] 07b84479… civics (k1/4) — ETA 1205m
+✓ [101/9548] 07bfed3c… chemistry (k1/4) — ETA 1205m
+✓ [102/9548] 07c27953… civics (k1/4) — ETA 1205m
+✓ [103/9548] 07c5d2cb… aptitude (k1/4) — ETA 1205m
+✓ [104/9548] 07d1952a… english (k1/4) — ETA 1204m
+✓ [105/9548] 07d5c364… physics (k1/4) — ETA 1204m
+✓ [106/9548] 07d7a0a6… english (k1/4) — ETA 1204m
+✓ [107/9548] 07db0db0… civics (k1/4) — ETA 1205m
+✓ [108/9548] 07de2b1f… mathematics (k1/4) — ETA 1205m
+✓ [109/9548] 07ed34bc… mathematics (k1/4) — ETA 1205m
+✓ [110/9548] 07efc204… biology (k1/4) — ETA 1204m
+✓ [111/9548] 07f16866… biology (k1/4) — ETA 1204m
+✓ [112/9548] 080c6d1b… civics (k1/4) — ETA 1204m
+✓ [113/9548] 080e1762… aptitude (k1/4) — ETA 1204m
+✓ [114/9548] 08117a91… english (k1/4) — ETA 1203m
+✓ [115/9548] 0820850d… civics (k1/4) — ETA 1203m
+✓ [116/9548] 0821654b… biology (k1/4) — ETA 1202m
+✓ [117/9548] 0828d1ad… english (k1/4) — ETA 1202m
+✓ [118/9548] 0831db6e… english (k1/4) — ETA 1202m
+✓ [119/9548] 08323318… english (k1/4) — ETA 1202m
+✓ [120/9548] 0833c4a2… geography (k1/4) — ETA 1201m
+✓ [121/9548] 0837bcee… biology (k1/4) — ETA 1201m
+✓ [122/9548] 083c533b… physics (k1/4) — ETA 1201m
+✓ [123/9548] 084ba961… civics (k1/4) — ETA 1201m
+✓ [124/9548] 085d0a93… biology (k1/4) — ETA 1201m
+✓ [125/9548] 0862094b… aptitude (k1/4) — ETA 1200m
+✓ [126/9548] 086482f9… aptitude (k1/4) — ETA 1200m
+✓ [127/9548] 08658f7b… chemistry (k1/4) — ETA 1200m
+✓ [128/9548] 086b0071… mathematics (k1/4) — ETA 1201m
+✓ [129/9548] 08705d04… aptitude (k1/4) — ETA 1201m
+✓ [130/9548] 087c99ed… english (k1/4) — ETA 1202m
+✓ [131/9548] 088dde75… civics (k1/4) — ETA 1202m
+✓ [132/9548] 08904c4e… aptitude (k1/4) — ETA 1202m
+✓ [133/9548] 08c674cf… civics (k1/4) — ETA 1202m
+✓ [134/9548] 08d7ae2c… civics (k1/4) — ETA 1201m
+✓ [135/9548] 08da2284… geography (k1/4) — ETA 1201m
+✓ [136/9548] 08dc68ac… physics (k1/4) — ETA 1201m
+✓ [137/9548] 08dd58f8… english (k1/4) — ETA 1200m
+✓ [138/9548] 08e9b9cd… english (k1/4) — ETA 1200m
+✓ [139/9548] 08f08541… physics (k1/4) — ETA 1200m
+✓ [140/9548] 08f4a4cc… history (k1/4) — ETA 1202m
+✓ [141/9548] 08f6599e… mathematics (k1/4) — ETA 1202m
+✓ [142/9548] 09041418… english (k1/4) — ETA 1202m
+✓ [143/9548] 090479d2… physics (k1/4) — ETA 1202m
+✓ [144/9548] 0905152f… english (k1/4) — ETA 1202m
+  ℹ️  no-key: AI said B — The expression 'I would rather report otherwise' conveys the narrator's reluctance yet com
+✓ [145/9548] 090525cd… english (k1/4) — ETA 1203m
+✓ [146/9548] 090fd250… economics (k1/4) — ETA 1202m
+✓ [147/9548] 090ff503… mathematics (k1/4) — ETA 1203m
+✓ [148/9548] 0910b0cb… physics (k1/4) — ETA 1205m
+✓ [149/9548] 0913b4e2… mathematics (k1/4) — ETA 1205m
+✓ [150/9548] 091518c8… economics (k1/4) — ETA 1205m
+✓ [151/9548] 0917d2ff… civics (k1/4) — ETA 1206m
+✓ [152/9548] 0917d576… mathematics (k1/4) — ETA 1206m
+✓ [153/9548] 091db293… english (k1/4) — ETA 1206m
+✓ [154/9548] 091dcd2e… biology (k1/4) — ETA 1206m
+✓ [155/9548] 09209326… english (k1/4) — ETA 1206m
+✓ [156/9548] 0927183b… chemistry (k1/4) — ETA 1206m
+✓ [157/9548] 092b8457… mathematics (k1/4) — ETA 1207m
+✓ [158/9548] 09332365… english (k1/4) — ETA 1207m
+✓ [159/9548] 0933eba6… biology (k1/4) — ETA 1207m
+✓ [160/9548] 0934f72d… chemistry (k1/4) — ETA 1207m
+✓ [161/9548] 09365dfd… geography (k1/4) — ETA 1206m
+✓ [162/9548] 09367a43… english (k1/4) — ETA 1206m
+✓ [163/9548] 093f63c6… civics (k1/4) — ETA 1205m
+✓ [164/9548] 0943d2a0… english (k1/4) — ETA 1205m
+✓ [165/9548] 094876eb… mathematics (k1/4) — ETA 1205m
+✓ [166/9548] 09513b10… physics (k1/4) — ETA 1205m
+✓ [167/9548] 095b3b0c… english (k1/4) — ETA 1205m
+✓ [168/9548] 095c53eb… mathematics (k1/4) — ETA 1209m
+✓ [169/9548] 095cb487… mathematics (k1/4) — ETA 1208m
+✓ [170/9548] 095d4289… english (k1/4) — ETA 1208m
+✓ [171/9548] 09670ba7… chemistry (k1/4) — ETA 1208m
+✓ [172/9548] 09772b1a… english (k1/4) — ETA 1209m
+✓ [173/9548] 09787118… civics (k1/4) — ETA 1209m
+✓ [174/9548] 09796321… english (k1/4) — ETA 1209m
+✓ [175/9548] 099872a5… history (k1/4) — ETA 1208m
+✓ [176/9548] 099c0a9c… english (k1/4) — ETA 1208m
+✓ [177/9548] 09a413aa… aptitude (k1/4) — ETA 1208m
+✓ [178/9548] 09aaf6fd… english (k1/4) — ETA 1208m
+✓ [179/9548] 09b156ac… chemistry (k1/4) — ETA 1207m
+✓ [180/9548] 09cacd2a… english (k1/4) — ETA 1207m
+✓ [181/9548] 09cf765c… mathematics (k1/4) — ETA 1207m
+✓ [182/9548] 09d35e23… civics (k1/4) — ETA 1207m
+✓ [183/9548] 09da95c0… english (k1/4) — ETA 1207m
+✓ [184/9548] 09dd0313… biology (k1/4) — ETA 1207m
+✓ [185/9548] 09de3cb4… english (k1/4) — ETA 1207m
+✓ [186/9548] 09e0b419… english (k1/4) — ETA 1207m
+✓ [187/9548] 09e7ac3f… english (k1/4) — ETA 1207m
+✓ [188/9548] 09ebc162… mathematics (k1/4) — ETA 1207m
+✓ [189/9548] 09ec69bc… geography (k1/4) — ETA 1207m
+✓ [190/9548] 09f27299… english (k1/4) — ETA 1206m
+✓ [191/9548] 09f44d64… biology (k1/4) — ETA 1206m
+✓ [192/9548] 0a013c0e… physics (k1/4) — ETA 1206m
+✓ [193/9548] 0a0b0bc7… civics (k1/4) — ETA 1206m
+✓ [194/9548] 0a21e32d… biology (k1/4) — ETA 1206m
+✓ [195/9548] 0a23be80… chemistry (k1/4) — ETA 1206m
+✓ [196/9548] 0a25cff2… english (k1/4) — ETA 1206m
+✓ [197/9548] 0a2b5700… chemistry (k1/4) — ETA 1205m
+✓ [198/9548] 0a2bca57… aptitude (k1/4) — ETA 1206m
+✓ [199/9548] 0a33bb5c… physics (k1/4) — ETA 1206m
+✓ [200/9548] 0a372559… biology (k1/4) — ETA 1206m
+✓ [201/9548] 0a41162f… english (k1/4) — ETA 1205m
+✓ [202/9548] 0a430c82… civics (k1/4) — ETA 1205m
+✓ [203/9548] 0a4b7768… biology (k1/4) — ETA 1205m
+✓ [204/9548] 0a4bb5f3… mathematics (k1/4) — ETA 1205m
+✓ [205/9548] 0a4eb023… chemistry (k1/4) — ETA 1204m
+✓ [206/9548] 0a5a4ed0… civics (k1/4) — ETA 1204m
+✓ [207/9548] 0a646c12… history (k1/4) — ETA 1204m
+✓ [208/9548] 0a6799f7… mathematics (k1/4) — ETA 1204m
+✓ [209/9548] 0a71fbc7… biology (k1/4) — ETA 1204m
+✓ [210/9548] 0a746884… mathematics (k1/4) — ETA 1203m
+✓ [211/9548] 0a75109f… civics (k1/4) — ETA 1203m
+✓ [212/9548] 0a752001… civics (k1/4) — ETA 1203m
+✓ [213/9548] 0a885d02… mathematics (k1/4) — ETA 1202m
+✓ [214/9548] 0a8d42aa… english (k1/4) — ETA 1202m
+✓ [215/9548] 0a8dd052… physics (k1/4) — ETA 1202m
+✓ [216/9548] 0a903965… english (k1/4) — ETA 1202m
+✓ [217/9548] 0a9093ee… biology (k1/4) — ETA 1202m
+✓ [218/9548] 0a95c889… civics (k1/4) — ETA 1202m
+✓ [219/9548] 0a9863de… biology (k1/4) — ETA 1201m
+✓ [220/9548] 0a9c47b3… civics (k1/4) — ETA 1201m
+✓ [221/9548] 0aa1c3fd… civics (k1/4) — ETA 1200m
+✓ [222/9548] 0aa6743e… english (k1/4) — ETA 1200m
+✓ [223/9548] 0aa6fd3b… chemistry (k1/4) — ETA 1200m
+✓ [224/9548] 0aaaa89e… chemistry (k1/4) — ETA 1200m
+✓ [225/9548] 0abda095… civics (k1/4) — ETA 1200m
+✓ [226/9548] 0abdff00… biology (k1/4) — ETA 1199m
+✓ [227/9548] 0abeee10… english (k1/4) — ETA 1199m
+✓ [228/9548] 0acba515… biology (k1/4) — ETA 1199m
+✓ [229/9548] 0ad37d37… physics (k1/4) — ETA 1199m
+✓ [230/9548] 0ad485c7… civics (k1/4) — ETA 1199m
+✓ [231/9548] 0afcdc36… chemistry (k1/4) — ETA 1199m
+✓ [232/9548] 0affa94a… english (k1/4) — ETA 1199m
+✓ [233/9548] 0b05a385… mathematics (k1/4) — ETA 1199m
+✓ [234/9548] 0b06fa4f… chemistry (k1/4) — ETA 1199m
+✓ [235/9548] 0b1c7e75… chemistry (k1/4) — ETA 1198m
+✓ [236/9548] 0b218a6f… english (k1/4) — ETA 1198m
+✓ [237/9548] 0b3779fd… physics (k1/4) — ETA 1199m
+✓ [238/9548] 0b390483… chemistry (k1/4) — ETA 1199m
+✓ [239/9548] 0b3cf41c… aptitude (k1/4) — ETA 1198m
+✓ [240/9548] 0b462768… geography (k1/4) — ETA 1199m
+✓ [241/9548] 0b6c7a83… english (k1/4) — ETA 1198m
+✓ [242/9548] 0b74c26b… mathematics (k1/4) — ETA 1198m
+✓ [243/9548] 0b762c74… english (k1/4) — ETA 1198m
+✓ [244/9548] 0b78308a… physics (k1/4) — ETA 1199m
+✓ [245/9548] 0b87b6b9… english (k1/4) — ETA 1199m
+✓ [246/9548] 0b8bfd93… english (k1/4) — ETA 1199m
+✓ [247/9548] 0b8c9050… chemistry (k1/4) — ETA 1201m
+✓ [248/9548] 0b900c4a… english (k1/4) — ETA 1201m
+✓ [249/9548] 0b96351f… history (k1/4) — ETA 1200m
+✓ [250/9548] 0b9e61a7… mathematics (k1/4) — ETA 1200m
+✓ [251/9548] 0bab3a43… chemistry (k1/4) — ETA 1200m
+✓ [252/9548] 0bb40d92… geography (k1/4) — ETA 1200m
+✓ [253/9548] 0bb8ba4f… english (k1/4) — ETA 1200m
+✓ [254/9548] 0bbd414a… english (k1/4) — ETA 1200m
+✓ [255/9548] 0bbd437f… english (k1/4) — ETA 1200m
+✓ [256/9548] 0bc05a29… civics (k1/4) — ETA 1200m
+✓ [257/9548] 0bc7b820… chemistry (k1/4) — ETA 1200m
+✓ [258/9548] 0bcab4cd… mathematics (k1/4) — ETA 1200m
+✗ [259/9548] 0bd60f0c…: fetch failed
+✓ [260/9548] 0be37c50… geography (k1/4) — ETA 1205m
+✓ [261/9548] 0be4ac27… civics (k1/4) — ETA 1205m
+✓ [262/9548] 0bf0d3cf… english (k1/4) — ETA 1205m
+✓ [263/9548] 0bf6c4a4… english (k1/4) — ETA 1206m
+✓ [264/9548] 0bf947be… civics (k1/4) — ETA 1206m
+✓ [265/9548] 0c004708… civics (k1/4) — ETA 1206m
+✓ [266/9548] 0c04372d… biology (k1/4) — ETA 1207m
+✓ [267/9548] 0c0ed9a5… biology (k1/4) — ETA 1207m
+✓ [268/9548] 0c13ed22… biology (k1/4) — ETA 1206m
+✓ [269/9548] 0c1bd383… mathematics (k1/4) — ETA 1206m
+✓ [270/9548] 0c237314… english (k1/4) — ETA 1206m
+✓ [271/9548] 0c259430… english (k1/4) — ETA 1206m
+✓ [272/9548] 0c2db83d… biology (k1/4) — ETA 1206m
+✓ [273/9548] 0c476607… physics (k1/4) — ETA 1207m
+✓ [274/9548] 0c4d0bbc… mathematics (k1/4) — ETA 1207m
+✓ [275/9548] 0c4fe836… biology (k1/4) — ETA 1207m
+✓ [276/9548] 0c541b35… civics (k1/4) — ETA 1207m
+✓ [277/9548] 0c58b108… civics (k1/4) — ETA 1207m
+✓ [278/9548] 0c61ae3d… mathematics (k1/4) — ETA 1207m
+✓ [279/9548] 0c68e230… mathematics (k1/4) — ETA 1208m
+✗ [280/9548] 0c71099c…: fetch failed
+✓ [281/9548] 0c7137f5… mathematics (k1/4) — ETA 1212m
+✓ [282/9548] 0c71c3ab… mathematics (k1/4) — ETA 1212m
+✓ [283/9548] 0c74dc63… mathematics (k1/4) — ETA 1213m
+✓ [284/9548] 0c78d59a… english (k1/4) — ETA 1213m
+✓ [285/9548] 0c7ecc1d… civics (k1/4) — ETA 1213m
+✓ [286/9548] 0c8394b8… mathematics (k1/4) — ETA 1213m
+✓ [287/9548] 0c8593aa… chemistry (k1/4) — ETA 1213m
+✓ [288/9548] 0c9bd808… civics (k1/4) — ETA 1212m
+✓ [289/9548] 0c9f7f14… english (k1/4) — ETA 1212m
+✓ [290/9548] 0ca83af6… english (k1/4) — ETA 1212m
+✓ [291/9548] 0cb17d9b… english (k1/4) — ETA 1213m
+✓ [292/9548] 0cb3b5e9… chemistry (k1/4) — ETA 1213m
+✓ [293/9548] 0cbdc32e… civics (k1/4) — ETA 1213m
+✓ [294/9548] 0cbe62b5… physics (k1/4) — ETA 1213m
+✓ [295/9548] 0cbe641c… civics (k1/4) — ETA 1213m
+✓ [296/9548] 0cbec381… history (k1/4) — ETA 1213m
+✓ [297/9548] 0cc0c1ce… english (k1/4) — ETA 1213m
+✓ [298/9548] 0cc69021… economics (k1/4) — ETA 1213m
+✓ [299/9548] 0cc79326… chemistry (k1/4) — ETA 1213m
+✓ [300/9548] 0cc931b8… chemistry (k1/4) — ETA 1213m
+✓ [301/9548] 0cd99a59… mathematics (k1/4) — ETA 1213m
+✓ [302/9548] 0cdcffb1… geography (k1/4) — ETA 1214m
+✓ [303/9548] 0cde1382… civics (k1/4) — ETA 1214m
+✓ [304/9548] 0ce1031a… mathematics (k1/4) — ETA 1214m
+✓ [305/9548] 0ce3f645… english (k1/4) — ETA 1214m
+✓ [306/9548] 0cf19a9e… chemistry (k1/4) — ETA 1214m
+✓ [307/9548] 0cf2f440… aptitude (k1/4) — ETA 1213m
+  ℹ️  no-key: AI said C — Oxidation of an alkylbenzene with a benzylic hydrogen using hot acidic KMnO4 cleaves the a
+✓ [308/9548] 0cff4aee… chemistry (k1/4) — ETA 1213m
+✓ [309/9548] 0d09bad5… civics (k1/4) — ETA 1213m
+✓ [310/9548] 0d0b0072… civics (k1/4) — ETA 1213m
+✓ [311/9548] 0d175db9… civics (k1/4) — ETA 1213m
+✓ [312/9548] 0d183349… history (k1/4) — ETA 1213m
+✓ [313/9548] 0d25d771… english (k1/4) — ETA 1213m
+✓ [314/9548] 0d291cd3… biology (k1/4) — ETA 1213m
+✓ [315/9548] 0d2995fe… history (k1/4) — ETA 1213m
+✓ [316/9548] 0d36f65f… english (k1/4) — ETA 1213m
+✓ [317/9548] 0d38f800… civics (k1/4) — ETA 1213m
+✓ [318/9548] 0d3d160f… civics (k1/4) — ETA 1213m
+✓ [319/9548] 0d43f08d… biology (k1/4) — ETA 1213m
+✓ [320/9548] 0d481468… physics (k1/4) — ETA 1213m
+✓ [321/9548] 0d4a80e6… biology (k1/4) — ETA 1213m
+✓ [322/9548] 0d651b7e… biology (k1/4) — ETA 1213m
+✓ [323/9548] 0d68b33d… mathematics (k1/4) — ETA 1213m
+✓ [324/9548] 0d6c4c70… mathematics (k1/4) — ETA 1213m
+✓ [325/9548] 0d6fe3a6… mathematics (k1/4) — ETA 1212m
+✓ [326/9548] 0d71202f… physics (k1/4) — ETA 1212m
+✓ [327/9548] 0d87cbaf… civics (k1/4) — ETA 1212m
+✓ [328/9548] 0d9c7b85… mathematics (k1/4) — ETA 1212m
+✓ [329/9548] 0d9d5c01… physics (k1/4) — ETA 1212m
+✓ [330/9548] 0db534b3… mathematics (k1/4) — ETA 1212m
+✓ [331/9548] 0db5508d… geography (k1/4) — ETA 1212m
+✓ [332/9548] 0db761e5… physics (k1/4) — ETA 1213m
+✓ [333/9548] 0dc11f3b… civics (k1/4) — ETA 1213m
+✓ [334/9548] 0dc1897b… civics (k1/4) — ETA 1213m
+✓ [335/9548] 0dc284cb… english (k1/4) — ETA 1213m
+✓ [336/9548] 0dc8c861… physics (k1/4) — ETA 1213m
+✓ [337/9548] 0dcdcdf9… english (k1/4) — ETA 1213m
+✓ [338/9548] 0dd78a04… chemistry (k1/4) — ETA 1213m
+✓ [339/9548] 0dd9e7e8… geography (k1/4) — ETA 1213m
+✓ [340/9548] 0ddc61dd… chemistry (k1/4) — ETA 1212m
+✓ [341/9548] 0dde3c56… physics (k1/4) — ETA 1212m
+✓ [342/9548] 0de3fd0b… civics (k1/4) — ETA 1212m
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 340 ok, 2 failed, 9206 not attempted.
+
+Done: 340 ok, 2 failed, 3 AI-determined.
+Elapsed: 45m. Remaining: 9208.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:20:44 AM EAT — exited, remaining=9208
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9208
+
+✓ [1/9208] 0bd60f0c… english (k1/4) — ETA 565m
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+✓ [2/9208] 0c71099c… english (k3/4) — ETA 1029m
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 2 ok, 0 failed, 9206 not attempted.
+
+Done: 2 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9206.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:21:34 AM EAT — exited, remaining=9206
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9206
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+✓ [1/9206] 0de70866… civics (k4/4) — ETA 909m
+✓ [2/9206] 0dec2e34… civics (k4/4) — ETA 1028m
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 2 ok, 0 failed, 9204 not attempted.
+
+Done: 2 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9204.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:22:24 AM EAT — exited, remaining=9204
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9204
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9204 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9204.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:22:58 AM EAT — exited, remaining=9204
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9204
+
+✓ [1/9204] 0ded59cc… english (k1/4) — ETA 462m
+✓ [2/9204] 0dedeb8f… english (k1/4) — ETA 854m
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 2 ok, 0 failed, 9202 not attempted.
+
+Done: 2 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:23:47 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9202 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:24:20 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9202 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:24:54 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9202 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:25:34 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9202 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:26:07 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9202 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:26:41 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9202 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:27:14 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9202 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9202.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:27:48 AM EAT — exited, remaining=9202
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9202
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+✓ [1/9202] 0def9aad… english (k2/4) — ETA 624m
+✓ [2/9202] 0df05c95… english (k2/4) — ETA 971m
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 2 ok, 0 failed, 9200 not attempted.
+
+Done: 2 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9200.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:28:38 AM EAT — exited, remaining=9200
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9200
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9200 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9200.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:29:11 AM EAT — exited, remaining=9200
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9200
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9200 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9200.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:29:45 AM EAT — exited, remaining=9200
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9200
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9200 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9200.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:30:19 AM EAT — exited, remaining=9200
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9200
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+✓ [1/9200] 0df5f481… history (k3/4) — ETA 924m
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 1 ok, 0 failed, 9199 not attempted.
+
+Done: 1 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9199.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:31:02 AM EAT — exited, remaining=9199
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9199
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9199 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9199.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:31:37 AM EAT — exited, remaining=9199
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9199
+
+✓ [1/9199] 0dfc7d8e… civics (k1/4) — ETA 601m
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 1 ok, 0 failed, 9198 not attempted.
+
+Done: 1 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:32:21 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:32:56 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:33:30 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:34:05 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:34:38 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:35:12 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:35:45 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:36:19 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:36:54 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:37:27 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:38:00 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:38:34 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:39:08 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:39:42 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:40:16 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:40:49 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:41:23 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:41:56 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:42:30 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:43:03 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:43:36 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:44:09 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:44:43 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:45:16 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:45:50 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:46:23 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:46:57 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:47:30 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:48:04 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:48:38 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:49:11 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:49:45 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:50:27 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:51:00 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:51:33 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:52:07 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:52:40 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:53:14 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:53:47 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:54:27 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:55:01 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:55:35 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:56:14 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:56:49 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:57:23 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:57:57 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:58:30 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:59:04 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 11:59:37 AM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:00:11 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:00:46 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:01:20 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:01:54 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:02:28 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:03:02 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:03:36 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:04:11 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:04:45 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:05:18 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:05:51 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:06:24 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:07:00 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:07:35 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:08:09 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:08:42 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:09:17 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:09:50 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:10:23 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:11:01 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:11:35 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:12:09 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:12:43 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:13:21 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:13:54 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:14:28 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:15:02 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:15:36 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:16:11 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:16:46 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:17:20 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:17:56 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:18:29 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:19:03 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:19:37 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:20:11 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:20:44 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:21:17 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:21:51 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:22:25 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:22:58 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:23:32 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:24:05 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:24:38 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:25:11 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:25:45 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:26:18 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:26:51 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:27:24 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:27:57 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:28:31 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:29:04 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:29:37 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:30:10 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:30:43 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:31:17 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:31:53 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:32:27 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:33:00 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:33:33 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:34:07 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:34:40 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:35:13 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:35:46 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:36:20 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:36:53 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:37:26 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:38:00 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:38:33 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:39:06 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:39:40 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:40:13 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:40:46 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:41:20 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...
+Backend: gemini
+Model: gemini-3.5-flash-lite | Keys: 4 | Pause: 4500ms
+To process: 9198
+
+  ⚠️  [key 1/4] quota exhausted — rotating to next key
+  ⚠️  [key 2/4] quota exhausted — rotating to next key
+  ⚠️  [key 3/4] quota exhausted — rotating to next key
+  ⚠️  [key 4/4] quota exhausted — rotating to next key
+
+🛑 All Gemini keys exhausted. Run again tomorrow.
+Progress: 0 ok, 0 failed, 9198 not attempted.
+
+Done: 0 ok, 0 failed, 0 AI-determined.
+Elapsed: 0m. Remaining: 9198.
+Keys used: 4 of 4 exhausted this run.
+[supervisor] Wed 28 Oct 2026 12:41:53 PM EAT — exited, remaining=9198
+[supervisor] Restarting in 30s...

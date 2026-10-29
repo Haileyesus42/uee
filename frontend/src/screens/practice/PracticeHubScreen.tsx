@@ -47,7 +47,7 @@ const MODES: {
   },
   {
     id: 'mock',
-    title: 'Mock Exams',
+    title: 'Model Exams',
     subtitle: 'Full-length, timed simulations',
     meta: '6 exams · Timed',
     icon: 'time-outline',

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Image, Pressable, StyleProp, Text, View, ViewStyle } from 'react-native';
+import { Pressable, StyleProp, Text, View, ViewStyle } from 'react-native';
+import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000';
@@ -45,6 +46,11 @@ export function Avatar({
       <Image
         source={{ uri: `${API_URL}/avatars/${userId}` }}
         onError={() => setFailed(true)}
+        // Memory+disk caching and recycling-key reuse, same as the textbook
+        // reader's images — avatars previously used plain RN Image, which has
+        // no reliable disk cache on Android and re-fetches far more than this.
+        cachePolicy="memory-disk"
+        recyclingKey={`${API_URL}/avatars/${userId}`}
         // ViewStyle and ImageStyle overlap almost entirely (width/height/borderRadius/
         // margin/etc.) but TS keeps them nominally distinct — callers only ever pass
         // plain layout styles here, so this cast is safe.

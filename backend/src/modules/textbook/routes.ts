@@ -64,7 +64,18 @@ export async function textbookRoutes(app: FastifyInstance) {
       const sections = await prisma.textbookSection.findMany({
         where: { subjectId: request.params.subjectId, kind: KIND_DB[kind], ...(grade ? { grade } : {}) },
         orderBy: { order: 'asc' },
-        select: { id: true, unitTitle: true, sectionTitle: true, order: true, pageStart: true, pageEnd: true },
+        select: {
+          id: true,
+          unitTitle: true,
+          sectionTitle: true,
+          order: true,
+          pageStart: true,
+          pageEnd: true,
+          // Lets a caller fetch ungraded once and filter client-side across
+          // several grades (see LearnHomeScreen's fan-out, fixed this session)
+          // instead of re-querying per grade switch.
+          grade: true,
+        },
       });
 
       const byUnit = new Map<string, typeof sections>();

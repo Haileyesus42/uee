@@ -121,13 +121,20 @@ export function useReadingProgress(subjectId: string, kind: TextbookKind) {
 
 // Same fan-out pattern as useAllSubjectUnits (useCurriculum.ts) — fetches every
 // candidate subject's TOC/progress in parallel so the Learn screen's summary
-// stats can be computed per mode without a dedicated aggregate endpoint. Query
-// keys match the single-subject hooks above so the caches are shared.
-export function useAllSubjectTextbookToc(subjects: Subject[] | undefined, kind: TextbookKind, grade?: number) {
+// stats can be computed per mode without a dedicated aggregate endpoint.
+//
+// Fetched ungraded (no `grade` arg, matching useAllSubjectUnits) so switching
+// the grade selector filters the already-cached response client-side in
+// summarizeReadingProgress instead of re-fetching every subject's TOC over
+// the network on every switch — this used to pass `grade` straight into both
+// the queryFn and the query key, which made each grade switch a fresh
+// per-subject network fan-out. The backend route now returns `grade` per
+// section specifically so that filtering is possible here.
+export function useAllSubjectTextbookToc(subjects: Subject[] | undefined, kind: TextbookKind) {
   return useQueries({
     queries: (subjects ?? []).map((s) => ({
-      queryKey: ['textbookToc', s.id, kind, grade ?? 'all'],
-      queryFn: () => getTextbookToc(s.id, kind, grade),
+      queryKey: ['textbookToc', s.id, kind, 'all'],
+      queryFn: () => getTextbookToc(s.id, kind),
       enabled: !!subjects,
     })),
   });
@@ -159,14 +166,18 @@ export function useAllSubjectReadingProgress(subjects: Subject[] | undefined, ki
 export function summarizeReadingProgress(
   subjects: Subject[],
   tocQueries: { data?: TextbookTocUnit[]; isPending: boolean }[],
-  progressQueries: { data?: TextbookReadingProgress; isPending: boolean }[]
+  progressQueries: { data?: TextbookReadingProgress; isPending: boolean }[],
+  grade: number
 ): { subjectsWithContent: Subject[]; sectionsCompleted: number; sectionsTotal: number; isLoading: boolean } {
   let sectionsCompleted = 0;
   let sectionsTotal = 0;
   const subjectsWithContent: Subject[] = [];
 
   subjects.forEach((subject, i) => {
-    const sections = (tocQueries[i]?.data ?? []).flatMap((u) => u.sections);
+    // The TOC response is now fetched ungraded (see useAllSubjectTextbookToc)
+    // and filtered to the selected grade here, client-side, rather than
+    // re-fetched per grade switch.
+    const sections = (tocQueries[i]?.data ?? []).flatMap((u) => u.sections).filter((s) => s.grade === grade);
     if (sections.length === 0) return;
     subjectsWithContent.push(subject);
     sectionsTotal += sections.length;

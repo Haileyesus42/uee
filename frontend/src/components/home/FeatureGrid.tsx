@@ -16,14 +16,14 @@ const FEATURES: { id: FeatureId; title: string; icon: keyof typeof Ionicons.glyp
   },
   {
     id: 'quiz',
-    title: 'Quiz Modes',
+    title: 'Practice',
     icon: 'help-circle',
     descLight: 'Practice question types',
     descDark: 'Practice question types',
   },
   {
     id: 'mock',
-    title: 'Mock Exams',
+    title: 'Model Exams',
     // Timer, not a generic document — a mock exam's defining trait is the
     // timed, real-condition simulation, not just "more questions."
     icon: 'timer',

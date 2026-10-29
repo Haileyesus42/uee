@@ -5,26 +5,10 @@ import { redis } from '../../lib/redis';
 import { groqChat, GroqChatMessage } from '../../lib/groq';
 import { authenticate } from '../../plugins/authenticate';
 
-// Hard ceiling on every Groq call's *response* — passed straight through as
-// max_tokens, so Groq itself stops generation there rather than us truncating
-// after the fact (docs/backend-architecture.md §9: token cost is the one thing
-// in this stack that scales directly with usage).
 const MAX_RESPONSE_TOKENS = 400;
-// Ceiling on the *request* side too — a guardrail only on the reply half would
-// still let one long paste dominate the token bill. ~4 chars/token is a rough
-// but standard heuristic for English text; this doesn't need to be exact, just
-// to keep any single message in the same ballpark as MAX_RESPONSE_TOKENS.
-const MAX_INPUT_CHARS = MAX_RESPONSE_TOKENS * 4;
-// Free-tier cap on real LLM calls per user per day (Tizata Pro is unlimited —
-// see isProUser below). This is the "5/day free" example from
-// docs/backend-architecture.md §9 — the full Tier 0-3 retrieval/cache system
-// that doc describes (pgvector, Redis response cache, spend counter) is Phase 2
-// scope; this route calls the LLM directly every time, so the daily cap is the
-// only cost governor in place until that's built.
 const DAILY_FREE_LIMIT = 5;
-// How much prior conversation rides along with each call — bounded, not the
-// full history, for the same token-cost reason (§9 point 2).
 const HISTORY_WINDOW = 10;
+const MAX_MESSAGES_PER_MINUTE = 10;
 
 const SYSTEM_PROMPT =
   'You are Unity, a friendly and encouraging AI tutor inside Tizata UEE, an app helping Ethiopian grade 9-12 ' +
@@ -32,7 +16,15 @@ const SYSTEM_PROMPT =
   'Use simple language a high school student can follow. If asked something far outside academics, gently ' +
   'steer the conversation back to studying.';
 
-const sendBody = z.object({ text: z.string().trim().min(1).max(MAX_INPUT_CHARS) });
+const sendBody = z.object({
+  text: z.string().min(1).max(2000),
+  context: z
+    .object({
+      questionId: z.string().optional(),
+      stepId: z.string().optional(),
+    })
+    .optional(),
+});
 
 function todayKey(): string {
   return new Date().toISOString().slice(0, 10);
@@ -43,8 +35,6 @@ async function isProUser(userId: string): Promise<boolean> {
   return !!sub && sub.status === 'active' && sub.expiresAt > new Date();
 }
 
-// Real LLM calls only — the capped/fallback replies below don't touch this, since
-// the whole point is counting billable calls, not messages sent.
 async function dailyUsageCount(userId: string): Promise<number> {
   const raw = await redis.get(`unity:usage:${userId}:${todayKey()}`);
   return raw ? Number(raw) : 0;
@@ -53,24 +43,99 @@ async function dailyUsageCount(userId: string): Promise<number> {
 async function incrementDailyUsage(userId: string): Promise<void> {
   const key = `unity:usage:${userId}:${todayKey()}`;
   const count = await redis.incr(key);
-  if (count === 1) await redis.expire(key, 60 * 60 * 48); // 2-day TTL — generous, self-cleaning
+  if (count === 1) await redis.expire(key, 60 * 60 * 48);
+}
+
+async function tooManyMessagesThisMinute(userId: string): Promise<boolean> {
+  const key = `unity:ratelimit:${userId}`;
+  const count = await redis.incr(key);
+  if (count === 1) await redis.expire(key, 60);
+  return count > MAX_MESSAGES_PER_MINUTE;
 }
 
 export async function chatRoutes(app: FastifyInstance) {
+  // GET — filters by questionId when provided. Used by the panel for
+  // per-question threads. Floating Unity button sends no questionId → general.
   app.get('/chat/messages', { preHandler: authenticate }, async (request) => {
+    const { questionId } = request.query as { questionId?: string };
+
+    const where: any = { userId: request.userId };
+    if (questionId) {
+      where.context = { path: ['questionId'], equals: questionId };
+    }
+
     const messages = await prisma.chatMessage.findMany({
-      where: { userId: request.userId },
+      where,
       orderBy: { createdAt: 'asc' },
       take: 50,
     });
-    return messages.map((m) => ({ id: m.id, role: m.role, text: m.text, createdAt: m.createdAt }));
+    return messages.map((m) => ({
+      id: m.id,
+      role: m.role,
+      text: m.text,
+      createdAt: m.createdAt,
+      context: m.context,
+    }));
   });
 
   app.post('/chat/messages', { preHandler: authenticate }, async (request, reply) => {
-    const { text } = sendBody.parse(request.body);
+    const { text, context } = sendBody.parse(request.body);
     const userId = request.userId;
 
-    await prisma.chatMessage.create({ data: { userId, role: 'user', text } });
+    // Diagnostic — remove once pre-gen is confirmed working.
+    console.log(
+      '[BACKEND] POST — text len:',
+      text.length,
+      '| context:',
+      JSON.stringify(context),
+      '| flag:',
+      process.env.UNITY_PREGEN_ENABLED,
+    );
+
+    if (await tooManyMessagesThisMinute(userId)) {
+      return reply.code(429).send({ error: "You're sending messages too fast — try again in a moment." });
+    }
+
+    await prisma.chatMessage.create({
+      data: { userId, role: 'user', text, context: (context ?? {}) as any },
+    });
+
+    // ── PRE-GEN PATH ──────────────────────────────────────────────────────
+    if (context?.questionId && process.env.UNITY_PREGEN_ENABLED === 'true') {
+      const q = await prisma.question.findUnique({
+        where: { id: context.questionId },
+        select: { aiDeepExplanation: true, aiFollowUps: true },
+      });
+
+      console.log(
+        '[BACKEND] pre-gen lookup — found:',
+        !!q,
+        '| explanation len:',
+        q?.aiDeepExplanation?.length ?? 0,
+      );
+
+      if (q?.aiDeepExplanation && q.aiDeepExplanation.trim().length > 0) {
+        const saved = await prisma.chatMessage.create({
+          data: {
+            userId,
+            role: 'unity',
+            text: q.aiDeepExplanation,
+            context: {
+              questionId: context.questionId,
+              followUps: q.aiFollowUps,
+            } as any,
+          },
+        });
+        return reply.send({
+          id: saved.id,
+          role: saved.role,
+          text: saved.text,
+          createdAt: saved.createdAt,
+          context: saved.context,
+        });
+      }
+    }
+    // ── END PRE-GEN PATH ──────────────────────────────────────────────────
 
     const pro = await isProUser(userId);
     if (!pro && (await dailyUsageCount(userId)) >= DAILY_FREE_LIMIT) {
@@ -78,7 +143,13 @@ export async function chatRoutes(app: FastifyInstance) {
         "You've reached today's free chat limit. It resets tomorrow — or upgrade to Tizata Pro for unlimited " +
         'access to Unity.';
       const saved = await prisma.chatMessage.create({ data: { userId, role: 'unity', text: limitText } });
-      return reply.send({ id: saved.id, role: saved.role, text: saved.text, createdAt: saved.createdAt });
+      return reply.send({
+        id: saved.id,
+        role: saved.role,
+        text: saved.text,
+        createdAt: saved.createdAt,
+        context: saved.context,
+      });
     }
 
     const history = await prisma.chatMessage.findMany({
@@ -90,7 +161,10 @@ export async function chatRoutes(app: FastifyInstance) {
 
     const groqMessages: GroqChatMessage[] = [
       { role: 'system', content: SYSTEM_PROMPT },
-      ...chronological.map((m): GroqChatMessage => ({ role: m.role === 'unity' ? 'assistant' : 'user', content: m.text })),
+      ...chronological.map((m): GroqChatMessage => ({
+        role: m.role === 'unity' ? 'assistant' : 'user',
+        content: m.text,
+      })),
     ];
 
     let replyText: string;
@@ -100,11 +174,23 @@ export async function chatRoutes(app: FastifyInstance) {
       request.log.error(err, '[chat] Groq call failed');
       replyText = "Sorry, I'm having trouble responding right now — please try again in a moment.";
       const saved = await prisma.chatMessage.create({ data: { userId, role: 'unity', text: replyText } });
-      return reply.send({ id: saved.id, role: saved.role, text: saved.text, createdAt: saved.createdAt });
+      return reply.send({
+        id: saved.id,
+        role: saved.role,
+        text: saved.text,
+        createdAt: saved.createdAt,
+        context: saved.context,
+      });
     }
 
     await incrementDailyUsage(userId);
     const saved = await prisma.chatMessage.create({ data: { userId, role: 'unity', text: replyText } });
-    return reply.send({ id: saved.id, role: saved.role, text: saved.text, createdAt: saved.createdAt });
+    return reply.send({
+      id: saved.id,
+      role: saved.role,
+      text: saved.text,
+      createdAt: saved.createdAt,
+      context: saved.context,
+    });
   });
 }

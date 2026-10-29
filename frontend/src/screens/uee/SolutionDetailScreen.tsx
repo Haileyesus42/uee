@@ -18,7 +18,6 @@ type Props = NativeStackScreenProps<UeeStackParamList, 'SolutionDetail'>;
 // to the paper list and returning to the same paper). Keyed by paper, so a
 // different paper starts fresh. Cleared on app restart.
 const sessionAnswers = new Map<string, Record<number, number>>();
-
 function paperKey(stream: string, year: number, subjectId: string) {
   return `${stream}|${year}|${subjectId}`;
 }
@@ -88,30 +87,28 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
     );
   }
 
-  // Opens the Unity panel and auto-sends a context-rich prompt so the user
-  // doesn't have to retype the question. The panel reuses its normal send
-  // path (same mutation, same pending bubble, same error handling).
   function askUnityWithContext() {
-    const letter = (i: number) => String.fromCharCode(65 + i);
-    const optionsList = question.options.map((opt, i) => `${letter(i)}. ${opt}`).join('\n');
-    const correctLine =
-      question.correctIndex != null
-        ? `Correct answer: ${letter(question.correctIndex)}. ${question.options[question.correctIndex]}\n\n`
-        : 'Correct answer: not published for this question.\n\n';
-    const explanationBlock = question.explanation
-      ? `Existing explanation: ${question.explanation}\n\n`
-      : '';
+  const letter = (i: number) => String.fromCharCode(65 + i);
+  const optionsList = question.options.map((opt, i) => `${letter(i)}. ${opt}`).join('\n');
+  const correctLine =
+    question.correctIndex != null
+      ? `Correct answer: ${letter(question.correctIndex)}. ${question.options[question.correctIndex]}\n\n`
+      : 'Correct answer: not published for this question.\n\n';
+  const explanationBlock = question.explanation
+    ? `Existing explanation: ${question.explanation}\n\n`
+    : '';
 
-    askUnity(
-      `I'm studying this UEE question and want a deeper explanation.\n\n` +
-        `Question: ${question.prompt}\n\n` +
-        `Options:\n${optionsList}\n\n` +
-        correctLine +
-        explanationBlock +
-        `Please explain why the correct answer is right, and why each of the other options is incorrect. ` +
-        `Walk me through the reasoning step by step.`
-    );
-  }
+  askUnity(
+    `[Q_CONTEXT] Can you explain this question in more detail?\n\n` +
+      `Question: ${question.prompt}\n\n` +
+      `Options:\n${optionsList}\n\n` +
+      correctLine +
+      explanationBlock +
+      `Please explain why the correct answer is right, and why each of the other options is incorrect. ` +
+      `Walk me through the reasoning step by step.`,
+    { questionId: question.id },
+  );
+}
 
   function optionState(i: number): OptionState {
     if (!revealed) return 'default';
@@ -258,3 +255,4 @@ const styles = StyleSheet.create({
     paddingBottom: 12,
   },
 });
+

@@ -1,6 +1,11 @@
 services:
   postgres:
-    image: postgres:16-alpine
+    # Same Postgres major version (16) as before, built on top of it — just
+    # with the pgvector extension binary available to CREATE EXTENSION, for
+    # Unity chat's Tier-2 retrieval (see migration add_content_embedding and
+    # docs/backend-architecture.md §9). Existing data in the compass_postgres_data
+    # volume is unaffected by this swap.
+    image: pgvector/pgvector:pg16
     container_name: compass-postgres
     restart: unless-stopped
     environment:
