@@ -18,6 +18,7 @@ type Props = NativeStackScreenProps<UeeStackParamList, 'SolutionDetail'>;
 // to the paper list and returning to the same paper). Keyed by paper, so a
 // different paper starts fresh. Cleared on app restart.
 const sessionAnswers = new Map<string, Record<number, number>>();
+
 function paperKey(stream: string, year: number, subjectId: string) {
   return `${stream}|${year}|${subjectId}`;
 }
@@ -87,40 +88,36 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
     );
   }
 
-function askUnityWithContext() {
-  const letter = (i: number) => String.fromCharCode(65 + i);
-  const optionsList = question.options.map((opt, i) => `${letter(i)}. ${opt}`).join('\n');
-  const correctLine =
-    question.correctIndex != null
-      ? `Correct answer: ${letter(question.correctIndex)}. ${question.options[question.correctIndex]}\n\n`
-      : 'Correct answer: not published for this question.\n\n';
-  const explanationBlock = question.explanation
-    ? `Existing explanation: ${question.explanation}\n\n`
-    : '';
+  // Opens Unity with a context-rich prompt for this exact question. The first
+  // line after [Q_CONTEXT] is what the user SEES in the chat bubble — the rest
+  // is the full prompt sent to the backend (and to pre-gen content lookup).
+  function askUnityWithContext() {
+    const letter = (i: number) => String.fromCharCode(65 + i);
+    const optionsList = question.options.map((opt, i) => `${letter(i)}. ${opt}`).join('\n');
+    const correctLine =
+      question.correctIndex != null
+        ? `Correct answer: ${letter(question.correctIndex)}. ${question.options[question.correctIndex]}\n\n`
+        : 'Correct answer: not published for this question.\n\n';
+    const explanationBlock = question.explanation
+      ? `Existing explanation: ${question.explanation}\n\n`
+      : '';
 
-  // The first line after [Q_CONTEXT] is what the user SEES in the chat bubble —
-  // getDisplayText strips the prefix and shows only this line. Everything
-  // after the blank line is the full context sent to Unity, hidden from the UI.
-  //
-  // Summarize the actual question for the bubble instead of the generic
-  // "Can you explain this question in more detail?" — the user already knows
-  // they tapped Ask Unity; the bubble should reflect WHAT they're asking about.
-  const displayPrompt =
-    question.prompt.length > 120
-      ? `${question.prompt.slice(0, 117).trimEnd()}…`
-      : question.prompt;
+    const displayPrompt =
+      question.prompt.length > 120
+        ? `${question.prompt.slice(0, 117).trimEnd()}…`
+        : question.prompt;
 
-  askUnity(
-    `[Q_CONTEXT] Explain: ${displayPrompt}\n\n` +
-      `Question: ${question.prompt}\n\n` +
-      `Options:\n${optionsList}\n\n` +
-      correctLine +
-      explanationBlock +
-      `Please explain why the correct answer is right, and why each of the other options is incorrect. ` +
-      `Walk me through the reasoning step by step.`,
-    { questionId: question.id },
-  );
-}
+    askUnity(
+      `[Q_CONTEXT] Explain: ${displayPrompt}\n\n` +
+        `Question: ${question.prompt}\n\n` +
+        `Options:\n${optionsList}\n\n` +
+        correctLine +
+        explanationBlock +
+        `Please explain why the correct answer is right, and why each of the other options is incorrect. ` +
+        `Walk me through the reasoning step by step.`,
+      { questionId: question.id },
+    );
+  }
 
   function optionState(i: number): OptionState {
     if (!revealed) return 'default';
@@ -129,7 +126,6 @@ function askUnityWithContext() {
       if (i === selected) return 'incorrect';
       return 'default';
     }
-    // No answer key — can't call it wrong, so show the pick as selected.
     return i === selected ? 'selected' : 'default';
   }
 
@@ -206,22 +202,37 @@ function askUnityWithContext() {
         )}
       </ScrollView>
 
+      {/* Nav row — compact pill buttons, not full-width. Sits centered under
+          the content with a smaller footprint so it doesn't dominate the
+          reading area. Full-width bars felt oversized on the J6+ screen, and
+          on short questions the buttons were visually heavier than the
+          content itself. */}
       <View style={[styles.navRow, { paddingHorizontal: t.spacing.md }]}>
         <Pressable
           onPress={() => goTo(questionIndex - 1)}
           disabled={isFirst}
-          style={[styles.navButton, { borderColor: t.colors.border, opacity: isFirst ? 0.4 : 1 }]}
+          style={[
+            styles.navButton,
+            { borderColor: t.colors.border, opacity: isFirst ? 0.4 : 1 },
+          ]}
         >
-          <Ionicons name="chevron-back" size={18} color={t.colors.textPrimary} />
-          <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginLeft: 4 }]}>Previous</Text>
+          <Ionicons name="chevron-back" size={16} color={t.colors.textPrimary} />
+          <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginLeft: 3, fontSize: 13 }]}>
+            Previous
+          </Text>
         </Pressable>
         <Pressable
           onPress={() => goTo(questionIndex + 1)}
           disabled={isLast}
-          style={[styles.navButton, { backgroundColor: t.colors.brand, opacity: isLast ? 0.4 : 1 }]}
+          style={[
+            styles.navButton,
+            { backgroundColor: t.colors.brand, borderColor: t.colors.brand, opacity: isLast ? 0.4 : 1 },
+          ]}
         >
-          <Text style={[t.typography.bodyStrong, { color: t.colors.textInverse, marginRight: 4 }]}>Next</Text>
-          <Ionicons name="chevron-forward" size={18} color={t.colors.textInverse} />
+          <Text style={[t.typography.bodyStrong, { color: t.colors.textInverse, marginRight: 3, fontSize: 13 }]}>
+            Next
+          </Text>
+          <Ionicons name="chevron-forward" size={16} color={t.colors.textInverse} />
         </Pressable>
       </View>
 
@@ -249,15 +260,28 @@ const styles = StyleSheet.create({
     paddingHorizontal: 9,
   },
   tryAgain: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginTop: 10 },
-  navRow: { flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 12, gap: 10 },
+
+  // Nav row — buttons are pill-shaped, sized to their content (not stretch),
+  // and centered in the row with a modest gap. Previously `flex: 1` on each
+  // button split the row edge-to-edge with `paddingVertical: 12`, which felt
+  // oversized for two short labels. Now: `paddingHorizontal: 18` gives the
+  // pill a comfortable touch target (~40dp tall including border) without
+  // filling half the screen per button.
+  navRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 12,
+    gap: 8,
+  },
   navButton: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 12,
+    borderRadius: 10,
     borderWidth: 1.5,
-    paddingVertical: 12,
+    paddingVertical: 9,
+    paddingHorizontal: 18,
   },
   resetAll: {
     flexDirection: 'row',
@@ -267,4 +291,3 @@ const styles = StyleSheet.create({
     paddingBottom: 12,
   },
 });
-

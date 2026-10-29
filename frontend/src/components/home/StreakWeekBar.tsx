@@ -12,9 +12,22 @@ function getPastWeek(): Date[] {
 
 export function StreakWeekBar({ streakDays }: { streakDays: number }) {
   const t = useTheme();
+  const isDark = t.scheme === 'dark';
   const today = new Date();
   const todayKey = today.toDateString();
   const week = getPastWeek();
+
+  // Amber accent stays the same hue in both themes (matches the Pro badge
+  // accent used elsewhere). Everything else is theme-aware — the previous
+  // hardcoded #16231F/#5C6B64/#ECE8DD were designed for a pale light-mode
+  // card and went fully illegible on dark surface. That's why only the "1"
+  // (streakNumber, amber) was visible in dark mode.
+  const amber = isDark ? '#F4B740' : '#C98A1A';
+  const amberDeep = isDark ? '#F4B740' : '#8A5A00';
+  const circleBg = isDark ? 'rgba(244,183,64,0.18)' : '#F6E8C9';
+  const circleBorder = isDark ? 'rgba(244,183,64,0.5)' : '#F4B740';
+  const todayBg = isDark ? 'rgba(244,183,64,0.24)' : '#FDF3E0';
+  const trackColor = isDark ? 'rgba(244,183,64,0.2)' : '#F6E8C9';
 
   return (
     <View
@@ -25,20 +38,22 @@ export function StreakWeekBar({ streakDays }: { streakDays: number }) {
       ]}
     >
       <View style={styles.streakRow}>
-        <CircularProgress progress={290 / 360} size={44} strokeWidth={5} color="#C98A1A" trackColor="#F6E8C9">
+        <CircularProgress progress={290 / 360} size={44} strokeWidth={5} color={amber} trackColor={trackColor}>
           <View style={styles.ringIn}>
             <Text style={styles.ringEmoji}>🔥</Text>
           </View>
         </CircularProgress>
         <View style={styles.streakTextCol}>
-          <Text style={styles.streakText}>
-            <Text style={styles.streakNumber}>{streakDays}</Text> day{streakDays === 1 ? '' : 's'} streak
+          <Text style={[styles.streakText, { color: t.colors.textPrimary }]}>
+            <Text style={[styles.streakNumber, { color: amber }]}>{streakDays}</Text> day{streakDays === 1 ? '' : 's'} streak
           </Text>
-          <Text style={styles.streakSub}>{streakDays > 0 ? "You're on fire!" : 'Start today'}</Text>
+          <Text style={[styles.streakSub, { color: t.colors.textSecondary }]}>
+            {streakDays > 0 ? "You're on fire!" : 'Start today'}
+          </Text>
         </View>
       </View>
 
-      <View style={styles.vline2} />
+      <View style={[styles.vline2, { backgroundColor: t.colors.border }]} />
 
       <View style={styles.week}>
         {week.map((date, i) => {
@@ -52,14 +67,43 @@ export function StreakWeekBar({ streakDays }: { streakDays: number }) {
           const label = date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase();
           return (
             <View key={i} style={styles.dayCol}>
-              <View style={[styles.dayCircle, isToday && styles.dayCircleToday, !isToday && !inStreak && styles.dayCircleEmpty]}>
+              <View
+                style={[
+                  styles.dayCircle,
+                  { backgroundColor: circleBg },
+                  // Outside the current streak window — an unfilled ring, not
+                  // a filled circle, so it reads as "no record" rather than a
+                  // dimmed/failed version of a checkmark.
+                  !isToday && !inStreak && {
+                    backgroundColor: 'transparent',
+                    borderWidth: 1,
+                    borderColor: circleBorder,
+                  },
+                  isToday && {
+                    width: 24,
+                    height: 24,
+                    borderRadius: 12,
+                    backgroundColor: todayBg,
+                    borderWidth: 1.5,
+                    borderStyle: 'dashed',
+                    borderColor: circleBorder,
+                  },
+                ]}
+              >
                 {isToday ? (
                   <Text style={styles.dayFlameEmoji}>🔥</Text>
                 ) : inStreak ? (
-                  <Text style={styles.dayCheck}>✓</Text>
+                  <Text style={[styles.dayCheck, { color: amberDeep }]}>✓</Text>
                 ) : null}
               </View>
-              <Text style={[styles.dayLabel, isToday && styles.dayLabelToday]}>{label}</Text>
+              <Text
+                style={[
+                  styles.dayLabel,
+                  { color: isToday ? amber : t.colors.textSecondary },
+                ]}
+              >
+                {label}
+              </Text>
             </View>
           );
         })}
@@ -78,27 +122,15 @@ const styles = StyleSheet.create({
   ringIn: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center' },
   ringEmoji: { fontSize: 15 },
   streakTextCol: { marginLeft: 8 },
-  streakText: { fontFamily: 'Inter_700Bold', fontSize: 11.5, fontWeight: '700', color: '#16231F' },
-  streakNumber: { color: '#C98A1A', fontSize: 12.5 },
-  streakSub: { fontFamily: 'Inter_500Medium', fontSize: 9, fontWeight: '500', color: '#5C6B64', marginTop: 1 },
-  vline2: { width: 1, height: 32, backgroundColor: '#ECE8DD', marginHorizontal: 10, borderRadius: 12 },
+  // Text colors are set inline (theme-aware); typography stays static here.
+  streakText: { fontFamily: 'Inter_700Bold', fontSize: 11.5, fontWeight: '700' },
+  streakNumber: { fontSize: 12.5, fontWeight: '800' },
+  streakSub: { fontFamily: 'Inter_500Medium', fontSize: 9, fontWeight: '500', marginTop: 1 },
+  vline2: { width: 1, height: 32, marginHorizontal: 10, borderRadius: 12 },
   week: { flex: 1, flexDirection: 'row', justifyContent: 'space-between' },
   dayCol: { alignItems: 'center' },
-  dayCircle: { width: 20, height: 20, borderRadius: 10, backgroundColor: '#F6E8C9', alignItems: 'center', justifyContent: 'center' },
-  // Outside the current streak window — an unfilled ring, not a filled circle,
-  // so it reads as "no record" rather than a dimmed/failed version of a checkmark.
-  dayCircleEmpty: { backgroundColor: 'transparent', borderWidth: 1, borderColor: '#F6E8C9' },
-  dayCircleToday: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: '#FDF3E0',
-    borderWidth: 1.5,
-    borderStyle: 'dashed',
-    borderColor: '#F4B740',
-  },
-  dayCheck: { color: '#8A5A00', fontWeight: '800', fontSize: 9 },
+  dayCircle: { width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
+  dayCheck: { fontWeight: '800', fontSize: 9 },
   dayFlameEmoji: { fontSize: 10 },
-  dayLabel: { fontFamily: 'Inter_700Bold', fontSize: 7, fontWeight: '700', color: '#5C6B64', marginTop: 3 },
-  dayLabelToday: { color: '#C98A1A' },
+  dayLabel: { fontFamily: 'Inter_700Bold', fontSize: 7, fontWeight: '700', marginTop: 3 },
 });

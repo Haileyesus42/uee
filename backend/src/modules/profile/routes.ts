@@ -5,7 +5,7 @@ import { prisma } from '../../lib/prisma';
 import { authenticate } from '../../plugins/authenticate';
 import { computeAvailableHearts } from '../../lib/gamification';
 import { xpToLevel } from '../../lib/leveling';
-import { MOTIVATIONAL_QUOTES } from '../../data/motivationalQuotes';
+import { MOTIVATIONAL_NOTIFICATIONS } from '../../data/motivationalQuotes';
 
 const ALLOWED_AVATAR_MIME = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
@@ -19,6 +19,10 @@ async function buildProfilePayload(userId: string) {
   const user = await prisma.user.findUniqueOrThrow({ where: { id: userId } });
   const stats = await prisma.userStats.findUnique({ where: { userId } });
 
+  // "Questions solved" and accuracy combine two sources on purpose: quiz-attempt
+  // answers (Practice/Mock/UEE) AND lesson question-steps (UserLessonProgress).
+  // Counting only the former was a real bug — a student who answers a lesson
+  // question correctly saw it nowhere in their own stats.
   const answers = await prisma.quizAttemptAnswer.findMany({
     where: { attempt: { userId } },
     select: { correct: true },
@@ -84,6 +88,9 @@ export async function profileRoutes(app: FastifyInstance) {
     return buildProfilePayload(request.userId);
   });
 
+  // Multipart upload, same pattern as POST /billing/telebirr/submit — read the
+  // one file part into a Buffer and store it directly (see avatarUpload's
+  // schema comment for why, unlike the Telegram photo, this has to be).
   app.post('/me/avatar', { preHandler: authenticate }, async (request, reply) => {
     let file: MultipartFile | undefined;
     let buffer: Buffer | undefined;
@@ -93,7 +100,7 @@ export async function profileRoutes(app: FastifyInstance) {
         file = part;
         buffer = await part.toBuffer();
       } else if (part.type === 'file') {
-        await part.toBuffer();
+        await part.toBuffer(); // drain any other/duplicate file part
       }
     }
 
@@ -160,23 +167,43 @@ export async function profileRoutes(app: FastifyInstance) {
     return { ok: true };
   });
 
-  // ── Motivation banner — ONE message per app-opening session ──────────────
-  // Priority: countdown → last lesson → last practice → last mock → quote.
-  // Every branch reflects actual data; nothing is invented. Falls through
-  // gracefully when the student has no activity yet.
+  // ── Motivation notification content — fired once per app-open ─────────────
+  // Priority: countdown → last lesson → last practice → last mock → pool.
+  // COUNTDOWN_MODE controls how often the countdown branch fires:
+  //   'always'   → countdown every open (spec default; pool unreachable)
+  //   'rotation' → countdown 1 day in 3; pool on the other 2 days (recommended)
+  //   'final30'  → countdown only in the last 30 days; pool the rest of the year
   app.get('/me/motivation', { preHandler: authenticate }, async (request) => {
     const userId = request.userId;
     const daysParam = (request.query as { daysUntilExam?: string }).daysUntilExam;
     const daysUntilExam = daysParam != null ? Number(daysParam) : null;
 
+    // Typed as plain `string` (not the union) so TypeScript's control-flow
+    // analysis can't narrow it to the literal 'rotation' at the comparison
+    // sites below. With either `const X: 'rotation' | 'always' | 'final30'`
+    // or `let X: ... = 'rotation'`, TS 5.x narrows the value to just
+    // 'rotation' at every use site (because nothing reassigns it in this
+    // scope), which makes `=== 'always'` / `=== 'final30'` type errors
+    // ("no overlap"). `string` prevents that narrowing entirely.
+    const COUNTDOWN_MODE: string = 'rotation';
+
+    // Deterministic rotation index — different users see different content
+    // on the same day, same user sees different content across days.
     const dayOfYear = Math.floor(
       (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86_400_000,
     );
     const userHash = userId.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
     const rotationIdx = (userHash + dayOfYear) % 1000;
 
-    // Priority 1 — countdown
-    if (daysUntilExam !== null && daysUntilExam >= 0) {
+    // ── Priority 1: exam countdown (rate-limited by COUNTDOWN_MODE) ─────
+    const useCountdown =
+      daysUntilExam !== null &&
+      daysUntilExam >= 0 &&
+      (COUNTDOWN_MODE === 'always' ||
+        (COUNTDOWN_MODE === 'rotation' && rotationIdx % 3 === 0) ||
+        (COUNTDOWN_MODE === 'final30' && daysUntilExam <= 30));
+
+    if (useCountdown) {
       if (daysUntilExam === 0) {
         return {
           type: 'countdown',
@@ -209,7 +236,7 @@ export async function profileRoutes(app: FastifyInstance) {
       return { type: 'countdown', emoji: '⏳', ...f };
     }
 
-    // Priority 2 — last completed lesson
+    // ── Priority 2: last completed lesson ───────────────────────────────
     const lastLesson = await prisma.userLessonProgress.findFirst({
       where: { userId, status: 'completed', completedAt: { not: null } },
       orderBy: { completedAt: 'desc' },
@@ -242,7 +269,7 @@ export async function profileRoutes(app: FastifyInstance) {
       return { type: 'lesson', emoji: '📚', ...l };
     }
 
-    // Priority 3 — last practice score
+    // ── Priority 3: last practice score ─────────────────────────────────
     const lastPractice = await prisma.quizAttempt.findFirst({
       where: { userId, submittedAt: { not: null }, mode: 'practice' },
       orderBy: { submittedAt: 'desc' },
@@ -262,7 +289,7 @@ export async function profileRoutes(app: FastifyInstance) {
       return { type: 'practice', emoji: '🎯', ...framing };
     }
 
-    // Priority 4 — last mock exam
+    // ── Priority 4: last mock exam ──────────────────────────────────────
     const lastExam = await prisma.quizAttempt.findFirst({
       where: { userId, submittedAt: { not: null }, mode: 'mock' },
       orderBy: { submittedAt: 'desc' },
@@ -279,8 +306,20 @@ export async function profileRoutes(app: FastifyInstance) {
       };
     }
 
-    // Priority 5 — rotating quote (deterministic; no per-user state)
-    const quote = MOTIVATIONAL_QUOTES[rotationIdx % MOTIVATIONAL_QUOTES.length];
-    return { type: 'quote', emoji: '✨', title: 'A thought for today', message: quote };
+    // ── Priority 5: rotating notification from the pool ─────────────────
+    const item = MOTIVATIONAL_NOTIFICATIONS[rotationIdx % MOTIVATIONAL_NOTIFICATIONS.length];
+    const CATEGORY_EMOJI: Record<string, string> = {
+      motivation: '🌱',
+      study: '🧠',
+      challenge: '🎯',
+      encouragement: '💚',
+      dream: '🎓',
+    };
+    return {
+      type: 'quote',
+      emoji: CATEGORY_EMOJI[item.category] ?? '✨',
+      title: item.title,
+      message: item.body,
+    };
   });
 }

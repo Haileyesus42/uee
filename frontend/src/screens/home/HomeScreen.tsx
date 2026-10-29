@@ -6,8 +6,6 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { LinearGradient } from 'expo-linear-gradient';
 import { setStatusBarStyle } from 'expo-status-bar';
-import { useMotivation } from '../../hooks/useMotivation';
-import { MotivationBanner } from '../../components/home/MotivationBanner';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { Avatar } from '../../components/common/Avatar';
@@ -89,8 +87,6 @@ function useContinueLearning() {
 // this slot blank with no indication the empty state was deliberate.
 function AllCaughtUpCard() {
   const t = useTheme();
-  const daysToExam = daysUntilMatriculation();
-const { message: motivation, dismiss: dismissMotivation } = useMotivation(daysToExam);
   return (
     <View>
       <Text style={[caughtUpStyles.sectionLabel, { color: t.colors.brand }]}>Continue Learning</Text>
@@ -197,7 +193,7 @@ export function HomeScreen({ navigation }: Props) {
               <Avatar
                 userId={profile?.id ?? ''}
                 hasPhoto={profile?.hasAvatarPhoto ?? false}
-                emoji={profile?.avatarEmoji ?? '🧑🎓'}
+                emoji={profile?.avatarEmoji ?? '🧑‍🎓'}
                 size={40}
                 dot={(notificationsData?.unreadCount ?? 0) > 0}
                 onDotPress={() => navigation.navigate('Notifications')}
@@ -207,9 +203,6 @@ export function HomeScreen({ navigation }: Props) {
         </View>
 
         <View style={styles.heroContent}>
-          {motivation && (
-  <MotivationBanner motivation={motivation} onDismiss={dismissMotivation} />
-)}
           <ExamCountdownHero daysUntilExam={daysUntilMatriculation()} />
         </View>
       </LinearGradient>

@@ -153,15 +153,21 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
   const isCorrect = !isMock && hasKey && selected === question.correctIndex;
   const showFooterButton = isMock || !checked;
 
-  // popToTop() alone only works when this screen was pushed onto an
-  // already-open Practice stack (QuizSetup/MockExamsList) — it correctly skips
-  // back past the setup screen to the hub. But a past-paper exam reaches this
-  // screen via a cross-stack jump from the UEE tab (see PaperViewerScreen),
-  // which mounts Practice fresh with QuizRunner as its only route: popToTop has
-  // nothing to pop and silently no-ops ("POP_TO_TOP was not handled by any
-  // navigator" in dev, a dead close button in production). goBack() bubbles up
-  // to the parent navigator in that case and correctly returns to the paper.
+  // UEE exam started via cross-stack jump from UEE tab (PaperViewerScreen →
+  // Practice/QuizRunner). Popping the Practice stack leaves the user on an
+  // empty Practice tab with no visible screen — so switch back to the UEE
+  // tab explicitly. React Navigation preserves each tab's stack, so this
+  // resumes on PaperViewer (the exact paper the user was viewing).
+  //
+  // Practice-side exits (from MockExamsList / QuizSetup) still use the
+  // popToTop/goBack path below, landing on the Practice hub as before.
   function exitQuiz() {
+    const wasUeeExam = !!(pastPaperYear && pastPaperStream);
+    if (wasUeeExam) {
+      const tabNav = navigation.getParent();
+      (tabNav as any)?.navigate('Uee');
+      return;
+    }
     if (navigation.getState().routes.length > 1) {
       navigation.popToTop();
     } else {
@@ -193,7 +199,12 @@ export function QuizRunnerScreen({ navigation, route }: Props) {
         <Text style={[t.typography.caption, { color: t.colors.brand, letterSpacing: 0.5, marginTop: 8 }]}>
           {subjectName.toUpperCase()}
         </Text>
-        <MathText style={[t.typography.question, { color: t.colors.textPrimary, marginTop: 8, marginBottom: 20, fontSize: 15, lineHeight: 20 }]}>
+        <MathText
+          style={[
+            t.typography.question,
+            { color: t.colors.textPrimary, marginTop: 8, marginBottom: 20, fontSize: 15, lineHeight: 20 },
+          ]}
+        >
           {question.prompt}
         </MathText>
 

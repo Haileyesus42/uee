@@ -10,11 +10,23 @@ import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold } f
 import { ThemeProvider } from './src/theme/ThemeProvider';
 import { AuthProvider } from './src/auth/AuthProvider';
 import { RootNavigator } from './src/navigation/RootNavigator';
+import { useMotivationNotification } from './src/hooks/useMotivationNotification';
 
 function makeQueryClient() {
   return new QueryClient({
     defaultOptions: { queries: { retry: 1, staleTime: 30_000 } },
   });
+}
+
+// The Matriculation (UEE) exam is always on 4 June. Local copy so the
+// motivation hook can pass days-remaining to the backend without importing
+// from HomeScreen (which would couple App root to a leaf screen module).
+function daysUntilMatriculation(now: Date = new Date()): number {
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const thisYear = new Date(startOfToday.getFullYear(), 5, 4);
+  const target =
+    thisYear < startOfToday ? new Date(startOfToday.getFullYear() + 1, 5, 4) : thisYear;
+  return Math.round((target.getTime() - startOfToday.getTime()) / 86_400_000);
 }
 
 SplashScreen.preventAutoHideAsync();
@@ -43,6 +55,14 @@ export default function App() {
     Inter_600SemiBold,
     Inter_700Bold,
   });
+
+  // Fires one Android system notification per app cold-start with a
+  // personalized message from /me/motivation. Called unconditionally (before
+  // the fontsLoaded early return) so the hook order stays stable.
+  // If the user isn't authenticated yet on cold start, the fetch 401s and
+  // the hook silently does nothing — the notification will fire on the next
+  // session once they're signed in.
+  useMotivationNotification(daysUntilMatriculation());
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) await SplashScreen.hideAsync();

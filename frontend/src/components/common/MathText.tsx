@@ -4,14 +4,52 @@ import { WebView } from 'react-native-webview';
 
 // Route to WebView if the content looks like math at all — either $...$,
 // \(...\), \[...\], or bare LaTeX commands like \boxed, \frac, \pi.
-const HAS_MATH =
-  /\$[^$]+\$|\\\(|\\\[|\\[a-zA-Z]+/;
+const HAS_MATH = /\$[^$]+\$|\\\(|\\\[|\\[a-zA-Z]+/;
+
+// Bare LaTeX command — anything starting with \ + letters. Used by
+// wrapBareLatex to decide whether inline wrapping is needed.
+const HAS_BARE_LATEX_COMMAND = /\\[a-zA-Z]+/;
 
 const SINGLE_FRACTION = /^\s*\$?\s*\\(?:d|t)?frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}\s*\$?\s*$/;
 
 function tryParseFraction(text: string): { num: string; den: string } | null {
   const m = text.trim().match(SINGLE_FRACTION);
   return m ? { num: m[1], den: m[2] } : null;
+}
+
+// Exam content (and some past papers) ship bare LaTeX commands inline, with
+// no $...$ or \(...\) delimiters — e.g. "The answer is \frac{1}{2}". KaTeX
+// auto-render only recognizes delimited math, so those commands leak through
+// as raw backslashes. This wraps each bare \command{...} run in $...$ before
+// the WebView sees it, so KaTeX picks it up.
+//
+// Bracket-form math (e.g. "[ \frac{1}{2} ]") is protected first — the
+// WebView's bracketMathToDollarMath converts those to $$...$$ for display
+// math, and wrapping the inner command here would break that conversion.
+function wrapBareLatex(content: string): string {
+  // Already has real delimiters — trust the source, don't double-wrap.
+  if (/\$[^$]+\$|\\\(|\\\[/.test(content)) return content;
+  // No LaTeX commands at all — return unchanged, no WebView needed.
+  if (!HAS_BARE_LATEX_COMMAND.test(content)) return content;
+
+  // Extract bracket-form blocks so the wrapping pass below doesn't touch
+  // their inner commands. Placeholders use Unicode private-use chars, which
+  // won't appear in real question content or LaTeX source.
+  const brackets: string[] = [];
+  let text = content.replace(/\[\s*([^\[\]]*\\[a-zA-Z][^\[\]]*)\s*\]/g, (match) => {
+    brackets.push(match);
+    return `\uE000BRK${brackets.length - 1}\uE001`;
+  });
+
+  // Wrap each bare \command or \command{args} in $...$
+  text = text.replace(/(\\[a-zA-Z]+(?:\{[^{}]*\})*)/g, (_, cmd) => `$${cmd}$`);
+
+  // Restore bracket blocks
+  for (let i = 0; i < brackets.length; i++) {
+    text = text.replace(`\uE000BRK${i}\uE001`, brackets[i]);
+  }
+
+  return text;
 }
 
 function renderPlainWithMath(text: string, fontSize: number, lineHeight: number): React.ReactNode {
@@ -107,9 +145,9 @@ function buildHtml(
     }
 
     function bracketMathToDollarMath(html) {
-      // Convert "[ \\command... ]" to "$$ \\command... $$" so KaTeX sees it.
-      // Requires the inner content to contain a LaTeX command (\\ + letters)
-      // so a regular sentence in brackets like "[sic]" stays untouched.
+      // Convert "[ \\command... ]" to "$$ \\command... $$" so KaTeX sees it
+      // as display math. Requires the inner content to contain a LaTeX
+      // command so a regular sentence in brackets like "[sic]" stays intact.
       return html.replace(/\\[([^\\[\\]]*\\\\[a-zA-Z][^\\[\\]]*)\\]/g, function(_, inner) {
         return '$$' + inner + '$$';
       });
@@ -128,11 +166,8 @@ function buildHtml(
             return 'KATEXBLOCK' + (latexBlocks.length - 1) + 'X';
           });
 
-          // Do bracket → $$ conversion on the raw text BEFORE marked so it
-          // isn't fighting with markdown's own bracket handling.
           protectedText = bracketMathToDollarMath(protectedText);
 
-          // Re-protect the newly created $$...$$ blocks
           var moreBlocks = [];
           protectedText = protectedText.replace(/\\$\\$[^$]+\\$\\$/g, function(m) {
             moreBlocks.push(m);
@@ -148,7 +183,6 @@ function buildHtml(
           contentDiv.innerHTML = bracketMathToDollarMath(escapeHtml(rawContent));
         }
       } catch (e) {
-        // marked failed — show raw
         contentDiv.innerHTML = escapeHtml(rawContent);
         usedFallback = true;
       }
@@ -166,8 +200,6 @@ function buildHtml(
         });
       } catch (e) {}
 
-      // If the renderer produced essentially nothing but we HAD content,
-      // fall back to showing the raw text so the card isn't blank.
       var finalLen = (contentDiv.textContent || '').trim().length;
       if (finalLen < 5 && rawContent.length > 5 && !usedFallback) {
         contentDiv.innerHTML = escapeHtml(rawContent);
@@ -208,6 +240,9 @@ export function MathText({
   const clampedHeight = numberOfLines ? lineHeight * numberOfLines : undefined;
   const [height, setHeight] = useState(clampedHeight ?? lineHeight * 3);
 
+  // Fast path 1: single fraction — native, no WebView. Checked on original
+  // children so `\frac{1}{2}` (pure) still gets the native fraction view
+  // instead of going through the wrapping pass and into KaTeX.
   if (!markdown) {
     const frac = tryParseFraction(children);
     if (frac) {
@@ -223,27 +258,33 @@ export function MathText({
         </View>
       );
     }
+  }
 
-    if (!HAS_MATH.test(children)) {
-      if (/[\^_]/.test(children)) {
-        return (
-          <Text style={style} numberOfLines={numberOfLines}>
-            {renderPlainWithMath(children, fontSize, lineHeight)}
-          </Text>
-        );
-      }
+  // Wrap bare inline LaTeX (e.g. "The answer is \frac{1}{2}") into $...$ so
+  // KaTeX auto-render picks it up. No-op for content that already has $...$,
+  // \(...\), \[...\], or no LaTeX commands at all.
+  const processed = markdown ? children : wrapBareLatex(children);
+
+  if (!markdown && !HAS_MATH.test(processed)) {
+    // Fast path 2: no math — sup/sub renderer for ^ or _ notation.
+    if (/[\^_]/.test(processed)) {
       return (
         <Text style={style} numberOfLines={numberOfLines}>
-          {children}
+          {renderPlainWithMath(processed, fontSize, lineHeight)}
         </Text>
       );
     }
+    return (
+      <Text style={style} numberOfLines={numberOfLines}>
+        {processed}
+      </Text>
+    );
   }
 
   return (
     <WebView
       originWhitelist={['*']}
-      source={{ html: buildHtml(children, fontSize, lineHeight, color, numberOfLines, markdown) }}
+      source={{ html: buildHtml(processed, fontSize, lineHeight, color, numberOfLines, markdown) }}
       style={[style, { height: clampedHeight ?? height, backgroundColor: 'transparent' }]}
       scrollEnabled={false}
       showsVerticalScrollIndicator={false}

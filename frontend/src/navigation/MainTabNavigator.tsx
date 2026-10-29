@@ -37,7 +37,16 @@ const NAV_TO_ROUTE: Record<NavKey, keyof MainTabParamList> = {
   profile: 'Profile',
 };
 
-function CustomTabBar({ state, navigation }: BottomTabBarProps) {
+// Routes that render full-screen, without the bottom tab bar. The quiz runner
+// is reached by a cross-stack jump from UEE (exam mode) as well as from
+// Practice (mock mode); hiding the tab bar during the quiz is what makes both
+// feel like dedicated full-screen exams rather than "practice with a
+// different title." Deepest-focused-route tracking (below) already exists for
+// TextbookReader's FAB-hide, so this reuses the same signal.
+const FULLSCREEN_ROUTES = new Set(['QuizRunner']);
+
+function CustomTabBar({ state, navigation, hidden }: BottomTabBarProps & { hidden?: boolean }) {
+  if (hidden) return null;
   const activeRoute = state.routeNames[state.index] as keyof MainTabParamList;
   return (
     <BottomNavigation
@@ -62,15 +71,18 @@ export function MainTabNavigator() {
   const { open: chatOpen, openChat, closeChat } = useUnityChat();
   const insets = useSafeAreaInsets();
   const [focusedRoute, setFocusedRoute] = useState<string | undefined>();
-  // The reader is a full-screen reading surface; the chat bubble would cover
-  // page controls, so it is hidden there.
-  const hideFab = focusedRoute === 'TextbookReader';
+  const inFullScreen = !!focusedRoute && FULLSCREEN_ROUTES.has(focusedRoute);
+  // The reader and full-screen quiz surfaces both need the FAB gone — the
+  // reader because the bubble would sit over page controls, the quiz because
+  // the FAB's position (computed from the tab bar's real height) would end up
+  // floating mid-scene once the tab bar itself is hidden.
+  const hideFab = focusedRoute === 'TextbookReader' || inFullScreen;
 
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator
         screenOptions={{ headerShown: false }}
-        tabBar={(props) => <CustomTabBar {...props} />}
+        tabBar={(props) => <CustomTabBar {...props} hidden={inFullScreen} />}
         screenListeners={{
           state: (event) => setFocusedRoute(deepestRouteName(event.data.state)),
         }}
@@ -83,22 +95,6 @@ export function MainTabNavigator() {
         <Tab.Screen name="Profile" component={ProfileNavigator} />
       </Tab.Navigator>
 
-      {/* Rendered as a sibling of the whole Tab.Navigator (tab bar included),
-          not inside a single screen's scene container, so it needs its own
-          clearance above the custom tab bar — computed from that bar's real
-          content height + this device's actual bottom inset, not a fixed guess
-          that only happened to clear the bar on one test device. The extra
-          120dp on top of that (vs. just enough to clear the bar) is deliberate:
-          on Home, the default (unscrolled) view's feature-card grid ends only
-          slightly above the bar, and a smaller gap let the bubble sit directly
-          on top of the "UEE Exams" card's title at rest, not just transiently
-          mid-scroll. A fixed-position corner button can still brush other
-          content while actively scrolling — that's normal for this pattern —
-          but it should never overlap text at the resting scroll position.
-          Hidden while the chat panel is open since it slides in over the same
-          corner. Chat open/close state lives in UnityChatContext so any
-          screen — not just this one — can trigger it (e.g. the "ask Unity"
-          affordance on quiz feedback). */}
       {!chatOpen && !hideFab && (
         <UnityFloatingButton onPress={openChat} bottom={BOTTOM_NAV_CONTENT_HEIGHT + insets.bottom + 55} />
       )}
