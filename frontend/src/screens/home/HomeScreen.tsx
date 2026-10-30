@@ -170,7 +170,7 @@ export function HomeScreen({ navigation }: Props) {
               hitSlop={8}
               style={[styles.statusBadge, isPro && styles.statusBadgePro]}
             >
-              {isPro && <Ionicons name="checkmark-circle" size={10} color="#FFE3A3" style={styles.statusBadgeIcon} />}
+              {isPro && <Ionicons name="checkmark-circle" size={9} color="#FFE3A3" style={styles.statusBadgeIcon} />}
               <Text style={[styles.statusBadgeText, isPro && styles.statusBadgeTextPro]}>{isPro ? 'PRO' : 'Free'}</Text>
             </Pressable>
           </View>
@@ -282,9 +282,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 7,
+    height: 24,
     paddingHorizontal: 7,
-    paddingVertical: 3,
-    borderRadius: 8,
+    borderRadius: 12,
     backgroundColor: 'rgba(255,255,255,0.16)',
   },
   statusBadgePro: { backgroundColor: 'rgba(246,214,143,0.24)' },
