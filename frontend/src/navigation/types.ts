@@ -104,6 +104,7 @@ export type ProfileStackParamList = {
 
 export type LeaderboardStackParamList = {
   LeaderboardHome: undefined;
+  SchoolPicker: undefined;
 };
 
 export type HomeStackParamList = {

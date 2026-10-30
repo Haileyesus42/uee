@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { getLeaderboard } from '../api/leaderboard';
-import { LeaderboardResponse } from '../api/types';
+import { LeaderboardPeriod, LeaderboardResponse, LeaderboardScope } from '../data/leaderboard';
 
-export function useLeaderboard(period: 'weekly' | 'monthly' | 'allTime') {
+export function useLeaderboard(period: LeaderboardPeriod, scope: LeaderboardScope) {
   return useQuery<LeaderboardResponse>({
-    queryKey: ['leaderboard', period],
-    queryFn: () => getLeaderboard(period),
+    queryKey: ['leaderboard', scope, period],
+    queryFn: () => getLeaderboard(period, scope),
   });
 }

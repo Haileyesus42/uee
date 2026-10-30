@@ -102,6 +102,14 @@ model User {
   languageCode     String?
   isPremium        Boolean  @default(false)
   grade            Int      @default(9)
+  schoolId         String?
+  school           School?  @relation(fields: [schoolId], references: [id], onDelete: SetNull)
+  schoolJoinedAt   DateTime?
+  schoolVerified   Boolean  @default(false)
+
+  schoolRequests   SchoolRequest[] @relation("UserSchoolRequests")
+
+  @@index([schoolId])
   tokenVersion     Int      @default(0)
   createdAt        DateTime @default(now())
 
@@ -296,6 +304,12 @@ model XpEvent {
 
   @@index([userId])
   @@map("xp_events")
+  schoolId       String?
+  school         School? @relation(fields: [schoolId], references: [id], onDelete: SetNull)
+  idempotencyKey String? @unique
+
+  @@index([schoolId])
+  @@index([userId, createdAt])
 }
 
 model ChatMessage {
@@ -499,4 +513,38 @@ model UserReadingProgress {
 
   @@id([userId, subjectId, kind])
   @@map("user_reading_progress")
+}
+
+
+model School {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String   @unique
+  code      String?  @unique
+  region    String
+  city      String?
+  status    String   @default("active")
+  createdAt DateTime @default(now())
+
+  members   User[]
+  xpEvents  XpEvent[]
+
+  @@index([status])
+  @@index([region])
+  @@index([name])
+}
+
+model SchoolRequest {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation("UserSchoolRequests", fields: [userId], references: [id], onDelete: Cascade)
+  name       String
+  region     String
+  city       String?
+  status     String   @default("pending")
+  createdAt  DateTime @default(now())
+  reviewedAt DateTime?
+
+  @@index([status])
+  @@index([userId])
 }

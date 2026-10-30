@@ -33,7 +33,7 @@ export function LeaderboardPeriodSelector({
             <Text
               style={[
                 t.typography.bodyStrong,
-                { color: active ? t.colors.brand : t.colors.textSecondary, fontSize: 12 },
+                { color: active ? t.colors.brand : t.colors.textSecondary, fontSize: 11 },
               ]}
             >
               {opt.label}
@@ -46,7 +46,7 @@ export function LeaderboardPeriodSelector({
 }
 
 const styles = StyleSheet.create({
-  row: { flexDirection: 'row', borderRadius: 14, padding: 4, gap: 4 },
-  chip: { flex: 1, alignItems: 'center', paddingVertical: 9, borderRadius: 10 },
+  row: { flexDirection: 'row', borderRadius: 10, padding: 3, gap: 3 },
+  chip: { flex: 1, alignItems: 'center', paddingVertical: 6, borderRadius: 7 },
   chipActive: {},
 });
