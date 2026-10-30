@@ -12,8 +12,10 @@ import { LeaderboardPeriodSelector } from '../../components/leaderboard/Leaderbo
 import { LeaderboardScopeSelector } from '../../components/leaderboard/LeaderboardScopeSelector';
 import { LeaderboardPodium } from '../../components/leaderboard/LeaderboardPodium';
 import { LeaderboardRow } from '../../components/leaderboard/LeaderboardRow';
+import { LeaderboardTableHeader } from '../../components/leaderboard/LeaderboardTableHeader';
 import { LeaderboardPeriod, LeaderboardScope } from '../../data/leaderboard';
 import { useLeaderboard } from '../../hooks/useLeaderboard';
+import { useMe } from '../../hooks/useProfile';
 import { LeaderboardStackParamList, MainTabParamList } from '../../navigation/types';
 
 type Props = CompositeScreenProps<
@@ -26,6 +28,7 @@ export function LeaderboardHomeScreen({ navigation }: Props) {
   const [period, setPeriod] = useState<LeaderboardPeriod>('allTime');
   const [scope, setScope] = useState<LeaderboardScope>('national');
   const { data } = useLeaderboard(period, scope);
+  const { data: profile } = useMe();
 
   const entries = data?.entries ?? [];
   const top3 = entries.slice(0, 3);
@@ -34,6 +37,9 @@ export function LeaderboardHomeScreen({ navigation }: Props) {
   const myRank = data?.currentUser?.rank ?? currentUser?.rank ?? null;
   const schoolName = data?.school?.name ?? null;
   const noSchool = data?.reason === 'no_school';
+  // Rank is outside the top-20 page but the user still has a rank — the
+  // brief requires showing their position even when it's not on this page.
+  const showSelfRow = !!(data?.currentUser && !currentUser);
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
@@ -119,11 +125,60 @@ export function LeaderboardHomeScreen({ navigation }: Props) {
         ) : (
           <>
             <LeaderboardPodium top3={top3} />
-            <View style={{ marginTop: 14 }}>
-              {rest.map((entry) => (
-                <LeaderboardRow key={entry.rank} entry={entry} />
-              ))}
-            </View>
+
+            {/* Table wrapper — single card, header strip inside, hairline
+                dividers between rows. Same container style as the app's other
+                surface cards (border + radius + overflow hidden), so the rows
+                render as one coherent block rather than N floating cards. */}
+            {rest.length > 0 && (
+              <View
+                style={[
+                  styles.tableWrap,
+                  { backgroundColor: t.colors.surface, borderColor: t.colors.border },
+                ]}
+              >
+                <LeaderboardTableHeader />
+                {rest.map((entry, idx) => (
+                  <LeaderboardRow
+                    key={entry.rank}
+                    entry={entry}
+                    isLast={idx === rest.length - 1}
+                  />
+                ))}
+              </View>
+            )}
+
+            {/* Current user, when their rank is outside the top-20 page.
+                Rendered as a separate single-row card with a "…" divider above,
+                so it's clearly the user's position, not a continuation of the
+                visible list. */}
+            {showSelfRow && data?.currentUser && (
+              <>
+                <View style={styles.ellipsisWrap}>
+                  <Text style={{ color: t.colors.textSecondary, fontSize: 14, letterSpacing: 2 }}>···</Text>
+                </View>
+                <View
+                  style={[
+                    styles.tableWrap,
+                    { backgroundColor: t.colors.surface, borderColor: t.colors.border },
+                  ]}
+                >
+                  <LeaderboardRow
+                    entry={{
+                      rank: data.currentUser.rank,
+                      userId: 'self',
+                      name: profile?.name ?? 'You',
+                      avatarEmoji: profile?.avatarEmoji ?? '🧑‍🎓',
+                      hasAvatarPhoto: profile?.hasAvatarPhoto ?? false,
+                      xp: data.currentUser.xp,
+                      isCurrentUser: true,
+                      grade: profile?.grade ?? null,
+                    }}
+                    isLast
+                  />
+                </View>
+              </>
+            )}
           </>
         )}
       </ScrollView>
@@ -142,5 +197,15 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 12,
+  },
+  tableWrap: {
+    marginTop: 14,
+    borderRadius: 14,
+    borderWidth: 1,
+    overflow: 'hidden',
+  },
+  ellipsisWrap: {
+    alignItems: 'center',
+    paddingVertical: 8,
   },
 });

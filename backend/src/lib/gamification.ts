@@ -59,3 +59,30 @@ export async function awardXp(
     console.error('[leaderboard] Redis update failed after XP award', { userId, amount, schoolId, err });
   }
 }
+// Hearts regen model:
+//   - 5 hearts maximum.
+//   - A heart regenerates every 30 minutes.
+//   - When hearts are full, heartsRegenAt is null and no timer runs.
+//   - Callers pass the stored hearts count and the timestamp from which
+//     regeneration should be counted; this returns how many hearts are
+//     actually available right now, computed lazily on read.
+//
+// This function was accidentally removed when gamification.ts was rewritten
+// for the school leaderboard feature. buildProfilePayload in profile/routes.ts
+// still imports it, so the whole /me endpoint was 500-ing.
+const MAX_HEARTS = 5;
+const HEART_REGEN_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
+
+export function computeAvailableHearts(
+  storedHearts: number,
+  heartsRegenAt: Date | null,
+): number {
+  if (storedHearts >= MAX_HEARTS) return MAX_HEARTS;
+  if (!heartsRegenAt) return storedHearts;
+
+  const elapsedMs = Date.now() - heartsRegenAt.getTime();
+  if (elapsedMs < 0) return storedHearts;
+
+  const regened = Math.floor(elapsedMs / HEART_REGEN_INTERVAL_MS);
+  return Math.min(MAX_HEARTS, storedHearts + regened);
+}

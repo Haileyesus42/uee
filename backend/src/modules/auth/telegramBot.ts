@@ -1,10 +1,18 @@
 import { env } from '../../env';
 import { prisma } from '../../lib/prisma';
+import { redis } from '../../lib/redis';
 import { signAccessToken, signRefreshToken } from '../../lib/jwt';
 import { storeRefreshToken } from './sessions';
 import { consumeLoginToken, storeLoginResult } from './telegramSessions';
 
 const TELEGRAM_API = `https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}`;
+
+// If a user verified within this window, subsequent /start or /login commands
+// still issue a fresh session (the app needs a valid token to poll) but don't
+// repeat the "Welcome" message. Prevents chat spam when the app's polling lags
+// and the user retries — which is exactly what caused the multi-bubble mess
+// in the reported screenshot.
+const RECENT_VERIFY_TTL_SECONDS = 120;
 
 type TelegramFrom = {
   id: number;
@@ -26,9 +34,6 @@ export type TelegramUpdate = {
   };
 };
 
-// The subset of ChatFullInfo (returned by getChat) we actually use — every field
-// here depends on the user's Telegram privacy settings and is commonly absent,
-// so all reads of this type must treat every field as possibly missing.
 type ChatFullInfo = {
   photo?: { small_file_id: string; big_file_id: string };
   bio?: string;
@@ -43,9 +48,6 @@ export async function sendTelegramMessage(chatId: number, text: string): Promise
   });
 }
 
-// Best-effort only: profile enrichment must never block a login. Privacy settings
-// hide most of these fields for most users (bio/birthdate especially), and that's
-// expected, not an error.
 async function fetchChatFullInfo(telegramId: string): Promise<ChatFullInfo | null> {
   try {
     const res = await fetch(`${TELEGRAM_API}/getChat?chat_id=${telegramId}`);
@@ -61,27 +63,37 @@ async function fetchChatFullInfo(telegramId: string): Promise<ChatFullInfo | nul
   }
 }
 
-// The deep link t.me/<bot>?start=<token> makes Telegram send "/start <token>" as
-// the message text the moment the user taps Start — this is the entire hand-off,
-// no webhook or web widget needed. Login and registration are the same flow here
-// too: findOrCreate by telegramId, matching the (now-removed) phone+OTP flow's
-// "no separate register step" behavior.
+// Fired by any /start TOKEN (Telegram deep link) or /login TOKEN (menu/manual).
+// The login token is single-use — consumeLoginToken atomically deletes it, so
+// only one caller per token ever sees `consumed = true`. That already prevents
+// duplicate success messages for the SAME attempt. The recent-verify guard
+// below handles the SEPARATE case where the user retries with a fresh token
+// within a short window (typical when the app's polling lags).
 async function handleStartMessage(loginToken: string, from: TelegramFrom, chatId: number) {
+  const telegramId = String(from.id);
+  const recentKey = `telegram:recently-verified:${telegramId}`;
+
   const consumed = await consumeLoginToken(loginToken);
   if (!consumed) {
-    await sendTelegramMessage(
-      chatId,
-      "That login link expired or was already used — go back to the Tizata app and tap “Continue with Telegram” again."
-    );
+    // Token already used or expired. Two different sub-cases:
+    //   - User recently verified → they're already signed in, tell them so
+    //     instead of the scarier "expired" message.
+    //   - Otherwise → genuine expiry, guide them back to the app.
+    const recentlyVerified = await redis.get(recentKey);
+    if (recentlyVerified) {
+      await sendTelegramMessage(chatId, `✅ You're already signed in! Return to Tizata UEE to continue.`);
+    } else {
+      await sendTelegramMessage(
+        chatId,
+        '⚠️ This login link has expired or has already been used.\n\n' +
+          'No worries! Return to Tizata UEE and tap Continue with Telegram to start a new login.'
+      );
+    }
     return;
   }
 
-  const telegramId = String(from.id);
   const chatInfo = await fetchChatFullInfo(telegramId);
 
-  // `undefined` fields below are left out of the create/update entirely (Prisma's
-  // semantics for undefined vs null), so a field we couldn't fetch this time simply
-  // keeps whatever value — if any — was captured on a previous login.
   const profileFields = {
     telegramUsername: from.username ?? undefined,
     languageCode: from.language_code ?? undefined,
@@ -124,33 +136,35 @@ async function handleStartMessage(loginToken: string, from: TelegramFrom, chatId
     },
   });
 
+  // One welcome per session. If the user verified within the last
+  // RECENT_VERIFY_TTL_SECONDS, they're clearly retrying because the app hasn't
+  // picked up the first success yet — silently re-issue the session without
+  // spamming another welcome bubble.
+  const recentlyVerified = await redis.get(recentKey);
+  if (recentlyVerified) return;
+
+  const firstName = from.first_name?.trim();
+  const greeting = firstName ? `Hi ${firstName}!` : null;
+  const header = greeting ? `✅ ${greeting} Welcome to Tizata UEE.` : '✅ Welcome to Tizata UEE.';
+
   await sendTelegramMessage(
     chatId,
-    "✅ You're verified! Switch back to the Tizata app (recents button or swipe up from home) — you'll be signed in automatically."
+    `${header}\n\n` +
+      `You've successfully logged in. You can now return to the app and continue learning.\n\n` +
+      `Happy studying! 🎓`
   );
-  // Gate the photo prompt on the user actually needing one. Without this it
-  // fires on every /start, nagging users who already uploaded a photo (or
-  // already have one from their Telegram profile) each time they log in.
-  if (!user.avatarUpload && !user.avatarFileId) {
-    await sendTelegramMessage(
-      chatId,
-      '📸 Want a profile picture? Send me a photo here anytime and I’ll add it to your account.'
-    );
-  }
+
+  await redis.setex(recentKey, RECENT_VERIFY_TTL_SECONDS, '1');
 }
 
-// Fires for any photo message from an already-registered chat, not just one
-// immediately after /start — the prompt above says "anytime" and means it, so
-// this isn't gated on being part of the same conversation turn as registration.
-// Silently ignores photos from a chat_id with no user row yet (hasn't sent
-// /start at all) rather than inventing registration-before-verification.
+// Fires for any photo message from an already-registered chat. Unchanged from
+// prior behavior — sending a photo still saves it and confirms. This is a
+// separate flow from login and doesn't affect the success-message count.
 async function handlePhotoMessage(photo: TelegramPhotoSize[], from: TelegramFrom, chatId: number) {
   const telegramId = String(from.id);
   const user = await prisma.user.findUnique({ where: { telegramId } });
   if (!user) return;
 
-  // Telegram sends every size it generated, smallest first — the last entry is
-  // the highest resolution available.
   const largest = photo[photo.length - 1];
   const file = await fetchTelegramFile(largest.file_id);
   if (!file) {
@@ -165,9 +179,6 @@ async function handlePhotoMessage(photo: TelegramPhotoSize[], from: TelegramFrom
   await sendTelegramMessage(chatId, '✅ Profile picture saved!');
 }
 
-// Deliberately not cached to disk or re-hosted anywhere — Telegram file_ids can go
-// stale, so re-resolving via getFile on every request is the correct behavior, not
-// just the simplest one. GET /avatars/:userId (see routes.ts) wraps this.
 export async function fetchTelegramFile(fileId: string): Promise<{ buffer: Buffer; contentType: string } | null> {
   try {
     const fileRes = await fetch(`${TELEGRAM_API}/getFile?file_id=${fileId}`);
@@ -178,12 +189,6 @@ export async function fetchTelegramFile(fileId: string): Promise<{ buffer: Buffe
     const imageRes = await fetch(downloadUrl);
     if (!imageRes.ok) return null;
 
-    // Telegram's file CDN often answers with application/octet-stream instead of
-    // a real image type — confirmed live, not hypothetical (a captured photo came
-    // back this way). Every caller of this function only ever fetches photos
-    // (chat photos or message photos, both JPEG — Telegram transcodes every
-    // "photo" send to JPEG), so a non-image content-type is always wrong, not a
-    // legitimate other format to preserve.
     const rawContentType = imageRes.headers.get('content-type');
     const contentType = rawContentType?.startsWith('image/') ? rawContentType : 'image/jpeg';
     const buffer = Buffer.from(await imageRes.arrayBuffer());
@@ -198,12 +203,6 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// Shared by both the polling loop and the webhook route (routes.ts) — the
-// update → handler dispatch is identical either way, only how updates arrive
-// differs. Fire-and-forget per message (not awaited here) on purpose: one
-// slow/failing update must never hold up the next one in the same batch, and
-// the webhook path specifically needs to ack Telegram fast regardless of how
-// long the actual handler takes.
 export function processUpdate(update: TelegramUpdate): void {
   const message = update.message;
   if (!message?.from) return;
@@ -216,27 +215,36 @@ export function processUpdate(update: TelegramUpdate): void {
   }
 
   const text = message.text;
-  if (!text?.startsWith('/start ')) return;
+  if (!text) return;
 
-  const loginToken = text.slice('/start '.length).trim();
-  if (!loginToken) return;
+  // Accept both /start TOKEN and /login TOKEN. The deep link from the app's
+  // "Continue with Telegram" button always sends /start TOKEN (Telegram
+  // platform constraint). /login is also accepted so manual entry and bot-menu
+  // commands work — the difference is invisible to the user either way.
+  // The optional @botname suffix handles the group-chat variant, though this
+  // bot is primarily DM-only.
+  const authMatch = text.match(/^\/(?:start|login)(?:@[A-Za-z0-9_]+)?\s+(\S+)/);
+  if (authMatch) {
+    handleStartMessage(authMatch[1], message.from, message.chat.id).catch((err) =>
+      console.error('[telegram] failed to handle auth command', err)
+    );
+    return;
+  }
 
-  handleStartMessage(loginToken, message.from, message.chat.id).catch((err) =>
-    console.error('[telegram] failed to handle /start', err)
-  );
+  // Bare /start or /login without a token — guide the user back to the app.
+  // Users who tap the bot's menu command (rather than the app's deep link)
+  // land here and need a clear next step.
+  if (/^\/(?:start|login)(?:@[A-Za-z0-9_]+)?\s*$/.test(text)) {
+    sendTelegramMessage(
+      message.chat.id,
+      '👋 To sign in, open Tizata UEE and tap "Continue with Telegram". We\'ll send you a login link here.'
+    ).catch((err) => console.error('[telegram] failed to send help message', err));
+    return;
+  }
 }
 
 let polling = false;
 
-// Long-polling by default — works with zero config in local dev (no public
-// HTTPS URL needed) and is fine in production for a single instance. It does
-// NOT scale past one instance: every instance would independently poll with
-// its own offset, duplicating calls and racing on which one "owns" a given
-// update. See routes.ts's /auth/telegram/webhook for the alternative — switch
-// TELEGRAM_POLLING_ENABLED off and register that URL with Telegram's
-// setWebhook once real multi-instance hosting exists. Both paths funnel
-// through the same processUpdate above, so switching modes changes nothing
-// about how updates are handled, only how they arrive.
 const POLL_BACKOFF_MIN_MS = 3000;
 const POLL_BACKOFF_MAX_MS = 60_000;
 
@@ -260,7 +268,6 @@ export async function startTelegramPolling(): Promise<void> {
         continue;
       }
 
-      // Reaching the API proves the network is back — reset the backoff.
       backoffMs = POLL_BACKOFF_MIN_MS;
       warnedUnreachable = false;
 
@@ -270,9 +277,6 @@ export async function startTelegramPolling(): Promise<void> {
         processUpdate(update);
       }
     } catch (err) {
-      // Distinguish "no outbound route" from a real API error: an unreachable
-      // api.telegram.org is an environment problem (common in containers with
-      // no egress) and retrying every 3s only floods the log.
       const code = (err as { cause?: { code?: string } })?.cause?.code;
       if (!warnedUnreachable) {
         console.warn(

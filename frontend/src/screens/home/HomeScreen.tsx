@@ -189,7 +189,8 @@ export function HomeScreen({ navigation }: Props) {
                 color={t.scheme === 'dark' ? '#F4F1EA' : '#16231F'}
               />
             </Pressable>
-            <Pressable onPress={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}>
+            <Pressable onPress={() => navigation.navigate('Notifications')}>
+              <Pressable onPress={() => navigation.navigate('Notifications')}></Pressable>
               <Avatar
                 userId={profile?.id ?? ''}
                 hasPhoto={profile?.hasAvatarPhoto ?? false}

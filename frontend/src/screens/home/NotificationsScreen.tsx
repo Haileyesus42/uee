@@ -1,16 +1,25 @@
 import React, { useCallback } from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { useFocusEffect } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/ThemeProvider';
 import { TopBar } from '../../components/navigation/TopBar';
 import { useMarkAllNotificationsRead, useNotifications } from '../../hooks/useNotifications';
 import { AppNotification } from '../../api/types';
-import { HomeStackParamList } from '../../navigation/types';
+import { HomeStackParamList, MainTabParamList } from '../../navigation/types';
 
-type Props = NativeStackScreenProps<HomeStackParamList, 'Notifications'>;
+// CompositeScreenProps so navigation can reach both the HomeStack screens
+// (back arrow, existing navigations) AND the tab-navigator screens (Profile),
+// since the profile icon in the top-right opens Profile which lives in the
+// tab navigator, not inside HomeStack.
+type Props = CompositeScreenProps<
+  NativeStackScreenProps<HomeStackParamList, 'Notifications'>,
+  BottomTabScreenProps<MainTabParamList>
+>;
 
 function timeAgo(iso: string): string {
   const diffMs = Date.now() - new Date(iso).getTime();
@@ -45,7 +54,19 @@ export function NotificationsScreen({ navigation }: Props) {
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
       <View style={{ paddingHorizontal: t.spacing.md }}>
-        <TopBar title="Notifications" onBack={() => navigation.goBack()} />
+        <TopBar
+          title="Notifications"
+          onBack={() => navigation.goBack()}
+          action={
+            <Pressable
+              onPress={() => navigation.navigate('Profile', { screen: 'ProfileHome' })}
+              hitSlop={10}
+              style={styles.profileButton}
+            >
+              <Ionicons name="person-circle-outline" size={24} color={t.colors.textSecondary} />
+            </Pressable>
+          }
+        />
       </View>
 
       {isLoading ? (
@@ -98,4 +119,5 @@ const styles = StyleSheet.create({
   iconBadge: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   titleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   unreadDot: { width: 8, height: 8, borderRadius: 4 },
+  profileButton: { width: 32, height: 32, alignItems: 'flex-end', justifyContent: 'center' },
 });
