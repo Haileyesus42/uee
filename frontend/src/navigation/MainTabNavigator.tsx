@@ -16,9 +16,6 @@ import { MainTabParamList } from './types';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
-// Profile has no button in the bottom bar (see BottomNavigation's ITEMS) — it's
-// reached only via the profile avatar in each tab-root screen's AppTopBar.
-// It still needs an entry here so the active-tab lookup below stays exhaustive.
 const ROUTE_TO_NAV: Record<keyof MainTabParamList, NavKey> = {
   Home: 'home',
   Learn: 'learn',
@@ -37,13 +34,20 @@ const NAV_TO_ROUTE: Record<NavKey, keyof MainTabParamList> = {
   profile: 'Profile',
 };
 
-// Routes that render full-screen, without the bottom tab bar. The quiz runner
-// is reached by a cross-stack jump from UEE (exam mode) as well as from
-// Practice (mock mode); hiding the tab bar during the quiz is what makes both
-// feel like dedicated full-screen exams rather than "practice with a
-// different title." Deepest-focused-route tracking (below) already exists for
-// TextbookReader's FAB-hide, so this reuses the same signal.
-const FULLSCREEN_ROUTES = new Set(['QuizRunner']);
+// Routes that render full-screen, without the bottom tab bar.
+//
+// - QuizRunner: reached by a cross-stack jump from UEE (exam mode) as well as
+//   from Practice (mock mode). Hiding the tab bar makes both feel like
+//   dedicated full-screen exams instead of "practice with a different title."
+//
+// - SolutionDetail: UEE study mode, stepped question-by-question with its own
+//   full-width Previous/Next pair at the bottom. Those buttons ARE the
+//   navigation here — the tab bar would compete with them and reduce the
+//   reading area. Hiding it lets the buttons be the footer.
+//
+// The deepest-focused-route tracker below (already used for TextbookReader's
+// FAB-hide) is reused for this.
+const FULLSCREEN_ROUTES = new Set(['QuizRunner', 'SolutionDetail']);
 
 function CustomTabBar({ state, navigation, hidden }: BottomTabBarProps & { hidden?: boolean }) {
   if (hidden) return null;
@@ -56,9 +60,6 @@ function CustomTabBar({ state, navigation, hidden }: BottomTabBarProps & { hidde
   );
 }
 
-// Deepest focused route name from a navigator state object. Called from the
-// navigator's onStateChange rather than a hook — MainTabNavigator itself
-// renders the navigator, so it is not inside a navigation context.
 function deepestRouteName(state: any): string | undefined {
   let current = state;
   while (current?.routes?.[current.index ?? 0]?.state) {
@@ -72,10 +73,11 @@ export function MainTabNavigator() {
   const insets = useSafeAreaInsets();
   const [focusedRoute, setFocusedRoute] = useState<string | undefined>();
   const inFullScreen = !!focusedRoute && FULLSCREEN_ROUTES.has(focusedRoute);
-  // The reader and full-screen quiz surfaces both need the FAB gone — the
-  // reader because the bubble would sit over page controls, the quiz because
-  // the FAB's position (computed from the tab bar's real height) would end up
-  // floating mid-scene once the tab bar itself is hidden.
+  // The reader and full-screen surfaces both need the FAB gone — the reader
+  // because the bubble would sit over page controls, the quiz and study mode
+  // because the FAB's position (computed from the tab bar's real height) would
+  // end up floating mid-scene once the tab bar itself is hidden, and in
+  // SolutionDetail it would overlap the Next button.
   const hideFab = focusedRoute === 'TextbookReader' || inFullScreen;
 
   return (

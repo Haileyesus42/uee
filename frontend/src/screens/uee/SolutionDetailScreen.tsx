@@ -14,9 +14,6 @@ import { MathText } from '../../components/common/MathText';
 
 type Props = NativeStackScreenProps<UeeStackParamList, 'SolutionDetail'>;
 
-// Session-scoped store so answers survive the screen unmounting (backing out
-// to the paper list and returning to the same paper). Keyed by paper, so a
-// different paper starts fresh. Cleared on app restart.
 const sessionAnswers = new Map<string, Record<number, number>>();
 
 function paperKey(stream: string, year: number, subjectId: string) {
@@ -37,7 +34,6 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
   if (!questions) return null;
   const question = questions[questionIndex];
 
-  // Derive current answer from the map — no reset-on-navigation needed.
   const selected = answers[questionIndex] ?? null;
 
   const isFirst = questionIndex === 0;
@@ -58,8 +54,6 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
     setAnswers(next);
   }
 
-  // Clears this question's answer so the user can retry. Every other
-  // question's answer stays intact.
   function resetCurrentAnswer() {
     const next = { ...answers };
     delete next[questionIndex];
@@ -67,8 +61,6 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
     setAnswers(next);
   }
 
-  // Clears every answer in this paper after a confirmation. Jumps back to Q1
-  // so the user immediately sees the fresh state.
   function resetAllAnswers() {
     Alert.alert(
       'Reset all answers?',
@@ -88,9 +80,6 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
     );
   }
 
-  // Opens Unity with a context-rich prompt for this exact question. The first
-  // line after [Q_CONTEXT] is what the user SEES in the chat bubble — the rest
-  // is the full prompt sent to the backend (and to pre-gen content lookup).
   function askUnityWithContext() {
     const letter = (i: number) => String.fromCharCode(65 + i);
     const optionsList = question.options.map((opt, i) => `${letter(i)}. ${opt}`).join('\n');
@@ -130,7 +119,7 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
   }
 
   return (
-    <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top']}>
+    <SafeAreaView style={[styles.flex, { backgroundColor: t.colors.bg }]} edges={['top', 'bottom']}>
       <View style={{ paddingHorizontal: t.spacing.md }}>
         <TopBar title={`Question ${questionIndex + 1} of ${questions.length}`} onBack={() => navigation.goBack()} />
       </View>
@@ -202,37 +191,27 @@ export function SolutionDetailScreen({ navigation, route }: Props) {
         )}
       </ScrollView>
 
-      {/* Nav row — compact pill buttons, not full-width. Sits centered under
-          the content with a smaller footprint so it doesn't dominate the
-          reading area. Full-width bars felt oversized on the J6+ screen, and
-          on short questions the buttons were visually heavier than the
-          content itself. */}
+      {/* Full-width Previous / Next pair. Tab bar is hidden on this screen
+          (see MainTabNavigator's FULLSCREEN_ROUTES), so these buttons are the
+          primary navigation at the bottom — full-width makes them easy to hit
+          and gives the screen a proper footer. SafeAreaView with
+          edges={['top', 'bottom']} keeps the pair clear of the home indicator. */}
       <View style={[styles.navRow, { paddingHorizontal: t.spacing.md }]}>
         <Pressable
           onPress={() => goTo(questionIndex - 1)}
           disabled={isFirst}
-          style={[
-            styles.navButton,
-            { borderColor: t.colors.border, opacity: isFirst ? 0.4 : 1 },
-          ]}
+          style={[styles.navButton, { borderColor: t.colors.border, opacity: isFirst ? 0.4 : 1 }]}
         >
-          <Ionicons name="chevron-back" size={16} color={t.colors.textPrimary} />
-          <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginLeft: 3, fontSize: 13 }]}>
-            Previous
-          </Text>
+          <Ionicons name="chevron-back" size={18} color={t.colors.textPrimary} />
+          <Text style={[t.typography.bodyStrong, { color: t.colors.textPrimary, marginLeft: 4 }]}>Previous</Text>
         </Pressable>
         <Pressable
           onPress={() => goTo(questionIndex + 1)}
           disabled={isLast}
-          style={[
-            styles.navButton,
-            { backgroundColor: t.colors.brand, borderColor: t.colors.brand, opacity: isLast ? 0.4 : 1 },
-          ]}
+          style={[styles.navButton, { backgroundColor: t.colors.brand, opacity: isLast ? 0.4 : 1 }]}
         >
-          <Text style={[t.typography.bodyStrong, { color: t.colors.textInverse, marginRight: 3, fontSize: 13 }]}>
-            Next
-          </Text>
-          <Ionicons name="chevron-forward" size={16} color={t.colors.textInverse} />
+          <Text style={[t.typography.bodyStrong, { color: t.colors.textInverse, marginRight: 4 }]}>Next</Text>
+          <Ionicons name="chevron-forward" size={18} color={t.colors.textInverse} />
         </Pressable>
       </View>
 
@@ -260,28 +239,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 9,
   },
   tryAgain: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginTop: 10 },
-
-  // Nav row — buttons are pill-shaped, sized to their content (not stretch),
-  // and centered in the row with a modest gap. Previously `flex: 1` on each
-  // button split the row edge-to-edge with `paddingVertical: 12`, which felt
-  // oversized for two short labels. Now: `paddingHorizontal: 18` gives the
-  // pill a comfortable touch target (~40dp tall including border) without
-  // filling half the screen per button.
-  navRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingBottom: 12,
-    gap: 8,
-  },
+  navRow: { flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 12, gap: 10 },
   navButton: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
+    borderRadius: 12,
     borderWidth: 1.5,
-    paddingVertical: 9,
-    paddingHorizontal: 18,
+    paddingVertical: 12,
   },
   resetAll: {
     flexDirection: 'row',
