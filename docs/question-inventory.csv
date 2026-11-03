@@ -1,0 +1,120 @@
+exam_year_gc,stream,subject,questions_in_paper,answered,with_explanation,with_deep_explanation,identical_to_other_stream,paper_source,per_question_source_recorded
+2013,natural,biology,100,99,100,6,,"national-exams:answer-key + national-exams:questions",no
+2013,natural,chemistry,80,79,80,4,,"national-exams:answer-key + national-exams:questions",no
+2013,natural,civics,100,100,100,8,100,"national-exams:answer-key + national-exams:questions",no
+2013,social,civics,100,100,100,4,100,"national-exams:answer-key + national-exams:questions",no
+2013,natural,english,120,120,120,10,120,"national-exams:answer-key + national-exams:questions",no
+2013,social,english,120,120,120,10,120,"national-exams:answer-key + national-exams:questions",no
+2013,natural,mathematics,65,64,65,3,65,"national-exams:answer-key + national-exams:questions",no
+2013,social,mathematics,65,64,65,2,65,"national-exams:answer-key + national-exams:questions",no
+2013,natural,physics,50,48,50,5,,"national-exams:answer-key + national-exams:questions",no
+2014,natural,biology,100,100,100,6,,"national-exams:answer-key + national-exams:questions",no
+2014,natural,chemistry,79,77,79,5,,"national-exams:answer-key + national-exams:questions",no
+2014,natural,civics,100,99,61,3,100,"national-exams:answer-key + national-exams:questions",no
+2014,social,civics,100,99,61,6,100,"national-exams:answer-key + national-exams:questions",no
+2014,natural,english,120,120,120,7,120,"national-exams:answer-key + national-exams:questions",no
+2014,social,english,120,120,120,2,120,"national-exams:answer-key + national-exams:questions",no
+2014,natural,mathematics,65,64,65,5,65,"national-exams:answer-key + national-exams:questions",no
+2014,social,mathematics,65,64,65,2,65,"national-exams:answer-key + national-exams:questions",no
+2014,natural,physics,50,49,50,7,,"national-exams:answer-key + national-exams:questions",no
+2015,natural,biology,100,100,100,4,,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2015,natural,chemistry,80,80,80,3,,"national-exams:answer-key + national-exams:questions",no
+2015,natural,civics,100,100,100,8,100,"national-exams:answer-key + national-exams:questions",no
+2015,social,civics,100,100,100,8,100,"national-exams:answer-key + national-exams:questions",no
+2015,natural,english,120,120,120,7,120,"national-exams:answer-key + national-exams:answer-key-broken + national-exams:questions",no
+2015,social,english,120,120,120,6,120,"national-exams:answer-key + national-exams:answer-key-broken + national-exams:questions",no
+2015,natural,mathematics,65,65,65,9,65,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2015,social,mathematics,65,65,65,3,65,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2015,natural,physics,50,50,50,4,,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2016,natural,biology,100,100,100,6,,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2016,natural,chemistry,80,79,80,9,,"national-exams:answer-key + national-exams:questions",no
+2016,natural,civics,100,100,100,3,100,"national-exams:answer-key + national-exams:questions",no
+2016,social,civics,100,100,100,7,100,"national-exams:answer-key + national-exams:questions",no
+2016,natural,english,120,120,120,12,120,"national-exams:answer-key + national-exams:questions",no
+2016,social,english,120,120,120,6,120,"national-exams:answer-key + national-exams:questions",no
+2016,natural,mathematics,65,65,65,6,65,"national-exams:answer-key + national-exams:questions",no
+2016,social,mathematics,65,65,65,4,65,"national-exams:answer-key + national-exams:questions",no
+2016,natural,physics,50,50,50,4,,"national-exams:answer-key + national-exams:questions",no
+2017,natural,biology,100,100,100,1,,"national-exams:answer-key + national-exams:questions",no
+2017,natural,chemistry,80,80,80,7,,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2017,natural,civics,100,100,100,5,100,"national-exams:answer-key + national-exams:answer-key-broken + national-exams:questions",no
+2017,social,civics,100,100,100,5,100,"national-exams:answer-key + national-exams:answer-key-broken + national-exams:questions",no
+2017,natural,english,120,120,120,5,120,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2017,social,english,120,120,120,12,120,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2017,natural,mathematics,63,63,63,5,63,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2017,social,mathematics,63,63,63,3,63,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2017,natural,physics,50,50,50,6,,"national-exams:answer-key + national-exams:questions",no
+2018,natural,biology,100,100,100,5,,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2018,natural,chemistry,80,80,80,4,,"national-exams:answer-key + national-exams:questions + national-exams:questions-broken",no
+2018,natural,civics,100,100,100,7,100,"national-exams:answer-key + national-exams:answer-key-broken + national-exams:questions",no
+2018,social,civics,100,100,100,7,100,"national-exams:answer-key + national-exams:answer-key-broken + national-exams:questions",no
+2018,natural,english,120,120,120,7,120,"national-exams:answer-key + national-exams:questions",no
+2018,social,english,120,120,120,3,120,"national-exams:answer-key + national-exams:questions",no
+2018,natural,mathematics,65,64,65,5,65,"national-exams:answer-key + national-exams:questions",no
+2018,social,mathematics,65,64,65,3,65,"national-exams:answer-key + national-exams:questions",no
+2018,natural,physics,50,50,50,3,,"national-exams:answer-key + national-exams:questions",no
+2021,natural,aptitude,56,56,56,0,56,"page-scan:page-image + temari:paper",no
+2021,social,aptitude,56,56,56,3,56,"page-scan:page-image + temari:paper",no
+2021,natural,biology,95,95,95,11,,"temari:paper",no
+2021,natural,chemistry,69,69,57,6,,"temari:paper",no
+2021,natural,civics,99,99,99,6,99,"temari:paper",no
+2021,social,civics,99,99,99,3,99,"temari:paper",no
+2021,natural,english,118,118,118,5,118,"temari:paper",no
+2021,social,english,118,118,118,6,118,"temari:paper",no
+2021,social,geography,30,30,30,1,,"page-scan:page-image + temari:paper",no
+2021,social,history,31,31,31,1,,"page-scan:page-image + temari:paper",no
+2021,natural,mathematics,65,65,52,4,65,"temari:paper",no
+2021,social,mathematics,65,65,52,3,65,"temari:paper",no
+2021,natural,physics,48,48,48,3,,"temari:paper",no
+2022,natural,aptitude,52,45,48,3,25,"page-scan:page-image + temari:paper",no
+2022,social,aptitude,44,44,44,2,25,"page-scan:page-image + temari:paper",no
+2022,natural,biology,93,93,93,6,,"temari:paper",no
+2022,natural,chemistry,58,58,58,2,,"temari:paper",no
+2022,natural,civics,99,99,99,7,99,"temari:paper",no
+2022,social,civics,99,99,99,6,99,"temari:paper",no
+2022,natural,english,106,106,106,2,106,"temari:paper",no
+2022,social,english,106,106,106,5,106,"temari:paper",no
+2022,social,geography,82,82,82,8,,"page-scan:page-image + temari:paper",no
+2022,social,history,85,85,85,3,,"page-scan:page-image + temari:paper",no
+2022,natural,mathematics,51,51,40,4,51,"temari:paper",no
+2022,social,mathematics,51,51,40,3,51,"temari:paper",no
+2022,natural,physics,30,30,30,2,,"temari:paper",no
+2023,natural,aptitude,52,52,52,5,52,"page-scan:page-image + temari:paper",no
+2023,social,aptitude,52,52,52,0,52,"page-scan:page-image + temari:paper",no
+2023,natural,biology,92,92,92,4,,"temari:paper",no
+2023,natural,chemistry,76,76,76,6,,"temari:paper",no
+2023,natural,civics,96,96,96,6,96,"temari:paper",no
+2023,social,civics,96,96,96,6,96,"temari:paper",no
+2023,natural,english,106,106,106,7,106,"temari:paper",no
+2023,social,english,106,106,106,1,106,"temari:paper",no
+2023,social,geography,90,90,85,6,,"page-scan:page-image + temari:paper",no
+2023,social,history,100,100,100,3,,"page-scan:page-image + temari:paper",no
+2023,natural,mathematics,57,57,57,3,57,"temari:paper",no
+2023,social,mathematics,57,57,57,3,57,"temari:paper",no
+2023,natural,physics,46,46,46,4,,"temari:paper",no
+2024,natural,aptitude,43,43,43,0,43,"page-scan:page-image + temari:paper",no
+2024,social,aptitude,43,43,43,2,43,"page-scan:page-image + temari:paper",no
+2024,natural,biology,93,93,93,6,,"temari:paper",no
+2024,natural,chemistry,72,72,72,4,,"temari:paper",no
+2024,natural,civics,99,99,99,4,99,"temari:paper",no
+2024,social,civics,99,99,99,9,99,"temari:paper",no
+2024,social,economics,78,78,78,3,,"temari:paper",no
+2024,natural,english,110,110,110,4,110,"temari:paper",no
+2024,social,english,110,110,110,7,110,"temari:paper",no
+2024,social,geography,82,82,82,7,,"page-scan:page-image + temari:paper",no
+2024,social,history,100,100,100,5,,"page-scan:page-image + temari:paper",no
+2024,natural,mathematics,52,52,52,2,42,"temari:paper",no
+2024,social,mathematics,51,51,51,6,42,"temari:paper",no
+2024,natural,physics,48,48,48,3,,"temari:paper",no
+2025,natural,aptitude,56,51,51,6,56,"page-scan:page-image + temari:paper",no
+2025,social,aptitude,56,51,51,3,56,"page-scan:page-image + temari:paper",no
+2025,natural,biology,98,98,98,3,,"",no
+2025,natural,chemistry,76,71,71,4,,"temari:paper",no
+2025,social,economics,85,85,85,4,,"temari:paper",no
+2025,natural,english,100,98,98,10,100,"temari:paper",no
+2025,social,english,100,98,98,8,100,"temari:paper",no
+2025,social,geography,98,98,97,2,,"page-scan:page-image + temari:paper",no
+2025,social,history,99,99,99,3,,"page-scan:page-image + temari:paper",no
+2025,natural,mathematics,53,51,51,2,,"temari:paper",no
+2025,social,mathematics,58,58,58,4,,"temari:paper",no
+2025,natural,physics,59,55,55,3,,"temari:paper",no
