@@ -14,3 +14,7 @@ __pycache__/
 
 # Disposable render caches from one-off ingest/audit scripts
 .tmp-exam-render/
+
+# Copyrighted source library (exam papers, textbooks, teacher guides) built by
+# backend/scripts/source-library/organizeSourceLibrary.cjs — ~3.6 GB, local only.
+/EUEE_database/
