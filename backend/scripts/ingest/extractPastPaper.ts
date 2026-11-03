@@ -26,8 +26,8 @@ const QuestionsEnvelopeSchema = z.object({ questions: z.array(z.unknown()) });
 const PROMPT = `You are transcribing one page of a scanned Ethiopian University Entrance Exam (UEE) past paper.
 
 Return ONLY a JSON object of the form {"questions": [...]}, where each item has:
-- prompt: the question text, transcribed exactly as written
-- options: array of the answer choices, transcribed exactly (do not reorder them)
+- prompt: the question text, transcribed exactly as written, with all math rendered as LaTeX
+- options: array of the answer choices, transcribed exactly (do not reorder them), with all math rendered as LaTeX
 - correctIndex: 0-based index of the correct option. Use the paper's own answer key if this
   page shows one; otherwise determine it yourself and set confidence to "low".
 - answerSource: "official" if correctIndex came from the paper's own answer key/marker on the
@@ -37,6 +37,37 @@ Return ONLY a JSON object of the form {"questions": [...]}, where each item has:
   yourself and set explanationSource to "generated".
 - confidence: "low" if the scan is unclear, the question is cut off, or you are unsure
   of the correct answer; otherwise "high".
+
+CRITICAL LaTeX RULES for prompt, options, and explanation:
+
+1. Wrap EVERY math expression in $...$ for inline, $$...$$ for display.
+   - A standalone number "2" stays plain "2"; but "2x" becomes $2x$.
+   - A standalone variable "x" becomes $x$.
+   - "3 cm" becomes $3\text{ cm}$.
+
+2. Convert Unicode math characters to LaTeX:
+   - pi -> \pi, theta -> \theta, sqrt -> \sqrt{}, infinity -> \infty
+   - superscript digits -> ^N inside math mode
+   - multiply -> \times, divide -> \div, less-or-equal -> \leq, greater-or-equal -> \geq, not-equal -> \neq
+
+3. ALWAYS use \dfrac{num}{den} for fractions, NEVER "num/den":
+   - 1/2 -> $\dfrac{1}{2}$
+   - (a+b)/c -> $\dfrac{a+b}{c}$
+
+4. Subscripts use _{}: a_1, a_n, a_{n+1}
+5. Superscripts use ^{}: x^2, x^{-1}, x^{n+1}
+6. Multi-char sub/superscripts MUST use braces: x^{10} NOT x^10
+
+7. Limits, sums, integrals include bounds:
+   - lim(n -> infinity) -> $\lim_{n \to \infty}$
+   - sum from i=1 to n -> $\sum_{i=1}^{n}$
+
+8. Preserve tables as markdown tables inside the prompt.
+9. Preserve multi-part questions as sequential prompts (Part (a): ..., Part (b): ...).
+
+10. NEVER leave a backslash command unwrapped. Every LaTeX command lives inside $...$.
+11. NEVER mix Unicode math with LaTeX in the same expression - convert everything to LaTeX.
+12. NEVER add markdown headers (##, ###).
 
 If this page has no multiple-choice questions on it (e.g. a cover page or instructions),
 return {"questions": []}. Do not invent questions that aren't on the page.`;

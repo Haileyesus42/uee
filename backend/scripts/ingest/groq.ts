@@ -90,6 +90,7 @@ export async function extractJsonFromImage(imagePath: string, prompt: string): P
 
   const res = await fetchGroqWithRetry({
     model: env.GROQ_VISION_MODEL,
+    max_tokens: 900,
     temperature: 0,
     response_format: { type: 'json_object' },
     messages: [
